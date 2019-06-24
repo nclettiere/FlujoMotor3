@@ -87,7 +87,7 @@ Public Class Inicio_de_sesion
         Charged = True
     End Sub
 
-    Friend Sub cargar(strOp As String, strVehiculos As String, strPatios As String, strUbicaciones As String)
+    Friend Sub cargar(strOp As String, strVehiculos As String, strPatios As String, strUbicaciones As String, strInspecciones As String)
 
         Usuarios = New List(Of Operario)
         FacadeRef = New Facade
@@ -95,18 +95,52 @@ Public Class Inicio_de_sesion
         If String.IsNullOrEmpty(strOp) Or
            String.IsNullOrEmpty(strVehiculos) Or
            String.IsNullOrEmpty(strPatios) Or
-           String.IsNullOrEmpty(strUbicaciones) Then
+           String.IsNullOrEmpty(strUbicaciones) Or
+           String.IsNullOrEmpty(strInspecciones) Then
             MessageBox.Show("Error Al cargar CSV's")
             Me.Close()
         Else
             FacadeRef.CSVVehiculos = strVehiculos
             FacadeRef.CSVUbicaciones = strUbicaciones
+            FacadeRef.CSVInspecciones = strInspecciones
 
             CargarUsuarios(strOp)
             CargarVehiculos(strVehiculos)
             CargarPatios(strPatios)
             CargarUbicaciones(strUbicaciones)
+            CargarInspecciones(strInspecciones)
         End If
+    End Sub
+
+    Private Sub CargarInspecciones(strInspecciones As String)
+        Dim filePath As String = strInspecciones
+        Dim streamReader As New IO.StreamReader(filePath)
+        Dim StreamText As String
+
+        While Not streamReader.EndOfStream
+
+            StreamText = streamReader.ReadLine()
+
+            Dim StreamArray As String() = StreamText.Split(",")
+
+            If String.IsNullOrWhiteSpace(StreamArray(5)) Then
+                FacadeRef.AgregarInspeccion(New Inspeccion(Int32.Parse(StreamArray(0)),
+                                                       StreamArray(1),
+                                                       StreamArray(2),
+                                                       Int32.Parse(StreamArray(3)),
+                                                       StreamArray(4)))
+            Else
+                FacadeRef.AgregarInspeccion(New Inspeccion(Int32.Parse(StreamArray(0)),
+                                       StreamArray(1),
+                                       StreamArray(2),
+                                       Int32.Parse(StreamArray(3)),
+                                       StreamArray(4),
+                                       Int32.Parse(StreamArray(5))))
+            End If
+
+        End While
+
+        streamReader.Dispose()
     End Sub
 
     Private Sub CargarPatios(archivo As String)
@@ -126,7 +160,6 @@ Public Class Inicio_de_sesion
         End While
 
         streamReader.Dispose()
-
     End Sub
 
     Private Sub CargarUbicaciones(archivo As String)

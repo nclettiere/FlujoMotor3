@@ -4,11 +4,13 @@
     Private PathVehiculos As String
     Private PathPatios As String
     Private PathUbicaciones As String
+    Private PathInspecciones As String
 
     Private SetOperarios As Boolean = False
     Private SetVehiculos As Boolean = False
     Private SetPatios As Boolean = False
     Private SetUbicaciones As Boolean = False
+    Private SetInspecciones As Boolean = False
 
     Private InicioDeSesion As Inicio_de_sesion
 
@@ -27,7 +29,7 @@
 
         SetOperarios = True
 
-        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones Then
+        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones And SetInspecciones Then
             btn_aceptar.Enabled = True
         End If
     End Sub
@@ -41,11 +43,11 @@
             PathVehiculos = AbrirCSV.FileName
         End If
 
-        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones Then
+        SetVehiculos = True
+
+        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones And SetInspecciones Then
             btn_aceptar.Enabled = True
         End If
-
-        SetVehiculos = True
     End Sub
 
     Private Sub btn_pa_Click(sender As Object, e As EventArgs) Handles btn_pa.Click
@@ -57,11 +59,12 @@
             PathPatios = AbrirCSV.FileName
         End If
 
-        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones Then
+        SetPatios = True
+
+        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones And SetInspecciones Then
             btn_aceptar.Enabled = True
         End If
 
-        SetPatios = True
     End Sub
 
     Private Sub btn_ub_Click(sender As Object, e As EventArgs) Handles btn_ub.Click
@@ -75,13 +78,30 @@
 
         SetUbicaciones = True
 
-        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones Then
+        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones And SetInspecciones Then
             btn_aceptar.Enabled = True
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        AbrirCSV.Title = "Seleccionar el CSV de Inspecciones"
+        AbrirCSV.InitialDirectory = Application.StartupPath + "\CSV\"
+        AbrirCSV.Filter = "CSV Files|*.csv"
+
+        If AbrirCSV.ShowDialog() = DialogResult.OK Then
+            PathInspecciones = AbrirCSV.FileName
+        End If
+
+        SetInspecciones = True
+
+        If SetOperarios And SetVehiculos And SetPatios And SetUbicaciones And SetInspecciones Then
+            btn_aceptar.Enabled = True
+        End If
+    End Sub
+
+
     Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
-        InicioDeSesion.cargar(PathOperarios, PathVehiculos, PathPatios, PathUbicaciones)
+        InicioDeSesion.cargar(PathOperarios, PathVehiculos, PathPatios, PathUbicaciones, PathInspecciones)
         Me.Close()
     End Sub
 End Class

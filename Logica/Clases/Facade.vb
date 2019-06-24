@@ -13,6 +13,7 @@ Public Class Facade
 
     Public CSVVehiculos As String
     Public CSVUbicaciones As String
+    Public CSVInspecciones As String
 
 
 
@@ -292,13 +293,21 @@ Public Class Facade
         Return ListaInspecciones
     End Function
 
-    Function ObtenerInspeccion(func As Integer) As Inspeccion
+    Function ObtenerInspeccion(InspeccionID As Integer) As Inspeccion
         For Each inspeccion As Inspeccion In ListaInspecciones
-            If func = inspeccion.InspeccionID Then
+            If InspeccionID = inspeccion.InspeccionID Then
                 Return inspeccion
             End If
         Next
         Return Nothing
     End Function
 
+    Function ObtenerInspeccionVin(VIN As String) As Inspeccion
+        For Each inspeccion As Inspeccion In ListaInspecciones
+            If VIN = inspeccion.VehiculoVin Then
+                Return inspeccion
+            End If
+        Next
+        Return Nothing
+    End Function
 End Class

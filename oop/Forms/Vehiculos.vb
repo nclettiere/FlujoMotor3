@@ -37,9 +37,6 @@ Public Class Vehiculos
         btBuscarVehiculo.ForeColor = Color.White
     End Sub
 
-
-
-
     '- - - LOTES - - -
 
     'BOTON "AGREGAR" LOTE
@@ -67,7 +64,7 @@ Public Class Vehiculos
         Facade = CType(ParentForm, Menu_Operario).GetFacade()
 
         For Each vehiculo In Facade.ObtenerVehiculos()
-            Dim ListaPatio(6) As String
+            Dim ListaPatio(7) As String
 
             ListaPatio(0) = vehiculo.Vin
             ListaPatio(1) = vehiculo.Marca
@@ -75,6 +72,7 @@ Public Class Vehiculos
             ListaPatio(3) = vehiculo.Tipo
             ListaPatio(4) = vehiculo.Color
             ListaPatio(5) = vehiculo.Fecha.ToString
+            ListaPatio(6) = Facade.ObtenerUbicacion(vehiculo.UbicacionID).Status
 
 
             Dim listViewItem As ListViewItem = New ListViewItem(ListaPatio)
@@ -114,7 +112,7 @@ Public Class Vehiculos
         If Not vehiculo Is Nothing Then
 
 
-            Dim ListArray(6) As String
+            Dim ListArray(7) As String
             For Each item In vehiculo
                 ListArray(0) = item.Vin
                 ListArray(1) = item.Marca
@@ -122,6 +120,7 @@ Public Class Vehiculos
                 ListArray(3) = item.Tipo
                 ListArray(4) = item.Color
                 ListArray(5) = item.Fecha
+                ListArray(6) = Facade.ObtenerUbicacion(item.UbicacionID).Status
 
                 Dim ListViewItem As ListViewItem = New ListViewItem(ListArray)
 
@@ -142,7 +141,7 @@ Public Class Vehiculos
         If Not vehiculo Is Nothing Then
 
 
-            Dim ListArray(6) As String
+            Dim ListArray(7) As String
             For Each item In vehiculo
                 ListArray(0) = item.Vin
                 ListArray(1) = item.Marca
@@ -150,6 +149,7 @@ Public Class Vehiculos
                 ListArray(3) = item.Tipo
                 ListArray(4) = item.Color
                 ListArray(5) = item.Fecha
+                ListArray(6) = Facade.ObtenerUbicacion(item.UbicacionID).Status
 
                 Dim ListViewItem As ListViewItem = New ListViewItem(ListArray)
                 lista_vehiculos.Items.Add(ListViewItem)

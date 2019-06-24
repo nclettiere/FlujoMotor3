@@ -27,10 +27,12 @@ Partial Class Vehiculos
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btn_verlote = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btn_AgregarLote = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.pnMenuAutitos = New System.Windows.Forms.Panel()
+        Me.btn_ver = New System.Windows.Forms.Button()
         Me.btListarVehiculo = New System.Windows.Forms.Button()
         Me.btAgregarVehiculo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -46,8 +48,7 @@ Partial Class Vehiculos
         Me.btBuscarVehiculo = New System.Windows.Forms.Button()
         Me.txtBuscadorVehiculo = New System.Windows.Forms.TextBox()
         Me.TabVehiculos = New System.Windows.Forms.TabControl()
-        Me.btn_ver = New System.Windows.Forms.Button()
-        Me.btn_verlote = New System.Windows.Forms.Button()
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -111,6 +112,25 @@ Partial Class Vehiculos
         Me.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Panel2.Size = New System.Drawing.Size(923, 65)
         Me.Panel2.TabIndex = 2
+        '
+        'btn_verlote
+        '
+        Me.btn_verlote.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
+        Me.btn_verlote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_verlote.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_verlote.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btn_verlote.FlatAppearance.BorderSize = 0
+        Me.btn_verlote.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btn_verlote.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btn_verlote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_verlote.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_verlote.ForeColor = System.Drawing.Color.White
+        Me.btn_verlote.Location = New System.Drawing.Point(264, 0)
+        Me.btn_verlote.Name = "btn_verlote"
+        Me.btn_verlote.Size = New System.Drawing.Size(132, 65)
+        Me.btn_verlote.TabIndex = 9
+        Me.btn_verlote.Text = "Ver"
+        Me.btn_verlote.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -176,6 +196,25 @@ Partial Class Vehiculos
         Me.pnMenuAutitos.Size = New System.Drawing.Size(923, 65)
         Me.pnMenuAutitos.TabIndex = 1
         '
+        'btn_ver
+        '
+        Me.btn_ver.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
+        Me.btn_ver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_ver.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_ver.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btn_ver.FlatAppearance.BorderSize = 0
+        Me.btn_ver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btn_ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_ver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_ver.ForeColor = System.Drawing.Color.White
+        Me.btn_ver.Location = New System.Drawing.Point(264, 0)
+        Me.btn_ver.Name = "btn_ver"
+        Me.btn_ver.Size = New System.Drawing.Size(132, 65)
+        Me.btn_ver.TabIndex = 5
+        Me.btn_ver.Text = "Ver"
+        Me.btn_ver.UseVisualStyleBackColor = True
+        '
         'btListarVehiculo
         '
         Me.btListarVehiculo.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
@@ -225,7 +264,7 @@ Partial Class Vehiculos
         '
         'lista_vehiculos
         '
-        Me.lista_vehiculos.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.lista_vehiculos.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader8})
         Me.lista_vehiculos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lista_vehiculos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lista_vehiculos.FullRowSelect = True
@@ -332,43 +371,10 @@ Partial Class Vehiculos
         Me.TabVehiculos.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabVehiculos.TabIndex = 3
         '
-        'btn_ver
+        'ColumnHeader8
         '
-        Me.btn_ver.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
-        Me.btn_ver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_ver.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_ver.Dock = System.Windows.Forms.DockStyle.Left
-        Me.btn_ver.FlatAppearance.BorderSize = 0
-        Me.btn_ver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btn_ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_ver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_ver.ForeColor = System.Drawing.Color.White
-        Me.btn_ver.Location = New System.Drawing.Point(264, 0)
-        Me.btn_ver.Name = "btn_ver"
-        Me.btn_ver.Size = New System.Drawing.Size(132, 65)
-        Me.btn_ver.TabIndex = 5
-        Me.btn_ver.Text = "Ver"
-        Me.btn_ver.UseVisualStyleBackColor = True
-        '
-        'btn_verlote
-        '
-        Me.btn_verlote.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
-        Me.btn_verlote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_verlote.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_verlote.Dock = System.Windows.Forms.DockStyle.Left
-        Me.btn_verlote.FlatAppearance.BorderSize = 0
-        Me.btn_verlote.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btn_verlote.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btn_verlote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_verlote.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_verlote.ForeColor = System.Drawing.Color.White
-        Me.btn_verlote.Location = New System.Drawing.Point(264, 0)
-        Me.btn_verlote.Name = "btn_verlote"
-        Me.btn_verlote.Size = New System.Drawing.Size(132, 65)
-        Me.btn_verlote.TabIndex = 9
-        Me.btn_verlote.Text = "Ver"
-        Me.btn_verlote.UseVisualStyleBackColor = True
+        Me.ColumnHeader8.Text = "Status"
+        Me.ColumnHeader8.Width = 109
         '
         'Vehiculos
         '
@@ -418,4 +424,5 @@ Partial Class Vehiculos
     Friend WithEvents Button1 As Button
     Friend WithEvents btn_ver As Button
     Friend WithEvents btn_verlote As Button
+    Friend WithEvents ColumnHeader8 As ColumnHeader
 End Class

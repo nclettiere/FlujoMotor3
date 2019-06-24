@@ -1,25 +1,31 @@
-﻿Imports Test
+﻿Imports Logica
 
 Public Class Inspeccion
 
     Private _InspeccionID As Integer
-    Private _Name As String
     Private _VehiculoVin As String
     Private _Descripcion As String
-    Private _Ubicacion As String
-    Private _OperarioID As String
-    Private _Fecha As Date
+    Private _OperarioID As Integer
+    Private _Fecha As String
 
-    Private _Herencias As List(Of Inspeccion)
+    Private _HerenciaID As Integer
 
-    Public Sub New(InspeccionID As Integer, Name As String, VehiculoVin As String, Descripcion As String, Ubicacion As String, OperarioID As String, Fecha As Date)
+    Public Sub New(InspeccionID As Integer, VehiculoVin As String, Descripcion As String, OperarioID As Integer, Fecha As String)
         _InspeccionID = InspeccionID
-        _Name = Name
         _VehiculoVin = VehiculoVin
         _Descripcion = Descripcion
-        _Ubicacion = Ubicacion
         _OperarioID = OperarioID
         _Fecha = Fecha
+        _HerenciaID = Nothing
+    End Sub
+
+    Public Sub New(InspeccionID As Integer, VehiculoVin As String, Descripcion As String, OperarioID As Integer, Fecha As String, Herencia As Integer)
+        _InspeccionID = InspeccionID
+        _VehiculoVin = VehiculoVin
+        _Descripcion = Descripcion
+        _OperarioID = OperarioID
+        _Fecha = Fecha
+        _HerenciaID = Herencia
     End Sub
 
     Public Property InspeccionID As Integer
@@ -49,48 +55,30 @@ Public Class Inspeccion
         End Set
     End Property
 
-    Public Property Ubicacion As String
-        Get
-            Return _Ubicacion
-        End Get
-        Set(value As String)
-            _Ubicacion = value
-        End Set
-    End Property
-
-    Public Property OperarioID As String
+    Public Property OperarioID As Integer
         Get
             Return _OperarioID
         End Get
-        Set(value As String)
+        Set(value As Integer)
             _OperarioID = value
         End Set
     End Property
 
-    Public Property Fecha As Date
+    Public Property Fecha As String
         Get
             Return _Fecha
         End Get
-        Set(value As Date)
+        Set(value As String)
             _Fecha = value
         End Set
     End Property
 
-    Public Property Herencias As List(Of Inspeccion)
+    Public Property Herencia As Integer
         Get
-            Return _Herencias
+            Return _HerenciaID
         End Get
-        Set(value As List(Of Inspeccion))
-            _Herencias = value
-        End Set
-    End Property
-
-    Public Property Name As String
-        Get
-            Return _Name
-        End Get
-        Set(value As String)
-            _Name = value
+        Set(value As Integer)
+            _HerenciaID = value
         End Set
     End Property
 End Class

@@ -95,6 +95,25 @@ Public Class Facade
         Return Nothing
     End Function
 
+    Public Sub AgregarInspeccionACsV(cSVInspeccion() As String, strFile As String, v As Boolean)
+        Using writer As New StreamWriter(strFile, True)
+            If v Then
+                writer.WriteLine(cSVInspeccion(0) + "," +
+                            cSVInspeccion(1) + "," +
+                            cSVInspeccion(2) + "," +
+                            cSVInspeccion(3) + "," +
+                            cSVInspeccion(4) + "," +
+                            cSVInspeccion(5))
+            Else
+                writer.WriteLine(cSVInspeccion(0) + "," +
+            cSVInspeccion(1) + "," +
+            cSVInspeccion(2) + "," +
+            cSVInspeccion(3) + "," +
+            cSVInspeccion(4) + ",")
+            End If
+        End Using
+    End Sub
+
     Function ObtenerVehiculos() As List(Of VehiculoTest)
         Return ListaVehiculos
     End Function

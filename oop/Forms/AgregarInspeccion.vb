@@ -34,19 +34,34 @@ Public Class AgregarInspeccion
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
         If (DependencyID <> Nothing) Then
             Dim NewInspeccion = New Inspeccion(FacadeRef.GenerateInspeccionId(),
-                       VehiculoVin,
-                       rch_desc.Text,
-                       FacadeRef.Operario.OperarioID,
-                       Date.Now.ToShortDateString,
-                       DependencyID)
+                                               VehiculoVin,
+                                               rch_desc.Text,
+                                               FacadeRef.Operario.OperarioID,
+                                               Date.Now.ToShortDateString,
+                                               DependencyID)
             FacadeRef.AgregarInspeccion(NewInspeccion)
             ParentFormClass.ActualizarLista()
+
+            Dim CSVInspeccion() As String = {FacadeRef.GenerateInspeccionId().ToString, VehiculoVin,
+                                             rch_desc.Text,
+                                             FacadeRef.Operario.OperarioID,
+                                             Date.Now.ToShortDateString,
+                                             DependencyID}
+
+            FacadeRef.AgregarInspeccionACsV(CSVInspeccion, FacadeRef.CSVInspecciones, True)
         Else
             Dim NewInspeccion = New Inspeccion(FacadeRef.GenerateInspeccionId(),
                                        VehiculoVin,
                                        rch_desc.Text,
                                        FacadeRef.Operario.OperarioID,
                                        Date.Now.ToShortDateString)
+            Dim CSVInspeccion() As String = {FacadeRef.GenerateInspeccionId().ToString, VehiculoVin,
+                                             rch_desc.Text,
+                                             FacadeRef.Operario.OperarioID,
+                                             Date.Now.ToShortDateString}
+
+            FacadeRef.AgregarInspeccionACsV(CSVInspeccion, FacadeRef.CSVInspecciones, False)
+
             FacadeRef.AgregarInspeccion(NewInspeccion)
             ParentFormClass.ActualizarLista()
         End If

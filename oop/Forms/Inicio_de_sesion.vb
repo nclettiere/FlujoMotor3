@@ -74,8 +74,7 @@ Public Class Inicio_de_sesion
                                                     StreamArray(6),
                                                     0,
                                                     Int32.Parse(StreamArray(7)),
-                                                    Int32.Parse(StreamArray(9)),
-                                                    StreamArray(10)))
+                                                    Int32.Parse(StreamArray(9))))
         End While
 
         streamReader.Dispose()

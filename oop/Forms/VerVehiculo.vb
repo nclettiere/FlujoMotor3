@@ -18,13 +18,11 @@ Public Class VerVehiculo
         lbl_vin.Text = "Viendo: " + DisplayVin
         lbl_marca.Text = "Marca: " + vehiculo.Marca
         lbl_color.Text = "Color: " + vehiculo.Color
-        lbl_cliente.Text = "Cliente: " + vehiculo.Cliente
         lbl_tipo.Text = "Tipo: " + vehiculo.Tipo
         lbl_modelo.Text = "Modelo: " + vehiculo.Modelo
         lbl_anio.Text = "Anio: " + vehiculo.Anio.ToString
         lbl_fncionario.Text = "Agregado por: " + FacadeRef.ObtenerOperario(vehiculo.OperarioID).Nombre + " " + FacadeRef.ObtenerOperario(vehiculo.OperarioID).Apellido
         lbl_fecha.Text = "El: " + vehiculo.Fecha.ToString
-
 
         For Each lote In FacadeRef.ObtenerLotes()
             For Each vin In lote.Vehiculos
@@ -35,5 +33,4 @@ Public Class VerVehiculo
         Next
 
     End Sub
-
 End Class

@@ -1,11 +1,9 @@
 ﻿Imports Logica
 
 Public Class Agregar_Lote
-
     Private ParentFormClass As Vehiculos
     Private FacadeRef As Facade
     Private DisplayVin As String
-
 
     Friend Sub cargar(vehiculos As Vehiculos, facade As Facade)
         ParentFormClass = vehiculos

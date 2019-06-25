@@ -1,7 +1,4 @@
-﻿Imports Test
-
-Public Class Lote
-
+﻿Public Class Lote
     Private _LoteID As Integer
     Private _LoteName As String
     Private _LoteDesc As String

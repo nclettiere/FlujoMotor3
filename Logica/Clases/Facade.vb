@@ -29,7 +29,8 @@ Public Class Facade
                              csv(6) + "," +
                              csv(7) + "," +
                              csv(8) + "," +
-                             csv(9))
+                             csv(9) + "," +
+                             csv(10))
         End Using
     End Sub
 

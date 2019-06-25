@@ -17,7 +17,7 @@ Public Class AgregarVehiculo
     'BOTON "ACEPTAR"
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
         Try
-            If (String.IsNullOrWhiteSpace(txtVIN.Text)) And (String.IsNullOrWhiteSpace(cbx_tipo.SelectedItem.ToString)) And (String.IsNullOrWhiteSpace(txtMarca.Text)) And (String.IsNullOrWhiteSpace(txtModelo.Text)) And (String.IsNullOrWhiteSpace(txtAno.Text)) Then
+            If (String.IsNullOrWhiteSpace(txtVIN.Text)) And (String.IsNullOrWhiteSpace(cbx_tipo.SelectedItem.ToString)) And (String.IsNullOrWhiteSpace(txtCliente.Text)) And (String.IsNullOrWhiteSpace(txtModelo.Text)) And (String.IsNullOrWhiteSpace(txtAno.Text)) Then
                 MessageBox.Show("Nunguno de los campos puede quedar vacio", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf (String.IsNullOrWhiteSpace(txtVIN.Text)) Then
                 MessageBox.Show("El campo 'V.I.N.' no debe quedar vacio", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -27,6 +27,8 @@ Public Class AgregarVehiculo
                 MessageBox.Show("El campo 'TIPO' no debe quedar vacio", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf (String.IsNullOrWhiteSpace(txtMarca.Text)) Then
                 MessageBox.Show("El campo 'MARCA' no debe quedar vacio", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf (String.IsNullOrWhiteSpace(txtCliente.Text)) Then
+                MessageBox.Show("El campo 'CLIENTE' no debe quedar vacio", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf (String.IsNullOrWhiteSpace(txtModelo.Text)) Then
                 MessageBox.Show("El campo 'MODELO' no debe quedar vacio", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf (String.IsNullOrWhiteSpace(txtColor.Text)) Then
@@ -57,7 +59,8 @@ Public Class AgregarVehiculo
                                                                      Date.Now.ToShortDateString,
                                                                      0,
                                                                      FacadeRef.Operario.Id,
-                                                                     NuevaUbicacionID)
+                                                                     NuevaUbicacionID,
+                                                                     txtCliente.Text)
                 Dim VehiculoCsv() As String = {txtVIN.Text,
                                                txtMarca.Text,
                                                txtModelo.Text,
@@ -67,7 +70,8 @@ Public Class AgregarVehiculo
                                                Date.Now.ToShortDateString,
                                                "0",
                                                FacadeRef.Operario.Id.ToString,
-                                               NuevaUbicacionID.ToString}
+                                               NuevaUbicacionID.ToString,
+                                               txtCliente.Text}
 
                 If FacadeRef.AgregarVehiculo(NuevoVehiculo) Then
 
@@ -93,4 +97,6 @@ Public Class AgregarVehiculo
     Private Sub BtCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         Me.Close()
     End Sub
+
+
 End Class

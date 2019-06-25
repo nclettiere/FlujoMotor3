@@ -32,6 +32,7 @@ Partial Class VerVehiculo
         Me.lbl_fncionario = New System.Windows.Forms.Label()
         Me.lbl_anio = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lbl_cliente = New System.Windows.Forms.Label()
         Me.lbl_color = New System.Windows.Forms.Label()
         Me.lbl_tipo = New System.Windows.Forms.Label()
         Me.lbl_modelo = New System.Windows.Forms.Label()
@@ -146,6 +147,7 @@ Partial Class VerVehiculo
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.lbl_cliente)
         Me.Panel4.Controls.Add(Me.Panel5)
         Me.Panel4.Controls.Add(Me.lbl_anio)
         Me.Panel4.Controls.Add(Me.lbl_color)
@@ -157,6 +159,17 @@ Partial Class VerVehiculo
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(360, 199)
         Me.Panel4.TabIndex = 2
+        '
+        'lbl_cliente
+        '
+        Me.lbl_cliente.AutoSize = True
+        Me.lbl_cliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_cliente.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.lbl_cliente.Location = New System.Drawing.Point(170, 64)
+        Me.lbl_cliente.Name = "lbl_cliente"
+        Me.lbl_cliente.Size = New System.Drawing.Size(68, 24)
+        Me.lbl_cliente.TabIndex = 8
+        Me.lbl_cliente.Text = "Cliente"
         '
         'lbl_color
         '
@@ -299,4 +312,5 @@ Partial Class VerVehiculo
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents lbl_cliente As Label
 End Class

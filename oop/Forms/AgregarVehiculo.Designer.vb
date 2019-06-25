@@ -26,8 +26,12 @@ Partial Class AgregarVehiculo
         Me.labVIN = New System.Windows.Forms.Label()
         Me.gpboInformacion = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lblCliente = New System.Windows.Forms.Label()
         Me.labMarca = New System.Windows.Forms.Label()
         Me.labTipo = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cbx_tipo = New System.Windows.Forms.ComboBox()
+        Me.txtCliente = New System.Windows.Forms.TextBox()
         Me.txtMarca = New System.Windows.Forms.TextBox()
         Me.gpboCaracteristicas = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -40,14 +44,12 @@ Partial Class AgregarVehiculo
         Me.btAceptar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btCancelar = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.cbx_tipo = New System.Windows.Forms.ComboBox()
         Me.gpboInformacion.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.gpboCaracteristicas.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtVIN
@@ -57,7 +59,7 @@ Partial Class AgregarVehiculo
         Me.txtVIN.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtVIN.Font = New System.Drawing.Font("Arial Narrow", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtVIN.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtVIN.Location = New System.Drawing.Point(204, 10)
+        Me.txtVIN.Location = New System.Drawing.Point(204, 16)
         Me.txtVIN.MaxLength = 17
         Me.txtVIN.Name = "txtVIN"
         Me.txtVIN.Size = New System.Drawing.Size(195, 27)
@@ -71,7 +73,7 @@ Partial Class AgregarVehiculo
         Me.labVIN.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.labVIN.Location = New System.Drawing.Point(3, 0)
         Me.labVIN.Name = "labVIN"
-        Me.labVIN.Size = New System.Drawing.Size(195, 48)
+        Me.labVIN.Size = New System.Drawing.Size(195, 59)
         Me.labVIN.TabIndex = 3
         Me.labVIN.Text = "V.I.N.  :"
         Me.labVIN.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -86,7 +88,7 @@ Partial Class AgregarVehiculo
         Me.gpboInformacion.ForeColor = System.Drawing.SystemColors.AppWorkspace
         Me.gpboInformacion.Location = New System.Drawing.Point(12, 12)
         Me.gpboInformacion.Name = "gpboInformacion"
-        Me.gpboInformacion.Size = New System.Drawing.Size(408, 172)
+        Me.gpboInformacion.Size = New System.Drawing.Size(408, 245)
         Me.gpboInformacion.TabIndex = 4
         Me.gpboInformacion.TabStop = False
         Me.gpboInformacion.Text = "INFORMACION"
@@ -96,21 +98,38 @@ Partial Class AgregarVehiculo
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.lblCliente, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.labMarca, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.labTipo, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.labVIN, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtVIN, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtMarca, 1, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtCliente, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtMarca, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtVIN, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 25)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowCount = 5
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(402, 144)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(402, 217)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'lblCliente
+        '
+        Me.lblCliente.AutoSize = True
+        Me.lblCliente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblCliente.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCliente.ForeColor = System.Drawing.SystemColors.ButtonShadow
+        Me.lblCliente.Location = New System.Drawing.Point(3, 177)
+        Me.lblCliente.Name = "lblCliente"
+        Me.lblCliente.Size = New System.Drawing.Size(195, 20)
+        Me.lblCliente.TabIndex = 10
+        Me.lblCliente.Text = "CLIENTE  :"
+        Me.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'labMarca
         '
@@ -118,9 +137,9 @@ Partial Class AgregarVehiculo
         Me.labMarca.Dock = System.Windows.Forms.DockStyle.Fill
         Me.labMarca.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labMarca.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.labMarca.Location = New System.Drawing.Point(3, 96)
+        Me.labMarca.Location = New System.Drawing.Point(3, 118)
         Me.labMarca.Name = "labMarca"
-        Me.labMarca.Size = New System.Drawing.Size(195, 48)
+        Me.labMarca.Size = New System.Drawing.Size(195, 59)
         Me.labMarca.TabIndex = 6
         Me.labMarca.Text = "MARCA  :"
         Me.labMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -131,12 +150,41 @@ Partial Class AgregarVehiculo
         Me.labTipo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.labTipo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labTipo.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.labTipo.Location = New System.Drawing.Point(3, 48)
+        Me.labTipo.Location = New System.Drawing.Point(3, 59)
         Me.labTipo.Name = "labTipo"
-        Me.labTipo.Size = New System.Drawing.Size(195, 48)
+        Me.labTipo.Size = New System.Drawing.Size(195, 59)
         Me.labTipo.TabIndex = 4
         Me.labTipo.Text = "TIPO  :"
         Me.labTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.cbx_tipo)
+        Me.Panel2.Location = New System.Drawing.Point(204, 62)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(195, 42)
+        Me.Panel2.TabIndex = 8
+        '
+        'cbx_tipo
+        '
+        Me.cbx_tipo.FormattingEnabled = True
+        Me.cbx_tipo.Items.AddRange(New Object() {"Auto", "Camion", "SUV", "VAN", "Minivan"})
+        Me.cbx_tipo.Location = New System.Drawing.Point(3, 5)
+        Me.cbx_tipo.Name = "cbx_tipo"
+        Me.cbx_tipo.Size = New System.Drawing.Size(192, 32)
+        Me.cbx_tipo.TabIndex = 0
+        '
+        'txtCliente
+        '
+        Me.txtCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCliente.Font = New System.Drawing.Font("Arial Narrow", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCliente.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.txtCliente.Location = New System.Drawing.Point(204, 180)
+        Me.txtCliente.MaxLength = 16
+        Me.txtCliente.Name = "txtCliente"
+        Me.txtCliente.Size = New System.Drawing.Size(195, 27)
+        Me.txtCliente.TabIndex = 7
         '
         'txtMarca
         '
@@ -144,11 +192,11 @@ Partial Class AgregarVehiculo
         Me.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMarca.Font = New System.Drawing.Font("Arial Narrow", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMarca.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtMarca.Location = New System.Drawing.Point(204, 106)
+        Me.txtMarca.Location = New System.Drawing.Point(204, 134)
         Me.txtMarca.MaxLength = 16
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(195, 27)
-        Me.txtMarca.TabIndex = 7
+        Me.txtMarca.TabIndex = 9
         '
         'gpboCaracteristicas
         '
@@ -158,7 +206,7 @@ Partial Class AgregarVehiculo
         Me.gpboCaracteristicas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.gpboCaracteristicas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gpboCaracteristicas.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.gpboCaracteristicas.Location = New System.Drawing.Point(12, 193)
+        Me.gpboCaracteristicas.Location = New System.Drawing.Point(12, 275)
         Me.gpboCaracteristicas.Name = "gpboCaracteristicas"
         Me.gpboCaracteristicas.Size = New System.Drawing.Size(408, 172)
         Me.gpboCaracteristicas.TabIndex = 5
@@ -287,7 +335,7 @@ Partial Class AgregarVehiculo
         Me.Panel1.Controls.Add(Me.btCancelar)
         Me.Panel1.Controls.Add(Me.btAceptar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 378)
+        Me.Panel1.Location = New System.Drawing.Point(0, 489)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(432, 72)
         Me.Panel1.TabIndex = 6
@@ -311,30 +359,13 @@ Partial Class AgregarVehiculo
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.UseVisualStyleBackColor = True
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.cbx_tipo)
-        Me.Panel2.Location = New System.Drawing.Point(204, 51)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(195, 42)
-        Me.Panel2.TabIndex = 8
-        '
-        'cbx_tipo
-        '
-        Me.cbx_tipo.FormattingEnabled = True
-        Me.cbx_tipo.Items.AddRange(New Object() {"Auto", "Camion", "SUV", "VAN", "Minivan"})
-        Me.cbx_tipo.Location = New System.Drawing.Point(3, 5)
-        Me.cbx_tipo.Name = "cbx_tipo"
-        Me.cbx_tipo.Size = New System.Drawing.Size(192, 32)
-        Me.cbx_tipo.TabIndex = 0
-        '
         'AgregarVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AntiqueWhite
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(432, 450)
+        Me.ClientSize = New System.Drawing.Size(432, 561)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.gpboCaracteristicas)
         Me.Controls.Add(Me.gpboInformacion)
@@ -346,11 +377,11 @@ Partial Class AgregarVehiculo
         Me.gpboInformacion.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.gpboCaracteristicas.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -360,7 +391,7 @@ Partial Class AgregarVehiculo
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents labMarca As Label
     Friend WithEvents labTipo As Label
-    Friend WithEvents txtMarca As TextBox
+    Friend WithEvents txtCliente As TextBox
     Friend WithEvents gpboCaracteristicas As GroupBox
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents labColor As Label
@@ -374,4 +405,6 @@ Partial Class AgregarVehiculo
     Friend WithEvents btCancelar As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cbx_tipo As ComboBox
+    Friend WithEvents lblCliente As Label
+    Friend WithEvents txtMarca As TextBox
 End Class

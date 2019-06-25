@@ -43,16 +43,15 @@ Public Class AgregarVehiculo
                 Dim NuevaUbicacion = New Ubicacion(NuevaUbicacionID,
                                                    0,
                                                    0,
-                                                   "Esperando Inspeccion",
+                                                   "Esperando Asignacion de lote.",
                                                    0)
-                Dim UbicacionCsv() As String = {NuevaUbicacionID.ToString, "0", "0", "Esperando Inspeccion", 0}
+                Dim UbicacionCsv() As String = {NuevaUbicacionID.ToString, "0", "0", "Esperando Asignacion de lote.", 0}
 
-                Dim NuevoVehiculo As VehiculoTest = New VehiculoTest(txtVIN.Text,
+                Dim NuevoVehiculo As Vehiculo = New Vehiculo(txtVIN.Text,
                                                                      txtMarca.Text,
                                                                      txtModelo.Text,
                                                                      cbx_tipo.SelectedItem.ToString,
                                                                      txtColor.Text,
-                                                                     "Esperando Inspeccion",
                                                                      Int32.Parse(txtAno.Text),
                                                                      Date.Now.ToShortDateString,
                                                                      0,

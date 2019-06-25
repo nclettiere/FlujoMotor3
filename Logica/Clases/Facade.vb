@@ -1,9 +1,8 @@
 ﻿Imports System.IO
-Imports oop
 
 Public Class Facade
 
-    Private ListaVehiculos = New List(Of VehiculoTest)
+    Private ListaVehiculos = New List(Of Vehiculo)
     Private ListaLotes = New List(Of Lote)
     Private ListaInspecciones = New List(Of Inspeccion)
     Private ListaUbicaciones = New List(Of Ubicacion)
@@ -69,7 +68,7 @@ Public Class Facade
 
 
     '' Metodos para ListaVehiculos
-    Function AgregarVehiculo(vehiculo As VehiculoTest) As Boolean
+    Function AgregarVehiculo(vehiculo As Vehiculo) As Boolean
         If Not ExisteVinEnLista(vehiculo.Vin) Then
             ListaVehiculos.Add(vehiculo)
             Return True
@@ -114,7 +113,7 @@ Public Class Facade
         End Using
     End Sub
 
-    Function ObtenerVehiculos() As List(Of VehiculoTest)
+    Function ObtenerVehiculos() As List(Of Vehiculo)
         Return ListaVehiculos
     End Function
 
@@ -144,7 +143,7 @@ Public Class Facade
 
     Function ExisteVinEnLista(func As String) As Boolean
         If ListaVehiculos.Count() <> 0 Then
-            For Each item As VehiculoTest In ListaVehiculos
+            For Each item As Vehiculo In ListaVehiculos
                 If String.Equals(item.Vin, func) Then
                     Return True
                 End If
@@ -181,7 +180,7 @@ Public Class Facade
         ListaPatios.Add(patio)
     End Sub
 
-    Function BuscarVinEnLista(func As String) As VehiculoTest
+    Function BuscarVinEnLista(func As String) As Vehiculo
         If ListaVehiculos.Count() <> 0 Then
             For Each item In ListaVehiculos
                 If item.Vin.Contains(func) Then
@@ -194,8 +193,8 @@ Public Class Facade
         Return Nothing
     End Function
 
-    Function ObtenerListaVin(func As String) As List(Of VehiculoTest)
-        Dim NewListaVehiculos = New List(Of VehiculoTest)
+    Function ObtenerListaVin(func As String) As List(Of Vehiculo)
+        Dim NewListaVehiculos = New List(Of Vehiculo)
 
         If ListaVehiculos.Count() <> 0 Then
 
@@ -237,11 +236,11 @@ Public Class Facade
                 End If
             Next
         End If
-        Return lote
+        Return Nothing
     End Function
 
-    Function BuscarMarcaEnLista(func As String) As List(Of VehiculoTest)
-        Dim NewListaVehiculos = New List(Of VehiculoTest)
+    Function BuscarMarcaEnLista(func As String) As List(Of Vehiculo)
+        Dim NewListaVehiculos = New List(Of Vehiculo)
 
         If ListaVehiculos.Count() <> 0 Then
             For Each item In ListaVehiculos
@@ -256,13 +255,13 @@ Public Class Facade
         Return ListaVehiculos
     End Function
 
-    Function BuscarModeloEnLista(func As String) As List(Of VehiculoTest)
+    Function BuscarModeloEnLista(func As String) As List(Of Vehiculo)
 
-        Dim listaVehiculos = New List(Of VehiculoTest)
+        Dim listaVehiculos = New List(Of Vehiculo)
 
         If listaVehiculos.Count() <> 0 Then
             For i As Integer = 0 To listaVehiculos.Count - 1
-                If DirectCast(listaVehiculos(i), VehiculoTest).Modelo.Contains(func) Then
+                If DirectCast(listaVehiculos(i), Vehiculo).Modelo.Contains(func) Then
                     listaVehiculos.Add(listaVehiculos(i))
                 End If
             Next

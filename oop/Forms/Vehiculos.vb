@@ -59,7 +59,7 @@ Public Class Vehiculos
 
     End Sub
 
-    Private Sub onLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub VehiculoLoad(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Facade = CType(ParentForm, Menu_Operario).GetFacade()
 
@@ -83,29 +83,34 @@ Public Class Vehiculos
             btn_AgregarLote.Enabled = False
             btAgregarVehiculo.Enabled = False
         End If
+    End Sub
 
-        'SQL INFROMIX
-        'Dim conUsql As New OdbcConnection("Driver={IBM INFORMIX ODBC DRIVER (64-bit)};Host=192.168.139.3;Server=ol_esi;Service=9088;Protocol=onsoctcp;Database=boi;Uid=informix;Pwd=informix;")
-        'Dim comUsql As New OdbcCommand
-        'Dim da As New OdbcDataAdapter
-        'Dim ds As New Data.DataSet
+    Friend Sub ActualizarListaLotes()
+        lista_lotes.Items.Clear()
 
-        'Dim strSql1 As String
-        'strSql1 = "SELECT * FROM vehiculo"
+        Dim lotes As New List(Of Lote)
 
-        'conUsql.Open()
-        'comUsql.Connection = conUsql
+        For Each item In Facade.ObtenerLotes
 
-        'comUsql.CommandText = strSql1
-        'comUsql.ExecuteNonQuery() 'if I comment this line out, comUsql2 executes, otherwise only comUsql executes
-        'da.SelectCommand = comUsql
-        'da.Fill(ds, "vehiculo")
-        'taGridView1.DataSource = ds.Tables("vehiculo")
-        'conUsql.Close()
+            Dim lvFilmDetailGroup = New ListViewGroup(item.LoteID.ToString, item.LoteName + " (ID:" + item.LoteID.ToString + ")")
+            lista_lotes.Groups.Add(lvFilmDetailGroup)
+
+            Dim i As Integer = 0
+
+            For Each vin As String In item.Vehiculos
+                Dim myLVI = New ListViewItem()
+                myLVI.SubItems(0).Text = item.LoteID
+                myLVI.SubItems(0).Text = vin
+                myLVI.Group = lvFilmDetailGroup
+                lista_lotes.Items.Add(myLVI)
+
+                i += 1
+            Next
+        Next
     End Sub
 
     Private Sub txtBuscadorVehiculo_TextChanged(sender As Object, e As EventArgs) Handles txtBuscadorVehiculo.TextChanged
-        Dim vehiculo As List(Of VehiculoTest) = Facade.ObtenerListaVin(txtBuscadorVehiculo.Text)
+        Dim vehiculo As List(Of Vehiculo) = Facade.ObtenerListaVin(txtBuscadorVehiculo.Text)
 
         lista_vehiculos.Items.Clear()
 
@@ -134,13 +139,11 @@ Public Class Vehiculos
     End Sub
 
     Friend Sub ActualizarListaVehiculos()
-        Dim vehiculo As List(Of VehiculoTest) = Facade.ObtenerListaVin("")
+        Dim vehiculo As List(Of Vehiculo) = Facade.ObtenerListaVin("")
 
         lista_vehiculos.Items.Clear()
 
         If Not vehiculo Is Nothing Then
-
-
             Dim ListArray(7) As String
             For Each item In vehiculo
                 ListArray(0) = item.Vin
@@ -167,7 +170,6 @@ Public Class Vehiculos
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
         lista_lotes.Items.Clear()
 
         Dim lotes As New List(Of Lote)
@@ -228,5 +230,9 @@ Public Class Vehiculos
         Catch ex As Exception
             MessageBox.Show("Selecciona un lote.")
         End Try
+    End Sub
+
+    Private Sub btListarVehiculo_Click(sender As Object, e As EventArgs) Handles btListarVehiculo.Click
+        ActualizarListaVehiculos()
     End Sub
 End Class

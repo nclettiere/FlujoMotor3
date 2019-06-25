@@ -171,6 +171,12 @@
     <Compile Include="Forms\Configuracion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\DependencySelector.Designer.vb">
+      <DependentUpon>DependencySelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DependencySelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Editar Vehiculo.Designer.vb">
       <DependentUpon>Editar Vehiculo.vb</DependentUpon>
     </Compile>
@@ -297,6 +303,9 @@
     <EmbeddedResource Include="Forms\Configuracion.resx">
       <DependentUpon>Configuracion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DependencySelector.resx">
+      <DependentUpon>DependencySelector.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Editar Vehiculo.resx">
       <DependentUpon>Editar Vehiculo.vb</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +362,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CSV\inspecciones.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="CSV\vehiculos.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

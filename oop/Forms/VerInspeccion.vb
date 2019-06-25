@@ -18,8 +18,11 @@ Public Class VerInspeccion
 
     Private Sub VerInspeccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_title.Text = "Inspeccion al vehiculo: " + Vehiculo.Vin + " El " + Inspeccion.Fecha.ToString
-        lbl_name.Text = "Nombre: " + Inspeccion.Name
-        lbl_ubicacion.Text = "Ubicacion: " + Inspeccion.Ubicacion
+        lbl_name.Text = "Por: " + FacadeRef.ObtenerOperario(Inspeccion.OperarioID).Nombre + " " + FacadeRef.ObtenerOperario(Inspeccion.OperarioID).Apellido
+
+        'If IsNumeric(Inspeccion.Herencia.ToString) Then
+        'lbl_actualizacion.Text = "Actualizacion de: Inspeccion ID: " + FacadeRef.ObtenerInspeccion(Inspeccion.Herencia).InspeccionID.ToString
+        'End If
         rch_desc.Text = Inspeccion.Descripcion
     End Sub
 End Class

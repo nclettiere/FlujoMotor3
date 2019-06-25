@@ -26,6 +26,7 @@ Partial Class VerInspeccion
         Me.lbl_name = New System.Windows.Forms.Label()
         Me.rch_desc = New System.Windows.Forms.RichTextBox()
         Me.lbl_ubicacion = New System.Windows.Forms.Label()
+        Me.lbl_actualizacion = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_title
@@ -40,7 +41,7 @@ Partial Class VerInspeccion
         'lbl_name
         '
         Me.lbl_name.AutoSize = True
-        Me.lbl_name.Location = New System.Drawing.Point(13, 43)
+        Me.lbl_name.Location = New System.Drawing.Point(13, 39)
         Me.lbl_name.Name = "lbl_name"
         Me.lbl_name.Size = New System.Drawing.Size(39, 13)
         Me.lbl_name.TabIndex = 1
@@ -60,21 +61,30 @@ Partial Class VerInspeccion
         Me.lbl_ubicacion.AutoSize = True
         Me.lbl_ubicacion.Location = New System.Drawing.Point(13, 90)
         Me.lbl_ubicacion.Name = "lbl_ubicacion"
-        Me.lbl_ubicacion.Size = New System.Drawing.Size(39, 13)
+        Me.lbl_ubicacion.Size = New System.Drawing.Size(63, 13)
         Me.lbl_ubicacion.TabIndex = 4
-        Me.lbl_ubicacion.Text = "Label1"
+        Me.lbl_ubicacion.Text = "Descripcion"
+        '
+        'lbl_actualizacion
+        '
+        Me.lbl_actualizacion.AutoSize = True
+        Me.lbl_actualizacion.Location = New System.Drawing.Point(13, 61)
+        Me.lbl_actualizacion.Name = "lbl_actualizacion"
+        Me.lbl_actualizacion.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_actualizacion.TabIndex = 5
         '
         'VerInspeccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(429, 246)
+        Me.Controls.Add(Me.lbl_actualizacion)
         Me.Controls.Add(Me.lbl_ubicacion)
         Me.Controls.Add(Me.rch_desc)
         Me.Controls.Add(Me.lbl_name)
         Me.Controls.Add(Me.lbl_title)
         Me.Name = "VerInspeccion"
-        Me.Text = "VerInspeccion"
+        Me.Text = "Ver Danio"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -84,4 +94,5 @@ Partial Class VerInspeccion
     Friend WithEvents lbl_name As Label
     Friend WithEvents rch_desc As RichTextBox
     Friend WithEvents lbl_ubicacion As Label
+    Friend WithEvents lbl_actualizacion As Label
 End Class

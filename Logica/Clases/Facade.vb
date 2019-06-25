@@ -13,6 +13,7 @@ Public Class Facade
 
     Public CSVVehiculos As String
     Public CSVUbicaciones As String
+    Public CSVInspecciones As String
 
 
 
@@ -93,6 +94,25 @@ Public Class Facade
         Next
         Return Nothing
     End Function
+
+    Public Sub AgregarInspeccionACsV(cSVInspeccion() As String, strFile As String, v As Boolean)
+        Using writer As New StreamWriter(strFile, True)
+            If v Then
+                writer.WriteLine(cSVInspeccion(0) + "," +
+                            cSVInspeccion(1) + "," +
+                            cSVInspeccion(2) + "," +
+                            cSVInspeccion(3) + "," +
+                            cSVInspeccion(4) + "," +
+                            cSVInspeccion(5))
+            Else
+                writer.WriteLine(cSVInspeccion(0) + "," +
+            cSVInspeccion(1) + "," +
+            cSVInspeccion(2) + "," +
+            cSVInspeccion(3) + "," +
+            cSVInspeccion(4) + ",")
+            End If
+        End Using
+    End Sub
 
     Function ObtenerVehiculos() As List(Of VehiculoTest)
         Return ListaVehiculos
@@ -292,13 +312,21 @@ Public Class Facade
         Return ListaInspecciones
     End Function
 
-    Function ObtenerInspeccion(func As Integer) As Inspeccion
+    Function ObtenerInspeccion(InspeccionID As Integer) As Inspeccion
         For Each inspeccion As Inspeccion In ListaInspecciones
-            If func = inspeccion.InspeccionID Then
+            If InspeccionID = inspeccion.InspeccionID Then
                 Return inspeccion
             End If
         Next
         Return Nothing
     End Function
 
+    Function ObtenerInspeccionVin(VIN As String) As Inspeccion
+        For Each inspeccion As Inspeccion In ListaInspecciones
+            If VIN = inspeccion.VehiculoVin Then
+                Return inspeccion
+            End If
+        Next
+        Return Nothing
+    End Function
 End Class

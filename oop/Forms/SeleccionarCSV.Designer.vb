@@ -23,6 +23,7 @@ Partial Class SeleccionarCSV
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.lbl_ub = New System.Windows.Forms.Label()
         Me.btn_ub = New System.Windows.Forms.Button()
@@ -32,13 +33,16 @@ Partial Class SeleccionarCSV
         Me.btn_ve = New System.Windows.Forms.Button()
         Me.lbl_op = New System.Windows.Forms.Label()
         Me.btn_op = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.AbrirCSV = New System.Windows.Forms.OpenFileDialog()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btn_aceptar)
         Me.Panel1.Controls.Add(Me.lbl_ub)
@@ -52,13 +56,24 @@ Partial Class SeleccionarCSV
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(284, 215)
+        Me.Panel1.Size = New System.Drawing.Size(284, 246)
         Me.Panel1.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(284, 52)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Selecciona los CSV correspondientes"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btn_aceptar
         '
         Me.btn_aceptar.Enabled = False
-        Me.btn_aceptar.Location = New System.Drawing.Point(16, 184)
+        Me.btn_aceptar.Location = New System.Drawing.Point(16, 211)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(256, 23)
         Me.btn_aceptar.TabIndex = 17
@@ -138,26 +153,33 @@ Partial Class SeleccionarCSV
         Me.btn_op.Text = "Seleccionar"
         Me.btn_op.UseVisualStyleBackColor = True
         '
-        'Label5
-        '
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(0, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(284, 52)
-        Me.Label5.TabIndex = 18
-        Me.Label5.Text = "Selecciona los CSV correspondientes"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'AbrirCSV
         '
         Me.AbrirCSV.FileName = "OpenFileDialog1"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 180)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(94, 13)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "CSV Inspecciones"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(197, 171)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "Seleccionar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'SeleccionarCSV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 215)
+        Me.ClientSize = New System.Drawing.Size(284, 246)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "SeleccionarCSV"
         Me.Text = "Seleccione los CSV"
@@ -179,4 +201,6 @@ Partial Class SeleccionarCSV
     Friend WithEvents lbl_op As Label
     Friend WithEvents btn_op As Button
     Friend WithEvents AbrirCSV As OpenFileDialog
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
 End Class

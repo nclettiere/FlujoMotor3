@@ -40,7 +40,9 @@ Public Class VerVehiculoPatio
         Next
 
         For Each inspeccion In Inspecciones
-            lst_inspecciones.Items.Add(inspeccion.InspeccionID)
+            If inspeccion.VehiculoVin = Vehiculo.Vin Then
+                lst_inspecciones.Items.Add(inspeccion.InspeccionID)
+            End If
         Next
     End Sub
 
@@ -64,7 +66,9 @@ Public Class VerVehiculoPatio
         lst_inspecciones.BeginUpdate()
         lst_inspecciones.Items.Clear()
         For Each inspeccion In Inspecciones
-            lst_inspecciones.Items.Add(inspeccion.InspeccionID)
+            If String.Equals(inspeccion.VehiculoVin, Vehiculo.Vin) Then
+                lst_inspecciones.Items.Add("Inspeccion #" + inspeccion.InspeccionID.ToString)
+            End If
         Next
         lst_inspecciones.EndUpdate()
     End Sub
@@ -119,14 +123,11 @@ Public Class VerVehiculoPatio
     End Sub
 
     Private Sub ItemDoubleClick(sender As Object, e As MouseEventArgs) Handles lst_inspecciones.MouseDoubleClick
-        Try
-            Dim InspeccionId As Integer = Int32.Parse(lst_inspecciones.SelectedItem.ToString)
-            Dim verInspeccion = New VerInspeccion()
-            verInspeccion.cargar(Me, FacadeRef, VehiculoVin, InspeccionId)
-            verInspeccion.ShowDialog()
-        Catch ex As Exception
-            MessageBox.Show("Error")
-        End Try
+        Dim lastchar As Char = lst_inspecciones.SelectedItem.ToString.Last
+        Dim InspeccionId As Integer = Int32.Parse(lastchar)
+        Dim verInspeccion = New VerInspeccion()
+        verInspeccion.cargar(Me, FacadeRef, VehiculoVin, InspeccionId)
+        verInspeccion.ShowDialog()
     End Sub
 
     Private Sub InspeccionClick(sender As Object, e As EventArgs) Handles btn_inspeccion.Click
@@ -134,4 +135,5 @@ Public Class VerVehiculoPatio
         agregarInspeccion.cargar(Me, FacadeRef, VehiculoVin)
         agregarInspeccion.ShowDialog()
     End Sub
+
 End Class

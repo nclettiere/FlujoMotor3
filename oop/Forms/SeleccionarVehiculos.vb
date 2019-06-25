@@ -29,7 +29,10 @@ Public Class SeleccionarVehiculos
         Dim ListaString(FacadeRef.ObtenerVehiculos().Count) As String
 
         For Each item In FacadeRef.ObtenerVehiculos()
-            lst_vehiculos.Items.Add(item.Vin)
+            Dim ubicacion = FacadeRef.ObtenerUbicacion(item.UbicacionID)
+            If String.Equals("Esperando Asignacion de lote.", ubicacion.Status) Then
+                lst_vehiculos.Items.Add(item.Vin)
+            End If
         Next
 
     End Sub

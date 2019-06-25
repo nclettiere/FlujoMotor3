@@ -86,7 +86,7 @@ Partial Class Menu_Operario
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Agency FB", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(3, 549)
         Me.Button1.Name = "Button1"
@@ -104,7 +104,7 @@ Partial Class Menu_Operario
         Me.btVehiculos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btVehiculos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVehiculos.Font = New System.Drawing.Font("Agency FB", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btVehiculos.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btVehiculos.ForeColor = System.Drawing.Color.White
         Me.btVehiculos.Location = New System.Drawing.Point(3, 13)
         Me.btVehiculos.Name = "btVehiculos"
@@ -123,7 +123,7 @@ Partial Class Menu_Operario
         Me.btPatio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btPatio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btPatio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btPatio.Font = New System.Drawing.Font("Agency FB", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btPatio.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btPatio.ForeColor = System.Drawing.Color.White
         Me.btPatio.Location = New System.Drawing.Point(3, 87)
         Me.btPatio.Name = "btPatio"
@@ -152,7 +152,7 @@ Partial Class Menu_Operario
         Me.btn_scan_qr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btn_scan_qr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btn_scan_qr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_scan_qr.Font = New System.Drawing.Font("Agency FB", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_scan_qr.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_scan_qr.ForeColor = System.Drawing.Color.White
         Me.btn_scan_qr.Location = New System.Drawing.Point(0, 0)
         Me.btn_scan_qr.Name = "btn_scan_qr"
@@ -190,7 +190,7 @@ Partial Class Menu_Operario
         Me.btn_perfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btn_perfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btn_perfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_perfil.Font = New System.Drawing.Font("Agency FB", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_perfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_perfil.ForeColor = System.Drawing.Color.White
         Me.btn_perfil.Location = New System.Drawing.Point(0, 0)
         Me.btn_perfil.Name = "btn_perfil"

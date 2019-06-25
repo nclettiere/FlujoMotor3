@@ -27,7 +27,7 @@ Public Class Agregar_Lote
         SelecVehiculo.ShowDialog()
     End Sub
 
-    Friend Sub CargarSelecciones(ByRef lista As List(Of String))
+    Friend Sub CargarSelecciones(lista As List(Of String))
         Seleccion = lista
     End Sub
 

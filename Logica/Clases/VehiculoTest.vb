@@ -11,6 +11,7 @@
     Private _CantInsp As Integer
     Private _OperarioID As Integer
     Private _UbicacionID As Integer
+    Private _ClienteNombre As String
 
 
     Public Sub New()

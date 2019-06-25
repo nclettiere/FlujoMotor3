@@ -8,14 +8,18 @@ Public Class Lote
     Private _Vehiculos As List(Of String)
     Private _Fecha As Date
     Private _FuncionarioID As String
+    Private _RutaA As String
+    Private _RutaB As String
 
-    Public Sub New(LoteID As Integer, LoteName As String, LoteDesc As String, Vehiculos As List(Of String), Fecha As Date, FuncionarioID As String)
+    Public Sub New(LoteID As Integer, LoteName As String, LoteDesc As String, Vehiculos As List(Of String), Fecha As Date, FuncionarioID As String, RutaA As String, RutaB As String)
         _LoteID = LoteID
         _LoteName = LoteName
         _LoteDesc = LoteDesc
         _Vehiculos = Vehiculos
         _Fecha = Fecha
         _FuncionarioID = FuncionarioID
+        _RutaA = RutaA
+        _RutaB = RutaB
     End Sub
 
     Public Property LoteID As Integer
@@ -69,6 +73,24 @@ Public Class Lote
         End Get
         Set(value As String)
             _LoteDesc = value
+        End Set
+    End Property
+
+    Public Property RutaA As String
+        Get
+            Return _RutaA
+        End Get
+        Set(value As String)
+            _RutaA = value
+        End Set
+    End Property
+
+    Public Property RutaB As String
+        Get
+            Return _RutaB
+        End Get
+        Set(value As String)
+            _RutaB = value
         End Set
     End Property
 End Class

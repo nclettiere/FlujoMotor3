@@ -34,9 +34,16 @@ Partial Class Agregar_Lote
         Me.labVIN = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.tbx_rutaB = New System.Windows.Forms.TextBox()
+        Me.tbx_rutaA = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtNombre
@@ -81,8 +88,10 @@ Partial Class Agregar_Lote
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.btCancelar)
+        Me.Panel1.Controls.Add(Me.btAceptar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 363)
+        Me.Panel1.Location = New System.Drawing.Point(0, 545)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(432, 72)
         Me.Panel1.TabIndex = 8
@@ -98,7 +107,7 @@ Partial Class Agregar_Lote
         Me.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Location = New System.Drawing.Point(0, 344)
+        Me.btCancelar.Location = New System.Drawing.Point(0, 0)
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(190, 72)
         Me.btCancelar.TabIndex = 7
@@ -116,7 +125,7 @@ Partial Class Agregar_Lote
         Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAceptar.ForeColor = System.Drawing.Color.White
-        Me.btAceptar.Location = New System.Drawing.Point(242, 344)
+        Me.btAceptar.Location = New System.Drawing.Point(242, 0)
         Me.btAceptar.Name = "btAceptar"
         Me.btAceptar.Size = New System.Drawing.Size(190, 72)
         Me.btAceptar.TabIndex = 6
@@ -187,7 +196,7 @@ Partial Class Agregar_Lote
         Me.GroupBox2.Controls.Add(Me.btSeleccionar)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 249)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 239)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(411, 89)
         Me.GroupBox2.TabIndex = 10
@@ -206,15 +215,76 @@ Partial Class Agregar_Lote
         Me.Label2.Text = "Seleccionar Vehiculos:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.tbx_rutaB)
+        Me.GroupBox3.Controls.Add(Me.tbx_rutaA)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 350)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(411, 161)
+        Me.GroupBox3.TabIndex = 11
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "RUTA"
+        '
+        'tbx_rutaB
+        '
+        Me.tbx_rutaB.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tbx_rutaB.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbx_rutaB.Font = New System.Drawing.Font("Arial Narrow", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbx_rutaB.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.tbx_rutaB.Location = New System.Drawing.Point(195, 97)
+        Me.tbx_rutaB.Name = "tbx_rutaB"
+        Me.tbx_rutaB.Size = New System.Drawing.Size(207, 27)
+        Me.tbx_rutaB.TabIndex = 10
+        '
+        'tbx_rutaA
+        '
+        Me.tbx_rutaA.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tbx_rutaA.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbx_rutaA.Font = New System.Drawing.Font("Arial Narrow", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbx_rutaA.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.tbx_rutaA.Location = New System.Drawing.Point(195, 45)
+        Me.tbx_rutaA.Name = "tbx_rutaA"
+        Me.tbx_rutaA.Size = New System.Drawing.Size(207, 27)
+        Me.tbx_rutaA.TabIndex = 9
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Label4.Location = New System.Drawing.Point(93, 103)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(92, 19)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Ruta Final:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Label3.Location = New System.Drawing.Point(93, 51)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(103, 19)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Ruta Inicial: "
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'Agregar_Lote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AntiqueWhite
-        Me.ClientSize = New System.Drawing.Size(432, 435)
-        Me.Controls.Add(Me.btCancelar)
+        Me.ClientSize = New System.Drawing.Size(432, 617)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.btAceptar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -222,11 +292,14 @@ Partial Class Agregar_Lote
         Me.MinimizeBox = False
         Me.Name = "Agregar_Lote"
         Me.Text = "Agregar Lote"
+        Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -242,4 +315,9 @@ Partial Class Agregar_Lote
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents tbx_rutaB As TextBox
+    Friend WithEvents tbx_rutaA As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
 End Class

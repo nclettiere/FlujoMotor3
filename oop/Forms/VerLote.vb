@@ -22,6 +22,8 @@ Public Class VerLote
             Next
 
             lbl_name.Text = "Nombre: " + lote.LoteName
+            lbl_rutaA.Text = "Ruta inicial: " + lote.RutaA
+            lbl_rutaB.Text = "Ruta Final: " + lote.RutaB
             rch_desc.Text = lote.LoteDesc
         Catch ex As Exception
             MessageBox.Show("Error al cargar lote.")

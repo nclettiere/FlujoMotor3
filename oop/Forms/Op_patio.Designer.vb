@@ -25,6 +25,8 @@ Partial Class Op_patio
         Me.tacoVehiculo = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.pnMenuAutitos = New System.Windows.Forms.Panel()
+        Me.btn_ver = New System.Windows.Forms.Button()
+        Me.btListarVehiculo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lista_vehiculos = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -32,11 +34,9 @@ Partial Class Op_patio
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnBuscar = New System.Windows.Forms.Panel()
-        Me.btListarVehiculo = New System.Windows.Forms.Button()
         Me.pnCampoBuscador = New System.Windows.Forms.Panel()
         Me.btBuscarVehiculo = New System.Windows.Forms.Button()
         Me.txtBuscadorVehiculo = New System.Windows.Forms.TextBox()
-        Me.btn_ver = New System.Windows.Forms.Button()
         Me.tacoVehiculo.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.pnMenuAutitos.SuspendLayout()
@@ -83,6 +83,44 @@ Partial Class Op_patio
         Me.pnMenuAutitos.Size = New System.Drawing.Size(907, 65)
         Me.pnMenuAutitos.TabIndex = 1
         '
+        'btn_ver
+        '
+        Me.btn_ver.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
+        Me.btn_ver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_ver.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_ver.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btn_ver.FlatAppearance.BorderSize = 0
+        Me.btn_ver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btn_ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_ver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_ver.ForeColor = System.Drawing.Color.White
+        Me.btn_ver.Location = New System.Drawing.Point(132, 0)
+        Me.btn_ver.Name = "btn_ver"
+        Me.btn_ver.Size = New System.Drawing.Size(132, 65)
+        Me.btn_ver.TabIndex = 5
+        Me.btn_ver.Text = "Ver"
+        Me.btn_ver.UseVisualStyleBackColor = True
+        '
+        'btListarVehiculo
+        '
+        Me.btListarVehiculo.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
+        Me.btListarVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btListarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btListarVehiculo.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btListarVehiculo.FlatAppearance.BorderSize = 0
+        Me.btListarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btListarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btListarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btListarVehiculo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btListarVehiculo.ForeColor = System.Drawing.Color.White
+        Me.btListarVehiculo.Location = New System.Drawing.Point(0, 0)
+        Me.btListarVehiculo.Name = "btListarVehiculo"
+        Me.btListarVehiculo.Size = New System.Drawing.Size(132, 65)
+        Me.btListarVehiculo.TabIndex = 4
+        Me.btListarVehiculo.Text = "Actualizar"
+        Me.btListarVehiculo.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.lista_vehiculos)
@@ -114,12 +152,12 @@ Partial Class Op_patio
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Latitud"
-        Me.ColumnHeader2.Width = 208
+        Me.ColumnHeader2.Width = 184
         '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Longitud"
-        Me.ColumnHeader7.Width = 187
+        Me.ColumnHeader7.Width = 177
         '
         'ColumnHeader3
         '
@@ -135,25 +173,6 @@ Partial Class Op_patio
         Me.pnBuscar.Name = "pnBuscar"
         Me.pnBuscar.Size = New System.Drawing.Size(907, 70)
         Me.pnBuscar.TabIndex = 2
-        '
-        'btListarVehiculo
-        '
-        Me.btListarVehiculo.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
-        Me.btListarVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btListarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btListarVehiculo.Dock = System.Windows.Forms.DockStyle.Left
-        Me.btListarVehiculo.FlatAppearance.BorderSize = 0
-        Me.btListarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btListarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btListarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btListarVehiculo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btListarVehiculo.ForeColor = System.Drawing.Color.White
-        Me.btListarVehiculo.Location = New System.Drawing.Point(0, 0)
-        Me.btListarVehiculo.Name = "btListarVehiculo"
-        Me.btListarVehiculo.Size = New System.Drawing.Size(132, 65)
-        Me.btListarVehiculo.TabIndex = 4
-        Me.btListarVehiculo.Text = "Actualizar"
-        Me.btListarVehiculo.UseVisualStyleBackColor = True
         '
         'pnCampoBuscador
         '
@@ -195,25 +214,6 @@ Partial Class Op_patio
         Me.txtBuscadorVehiculo.Name = "txtBuscadorVehiculo"
         Me.txtBuscadorVehiculo.Size = New System.Drawing.Size(727, 28)
         Me.txtBuscadorVehiculo.TabIndex = 0
-        '
-        'btn_ver
-        '
-        Me.btn_ver.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
-        Me.btn_ver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_ver.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_ver.Dock = System.Windows.Forms.DockStyle.Left
-        Me.btn_ver.FlatAppearance.BorderSize = 0
-        Me.btn_ver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btn_ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_ver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_ver.ForeColor = System.Drawing.Color.White
-        Me.btn_ver.Location = New System.Drawing.Point(132, 0)
-        Me.btn_ver.Name = "btn_ver"
-        Me.btn_ver.Size = New System.Drawing.Size(132, 65)
-        Me.btn_ver.TabIndex = 5
-        Me.btn_ver.Text = "Ver"
-        Me.btn_ver.UseVisualStyleBackColor = True
         '
         'Op_patio
         '

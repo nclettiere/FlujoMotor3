@@ -29,6 +29,8 @@ Partial Class AgregarVehiculo
         Me.labMarca = New System.Windows.Forms.Label()
         Me.labTipo = New System.Windows.Forms.Label()
         Me.txtMarca = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cbx_tipo = New System.Windows.Forms.ComboBox()
         Me.gpboCaracteristicas = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.labColor = New System.Windows.Forms.Label()
@@ -40,14 +42,16 @@ Partial Class AgregarVehiculo
         Me.btAceptar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btCancelar = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.cbx_tipo = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.tbx_cNombre = New System.Windows.Forms.TextBox()
         Me.gpboInformacion.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.gpboCaracteristicas.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtVIN
@@ -149,6 +153,23 @@ Partial Class AgregarVehiculo
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(195, 27)
         Me.txtMarca.TabIndex = 7
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.cbx_tipo)
+        Me.Panel2.Location = New System.Drawing.Point(204, 51)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(195, 42)
+        Me.Panel2.TabIndex = 8
+        '
+        'cbx_tipo
+        '
+        Me.cbx_tipo.FormattingEnabled = True
+        Me.cbx_tipo.Items.AddRange(New Object() {"Auto", "Camion", "SUV", "VAN", "Minivan"})
+        Me.cbx_tipo.Location = New System.Drawing.Point(3, 5)
+        Me.cbx_tipo.Name = "cbx_tipo"
+        Me.cbx_tipo.Size = New System.Drawing.Size(192, 32)
+        Me.cbx_tipo.TabIndex = 0
         '
         'gpboCaracteristicas
         '
@@ -287,7 +308,7 @@ Partial Class AgregarVehiculo
         Me.Panel1.Controls.Add(Me.btCancelar)
         Me.Panel1.Controls.Add(Me.btAceptar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 378)
+        Me.Panel1.Location = New System.Drawing.Point(0, 495)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(432, 72)
         Me.Panel1.TabIndex = 6
@@ -311,22 +332,37 @@ Partial Class AgregarVehiculo
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.UseVisualStyleBackColor = True
         '
-        'Panel2
+        'GroupBox1
         '
-        Me.Panel2.Controls.Add(Me.cbx_tipo)
-        Me.Panel2.Location = New System.Drawing.Point(204, 51)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(195, 42)
-        Me.Panel2.TabIndex = 8
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.tbx_cNombre)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 383)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(408, 84)
+        Me.GroupBox1.TabIndex = 7
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "CLIENTE"
         '
-        'cbx_tipo
+        'Label1
         '
-        Me.cbx_tipo.FormattingEnabled = True
-        Me.cbx_tipo.Items.AddRange(New Object() {"Auto", "Camion", "SUV", "VAN", "Minivan"})
-        Me.cbx_tipo.Location = New System.Drawing.Point(3, 5)
-        Me.cbx_tipo.Name = "cbx_tipo"
-        Me.cbx_tipo.Size = New System.Drawing.Size(192, 32)
-        Me.cbx_tipo.TabIndex = 0
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(109, 39)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 24)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nombre :"
+        '
+        'tbx_cNombre
+        '
+        Me.tbx_cNombre.Location = New System.Drawing.Point(204, 39)
+        Me.tbx_cNombre.Name = "tbx_cNombre"
+        Me.tbx_cNombre.Size = New System.Drawing.Size(195, 29)
+        Me.tbx_cNombre.TabIndex = 1
         '
         'AgregarVehiculo
         '
@@ -334,7 +370,8 @@ Partial Class AgregarVehiculo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AntiqueWhite
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(432, 450)
+        Me.ClientSize = New System.Drawing.Size(432, 567)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.gpboCaracteristicas)
         Me.Controls.Add(Me.gpboInformacion)
@@ -346,11 +383,13 @@ Partial Class AgregarVehiculo
         Me.gpboInformacion.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.gpboCaracteristicas.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -374,4 +413,7 @@ Partial Class AgregarVehiculo
     Friend WithEvents btCancelar As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cbx_tipo As ComboBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents tbx_cNombre As TextBox
+    Friend WithEvents Label1 As Label
 End Class

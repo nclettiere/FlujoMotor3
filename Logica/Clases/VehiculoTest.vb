@@ -17,7 +17,7 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(Vin As String, Marca As String, Modelo As String, Tipo As String, Color As String, Status As String, Anio As Short, Fecha As String, CantInsp As Integer, OperarioID As Integer, UbicacionID As Integer)
+    Public Sub New(Vin As String, Marca As String, Modelo As String, Tipo As String, Color As String, Status As String, Anio As Short, Fecha As String, CantInsp As Integer, OperarioID As Integer, UbicacionID As Integer, ClienteNombre As String)
         _Vin = Vin
         _Marca = Marca
         _Modelo = Modelo
@@ -29,6 +29,7 @@
         _CantInsp = CantInsp
         _OperarioID = OperarioID
         _UbicacionID = UbicacionID
+        _ClienteNombre = ClienteNombre
     End Sub
 
     Public Property Vin As String
@@ -127,6 +128,15 @@
         End Get
         Set(value As Integer)
             _UbicacionID = value
+        End Set
+    End Property
+
+    Public Property ClienteNombre As String
+        Get
+            Return _ClienteNombre
+        End Get
+        Set(value As String)
+            _ClienteNombre = value
         End Set
     End Property
 End Class

@@ -63,6 +63,7 @@ Public Class AgregarInspeccion
             FacadeRef.AgregarInspeccionACsV(CSVInspeccion, FacadeRef.CSVInspecciones, False)
 
             FacadeRef.AgregarInspeccion(NewInspeccion)
+            FacadeRef.ObtenerUbicacion(FacadeRef.BuscarVinEnLista(VehiculoVin).UbicacionID).Status = "En Patio."
             ParentFormClass.ActualizarLista()
         End If
         Me.Close()

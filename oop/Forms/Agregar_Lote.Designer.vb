@@ -33,12 +33,10 @@ Partial Class Agregar_Lote
         Me.Label1 = New System.Windows.Forms.Label()
         Me.labVIN = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel1.SuspendLayout()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtNombre
@@ -74,7 +72,7 @@ Partial Class Agregar_Lote
         Me.btSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSeleccionar.ForeColor = System.Drawing.Color.White
-        Me.btSeleccionar.Location = New System.Drawing.Point(3, 70)
+        Me.btSeleccionar.Location = New System.Drawing.Point(216, 21)
         Me.btSeleccionar.Name = "btSeleccionar"
         Me.btSeleccionar.Size = New System.Drawing.Size(189, 52)
         Me.btSeleccionar.TabIndex = 6
@@ -83,10 +81,8 @@ Partial Class Agregar_Lote
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.btCancelar)
-        Me.Panel1.Controls.Add(Me.btAceptar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 543)
+        Me.Panel1.Location = New System.Drawing.Point(0, 363)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(432, 72)
         Me.Panel1.TabIndex = 8
@@ -96,14 +92,13 @@ Partial Class Agregar_Lote
         Me.btCancelar.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
         Me.btCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btCancelar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btCancelar.Dock = System.Windows.Forms.DockStyle.Left
         Me.btCancelar.FlatAppearance.BorderSize = 0
         Me.btCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Location = New System.Drawing.Point(0, 0)
+        Me.btCancelar.Location = New System.Drawing.Point(0, 344)
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(190, 72)
         Me.btCancelar.TabIndex = 7
@@ -115,14 +110,13 @@ Partial Class Agregar_Lote
         Me.btAceptar.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
         Me.btAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btAceptar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btAceptar.Dock = System.Windows.Forms.DockStyle.Right
         Me.btAceptar.FlatAppearance.BorderSize = 0
         Me.btAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAceptar.ForeColor = System.Drawing.Color.White
-        Me.btAceptar.Location = New System.Drawing.Point(242, 0)
+        Me.btAceptar.Location = New System.Drawing.Point(242, 344)
         Me.btAceptar.Name = "btAceptar"
         Me.btAceptar.Size = New System.Drawing.Size(190, 72)
         Me.btAceptar.TabIndex = 6
@@ -135,7 +129,7 @@ Partial Class Agregar_Lote
         Me.GroupBox1.Controls.Add(Me.TableLayoutPanel1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 39)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(408, 221)
         Me.GroupBox1.TabIndex = 9
@@ -189,48 +183,50 @@ Partial Class Agregar_Lote
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.TableLayoutPanel2)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.btSeleccionar)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 295)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 249)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(411, 221)
+        Me.GroupBox2.Size = New System.Drawing.Size(411, 89)
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "VEHICULOS"
         '
-        'TableLayoutPanel2
+        'Label2
         '
-        Me.TableLayoutPanel2.ColumnCount = 2
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.14815!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.85185!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btSeleccionar, 0, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 25)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.42487!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(405, 193)
-        Me.TableLayoutPanel2.TabIndex = 0
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Label2.Location = New System.Drawing.Point(12, 39)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(184, 19)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Seleccionar Vehiculos:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Agregar_Lote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AntiqueWhite
-        Me.ClientSize = New System.Drawing.Size(432, 615)
+        Me.ClientSize = New System.Drawing.Size(432, 435)
+        Me.Controls.Add(Me.btCancelar)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.btAceptar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Agregar_Lote"
         Me.Text = "Agregar Lote"
-        Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -245,5 +241,5 @@ Partial Class Agregar_Lote
     Friend WithEvents labVIN As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents Label2 As Label
 End Class

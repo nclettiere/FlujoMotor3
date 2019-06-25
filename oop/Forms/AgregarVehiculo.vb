@@ -17,7 +17,7 @@ Public Class AgregarVehiculo
     'BOTON "ACEPTAR"
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
         Try
-            If (String.IsNullOrWhiteSpace(txtVIN.Text)) And (String.IsNullOrWhiteSpace(cbx_tipo.SelectedItem.ToString)) And (String.IsNullOrWhiteSpace(txtMarca.Text)) And (String.IsNullOrWhiteSpace(txtModelo.Text)) And (String.IsNullOrWhiteSpace(txtAno.Text)) Then
+            If (String.IsNullOrWhiteSpace(txtVIN.Text)) And (String.IsNullOrWhiteSpace(cbx_tipo.SelectedItem.ToString)) And (String.IsNullOrWhiteSpace(txtMarca.Text)) And (String.IsNullOrWhiteSpace(txtModelo.Text)) And (String.IsNullOrWhiteSpace(txtAno.Text)) And (String.IsNullOrWhiteSpace(tbx_cNombre.Text)) Then
                 MessageBox.Show("Nunguno de los campos puede quedar vacio", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf (String.IsNullOrWhiteSpace(txtVIN.Text)) Then
                 MessageBox.Show("El campo 'V.I.N.' no debe quedar vacio", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -37,27 +37,29 @@ Public Class AgregarVehiculo
                 MessageBox.Show("El campo 'AÑO' debe ser numerico.", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf (IsNumeric(txtColor.Text)) Then
                 MessageBox.Show("El campo 'COLOR' NO debe ser numerico.", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf (String.IsNullOrWhiteSpace(tbx_cNombre.Text)) Then
+                MessageBox.Show("El campo 'Cliente Nombre' no debe quedar vacio.", "Error al Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
 
                 Dim NuevaUbicacionID = FacadeRef.GenerarUbicacionId()
                 Dim NuevaUbicacion = New Ubicacion(NuevaUbicacionID,
                                                    0,
                                                    0,
-                                                   "Esperando Inspeccion",
+                                                   "Esperando Asignacion de lote.",
                                                    0)
-                Dim UbicacionCsv() As String = {NuevaUbicacionID.ToString, "0", "0", "Esperando Inspeccion", 0}
+                Dim UbicacionCsv() As String = {NuevaUbicacionID.ToString, "0", "0", "Esperando Asignacion de lote.", 0}
 
-                Dim NuevoVehiculo As VehiculoTest = New VehiculoTest(txtVIN.Text,
-                                                                     txtMarca.Text,
-                                                                     txtModelo.Text,
-                                                                     cbx_tipo.SelectedItem.ToString,
-                                                                     txtColor.Text,
-                                                                     "Esperando Inspeccion",
-                                                                     Int32.Parse(txtAno.Text),
-                                                                     Date.Now.ToShortDateString,
-                                                                     0,
-                                                                     FacadeRef.Operario.Id,
-                                                                     NuevaUbicacionID)
+                Dim NuevoVehiculo As Vehiculo = New Vehiculo(txtVIN.Text,
+                                                             txtMarca.Text,
+                                                             txtModelo.Text,
+                                                             cbx_tipo.SelectedItem.ToString,
+                                                             txtColor.Text,
+                                                             Now.Year.ToString,
+                                                             Date.Now.ToShortDateString,
+                                                             0,
+                                                             FacadeRef.Operario.OperarioID,
+                                                             NuevaUbicacionID,
+                                                             tbx_cNombre.Text)
                 Dim VehiculoCsv() As String = {txtVIN.Text,
                                                txtMarca.Text,
                                                txtModelo.Text,
@@ -67,7 +69,8 @@ Public Class AgregarVehiculo
                                                Date.Now.ToShortDateString,
                                                "0",
                                                FacadeRef.Operario.Id.ToString,
-                                               NuevaUbicacionID.ToString}
+                                               NuevaUbicacionID.ToString,
+                                               tbx_cNombre.Text}
 
                 If FacadeRef.AgregarVehiculo(NuevoVehiculo) Then
 

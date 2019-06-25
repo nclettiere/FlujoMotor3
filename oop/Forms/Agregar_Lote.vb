@@ -35,9 +35,16 @@ Public Class Agregar_Lote
         Dim LoteId As Integer = FacadeRef.GenerateLoteID()
         Dim LoteNombre As String = txtNombre.Text
         Dim LoteDesc As String = rch_desc.Text
-        Dim LoteGenerado = New Lote(LoteId, LoteNombre, LoteDesc, Seleccion, Now.Date.ToShortDateString, Nothing)
+        Dim LoteGenerado = New Lote(LoteId, LoteNombre, LoteDesc, Seleccion, Now.Date.ToShortDateString, FacadeRef.Operario.OperarioID)
 
         FacadeRef.AgregarLote(LoteGenerado)
+
+        For Each vin As String In Seleccion
+            Dim UbicacionID As Integer = FacadeRef.BuscarVinEnLista(vin).UbicacionID
+            FacadeRef.ObtenerUbicacion(UbicacionID).Status = "A Espera de Inspeccion."
+            ParentFormClass.ActualizarListaVehiculos()
+            ParentFormClass.ActualizarListaLotes()
+        Next
 
         Me.Close()
     End Sub

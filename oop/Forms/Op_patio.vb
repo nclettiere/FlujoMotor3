@@ -48,7 +48,7 @@ Public Class Op_patio
     End Sub
 
     Private Sub txtBuscadorVehiculo_TextChanged(sender As Object, e As EventArgs) Handles txtBuscadorVehiculo.TextChanged
-        Dim vehiculo As List(Of VehiculoTest) = Facade.ObtenerListaVin(txtBuscadorVehiculo.Text)
+        Dim vehiculo As List(Of Vehiculo) = Facade.ObtenerListaVin(txtBuscadorVehiculo.Text)
 
         lista_vehiculos.Items.Clear()
 

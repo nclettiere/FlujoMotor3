@@ -5,7 +5,7 @@ Public Class VerVehiculoPatio
     Private ParentFormClass As Op_patio
     Private FacadeRef As Facade
 
-    Private Vehiculo As VehiculoTest
+    Private Vehiculo As Vehiculo
     Private VehiculoVin As String
 
     Private Ubicacion As Ubicacion

@@ -71,7 +71,7 @@
     <Compile Include="Clases\Operario.vb" />
     <Compile Include="Clases\Patio.vb" />
     <Compile Include="Clases\Ubicacion.vb" />
-    <Compile Include="Clases\VehiculoTest.vb" />
+    <Compile Include="Clases\Vehiculo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

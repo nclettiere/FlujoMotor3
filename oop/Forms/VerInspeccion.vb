@@ -5,7 +5,7 @@ Public Class VerInspeccion
     Private ParentFormClass As VerVehiculoPatio
     Private FacadeRef As Facade
 
-    Private Vehiculo As VehiculoTest
+    Private Vehiculo As Vehiculo
 
     Private Inspeccion As Inspeccion
 

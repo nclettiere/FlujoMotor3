@@ -43,12 +43,12 @@ Partial Class Vehiculos
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnBuscar = New System.Windows.Forms.Panel()
         Me.pnCampoBuscador = New System.Windows.Forms.Panel()
         Me.btBuscarVehiculo = New System.Windows.Forms.Button()
         Me.txtBuscadorVehiculo = New System.Windows.Forms.TextBox()
         Me.TabVehiculos = New System.Windows.Forms.TabControl()
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -306,6 +306,11 @@ Partial Class Vehiculos
         Me.ColumnHeader6.Text = "Fecha Agregado"
         Me.ColumnHeader6.Width = 156
         '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Status"
+        Me.ColumnHeader8.Width = 109
+        '
         'pnBuscar
         '
         Me.pnBuscar.BackColor = System.Drawing.Color.Bisque
@@ -370,11 +375,6 @@ Partial Class Vehiculos
         Me.TabVehiculos.Size = New System.Drawing.Size(937, 621)
         Me.TabVehiculos.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabVehiculos.TabIndex = 3
-        '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "Status"
-        Me.ColumnHeader8.Width = 109
         '
         'Vehiculos
         '

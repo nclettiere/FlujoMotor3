@@ -63,18 +63,17 @@ Public Class Inicio_de_sesion
 
             Dim StreamArray As String() = StreamText.Split(",")
 
-
-            FacadeRef.AgregarVehiculo(New VehiculoTest(StreamArray(0),
+            FacadeRef.AgregarVehiculo(New Vehiculo(StreamArray(0),
                                                     StreamArray(1),
                                                     StreamArray(2),
                                                     StreamArray(3),
                                                     StreamArray(4),
-                                                    "En Patio",
                                                     Short.Parse(StreamArray(5)),
                                                     StreamArray(6),
                                                     0,
                                                     Int32.Parse(StreamArray(7)),
-                                                    Int32.Parse(StreamArray(9))))
+                                                    Int32.Parse(StreamArray(9)),
+                                                    StreamArray(10)))
         End While
 
         streamReader.Dispose()

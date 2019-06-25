@@ -23,6 +23,7 @@ Public Class VerVehiculo
         lbl_anio.Text = "Anio: " + vehiculo.Anio.ToString
         lbl_fncionario.Text = "Agregado por: " + FacadeRef.ObtenerOperario(vehiculo.OperarioID).Nombre + " " + FacadeRef.ObtenerOperario(vehiculo.OperarioID).Apellido
         lbl_fecha.Text = "El: " + vehiculo.Fecha.ToString
+        lbl_cliente.Text = "Cliente: " + vehiculo.ClienteNombre
 
         For Each lote In FacadeRef.ObtenerLotes()
             For Each vin In lote.Vehiculos

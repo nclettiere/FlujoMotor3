@@ -14,15 +14,18 @@ Public Class VerLote
     End Sub
 
     Private Sub VerLote_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim lote = FacadeRef.ObtenerLoteID(DisplayLoteId)
 
-        Dim lote = FacadeRef.ObtenerLoteID(DisplayLoteId)
+            For Each item In lote.Vehiculos
+                lst_vin.Items.Add(item)
+            Next
 
-        For Each item In lote.Vehiculos
-            lst_vin.Items.Add(item)
-        Next
-
-        lbl_name.Text = "Nombre: " + lote.LoteName
-        rch_desc.Text = lote.LoteDesc
-
+            lbl_name.Text = "Nombre: " + lote.LoteName
+            rch_desc.Text = lote.LoteDesc
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar lote.")
+            Me.Close()
+        End Try
     End Sub
 End Class

@@ -227,16 +227,11 @@ Public Class Facade
     End Function
 
     Function ObtenerLoteID(func As String) As Lote
-        Dim lote As Lote
-
-        If ListaVehiculos.Count() <> 0 Then
-
-            For Each item As Lote In ListaLotes
-                If String.Equals(item.LoteID.ToString, func) Then
-                    lote = item
-                End If
-            Next
-        End If
+        For Each item As Lote In ListaLotes
+            If String.Equals(item.LoteID.ToString, func) Then
+                Return item
+            End If
+        Next
         Return Nothing
     End Function
 
@@ -275,11 +270,7 @@ Public Class Facade
 
     '' Metodos para ListaLotes
     Sub AgregarLote(lote As Lote)
-        If Not ListaLotes.Contains(lote) Then
-            ListaLotes.Add(lote)
-        Else
-            Debug.WriteLine("Err: Ya existe ese lote.")
-        End If
+        ListaLotes.Add(lote)
     End Sub
 
     Sub AgregarOperario(operario As Operario)

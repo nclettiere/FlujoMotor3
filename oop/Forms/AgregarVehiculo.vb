@@ -50,16 +50,16 @@ Public Class AgregarVehiculo
                 Dim UbicacionCsv() As String = {NuevaUbicacionID.ToString, "0", "0", "Esperando Asignacion de lote.", 0}
 
                 Dim NuevoVehiculo As Vehiculo = New Vehiculo(txtVIN.Text,
-                                                                     txtMarca.Text,
-                                                                     txtModelo.Text,
-                                                                     cbx_tipo.SelectedItem.ToString,
-                                                                     txtColor.Text,
-                                                                     Int32.Parse(txtAno.Text),
-                                                                     Date.Now.ToShortDateString,
-                                                                     0,
-                                                                     FacadeRef.Operario.Id,
-                                                                     NuevaUbicacionID,
-                                                                     tbx_cNombre.Text)
+                                                             txtMarca.Text,
+                                                             txtModelo.Text,
+                                                             cbx_tipo.SelectedItem.ToString,
+                                                             txtColor.Text,
+                                                             Now.Year.ToString,
+                                                             Date.Now.ToShortDateString,
+                                                             0,
+                                                             FacadeRef.Operario.OperarioID,
+                                                             NuevaUbicacionID,
+                                                             tbx_cNombre.Text)
                 Dim VehiculoCsv() As String = {txtVIN.Text,
                                                txtMarca.Text,
                                                txtModelo.Text,

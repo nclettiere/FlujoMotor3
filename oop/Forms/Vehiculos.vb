@@ -235,4 +235,8 @@ Public Class Vehiculos
     Private Sub btListarVehiculo_Click(sender As Object, e As EventArgs) Handles btListarVehiculo.Click
         ActualizarListaVehiculos()
     End Sub
+
+    Private Sub lista_lotes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lista_lotes.SelectedIndexChanged
+
+    End Sub
 End Class

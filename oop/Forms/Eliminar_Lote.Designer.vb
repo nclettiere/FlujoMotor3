@@ -149,7 +149,8 @@ Partial Class Eliminar_Lote
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Eliminar_Lote"
-        Me.Text = "Eliminar_Lote"
+        Me.ShowIcon = False
+        Me.Text = "Eliminar Lote"
         Me.gpboInformacion.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()

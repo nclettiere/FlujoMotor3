@@ -24,10 +24,10 @@ Partial Class SeleccionarCliente
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btn_agregar = New System.Windows.Forms.Button()
         Me.lst_clientes = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btn_agregar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -57,6 +57,23 @@ Partial Class SeleccionarCliente
         Me.Panel1.Size = New System.Drawing.Size(262, 229)
         Me.Panel1.TabIndex = 0
         '
+        'lst_clientes
+        '
+        Me.lst_clientes.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
+        Me.lst_clientes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_clientes.HideSelection = False
+        Me.lst_clientes.Location = New System.Drawing.Point(0, 0)
+        Me.lst_clientes.Name = "lst_clientes"
+        Me.lst_clientes.ShowGroups = False
+        Me.lst_clientes.Size = New System.Drawing.Size(262, 229)
+        Me.lst_clientes.TabIndex = 0
+        Me.lst_clientes.UseCompatibleStateImageBehavior = False
+        Me.lst_clientes.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = ""
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.btn_agregar)
@@ -82,22 +99,6 @@ Partial Class SeleccionarCliente
         Me.btn_agregar.Text = "Aceptar"
         Me.btn_agregar.UseVisualStyleBackColor = True
         '
-        'lst_clientes
-        '
-        Me.lst_clientes.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
-        Me.lst_clientes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lst_clientes.Location = New System.Drawing.Point(0, 0)
-        Me.lst_clientes.Name = "lst_clientes"
-        Me.lst_clientes.ShowGroups = False
-        Me.lst_clientes.Size = New System.Drawing.Size(262, 229)
-        Me.lst_clientes.TabIndex = 0
-        Me.lst_clientes.UseCompatibleStateImageBehavior = False
-        Me.lst_clientes.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = ""
-        '
         'SeleccionarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -105,6 +106,7 @@ Partial Class SeleccionarCliente
         Me.ClientSize = New System.Drawing.Size(268, 292)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "SeleccionarCliente"
+        Me.ShowIcon = False
         Me.Text = "Seleccionar Cliente"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)

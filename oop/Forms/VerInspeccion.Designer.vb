@@ -84,7 +84,8 @@ Partial Class VerInspeccion
         Me.Controls.Add(Me.lbl_name)
         Me.Controls.Add(Me.lbl_title)
         Me.Name = "VerInspeccion"
-        Me.Text = "Ver Danio"
+        Me.ShowIcon = False
+        Me.Text = "Ver Daño"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

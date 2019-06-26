@@ -32,6 +32,7 @@ Partial Class VerVehiculo
         Me.lbl_fncionario = New System.Windows.Forms.Label()
         Me.lbl_anio = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lbl_cliente = New System.Windows.Forms.Label()
         Me.lbl_color = New System.Windows.Forms.Label()
         Me.lbl_tipo = New System.Windows.Forms.Label()
         Me.lbl_modelo = New System.Windows.Forms.Label()
@@ -40,7 +41,6 @@ Partial Class VerVehiculo
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lbl_cliente = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -160,6 +160,17 @@ Partial Class VerVehiculo
         Me.Panel4.Size = New System.Drawing.Size(360, 199)
         Me.Panel4.TabIndex = 2
         '
+        'lbl_cliente
+        '
+        Me.lbl_cliente.AutoSize = True
+        Me.lbl_cliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_cliente.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.lbl_cliente.Location = New System.Drawing.Point(170, 64)
+        Me.lbl_cliente.Name = "lbl_cliente"
+        Me.lbl_cliente.Size = New System.Drawing.Size(65, 24)
+        Me.lbl_cliente.TabIndex = 8
+        Me.lbl_cliente.Text = "cleinte"
+        '
         'lbl_color
         '
         Me.lbl_color.AutoSize = True
@@ -258,17 +269,6 @@ Partial Class VerVehiculo
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(367, 252)
         Me.TableLayoutPanel2.TabIndex = 1
         '
-        'lbl_cliente
-        '
-        Me.lbl_cliente.AutoSize = True
-        Me.lbl_cliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_cliente.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lbl_cliente.Location = New System.Drawing.Point(170, 64)
-        Me.lbl_cliente.Name = "lbl_cliente"
-        Me.lbl_cliente.Size = New System.Drawing.Size(65, 24)
-        Me.lbl_cliente.TabIndex = 8
-        Me.lbl_cliente.Text = "cleinte"
-        '
         'VerVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -277,7 +277,8 @@ Partial Class VerVehiculo
         Me.ClientSize = New System.Drawing.Size(745, 258)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "VerVehiculo"
-        Me.Text = "VerVehiculo"
+        Me.ShowIcon = False
+        Me.Text = "Ver Vehiculo"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)

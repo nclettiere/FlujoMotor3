@@ -223,7 +223,8 @@ Partial Class Menu_Operario
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Menu_Operario"
-        Me.Text = "Menu_Operario"
+        Me.ShowIcon = False
+        Me.Text = "Menu Operario"
         Me.pnLateral.ResumeLayout(False)
         Me.tlpnMenu.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)

@@ -102,7 +102,8 @@ Partial Class SeleccionarVehiculos
         Me.ClientSize = New System.Drawing.Size(274, 300)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "SeleccionarVehiculos"
-        Me.Text = "SeleccionarVehiculos"
+        Me.ShowIcon = False
+        Me.Text = "Seleccionar Vehiculos"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)

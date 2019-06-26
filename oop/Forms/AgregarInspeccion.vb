@@ -78,7 +78,7 @@ Public Class AgregarInspeccion
     End Sub
 
     Private Sub btn_dpenency_Click(sender As Object, e As EventArgs) Handles btn_dpenency.Click
-        Dim dependency = New DependencySelector()
+        Dim dependency = New Asignar_Herencia()
         dependency.cargar(Me, FacadeRef, VehiculoVin)
         dependency.ShowDialog()
     End Sub

@@ -431,7 +431,8 @@ Partial Class Editar_Vehiculo
         Me.Controls.Add(Me.gpboCaracteristicas)
         Me.Controls.Add(Me.gpboInformacion)
         Me.Name = "Editar_Vehiculo"
-        Me.Text = "Editar_Vehiculo"
+        Me.ShowIcon = False
+        Me.Text = "Editar Vehiculo"
         Me.Panel1.ResumeLayout(False)
         Me.gpboCaracteristicas.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)

@@ -128,6 +128,9 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icono_ Operario.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -178,10 +181,10 @@
     <Compile Include="Forms\Configuracion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DependencySelector.Designer.vb">
-      <DependentUpon>DependencySelector.vb</DependentUpon>
+    <Compile Include="Forms\Asignar_Herencia.Designer.vb">
+      <DependentUpon>Asignar_Herencia.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DependencySelector.vb">
+    <Compile Include="Forms\Asignar_Herencia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Editar Vehiculo.Designer.vb">
@@ -316,8 +319,8 @@
     <EmbeddedResource Include="Forms\Configuracion.resx">
       <DependentUpon>Configuracion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DependencySelector.resx">
-      <DependentUpon>DependencySelector.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Asignar_Herencia.resx">
+      <DependentUpon>Asignar_Herencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Editar Vehiculo.resx">
       <DependentUpon>Editar Vehiculo.vb</DependentUpon>
@@ -458,6 +461,9 @@
       <Project>{dbb27519-5238-4fd6-af9d-80d4eb10c862}</Project>
       <Name>Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icono_ Operario.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

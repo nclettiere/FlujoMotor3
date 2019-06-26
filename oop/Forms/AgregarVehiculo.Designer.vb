@@ -379,6 +379,7 @@ Partial Class AgregarVehiculo
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "AgregarVehiculo"
+        Me.ShowIcon = False
         Me.Text = "Agregar Vehiculo"
         Me.gpboInformacion.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)

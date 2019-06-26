@@ -99,7 +99,7 @@ Partial Class AgregarInspeccion
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lbl_title)
         Me.Name = "AgregarInspeccion"
-        Me.Text = "AgregarInspeccion"
+        Me.Text = "Agregar Inspeccion"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

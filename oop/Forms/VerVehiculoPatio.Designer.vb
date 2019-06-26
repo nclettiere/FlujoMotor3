@@ -318,7 +318,8 @@ Partial Class VerVehiculoPatio
         Me.ClientSize = New System.Drawing.Size(466, 349)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "VerVehiculoPatio"
-        Me.Text = "VerVehiculoPatio"
+        Me.ShowIcon = False
+        Me.Text = "Ver Vehiculo en el Patio"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)

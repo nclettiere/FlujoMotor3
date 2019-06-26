@@ -224,6 +224,7 @@ Partial Class Op_patio
         Me.Controls.Add(Me.tacoVehiculo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Op_patio"
+        Me.ShowIcon = False
         Me.Text = "Op_patio"
         Me.tacoVehiculo.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

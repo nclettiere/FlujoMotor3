@@ -136,7 +136,8 @@ Partial Class VerLote
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbl_name)
         Me.Name = "VerLote"
-        Me.Text = "VerLote"
+        Me.ShowIcon = False
+        Me.Text = "Ver Lote"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)

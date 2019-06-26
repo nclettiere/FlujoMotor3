@@ -384,6 +384,7 @@ Partial Class Vehiculos
         Me.Controls.Add(Me.TabVehiculos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Vehiculos"
+        Me.ShowIcon = False
         Me.Text = "Vehiculos"
         Me.TabPage2.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)

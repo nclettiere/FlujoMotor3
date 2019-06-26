@@ -62,7 +62,7 @@ Partial Class Editar_Lote
         Me.TableLayoutPanel2.ColumnCount = 3
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.16563!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.83437!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.btSeleccionar, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.cheboSeleccionar, 2, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -86,7 +86,7 @@ Partial Class Editar_Lote
         Me.btSeleccionar.ForeColor = System.Drawing.Color.White
         Me.btSeleccionar.Location = New System.Drawing.Point(3, 70)
         Me.btSeleccionar.Name = "btSeleccionar"
-        Me.btSeleccionar.Size = New System.Drawing.Size(177, 52)
+        Me.btSeleccionar.Size = New System.Drawing.Size(176, 52)
         Me.btSeleccionar.TabIndex = 6
         Me.btSeleccionar.Text = "Seleccionar"
         Me.btSeleccionar.UseVisualStyleBackColor = True
@@ -96,9 +96,9 @@ Partial Class Editar_Lote
         Me.cheboSeleccionar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cheboSeleccionar.AutoSize = True
         Me.cheboSeleccionar.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cheboSeleccionar.Location = New System.Drawing.Point(458, 89)
+        Me.cheboSeleccionar.Location = New System.Drawing.Point(457, 89)
         Me.cheboSeleccionar.Name = "cheboSeleccionar"
-        Me.cheboSeleccionar.Size = New System.Drawing.Size(22, 14)
+        Me.cheboSeleccionar.Size = New System.Drawing.Size(23, 14)
         Me.cheboSeleccionar.TabIndex = 8
         Me.cheboSeleccionar.UseVisualStyleBackColor = True
         '
@@ -120,7 +120,7 @@ Partial Class Editar_Lote
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.79105!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.20895!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.cheboDescripcion, 2, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.labVIN, 0, 0)
@@ -141,9 +141,9 @@ Partial Class Editar_Lote
         Me.cheboDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cheboDescripcion.AutoSize = True
         Me.cheboDescripcion.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cheboDescripcion.Location = New System.Drawing.Point(456, 114)
+        Me.cheboDescripcion.Location = New System.Drawing.Point(455, 114)
         Me.cheboDescripcion.Name = "cheboDescripcion"
-        Me.cheboDescripcion.Size = New System.Drawing.Size(21, 14)
+        Me.cheboDescripcion.Size = New System.Drawing.Size(22, 14)
         Me.cheboDescripcion.TabIndex = 7
         Me.cheboDescripcion.UseVisualStyleBackColor = True
         '
@@ -182,7 +182,7 @@ Partial Class Editar_Lote
         Me.txtNombre.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.txtNombre.Location = New System.Drawing.Point(192, 11)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(258, 27)
+        Me.txtNombre.Size = New System.Drawing.Size(257, 27)
         Me.txtNombre.TabIndex = 1
         '
         'rch_desc
@@ -194,7 +194,7 @@ Partial Class Editar_Lote
         Me.rch_desc.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.rch_desc.Location = New System.Drawing.Point(192, 60)
         Me.rch_desc.Name = "rch_desc"
-        Me.rch_desc.Size = New System.Drawing.Size(258, 123)
+        Me.rch_desc.Size = New System.Drawing.Size(257, 123)
         Me.rch_desc.TabIndex = 4
         Me.rch_desc.Text = ""
         '
@@ -203,9 +203,9 @@ Partial Class Editar_Lote
         Me.cheboNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cheboNombre.AutoSize = True
         Me.cheboNombre.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cheboNombre.Location = New System.Drawing.Point(456, 18)
+        Me.cheboNombre.Location = New System.Drawing.Point(455, 18)
         Me.cheboNombre.Name = "cheboNombre"
-        Me.cheboNombre.Size = New System.Drawing.Size(21, 14)
+        Me.cheboNombre.Size = New System.Drawing.Size(22, 14)
         Me.cheboNombre.TabIndex = 6
         Me.cheboNombre.UseVisualStyleBackColor = True
         '
@@ -270,7 +270,8 @@ Partial Class Editar_Lote
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Editar_Lote"
-        Me.Text = "Editar_Lote"
+        Me.ShowIcon = False
+        Me.Text = "Editar Lote"
         Me.GroupBox2.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()

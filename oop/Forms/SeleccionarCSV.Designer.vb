@@ -23,11 +23,11 @@ Partial Class SeleccionarCSV
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btn_selec = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_aceptar = New System.Windows.Forms.Button()
-        Me.btn_selec = New System.Windows.Forms.Button()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,6 +42,22 @@ Partial Class SeleccionarCSV
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 157)
         Me.Panel1.TabIndex = 0
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(16, 71)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(175, 20)
+        Me.TextBox1.TabIndex = 20
+        '
+        'btn_selec
+        '
+        Me.btn_selec.Location = New System.Drawing.Point(197, 71)
+        Me.btn_selec.Name = "btn_selec"
+        Me.btn_selec.Size = New System.Drawing.Size(75, 23)
+        Me.btn_selec.TabIndex = 19
+        Me.btn_selec.Text = "Seleccionar"
+        Me.btn_selec.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -64,22 +80,6 @@ Partial Class SeleccionarCSV
         Me.btn_aceptar.Text = "Aceptar"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
-        'btn_selec
-        '
-        Me.btn_selec.Location = New System.Drawing.Point(197, 71)
-        Me.btn_selec.Name = "btn_selec"
-        Me.btn_selec.Size = New System.Drawing.Size(75, 23)
-        Me.btn_selec.TabIndex = 19
-        Me.btn_selec.Text = "Seleccionar"
-        Me.btn_selec.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(16, 71)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(175, 20)
-        Me.TextBox1.TabIndex = 20
-        '
         'SeleccionarCSV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -87,6 +87,7 @@ Partial Class SeleccionarCSV
         Me.ClientSize = New System.Drawing.Size(284, 157)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "SeleccionarCSV"
+        Me.ShowIcon = False
         Me.Text = "Seleccione los CSV"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

@@ -339,6 +339,7 @@ Partial Class Agregar_Lote
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Agregar_Lote"
+        Me.ShowIcon = False
         Me.Text = "Agregar Lote"
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)

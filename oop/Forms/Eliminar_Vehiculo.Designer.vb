@@ -149,7 +149,8 @@ Partial Class Eliminar_Vehiculo
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Eliminar_Vehiculo"
-        Me.Text = "Eliminar_Vehiculo"
+        Me.ShowIcon = False
+        Me.Text = "Eliminar Vehiculo"
         Me.Panel1.ResumeLayout(False)
         Me.gpboInformacion.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)

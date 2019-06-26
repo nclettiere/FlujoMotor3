@@ -152,7 +152,7 @@ Partial Class Inicio_de_sesion
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Inicio_de_sesion"
-        Me.Text = "Log in"
+        Me.Text = "Inicio de Sesion"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

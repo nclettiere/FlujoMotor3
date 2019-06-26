@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Cliente.vb" />
     <Compile Include="Clases\Facade.vb" />
     <Compile Include="Clases\Funcionario.vb" />
     <Compile Include="Clases\Inspeccion.vb" />

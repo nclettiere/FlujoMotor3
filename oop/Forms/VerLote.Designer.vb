@@ -29,6 +29,7 @@ Partial Class VerLote
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lbl_rutaA = New System.Windows.Forms.Label()
         Me.lbl_rutaB = New System.Windows.Forms.Label()
+        Me.lbl_client = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -38,7 +39,7 @@ Partial Class VerLote
         Me.lbl_name.AutoSize = True
         Me.lbl_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_name.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.lbl_name.Location = New System.Drawing.Point(13, 13)
+        Me.lbl_name.Location = New System.Drawing.Point(8, 9)
         Me.lbl_name.Name = "lbl_name"
         Me.lbl_name.Size = New System.Drawing.Size(84, 24)
         Me.lbl_name.TabIndex = 0
@@ -70,7 +71,7 @@ Partial Class VerLote
         Me.GroupBox1.Controls.Add(Me.lst_vin)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 281)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 336)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(408, 192)
         Me.GroupBox1.TabIndex = 5
@@ -82,7 +83,7 @@ Partial Class VerLote
         Me.GroupBox2.Controls.Add(Me.rch_desc)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 146)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 200)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(408, 121)
         Me.GroupBox2.TabIndex = 6
@@ -94,7 +95,7 @@ Partial Class VerLote
         Me.lbl_rutaA.AutoSize = True
         Me.lbl_rutaA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_rutaA.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.lbl_rutaA.Location = New System.Drawing.Point(13, 67)
+        Me.lbl_rutaA.Location = New System.Drawing.Point(8, 99)
         Me.lbl_rutaA.Name = "lbl_rutaA"
         Me.lbl_rutaA.Size = New System.Drawing.Size(105, 24)
         Me.lbl_rutaA.TabIndex = 7
@@ -105,18 +106,30 @@ Partial Class VerLote
         Me.lbl_rutaB.AutoSize = True
         Me.lbl_rutaB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_rutaB.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.lbl_rutaB.Location = New System.Drawing.Point(13, 105)
+        Me.lbl_rutaB.Location = New System.Drawing.Point(8, 137)
         Me.lbl_rutaB.Name = "lbl_rutaB"
         Me.lbl_rutaB.Size = New System.Drawing.Size(104, 24)
         Me.lbl_rutaB.TabIndex = 8
         Me.lbl_rutaB.Text = "Ruta Final: "
+        '
+        'lbl_client
+        '
+        Me.lbl_client.AutoSize = True
+        Me.lbl_client.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_client.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.lbl_client.Location = New System.Drawing.Point(8, 55)
+        Me.lbl_client.Name = "lbl_client"
+        Me.lbl_client.Size = New System.Drawing.Size(78, 24)
+        Me.lbl_client.TabIndex = 9
+        Me.lbl_client.Text = "Cliente: "
         '
         'VerLote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AntiqueWhite
-        Me.ClientSize = New System.Drawing.Size(432, 485)
+        Me.ClientSize = New System.Drawing.Size(432, 540)
+        Me.Controls.Add(Me.lbl_client)
         Me.Controls.Add(Me.lbl_rutaB)
         Me.Controls.Add(Me.lbl_rutaA)
         Me.Controls.Add(Me.GroupBox2)
@@ -138,4 +151,5 @@ Partial Class VerLote
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents lbl_rutaA As Label
     Friend WithEvents lbl_rutaB As Label
+    Friend WithEvents lbl_client As Label
 End Class

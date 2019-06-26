@@ -7,8 +7,9 @@
     Private _FuncionarioID As String
     Private _RutaA As String
     Private _RutaB As String
+    Private _ClienteID As Integer
 
-    Public Sub New(LoteID As Integer, LoteName As String, LoteDesc As String, Vehiculos As List(Of String), Fecha As Date, FuncionarioID As String, RutaA As String, RutaB As String)
+    Public Sub New(LoteID As Integer, LoteName As String, LoteDesc As String, Vehiculos As List(Of String), Fecha As Date, FuncionarioID As String, RutaA As String, RutaB As String, ClienteID As Integer)
         _LoteID = LoteID
         _LoteName = LoteName
         _LoteDesc = LoteDesc
@@ -17,6 +18,7 @@
         _FuncionarioID = FuncionarioID
         _RutaA = RutaA
         _RutaB = RutaB
+        _ClienteID = ClienteID
     End Sub
 
     Public Property LoteID As Integer
@@ -88,6 +90,15 @@
         End Get
         Set(value As String)
             _RutaB = value
+        End Set
+    End Property
+
+    Public Property ClienteID As Integer
+        Get
+            Return _ClienteID
+        End Get
+        Set(value As Integer)
+            _ClienteID = value
         End Set
     End Property
 End Class

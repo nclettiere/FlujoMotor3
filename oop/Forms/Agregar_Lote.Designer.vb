@@ -39,11 +39,15 @@ Partial Class Agregar_Lote
         Me.tbx_rutaA = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_selecClient = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtNombre
@@ -79,7 +83,7 @@ Partial Class Agregar_Lote
         Me.btSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSeleccionar.ForeColor = System.Drawing.Color.White
-        Me.btSeleccionar.Location = New System.Drawing.Point(216, 21)
+        Me.btSeleccionar.Location = New System.Drawing.Point(216, 14)
         Me.btSeleccionar.Name = "btSeleccionar"
         Me.btSeleccionar.Size = New System.Drawing.Size(189, 52)
         Me.btSeleccionar.TabIndex = 6
@@ -198,7 +202,7 @@ Partial Class Agregar_Lote
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.AppWorkspace
         Me.GroupBox2.Location = New System.Drawing.Point(12, 239)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(411, 89)
+        Me.GroupBox2.Size = New System.Drawing.Size(411, 74)
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "VEHICULOS"
@@ -208,7 +212,7 @@ Partial Class Agregar_Lote
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Label2.Location = New System.Drawing.Point(12, 39)
+        Me.Label2.Location = New System.Drawing.Point(12, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(184, 19)
         Me.Label2.TabIndex = 7
@@ -224,9 +228,9 @@ Partial Class Agregar_Lote
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 350)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 411)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(411, 161)
+        Me.GroupBox3.Size = New System.Drawing.Size(411, 128)
         Me.GroupBox3.TabIndex = 11
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "RUTA"
@@ -237,7 +241,7 @@ Partial Class Agregar_Lote
         Me.tbx_rutaB.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbx_rutaB.Font = New System.Drawing.Font("Arial Narrow", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbx_rutaB.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.tbx_rutaB.Location = New System.Drawing.Point(195, 97)
+        Me.tbx_rutaB.Location = New System.Drawing.Point(195, 81)
         Me.tbx_rutaB.Name = "tbx_rutaB"
         Me.tbx_rutaB.Size = New System.Drawing.Size(207, 27)
         Me.tbx_rutaB.TabIndex = 10
@@ -248,7 +252,7 @@ Partial Class Agregar_Lote
         Me.tbx_rutaA.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbx_rutaA.Font = New System.Drawing.Font("Arial Narrow", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbx_rutaA.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.tbx_rutaA.Location = New System.Drawing.Point(195, 45)
+        Me.tbx_rutaA.Location = New System.Drawing.Point(195, 29)
         Me.tbx_rutaA.Name = "tbx_rutaA"
         Me.tbx_rutaA.Size = New System.Drawing.Size(207, 27)
         Me.tbx_rutaA.TabIndex = 9
@@ -277,12 +281,56 @@ Partial Class Agregar_Lote
         Me.Label3.Text = "Ruta Inicial: "
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Controls.Add(Me.btn_selecClient)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.ForeColor = System.Drawing.SystemColors.AppWorkspace
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 331)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(411, 74)
+        Me.GroupBox4.TabIndex = 12
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "SELECCIONAR CLIENTE"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Label5.Location = New System.Drawing.Point(117, 32)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(68, 19)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "Cliente:"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'btn_selecClient
+        '
+        Me.btn_selecClient.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_selecClient.BackgroundImage = Global.oop.My.Resources.Resources.boton_buscar
+        Me.btn_selecClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_selecClient.FlatAppearance.BorderSize = 0
+        Me.btn_selecClient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btn_selecClient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btn_selecClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_selecClient.ForeColor = System.Drawing.Color.White
+        Me.btn_selecClient.Location = New System.Drawing.Point(210, 14)
+        Me.btn_selecClient.Name = "btn_selecClient"
+        Me.btn_selecClient.Size = New System.Drawing.Size(189, 52)
+        Me.btn_selecClient.TabIndex = 6
+        Me.btn_selecClient.Text = "Seleccionar"
+        Me.btn_selecClient.UseVisualStyleBackColor = True
+        '
         'Agregar_Lote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AntiqueWhite
         Me.ClientSize = New System.Drawing.Size(432, 617)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -300,6 +348,8 @@ Partial Class Agregar_Lote
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -320,4 +370,7 @@ Partial Class Agregar_Lote
     Friend WithEvents tbx_rutaA As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents btn_selecClient As Button
 End Class

@@ -8,6 +8,7 @@ Public Class Facade
     Private ListaUbicaciones = New List(Of Ubicacion)
     Private ListaPatios = New List(Of Patio)
     Private ListaOperario = New List(Of Operario)
+    Private ListaCliente = New List(Of Cliente)
     Private _Operario As Operario
 
     Public CSVVehiculos As String
@@ -93,6 +94,23 @@ Public Class Facade
             End If
         Next
         Return Nothing
+    End Function
+
+    Public Sub AgregarCliente(cliente As Cliente)
+        ListaCliente.Add(cliente)
+    End Sub
+
+    Public Function ObtenerCliente(id As Integer) As Cliente
+        For Each cliente As Cliente In ListaCliente
+            If cliente.ClienteID = id Then
+                Return (cliente)
+            End If
+        Next
+        Return Nothing
+    End Function
+
+    Public Function ObtenerClientes() As List(Of Cliente)
+        Return ListaCliente
     End Function
 
     Public Sub AgregarInspeccionACsV(cSVInspeccion() As String, strFile As String, v As Boolean)

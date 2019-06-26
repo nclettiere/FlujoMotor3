@@ -221,6 +221,12 @@
     <Compile Include="Forms\Menu_Operario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\SeleccionarCliente.Designer.vb">
+      <DependentUpon>SeleccionarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SeleccionarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\SeleccionarCSV.Designer.vb">
       <DependentUpon>SeleccionarCSV.vb</DependentUpon>
     </Compile>
@@ -331,6 +337,9 @@
     <EmbeddedResource Include="Forms\Menu_Operario.resx">
       <DependentUpon>Menu_Operario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SeleccionarCliente.resx">
+      <DependentUpon>SeleccionarCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SeleccionarCSV.resx">
       <DependentUpon>SeleccionarCSV.vb</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +378,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CSV\clientes.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="CSV\inspecciones.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -12,11 +12,17 @@ Public Class Agregar_Lote
 
     '' Lista de vin's seleccionados
     Private Seleccion As List(Of String)
+    '' Selected Client
+    Private Cliente As Integer
 
     Private Sub btn_selec_Click(sender As Object, e As EventArgs) Handles btSeleccionar.Click
         Dim SelecVehiculo = New SeleccionarVehiculos()
         SelecVehiculo.cargar(Me, FacadeRef)
         SelecVehiculo.ShowDialog()
+    End Sub
+
+    Friend Sub CargarCliente(seleccion As Integer)
+        Cliente = seleccion
     End Sub
 
     Friend Sub CargarSelecciones(lista As List(Of String))
@@ -39,13 +45,14 @@ Public Class Agregar_Lote
                 MessageBox.Show("Elije una descripcion para el lote.")
             Else
                 Dim LoteGenerado = New Lote(LoteId,
-                                    LoteNombre,
-                                    LoteDesc,
-                                    Seleccion,
-                                    Now.Date.ToShortDateString,
-                                    FacadeRef.Operario.OperarioID,
-                                    tbx_rutaA.Text,
-                                    tbx_rutaB.Text)
+                                            LoteNombre,
+                                            LoteDesc,
+                                            Seleccion,
+                                            Now.Date.ToShortDateString,
+                                            FacadeRef.Operario.OperarioID,
+                                            tbx_rutaA.Text,
+                                            tbx_rutaB.Text,
+                                            Cliente)
 
                 FacadeRef.AgregarLote(LoteGenerado)
                 If Not Seleccion Is Nothing Then
@@ -67,5 +74,11 @@ Public Class Agregar_Lote
         Catch ex As Exception
             MessageBox.Show("Error Al Agregar Lote.\n" + ex.Message)
         End Try
+    End Sub
+
+    Private Sub btn_selecClient_Click(sender As Object, e As EventArgs) Handles btn_selecClient.Click
+        Dim SelecClient = New SeleccionarCliente()
+        SelecClient.cargar(Me, FacadeRef)
+        SelecClient.ShowDialog()
     End Sub
 End Class

@@ -51,6 +51,27 @@ Public Class Inicio_de_sesion
         btIngresar.ForeColor = Color.Peru
     End Sub
 
+    Private Sub CargarClientes(archivo As String)
+
+        Dim filePath As String = archivo
+        Dim streamReader As New IO.StreamReader(filePath)
+        Dim StreamText As String
+
+        While Not streamReader.EndOfStream
+
+            StreamText = streamReader.ReadLine()
+
+            Dim StreamArray As String() = StreamText.Split(",")
+
+            FacadeRef.AgregarCliente(New Cliente(Int32.Parse(StreamArray(0)),
+                                                    StreamArray(1),
+                                                    StreamArray(2)))
+        End While
+
+        streamReader.Dispose()
+
+    End Sub
+
     Private Sub CargarVehiculos(archivo As String)
 
         Dim filePath As String = archivo
@@ -86,28 +107,25 @@ Public Class Inicio_de_sesion
         Charged = True
     End Sub
 
-    Friend Sub cargar(strOp As String, strVehiculos As String, strPatios As String, strUbicaciones As String, strInspecciones As String)
+    Friend Sub cargar(path As String)
 
         Usuarios = New List(Of Operario)
         FacadeRef = New Facade
 
-        If String.IsNullOrEmpty(strOp) Or
-           String.IsNullOrEmpty(strVehiculos) Or
-           String.IsNullOrEmpty(strPatios) Or
-           String.IsNullOrEmpty(strUbicaciones) Or
-           String.IsNullOrEmpty(strInspecciones) Then
+        If String.IsNullOrEmpty(path) Then
             MessageBox.Show("Error Al cargar CSV's")
             Me.Close()
         Else
-            FacadeRef.CSVVehiculos = strVehiculos
-            FacadeRef.CSVUbicaciones = strUbicaciones
-            FacadeRef.CSVInspecciones = strInspecciones
+            FacadeRef.CSVVehiculos = path + "\vehiculos.csv"
+            FacadeRef.CSVUbicaciones = path + "\ubicaciones.csv"
+            FacadeRef.CSVInspecciones = path + "\ubicaciones.csv"
 
-            CargarUsuarios(strOp)
-            CargarVehiculos(strVehiculos)
-            CargarPatios(strPatios)
-            CargarUbicaciones(strUbicaciones)
-            CargarInspecciones(strInspecciones)
+            CargarUsuarios(path + "\operarios.csv")
+            CargarVehiculos(path + "\vehiculos.csv")
+            CargarPatios(path + "\patios.csv")
+            CargarUbicaciones(path + "\ubicaciones.csv")
+            CargarInspecciones(path + "\inspecciones.csv")
+            CargarClientes(path + "\clientes.csv")
         End If
     End Sub
 

@@ -239,4 +239,8 @@ Public Class Vehiculos
     Private Sub lista_lotes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lista_lotes.SelectedIndexChanged
 
     End Sub
+
+    Private Sub Lista_vehiculos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lista_vehiculos.SelectedIndexChanged
+
+    End Sub
 End Class

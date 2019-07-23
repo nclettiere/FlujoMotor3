@@ -117,41 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="log-in_Operario_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\log-in_Operario_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="577c14f6dd4381" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\577c14f6dd4381.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icono cerrar FN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono cerrar FN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="577c14f6dd438" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\577c14f6dd438.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icono Maximizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono Maximizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ojito_gris" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ojito_gris.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icono Minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono Minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="barra_ buscador" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barra_ buscador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icono Restaurar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono Restaurar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="boton_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boton_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hide_gris" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hide_gris.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FE01001LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FE01001LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

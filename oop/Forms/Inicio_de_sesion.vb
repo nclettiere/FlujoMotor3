@@ -234,7 +234,7 @@ Public Class Inicio_de_sesion
     Private Sub Inicio_de_sesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not Charged Then
             Dim CargarCSV = New SeleccionarCSV()
-            CargarCSV.Cargar(Me)
+            ''CargarCSV.Cargar(Me)
             CargarCSV.ShowDialog()
         Else
             Menu_Operario.Close()

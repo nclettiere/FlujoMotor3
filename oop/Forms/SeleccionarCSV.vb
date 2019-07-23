@@ -12,9 +12,9 @@
     Private SetUbicaciones As Boolean = False
     Private SetInspecciones As Boolean = False
 
-    Private InicioDeSesion As Inicio_de_sesion
+    Private InicioDeSesion As Login
 
-    Sub Cargar(Parent As Inicio_de_sesion)
+    Sub Cargar(Parent As Login)
         Me.InicioDeSesion = Parent
     End Sub
 

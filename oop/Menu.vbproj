@@ -311,10 +311,70 @@
     <Compile Include="Forms\VerVehiculoPatio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserControls\Agregar_Inspeccion.Designer.vb">
+      <DependentUpon>Agregar_Inspeccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Agregar_Inspeccion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Agregar_Lotesillo.Designer.vb">
+      <DependentUpon>Agregar_Lotesillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Agregar_Lotesillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Agregar_Vehiculillo.Designer.vb">
+      <DependentUpon>Agregar_Vehiculillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Agregar_Vehiculillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asignar_Heredacion.Designer.vb">
+      <DependentUpon>Asignar_Heredacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asignar_Heredacion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Editar_Lotesillo.Designer.vb">
+      <DependentUpon>Editar_Lotesillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Editar_Lotesillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Editar_Vehiculillo.Designer.vb">
+      <DependentUpon>Editar_Vehiculillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Editar_Vehiculillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Eliminar_Lotesillo.Designer.vb">
+      <DependentUpon>Eliminar_Lotesillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Eliminar_Lotesillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Eliminar_Vehiculillo.Designer.vb">
+      <DependentUpon>Eliminar_Vehiculillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Eliminar_Vehiculillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Info_de_Autillos.Designer.vb">
+      <DependentUpon>Info_de_Autillos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Info_de_Autillos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Login.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OK-NOT.Designer.vb">
+      <DependentUpon>OK-NOT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OK-NOT.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\PreviewLote.Designer.vb">
@@ -323,10 +383,40 @@
     <Compile Include="UserControls\PreviewLote.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\Seleccionar_Clientillo.Designer.vb">
+      <DependentUpon>Seleccionar_Clientillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Seleccionar_Clientillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Seleccionar_Vehiculillo.Designer.vb">
+      <DependentUpon>Seleccionar_Vehiculillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Seleccionar_Vehiculillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\Summary.Designer.vb">
       <DependentUpon>Summary.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Summary.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ver_Inspeccionsilla.Designer.vb">
+      <DependentUpon>Ver_Inspeccionsilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ver_Inspeccionsilla.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ver_Lotesillo.Designer.vb">
+      <DependentUpon>Ver_Lotesillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ver_Lotesillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ver_Vehiculillo.Designer.vb">
+      <DependentUpon>Ver_Vehiculillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ver_Vehiculillo.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -406,14 +496,59 @@
     <EmbeddedResource Include="Forms\VerVehiculoPatio.resx">
       <DependentUpon>VerVehiculoPatio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Agregar_Inspeccion.resx">
+      <DependentUpon>Agregar_Inspeccion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Agregar_Lotesillo.resx">
+      <DependentUpon>Agregar_Lotesillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Agregar_Vehiculillo.resx">
+      <DependentUpon>Agregar_Vehiculillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asignar_Heredacion.resx">
+      <DependentUpon>Asignar_Heredacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Editar_Lotesillo.resx">
+      <DependentUpon>Editar_Lotesillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Editar_Vehiculillo.resx">
+      <DependentUpon>Editar_Vehiculillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Eliminar_Lotesillo.resx">
+      <DependentUpon>Eliminar_Lotesillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Eliminar_Vehiculillo.resx">
+      <DependentUpon>Eliminar_Vehiculillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Info_de_Autillos.resx">
+      <DependentUpon>Info_de_Autillos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OK-NOT.resx">
+      <DependentUpon>OK-NOT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\PreviewLote.resx">
       <DependentUpon>PreviewLote.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Seleccionar_Clientillo.resx">
+      <DependentUpon>Seleccionar_Clientillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Seleccionar_Vehiculillo.resx">
+      <DependentUpon>Seleccionar_Vehiculillo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Summary.resx">
       <DependentUpon>Summary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ver_Inspeccionsilla.resx">
+      <DependentUpon>Ver_Inspeccionsilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ver_Lotesillo.resx">
+      <DependentUpon>Ver_Lotesillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ver_Vehiculillo.resx">
+      <DependentUpon>Ver_Vehiculillo.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -493,12 +628,17 @@
     <None Include="Resources\577c14f6dd4381.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DB\DB.vbproj">
+      <Project>{5437B271-1A47-4701-BB80-726B4090B26A}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.vbproj">
       <Project>{dbb27519-5238-4fd6-af9d-80d4eb10c862}</Project>
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\operario_Iconillo.png" />
     <None Include="Resources\FE01001LOGO.png" />
     <Content Include="Resources\icono_ Operario.ico" />
   </ItemGroup>

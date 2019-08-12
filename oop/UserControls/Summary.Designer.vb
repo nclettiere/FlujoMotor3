@@ -25,12 +25,6 @@ Partial Class Summary
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.ListViewVehiculos = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -39,23 +33,26 @@ Partial Class Summary
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.LotesContent = New System.Windows.Forms.FlowLayoutPanel()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -63,6 +60,9 @@ Partial Class Summary
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel7.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -104,6 +104,183 @@ Partial Class Summary
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.46438!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(560, 379)
         Me.TableLayoutPanel2.TabIndex = 0
+        '
+        'ListViewVehiculos
+        '
+        Me.ListViewVehiculos.BackColor = System.Drawing.Color.LightCyan
+        Me.ListViewVehiculos.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader8})
+        Me.ListViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListViewVehiculos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListViewVehiculos.FullRowSelect = True
+        Me.ListViewVehiculos.HideSelection = False
+        Me.ListViewVehiculos.Location = New System.Drawing.Point(3, 3)
+        Me.ListViewVehiculos.Name = "ListViewVehiculos"
+        Me.ListViewVehiculos.Size = New System.Drawing.Size(554, 159)
+        Me.ListViewVehiculos.TabIndex = 2
+        Me.ListViewVehiculos.UseCompatibleStateImageBehavior = False
+        Me.ListViewVehiculos.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "VIN"
+        Me.ColumnHeader1.Width = 116
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Marca"
+        Me.ColumnHeader2.Width = 106
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Modelo"
+        Me.ColumnHeader3.Width = 100
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Tipo"
+        Me.ColumnHeader4.Width = 82
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Color"
+        Me.ColumnHeader5.Width = 82
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Fecha Agregado"
+        Me.ColumnHeader6.Width = 156
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Status"
+        Me.ColumnHeader8.Width = 109
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.TableLayoutPanel4)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(3, 168)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(554, 208)
+        Me.Panel4.TabIndex = 1
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 2
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.90614!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 405.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel5, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel6, 1, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 208.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(554, 208)
+        Me.TableLayoutPanel4.TabIndex = 0
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Label3)
+        Me.Panel5.Controls.Add(Me.Label2)
+        Me.Panel5.Controls.Add(Me.Label4)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(3, 3)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(143, 202)
+        Me.Panel5.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(0, 44)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(143, 27)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Lotes Asignados:"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
+        'Label2
+        '
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(0, 17)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(143, 27)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Fecha Agregado:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(0, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(88, 17)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Vista Rapida"
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.TabControl1)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Location = New System.Drawing.Point(152, 3)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(399, 202)
+        Me.Panel6.TabIndex = 1
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(399, 202)
+        Me.TabControl1.TabIndex = 0
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.Panel7)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(391, 176)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Lotes"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.LotesContent)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel7.Location = New System.Drawing.Point(3, 3)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(385, 170)
+        Me.Panel7.TabIndex = 0
+        '
+        'LotesContent
+        '
+        Me.LotesContent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LotesContent.Location = New System.Drawing.Point(0, 0)
+        Me.LotesContent.Name = "LotesContent"
+        Me.LotesContent.Size = New System.Drawing.Size(385, 170)
+        Me.LotesContent.TabIndex = 0
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(391, 176)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Opciones"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel3
         '
@@ -160,183 +337,6 @@ Partial Class Summary
         Me.Label1.Text = "Operario"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.TableLayoutPanel4)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(3, 168)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(554, 208)
-        Me.Panel4.TabIndex = 1
-        '
-        'ListViewVehiculos
-        '
-        Me.ListViewVehiculos.BackColor = System.Drawing.Color.LightCyan
-        Me.ListViewVehiculos.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader8})
-        Me.ListViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListViewVehiculos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListViewVehiculos.FullRowSelect = True
-        Me.ListViewVehiculos.HideSelection = False
-        Me.ListViewVehiculos.Location = New System.Drawing.Point(3, 3)
-        Me.ListViewVehiculos.Name = "ListViewVehiculos"
-        Me.ListViewVehiculos.Size = New System.Drawing.Size(554, 159)
-        Me.ListViewVehiculos.TabIndex = 2
-        Me.ListViewVehiculos.UseCompatibleStateImageBehavior = False
-        Me.ListViewVehiculos.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "VIN"
-        Me.ColumnHeader1.Width = 116
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Marca"
-        Me.ColumnHeader2.Width = 106
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Modelo"
-        Me.ColumnHeader3.Width = 100
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Tipo"
-        Me.ColumnHeader4.Width = 82
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Color"
-        Me.ColumnHeader5.Width = 82
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Fecha Agregado"
-        Me.ColumnHeader6.Width = 156
-        '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "Status"
-        Me.ColumnHeader8.Width = 109
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.90614!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 405.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Panel5, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.Panel6, 1, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(554, 208)
-        Me.TableLayoutPanel4.TabIndex = 0
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.Label3)
-        Me.Panel5.Controls.Add(Me.Label2)
-        Me.Panel5.Controls.Add(Me.Label4)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(3, 3)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(143, 202)
-        Me.Panel5.TabIndex = 0
-        '
-        'Panel6
-        '
-        Me.Panel6.Controls.Add(Me.TabControl1)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(152, 3)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(399, 202)
-        Me.Panel6.TabIndex = 1
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(0, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 17)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Vista Rapida"
-        '
-        'Label2
-        '
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(0, 17)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(143, 27)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Fecha Agregado:"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        '
-        'Label3
-        '
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(0, 44)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(143, 27)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "Lotes Asignados:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(399, 202)
-        Me.TabControl1.TabIndex = 0
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.Panel7)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(391, 176)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Lotes"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(391, 176)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Opciones"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.LotesContent)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(3, 3)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(385, 170)
-        Me.Panel7.TabIndex = 0
-        '
-        'LotesContent
-        '
-        Me.LotesContent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LotesContent.Location = New System.Drawing.Point(0, 0)
-        Me.LotesContent.Name = "LotesContent"
-        Me.LotesContent.Size = New System.Drawing.Size(385, 170)
-        Me.LotesContent.TabIndex = 0
-        '
         'Summary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -347,9 +347,6 @@ Partial Class Summary
         Me.Panel1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
@@ -358,6 +355,9 @@ Partial Class Summary
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

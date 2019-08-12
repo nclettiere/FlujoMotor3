@@ -1,8 +1,12 @@
-﻿Imports Logica
+﻿Imports System.Data.Odbc
+Imports System.Data.SqlClient
+Imports DB
+Imports Logica
 
 Public Class Summary
 
     Private Shared _instance As Summary
+    Private Conexion As ODBC
 
     Private Usuarios As List(Of Operario)
 
@@ -30,11 +34,25 @@ Public Class Summary
 
     Private currentUser As Operario
 
-    Friend Sub LoadData(main As MainWindow, facade As Facade, currentUser As Operario)
+    Friend Sub LoadData(main As MainWindow, facade As Facade, currentUser As Operario, Conexion As ODBC)
         Me.facade = facade
         Me.main = main
 
         Me.currentUser = currentUser
+
+        Me.Conexion = Conexion
+
+        Dim a As DataTable = Conexion.consultar("Select * FROM empleados")
+
+        Dim index As Integer = 0
+        For Each Row As DataRow In a.Rows
+            Dim newRow = New String() {Row("empleadoId").ToString, Row("empleadoNombre").ToString, Row("empleadoApellido").ToString, Row("empleadoTelefono").ToString}
+            Dim item As ListViewItem = New ListViewItem(newRow)
+            ListViewVehiculos.Items.Add(item)
+        Next
+
+
+
     End Sub
 
 
@@ -73,12 +91,11 @@ Public Class Summary
     End Sub
 
     Private Sub OnSelectedIndexChange(sender As Object, e As EventArgs) Handles ListViewVehiculos.SelectedIndexChanged
-        If ListViewVehiculos.SelectedItems.Count > 0 Then
-            Dim index As Integer = ListViewVehiculos.SelectedItems(0).Index
-            Dim selected As String = ListViewVehiculos.SelectedItems(0).SubItems(0).Text
+        ''If ListViewVehiculos.SelectedItems.Count > 0 Then
+        ''Dim index As Integer = ListViewVehiculos.SelectedItems(0).Index
+        ''Dim selected As String = ListViewVehiculos.SelectedItems(0).SubItems(0).Text
 
-
-            MessageBox.Show("SelectedIndex:=" + index.ToString)
-        End If
+        ''MessageBox.Show("SelectedIndex:=" + index.ToString)
+        ''End If
     End Sub
 End Class

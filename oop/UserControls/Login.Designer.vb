@@ -24,20 +24,17 @@ Partial Class Login
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.tbx_passwd = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbx_user = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_LogIn = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
@@ -45,142 +42,149 @@ Partial Class Login
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'Panel1
-        '
-        Me.Panel1.AutoSize = True
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(456, 384)
-        Me.Panel1.TabIndex = 1
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel2.AutoSize = True
-        Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Controls.Add(Me.btn_LogIn)
-        Me.Panel2.Controls.Add(Me.PictureBox1)
-        Me.Panel2.Location = New System.Drawing.Point(115, 52)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(50)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(226, 281)
-        Me.Panel2.TabIndex = 0
-        '
         'tbx_passwd
         '
-        Me.tbx_passwd.Dock = System.Windows.Forms.DockStyle.Top
-        Me.tbx_passwd.Location = New System.Drawing.Point(0, 86)
-        Me.tbx_passwd.Margin = New System.Windows.Forms.Padding(3, 3, 3, 20)
+        Me.tbx_passwd.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tbx_passwd.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbx_passwd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbx_passwd.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.tbx_passwd.Location = New System.Drawing.Point(50, 179)
+        Me.tbx_passwd.Margin = New System.Windows.Forms.Padding(50, 3, 50, 3)
         Me.tbx_passwd.Name = "tbx_passwd"
-        Me.tbx_passwd.Size = New System.Drawing.Size(226, 20)
+        Me.tbx_passwd.Size = New System.Drawing.Size(249, 22)
         Me.tbx_passwd.TabIndex = 16
         Me.tbx_passwd.UseSystemPasswordChar = True
         '
         'Label3
         '
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label3.Location = New System.Drawing.Point(0, 64)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(3, 137)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(3)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(226, 22)
+        Me.Label3.Size = New System.Drawing.Size(343, 22)
         Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Contrasena:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label3.Text = "CONTRASEÑA"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'tbx_user
         '
-        Me.tbx_user.Dock = System.Windows.Forms.DockStyle.Top
-        Me.tbx_user.Location = New System.Drawing.Point(0, 44)
+        Me.tbx_user.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tbx_user.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbx_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbx_user.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.tbx_user.Location = New System.Drawing.Point(50, 70)
+        Me.tbx_user.Margin = New System.Windows.Forms.Padding(50, 3, 50, 3)
         Me.tbx_user.Name = "tbx_user"
-        Me.tbx_user.Size = New System.Drawing.Size(226, 20)
+        Me.tbx_user.Size = New System.Drawing.Size(249, 22)
         Me.tbx_user.TabIndex = 13
         '
         'Label2
         '
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label2.Location = New System.Drawing.Point(0, 22)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Orange
+        Me.Label2.Location = New System.Drawing.Point(3, 29)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(3)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(226, 22)
+        Me.Label2.Size = New System.Drawing.Size(343, 22)
         Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Nombre de Usuario:"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Text = "USUARIO"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btn_LogIn
         '
-        Me.btn_LogIn.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btn_LogIn.Location = New System.Drawing.Point(0, 252)
-        Me.btn_LogIn.Margin = New System.Windows.Forms.Padding(3, 20, 3, 3)
+        Me.btn_LogIn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_LogIn.BackColor = System.Drawing.Color.Gray
+        Me.btn_LogIn.FlatAppearance.BorderSize = 0
+        Me.btn_LogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_LogIn.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_LogIn.ForeColor = System.Drawing.Color.Orange
+        Me.btn_LogIn.Location = New System.Drawing.Point(106, 389)
+        Me.btn_LogIn.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btn_LogIn.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btn_LogIn.Name = "btn_LogIn"
-        Me.btn_LogIn.Size = New System.Drawing.Size(226, 29)
+        Me.btn_LogIn.Size = New System.Drawing.Size(143, 53)
         Me.btn_LogIn.TabIndex = 14
         Me.btn_LogIn.Text = "Iniciar Sesion"
-        Me.btn_LogIn.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(226, 22)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Iniciar Sesion"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_LogIn.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackgroundImage = Global.oop.My.Resources.Resources.FE01001LOGO
+        Me.PictureBox1.BackgroundImage = Global.oop.My.Resources.Resources.operario_Iconillo
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(226, 104)
+        Me.PictureBox1.Size = New System.Drawing.Size(349, 145)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'Panel3
+        'TableLayoutPanel1
         '
-        Me.Panel3.Controls.Add(Me.tbx_passwd)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.tbx_user)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 104)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(226, 125)
-        Me.Panel3.TabIndex = 17
+        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox1, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.btn_LogIn, 0, 2)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 8)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.67033!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.14286!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(355, 455)
+        Me.TableLayoutPanel1.TabIndex = 17
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 1
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.tbx_user, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.tbx_passwd, 0, 3)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 154)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 4
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(349, 219)
+        Me.TableLayoutPanel2.TabIndex = 2
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
-        Me.Controls.Add(Me.Panel1)
+        Me.BackColor = System.Drawing.Color.DimGray
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Login"
-        Me.Size = New System.Drawing.Size(456, 384)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
+        Me.Padding = New System.Windows.Forms.Padding(5)
+        Me.Size = New System.Drawing.Size(371, 472)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents tbx_passwd As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents tbx_user As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btn_LogIn As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
 End Class

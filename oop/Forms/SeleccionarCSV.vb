@@ -44,7 +44,6 @@
         ElseIf Not System.IO.File.Exists(TextBox1.Text + "\clientes.csv") Then
             MessageBox.Show("Error: CSV 'inspecciones.csv' no encontrado.")
         Else
-            InicioDeSesion.cargar(TextBox1.Text)
             InicioDeSesion.Show()
             Me.Close()
         End If

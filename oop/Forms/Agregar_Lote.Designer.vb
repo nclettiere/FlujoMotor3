@@ -317,7 +317,7 @@ Partial Class Agregar_Lote
         Me.btn_selecClient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btn_selecClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_selecClient.ForeColor = System.Drawing.Color.White
-        Me.btn_selecClient.Location = New System.Drawing.Point(210, 14)
+        Me.btn_selecClient.Location = New System.Drawing.Point(230, 14)
         Me.btn_selecClient.Name = "btn_selecClient"
         Me.btn_selecClient.Size = New System.Drawing.Size(189, 52)
         Me.btn_selecClient.TabIndex = 6

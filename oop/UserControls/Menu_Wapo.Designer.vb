@@ -36,7 +36,17 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanelSesion = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnAddVehicle = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanelMenu.SuspendLayout()
+        Me.pnCOntenedor.SuspendLayout()
         Me.TableLayoutPanelOpciones.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.piBoPuerto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +54,10 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanelInfoUsuario.SuspendLayout()
         Me.TableLayoutPanelSesion.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel2.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanelMenu
@@ -69,6 +83,7 @@ Partial Class Menu_Wapo
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnCOntenedor.BackColor = System.Drawing.Color.Gainsboro
+        Me.pnCOntenedor.Controls.Add(Me.TableLayoutPanel2)
         Me.pnCOntenedor.Location = New System.Drawing.Point(282, 3)
         Me.pnCOntenedor.Name = "pnCOntenedor"
         Me.pnCOntenedor.Size = New System.Drawing.Size(915, 694)
@@ -265,6 +280,120 @@ Partial Class Menu_Wapo
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.DarkGray
+        Me.TableLayoutPanel2.ColumnCount = 1
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Panel2, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Panel3, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Panel1, 0, 2)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.ForeColor = System.Drawing.Color.OrangeRed
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 3
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 470.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(915, 694)
+        Me.TableLayoutPanel2.TabIndex = 1
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(3, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(909, 30)
+        Me.Panel2.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.DimGray
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 18.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(286, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(329, 30)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Total de Vehiculos Ingresados: 0"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.DimGray
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 18.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.Orange
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(286, 30)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Vehiculos Pendientes: 0"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Button3)
+        Me.Panel3.Controls.Add(Me.btnAddVehicle)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(3, 39)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(909, 51)
+        Me.Panel3.TabIndex = 1
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.DimGray
+        Me.Button3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button3.Font = New System.Drawing.Font("Arial Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.Orange
+        Me.Button3.Location = New System.Drawing.Point(159, 0)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(227, 51)
+        Me.Button3.TabIndex = 1
+        Me.Button3.Text = "Ingresar Nuevo Vehiculo"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'btnAddVehicle
+        '
+        Me.btnAddVehicle.BackColor = System.Drawing.Color.DimGray
+        Me.btnAddVehicle.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btnAddVehicle.Font = New System.Drawing.Font("Arial Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddVehicle.ForeColor = System.Drawing.Color.Orange
+        Me.btnAddVehicle.Location = New System.Drawing.Point(0, 0)
+        Me.btnAddVehicle.Name = "btnAddVehicle"
+        Me.btnAddVehicle.Size = New System.Drawing.Size(159, 51)
+        Me.btnAddVehicle.TabIndex = 0
+        Me.btnAddVehicle.Text = "Ver Vehiculos"
+        Me.btnAddVehicle.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 96)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(909, 595)
+        Me.Panel1.TabIndex = 2
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(396, 193)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(147, 31)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "CONTENT"
+        '
         'Menu_Wapo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -274,6 +403,7 @@ Partial Class Menu_Wapo
         Me.Name = "Menu_Wapo"
         Me.Size = New System.Drawing.Size(1200, 700)
         Me.TableLayoutPanelMenu.ResumeLayout(False)
+        Me.pnCOntenedor.ResumeLayout(False)
         Me.TableLayoutPanelOpciones.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.piBoPuerto, System.ComponentModel.ISupportInitialize).EndInit()
@@ -282,6 +412,11 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanelInfoUsuario.PerformLayout()
         Me.TableLayoutPanelSesion.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -300,4 +435,13 @@ Partial Class Menu_Wapo
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Button2 As Button
     Friend WithEvents pnCOntenedor As Panel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Button3 As Button
+    Friend WithEvents btnAddVehicle As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label4 As Label
 End Class

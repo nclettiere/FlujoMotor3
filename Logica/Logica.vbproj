@@ -72,6 +72,7 @@
     <Compile Include="Clases\Operario.vb" />
     <Compile Include="Clases\Patio.vb" />
     <Compile Include="Clases\Ubicacion.vb" />
+    <Compile Include="Clases\VehiculoManagement.vb" />
     <Compile Include="Clases\Vehiculo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -107,6 +108,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DB\DB.vbproj">
+      <Project>{5437b271-1a47-4701-bb80-726b4090b26a}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

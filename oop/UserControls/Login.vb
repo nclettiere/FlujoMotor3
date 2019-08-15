@@ -8,7 +8,7 @@ Public Class Login
     Private Usuarios As List(Of Operario)
 
     Private facade As Facade
-    Private main As MainWindow
+    Private main As Ventanita_Login
 
     Private OperarioId As Integer
 
@@ -25,6 +25,7 @@ Public Class Login
     End Property
 
     Private Sub Btn_LogIn_Click_1(sender As Object, e As EventArgs) Handles btn_LogIn.Click
+#If RELEASE Then
         Dim Conexion As ODBC = New ODBC()
 
         Conexion.USER = tbx_user.Text
@@ -34,10 +35,13 @@ Public Class Login
         If (isConnected) Then
             ''Conexion.Hacer_consulta("Select * FROM Personas")
             MessageBox.Show("Conectado Exitosamente.")
-            MainWindow.ChangeControlSummary(0, Conexion)
+            Ventanita_Login.ChangeControlSummary(0, Conexion)
         Else
             MessageBox.Show("Usuario o Contrasena invalidos.")
         End If
+#Else
+        Ventanita_Login.ChangeControlSummary(0, Nothing)
+#End If
 
     End Sub
 End Class

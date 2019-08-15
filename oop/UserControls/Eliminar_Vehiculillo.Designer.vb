@@ -137,6 +137,7 @@ Partial Class Eliminar_Vehiculillo
         Me.txtVIN.Name = "txtVIN"
         Me.txtVIN.Size = New System.Drawing.Size(271, 22)
         Me.txtVIN.TabIndex = 3
+        Me.txtVIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -151,13 +152,13 @@ Partial Class Eliminar_Vehiculillo
         Me.Label1.Text = "V.I.N."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Eliminar_V
+        'Eliminar_Vehiculillo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Name = "Eliminar_V"
+        Me.Name = "Eliminar_Vehiculillo"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(436, 155)
         Me.TableLayoutPanel1.ResumeLayout(False)

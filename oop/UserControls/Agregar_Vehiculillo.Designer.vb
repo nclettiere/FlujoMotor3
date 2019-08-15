@@ -27,6 +27,7 @@ Partial Class Agregar_Vehiculillo
         Me.btAceptar = New System.Windows.Forms.Button()
         Me.btCancelar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtColor = New System.Windows.Forms.TextBox()
         Me.txtAno = New System.Windows.Forms.TextBox()
         Me.txtModelo = New System.Windows.Forms.TextBox()
@@ -39,6 +40,7 @@ Partial Class Agregar_Vehiculillo
         Me.txtVin = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.coBoTipo = New System.Windows.Forms.ComboBox()
+        Me.btSeleccionar = New System.Windows.Forms.Button()
         Me.TableLayoutPanelMain.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -59,21 +61,19 @@ Partial Class Agregar_Vehiculillo
         Me.TableLayoutPanelMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.47205!))
         Me.TableLayoutPanelMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.52795!))
         Me.TableLayoutPanelMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanelMain.Size = New System.Drawing.Size(376, 483)
+        Me.TableLayoutPanelMain.Size = New System.Drawing.Size(529, 483)
         Me.TableLayoutPanelMain.TabIndex = 0
         '
         'TableLayoutPanel2
         '
-        Me.TableLayoutPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TableLayoutPanel2.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel2.ColumnCount = 2
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.btAceptar, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btCancelar, 1, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 411)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(79, 411)
         Me.TableLayoutPanel2.MaximumSize = New System.Drawing.Size(370, 69)
         Me.TableLayoutPanel2.MinimumSize = New System.Drawing.Size(370, 69)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -124,8 +124,9 @@ Partial Class Agregar_Vehiculillo
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.05405!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.94595!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.48948!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.51051!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.txtColor, 1, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.txtAno, 1, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.txtModelo, 1, 3)
@@ -138,19 +139,33 @@ Partial Class Agregar_Vehiculillo
         Me.TableLayoutPanel1.Controls.Add(Me.txtVin, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.coBoTipo, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.btSeleccionar, 1, 6)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 6
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(370, 402)
+        Me.TableLayoutPanel1.RowCount = 7
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(523, 402)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(3, 359)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(142, 26)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "LOTE"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtColor
         '
@@ -158,12 +173,13 @@ Partial Class Agregar_Vehiculillo
         Me.txtColor.BackColor = System.Drawing.Color.White
         Me.txtColor.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtColor.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtColor.Location = New System.Drawing.Point(135, 357)
+        Me.txtColor.Location = New System.Drawing.Point(158, 302)
         Me.txtColor.Margin = New System.Windows.Forms.Padding(10)
         Me.txtColor.MaxLength = 16
         Me.txtColor.Name = "txtColor"
-        Me.txtColor.Size = New System.Drawing.Size(225, 22)
+        Me.txtColor.Size = New System.Drawing.Size(355, 22)
         Me.txtColor.TabIndex = 18
+        Me.txtColor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtAno
         '
@@ -171,12 +187,13 @@ Partial Class Agregar_Vehiculillo
         Me.txtAno.BackColor = System.Drawing.Color.White
         Me.txtAno.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtAno.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAno.Location = New System.Drawing.Point(135, 289)
+        Me.txtAno.Location = New System.Drawing.Point(158, 245)
         Me.txtAno.Margin = New System.Windows.Forms.Padding(10)
         Me.txtAno.MaxLength = 4
         Me.txtAno.Name = "txtAno"
-        Me.txtAno.Size = New System.Drawing.Size(225, 22)
+        Me.txtAno.Size = New System.Drawing.Size(355, 22)
         Me.txtAno.TabIndex = 17
+        Me.txtAno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtModelo
         '
@@ -184,12 +201,13 @@ Partial Class Agregar_Vehiculillo
         Me.txtModelo.BackColor = System.Drawing.Color.White
         Me.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtModelo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtModelo.Location = New System.Drawing.Point(135, 222)
+        Me.txtModelo.Location = New System.Drawing.Point(158, 188)
         Me.txtModelo.Margin = New System.Windows.Forms.Padding(10)
         Me.txtModelo.MaxLength = 32
         Me.txtModelo.Name = "txtModelo"
-        Me.txtModelo.Size = New System.Drawing.Size(225, 22)
+        Me.txtModelo.Size = New System.Drawing.Size(355, 22)
         Me.txtModelo.TabIndex = 16
+        Me.txtModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtMarca
         '
@@ -197,12 +215,13 @@ Partial Class Agregar_Vehiculillo
         Me.txtMarca.BackColor = System.Drawing.Color.White
         Me.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMarca.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMarca.Location = New System.Drawing.Point(135, 155)
+        Me.txtMarca.Location = New System.Drawing.Point(158, 131)
         Me.txtMarca.Margin = New System.Windows.Forms.Padding(10)
         Me.txtMarca.MaxLength = 16
         Me.txtMarca.Name = "txtMarca"
-        Me.txtMarca.Size = New System.Drawing.Size(225, 22)
+        Me.txtMarca.Size = New System.Drawing.Size(355, 22)
         Me.txtMarca.TabIndex = 15
+        Me.txtMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label10
         '
@@ -210,9 +229,9 @@ Partial Class Agregar_Vehiculillo
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Orange
-        Me.Label10.Location = New System.Drawing.Point(3, 355)
+        Me.Label10.Location = New System.Drawing.Point(3, 300)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(119, 26)
+        Me.Label10.Size = New System.Drawing.Size(142, 26)
         Me.Label10.TabIndex = 13
         Me.Label10.Text = "COLOR"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -223,9 +242,9 @@ Partial Class Agregar_Vehiculillo
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Orange
-        Me.Label8.Location = New System.Drawing.Point(3, 287)
+        Me.Label8.Location = New System.Drawing.Point(3, 243)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(119, 26)
+        Me.Label8.Size = New System.Drawing.Size(142, 26)
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "AÑO"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -236,9 +255,9 @@ Partial Class Agregar_Vehiculillo
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Orange
-        Me.Label6.Location = New System.Drawing.Point(3, 220)
+        Me.Label6.Location = New System.Drawing.Point(3, 186)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(119, 26)
+        Me.Label6.Size = New System.Drawing.Size(142, 26)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "MODELO"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -249,9 +268,9 @@ Partial Class Agregar_Vehiculillo
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Orange
-        Me.Label4.Location = New System.Drawing.Point(3, 153)
+        Me.Label4.Location = New System.Drawing.Point(3, 129)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(119, 26)
+        Me.Label4.Size = New System.Drawing.Size(142, 26)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "MARCA"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -262,9 +281,9 @@ Partial Class Agregar_Vehiculillo
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
-        Me.Label2.Location = New System.Drawing.Point(3, 86)
+        Me.Label2.Location = New System.Drawing.Point(3, 72)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(119, 26)
+        Me.Label2.Size = New System.Drawing.Size(142, 26)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "TIPO"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -276,12 +295,13 @@ Partial Class Agregar_Vehiculillo
         Me.txtVin.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtVin.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtVin.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtVin.Location = New System.Drawing.Point(135, 22)
+        Me.txtVin.Location = New System.Drawing.Point(158, 17)
         Me.txtVin.Margin = New System.Windows.Forms.Padding(10)
         Me.txtVin.MaxLength = 17
         Me.txtVin.Name = "txtVin"
-        Me.txtVin.Size = New System.Drawing.Size(225, 22)
+        Me.txtVin.Size = New System.Drawing.Size(355, 22)
         Me.txtVin.TabIndex = 0
+        Me.txtVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -289,9 +309,9 @@ Partial Class Agregar_Vehiculillo
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Orange
-        Me.Label1.Location = New System.Drawing.Point(3, 20)
+        Me.Label1.Location = New System.Drawing.Point(3, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(119, 26)
+        Me.Label1.Size = New System.Drawing.Size(142, 26)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "V.I.N."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -304,21 +324,39 @@ Partial Class Agregar_Vehiculillo
         Me.coBoTipo.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.coBoTipo.FormattingEnabled = True
         Me.coBoTipo.Items.AddRange(New Object() {"Auto", "Camion", "Camioneta", "Mini van", "Van", "SUV"})
-        Me.coBoTipo.Location = New System.Drawing.Point(135, 87)
+        Me.coBoTipo.Location = New System.Drawing.Point(158, 73)
         Me.coBoTipo.Margin = New System.Windows.Forms.Padding(10)
         Me.coBoTipo.Name = "coBoTipo"
-        Me.coBoTipo.Size = New System.Drawing.Size(225, 24)
+        Me.coBoTipo.Size = New System.Drawing.Size(355, 24)
         Me.coBoTipo.TabIndex = 14
         '
-        'Agregar_V
+        'btSeleccionar
+        '
+        Me.btSeleccionar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btSeleccionar.BackColor = System.Drawing.Color.DimGray
+        Me.btSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btSeleccionar.FlatAppearance.BorderSize = 0
+        Me.btSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSeleccionar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSeleccionar.ForeColor = System.Drawing.Color.Orange
+        Me.btSeleccionar.Location = New System.Drawing.Point(264, 345)
+        Me.btSeleccionar.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btSeleccionar.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btSeleccionar.Name = "btSeleccionar"
+        Me.btSeleccionar.Size = New System.Drawing.Size(143, 53)
+        Me.btSeleccionar.TabIndex = 20
+        Me.btSeleccionar.Text = "Seleccionar"
+        Me.btSeleccionar.UseVisualStyleBackColor = False
+        '
+        'Agregar_Vehiculillo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanelMain)
-        Me.Name = "Agregar_V"
+        Me.Name = "Agregar_Vehiculillo"
         Me.Padding = New System.Windows.Forms.Padding(5)
-        Me.Size = New System.Drawing.Size(392, 499)
+        Me.Size = New System.Drawing.Size(545, 499)
         Me.TableLayoutPanelMain.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -344,4 +382,6 @@ Partial Class Agregar_Vehiculillo
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents btAceptar As Button
     Friend WithEvents btCancelar As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btSeleccionar As Button
 End Class

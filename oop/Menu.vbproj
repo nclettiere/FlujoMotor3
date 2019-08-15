@@ -236,10 +236,16 @@
     <Compile Include="Forms\SeleccionarCSV.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.vb">
-      <DependentUpon>MainWindow.vb</DependentUpon>
+    <Compile Include="UserControls\Entrega.Designer.vb">
+      <DependentUpon>Entrega.vb</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.vb">
+    <Compile Include="UserControls\Entrega.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Login.Designer.vb">
+      <DependentUpon>Ventanita_Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -329,12 +335,6 @@
     <Compile Include="UserControls\Agregar_Vehiculillo.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Asignar_Heredacion.Designer.vb">
-      <DependentUpon>Asignar_Heredacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Asignar_Heredacion.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UserControls\Editar_Lotesillo.Designer.vb">
       <DependentUpon>Editar_Lotesillo.vb</DependentUpon>
     </Compile>
@@ -369,6 +369,12 @@
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Login.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Menu_Wapo.Designer.vb">
+      <DependentUpon>Menu_Wapo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Menu_Wapo.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\OK-NOT.Designer.vb">
@@ -419,6 +425,36 @@
     <Compile Include="UserControls\Ver_Vehiculillo.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Ventanitas\Ventanita_Agregar.Designer.vb">
+      <DependentUpon>Ventanita_Agregar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Agregar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Editar.Designer.vb">
+      <DependentUpon>Ventanita_Editar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Editar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Eliminar.Designer.vb">
+      <DependentUpon>Ventanita_Eliminar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Eliminar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Ver.Designer.vb">
+      <DependentUpon>Ventanita_Ver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Ver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Seleccionar.Designer.vb">
+      <DependentUpon>Ventanita_Seleccionar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanitas\Ventanita_Seleccionar.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\AgregarInspeccion.resx">
@@ -460,8 +496,11 @@
     <EmbeddedResource Include="Forms\SeleccionarCSV.resx">
       <DependentUpon>SeleccionarCSV.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
-      <DependentUpon>MainWindow.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\Entrega.resx">
+      <DependentUpon>Entrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanitas\Ventanita_Login.resx">
+      <DependentUpon>Ventanita_Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -505,9 +544,6 @@
     <EmbeddedResource Include="UserControls\Agregar_Vehiculillo.resx">
       <DependentUpon>Agregar_Vehiculillo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Asignar_Heredacion.resx">
-      <DependentUpon>Asignar_Heredacion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Editar_Lotesillo.resx">
       <DependentUpon>Editar_Lotesillo.vb</DependentUpon>
     </EmbeddedResource>
@@ -525,6 +561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Menu_Wapo.resx">
+      <DependentUpon>Menu_Wapo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\OK-NOT.resx">
       <DependentUpon>OK-NOT.vb</DependentUpon>
@@ -549,6 +588,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Ver_Vehiculillo.resx">
       <DependentUpon>Ver_Vehiculillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanitas\Ventanita_Agregar.resx">
+      <DependentUpon>Ventanita_Agregar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanitas\Ventanita_Editar.resx">
+      <DependentUpon>Ventanita_Editar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanitas\Ventanita_Eliminar.resx">
+      <DependentUpon>Ventanita_Eliminar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanitas\Ventanita_Ver.resx">
+      <DependentUpon>Ventanita_Ver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanitas\Ventanita_Seleccionar.resx">
+      <DependentUpon>Ventanita_Seleccionar.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -638,6 +692,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\next-1aaaa.png" />
+    <None Include="Resources\logoutss.png" />
     <None Include="Resources\operario_Iconillo.png" />
     <None Include="Resources\FE01001LOGO.png" />
     <Content Include="Resources\icono_ Operario.ico" />

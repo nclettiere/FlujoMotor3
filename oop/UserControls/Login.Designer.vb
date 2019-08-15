@@ -48,11 +48,12 @@ Partial Class Login
         Me.tbx_passwd.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbx_passwd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbx_passwd.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.tbx_passwd.Location = New System.Drawing.Point(50, 179)
+        Me.tbx_passwd.Location = New System.Drawing.Point(50, 192)
         Me.tbx_passwd.Margin = New System.Windows.Forms.Padding(50, 3, 50, 3)
         Me.tbx_passwd.Name = "tbx_passwd"
-        Me.tbx_passwd.Size = New System.Drawing.Size(249, 22)
+        Me.tbx_passwd.Size = New System.Drawing.Size(270, 22)
         Me.tbx_passwd.TabIndex = 16
+        Me.tbx_passwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tbx_passwd.UseSystemPasswordChar = True
         '
         'Label3
@@ -61,10 +62,10 @@ Partial Class Login
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label3.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(3, 137)
+        Me.Label3.Location = New System.Drawing.Point(3, 149)
         Me.Label3.Margin = New System.Windows.Forms.Padding(3)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(343, 22)
+        Me.Label3.Size = New System.Drawing.Size(364, 22)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "CONTRASEÑA"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -75,11 +76,12 @@ Partial Class Login
         Me.tbx_user.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbx_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbx_user.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.tbx_user.Location = New System.Drawing.Point(50, 70)
+        Me.tbx_user.Location = New System.Drawing.Point(50, 76)
         Me.tbx_user.Margin = New System.Windows.Forms.Padding(50, 3, 50, 3)
         Me.tbx_user.Name = "tbx_user"
-        Me.tbx_user.Size = New System.Drawing.Size(249, 22)
+        Me.tbx_user.Size = New System.Drawing.Size(270, 22)
         Me.tbx_user.TabIndex = 13
+        Me.tbx_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -87,10 +89,10 @@ Partial Class Login
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label2.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
-        Me.Label2.Location = New System.Drawing.Point(3, 29)
+        Me.Label2.Location = New System.Drawing.Point(3, 33)
         Me.Label2.Margin = New System.Windows.Forms.Padding(3)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(343, 22)
+        Me.Label2.Size = New System.Drawing.Size(364, 22)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "USUARIO"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -103,7 +105,7 @@ Partial Class Login
         Me.btn_LogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_LogIn.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_LogIn.ForeColor = System.Drawing.Color.Orange
-        Me.btn_LogIn.Location = New System.Drawing.Point(106, 389)
+        Me.btn_LogIn.Location = New System.Drawing.Point(116, 414)
         Me.btn_LogIn.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btn_LogIn.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btn_LogIn.Name = "btn_LogIn"
@@ -119,7 +121,7 @@ Partial Class Login
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(349, 145)
+        Me.PictureBox1.Size = New System.Drawing.Size(370, 154)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
@@ -140,7 +142,7 @@ Partial Class Login
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.67033!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.14286!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(355, 455)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(376, 482)
         Me.TableLayoutPanel1.TabIndex = 17
         '
         'TableLayoutPanel2
@@ -152,14 +154,14 @@ Partial Class Login
         Me.TableLayoutPanel2.Controls.Add(Me.tbx_user, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.tbx_passwd, 0, 3)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 154)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 163)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 4
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(349, 219)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(370, 233)
         Me.TableLayoutPanel2.TabIndex = 2
         '
         'Login
@@ -170,7 +172,7 @@ Partial Class Login
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Login"
         Me.Padding = New System.Windows.Forms.Padding(5)
-        Me.Size = New System.Drawing.Size(371, 472)
+        Me.Size = New System.Drawing.Size(392, 499)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)

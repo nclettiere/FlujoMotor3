@@ -23,15 +23,18 @@ Partial Class Ver_Inspeccionsilla
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.labTitulo = New System.Windows.Forms.Label()
-        Me.labNombre = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.labNombre = New System.Windows.Forms.Label()
+        Me.labTitulo = New System.Windows.Forms.Label()
         Me.riCheBoDescripcion = New System.Windows.Forms.RichTextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 2)
@@ -47,34 +50,8 @@ Partial Class Ver_Inspeccionsilla
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.3516!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.789474!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.68421!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(528, 475)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(956, 528)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'labTitulo
-        '
-        Me.labTitulo.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labTitulo.AutoSize = True
-        Me.labTitulo.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labTitulo.ForeColor = System.Drawing.Color.Orange
-        Me.labTitulo.Location = New System.Drawing.Point(3, 28)
-        Me.labTitulo.Name = "labTitulo"
-        Me.labTitulo.Size = New System.Drawing.Size(522, 26)
-        Me.labTitulo.TabIndex = 2
-        Me.labTitulo.Text = "A"
-        Me.labTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'labNombre
-        '
-        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labNombre.AutoSize = True
-        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labNombre.ForeColor = System.Drawing.Color.Orange
-        Me.labNombre.Location = New System.Drawing.Point(3, 110)
-        Me.labNombre.Name = "labNombre"
-        Me.labNombre.Size = New System.Drawing.Size(522, 26)
-        Me.labNombre.TabIndex = 3
-        Me.labNombre.Text = "B"
-        Me.labNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label1
         '
@@ -82,21 +59,47 @@ Partial Class Ver_Inspeccionsilla
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Orange
-        Me.Label1.Location = New System.Drawing.Point(3, 169)
+        Me.Label1.Location = New System.Drawing.Point(3, 189)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(522, 26)
+        Me.Label1.Size = New System.Drawing.Size(950, 26)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "DESCRIPCION"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'labNombre
+        '
+        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.labNombre.AutoSize = True
+        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNombre.ForeColor = System.Drawing.Color.Orange
+        Me.labNombre.Location = New System.Drawing.Point(3, 123)
+        Me.labNombre.Name = "labNombre"
+        Me.labNombre.Size = New System.Drawing.Size(950, 26)
+        Me.labNombre.TabIndex = 3
+        Me.labNombre.Text = "B"
+        Me.labNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'labTitulo
+        '
+        Me.labTitulo.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.labTitulo.AutoSize = True
+        Me.labTitulo.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labTitulo.ForeColor = System.Drawing.Color.Orange
+        Me.labTitulo.Location = New System.Drawing.Point(3, 32)
+        Me.labTitulo.Name = "labTitulo"
+        Me.labTitulo.Size = New System.Drawing.Size(950, 26)
+        Me.labTitulo.TabIndex = 2
+        Me.labTitulo.Text = "A"
+        Me.labTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'riCheBoDescripcion
         '
         Me.riCheBoDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.riCheBoDescripcion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.riCheBoDescripcion.Location = New System.Drawing.Point(7, 207)
+        Me.riCheBoDescripcion.Location = New System.Drawing.Point(7, 230)
         Me.riCheBoDescripcion.Margin = New System.Windows.Forms.Padding(7)
         Me.riCheBoDescripcion.Name = "riCheBoDescripcion"
-        Me.riCheBoDescripcion.Size = New System.Drawing.Size(514, 261)
+        Me.riCheBoDescripcion.Size = New System.Drawing.Size(942, 291)
         Me.riCheBoDescripcion.TabIndex = 5
         Me.riCheBoDescripcion.Text = ""
         '
@@ -108,7 +111,7 @@ Partial Class Ver_Inspeccionsilla
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Ver_Inspeccionsilla"
         Me.Padding = New System.Windows.Forms.Padding(5)
-        Me.Size = New System.Drawing.Size(544, 491)
+        Me.Size = New System.Drawing.Size(972, 544)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)

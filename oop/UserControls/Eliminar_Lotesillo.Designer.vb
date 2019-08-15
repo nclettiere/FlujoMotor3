@@ -27,8 +27,8 @@ Partial Class Eliminar_Lotesillo
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -113,7 +113,7 @@ Partial Class Eliminar_Lotesillo
         Me.TableLayoutPanel2.ColumnCount = 2
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.95169!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.04831!))
-        Me.TableLayoutPanel2.Controls.Add(Me.txtNombre, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.txtID, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
@@ -122,6 +122,22 @@ Partial Class Eliminar_Lotesillo
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(414, 55)
         Me.TableLayoutPanel2.TabIndex = 4
+        '
+        'txtID
+        '
+        Me.txtID.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtID.BackColor = System.Drawing.Color.White
+        Me.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtID.Enabled = False
+        Me.txtID.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtID.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.txtID.Location = New System.Drawing.Point(133, 16)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(10)
+        Me.txtID.MaxLength = 17
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(271, 22)
+        Me.txtID.TabIndex = 3
+        Me.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -133,31 +149,16 @@ Partial Class Eliminar_Lotesillo
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(117, 26)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "NOMBRE"
+        Me.Label1.Text = "ID"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'txtNombre
-        '
-        Me.txtNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtNombre.BackColor = System.Drawing.Color.White
-        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtNombre.Enabled = False
-        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtNombre.Location = New System.Drawing.Point(133, 16)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(10)
-        Me.txtNombre.MaxLength = 17
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(271, 22)
-        Me.txtNombre.TabIndex = 3
-        '
-        'Eliminar_L
+        'Eliminar_Lotesillo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Name = "Eliminar_L"
+        Me.Name = "Eliminar_Lotesillo"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(436, 155)
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -174,5 +175,5 @@ Partial Class Eliminar_Lotesillo
     Friend WithEvents Button2 As Button
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents txtID As TextBox
 End Class

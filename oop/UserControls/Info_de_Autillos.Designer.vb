@@ -27,10 +27,10 @@ Partial Class Info_de_Autillos
         Me.autito = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lista_vehiculos = New System.Windows.Forms.ListView()
-        Me.VIN = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.MARCA = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TIPO = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.FECHA_DE_AGREGAMIENTO = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.VIN = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.MARCA = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.TIPO = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.FECHA_DE_AGREGAMIENTO = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
         Me.btAceptarVehiculo = New System.Windows.Forms.Button()
@@ -45,17 +45,17 @@ Partial Class Info_de_Autillos
         Me.btAceptarLote = New System.Windows.Forms.Button()
         Me.btVerLote = New System.Windows.Forms.Button()
         Me.lista_lotes = New System.Windows.Forms.ListView()
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel1.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.autito.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.lote.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.SuspendLayout()
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.Panel1.SuspendLayout
+        Me.TabControl1.SuspendLayout
+        Me.autito.SuspendLayout
+        Me.TableLayoutPanel1.SuspendLayout
+        Me.TableLayoutPanel2.SuspendLayout
+        Me.TableLayoutPanel3.SuspendLayout
+        Me.lote.SuspendLayout
+        Me.TableLayoutPanel4.SuspendLayout
+        Me.TableLayoutPanel5.SuspendLayout
+        Me.SuspendLayout
         '
         'Panel1
         '
@@ -68,12 +68,12 @@ Partial Class Info_de_Autillos
         '
         'TabControl1
         '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.autito)
         Me.TabControl1.Controls.Add(Me.lote)
-        Me.TabControl1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Font = New System.Drawing.Font("Calibri", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.TabControl1.ItemSize = New System.Drawing.Size(70, 18)
         Me.TabControl1.Location = New System.Drawing.Point(3, 3)
         Me.TabControl1.Name = "TabControl1"
@@ -85,7 +85,7 @@ Partial Class Info_de_Autillos
         '
         Me.autito.BackColor = System.Drawing.Color.Gray
         Me.autito.Controls.Add(Me.TableLayoutPanel1)
-        Me.autito.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.autito.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.autito.ForeColor = System.Drawing.Color.Orange
         Me.autito.ImageKey = "(ninguno)"
         Me.autito.Location = New System.Drawing.Point(4, 22)
@@ -98,7 +98,7 @@ Partial Class Info_de_Autillos
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel1.Controls.Add(Me.lista_vehiculos, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 0)
@@ -114,21 +114,19 @@ Partial Class Info_de_Autillos
         '
         'lista_vehiculos
         '
-        Me.lista_vehiculos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lista_vehiculos.BackColor = System.Drawing.Color.White
         Me.lista_vehiculos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lista_vehiculos.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.VIN, Me.MARCA, Me.TIPO, Me.FECHA_DE_AGREGAMIENTO})
-        Me.lista_vehiculos.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lista_vehiculos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lista_vehiculos.Font = New System.Drawing.Font("Calibri", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lista_vehiculos.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lista_vehiculos.FullRowSelect = True
-        Me.lista_vehiculos.HideSelection = False
+        Me.lista_vehiculos.FullRowSelect = true
+        Me.lista_vehiculos.HideSelection = false
         Me.lista_vehiculos.Location = New System.Drawing.Point(3, 74)
         Me.lista_vehiculos.Name = "lista_vehiculos"
         Me.lista_vehiculos.Size = New System.Drawing.Size(901, 424)
         Me.lista_vehiculos.TabIndex = 4
-        Me.lista_vehiculos.UseCompatibleStateImageBehavior = False
+        Me.lista_vehiculos.UseCompatibleStateImageBehavior = false
         Me.lista_vehiculos.View = System.Windows.Forms.View.Details
         '
         'VIN
@@ -166,7 +164,7 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
         Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(543, 66)
         Me.TableLayoutPanel2.TabIndex = 2
         '
@@ -177,7 +175,7 @@ Partial Class Info_de_Autillos
         Me.btActualizarVehiculo.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btActualizarVehiculo.FlatAppearance.BorderSize = 0
         Me.btActualizarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btActualizarVehiculo.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btActualizarVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btActualizarVehiculo.ForeColor = System.Drawing.Color.Orange
         Me.btActualizarVehiculo.Location = New System.Drawing.Point(200, 8)
         Me.btActualizarVehiculo.MaximumSize = New System.Drawing.Size(143, 53)
@@ -186,7 +184,7 @@ Partial Class Info_de_Autillos
         Me.btActualizarVehiculo.Size = New System.Drawing.Size(143, 53)
         Me.btActualizarVehiculo.TabIndex = 2
         Me.btActualizarVehiculo.Text = "Actualizar"
-        Me.btActualizarVehiculo.UseVisualStyleBackColor = False
+        Me.btActualizarVehiculo.UseVisualStyleBackColor = false
         '
         'btAceptarVehiculo
         '
@@ -195,7 +193,7 @@ Partial Class Info_de_Autillos
         Me.btAceptarVehiculo.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btAceptarVehiculo.FlatAppearance.BorderSize = 0
         Me.btAceptarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptarVehiculo.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAceptarVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btAceptarVehiculo.ForeColor = System.Drawing.Color.Orange
         Me.btAceptarVehiculo.Location = New System.Drawing.Point(39, 8)
         Me.btAceptarVehiculo.MaximumSize = New System.Drawing.Size(143, 53)
@@ -204,7 +202,7 @@ Partial Class Info_de_Autillos
         Me.btAceptarVehiculo.Size = New System.Drawing.Size(143, 53)
         Me.btAceptarVehiculo.TabIndex = 0
         Me.btAceptarVehiculo.Text = "Aceptar"
-        Me.btAceptarVehiculo.UseVisualStyleBackColor = False
+        Me.btAceptarVehiculo.UseVisualStyleBackColor = false
         '
         'btInfoVehiculo
         '
@@ -213,7 +211,7 @@ Partial Class Info_de_Autillos
         Me.btInfoVehiculo.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btInfoVehiculo.FlatAppearance.BorderSize = 0
         Me.btInfoVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btInfoVehiculo.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btInfoVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btInfoVehiculo.ForeColor = System.Drawing.Color.Orange
         Me.btInfoVehiculo.Location = New System.Drawing.Point(361, 8)
         Me.btInfoVehiculo.MaximumSize = New System.Drawing.Size(143, 53)
@@ -222,13 +220,13 @@ Partial Class Info_de_Autillos
         Me.btInfoVehiculo.Size = New System.Drawing.Size(143, 53)
         Me.btInfoVehiculo.TabIndex = 1
         Me.btInfoVehiculo.Text = "Informacion"
-        Me.btInfoVehiculo.UseVisualStyleBackColor = False
+        Me.btInfoVehiculo.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel3.ColumnCount = 2
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.13541!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.8646!))
@@ -237,16 +235,16 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(901, 65)
         Me.TableLayoutPanel3.TabIndex = 3
         '
         'txtBuscar
         '
-        Me.txtBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.txtBuscar.BackColor = System.Drawing.Color.White
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtBuscar.Font = New System.Drawing.Font("Calibri", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(3, 19)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(697, 27)
@@ -260,14 +258,14 @@ Partial Class Info_de_Autillos
         Me.btBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btBuscar.FlatAppearance.BorderSize = 0
         Me.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btBuscar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBuscar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.Orange
         Me.btBuscar.Location = New System.Drawing.Point(730, 12)
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(143, 40)
         Me.btBuscar.TabIndex = 2
         Me.btBuscar.Text = "Buscar"
-        Me.btBuscar.UseVisualStyleBackColor = False
+        Me.btBuscar.UseVisualStyleBackColor = false
         '
         'lote
         '
@@ -283,7 +281,7 @@ Partial Class Info_de_Autillos
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.ColumnCount = 1
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 2)
         Me.TableLayoutPanel4.Controls.Add(Me.lista_lotes, 0, 1)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
@@ -312,7 +310,7 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
         Me.TableLayoutPanel5.RowCount = 1
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(543, 66)
         Me.TableLayoutPanel5.TabIndex = 6
         '
@@ -323,7 +321,7 @@ Partial Class Info_de_Autillos
         Me.btActualizarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btActualizarLote.FlatAppearance.BorderSize = 0
         Me.btActualizarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btActualizarLote.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btActualizarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btActualizarLote.ForeColor = System.Drawing.Color.Orange
         Me.btActualizarLote.Location = New System.Drawing.Point(200, 8)
         Me.btActualizarLote.MaximumSize = New System.Drawing.Size(143, 53)
@@ -332,7 +330,7 @@ Partial Class Info_de_Autillos
         Me.btActualizarLote.Size = New System.Drawing.Size(143, 53)
         Me.btActualizarLote.TabIndex = 2
         Me.btActualizarLote.Text = "Actualizar"
-        Me.btActualizarLote.UseVisualStyleBackColor = False
+        Me.btActualizarLote.UseVisualStyleBackColor = false
         '
         'btAceptarLote
         '
@@ -341,7 +339,7 @@ Partial Class Info_de_Autillos
         Me.btAceptarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btAceptarLote.FlatAppearance.BorderSize = 0
         Me.btAceptarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptarLote.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAceptarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btAceptarLote.ForeColor = System.Drawing.Color.Orange
         Me.btAceptarLote.Location = New System.Drawing.Point(39, 8)
         Me.btAceptarLote.MaximumSize = New System.Drawing.Size(143, 53)
@@ -350,7 +348,7 @@ Partial Class Info_de_Autillos
         Me.btAceptarLote.Size = New System.Drawing.Size(143, 53)
         Me.btAceptarLote.TabIndex = 0
         Me.btAceptarLote.Text = "Aceptar"
-        Me.btAceptarLote.UseVisualStyleBackColor = False
+        Me.btAceptarLote.UseVisualStyleBackColor = false
         '
         'btVerLote
         '
@@ -359,7 +357,7 @@ Partial Class Info_de_Autillos
         Me.btVerLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btVerLote.FlatAppearance.BorderSize = 0
         Me.btVerLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVerLote.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btVerLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btVerLote.ForeColor = System.Drawing.Color.Orange
         Me.btVerLote.Location = New System.Drawing.Point(361, 8)
         Me.btVerLote.MaximumSize = New System.Drawing.Size(143, 53)
@@ -368,20 +366,20 @@ Partial Class Info_de_Autillos
         Me.btVerLote.Size = New System.Drawing.Size(143, 53)
         Me.btVerLote.TabIndex = 1
         Me.btVerLote.Text = "Ver"
-        Me.btVerLote.UseVisualStyleBackColor = False
+        Me.btVerLote.UseVisualStyleBackColor = false
         '
         'lista_lotes
         '
         Me.lista_lotes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lista_lotes.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader7})
-        Me.lista_lotes.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lista_lotes.Font = New System.Drawing.Font("Calibri", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lista_lotes.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lista_lotes.HideSelection = False
+        Me.lista_lotes.HideSelection = false
         Me.lista_lotes.Location = New System.Drawing.Point(3, 74)
         Me.lista_lotes.Name = "lista_lotes"
         Me.lista_lotes.Size = New System.Drawing.Size(901, 423)
         Me.lista_lotes.TabIndex = 5
-        Me.lista_lotes.UseCompatibleStateImageBehavior = False
+        Me.lista_lotes.UseCompatibleStateImageBehavior = false
         Me.lista_lotes.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader7
@@ -391,26 +389,26 @@ Partial Class Info_de_Autillos
         '
         'Info_de_Autillos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Info_de_Autillos"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(937, 621)
-        Me.Panel1.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
-        Me.autito.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel3.PerformLayout()
-        Me.lote.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(false)
+        Me.TabControl1.ResumeLayout(false)
+        Me.autito.ResumeLayout(false)
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.TableLayoutPanel2.ResumeLayout(false)
+        Me.TableLayoutPanel3.ResumeLayout(false)
+        Me.TableLayoutPanel3.PerformLayout
+        Me.lote.ResumeLayout(false)
+        Me.TableLayoutPanel4.ResumeLayout(false)
+        Me.TableLayoutPanel5.ResumeLayout(false)
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TabControl1 As TabControl

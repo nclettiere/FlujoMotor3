@@ -23,17 +23,29 @@ Partial Class Ventanita_Seleccionar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventanita_Seleccionar))
-        Me.SuspendLayout()
+        Me.MainContent = New System.Windows.Forms.Panel()
+        Me.SuspendLayout
+        '
+        'MainContent
+        '
+        Me.MainContent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainContent.Location = New System.Drawing.Point(0, 0)
+        Me.MainContent.Name = "MainContent"
+        Me.MainContent.Size = New System.Drawing.Size(366, 436)
+        Me.MainContent.TabIndex = 0
         '
         'Ventanita_Seleccionar
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(366, 436)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Controls.Add(Me.MainContent)
+        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.Name = "Ventanita_Seleccionar"
         Me.Text = "Seleccionar"
-        Me.ResumeLayout(False)
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
+
+    Friend WithEvents MainContent As Panel
 End Class

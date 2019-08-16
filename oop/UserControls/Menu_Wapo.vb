@@ -34,4 +34,49 @@
 
     End Sub
 
+    Private Sub BtnVerVehicle_Click(sender As Object, e As EventArgs) Handles btnVerVehicle.Click
+        GoToSection(0)
+    End Sub
+
+    Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.AutoSize = true
+        Me.AutoSizeMode = AutoSizeMode.GrowOnly
+    End Sub
+
+    Private Sub BtnAddVehicle_Click(sender As Object, e As EventArgs) Handles btnAddVehicle.Click
+        GoToSection(1)
+    End Sub
+
+    ''' <summary>
+    ''' Metodo usado para cambiar dinamicamente el contenido del MainContent
+    ''' </summary>
+    ''' <param name="Section">Integer que especifica el ID de la seccion.</param>
+    Private Sub GoToSection(ByVal Section As Integer)
+        '' Section => {0=>"VerVehiculos";1=>AgregarVehiculos};
+
+        Dim Selection As Object
+
+        Select Case Section
+            Case 0
+                Selection = Info_de_Autillos.Instance
+                btnAddVehicle.BackColor = Color.DimGray
+                btnVerVehicle.BackColor = Color.DarkGray
+            Case 1
+                Selection = Agregar_Vehiculillo.Instance
+                btnVerVehicle.BackColor = Color.DimGray
+                btnAddVehicle.BackColor = Color.DarkGray
+            Case Else
+                Selection = Info_de_Autillos.Instance
+                btnAddVehicle.BackColor = Color.DimGray
+                btnVerVehicle.BackColor = Color.DarkGray
+        End Select
+
+        If Not mainContent.Contains(Selection) Then
+            MainContent.Controls.Add(Selection.Instance)
+            Selection.Instance.Dock = DockStyle.Fill
+            Selection.Instance.BringToFront()
+        Else
+            Selection.Instance.BringToFront()
+        End If
+    End Sub
 End Class

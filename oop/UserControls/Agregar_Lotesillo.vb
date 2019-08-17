@@ -36,4 +36,7 @@
         MessageBox.Show(string.Format("Column: {0}, Row: {1}", column, row))    
     End Sub
 
+    Private Sub BtnAgrExistente_Click(sender As Object, e As EventArgs) Handles btnAgrExistente.Click
+        DirectCast(FormParent, Ventanita_Seleccionar).GotoSection(2)
+    End Sub
 End Class

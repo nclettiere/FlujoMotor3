@@ -36,9 +36,9 @@ Partial Class Agregar_Lotesillo
         Me.labDescripcion = New System.Windows.Forms.Label()
         Me.riTeBoDescripcion = New System.Windows.Forms.RichTextBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btAceptar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnAgrExistente = New System.Windows.Forms.Button()
+        Me.btAgregar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
@@ -254,9 +254,9 @@ Partial Class Agregar_Lotesillo
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.01994!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.49003!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.49003!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Button2, 2, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.Button1, 1, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.btAceptar, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.btnCancelar, 2, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.btnAgrExistente, 1, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.btAgregar, 0, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 411)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -265,53 +265,53 @@ Partial Class Agregar_Lotesillo
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(523, 69)
         Me.TableLayoutPanel4.TabIndex = 2
         '
-        'Button2
+        'btnCancelar
         '
-        Me.Button2.BackColor = System.Drawing.Color.DimGray
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Orange
-        Me.Button2.Location = New System.Drawing.Point(376, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(144, 63)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = false
+        Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
+        Me.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Orange
+        Me.btnCancelar.Location = New System.Drawing.Point(376, 3)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(144, 63)
+        Me.btnCancelar.TabIndex = 3
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = false
         '
-        'Button1
+        'btnAgrExistente
         '
-        Me.Button1.BackColor = System.Drawing.Color.DimGray
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Orange
-        Me.Button1.Location = New System.Drawing.Point(227, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(143, 63)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Nuevo Lote"
-        Me.Button1.UseVisualStyleBackColor = false
+        Me.btnAgrExistente.BackColor = System.Drawing.Color.DimGray
+        Me.btnAgrExistente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAgrExistente.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAgrExistente.FlatAppearance.BorderSize = 0
+        Me.btnAgrExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgrExistente.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnAgrExistente.ForeColor = System.Drawing.Color.Orange
+        Me.btnAgrExistente.Location = New System.Drawing.Point(227, 3)
+        Me.btnAgrExistente.Name = "btnAgrExistente"
+        Me.btnAgrExistente.Size = New System.Drawing.Size(143, 63)
+        Me.btnAgrExistente.TabIndex = 2
+        Me.btnAgrExistente.Text = "Agregar a Lote Existente"
+        Me.btnAgrExistente.UseVisualStyleBackColor = false
         '
-        'btAceptar
+        'btAgregar
         '
-        Me.btAceptar.BackColor = System.Drawing.Color.DimGray
-        Me.btAceptar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btAceptar.FlatAppearance.BorderSize = 0
-        Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btAceptar.ForeColor = System.Drawing.Color.Orange
-        Me.btAceptar.Location = New System.Drawing.Point(3, 3)
-        Me.btAceptar.Name = "btAceptar"
-        Me.btAceptar.Size = New System.Drawing.Size(218, 63)
-        Me.btAceptar.TabIndex = 1
-        Me.btAceptar.Text = "Agregar"
-        Me.btAceptar.UseVisualStyleBackColor = false
+        Me.btAgregar.BackColor = System.Drawing.Color.DimGray
+        Me.btAgregar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btAgregar.FlatAppearance.BorderSize = 0
+        Me.btAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAgregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btAgregar.ForeColor = System.Drawing.Color.Orange
+        Me.btAgregar.Location = New System.Drawing.Point(3, 3)
+        Me.btAgregar.Name = "btAgregar"
+        Me.btAgregar.Size = New System.Drawing.Size(218, 63)
+        Me.btAgregar.TabIndex = 1
+        Me.btAgregar.Text = "Agregar"
+        Me.btAgregar.UseVisualStyleBackColor = false
         '
         'Agregar_Lotesillo
         '
@@ -346,7 +346,7 @@ End Sub
     Friend WithEvents labDescripcion As Label
     Friend WithEvents riTeBoDescripcion As RichTextBox
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents btAceptar As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnAgrExistente As Button
+    Friend WithEvents btAgregar As Button
 End Class

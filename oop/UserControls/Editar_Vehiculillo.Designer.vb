@@ -24,6 +24,7 @@ Partial Class Editar_Vehiculillo
     Private Sub InitializeComponent()
         Me.TableLayoutPanelMain = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.labLote = New System.Windows.Forms.Label()
         Me.cheBoColor = New System.Windows.Forms.CheckBox()
         Me.cheBoAno = New System.Windows.Forms.CheckBox()
         Me.cheBoModelo = New System.Windows.Forms.CheckBox()
@@ -38,16 +39,14 @@ Partial Class Editar_Vehiculillo
         Me.labModelo = New System.Windows.Forms.Label()
         Me.labMarca = New System.Windows.Forms.Label()
         Me.labTipo = New System.Windows.Forms.Label()
-        Me.txtVin = New System.Windows.Forms.TextBox()
         Me.labVIN = New System.Windows.Forms.Label()
         Me.coBoTipo = New System.Windows.Forms.ComboBox()
-        Me.cheBoVIN = New System.Windows.Forms.CheckBox()
+        Me.txtLoteID = New System.Windows.Forms.TextBox()
+        Me.cheBoLote = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btAceptar = New System.Windows.Forms.Button()
         Me.btCancelar = New System.Windows.Forms.Button()
-        Me.labLote = New System.Windows.Forms.Label()
-        Me.txtLoteID = New System.Windows.Forms.TextBox()
-        Me.cheBoLote = New System.Windows.Forms.CheckBox()
+        Me.labVIIN = New System.Windows.Forms.Label()
         Me.TableLayoutPanelMain.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -73,11 +72,13 @@ Partial Class Editar_Vehiculillo
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.78237!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.21763!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.labLote, 0, 6)
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.cheBoColor, 2, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.cheBoAno, 2, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.cheBoModelo, 2, 3)
@@ -92,13 +93,12 @@ Partial Class Editar_Vehiculillo
         Me.TableLayoutPanel1.Controls.Add(Me.labModelo, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.labMarca, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.labTipo, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtVin, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.labVIN, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.coBoTipo, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.cheBoVIN, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.txtLoteID, 1, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.cheBoLote, 2, 6)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Controls.Add(Me.labLote, 0, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.labVIIN, 1, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 7
@@ -109,8 +109,23 @@ Partial Class Editar_Vehiculillo
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.2853!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(370, 402)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'labLote
+        '
+        Me.labLote.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.labLote.AutoSize = True
+        Me.labLote.Enabled = False
+        Me.labLote.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labLote.ForeColor = System.Drawing.Color.Orange
+        Me.labLote.Location = New System.Drawing.Point(3, 359)
+        Me.labLote.Name = "labLote"
+        Me.labLote.Size = New System.Drawing.Size(108, 26)
+        Me.labLote.TabIndex = 25
+        Me.labLote.Text = "LOTE"
+        Me.labLote.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'cheBoColor
         '
@@ -119,9 +134,9 @@ Partial Class Editar_Vehiculillo
         Me.cheBoColor.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cheBoColor.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoColor.Location = New System.Drawing.Point(353, 308)
+        Me.cheBoColor.Location = New System.Drawing.Point(352, 308)
         Me.cheBoColor.Name = "cheBoColor"
-        Me.cheBoColor.Size = New System.Drawing.Size(14, 11)
+        Me.cheBoColor.Size = New System.Drawing.Size(15, 11)
         Me.cheBoColor.TabIndex = 24
         Me.cheBoColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoColor.UseVisualStyleBackColor = True
@@ -133,9 +148,9 @@ Partial Class Editar_Vehiculillo
         Me.cheBoAno.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cheBoAno.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoAno.Location = New System.Drawing.Point(353, 251)
+        Me.cheBoAno.Location = New System.Drawing.Point(352, 251)
         Me.cheBoAno.Name = "cheBoAno"
-        Me.cheBoAno.Size = New System.Drawing.Size(14, 11)
+        Me.cheBoAno.Size = New System.Drawing.Size(15, 11)
         Me.cheBoAno.TabIndex = 23
         Me.cheBoAno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoAno.UseVisualStyleBackColor = True
@@ -147,9 +162,9 @@ Partial Class Editar_Vehiculillo
         Me.cheBoModelo.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cheBoModelo.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoModelo.Location = New System.Drawing.Point(353, 194)
+        Me.cheBoModelo.Location = New System.Drawing.Point(352, 194)
         Me.cheBoModelo.Name = "cheBoModelo"
-        Me.cheBoModelo.Size = New System.Drawing.Size(14, 11)
+        Me.cheBoModelo.Size = New System.Drawing.Size(15, 11)
         Me.cheBoModelo.TabIndex = 22
         Me.cheBoModelo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoModelo.UseVisualStyleBackColor = True
@@ -161,9 +176,9 @@ Partial Class Editar_Vehiculillo
         Me.cheBoMarca.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cheBoMarca.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoMarca.Location = New System.Drawing.Point(353, 137)
+        Me.cheBoMarca.Location = New System.Drawing.Point(352, 137)
         Me.cheBoMarca.Name = "cheBoMarca"
-        Me.cheBoMarca.Size = New System.Drawing.Size(14, 11)
+        Me.cheBoMarca.Size = New System.Drawing.Size(15, 11)
         Me.cheBoMarca.TabIndex = 21
         Me.cheBoMarca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoMarca.UseVisualStyleBackColor = True
@@ -175,9 +190,9 @@ Partial Class Editar_Vehiculillo
         Me.cheBoTipo.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cheBoTipo.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoTipo.Location = New System.Drawing.Point(353, 80)
+        Me.cheBoTipo.Location = New System.Drawing.Point(352, 80)
         Me.cheBoTipo.Name = "cheBoTipo"
-        Me.cheBoTipo.Size = New System.Drawing.Size(14, 11)
+        Me.cheBoTipo.Size = New System.Drawing.Size(15, 11)
         Me.cheBoTipo.TabIndex = 20
         Me.cheBoTipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.cheBoTipo.UseVisualStyleBackColor = True
@@ -189,7 +204,7 @@ Partial Class Editar_Vehiculillo
         Me.txtColor.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtColor.Enabled = False
         Me.txtColor.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtColor.Location = New System.Drawing.Point(125, 302)
+        Me.txtColor.Location = New System.Drawing.Point(124, 302)
         Me.txtColor.Margin = New System.Windows.Forms.Padding(10)
         Me.txtColor.MaxLength = 16
         Me.txtColor.Name = "txtColor"
@@ -204,7 +219,7 @@ Partial Class Editar_Vehiculillo
         Me.txtAno.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtAno.Enabled = False
         Me.txtAno.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAno.Location = New System.Drawing.Point(125, 245)
+        Me.txtAno.Location = New System.Drawing.Point(124, 245)
         Me.txtAno.Margin = New System.Windows.Forms.Padding(10)
         Me.txtAno.MaxLength = 4
         Me.txtAno.Name = "txtAno"
@@ -219,7 +234,7 @@ Partial Class Editar_Vehiculillo
         Me.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtModelo.Enabled = False
         Me.txtModelo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtModelo.Location = New System.Drawing.Point(125, 188)
+        Me.txtModelo.Location = New System.Drawing.Point(124, 188)
         Me.txtModelo.Margin = New System.Windows.Forms.Padding(10)
         Me.txtModelo.MaxLength = 32
         Me.txtModelo.Name = "txtModelo"
@@ -234,7 +249,7 @@ Partial Class Editar_Vehiculillo
         Me.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMarca.Enabled = False
         Me.txtMarca.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMarca.Location = New System.Drawing.Point(125, 131)
+        Me.txtMarca.Location = New System.Drawing.Point(124, 131)
         Me.txtMarca.Margin = New System.Windows.Forms.Padding(10)
         Me.txtMarca.MaxLength = 16
         Me.txtMarca.Name = "txtMarca"
@@ -251,7 +266,7 @@ Partial Class Editar_Vehiculillo
         Me.labColor.ForeColor = System.Drawing.Color.Orange
         Me.labColor.Location = New System.Drawing.Point(3, 300)
         Me.labColor.Name = "labColor"
-        Me.labColor.Size = New System.Drawing.Size(109, 26)
+        Me.labColor.Size = New System.Drawing.Size(108, 26)
         Me.labColor.TabIndex = 13
         Me.labColor.Text = "COLOR"
         Me.labColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -265,7 +280,7 @@ Partial Class Editar_Vehiculillo
         Me.labAno.ForeColor = System.Drawing.Color.Orange
         Me.labAno.Location = New System.Drawing.Point(3, 243)
         Me.labAno.Name = "labAno"
-        Me.labAno.Size = New System.Drawing.Size(109, 26)
+        Me.labAno.Size = New System.Drawing.Size(108, 26)
         Me.labAno.TabIndex = 8
         Me.labAno.Text = "AÑO"
         Me.labAno.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -279,7 +294,7 @@ Partial Class Editar_Vehiculillo
         Me.labModelo.ForeColor = System.Drawing.Color.Orange
         Me.labModelo.Location = New System.Drawing.Point(3, 186)
         Me.labModelo.Name = "labModelo"
-        Me.labModelo.Size = New System.Drawing.Size(109, 26)
+        Me.labModelo.Size = New System.Drawing.Size(108, 26)
         Me.labModelo.TabIndex = 6
         Me.labModelo.Text = "MODELO"
         Me.labModelo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -293,7 +308,7 @@ Partial Class Editar_Vehiculillo
         Me.labMarca.ForeColor = System.Drawing.Color.Orange
         Me.labMarca.Location = New System.Drawing.Point(3, 129)
         Me.labMarca.Name = "labMarca"
-        Me.labMarca.Size = New System.Drawing.Size(109, 26)
+        Me.labMarca.Size = New System.Drawing.Size(108, 26)
         Me.labMarca.TabIndex = 4
         Me.labMarca.Text = "MARCA"
         Me.labMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -307,26 +322,10 @@ Partial Class Editar_Vehiculillo
         Me.labTipo.ForeColor = System.Drawing.Color.Orange
         Me.labTipo.Location = New System.Drawing.Point(3, 72)
         Me.labTipo.Name = "labTipo"
-        Me.labTipo.Size = New System.Drawing.Size(109, 26)
+        Me.labTipo.Size = New System.Drawing.Size(108, 26)
         Me.labTipo.TabIndex = 2
         Me.labTipo.Text = "TIPO"
         Me.labTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'txtVin
-        '
-        Me.txtVin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtVin.BackColor = System.Drawing.Color.White
-        Me.txtVin.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtVin.Enabled = False
-        Me.txtVin.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtVin.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtVin.Location = New System.Drawing.Point(125, 17)
-        Me.txtVin.Margin = New System.Windows.Forms.Padding(10)
-        Me.txtVin.MaxLength = 17
-        Me.txtVin.Name = "txtVin"
-        Me.txtVin.Size = New System.Drawing.Size(215, 22)
-        Me.txtVin.TabIndex = 0
-        Me.txtVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'labVIN
         '
@@ -337,7 +336,7 @@ Partial Class Editar_Vehiculillo
         Me.labVIN.ForeColor = System.Drawing.Color.Orange
         Me.labVIN.Location = New System.Drawing.Point(3, 15)
         Me.labVIN.Name = "labVIN"
-        Me.labVIN.Size = New System.Drawing.Size(109, 26)
+        Me.labVIN.Size = New System.Drawing.Size(108, 26)
         Me.labVIN.TabIndex = 1
         Me.labVIN.Text = "V.I.N."
         Me.labVIN.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -351,25 +350,40 @@ Partial Class Editar_Vehiculillo
         Me.coBoTipo.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.coBoTipo.FormattingEnabled = True
         Me.coBoTipo.Items.AddRange(New Object() {"Auto", "Camion", "Camioneta", "Mini van", "Van", "SUV"})
-        Me.coBoTipo.Location = New System.Drawing.Point(125, 73)
+        Me.coBoTipo.Location = New System.Drawing.Point(124, 73)
         Me.coBoTipo.Margin = New System.Windows.Forms.Padding(10)
         Me.coBoTipo.Name = "coBoTipo"
         Me.coBoTipo.Size = New System.Drawing.Size(215, 24)
         Me.coBoTipo.TabIndex = 14
         '
-        'cheBoVIN
+        'txtLoteID
         '
-        Me.cheBoVIN.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cheBoVIN.AutoSize = True
-        Me.cheBoVIN.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cheBoVIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cheBoVIN.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoVIN.Location = New System.Drawing.Point(353, 23)
-        Me.cheBoVIN.Name = "cheBoVIN"
-        Me.cheBoVIN.Size = New System.Drawing.Size(14, 11)
-        Me.cheBoVIN.TabIndex = 19
-        Me.cheBoVIN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cheBoVIN.UseVisualStyleBackColor = True
+        Me.txtLoteID.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtLoteID.BackColor = System.Drawing.Color.White
+        Me.txtLoteID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtLoteID.Enabled = False
+        Me.txtLoteID.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLoteID.Location = New System.Drawing.Point(124, 361)
+        Me.txtLoteID.Margin = New System.Windows.Forms.Padding(10)
+        Me.txtLoteID.MaxLength = 16
+        Me.txtLoteID.Name = "txtLoteID"
+        Me.txtLoteID.Size = New System.Drawing.Size(215, 22)
+        Me.txtLoteID.TabIndex = 26
+        Me.txtLoteID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'cheBoLote
+        '
+        Me.cheBoLote.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cheBoLote.AutoSize = True
+        Me.cheBoLote.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.cheBoLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cheBoLote.ForeColor = System.Drawing.Color.Orange
+        Me.cheBoLote.Location = New System.Drawing.Point(352, 366)
+        Me.cheBoLote.Name = "cheBoLote"
+        Me.cheBoLote.Size = New System.Drawing.Size(15, 11)
+        Me.cheBoLote.TabIndex = 27
+        Me.cheBoLote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.cheBoLote.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel2
         '
@@ -428,48 +442,18 @@ Partial Class Editar_Vehiculillo
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.UseVisualStyleBackColor = False
         '
-        'labLote
+        'labVIIN
         '
-        Me.labLote.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labLote.AutoSize = True
-        Me.labLote.Enabled = False
-        Me.labLote.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labLote.ForeColor = System.Drawing.Color.Orange
-        Me.labLote.Location = New System.Drawing.Point(3, 359)
-        Me.labLote.Name = "labLote"
-        Me.labLote.Size = New System.Drawing.Size(109, 26)
-        Me.labLote.TabIndex = 25
-        Me.labLote.Text = "LOTE"
-        Me.labLote.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'txtLoteID
-        '
-        Me.txtLoteID.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtLoteID.BackColor = System.Drawing.Color.White
-        Me.txtLoteID.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtLoteID.Enabled = False
-        Me.txtLoteID.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLoteID.Location = New System.Drawing.Point(125, 361)
-        Me.txtLoteID.Margin = New System.Windows.Forms.Padding(10)
-        Me.txtLoteID.MaxLength = 16
-        Me.txtLoteID.Name = "txtLoteID"
-        Me.txtLoteID.Size = New System.Drawing.Size(215, 22)
-        Me.txtLoteID.TabIndex = 26
-        Me.txtLoteID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'cheBoLote
-        '
-        Me.cheBoLote.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cheBoLote.AutoSize = True
-        Me.cheBoLote.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cheBoLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cheBoLote.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoLote.Location = New System.Drawing.Point(353, 366)
-        Me.cheBoLote.Name = "cheBoLote"
-        Me.cheBoLote.Size = New System.Drawing.Size(14, 11)
-        Me.cheBoLote.TabIndex = 27
-        Me.cheBoLote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cheBoLote.UseVisualStyleBackColor = True
+        Me.labVIIN.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.labVIIN.AutoSize = True
+        Me.labVIIN.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labVIIN.ForeColor = System.Drawing.Color.Wheat
+        Me.labVIIN.Location = New System.Drawing.Point(117, 15)
+        Me.labVIIN.Name = "labVIIN"
+        Me.labVIIN.Size = New System.Drawing.Size(229, 26)
+        Me.labVIIN.TabIndex = 28
+        Me.labVIIN.Text = "N/A"
+        Me.labVIIN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Editar_Vehiculillo
         '
@@ -502,10 +486,8 @@ Partial Class Editar_Vehiculillo
     Friend WithEvents labModelo As Label
     Friend WithEvents labMarca As Label
     Friend WithEvents labTipo As Label
-    Friend WithEvents txtVin As TextBox
     Friend WithEvents labVIN As Label
     Friend WithEvents coBoTipo As ComboBox
-    Friend WithEvents cheBoVIN As CheckBox
     Friend WithEvents cheBoColor As CheckBox
     Friend WithEvents cheBoAno As CheckBox
     Friend WithEvents cheBoModelo As CheckBox
@@ -514,4 +496,5 @@ Partial Class Editar_Vehiculillo
     Friend WithEvents labLote As Label
     Friend WithEvents txtLoteID As TextBox
     Friend WithEvents cheBoLote As CheckBox
+    Friend WithEvents labVIIN As Label
 End Class

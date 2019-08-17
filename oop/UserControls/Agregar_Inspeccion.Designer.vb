@@ -33,27 +33,27 @@ Partial Class Agregar_Inspeccion
         Me.btAceptar = New System.Windows.Forms.Button()
         Me.btCancelar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.cheBoSIDepende = New System.Windows.Forms.CheckBox()
+        Me.cheBoNODepende = New System.Windows.Forms.CheckBox()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.btAgregar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
-        Me.cheBoNODano = New System.Windows.Forms.CheckBox()
         Me.cheBoSIDano = New System.Windows.Forms.CheckBox()
-        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
-        Me.cheBoNODepende = New System.Windows.Forms.CheckBox()
-        Me.cheBoSIDepende = New System.Windows.Forms.CheckBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cheBoNODano = New System.Windows.Forms.CheckBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
+        Me.TableLayoutPanel9.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
-        Me.TableLayoutPanel9.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -195,7 +195,7 @@ Partial Class Agregar_Inspeccion
         Me.btAceptar.Name = "btAceptar"
         Me.btAceptar.Size = New System.Drawing.Size(143, 51)
         Me.btAceptar.TabIndex = 0
-        Me.btAceptar.Text = "Aceptar"
+        Me.btAceptar.Text = "Agregar"
         Me.btAceptar.UseVisualStyleBackColor = False
         '
         'btCancelar
@@ -236,19 +236,19 @@ Partial Class Agregar_Inspeccion
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(517, 134)
         Me.TableLayoutPanel4.TabIndex = 0
         '
-        'Label3
+        'Label4
         '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(3, 20)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(186, 26)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "DEPENDENCIA"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Orange
+        Me.Label4.Location = New System.Drawing.Point(3, 87)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(186, 26)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "DAÑO"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TableLayoutPanel6
         '
@@ -266,6 +266,58 @@ Partial Class Agregar_Inspeccion
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(319, 61)
         Me.TableLayoutPanel6.TabIndex = 2
+        '
+        'TableLayoutPanel9
+        '
+        Me.TableLayoutPanel9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel9.ColumnCount = 2
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.Controls.Add(Me.cheBoSIDepende, 1, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.cheBoNODepende, 1, 1)
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel9.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
+        Me.TableLayoutPanel9.RowCount = 2
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(159, 61)
+        Me.TableLayoutPanel9.TabIndex = 4
+        '
+        'cheBoSIDepende
+        '
+        Me.cheBoSIDepende.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.cheBoSIDepende.AutoSize = True
+        Me.cheBoSIDepende.CheckAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.cheBoSIDepende.FlatAppearance.BorderSize = 9
+        Me.cheBoSIDepende.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cheBoSIDepende.Font = New System.Drawing.Font("Calibri", 14.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cheBoSIDepende.ForeColor = System.Drawing.Color.Orange
+        Me.cheBoSIDepende.Location = New System.Drawing.Point(82, 3)
+        Me.cheBoSIDepende.Name = "cheBoSIDepende"
+        Me.cheBoSIDepende.Size = New System.Drawing.Size(40, 24)
+        Me.cheBoSIDepende.TabIndex = 1
+        Me.cheBoSIDepende.Text = "SI"
+        Me.cheBoSIDepende.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.cheBoSIDepende.UseVisualStyleBackColor = True
+        '
+        'cheBoNODepende
+        '
+        Me.cheBoNODepende.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.cheBoNODepende.AutoSize = True
+        Me.cheBoNODepende.FlatAppearance.BorderSize = 9
+        Me.cheBoNODepende.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cheBoNODepende.Font = New System.Drawing.Font("Calibri", 14.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cheBoNODepende.ForeColor = System.Drawing.Color.Orange
+        Me.cheBoNODepende.Location = New System.Drawing.Point(82, 33)
+        Me.cheBoNODepende.Name = "cheBoNODepende"
+        Me.cheBoNODepende.Size = New System.Drawing.Size(52, 25)
+        Me.cheBoNODepende.TabIndex = 2
+        Me.cheBoNODepende.Text = "NO"
+        Me.cheBoNODepende.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cheBoNODepende.UseVisualStyleBackColor = True
         '
         'btBuscar
         '
@@ -341,22 +393,6 @@ Partial Class Agregar_Inspeccion
         Me.TableLayoutPanel8.Size = New System.Drawing.Size(159, 61)
         Me.TableLayoutPanel8.TabIndex = 3
         '
-        'cheBoNODano
-        '
-        Me.cheBoNODano.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cheBoNODano.AutoSize = True
-        Me.cheBoNODano.FlatAppearance.BorderSize = 9
-        Me.cheBoNODano.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cheBoNODano.Font = New System.Drawing.Font("Calibri", 14.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cheBoNODano.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoNODano.Location = New System.Drawing.Point(82, 33)
-        Me.cheBoNODano.Name = "cheBoNODano"
-        Me.cheBoNODano.Size = New System.Drawing.Size(52, 25)
-        Me.cheBoNODano.TabIndex = 2
-        Me.cheBoNODano.Text = "NO"
-        Me.cheBoNODano.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cheBoNODano.UseVisualStyleBackColor = True
-        '
         'cheBoSIDano
         '
         Me.cheBoSIDano.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -374,71 +410,35 @@ Partial Class Agregar_Inspeccion
         Me.cheBoSIDano.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cheBoSIDano.UseVisualStyleBackColor = True
         '
-        'TableLayoutPanel9
+        'cheBoNODano
         '
-        Me.TableLayoutPanel9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel9.ColumnCount = 2
-        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel9.Controls.Add(Me.cheBoSIDepende, 1, 0)
-        Me.TableLayoutPanel9.Controls.Add(Me.cheBoNODepende, 1, 1)
-        Me.TableLayoutPanel9.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel9.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
-        Me.TableLayoutPanel9.RowCount = 2
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel9.Size = New System.Drawing.Size(159, 61)
-        Me.TableLayoutPanel9.TabIndex = 4
+        Me.cheBoNODano.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.cheBoNODano.AutoSize = True
+        Me.cheBoNODano.FlatAppearance.BorderSize = 9
+        Me.cheBoNODano.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cheBoNODano.Font = New System.Drawing.Font("Calibri", 14.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cheBoNODano.ForeColor = System.Drawing.Color.Orange
+        Me.cheBoNODano.Location = New System.Drawing.Point(82, 33)
+        Me.cheBoNODano.Name = "cheBoNODano"
+        Me.cheBoNODano.Size = New System.Drawing.Size(52, 25)
+        Me.cheBoNODano.TabIndex = 2
+        Me.cheBoNODano.Text = "NO"
+        Me.cheBoNODano.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cheBoNODano.UseVisualStyleBackColor = True
         '
-        'cheBoNODepende
+        'Label3
         '
-        Me.cheBoNODepende.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cheBoNODepende.AutoSize = True
-        Me.cheBoNODepende.FlatAppearance.BorderSize = 9
-        Me.cheBoNODepende.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cheBoNODepende.Font = New System.Drawing.Font("Calibri", 14.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cheBoNODepende.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoNODepende.Location = New System.Drawing.Point(82, 33)
-        Me.cheBoNODepende.Name = "cheBoNODepende"
-        Me.cheBoNODepende.Size = New System.Drawing.Size(52, 25)
-        Me.cheBoNODepende.TabIndex = 2
-        Me.cheBoNODepende.Text = "NO"
-        Me.cheBoNODepende.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cheBoNODepende.UseVisualStyleBackColor = True
-        '
-        'cheBoSIDepende
-        '
-        Me.cheBoSIDepende.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cheBoSIDepende.AutoSize = True
-        Me.cheBoSIDepende.CheckAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.cheBoSIDepende.FlatAppearance.BorderSize = 9
-        Me.cheBoSIDepende.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cheBoSIDepende.Font = New System.Drawing.Font("Calibri", 14.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cheBoSIDepende.ForeColor = System.Drawing.Color.Orange
-        Me.cheBoSIDepende.Location = New System.Drawing.Point(82, 3)
-        Me.cheBoSIDepende.Name = "cheBoSIDepende"
-        Me.cheBoSIDepende.Size = New System.Drawing.Size(40, 24)
-        Me.cheBoSIDepende.TabIndex = 1
-        Me.cheBoSIDepende.Text = "SI"
-        Me.cheBoSIDepende.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cheBoSIDepende.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Orange
-        Me.Label4.Location = New System.Drawing.Point(3, 87)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(186, 26)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "DAÑO"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(3, 20)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(186, 26)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "DEPENDENCIA"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Agregar_Inspeccion
         '
@@ -457,11 +457,11 @@ Partial Class Agregar_Inspeccion
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel9.ResumeLayout(False)
+        Me.TableLayoutPanel9.PerformLayout()
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel8.ResumeLayout(False)
         Me.TableLayoutPanel8.PerformLayout()
-        Me.TableLayoutPanel9.ResumeLayout(False)
-        Me.TableLayoutPanel9.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

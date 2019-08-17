@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Seleccionar_Clientillo
+Partial Class Seleccionar_Lotesillo
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,7 +24,7 @@ Partial Class Seleccionar_Clientillo
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btAceptar = New System.Windows.Forms.Button()
-        Me.lisBoClientes = New System.Windows.Forms.ListBox()
+        Me.lisBoLote = New System.Windows.Forms.ListBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,14 +36,14 @@ Partial Class Seleccionar_Clientillo
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.btAceptar, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lisBoClientes, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.lisBoLote, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 8)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.7619!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.2381!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(350, 420)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.TableLayoutPanel1.TabIndex = 1
         '
         'btAceptar
         '
@@ -63,29 +63,27 @@ Partial Class Seleccionar_Clientillo
         Me.btAceptar.Text = "Aceptar"
         Me.btAceptar.UseVisualStyleBackColor = False
         '
-        'lisBoClientes
+        'lisBoLote
         '
-        Me.lisBoClientes.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lisBoClientes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lisBoClientes.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lisBoClientes.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lisBoClientes.FormattingEnabled = True
-        Me.lisBoClientes.ItemHeight = 23
-        Me.lisBoClientes.Location = New System.Drawing.Point(5, 5)
-        Me.lisBoClientes.Margin = New System.Windows.Forms.Padding(5)
-        Me.lisBoClientes.Name = "lisBoClientes"
-        Me.lisBoClientes.Size = New System.Drawing.Size(340, 345)
-        Me.lisBoClientes.TabIndex = 2
+        Me.lisBoLote.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lisBoLote.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lisBoLote.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lisBoLote.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.lisBoLote.FormattingEnabled = True
+        Me.lisBoLote.ItemHeight = 23
+        Me.lisBoLote.Location = New System.Drawing.Point(5, 5)
+        Me.lisBoLote.Margin = New System.Windows.Forms.Padding(5)
+        Me.lisBoLote.Name = "lisBoLote"
+        Me.lisBoLote.Size = New System.Drawing.Size(340, 345)
+        Me.lisBoLote.TabIndex = 2
         '
-        'Seleccionar_Clientillo
+        'Seleccionar_Lotesillo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Margin = New System.Windows.Forms.Padding(5)
-        Me.Name = "Seleccionar_Clientillo"
-        Me.Padding = New System.Windows.Forms.Padding(5)
+        Me.Name = "Seleccionar_Lotesillo"
         Me.Size = New System.Drawing.Size(366, 436)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -94,5 +92,5 @@ Partial Class Seleccionar_Clientillo
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents btAceptar As Button
-    Friend WithEvents lisBoClientes As ListBox
+    Friend WithEvents lisBoLote As ListBox
 End Class

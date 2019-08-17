@@ -242,6 +242,12 @@
     <Compile Include="UserControls\Entrega.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\Seleccionar_Lotesillo.Designer.vb">
+      <DependentUpon>Seleccionar_Lotesillo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Seleccionar_Lotesillo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ventanitas\Ventanita_Login.Designer.vb">
       <DependentUpon>Ventanita_Login.vb</DependentUpon>
     </Compile>
@@ -498,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Entrega.resx">
       <DependentUpon>Entrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Seleccionar_Lotesillo.resx">
+      <DependentUpon>Seleccionar_Lotesillo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\Ventanita_Login.resx">
       <DependentUpon>Ventanita_Login.vb</DependentUpon>

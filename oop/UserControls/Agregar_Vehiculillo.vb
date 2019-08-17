@@ -76,9 +76,9 @@
 
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load 
-        VehiculoAnio.Format = DateTimePickerFormat.Custom
-        VehiculoAnio.CustomFormat = "yyyy"
-        VehiculoAnio.ShowUpDown = true
+        VehiculoAno.Format = DateTimePickerFormat.Custom
+        VehiculoAno.CustomFormat = "yyyy"
+        VehiculoAno.ShowUpDown = true
 
         cbxTipo.SelectedIndex = 0
     End Sub
@@ -95,8 +95,8 @@
         SelecLote.ShowDialog()
     End Sub
 
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click 
-        If CheckFields()
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs)
+        If CheckFields() Then
 
         End If
     End Sub
@@ -107,7 +107,7 @@
                 If cbxTipo.SelectedIndex >= 0
                     If Not String.IsNullOrWhiteSpace(txtMarca.Text)
                         If Not String.IsNullOrWhiteSpace(txtMarca.Text)
-                            If Not VehiculoAnio.Value.Year > DateTime.Now.Year And Not VehiculoAnio.Value.Year < 1808
+                            If Not VehiculoAno.Value.Year > DateTime.Now.Year And Not VehiculoAno.Value.Year < 1808
                                 If Not String.IsNullOrWhiteSpace(txtMarca.Text)
                                     MessageBox.Show("Valid data.")
                                     Return True

@@ -1,4 +1,7 @@
-﻿Public Class Menu_Wapo
+﻿Imports DB
+Imports oop
+
+Public Class Menu_Wapo
 
     Private Shared _instance As Menu_Wapo
 
@@ -13,6 +16,9 @@
             _instance = value
         End Set
     End Property
+
+    Public Property FormParent As Menu
+    Public Property Conexion As ODBC
 
     Private Sub BtPuerto_Click(sender As Object, e As EventArgs) Handles btPuerto.Click
         btPatio.Font = New Font(btPatio.Font.FontFamily, 14)
@@ -59,14 +65,17 @@
         Select Case Section
             Case 0
                 Selection = Info_de_Autillos.Instance
+                Info_de_Autillos.Instance.FormParent = Me
                 btnAddVehicle.BackColor = Color.DimGray
                 btnVerVehicle.BackColor = Color.DarkGray
             Case 1
                 Selection = Agregar_Vehiculillo.Instance
+                Agregar_Vehiculillo.Instance.FormParent = Me
                 btnVerVehicle.BackColor = Color.DimGray
                 btnAddVehicle.BackColor = Color.DarkGray
             Case Else
                 Selection = Info_de_Autillos.Instance
+                Info_de_Autillos.Instance.FormParent = Me
                 btnAddVehicle.BackColor = Color.DimGray
                 btnVerVehicle.BackColor = Color.DarkGray
         End Select
@@ -78,13 +87,5 @@
         Else
             Selection.Instance.BringToFront()
         End If
-    End Sub
-
-    Private Sub TableLayoutPanelMenu_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanelMenu.Paint
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
     End Sub
 End Class

@@ -32,17 +32,20 @@ Partial Class Agregar_Lotesillo
         Me.labRutaF = New System.Windows.Forms.Label()
         Me.labRutaI = New System.Windows.Forms.Label()
         Me.labClientes = New System.Windows.Forms.Label()
-        Me.labVehiculos = New System.Windows.Forms.Label()
         Me.labDescripcion = New System.Windows.Forms.Label()
         Me.riTeBoDescripcion = New System.Windows.Forms.RichTextBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btAgregar = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.SuspendLayout()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.labVehiculos = New System.Windows.Forms.Label()
+        Me.lblSelected = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1.SuspendLayout
+        Me.TableLayoutPanel3.SuspendLayout
+        Me.TableLayoutPanel2.SuspendLayout
+        Me.TableLayoutPanel4.SuspendLayout
+        Me.Panel1.SuspendLayout
+        Me.SuspendLayout
         '
         'TableLayoutPanel1
         '
@@ -54,15 +57,15 @@ Partial Class Agregar_Lotesillo
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(5, 5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(535, 489)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel3.ColumnCount = 2
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -73,7 +76,7 @@ Partial Class Agregar_Lotesillo
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.63158!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.36842!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(529, 483)
         Me.TableLayoutPanel3.TabIndex = 1
         '
@@ -89,9 +92,9 @@ Partial Class Agregar_Lotesillo
         Me.TableLayoutPanel2.Controls.Add(Me.labRutaF, 0, 5)
         Me.TableLayoutPanel2.Controls.Add(Me.labRutaI, 0, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.labClientes, 0, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.labVehiculos, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.labDescripcion, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.riTeBoDescripcion, 1, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Panel1, 0, 2)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -102,15 +105,16 @@ Partial Class Agregar_Lotesillo
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.14428!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.31915!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.31915!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(523, 402)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'txtRutaFinal
         '
-        Me.txtRutaFinal.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtRutaFinal.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.txtRutaFinal.BackColor = System.Drawing.Color.White
         Me.txtRutaFinal.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtRutaFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRutaFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtRutaFinal.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.txtRutaFinal.Location = New System.Drawing.Point(223, 359)
         Me.txtRutaFinal.Margin = New System.Windows.Forms.Padding(10)
@@ -122,10 +126,10 @@ Partial Class Agregar_Lotesillo
         '
         'txtRutaInicial
         '
-        Me.txtRutaInicial.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtRutaInicial.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.txtRutaInicial.BackColor = System.Drawing.Color.White
         Me.txtRutaInicial.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtRutaInicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRutaInicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtRutaInicial.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.txtRutaInicial.Location = New System.Drawing.Point(223, 296)
         Me.txtRutaInicial.Margin = New System.Windows.Forms.Padding(10)
@@ -142,7 +146,7 @@ Partial Class Agregar_Lotesillo
         Me.btSeleccionarCliente.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btSeleccionarCliente.FlatAppearance.BorderSize = 0
         Me.btSeleccionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSeleccionarCliente.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSeleccionarCliente.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btSeleccionarCliente.ForeColor = System.Drawing.Color.Orange
         Me.btSeleccionarCliente.Location = New System.Drawing.Point(296, 209)
         Me.btSeleccionarCliente.Margin = New System.Windows.Forms.Padding(40, 5, 40, 5)
@@ -150,7 +154,7 @@ Partial Class Agregar_Lotesillo
         Me.btSeleccionarCliente.Size = New System.Drawing.Size(143, 51)
         Me.btSeleccionarCliente.TabIndex = 20
         Me.btSeleccionarCliente.Text = "Seleccionar"
-        Me.btSeleccionarCliente.UseVisualStyleBackColor = False
+        Me.btSeleccionarCliente.UseVisualStyleBackColor = false
         '
         'btSeleccionarVehiculo
         '
@@ -159,7 +163,7 @@ Partial Class Agregar_Lotesillo
         Me.btSeleccionarVehiculo.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btSeleccionarVehiculo.FlatAppearance.BorderSize = 0
         Me.btSeleccionarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSeleccionarVehiculo.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSeleccionarVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btSeleccionarVehiculo.ForeColor = System.Drawing.Color.Orange
         Me.btSeleccionarVehiculo.Location = New System.Drawing.Point(296, 122)
         Me.btSeleccionarVehiculo.Margin = New System.Windows.Forms.Padding(40, 5, 40, 5)
@@ -167,13 +171,13 @@ Partial Class Agregar_Lotesillo
         Me.btSeleccionarVehiculo.Size = New System.Drawing.Size(143, 51)
         Me.btSeleccionarVehiculo.TabIndex = 19
         Me.btSeleccionarVehiculo.Text = "Seleccionar"
-        Me.btSeleccionarVehiculo.UseVisualStyleBackColor = False
+        Me.btSeleccionarVehiculo.UseVisualStyleBackColor = false
         '
         'labRutaF
         '
-        Me.labRutaF.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labRutaF.AutoSize = True
-        Me.labRutaF.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRutaF.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labRutaF.AutoSize = true
+        Me.labRutaF.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labRutaF.ForeColor = System.Drawing.Color.Orange
         Me.labRutaF.Location = New System.Drawing.Point(3, 357)
         Me.labRutaF.Name = "labRutaF"
@@ -184,9 +188,9 @@ Partial Class Agregar_Lotesillo
         '
         'labRutaI
         '
-        Me.labRutaI.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labRutaI.AutoSize = True
-        Me.labRutaI.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRutaI.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labRutaI.AutoSize = true
+        Me.labRutaI.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labRutaI.ForeColor = System.Drawing.Color.Orange
         Me.labRutaI.Location = New System.Drawing.Point(3, 294)
         Me.labRutaI.Name = "labRutaI"
@@ -197,9 +201,9 @@ Partial Class Agregar_Lotesillo
         '
         'labClientes
         '
-        Me.labClientes.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labClientes.AutoSize = True
-        Me.labClientes.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labClientes.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labClientes.AutoSize = true
+        Me.labClientes.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labClientes.ForeColor = System.Drawing.Color.Orange
         Me.labClientes.Location = New System.Drawing.Point(3, 221)
         Me.labClientes.Name = "labClientes"
@@ -208,24 +212,11 @@ Partial Class Agregar_Lotesillo
         Me.labClientes.Text = "CLIENTES"
         Me.labClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'labVehiculos
-        '
-        Me.labVehiculos.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labVehiculos.AutoSize = True
-        Me.labVehiculos.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labVehiculos.ForeColor = System.Drawing.Color.Orange
-        Me.labVehiculos.Location = New System.Drawing.Point(3, 135)
-        Me.labVehiculos.Name = "labVehiculos"
-        Me.labVehiculos.Size = New System.Drawing.Size(207, 26)
-        Me.labVehiculos.TabIndex = 6
-        Me.labVehiculos.Text = "VEHICULOS"
-        Me.labVehiculos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'labDescripcion
         '
-        Me.labDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labDescripcion.AutoSize = True
-        Me.labDescripcion.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labDescripcion.AutoSize = true
+        Me.labDescripcion.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labDescripcion.ForeColor = System.Drawing.Color.Orange
         Me.labDescripcion.Location = New System.Drawing.Point(3, 43)
         Me.labDescripcion.Name = "labDescripcion"
@@ -236,9 +227,9 @@ Partial Class Agregar_Lotesillo
         '
         'riTeBoDescripcion
         '
-        Me.riTeBoDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.riTeBoDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.riTeBoDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.riTeBoDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.riTeBoDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.riTeBoDescripcion.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.riTeBoDescripcion.Location = New System.Drawing.Point(223, 19)
         Me.riTeBoDescripcion.Margin = New System.Windows.Forms.Padding(10)
@@ -258,25 +249,9 @@ Partial Class Agregar_Lotesillo
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(96, 411)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(336, 69)
         Me.TableLayoutPanel4.TabIndex = 2
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
-        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnCancelar.FlatAppearance.BorderSize = 0
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.ForeColor = System.Drawing.Color.Orange
-        Me.btnCancelar.Location = New System.Drawing.Point(180, 9)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(143, 51)
-        Me.btnCancelar.TabIndex = 3
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btAgregar
         '
@@ -285,18 +260,69 @@ Partial Class Agregar_Lotesillo
         Me.btAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btAgregar.FlatAppearance.BorderSize = 0
         Me.btAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAgregar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAgregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btAgregar.ForeColor = System.Drawing.Color.Orange
         Me.btAgregar.Location = New System.Drawing.Point(12, 9)
         Me.btAgregar.Name = "btAgregar"
         Me.btAgregar.Size = New System.Drawing.Size(143, 51)
         Me.btAgregar.TabIndex = 1
         Me.btAgregar.Text = "Agregar"
-        Me.btAgregar.UseVisualStyleBackColor = False
+        Me.btAgregar.UseVisualStyleBackColor = false
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
+        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Orange
+        Me.btnCancelar.Location = New System.Drawing.Point(180, 9)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(143, 51)
+        Me.btnCancelar.TabIndex = 3
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = false
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.lblSelected)
+        Me.Panel1.Controls.Add(Me.labVehiculos)
+        Me.Panel1.Location = New System.Drawing.Point(3, 124)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 20, 3, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 65)
+        Me.Panel1.TabIndex = 23
+        '
+        'labVehiculos
+        '
+        Me.labVehiculos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.labVehiculos.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.labVehiculos.ForeColor = System.Drawing.Color.Orange
+        Me.labVehiculos.Location = New System.Drawing.Point(0, 0)
+        Me.labVehiculos.Margin = New System.Windows.Forms.Padding(3, 20, 3, 0)
+        Me.labVehiculos.Name = "labVehiculos"
+        Me.labVehiculos.Size = New System.Drawing.Size(200, 26)
+        Me.labVehiculos.TabIndex = 7
+        Me.labVehiculos.Text = "VEHICULOS"
+        Me.labVehiculos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblSelected
+        '
+        Me.lblSelected.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblSelected.Font = New System.Drawing.Font("Calibri", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblSelected.ForeColor = System.Drawing.Color.Orange
+        Me.lblSelected.Location = New System.Drawing.Point(0, 26)
+        Me.lblSelected.Name = "lblSelected"
+        Me.lblSelected.Size = New System.Drawing.Size(200, 17)
+        Me.lblSelected.TabIndex = 8
+        Me.lblSelected.Text = "0 Seleccionados"
+        Me.lblSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Agregar_Lotesillo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -304,14 +330,15 @@ Partial Class Agregar_Lotesillo
         Me.Name = "Agregar_Lotesillo"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(545, 499)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.TableLayoutPanel3.ResumeLayout(false)
+        Me.TableLayoutPanel2.ResumeLayout(false)
+        Me.TableLayoutPanel2.PerformLayout
+        Me.TableLayoutPanel4.ResumeLayout(false)
+        Me.Panel1.ResumeLayout(false)
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
@@ -323,10 +350,12 @@ Partial Class Agregar_Lotesillo
     Friend WithEvents labRutaF As Label
     Friend WithEvents labRutaI As Label
     Friend WithEvents labClientes As Label
-    Friend WithEvents labVehiculos As Label
     Friend WithEvents labDescripcion As Label
     Friend WithEvents riTeBoDescripcion As RichTextBox
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btAgregar As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents lblSelected As Label
+    Friend WithEvents labVehiculos As Label
 End Class

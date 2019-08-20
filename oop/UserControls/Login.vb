@@ -1,5 +1,6 @@
 ﻿Imports Logica
 Imports DB
+Imports oop
 
 Public Class Login
 
@@ -40,7 +41,24 @@ Public Class Login
             MessageBox.Show("Usuario o Contrasena invalidos.")
         End If
 #Else
-        Ventanita_Login.ChangeControlSummary(0, Nothing)
+        If Ventanita_Login.ModoDatos = 1
+            Ventanita_Login.ChangeControlSummary(0, Nothing)
+        Else
+            Dim Conexion As ODBC = New ODBC()
+
+            Conexion.USER = tbx_user.Text
+            Conexion.PWD = tbx_passwd.Text
+
+            Dim isConnected = Conexion.Conectar(Conexion.Conectar())
+            If (isConnected) Then
+                ''Conexion.Hacer_consulta("Select * FROM Personas")
+                MessageBox.Show("Conectado Exitosamente.")
+                Ventanita_Login.ChangeControlSummary(0, Conexion)
+            Else
+                MessageBox.Show("Usuario o Contrasena invalidos.")
+            End If
+        End If
+            
 #End If
 
     End Sub

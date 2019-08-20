@@ -27,6 +27,13 @@ Public Class Seleccionar_Vehiculillo
     End Property
 
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
+        Dim SelectedItems = lisBoVehiculos.SelectedItems
+        Dim ListaVehiculos = New List(Of String)
+        For Each item As String In SelectedItems
+            ListaVehiculos.Add(item)
+        Next
+
+        Agregar_Lotesillo.Instance.UpdateLotes(ListaVehiculos)
         FormParent.GoToSection(0)
     End Sub
 End Class

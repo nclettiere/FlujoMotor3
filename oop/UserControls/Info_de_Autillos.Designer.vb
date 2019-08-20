@@ -22,21 +22,17 @@ Partial Class Info_de_Autillos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.autito = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lista_vehiculos = New System.Windows.Forms.ListView()
-        Me.VIN = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.MARCA = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.TIPO = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.FECHA_DE_AGREGAMIENTO = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
         Me.btAceptarVehiculo = New System.Windows.Forms.Button()
         Me.btInfoVehiculo = New System.Windows.Forms.Button()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.lote = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
@@ -44,8 +40,9 @@ Partial Class Info_de_Autillos
         Me.btActualizarLote = New System.Windows.Forms.Button()
         Me.btAceptarLote = New System.Windows.Forms.Button()
         Me.btVerLote = New System.Windows.Forms.Button()
-        Me.lista_lotes = New System.Windows.Forms.ListView()
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.autito.SuspendLayout
@@ -55,6 +52,9 @@ Partial Class Info_de_Autillos
         Me.lote.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel5.SuspendLayout
+        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Panel2.SuspendLayout
+        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'Panel1
@@ -99,9 +99,9 @@ Partial Class Info_de_Autillos
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel1.Controls.Add(Me.lista_vehiculos, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.DataGridViewVehiculos, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -111,43 +111,6 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.56544!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(907, 573)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'lista_vehiculos
-        '
-        Me.lista_vehiculos.BackColor = System.Drawing.Color.White
-        Me.lista_vehiculos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lista_vehiculos.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.VIN, Me.MARCA, Me.TIPO, Me.FECHA_DE_AGREGAMIENTO})
-        Me.lista_vehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lista_vehiculos.Font = New System.Drawing.Font("Calibri", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lista_vehiculos.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lista_vehiculos.FullRowSelect = true
-        Me.lista_vehiculos.HideSelection = false
-        Me.lista_vehiculos.Location = New System.Drawing.Point(3, 74)
-        Me.lista_vehiculos.Name = "lista_vehiculos"
-        Me.lista_vehiculos.Size = New System.Drawing.Size(901, 424)
-        Me.lista_vehiculos.TabIndex = 4
-        Me.lista_vehiculos.UseCompatibleStateImageBehavior = false
-        Me.lista_vehiculos.View = System.Windows.Forms.View.Details
-        '
-        'VIN
-        '
-        Me.VIN.Text = "VIN"
-        Me.VIN.Width = 238
-        '
-        'MARCA
-        '
-        Me.MARCA.Text = "Marca"
-        Me.MARCA.Width = 229
-        '
-        'TIPO
-        '
-        Me.TIPO.Text = "Tipo"
-        Me.TIPO.Width = 160
-        '
-        'FECHA_DE_AGREGAMIENTO
-        '
-        Me.FECHA_DE_AGREGAMIENTO.Text = "Fecha Agregado"
-        Me.FECHA_DE_AGREGAMIENTO.Width = 226
         '
         'TableLayoutPanel2
         '
@@ -230,7 +193,7 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel3.ColumnCount = 2
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.13541!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.8646!))
-        Me.TableLayoutPanel3.Controls.Add(Me.txtBuscar, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.tbxBuscarVin, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.btBuscar, 1, 0)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
@@ -239,17 +202,17 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(901, 65)
         Me.TableLayoutPanel3.TabIndex = 3
         '
-        'txtBuscar
+        'tbxBuscarVin
         '
-        Me.txtBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtBuscar.BackColor = System.Drawing.Color.White
-        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtBuscar.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(3, 19)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(697, 27)
-        Me.txtBuscar.TabIndex = 3
-        Me.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxBuscarVin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.tbxBuscarVin.BackColor = System.Drawing.Color.White
+        Me.tbxBuscarVin.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbxBuscarVin.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.tbxBuscarVin.Location = New System.Drawing.Point(3, 19)
+        Me.tbxBuscarVin.Name = "tbxBuscarVin"
+        Me.tbxBuscarVin.Size = New System.Drawing.Size(697, 27)
+        Me.tbxBuscarVin.TabIndex = 3
+        Me.tbxBuscarVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btBuscar
         '
@@ -264,7 +227,7 @@ Partial Class Info_de_Autillos
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(143, 40)
         Me.btBuscar.TabIndex = 2
-        Me.btBuscar.Text = "Buscar"
+        Me.btBuscar.Text = "Buscar VIN"
         Me.btBuscar.UseVisualStyleBackColor = false
         '
         'lote
@@ -283,7 +246,7 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 2)
-        Me.TableLayoutPanel4.Controls.Add(Me.lista_lotes, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel2, 0, 1)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -368,24 +331,52 @@ Partial Class Info_de_Autillos
         Me.btVerLote.Text = "Ver"
         Me.btVerLote.UseVisualStyleBackColor = false
         '
-        'lista_lotes
+        'DataGridViewVehiculos
         '
-        Me.lista_lotes.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lista_lotes.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader7})
-        Me.lista_lotes.Font = New System.Drawing.Font("Calibri", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lista_lotes.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lista_lotes.HideSelection = false
-        Me.lista_lotes.Location = New System.Drawing.Point(3, 74)
-        Me.lista_lotes.Name = "lista_lotes"
-        Me.lista_lotes.Size = New System.Drawing.Size(901, 423)
-        Me.lista_lotes.TabIndex = 5
-        Me.lista_lotes.UseCompatibleStateImageBehavior = false
-        Me.lista_lotes.View = System.Windows.Forms.View.Details
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0,Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewVehiculos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewVehiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DataGridViewVehiculos.EnableHeadersVisualStyles = false
+        Me.DataGridViewVehiculos.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 74)
+        Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
+        Me.DataGridViewVehiculos.ReadOnly = true
+        Me.DataGridViewVehiculos.ShowCellToolTips = false
+        Me.DataGridViewVehiculos.ShowEditingIcon = false
+        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(901, 424)
+        Me.DataGridViewVehiculos.TabIndex = 4
         '
-        'ColumnHeader7
+        'Panel2
         '
-        Me.ColumnHeader7.Text = "Lote"
-        Me.ColumnHeader7.Width = 643
+        Me.Panel2.Controls.Add(Me.DataGridViewLotes)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(3, 74)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(901, 424)
+        Me.Panel2.TabIndex = 7
+        '
+        'DataGridViewLotes
+        '
+        Me.DataGridViewLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewLotes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewLotes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DataGridViewLotes.EnableHeadersVisualStyles = false
+        Me.DataGridViewLotes.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.DataGridViewLotes.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridViewLotes.Name = "DataGridViewLotes"
+        Me.DataGridViewLotes.ReadOnly = true
+        Me.DataGridViewLotes.ShowCellToolTips = false
+        Me.DataGridViewLotes.ShowEditingIcon = false
+        Me.DataGridViewLotes.Size = New System.Drawing.Size(901, 424)
+        Me.DataGridViewLotes.TabIndex = 5
         '
         'Info_de_Autillos
         '
@@ -406,6 +397,9 @@ Partial Class Info_de_Autillos
         Me.lote.ResumeLayout(false)
         Me.TableLayoutPanel4.ResumeLayout(false)
         Me.TableLayoutPanel5.ResumeLayout(false)
+        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
+        Me.Panel2.ResumeLayout(false)
+        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
@@ -421,17 +415,13 @@ End Sub
     Friend WithEvents btInfoVehiculo As Button
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents btBuscar As Button
-    Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents tbxBuscarVin As TextBox
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents btActualizarLote As Button
     Friend WithEvents btAceptarLote As Button
     Friend WithEvents btVerLote As Button
-    Friend WithEvents lista_lotes As ListView
-    Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents lista_vehiculos As ListView
-    Friend WithEvents VIN As ColumnHeader
-    Friend WithEvents MARCA As ColumnHeader
-    Friend WithEvents TIPO As ColumnHeader
-    Friend WithEvents FECHA_DE_AGREGAMIENTO As ColumnHeader
+    Friend WithEvents DataGridViewVehiculos As DataGridView
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents DataGridViewLotes As DataGridView
 End Class

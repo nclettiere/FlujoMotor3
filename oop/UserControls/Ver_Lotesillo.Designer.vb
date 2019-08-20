@@ -42,18 +42,18 @@ Partial Class Ver_Lotesillo
         Me.lisBoVehiculos = New System.Windows.Forms.ListBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout
+        Me.TableLayoutPanel4.SuspendLayout
+        Me.TableLayoutPanel2.SuspendLayout
+        Me.Panel1.SuspendLayout
+        Me.TableLayoutPanel3.SuspendLayout
+        Me.SuspendLayout
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.27144!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 0, 1)
@@ -61,8 +61,8 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(455, 522)
         Me.TableLayoutPanel1.TabIndex = 0
         '
@@ -80,18 +80,18 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 446)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(449, 69)
         Me.TableLayoutPanel4.TabIndex = 2
         '
         'btEditar
         '
-        Me.btEditar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btEditar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.btEditar.BackColor = System.Drawing.Color.DimGray
         Me.btEditar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btEditar.FlatAppearance.BorderSize = 0
         Me.btEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btEditar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btEditar.ForeColor = System.Drawing.Color.Orange
         Me.btEditar.Location = New System.Drawing.Point(152, 8)
         Me.btEditar.MaximumSize = New System.Drawing.Size(143, 53)
@@ -100,16 +100,16 @@ Partial Class Ver_Lotesillo
         Me.btEditar.Size = New System.Drawing.Size(143, 53)
         Me.btEditar.TabIndex = 2
         Me.btEditar.Text = "Editar"
-        Me.btEditar.UseVisualStyleBackColor = False
+        Me.btEditar.UseVisualStyleBackColor = false
         '
         'btAceptar
         '
-        Me.btAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.btAceptar.BackColor = System.Drawing.Color.DimGray
         Me.btAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btAceptar.FlatAppearance.BorderSize = 0
         Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btAceptar.ForeColor = System.Drawing.Color.Orange
         Me.btAceptar.Location = New System.Drawing.Point(3, 8)
         Me.btAceptar.MaximumSize = New System.Drawing.Size(143, 53)
@@ -118,16 +118,16 @@ Partial Class Ver_Lotesillo
         Me.btAceptar.Size = New System.Drawing.Size(143, 53)
         Me.btAceptar.TabIndex = 0
         Me.btAceptar.Text = "Aceptar"
-        Me.btAceptar.UseVisualStyleBackColor = False
+        Me.btAceptar.UseVisualStyleBackColor = false
         '
         'btCerrar
         '
-        Me.btCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.btCerrar.BackColor = System.Drawing.Color.DimGray
         Me.btCerrar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btCerrar.FlatAppearance.BorderSize = 0
         Me.btCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCerrar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCerrar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btCerrar.ForeColor = System.Drawing.Color.Orange
         Me.btCerrar.Location = New System.Drawing.Point(301, 8)
         Me.btCerrar.MaximumSize = New System.Drawing.Size(143, 53)
@@ -136,7 +136,7 @@ Partial Class Ver_Lotesillo
         Me.btCerrar.Size = New System.Drawing.Size(143, 53)
         Me.btCerrar.TabIndex = 1
         Me.btCerrar.Text = "Cerrar"
-        Me.btCerrar.UseVisualStyleBackColor = False
+        Me.btCerrar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel2
         '
@@ -155,19 +155,19 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 4
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(449, 433)
         Me.TableLayoutPanel2.TabIndex = 0
         '
         'Label4
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = true
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Orange
         Me.Label4.Location = New System.Drawing.Point(3, 365)
         Me.Label4.Name = "Label4"
@@ -178,9 +178,9 @@ Partial Class Ver_Lotesillo
         '
         'Label1
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = true
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Orange
         Me.Label1.Location = New System.Drawing.Point(3, 41)
         Me.Label1.Name = "Label1"
@@ -191,9 +191,9 @@ Partial Class Ver_Lotesillo
         '
         'Label2
         '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
         Me.Label2.Location = New System.Drawing.Point(3, 149)
         Me.Label2.Name = "Label2"
@@ -204,9 +204,9 @@ Partial Class Ver_Lotesillo
         '
         'Label3
         '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
         Me.Label3.Location = New System.Drawing.Point(3, 257)
         Me.Label3.Name = "Label3"
@@ -217,9 +217,9 @@ Partial Class Ver_Lotesillo
         '
         'labNombre
         '
-        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labNombre.AutoSize = True
-        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labNombre.AutoSize = true
+        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labNombre.ForeColor = System.Drawing.Color.Wheat
         Me.labNombre.Location = New System.Drawing.Point(142, 41)
         Me.labNombre.Name = "labNombre"
@@ -230,9 +230,9 @@ Partial Class Ver_Lotesillo
         '
         'labCliente
         '
-        Me.labCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labCliente.AutoSize = True
-        Me.labCliente.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labCliente.AutoSize = true
+        Me.labCliente.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labCliente.ForeColor = System.Drawing.Color.Wheat
         Me.labCliente.Location = New System.Drawing.Point(142, 149)
         Me.labCliente.Name = "labCliente"
@@ -243,9 +243,9 @@ Partial Class Ver_Lotesillo
         '
         'labRutaI
         '
-        Me.labRutaI.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labRutaI.AutoSize = True
-        Me.labRutaI.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRutaI.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labRutaI.AutoSize = true
+        Me.labRutaI.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labRutaI.ForeColor = System.Drawing.Color.Wheat
         Me.labRutaI.Location = New System.Drawing.Point(142, 257)
         Me.labRutaI.Name = "labRutaI"
@@ -256,9 +256,9 @@ Partial Class Ver_Lotesillo
         '
         'labRutaF
         '
-        Me.labRutaF.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labRutaF.AutoSize = True
-        Me.labRutaF.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labRutaF.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labRutaF.AutoSize = true
+        Me.labRutaF.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labRutaF.ForeColor = System.Drawing.Color.Wheat
         Me.labRutaF.Location = New System.Drawing.Point(142, 365)
         Me.labRutaF.Name = "labRutaF"
@@ -269,9 +269,9 @@ Partial Class Ver_Lotesillo
         '
         'Label6
         '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = true
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Orange
         Me.Label6.Location = New System.Drawing.Point(3, 265)
         Me.Label6.Name = "Label6"
@@ -282,9 +282,9 @@ Partial Class Ver_Lotesillo
         '
         'Label5
         '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = true
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Orange
         Me.Label5.Location = New System.Drawing.Point(3, 10)
         Me.Label5.Name = "Label5"
@@ -297,7 +297,7 @@ Partial Class Ver_Lotesillo
         '
         Me.riTeBoDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.riTeBoDescripcion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.riTeBoDescripcion.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.riTeBoDescripcion.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.riTeBoDescripcion.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.riTeBoDescripcion.Location = New System.Drawing.Point(7, 53)
         Me.riTeBoDescripcion.Margin = New System.Windows.Forms.Padding(7)
@@ -310,9 +310,9 @@ Partial Class Ver_Lotesillo
         '
         Me.lisBoVehiculos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lisBoVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lisBoVehiculos.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lisBoVehiculos.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lisBoVehiculos.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lisBoVehiculos.FormattingEnabled = True
+        Me.lisBoVehiculos.FormattingEnabled = true
         Me.lisBoVehiculos.ItemHeight = 23
         Me.lisBoVehiculos.Location = New System.Drawing.Point(3, 303)
         Me.lisBoVehiculos.Name = "lisBoVehiculos"
@@ -321,9 +321,9 @@ Partial Class Ver_Lotesillo
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel3)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Location = New System.Drawing.Point(8, 8)
@@ -333,11 +333,11 @@ Partial Class Ver_Lotesillo
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel3.ColumnCount = 1
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel3.Controls.Add(Me.lisBoVehiculos, 0, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Label5, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label6, 0, 2)
@@ -354,23 +354,23 @@ Partial Class Ver_Lotesillo
         '
         'Ver_Lotesillo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Ver_Lotesillo"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(972, 544)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel3.PerformLayout()
-        Me.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.TableLayoutPanel4.ResumeLayout(false)
+        Me.TableLayoutPanel2.ResumeLayout(false)
+        Me.TableLayoutPanel2.PerformLayout
+        Me.Panel1.ResumeLayout(false)
+        Me.TableLayoutPanel3.ResumeLayout(false)
+        Me.TableLayoutPanel3.PerformLayout
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel

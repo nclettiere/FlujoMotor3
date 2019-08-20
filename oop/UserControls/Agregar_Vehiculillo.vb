@@ -1,4 +1,6 @@
-﻿Public Class Agregar_Vehiculillo
+﻿Imports oop
+
+Public Class Agregar_Vehiculillo
     Private Shared _instance As Agregar_Vehiculillo
 
     Public Shared Property Instance As Agregar_Vehiculillo
@@ -74,6 +76,7 @@
         End Set
     End Property
 
+    Public Property FormParent As Menu_Wapo
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load 
         VehiculoAno.Format = DateTimePickerFormat.Custom
@@ -87,12 +90,6 @@
         If txtVin.Text.Length > 17
             txtVin.Text = txtVin.Text.Trim().Substring(0, txtVin.Text.Length - 1)
         End If
-    End Sub
-
-    Private Sub BtSeleccionar_Click(sender As Object, e As EventArgs) Handles btSeleccionar.Click 
-        Dim SelecLote As Ventanita_Seleccionar = New Ventanita_Seleccionar
-        SelecLote.GoToSection(0)
-        SelecLote.ShowDialog()
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs)
@@ -136,5 +133,19 @@
             MessageBox.Show("El campo VIN no debe estar vacio.")
             Return False
         End If
-    End Function 
+    End Function
+
+    Private Sub BtnNuevoLote_Click(sender As Object, e As EventArgs) Handles btnNuevoLote.Click
+        Dim SelecLote As Ventanita_Seleccionar = New Ventanita_Seleccionar
+        SelecLote.ParentLoad = Me
+        SelecLote.GoToSection(0)
+        SelecLote.ShowDialog()
+    End Sub
+
+    Private Sub BtnLoteExistente_Click(sender As Object, e As EventArgs) Handles btnLoteExistente.Click
+        Dim SelecLote As Ventanita_Seleccionar = New Ventanita_Seleccionar
+        SelecLote.ParentLoad = Me
+        SelecLote.GoToSection(2)
+        SelecLote.ShowDialog()
+    End Sub
 End Class

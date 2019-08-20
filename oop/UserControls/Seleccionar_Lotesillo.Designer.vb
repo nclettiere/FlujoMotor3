@@ -24,19 +24,20 @@ Partial Class Seleccionar_Lotesillo
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btAceptar = New System.Windows.Forms.Button()
-        Me.lisBoLote = New System.Windows.Forms.ListBox()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.SuspendLayout()
+        Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
+        Me.TableLayoutPanel1.SuspendLayout
+        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
         Me.TableLayoutPanel1.Controls.Add(Me.btAceptar, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lisBoLote, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.DataGridViewLotes, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 8)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
@@ -52,7 +53,7 @@ Partial Class Seleccionar_Lotesillo
         Me.btAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btAceptar.FlatAppearance.BorderSize = 0
         Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btAceptar.ForeColor = System.Drawing.Color.Orange
         Me.btAceptar.Location = New System.Drawing.Point(103, 361)
         Me.btAceptar.MaximumSize = New System.Drawing.Size(143, 53)
@@ -61,36 +62,32 @@ Partial Class Seleccionar_Lotesillo
         Me.btAceptar.Size = New System.Drawing.Size(143, 53)
         Me.btAceptar.TabIndex = 1
         Me.btAceptar.Text = "Aceptar"
-        Me.btAceptar.UseVisualStyleBackColor = False
+        Me.btAceptar.UseVisualStyleBackColor = false
         '
-        'lisBoLote
+        'DataGridViewLotes
         '
-        Me.lisBoLote.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lisBoLote.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lisBoLote.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lisBoLote.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lisBoLote.FormattingEnabled = True
-        Me.lisBoLote.ItemHeight = 23
-        Me.lisBoLote.Location = New System.Drawing.Point(5, 5)
-        Me.lisBoLote.Margin = New System.Windows.Forms.Padding(5)
-        Me.lisBoLote.Name = "lisBoLote"
-        Me.lisBoLote.Size = New System.Drawing.Size(340, 345)
-        Me.lisBoLote.TabIndex = 2
+        Me.DataGridViewLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewLotes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewLotes.Location = New System.Drawing.Point(3, 3)
+        Me.DataGridViewLotes.Name = "DataGridViewLotes"
+        Me.DataGridViewLotes.Size = New System.Drawing.Size(344, 349)
+        Me.DataGridViewLotes.TabIndex = 2
         '
         'Seleccionar_Lotesillo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Seleccionar_Lotesillo"
         Me.Size = New System.Drawing.Size(366, 436)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents btAceptar As Button
-    Friend WithEvents lisBoLote As ListBox
+    Friend WithEvents DataGridViewLotes As DataGridView
 End Class

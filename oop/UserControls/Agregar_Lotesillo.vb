@@ -24,19 +24,30 @@
         End Set
     End Property
 
+    Public Shared Property ListaVehiculosSeleccionados As List(Of String)
+
     Private Sub BtSeleccionarVehiculo_Click(sender As Object, e As EventArgs) Handles btSeleccionarVehiculo.Click
         Dim Ventanita_Seleccion As Ventanita_Seleccionar = DirectCast(FormParent, Ventanita_Seleccionar)
         Ventanita_Seleccion.GoToSection(1)
     End Sub
 
-    Private Sub OnControlAdded(sender As object, e As ControlEventArgs)
-        Dim column As Integer = TableLayoutPanel3.GetPositionFromControl(e.Control).Column
-        Dim row As Integer = TableLayoutPanel3.GetPositionFromControl(e.Control).Row
-        e.Control.Controls.Add(Seleccionar_Vehiculillo.Instance)
-        MessageBox.Show(string.Format("Column: {0}, Row: {1}", column, row))    
-    End Sub
-
     Private Sub BtnAgrExistente_Click(sender As Object, e As EventArgs) 
         DirectCast(FormParent, Ventanita_Seleccionar).GotoSection(2)
+    End Sub
+
+    Friend Sub UpdateLotes(Lista As List(Of String))
+        ListaVehiculosSeleccionados = Lista
+
+        If ListaVehiculosSeleccionados.Count > 0
+            lblSelected.Text = ListaVehiculosSeleccionados.Count.ToString + " Seleccionados"
+        End If
+    End Sub
+
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        DirectCast(FormParent, Ventanita_Seleccionar).Close()
+    End Sub
+
+    Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles btAgregar.Click
+
     End Sub
 End Class

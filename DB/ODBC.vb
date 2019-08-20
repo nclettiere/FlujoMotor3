@@ -31,6 +31,7 @@ Public Class ODBC
             Console.WriteLine("Conectado")
             Return True
         Catch ex As OdbcException
+            Console.WriteLine("#######[EXCEPTION]#######" + Environment.NewLine + ex.Message + Environment.NewLine + "#######[END EXCEPTION]#######")
             Return False
         End Try
 
@@ -41,10 +42,16 @@ Public Class ODBC
     End Sub
 
     Public Function consultar(query As String) As DataTable
-        Dim data As New DataTable
-        Dim adapter As New OdbcDataAdapter(query, conODBC)
-        adapter.Fill(data)
-        Return data
+        Try
+            Dim data As New DataTable
+            Dim adapter As New OdbcDataAdapter(query, conODBC)
+            adapter.Fill(data)
+            Console.WriteLine("#######[LOG]#######" + Environment.NewLine + data.DisplayExpression + Environment.NewLine + "#######[END LOG]#######")
+            Return data
+        Catch ex As Exception
+            Console.WriteLine("#######[EXCEPTION]#######" + Environment.NewLine + ex.Message + Environment.NewLine + "#######[END EXCEPTION]#######")
+            Return Nothing
+        End Try
     End Function
 
     Public Function Conectar() As String

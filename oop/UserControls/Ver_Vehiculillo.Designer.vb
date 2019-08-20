@@ -66,22 +66,22 @@ Partial Class Ver_Vehiculillo
         Me.labAno = New System.Windows.Forms.Label()
         Me.labColor = New System.Windows.Forms.Label()
         Me.labCliente = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.TableLayoutPanel7.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.TableLayoutPanel8.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.SuspendLayout()
+        Me.Panel1.SuspendLayout
+        Me.TableLayoutPanel3.SuspendLayout
+        Me.TableLayoutPanel5.SuspendLayout
+        Me.TableLayoutPanel7.SuspendLayout
+        Me.TableLayoutPanel6.SuspendLayout
+        Me.TableLayoutPanel4.SuspendLayout
+        Me.TableLayoutPanel8.SuspendLayout
+        Me.TableLayoutPanel1.SuspendLayout
+        Me.TableLayoutPanel2.SuspendLayout
+        Me.SuspendLayout
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel3)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Location = New System.Drawing.Point(8, 8)
@@ -91,11 +91,11 @@ Partial Class Ver_Vehiculillo
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel3.ColumnCount = 1
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel5, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel8, 0, 1)
@@ -104,16 +104,16 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel3.RowCount = 3
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.55556!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.44444!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(574, 520)
         Me.TableLayoutPanel3.TabIndex = 1
         '
         'TableLayoutPanel5
         '
-        Me.TableLayoutPanel5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel5.ColumnCount = 2
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.3662!))
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.6338!))
@@ -126,16 +126,16 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 3
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.24051!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.87342!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(568, 172)
         Me.TableLayoutPanel5.TabIndex = 7
         '
         'TableLayoutPanel7
         '
-        Me.TableLayoutPanel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel7.ColumnCount = 2
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
@@ -144,7 +144,7 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(255, 40)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 1
-        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel7.Size = New System.Drawing.Size(310, 59)
         Me.TableLayoutPanel7.TabIndex = 14
         '
@@ -155,7 +155,7 @@ Partial Class Ver_Vehiculillo
         Me.btVerInspeccion.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btVerInspeccion.FlatAppearance.BorderSize = 0
         Me.btVerInspeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVerInspeccion.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btVerInspeccion.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btVerInspeccion.ForeColor = System.Drawing.Color.Orange
         Me.btVerInspeccion.Location = New System.Drawing.Point(12, 3)
         Me.btVerInspeccion.MaximumSize = New System.Drawing.Size(130, 53)
@@ -164,7 +164,7 @@ Partial Class Ver_Vehiculillo
         Me.btVerInspeccion.Size = New System.Drawing.Size(130, 53)
         Me.btVerInspeccion.TabIndex = 9
         Me.btVerInspeccion.Text = "Ver"
-        Me.btVerInspeccion.UseVisualStyleBackColor = False
+        Me.btVerInspeccion.UseVisualStyleBackColor = false
         '
         'Button2
         '
@@ -173,7 +173,7 @@ Partial Class Ver_Vehiculillo
         Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Orange
         Me.Button2.Location = New System.Drawing.Point(167, 3)
         Me.Button2.MaximumSize = New System.Drawing.Size(130, 53)
@@ -182,13 +182,13 @@ Partial Class Ver_Vehiculillo
         Me.Button2.Size = New System.Drawing.Size(130, 53)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Agregar"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2.UseVisualStyleBackColor = false
         '
         'Label11
         '
-        Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label11.AutoSize = true
+        Me.Label11.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Orange
         Me.Label11.Location = New System.Drawing.Point(3, 5)
         Me.Label11.Name = "Label11"
@@ -199,9 +199,9 @@ Partial Class Ver_Vehiculillo
         '
         'labLoteID
         '
-        Me.labLoteID.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labLoteID.AutoSize = True
-        Me.labLoteID.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labLoteID.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labLoteID.AutoSize = true
+        Me.labLoteID.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labLoteID.ForeColor = System.Drawing.Color.Wheat
         Me.labLoteID.Location = New System.Drawing.Point(255, 5)
         Me.labLoteID.Name = "labLoteID"
@@ -212,9 +212,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label6
         '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = true
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Orange
         Me.Label6.Location = New System.Drawing.Point(3, 56)
         Me.Label6.Name = "Label6"
@@ -225,9 +225,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label12
         '
-        Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label12.AutoSize = true
+        Me.Label12.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Orange
         Me.Label12.Location = New System.Drawing.Point(3, 124)
         Me.Label12.Name = "Label12"
@@ -238,7 +238,7 @@ Partial Class Ver_Vehiculillo
         '
         'TableLayoutPanel6
         '
-        Me.TableLayoutPanel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel6.ColumnCount = 2
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
@@ -247,7 +247,7 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(255, 106)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(310, 62)
         Me.TableLayoutPanel6.TabIndex = 13
         '
@@ -258,7 +258,7 @@ Partial Class Ver_Vehiculillo
         Me.btVerEntrega.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btVerEntrega.FlatAppearance.BorderSize = 0
         Me.btVerEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVerEntrega.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btVerEntrega.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btVerEntrega.ForeColor = System.Drawing.Color.Orange
         Me.btVerEntrega.Location = New System.Drawing.Point(12, 3)
         Me.btVerEntrega.MaximumSize = New System.Drawing.Size(130, 53)
@@ -267,7 +267,7 @@ Partial Class Ver_Vehiculillo
         Me.btVerEntrega.Size = New System.Drawing.Size(130, 53)
         Me.btVerEntrega.TabIndex = 13
         Me.btVerEntrega.Text = "Informacion"
-        Me.btVerEntrega.UseVisualStyleBackColor = False
+        Me.btVerEntrega.UseVisualStyleBackColor = false
         '
         'btEntregar
         '
@@ -276,7 +276,7 @@ Partial Class Ver_Vehiculillo
         Me.btEntregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btEntregar.FlatAppearance.BorderSize = 0
         Me.btEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btEntregar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEntregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btEntregar.ForeColor = System.Drawing.Color.Orange
         Me.btEntregar.Location = New System.Drawing.Point(167, 3)
         Me.btEntregar.MaximumSize = New System.Drawing.Size(130, 53)
@@ -285,7 +285,7 @@ Partial Class Ver_Vehiculillo
         Me.btEntregar.Size = New System.Drawing.Size(130, 53)
         Me.btEntregar.TabIndex = 11
         Me.btEntregar.Text = "Entregar"
-        Me.btEntregar.UseVisualStyleBackColor = False
+        Me.btEntregar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel4
         '
@@ -302,7 +302,7 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
         Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(567, 64)
         Me.TableLayoutPanel4.TabIndex = 2
         '
@@ -313,7 +313,7 @@ Partial Class Ver_Vehiculillo
         Me.btModificar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btModificar.FlatAppearance.BorderSize = 0
         Me.btModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btModificar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btModificar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btModificar.ForeColor = System.Drawing.Color.Orange
         Me.btModificar.Location = New System.Drawing.Point(212, 8)
         Me.btModificar.MaximumSize = New System.Drawing.Size(143, 53)
@@ -322,7 +322,7 @@ Partial Class Ver_Vehiculillo
         Me.btModificar.Size = New System.Drawing.Size(143, 53)
         Me.btModificar.TabIndex = 1
         Me.btModificar.Text = "Editar"
-        Me.btModificar.UseVisualStyleBackColor = False
+        Me.btModificar.UseVisualStyleBackColor = false
         '
         'Button1
         '
@@ -331,7 +331,7 @@ Partial Class Ver_Vehiculillo
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Orange
         Me.Button1.Location = New System.Drawing.Point(381, 8)
         Me.Button1.MaximumSize = New System.Drawing.Size(143, 53)
@@ -340,7 +340,7 @@ Partial Class Ver_Vehiculillo
         Me.Button1.Size = New System.Drawing.Size(143, 53)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Cerrar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.UseVisualStyleBackColor = false
         '
         'btAceptar
         '
@@ -349,7 +349,7 @@ Partial Class Ver_Vehiculillo
         Me.btAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btAceptar.FlatAppearance.BorderSize = 0
         Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btAceptar.ForeColor = System.Drawing.Color.Orange
         Me.btAceptar.Location = New System.Drawing.Point(48, 5)
         Me.btAceptar.Margin = New System.Windows.Forms.Padding(10, 0, 0, 0)
@@ -359,13 +359,13 @@ Partial Class Ver_Vehiculillo
         Me.btAceptar.Size = New System.Drawing.Size(143, 53)
         Me.btAceptar.TabIndex = 0
         Me.btAceptar.Text = "Aceptar"
-        Me.btAceptar.UseVisualStyleBackColor = False
+        Me.btAceptar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel8
         '
-        Me.TableLayoutPanel8.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel8.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel8.ColumnCount = 2
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.3662!))
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.6338!))
@@ -391,9 +391,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label13
         '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label13.AutoSize = true
+        Me.Label13.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Orange
         Me.Label13.Location = New System.Drawing.Point(3, 53)
         Me.Label13.Name = "Label13"
@@ -404,9 +404,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label14
         '
-        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label14.AutoSize = true
+        Me.Label14.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Orange
         Me.Label14.Location = New System.Drawing.Point(3, 97)
         Me.Label14.Name = "Label14"
@@ -417,9 +417,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label15
         '
-        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label15.AutoSize = true
+        Me.Label15.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Orange
         Me.Label15.Location = New System.Drawing.Point(3, 141)
         Me.Label15.Name = "Label15"
@@ -430,9 +430,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label16
         '
-        Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label16.AutoSize = true
+        Me.Label16.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label16.ForeColor = System.Drawing.Color.Orange
         Me.Label16.Location = New System.Drawing.Point(3, 185)
         Me.Label16.Name = "Label16"
@@ -443,9 +443,9 @@ Partial Class Ver_Vehiculillo
         '
         'labPatio
         '
-        Me.labPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labPatio.AutoSize = True
-        Me.labPatio.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labPatio.AutoSize = true
+        Me.labPatio.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labPatio.ForeColor = System.Drawing.Color.Wheat
         Me.labPatio.Location = New System.Drawing.Point(255, 53)
         Me.labPatio.Name = "labPatio"
@@ -456,9 +456,9 @@ Partial Class Ver_Vehiculillo
         '
         'labZona
         '
-        Me.labZona.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labZona.AutoSize = True
-        Me.labZona.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labZona.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labZona.AutoSize = true
+        Me.labZona.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labZona.ForeColor = System.Drawing.Color.Wheat
         Me.labZona.Location = New System.Drawing.Point(255, 97)
         Me.labZona.Name = "labZona"
@@ -469,9 +469,9 @@ Partial Class Ver_Vehiculillo
         '
         'labSubzona
         '
-        Me.labSubzona.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labSubzona.AutoSize = True
-        Me.labSubzona.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labSubzona.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labSubzona.AutoSize = true
+        Me.labSubzona.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labSubzona.ForeColor = System.Drawing.Color.Wheat
         Me.labSubzona.Location = New System.Drawing.Point(255, 141)
         Me.labSubzona.Name = "labSubzona"
@@ -482,9 +482,9 @@ Partial Class Ver_Vehiculillo
         '
         'labEstacionamiento
         '
-        Me.labEstacionamiento.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labEstacionamiento.AutoSize = True
-        Me.labEstacionamiento.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labEstacionamiento.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labEstacionamiento.AutoSize = true
+        Me.labEstacionamiento.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labEstacionamiento.ForeColor = System.Drawing.Color.Wheat
         Me.labEstacionamiento.Location = New System.Drawing.Point(255, 185)
         Me.labEstacionamiento.Name = "labEstacionamiento"
@@ -495,16 +495,16 @@ Partial Class Ver_Vehiculillo
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.27144!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(371, 520)
         Me.TableLayoutPanel1.TabIndex = 0
         '
@@ -546,9 +546,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label9
         '
-        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = true
+        Me.Label9.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Orange
         Me.Label9.Location = New System.Drawing.Point(3, 403)
         Me.Label9.Name = "Label9"
@@ -559,9 +559,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label4
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = true
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Orange
         Me.Label4.Location = New System.Drawing.Point(3, 211)
         Me.Label4.Name = "Label4"
@@ -572,9 +572,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label1
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = true
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Orange
         Me.Label1.Location = New System.Drawing.Point(3, 19)
         Me.Label1.Name = "Label1"
@@ -585,9 +585,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label2
         '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
         Me.Label2.Location = New System.Drawing.Point(3, 83)
         Me.Label2.Name = "Label2"
@@ -598,9 +598,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label3
         '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
         Me.Label3.Location = New System.Drawing.Point(3, 147)
         Me.Label3.Name = "Label3"
@@ -611,9 +611,9 @@ Partial Class Ver_Vehiculillo
         '
         'labFecha
         '
-        Me.labFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labFecha.AutoSize = True
-        Me.labFecha.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labFecha.AutoSize = true
+        Me.labFecha.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labFecha.ForeColor = System.Drawing.Color.Wheat
         Me.labFecha.Location = New System.Drawing.Point(127, 468)
         Me.labFecha.Name = "labFecha"
@@ -624,9 +624,9 @@ Partial Class Ver_Vehiculillo
         '
         'labNombre
         '
-        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labNombre.AutoSize = True
-        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labNombre.AutoSize = true
+        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labNombre.ForeColor = System.Drawing.Color.Wheat
         Me.labNombre.Location = New System.Drawing.Point(127, 19)
         Me.labNombre.Name = "labNombre"
@@ -637,9 +637,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label5
         '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = true
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Orange
         Me.Label5.Location = New System.Drawing.Point(3, 468)
         Me.Label5.Name = "Label5"
@@ -650,9 +650,9 @@ Partial Class Ver_Vehiculillo
         '
         'labTipo
         '
-        Me.labTipo.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labTipo.AutoSize = True
-        Me.labTipo.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labTipo.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labTipo.AutoSize = true
+        Me.labTipo.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labTipo.ForeColor = System.Drawing.Color.Wheat
         Me.labTipo.Location = New System.Drawing.Point(127, 83)
         Me.labTipo.Name = "labTipo"
@@ -663,9 +663,9 @@ Partial Class Ver_Vehiculillo
         '
         'labMarca
         '
-        Me.labMarca.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labMarca.AutoSize = True
-        Me.labMarca.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labMarca.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labMarca.AutoSize = true
+        Me.labMarca.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labMarca.ForeColor = System.Drawing.Color.Wheat
         Me.labMarca.Location = New System.Drawing.Point(127, 147)
         Me.labMarca.Name = "labMarca"
@@ -676,9 +676,9 @@ Partial Class Ver_Vehiculillo
         '
         'labModelo
         '
-        Me.labModelo.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labModelo.AutoSize = True
-        Me.labModelo.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labModelo.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labModelo.AutoSize = true
+        Me.labModelo.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labModelo.ForeColor = System.Drawing.Color.Wheat
         Me.labModelo.Location = New System.Drawing.Point(127, 211)
         Me.labModelo.Name = "labModelo"
@@ -689,9 +689,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label7
         '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = true
+        Me.Label7.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Orange
         Me.Label7.Location = New System.Drawing.Point(3, 275)
         Me.Label7.Name = "Label7"
@@ -702,9 +702,9 @@ Partial Class Ver_Vehiculillo
         '
         'Label8
         '
-        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = true
+        Me.Label8.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Orange
         Me.Label8.Location = New System.Drawing.Point(3, 339)
         Me.Label8.Name = "Label8"
@@ -715,9 +715,9 @@ Partial Class Ver_Vehiculillo
         '
         'labAno
         '
-        Me.labAno.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labAno.AutoSize = True
-        Me.labAno.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labAno.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labAno.AutoSize = true
+        Me.labAno.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labAno.ForeColor = System.Drawing.Color.Wheat
         Me.labAno.Location = New System.Drawing.Point(127, 275)
         Me.labAno.Name = "labAno"
@@ -728,9 +728,9 @@ Partial Class Ver_Vehiculillo
         '
         'labColor
         '
-        Me.labColor.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labColor.AutoSize = True
-        Me.labColor.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labColor.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labColor.AutoSize = true
+        Me.labColor.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labColor.ForeColor = System.Drawing.Color.Wheat
         Me.labColor.Location = New System.Drawing.Point(127, 339)
         Me.labColor.Name = "labColor"
@@ -741,9 +741,9 @@ Partial Class Ver_Vehiculillo
         '
         'labCliente
         '
-        Me.labCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labCliente.AutoSize = True
-        Me.labCliente.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labCliente.AutoSize = true
+        Me.labCliente.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labCliente.ForeColor = System.Drawing.Color.Wheat
         Me.labCliente.Location = New System.Drawing.Point(127, 403)
         Me.labCliente.Name = "labCliente"
@@ -754,27 +754,27 @@ Partial Class Ver_Vehiculillo
         '
         'Ver_Vehiculillo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Ver_Vehiculillo"
         Me.Size = New System.Drawing.Size(972, 544)
-        Me.Panel1.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.TableLayoutPanel5.PerformLayout()
-        Me.TableLayoutPanel7.ResumeLayout(False)
-        Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel8.ResumeLayout(False)
-        Me.TableLayoutPanel8.PerformLayout()
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
-        Me.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(false)
+        Me.TableLayoutPanel3.ResumeLayout(false)
+        Me.TableLayoutPanel5.ResumeLayout(false)
+        Me.TableLayoutPanel5.PerformLayout
+        Me.TableLayoutPanel7.ResumeLayout(false)
+        Me.TableLayoutPanel6.ResumeLayout(false)
+        Me.TableLayoutPanel4.ResumeLayout(false)
+        Me.TableLayoutPanel8.ResumeLayout(false)
+        Me.TableLayoutPanel8.PerformLayout
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.TableLayoutPanel2.ResumeLayout(false)
+        Me.TableLayoutPanel2.PerformLayout
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel

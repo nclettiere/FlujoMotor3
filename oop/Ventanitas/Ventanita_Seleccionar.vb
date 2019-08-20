@@ -1,4 +1,18 @@
-﻿Public Class Ventanita_Seleccionar
+﻿Imports oop
+
+Public Class Ventanita_Seleccionar
+    Public Property ParentLoad As Agregar_Vehiculillo
+
+    Public Property SelectedLote As String
+        Get
+            Return _SelectedLote
+        End Get
+        Set(value As String)
+            _SelectedLote = value
+        End Set
+    End Property
+
+    Private _SelectedLote As String
 
     ''' <summary>
     ''' Metodo usado para cambiar dinamicamente el contenido del MainContent
@@ -31,6 +45,10 @@
         End If
     End Sub
 
+    Public Shared Sub UpdateLotes()
+       
+    End Sub
+
     Friend Sub GoToSection(ByVal Section As Integer, Parent As Object)
         Dim Selection As Object
         Select Case Section
@@ -40,7 +58,8 @@
             Case 1
                 Selection = Seleccionar_Vehiculillo.Instance
                 Selection.FormParent = DirectCast(Parent, Agregar_Lotesillo)
-                
+            Case 2
+                Selection = Seleccionar_Lotesillo.Instance
             Case Else
                 Selection = Agregar_Lotesillo.Instance
         End Select

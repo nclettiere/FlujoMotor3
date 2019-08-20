@@ -5,7 +5,16 @@ Public Class Ventanita_Login
     Private OperarioId As Integer
     Private Conexion As ODBC
 
-    Private ModoDatos As Integer = 0
+    Private _ModoDatos As Integer = 0
+
+    Public Property ModoDatos As Integer
+        Get
+            Return _ModoDatos
+        End Get
+        Set(value As Integer)
+            _ModoDatos = value
+        End Set
+    End Property
 
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -35,10 +44,20 @@ Public Class Ventanita_Login
 
     Friend Sub ChangeControlSummary(operarioId As Integer, Conexion As ODBC)
 #If DEBUG Then
-        Dim mainVentana = New Ventanita_Ver
-        Hide()
-        mainVentana.ShowDialog()
-        Close()
+        If ModoDatos =  0
+            Dim mainVentana = New Menu
+            Hide()
+            mainVentana.Conexion = Conexion
+            mainVentana.ShowDialog()
+            Close()
+        Else
+            Dim mainVentana = New Menu
+            Hide()
+            mainVentana.Conexion = Conexion
+            mainVentana.ShowDialog()
+            Close()
+        End If
+        
 #Else
         Dim mainVentana = New Ventanita_Ver
         mainVentana.Show()

@@ -33,4 +33,24 @@ Public Class Ventanita_Ver
             Selection.Instance.BringToFront()
         End If
     End Sub
+
+        Friend Sub GoToSection(ByVal Section As Integer, ByVal VIN As String, ByRef Conexion As DB.ODBC)
+            Dim Selection As Object
+
+            Select Case Section
+                Case 0
+                    Selection = Ver_Inspeccionsilla.Instance
+                    Ver_Inspeccionsilla.Instance.Populate(VIN, Conexion)
+                Case Else
+                    Selection = Ver_Inspeccionsilla.Instance
+            End Select
+
+            If Not mainContent.Contains(Selection) Then
+                MainContent.Controls.Add(Selection.Instance)
+                Selection.Instance.Dock = DockStyle.Fill
+                Selection.Instance.BringToFront()
+            Else
+                Selection.Instance.BringToFront()
+            End If
+        End Sub
 End Class

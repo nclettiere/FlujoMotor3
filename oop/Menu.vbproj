@@ -251,6 +251,12 @@
     <Compile Include="UserControls\Entrega.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\InspeccionWidget.Designer.vb">
+      <DependentUpon>InspeccionWidget.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InspeccionWidget.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\Seleccionar_Lotesillo.Designer.vb">
       <DependentUpon>Seleccionar_Lotesillo.vb</DependentUpon>
     </Compile>
@@ -513,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Entrega.resx">
       <DependentUpon>Entrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InspeccionWidget.resx">
+      <DependentUpon>InspeccionWidget.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Seleccionar_Lotesillo.resx">
       <DependentUpon>Seleccionar_Lotesillo.vb</DependentUpon>

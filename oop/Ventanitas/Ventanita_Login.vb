@@ -20,7 +20,7 @@ Public Class Ventanita_Login
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Log.Logger = New LoggerConfiguration().MinimumLevel.Information().WriteTo.Console().WriteTo.File("logs\\log_.txt", rollingInterval:= RollingInterval.Day).CreateLogger()
 #If DEBUG Then
-        Dim result As Integer = MessageBox.Show("Desea cargar datos de prueba? Lord, Recuerde que debe ejecutar el proceso en x64 o en x86 dependiendo del driver ODBC de Informix. (No usar Any CPU)", "MODO DEBUG DETECTADO", MessageBoxButtons.YesNoCancel)
+        Dim result As Integer = MessageBox.Show("Si => Cargar datos (usa objetos y es inestable)" + Environment.NewLine + "No => Usar VM de INFROMIX", "Cargar Datos de Prueba?", MessageBoxButtons.YesNo)
         If result = DialogResult.Cancel Or result = DialogResult.Abort Then
             MessageBox.Show("Ha cancelado, se cargaran los datos de la VM de INFORMIX.")
             ModoDatos = 0

@@ -22,7 +22,6 @@ Partial Class Info_de_Autillos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.autito = New System.Windows.Forms.TabPage()
@@ -34,13 +33,13 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
         Me.btBuscar = New System.Windows.Forms.Button()
+        Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.lote = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.btActualizarLote = New System.Windows.Forms.Button()
         Me.btAceptarLote = New System.Windows.Forms.Button()
         Me.btVerLote = New System.Windows.Forms.Button()
-        Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout
@@ -49,10 +48,10 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
+        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.lote.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel5.SuspendLayout
-        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel2.SuspendLayout
         CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
@@ -230,6 +229,21 @@ Partial Class Info_de_Autillos
         Me.btBuscar.Text = "Buscar VIN"
         Me.btBuscar.UseVisualStyleBackColor = false
         '
+        'DataGridViewVehiculos
+        '
+        Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewVehiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DataGridViewVehiculos.EnableHeadersVisualStyles = false
+        Me.DataGridViewVehiculos.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 74)
+        Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
+        Me.DataGridViewVehiculos.ReadOnly = true
+        Me.DataGridViewVehiculos.ShowCellToolTips = false
+        Me.DataGridViewVehiculos.ShowEditingIcon = false
+        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(901, 424)
+        Me.DataGridViewVehiculos.TabIndex = 4
+        '
         'lote
         '
         Me.lote.BackColor = System.Drawing.Color.Gray
@@ -331,29 +345,6 @@ Partial Class Info_de_Autillos
         Me.btVerLote.Text = "Ver"
         Me.btVerLote.UseVisualStyleBackColor = false
         '
-        'DataGridViewVehiculos
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0,Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewVehiculos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewVehiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DataGridViewVehiculos.EnableHeadersVisualStyles = false
-        Me.DataGridViewVehiculos.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 74)
-        Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
-        Me.DataGridViewVehiculos.ReadOnly = true
-        Me.DataGridViewVehiculos.ShowCellToolTips = false
-        Me.DataGridViewVehiculos.ShowEditingIcon = false
-        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(901, 424)
-        Me.DataGridViewVehiculos.TabIndex = 4
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.DataGridViewLotes)
@@ -394,10 +385,10 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel2.ResumeLayout(false)
         Me.TableLayoutPanel3.ResumeLayout(false)
         Me.TableLayoutPanel3.PerformLayout
+        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.lote.ResumeLayout(false)
         Me.TableLayoutPanel4.ResumeLayout(false)
         Me.TableLayoutPanel5.ResumeLayout(false)
-        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel2.ResumeLayout(false)
         CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)

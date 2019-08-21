@@ -1,4 +1,5 @@
 ﻿Imports oop
+Imports Serilog
 
 Public Class Info_de_Autillos
 
@@ -19,18 +20,20 @@ Public Class Info_de_Autillos
     Public Property FormParent As Menu_Wapo
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        #If DEBUG
-            If FormParent.FormParent.Conexion IsNot Nothing
-               Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
-               DataGridViewVehiculos.DataSource = resultado
-            Else
-                Console.WriteLine("######[POTENTIAL ERROR]######" + Environment.NewLine + "Menu.Conexion was NULL on 'Info_de_Autillos.vb'" +Environment.NewLine + "######[END POTENTIAL ERROR]######")
-            End If
-        #End If
+#If DEBUG
+        If FormParent.FormParent.Conexion IsNot Nothing
+            Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
+            DataGridViewVehiculos.DataSource = resultado
+        Else
+            Console.WriteLine("######[POTENTIAL ERROR]######" + Environment.NewLine + "Menu.Conexion was NULL on 'Info_de_Autillos.vb'" + Environment.NewLine + "######[END POTENTIAL ERROR]######")
+        End If
+#End If
+
+        DataGridViewVehiculos.MultiSelect = False
     End Sub
 
     Private Sub BtBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-        if tbxBuscarVin.Text.Length > 0
+        If tbxBuscarVin.Text.Length > 0
             '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
             Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
             DataGridViewVehiculos.DataSource = resultado
@@ -38,7 +41,7 @@ Public Class Info_de_Autillos
             Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
             DataGridViewVehiculos.DataSource = resultado
         End If
-        
+
     End Sub
 
     Private Sub OnTabChange(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
@@ -46,5 +49,28 @@ Public Class Info_de_Autillos
             Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM lotes")
             DataGridViewLotes.DataSource = resultado
         End If
+    End Sub
+
+    Private Sub BtActualizarVehiculo_Click(sender As Object, e As EventArgs) Handles btActualizarVehiculo.Click
+        If tbxBuscarVin.Text.Length > 0
+            '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
+            Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
+            DataGridViewVehiculos.DataSource = resultado
+        Else
+            Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
+            DataGridViewVehiculos.DataSource = resultado
+        End If
+    End Sub
+
+    Private Sub BtInfoVehiculo_Click(sender As Object, e As EventArgs) Handles btInfoVehiculo.Click
+        Try
+            Dim IndiceSeleccion As Integer = DataGridViewVehiculos.SelectedCells(0).RowIndex
+            Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
+            Ver_Vehiculillo.Instance.Data(Me, DataGridViewVehiculos.Rows(IndiceSeleccion).Cells(0).Value.ToString, FormParent.Conexion)
+            VentanaVer.LoadControl(Ver_Vehiculillo.Instance)
+            VentanaVer.ShowDialog()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

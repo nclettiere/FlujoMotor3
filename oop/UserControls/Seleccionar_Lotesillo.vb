@@ -18,9 +18,9 @@ Public Class Seleccionar_Lotesillo
     Public Property FormParent As Ventanita_Seleccionar
 
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
-        If lisBoLote.SelectedItems.Count > 0
-            Ventanita_Seleccionar.SelectedLote = (lisBoLote.SelectedItems(0))  
-            Ventanita_Seleccionar.UpdateLotes()
-        End If
+         'If lisBoLote.SelectedItems.Count > 0
+         '   Ventanita_Seleccionar.SelectedLote = (lisBoLote.SelectedItems(0))  
+         '   Ventanita_Seleccionar.UpdateLotes()
+         'End If
     End Sub
 End Class

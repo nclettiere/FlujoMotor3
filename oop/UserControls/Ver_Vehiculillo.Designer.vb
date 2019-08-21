@@ -56,7 +56,7 @@ Partial Class Ver_Vehiculillo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.labFecha = New System.Windows.Forms.Label()
-        Me.labNombre = New System.Windows.Forms.Label()
+        Me.lblVin = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.labTipo = New System.Windows.Forms.Label()
         Me.labMarca = New System.Windows.Forms.Label()
@@ -519,7 +519,7 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.labFecha, 1, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.labNombre, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblVin, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label5, 0, 7)
         Me.TableLayoutPanel2.Controls.Add(Me.labTipo, 1, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.labMarca, 1, 2)
@@ -622,18 +622,18 @@ Partial Class Ver_Vehiculillo
         Me.labFecha.Text = "N/A"
         Me.labFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'labNombre
+        'lblVin
         '
-        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.labNombre.AutoSize = true
-        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.labNombre.ForeColor = System.Drawing.Color.Wheat
-        Me.labNombre.Location = New System.Drawing.Point(127, 19)
-        Me.labNombre.Name = "labNombre"
-        Me.labNombre.Size = New System.Drawing.Size(235, 26)
-        Me.labNombre.TabIndex = 6
-        Me.labNombre.Text = "N/A"
-        Me.labNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblVin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lblVin.AutoSize = true
+        Me.lblVin.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblVin.ForeColor = System.Drawing.Color.Wheat
+        Me.lblVin.Location = New System.Drawing.Point(127, 19)
+        Me.lblVin.Name = "lblVin"
+        Me.lblVin.Size = New System.Drawing.Size(235, 26)
+        Me.lblVin.TabIndex = 6
+        Me.lblVin.Text = "N/A"
+        Me.lblVin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label5
         '
@@ -786,7 +786,7 @@ End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents labNombre As Label
+    Friend WithEvents lblVin As Label
     Friend WithEvents labTipo As Label
     Friend WithEvents labMarca As Label
     Friend WithEvents labModelo As Label

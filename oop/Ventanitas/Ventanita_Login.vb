@@ -1,5 +1,6 @@
 ﻿Imports DB
 Imports Logica
+Imports Serilog
 
 Public Class Ventanita_Login
     Private OperarioId As Integer
@@ -17,7 +18,7 @@ Public Class Ventanita_Login
     End Property
 
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Log.Logger = New LoggerConfiguration().MinimumLevel.Information().WriteTo.Console().WriteTo.File("logs\\log_.txt", rollingInterval:= RollingInterval.Day).CreateLogger()
 #If DEBUG Then
         Dim result As Integer = MessageBox.Show("Desea cargar datos de prueba? Lord, Recuerde que debe ejecutar el proceso en x64 o en x86 dependiendo del driver ODBC de Informix. (No usar Any CPU)", "MODO DEBUG DETECTADO", MessageBoxButtons.YesNoCancel)
         If result = DialogResult.Cancel Or result = DialogResult.Abort Then
@@ -40,11 +41,12 @@ Public Class Ventanita_Login
             Login.Instance.BringToFront()
         End If
 
+        Log.Information(Me.Name.ToString + " Loaded.")
     End Sub
 
     Friend Sub ChangeControlSummary(operarioId As Integer, Conexion As ODBC)
 #If DEBUG Then
-        If ModoDatos =  0
+        If ModoDatos = 0
             Dim mainVentana = New Menu
             Hide()
             mainVentana.Conexion = Conexion
@@ -57,7 +59,7 @@ Public Class Ventanita_Login
             mainVentana.ShowDialog()
             Close()
         End If
-        
+
 #Else
         Dim mainVentana = New Ventanita_Ver
         mainVentana.Show()

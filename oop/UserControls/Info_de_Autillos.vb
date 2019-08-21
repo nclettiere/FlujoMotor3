@@ -66,7 +66,7 @@ Public Class Info_de_Autillos
         Try
             Dim IndiceSeleccion As Integer = DataGridViewVehiculos.SelectedCells(0).RowIndex
             Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
-            Ver_Vehiculillo.Instance.Data(Me, DataGridViewVehiculos.Rows(IndiceSeleccion).Cells(0).Value.ToString, FormParent.Conexion)
+            Ver_Vehiculillo.Instance.Data(Me, DataGridViewVehiculos.Rows(IndiceSeleccion).Cells(0).Value.ToString, VentanaVer, FormParent.Conexion)
             VentanaVer.LoadControl(Ver_Vehiculillo.Instance)
             VentanaVer.ShowDialog()
         Catch ex As Exception

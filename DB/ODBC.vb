@@ -1,4 +1,5 @@
 ﻿Imports System.Data.Odbc
+Imports Serilog
 
 Public Class ODBC
     Dim conODBC As New OdbcConnection
@@ -42,14 +43,15 @@ Public Class ODBC
     End Sub
 
     Public Function consultar(query As String) As DataTable
+        Log.Information("Consultando Query => " + query)
         Try
             Dim data As New DataTable
             Dim adapter As New OdbcDataAdapter(query, conODBC)
             adapter.Fill(data)
-            Console.WriteLine("#######[LOG]#######" + Environment.NewLine + data.DisplayExpression + Environment.NewLine + "#######[END LOG]#######")
+            Log.Information("Consulta Exitosa.")
             Return data
         Catch ex As Exception
-            Console.WriteLine("#######[EXCEPTION]#######" + Environment.NewLine + ex.Message + Environment.NewLine + "#######[END EXCEPTION]#######")
+            Log.Error(ex, "Consulta Erronea " + query)
             Return Nothing
         End Try
     End Function

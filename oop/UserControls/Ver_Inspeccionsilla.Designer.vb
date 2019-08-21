@@ -45,25 +45,25 @@ Partial Class Ver_Inspeccionsilla
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel7.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
-        Me.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout
+        Me.TableLayoutPanel7.SuspendLayout
+        Me.TableLayoutPanel2.SuspendLayout
+        Me.TableLayoutPanel5.SuspendLayout
+        Me.TableLayoutPanel4.SuspendLayout
+        Me.TableLayoutPanel3.SuspendLayout
+        Me.TableLayoutPanel6.SuspendLayout
+        Me.SuspendLayout
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel7, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 0)
-        Me.TableLayoutPanel1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TableLayoutPanel1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.TableLayoutPanel1.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 8)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -75,18 +75,18 @@ Partial Class Ver_Inspeccionsilla
         '
         'TableLayoutPanel7
         '
-        Me.TableLayoutPanel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel7.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel7.ColumnCount = 2
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
         Me.TableLayoutPanel7.Controls.Add(Me.btAceptar, 0, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.btCancelar, 1, 0)
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(3, 462)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
         Me.TableLayoutPanel7.RowCount = 1
-        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
         Me.TableLayoutPanel7.Size = New System.Drawing.Size(950, 62)
         Me.TableLayoutPanel7.TabIndex = 3
         '
@@ -97,7 +97,7 @@ Partial Class Ver_Inspeccionsilla
         Me.btAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btAceptar.FlatAppearance.BorderSize = 0
         Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btAceptar.ForeColor = System.Drawing.Color.Orange
         Me.btAceptar.Location = New System.Drawing.Point(181, 8)
         Me.btAceptar.MaximumSize = New System.Drawing.Size(143, 51)
@@ -106,7 +106,7 @@ Partial Class Ver_Inspeccionsilla
         Me.btAceptar.Size = New System.Drawing.Size(143, 51)
         Me.btAceptar.TabIndex = 0
         Me.btAceptar.Text = "Aceptar"
-        Me.btAceptar.UseVisualStyleBackColor = False
+        Me.btAceptar.UseVisualStyleBackColor = false
         '
         'btCancelar
         '
@@ -115,7 +115,7 @@ Partial Class Ver_Inspeccionsilla
         Me.btCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Goldenrod
         Me.btCancelar.FlatAppearance.BorderSize = 0
         Me.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCancelar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.Orange
         Me.btCancelar.Location = New System.Drawing.Point(626, 8)
         Me.btCancelar.MaximumSize = New System.Drawing.Size(143, 51)
@@ -124,13 +124,13 @@ Partial Class Ver_Inspeccionsilla
         Me.btCancelar.Size = New System.Drawing.Size(143, 51)
         Me.btCancelar.TabIndex = 1
         Me.btCancelar.Text = "Cancelar"
-        Me.btCancelar.UseVisualStyleBackColor = False
+        Me.btCancelar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel2
         '
-        Me.TableLayoutPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel2.ColumnCount = 2
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.10526!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.89474!))
@@ -157,9 +157,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'TableLayoutPanel5
         '
-        Me.TableLayoutPanel5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel5.ColumnCount = 2
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.81121!))
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.18879!))
@@ -168,7 +168,7 @@ Partial Class Ver_Inspeccionsilla
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(269, 353)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(678, 97)
         Me.TableLayoutPanel5.TabIndex = 17
         '
@@ -179,7 +179,7 @@ Partial Class Ver_Inspeccionsilla
         Me.btVerD.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btVerD.FlatAppearance.BorderSize = 0
         Me.btVerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVerD.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btVerD.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btVerD.ForeColor = System.Drawing.Color.Orange
         Me.btVerD.Location = New System.Drawing.Point(531, 22)
         Me.btVerD.MaximumSize = New System.Drawing.Size(130, 53)
@@ -188,12 +188,12 @@ Partial Class Ver_Inspeccionsilla
         Me.btVerD.Size = New System.Drawing.Size(130, 53)
         Me.btVerD.TabIndex = 11
         Me.btVerD.Text = "Ver Daño"
-        Me.btVerD.UseVisualStyleBackColor = False
+        Me.btVerD.UseVisualStyleBackColor = false
         '
         'riTeBoD
         '
         Me.riTeBoD.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.riTeBoD.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.riTeBoD.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.riTeBoD.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.riTeBoD.Location = New System.Drawing.Point(3, 3)
         Me.riTeBoD.Name = "riTeBoD"
@@ -203,9 +203,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'TableLayoutPanel4
         '
-        Me.TableLayoutPanel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel4.ColumnCount = 2
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.81121!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.18879!))
@@ -214,7 +214,7 @@ Partial Class Ver_Inspeccionsilla
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(269, 253)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(678, 94)
         Me.TableLayoutPanel4.TabIndex = 16
         '
@@ -225,7 +225,7 @@ Partial Class Ver_Inspeccionsilla
         Me.btVerC.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btVerC.FlatAppearance.BorderSize = 0
         Me.btVerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVerC.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btVerC.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btVerC.ForeColor = System.Drawing.Color.Orange
         Me.btVerC.Location = New System.Drawing.Point(531, 20)
         Me.btVerC.MaximumSize = New System.Drawing.Size(130, 53)
@@ -234,12 +234,12 @@ Partial Class Ver_Inspeccionsilla
         Me.btVerC.Size = New System.Drawing.Size(130, 53)
         Me.btVerC.TabIndex = 11
         Me.btVerC.Text = "Ver Daño"
-        Me.btVerC.UseVisualStyleBackColor = False
+        Me.btVerC.UseVisualStyleBackColor = false
         '
         'riTeBoC
         '
         Me.riTeBoC.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.riTeBoC.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.riTeBoC.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.riTeBoC.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.riTeBoC.Location = New System.Drawing.Point(3, 3)
         Me.riTeBoC.Name = "riTeBoC"
@@ -249,9 +249,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel3.ColumnCount = 2
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.81121!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.18879!))
@@ -260,7 +260,7 @@ Partial Class Ver_Inspeccionsilla
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(269, 153)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(678, 94)
         Me.TableLayoutPanel3.TabIndex = 15
         '
@@ -271,7 +271,7 @@ Partial Class Ver_Inspeccionsilla
         Me.btVerB.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btVerB.FlatAppearance.BorderSize = 0
         Me.btVerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVerB.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btVerB.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btVerB.ForeColor = System.Drawing.Color.Orange
         Me.btVerB.Location = New System.Drawing.Point(531, 20)
         Me.btVerB.MaximumSize = New System.Drawing.Size(130, 53)
@@ -280,12 +280,12 @@ Partial Class Ver_Inspeccionsilla
         Me.btVerB.Size = New System.Drawing.Size(130, 53)
         Me.btVerB.TabIndex = 11
         Me.btVerB.Text = "Ver Daño"
-        Me.btVerB.UseVisualStyleBackColor = False
+        Me.btVerB.UseVisualStyleBackColor = false
         '
         'riTeBoB
         '
         Me.riTeBoB.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.riTeBoB.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.riTeBoB.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.riTeBoB.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.riTeBoB.Location = New System.Drawing.Point(3, 3)
         Me.riTeBoB.Name = "riTeBoB"
@@ -295,9 +295,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'TableLayoutPanel6
         '
-        Me.TableLayoutPanel6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel6.ColumnCount = 2
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.81121!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.18879!))
@@ -306,7 +306,7 @@ Partial Class Ver_Inspeccionsilla
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(269, 53)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(678, 94)
         Me.TableLayoutPanel6.TabIndex = 14
         '
@@ -317,7 +317,7 @@ Partial Class Ver_Inspeccionsilla
         Me.btVerA.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btVerA.FlatAppearance.BorderSize = 0
         Me.btVerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVerA.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btVerA.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btVerA.ForeColor = System.Drawing.Color.Orange
         Me.btVerA.Location = New System.Drawing.Point(531, 20)
         Me.btVerA.MaximumSize = New System.Drawing.Size(130, 53)
@@ -326,12 +326,12 @@ Partial Class Ver_Inspeccionsilla
         Me.btVerA.Size = New System.Drawing.Size(130, 53)
         Me.btVerA.TabIndex = 11
         Me.btVerA.Text = "Ver Daño"
-        Me.btVerA.UseVisualStyleBackColor = False
+        Me.btVerA.UseVisualStyleBackColor = false
         '
         'riTeBoA
         '
         Me.riTeBoA.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.riTeBoA.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.riTeBoA.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.riTeBoA.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.riTeBoA.Location = New System.Drawing.Point(3, 3)
         Me.riTeBoA.Name = "riTeBoA"
@@ -341,9 +341,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'Label5
         '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = true
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Orange
         Me.Label5.Location = New System.Drawing.Point(3, 388)
         Me.Label5.Name = "Label5"
@@ -354,9 +354,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'Label1
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = true
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Orange
         Me.Label1.Location = New System.Drawing.Point(3, 12)
         Me.Label1.Name = "Label1"
@@ -367,9 +367,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'labNombre
         '
-        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labNombre.AutoSize = True
-        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labNombre.AutoSize = true
+        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labNombre.ForeColor = System.Drawing.Color.Wheat
         Me.labNombre.Location = New System.Drawing.Point(269, 12)
         Me.labNombre.Name = "labNombre"
@@ -380,9 +380,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'Label2
         '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
         Me.Label2.Location = New System.Drawing.Point(3, 87)
         Me.Label2.Name = "Label2"
@@ -393,9 +393,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'Label3
         '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
         Me.Label3.Location = New System.Drawing.Point(3, 187)
         Me.Label3.Name = "Label3"
@@ -406,9 +406,9 @@ Partial Class Ver_Inspeccionsilla
         '
         'Label4
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = true
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Orange
         Me.Label4.Location = New System.Drawing.Point(3, 287)
         Me.Label4.Name = "Label4"
@@ -419,24 +419,24 @@ Partial Class Ver_Inspeccionsilla
         '
         'Ver_Inspeccionsilla
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Ver_Inspeccionsilla"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(972, 544)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel7.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.TableLayoutPanel7.ResumeLayout(false)
+        Me.TableLayoutPanel2.ResumeLayout(false)
+        Me.TableLayoutPanel2.PerformLayout
+        Me.TableLayoutPanel5.ResumeLayout(false)
+        Me.TableLayoutPanel4.ResumeLayout(false)
+        Me.TableLayoutPanel3.ResumeLayout(false)
+        Me.TableLayoutPanel6.ResumeLayout(false)
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel

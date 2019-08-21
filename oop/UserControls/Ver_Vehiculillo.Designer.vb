@@ -29,7 +29,7 @@ Partial Class Ver_Vehiculillo
         Me.btVerInspeccion = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.labLoteID = New System.Windows.Forms.Label()
+        Me.labLoteName = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
@@ -38,7 +38,6 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btModificar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btAceptar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -119,7 +118,7 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.6338!))
         Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel7, 1, 1)
         Me.TableLayoutPanel5.Controls.Add(Me.Label11, 0, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.labLoteID, 1, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.labLoteName, 1, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.Label6, 0, 1)
         Me.TableLayoutPanel5.Controls.Add(Me.Label12, 0, 2)
         Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 1, 2)
@@ -197,18 +196,18 @@ Partial Class Ver_Vehiculillo
         Me.Label11.Text = "LOTE"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'labLoteID
+        'labLoteName
         '
-        Me.labLoteID.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.labLoteID.AutoSize = true
-        Me.labLoteID.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.labLoteID.ForeColor = System.Drawing.Color.Wheat
-        Me.labLoteID.Location = New System.Drawing.Point(255, 5)
-        Me.labLoteID.Name = "labLoteID"
-        Me.labLoteID.Size = New System.Drawing.Size(310, 26)
-        Me.labLoteID.TabIndex = 7
-        Me.labLoteID.Text = "N/A"
-        Me.labLoteID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labLoteName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labLoteName.AutoSize = true
+        Me.labLoteName.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.labLoteName.ForeColor = System.Drawing.Color.Wheat
+        Me.labLoteName.Location = New System.Drawing.Point(255, 5)
+        Me.labLoteName.Name = "labLoteName"
+        Me.labLoteName.Size = New System.Drawing.Size(310, 26)
+        Me.labLoteName.TabIndex = 7
+        Me.labLoteName.Text = "N/A"
+        Me.labLoteName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label6
         '
@@ -297,7 +296,6 @@ Partial Class Ver_Vehiculillo
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.Controls.Add(Me.btModificar, 1, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Button1, 2, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.btAceptar, 0, 0)
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 453)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
@@ -341,25 +339,6 @@ Partial Class Ver_Vehiculillo
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Cerrar"
         Me.Button1.UseVisualStyleBackColor = false
-        '
-        'btAceptar
-        '
-        Me.btAceptar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btAceptar.BackColor = System.Drawing.Color.DimGray
-        Me.btAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btAceptar.FlatAppearance.BorderSize = 0
-        Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btAceptar.ForeColor = System.Drawing.Color.Orange
-        Me.btAceptar.Location = New System.Drawing.Point(48, 5)
-        Me.btAceptar.Margin = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btAceptar.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btAceptar.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btAceptar.Name = "btAceptar"
-        Me.btAceptar.Size = New System.Drawing.Size(143, 53)
-        Me.btAceptar.TabIndex = 0
-        Me.btAceptar.Text = "Aceptar"
-        Me.btAceptar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel8
         '
@@ -779,7 +758,6 @@ End Sub
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents btAceptar As Button
     Friend WithEvents btModificar As Button
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label4 As Label
@@ -801,7 +779,7 @@ End Sub
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents btVerInspeccion As Button
     Friend WithEvents Label6 As Label
-    Friend WithEvents labLoteID As Label
+    Friend WithEvents labLoteName As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents labFecha As Label
     Friend WithEvents Label5 As Label

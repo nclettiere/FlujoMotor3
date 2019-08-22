@@ -21,7 +21,7 @@ Public Class InspeccionWidget
             If resultadoInspeccion IsNot Nothing
                 Dim resultadoInspeccionDanio As DataTable = Conexion.consultar("SELECT * FROM inspeccionDanio WHERE inspeccionid='"+ inspeccionId +"'")
                 If resultadoInspeccionDanio IsNot Nothing
-                    Dim resultadoDanio As DataTable = Conexion.consultar("SELECT * FROM danios WHERE danioid='"+ resultadoInspeccionDanio.Rows(0).Item(0) +"'")
+                    Dim resultadoDanio As DataTable = Conexion.consultar("SELECT * FROM danios WHERE danioid='"+ resultadoInspeccionDanio.Rows(0).Item(0).ToString +"'")
                     If resultadoDanio IsNot Nothing
                         lbl_name.Text = "INSPECCION_" + resultadoDanio.Rows(0).Item(0)
                         MessageBox.Show("nani?")

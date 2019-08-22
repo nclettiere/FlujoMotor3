@@ -32,7 +32,8 @@ Public Class ODBC
             Console.WriteLine("Conectado")
             Return True
         Catch ex As OdbcException
-            Console.WriteLine("#######[EXCEPTION]#######" + Environment.NewLine + ex.Message + Environment.NewLine + "#######[END EXCEPTION]#######")
+            Log.Information(ex, "Error de Conexion.")
+            conODBC.Close()
             Return False
         End Try
 

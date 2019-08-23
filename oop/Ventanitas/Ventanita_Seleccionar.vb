@@ -1,4 +1,5 @@
-﻿Imports oop
+﻿Imports DB
+Imports oop
 
 Public Class Ventanita_Seleccionar
     Public Property ParentLoad As Agregar_Vehiculillo
@@ -73,4 +74,28 @@ Public Class Ventanita_Seleccionar
         End If
     End Sub
 
+    Friend Sub GoToSection(ByVal Section As Integer, Parent As Object, conexion As ODBC)
+        Dim Selection As Object
+        Select Case Section
+            Case 0
+                Selection = Agregar_Lotesillo.Instance
+                Agregar_Lotesillo.Instance.CargarDatos(Me, Parent, conexion)
+            Case 1
+                Selection = Seleccionar_Vehiculillo.Instance
+                Selection.FormParent = DirectCast(Parent, Agregar_Lotesillo)
+            Case 2
+                Selection = Seleccionar_Lotesillo.Instance
+                Seleccionar_Lotesillo.Instance.CargarDatos(Me, Parent, conexion)
+            Case Else
+                Selection = Agregar_Lotesillo.Instance
+        End Select
+
+        If Not mainContent.Contains(Selection) Then
+            MainContent.Controls.Add(Selection.Instance)
+            Selection.Instance.Dock = DockStyle.Fill
+            Selection.Instance.BringToFront()
+        Else
+            Selection.Instance.BringToFront()
+        End If
+    End Sub
 End Class

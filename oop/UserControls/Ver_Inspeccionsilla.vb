@@ -18,6 +18,7 @@
     End Sub
 
     Friend Sub Populate(VIN As String,ByRef Conexion As DB.ODBC)
+        lblVehiculoVin.Text = "Viendo Vehiculo: " + VIN
         Dim ResultadoInspecciones As DataTable = Conexion.consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN +"'")
         If ResultadoInspecciones IsNot Nothing
             Dim index As Integer = 0

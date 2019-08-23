@@ -129,7 +129,7 @@ Partial Class Ver_Inspeccionsilla
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(944, 44)
+        Me.Panel1.Size = New System.Drawing.Size(944, 45)
         Me.Panel1.TabIndex = 0
         '
         'lblVehiculoVin
@@ -145,9 +145,9 @@ Partial Class Ver_Inspeccionsilla
         'MainWidgets
         '
         Me.MainWidgets.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainWidgets.Location = New System.Drawing.Point(3, 53)
+        Me.MainWidgets.Location = New System.Drawing.Point(3, 54)
         Me.MainWidgets.Name = "MainWidgets"
-        Me.MainWidgets.Size = New System.Drawing.Size(944, 397)
+        Me.MainWidgets.Size = New System.Drawing.Size(944, 396)
         Me.MainWidgets.TabIndex = 1
         '
         'Ver_Inspeccionsilla

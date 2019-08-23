@@ -62,7 +62,7 @@ Public Class ODBC
         conexion = "
         DSN=bigmamma;
         Database=big;
-        Host=192.168.1.48;
+        Host=192.168.1.32;
         Server=ol_esi;
         Service=9088;
         Protocol=onsoctcp;

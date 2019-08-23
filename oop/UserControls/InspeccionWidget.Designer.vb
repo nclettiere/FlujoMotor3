@@ -26,9 +26,9 @@ Partial Class InspeccionWidget
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbl_name = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnVerDan = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.rchtbxDesc = New System.Windows.Forms.RichTextBox()
-        Me.btnVerDan = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
@@ -39,9 +39,9 @@ Partial Class InspeccionWidget
         '
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Gray
         Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.93421!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.06579!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.10221!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.89779!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176!))
         Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 1, 0)
@@ -50,7 +50,7 @@ Partial Class InspeccionWidget
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(742, 96)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(610, 96)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Panel1
@@ -58,7 +58,7 @@ Partial Class InspeccionWidget
         Me.Panel1.Controls.Add(Me.lbl_name)
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(170, 90)
+        Me.Panel1.Size = New System.Drawing.Size(81, 90)
         Me.Panel1.TabIndex = 0
         '
         'lbl_name
@@ -68,7 +68,7 @@ Partial Class InspeccionWidget
         Me.lbl_name.ForeColor = System.Drawing.Color.Orange
         Me.lbl_name.Location = New System.Drawing.Point(0, 0)
         Me.lbl_name.Name = "lbl_name"
-        Me.lbl_name.Size = New System.Drawing.Size(170, 90)
+        Me.lbl_name.Size = New System.Drawing.Size(81, 90)
         Me.lbl_name.TabIndex = 9
         Me.lbl_name.Text = "INSPECCION (A)"
         Me.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -77,32 +77,10 @@ Partial Class InspeccionWidget
         '
         Me.Panel2.Controls.Add(Me.btnVerDan)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(590, 3)
+        Me.Panel2.Location = New System.Drawing.Point(436, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(149, 90)
+        Me.Panel2.Size = New System.Drawing.Size(171, 90)
         Me.Panel2.TabIndex = 1
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.rchtbxDesc)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(179, 3)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(405, 90)
-        Me.Panel3.TabIndex = 2
-        '
-        'rchtbxDesc
-        '
-        Me.rchtbxDesc.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.rchtbxDesc.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rchtbxDesc.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.rchtbxDesc.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.rchtbxDesc.Location = New System.Drawing.Point(0, 0)
-        Me.rchtbxDesc.Name = "rchtbxDesc"
-        Me.rchtbxDesc.ReadOnly = true
-        Me.rchtbxDesc.Size = New System.Drawing.Size(405, 90)
-        Me.rchtbxDesc.TabIndex = 13
-        Me.rchtbxDesc.Text = ""
         '
         'btnVerDan
         '
@@ -114,7 +92,7 @@ Partial Class InspeccionWidget
         Me.btnVerDan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVerDan.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnVerDan.ForeColor = System.Drawing.Color.Orange
-        Me.btnVerDan.Location = New System.Drawing.Point(9, 19)
+        Me.btnVerDan.Location = New System.Drawing.Point(20, 19)
         Me.btnVerDan.MaximumSize = New System.Drawing.Size(130, 53)
         Me.btnVerDan.MinimumSize = New System.Drawing.Size(130, 53)
         Me.btnVerDan.Name = "btnVerDan"
@@ -123,13 +101,35 @@ Partial Class InspeccionWidget
         Me.btnVerDan.Text = "Ver Daño"
         Me.btnVerDan.UseVisualStyleBackColor = false
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.rchtbxDesc)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(90, 3)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(340, 90)
+        Me.Panel3.TabIndex = 2
+        '
+        'rchtbxDesc
+        '
+        Me.rchtbxDesc.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rchtbxDesc.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rchtbxDesc.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.rchtbxDesc.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.rchtbxDesc.Location = New System.Drawing.Point(0, 0)
+        Me.rchtbxDesc.Name = "rchtbxDesc"
+        Me.rchtbxDesc.ReadOnly = true
+        Me.rchtbxDesc.Size = New System.Drawing.Size(340, 90)
+        Me.rchtbxDesc.TabIndex = 13
+        Me.rchtbxDesc.Text = ""
+        '
         'InspeccionWidget
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "InspeccionWidget"
-        Me.Size = New System.Drawing.Size(742, 96)
+        Me.Size = New System.Drawing.Size(610, 96)
         Me.TableLayoutPanel1.ResumeLayout(false)
         Me.Panel1.ResumeLayout(false)
         Me.Panel2.ResumeLayout(false)

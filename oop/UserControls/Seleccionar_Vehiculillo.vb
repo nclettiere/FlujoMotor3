@@ -1,4 +1,5 @@
-﻿Imports oop
+﻿Imports DB
+Imports oop
 
 Public Class Seleccionar_Vehiculillo
     Private Shared _instance As Seleccionar_Vehiculillo
@@ -35,5 +36,9 @@ Public Class Seleccionar_Vehiculillo
 
         Agregar_Lotesillo.Instance.UpdateLotes(ListaVehiculos)
         FormParent.GoToSection(0)
+    End Sub
+
+    Friend Sub CargarDatos(parent As Object, conexion As ODBC)
+        Throw New NotImplementedException()
     End Sub
 End Class

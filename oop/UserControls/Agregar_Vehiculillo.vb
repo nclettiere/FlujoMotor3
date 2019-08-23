@@ -77,6 +77,7 @@ Public Class Agregar_Vehiculillo
     End Property
 
     Public Property FormParent As Menu_Wapo
+    Public Property SelectedLote As DataGridViewCellCollection
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load 
         VehiculoAno.Format = DateTimePickerFormat.Custom
@@ -86,16 +87,21 @@ Public Class Agregar_Vehiculillo
         cbxTipo.SelectedIndex = 0
     End Sub
 
+
+
     Private Sub TxtVin_TextChanged(sender As Object, e As EventArgs) Handles txtVin.TextChanged 
         If txtVin.Text.Length > 17
             txtVin.Text = txtVin.Text.Trim().Substring(0, txtVin.Text.Length - 1)
         End If
     End Sub
 
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs)
-        If CheckFields() Then
-
-        End If
+    Friend Sub UpdateLotes(rowSeleccionado As DataGridViewCellCollection)
+        SelectedLote = rowSeleccionado
+        btnNuevoLote.Visible = False
+        btnLoteExistente.Visible = False
+        lblLoteSelection.Visible = True
+        btnQuitarLote.Visible = True
+        lblLoteSelection.Text = "Lote Seleccionado: ID="+ rowSeleccionado.Item("loteid").Value.ToString +", Nombre="+ rowSeleccionado.Item("lotenombre").Value.ToString
     End Sub
 
     Private Function CheckFields() As Boolean
@@ -103,11 +109,19 @@ Public Class Agregar_Vehiculillo
             If txtVin.Text.Length = 17
                 If cbxTipo.SelectedIndex >= 0
                     If Not String.IsNullOrWhiteSpace(txtMarca.Text)
-                        If Not String.IsNullOrWhiteSpace(txtMarca.Text)
+                        If Not String.IsNullOrWhiteSpace(txtModelo.Text)
                             If Not VehiculoAno.Value.Year > DateTime.Now.Year And Not VehiculoAno.Value.Year < 1808
-                                If Not String.IsNullOrWhiteSpace(txtMarca.Text)
-                                    MessageBox.Show("Valid data.")
-                                    Return True
+                                If Not String.IsNullOrWhiteSpace(txtColor.Text)
+                                    If SelectedLote IsNot Nothing
+                                        MessageBox.Show("Valid data.")
+                                        Return True
+                                    Else
+                                        MessageBox.Show("Debes seleccionar o crear un lote.")
+                                        Return False
+                                    End If
+                                Else
+                                    MessageBox.Show("El campo color no debe quedar vacio.")
+                                    Return False
                                 End If
                             Else
                                  MessageBox.Show("No podes viajar en el tiempo.")
@@ -135,17 +149,29 @@ Public Class Agregar_Vehiculillo
         End If
     End Function
 
-    Private Sub BtnNuevoLote_Click(sender As Object, e As EventArgs) Handles btnNuevoLote.Click
+    Private Sub BtnAgregar_Click_1(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        If CheckFields() Then
+
+        End If
+    End Sub
+
+    Private Sub BtnLoteExistente_Click_1(sender As Object, e As EventArgs) Handles btnLoteExistente.Click
         Dim SelecLote As Ventanita_Seleccionar = New Ventanita_Seleccionar
-        SelecLote.ParentLoad = Me
-        SelecLote.GoToSection(0)
+        SelecLote.GoToSection(2, Me, FormParent.Conexion)
         SelecLote.ShowDialog()
     End Sub
 
-    Private Sub BtnLoteExistente_Click(sender As Object, e As EventArgs) Handles btnLoteExistente.Click
+    Private Sub BtnNuevoLote_Click_1(sender As Object, e As EventArgs) Handles btnNuevoLote.Click
         Dim SelecLote As Ventanita_Seleccionar = New Ventanita_Seleccionar
-        SelecLote.ParentLoad = Me
-        SelecLote.GoToSection(2)
+        SelecLote.GoToSection(2, Me, FormParent.Conexion)
         SelecLote.ShowDialog()
+    End Sub
+
+    Private Sub btnQuitarClick(sender As Object, e As EventArgs) Handles btnQuitarLote.Click
+        SelectedLote = Nothing
+        btnNuevoLote.Visible = True
+        btnLoteExistente.Visible = True
+        lblLoteSelection.Visible = False
+        btnQuitarLote.Visible = False
     End Sub
 End Class

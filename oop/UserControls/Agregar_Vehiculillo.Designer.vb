@@ -42,19 +42,17 @@ Partial Class Agregar_Vehiculillo
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.VehiculoAno = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnNuevoLote = New System.Windows.Forms.Button()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnLoteExistente = New System.Windows.Forms.Button()
+        Me.lblLoteSelection = New System.Windows.Forms.Label()
+        Me.btnQuitarLote = New System.Windows.Forms.Button()
         Me.TableLayoutPanelMain.SuspendLayout
         Me.TableLayoutPanel5.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
-        Me.TableLayoutPanel2.SuspendLayout
-        Me.Panel3.SuspendLayout
-        Me.Panel4.SuspendLayout
+        Me.FlowLayoutPanel1.SuspendLayout
         Me.SuspendLayout
         '
         'TableLayoutPanelMain
@@ -349,36 +347,24 @@ Partial Class Agregar_Vehiculillo
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.TableLayoutPanel2)
+        Me.Panel2.Controls.Add(Me.FlowLayoutPanel1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(151, 345)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(369, 54)
         Me.Panel2.TabIndex = 22
         '
-        'TableLayoutPanel2
+        'FlowLayoutPanel1
         '
-        Me.TableLayoutPanel2.ColumnCount = 2
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Panel3, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Panel4, 1, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(369, 54)
-        Me.TableLayoutPanel2.TabIndex = 0
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.btnNuevoLote)
-        Me.Panel3.Location = New System.Drawing.Point(3, 3)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(178, 48)
-        Me.Panel3.TabIndex = 0
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnLoteExistente)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnNuevoLote)
+        Me.FlowLayoutPanel1.Controls.Add(Me.lblLoteSelection)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnQuitarLote)
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(369, 54)
+        Me.FlowLayoutPanel1.TabIndex = 0
         '
         'btnNuevoLote
         '
@@ -389,22 +375,14 @@ Partial Class Agregar_Vehiculillo
         Me.btnNuevoLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNuevoLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnNuevoLote.ForeColor = System.Drawing.Color.Orange
-        Me.btnNuevoLote.Location = New System.Drawing.Point(18, -2)
+        Me.btnNuevoLote.Location = New System.Drawing.Point(152, 3)
         Me.btnNuevoLote.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btnNuevoLote.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnNuevoLote.Name = "btnNuevoLote"
         Me.btnNuevoLote.Size = New System.Drawing.Size(143, 53)
-        Me.btnNuevoLote.TabIndex = 21
+        Me.btnNuevoLote.TabIndex = 23
         Me.btnNuevoLote.Text = "Nuevo Lote"
         Me.btnNuevoLote.UseVisualStyleBackColor = false
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.btnLoteExistente)
-        Me.Panel4.Location = New System.Drawing.Point(187, 3)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(179, 48)
-        Me.Panel4.TabIndex = 1
         '
         'btnLoteExistente
         '
@@ -415,14 +393,47 @@ Partial Class Agregar_Vehiculillo
         Me.btnLoteExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLoteExistente.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnLoteExistente.ForeColor = System.Drawing.Color.Orange
-        Me.btnLoteExistente.Location = New System.Drawing.Point(18, -2)
+        Me.btnLoteExistente.Location = New System.Drawing.Point(3, 3)
         Me.btnLoteExistente.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btnLoteExistente.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnLoteExistente.Name = "btnLoteExistente"
         Me.btnLoteExistente.Size = New System.Drawing.Size(143, 53)
-        Me.btnLoteExistente.TabIndex = 21
+        Me.btnLoteExistente.TabIndex = 22
         Me.btnLoteExistente.Text = "Lote Existente"
         Me.btnLoteExistente.UseVisualStyleBackColor = false
+        '
+        'lblLoteSelection
+        '
+        Me.lblLoteSelection.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lblLoteSelection.AutoSize = true
+        Me.lblLoteSelection.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblLoteSelection.ForeColor = System.Drawing.Color.Orange
+        Me.lblLoteSelection.Location = New System.Drawing.Point(3, 59)
+        Me.lblLoteSelection.Name = "lblLoteSelection"
+        Me.lblLoteSelection.Size = New System.Drawing.Size(354, 26)
+        Me.lblLoteSelection.TabIndex = 24
+        Me.lblLoteSelection.Text = "Lote Seleccionado: ID=0, Nombre=name"
+        Me.lblLoteSelection.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblLoteSelection.Visible = false
+        '
+        'btnQuitarLote
+        '
+        Me.btnQuitarLote.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnQuitarLote.BackColor = System.Drawing.Color.DimGray
+        Me.btnQuitarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnQuitarLote.FlatAppearance.BorderSize = 0
+        Me.btnQuitarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnQuitarLote.ForeColor = System.Drawing.Color.Orange
+        Me.btnQuitarLote.Location = New System.Drawing.Point(3, 88)
+        Me.btnQuitarLote.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnQuitarLote.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnQuitarLote.Name = "btnQuitarLote"
+        Me.btnQuitarLote.Size = New System.Drawing.Size(143, 53)
+        Me.btnQuitarLote.TabIndex = 25
+        Me.btnQuitarLote.Text = "Quitar"
+        Me.btnQuitarLote.UseVisualStyleBackColor = false
+        Me.btnQuitarLote.Visible = false
         '
         'Agregar_Vehiculillo
         '
@@ -439,9 +450,8 @@ Partial Class Agregar_Vehiculillo
         Me.TableLayoutPanel1.PerformLayout
         Me.Panel1.ResumeLayout(false)
         Me.Panel2.ResumeLayout(false)
-        Me.TableLayoutPanel2.ResumeLayout(false)
-        Me.Panel3.ResumeLayout(false)
-        Me.Panel4.ResumeLayout(false)
+        Me.FlowLayoutPanel1.ResumeLayout(false)
+        Me.FlowLayoutPanel1.PerformLayout
         Me.ResumeLayout(false)
 
 End Sub
@@ -466,9 +476,9 @@ End Sub
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btCancelar As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents btnNuevoLote As Button
-    Friend WithEvents Panel4 As Panel
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents btnLoteExistente As Button
+    Friend WithEvents btnNuevoLote As Button
+    Friend WithEvents lblLoteSelection As Label
+    Friend WithEvents btnQuitarLote As Button
 End Class

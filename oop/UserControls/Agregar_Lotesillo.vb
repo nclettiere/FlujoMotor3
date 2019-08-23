@@ -31,11 +31,11 @@ Public Class Agregar_Lotesillo
 
     Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles btAgregar.Click
         If Not String.IsNullOrWhiteSpace(riTeBoDescripcion.Text)
-            If Cliente IsNot Nothing
-                If Not String.IsNullOrWhiteSpace(txtRutaInicial.Text)
-                    If Not String.IsNullOrWhiteSpace(txtRutaFinal.Text)
-                        MessageBox.Show("valid")
-                    End If
+            If Not String.IsNullOrWhiteSpace(txtRutaInicial.Text)
+                If Not String.IsNullOrWhiteSpace(txtRutaFinal.Text)
+                    Dim datos As String() = {riTeBoDescripcion.Text, txtRutaInicial.Text, txtRutaFinal.Text}
+                    ParentControl.UpdateLotes(datos)
+                    FormParent.Close()
                 End If
             End If
         Else
@@ -49,7 +49,4 @@ Public Class Agregar_Lotesillo
         Me.Conexion = conexion
     End Sub
 
-    Private Sub BtSeleccionarCliente_Click(sender As Object, e As EventArgs) Handles btSeleccionarCliente.Click
-
-    End Sub
 End Class

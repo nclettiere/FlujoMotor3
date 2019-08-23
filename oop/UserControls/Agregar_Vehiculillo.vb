@@ -15,79 +15,20 @@ Public Class Agregar_Vehiculillo
         End Set
     End Property
 
-    Private _vin As String
-    Private _tipo As String
-    Private _marca As String
-    Private _modelo As String
-    Private _anio As Short
-    Private _color As String
-
-    Public Property Vin As String
-        Get
-            Return _vin
-        End Get
-        Set(value As String)
-            _vin = value
-        End Set
-    End Property
-
-    Public Property Tipo As String
-        Get
-            Return _tipo
-        End Get
-        Set(value As String)
-            _tipo = value
-        End Set
-    End Property
-
-    Public Property Marca As String
-        Get
-            Return _marca
-        End Get
-        Set(value As String)
-            _marca = value
-        End Set
-    End Property
-
-    Public Property Modelo As String
-        Get
-            Return _modelo
-        End Get
-        Set(value As String)
-            _modelo = value
-        End Set
-    End Property
-
-    Public Property Anio As Short
-        Get
-            Return _anio
-        End Get
-        Set(value As Short)
-            _anio = value
-        End Set
-    End Property
-
-    Public Property Color As String
-        Get
-            Return _color
-        End Get
-        Set(value As String)
-            _color = value
-        End Set
-    End Property
-
     Public Property FormParent As Menu_Wapo
     Public Property SelectedLote As DataGridViewCellCollection
+    Public Property LoteModo As Boolean
+    Public Property LoteDatos As Boolean
+    Public Property NuevoLoteInfo As String()
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load 
         VehiculoAno.Format = DateTimePickerFormat.Custom
         VehiculoAno.CustomFormat = "yyyy"
         VehiculoAno.ShowUpDown = true
-
         cbxTipo.SelectedIndex = 0
+        LoteDatos = False
+        LoteModo = False
     End Sub
-
-
 
     Private Sub TxtVin_TextChanged(sender As Object, e As EventArgs) Handles txtVin.TextChanged 
         If txtVin.Text.Length > 17
@@ -102,6 +43,19 @@ Public Class Agregar_Vehiculillo
         lblLoteSelection.Visible = True
         btnQuitarLote.Visible = True
         lblLoteSelection.Text = "Lote Seleccionado: ID="+ rowSeleccionado.Item("loteid").Value.ToString +", Nombre="+ rowSeleccionado.Item("lotenombre").Value.ToString
+        LoteModo = False
+        LoteDatos = True
+    End Sub
+
+    Friend Sub UpdateLotes(datos As String())
+        NuevoLoteInfo = datos
+        btnNuevoLote.Visible = False
+        btnLoteExistente.Visible = False
+        lblLoteSelection.Visible = True
+        btnQuitarLote.Visible = True
+        lblLoteSelection.Text = "Se creara un nuevo lote cuando agregues el vehiculo."
+        LoteModo = True
+        LoteDatos = True
     End Sub
 
     Private Function CheckFields() As Boolean
@@ -110,14 +64,24 @@ Public Class Agregar_Vehiculillo
                 If cbxTipo.SelectedIndex >= 0
                     If Not String.IsNullOrWhiteSpace(txtMarca.Text)
                         If Not String.IsNullOrWhiteSpace(txtModelo.Text)
-                            If Not VehiculoAno.Value.Year > DateTime.Now.Year And Not VehiculoAno.Value.Year < 1808
+                            If Not VehiculoAno.Value.Year > Now.Year And Not VehiculoAno.Value.Year < 1808
                                 If Not String.IsNullOrWhiteSpace(txtColor.Text)
-                                    If SelectedLote IsNot Nothing
-                                        MessageBox.Show("Valid data.")
-                                        Return True
+                                    If LoteModo
+                                        If LoteDatos
+                                            MessageBox.Show("Valid data.")
+                                            Return True
+                                        Else
+                                            MessageBox.Show("Debes seleccionar o crear un lote.")
+                                            Return False
+                                        End If
                                     Else
-                                        MessageBox.Show("Debes seleccionar o crear un lote.")
-                                        Return False
+                                        If SelectedLote IsNot Nothing And LoteDatos
+                                            MessageBox.Show("Valid data.")
+                                            Return True
+                                        Else
+                                            MessageBox.Show("Debes seleccionar o crear un lote.")
+                                            Return False
+                                        End If
                                     End If
                                 Else
                                     MessageBox.Show("El campo color no debe quedar vacio.")
@@ -151,7 +115,24 @@ Public Class Agregar_Vehiculillo
 
     Private Sub BtnAgregar_Click_1(sender As Object, e As EventArgs) Handles btnAgregar.Click
         If CheckFields() Then
-
+            Dim ChequearVin As DataTable = 
+                FormParent.Conexion.consultar("SELECT COUNT(*) FROM vehiculos WHERE vehiculovin ='"+ txtVin.Text +"';")
+            If String.Equals(ChequearVin.Rows(0).Item(0).ToString, "0")
+                If LoteModo
+                    If LoteDatos
+                        Try
+                            Dim LoteCount = FormParent.Conexion.consultar("SELECT COUNT(*) FROM lotes")
+                            Dim InsertarLote As DataTable = FormParent.Conexion.consultar("INSERT INTO lotes (loteid, lotedescripcion, lotenombre , operariopuertoid) VALUES ("+ (LoteCount.Rows(0).Item(0) + 1).ToString +", '"+ NuevoLoteInfo(0).ToString() +"', 'LOT_C', 1)")
+                            Serilog.Log.Verbose("Datos insertados correctamente.")
+                        Catch ex As Exception
+                            Serilog.Log.Fatal(ex, "No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarLote")
+                        End Try
+                        
+                    End If
+                End If
+            Else
+                MessageBox.Show("Error: Vehiculo existente.")
+            End If
         End If
     End Sub
 
@@ -163,7 +144,7 @@ Public Class Agregar_Vehiculillo
 
     Private Sub BtnNuevoLote_Click_1(sender As Object, e As EventArgs) Handles btnNuevoLote.Click
         Dim SelecLote As Ventanita_Seleccionar = New Ventanita_Seleccionar
-        SelecLote.GoToSection(2, Me, FormParent.Conexion)
+        SelecLote.GoToSection(0, Me, FormParent.Conexion)
         SelecLote.ShowDialog()
     End Sub
 
@@ -173,5 +154,6 @@ Public Class Agregar_Vehiculillo
         btnLoteExistente.Visible = True
         lblLoteSelection.Visible = False
         btnQuitarLote.Visible = False
+        LoteDatos = False
     End Sub
 End Class

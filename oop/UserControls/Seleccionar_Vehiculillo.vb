@@ -33,8 +33,6 @@ Public Class Seleccionar_Vehiculillo
         For Each item As String In SelectedItems
             ListaVehiculos.Add(item)
         Next
-
-        Agregar_Lotesillo.Instance.UpdateLotes(ListaVehiculos)
         FormParent.GoToSection(0)
     End Sub
 

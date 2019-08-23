@@ -25,7 +25,6 @@ Public Class Ventanita_Seleccionar
         Select Case Section
             Case 0
                 Selection = Agregar_Lotesillo.Instance
-                Agregar_Lotesillo.FormParent = Me
             Case 1
                 Selection = Seleccionar_Vehiculillo.Instance
                 Selection.FormParent = Me
@@ -55,7 +54,6 @@ Public Class Ventanita_Seleccionar
         Select Case Section
             Case 0
                 Selection = Agregar_Lotesillo.Instance
-                Agregar_Lotesillo.FormParent = Me
             Case 1
                 Selection = Seleccionar_Vehiculillo.Instance
                 Selection.FormParent = DirectCast(Parent, Agregar_Lotesillo)

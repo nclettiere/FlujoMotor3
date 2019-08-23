@@ -36,12 +36,11 @@ Partial Class Info_de_Autillos
         Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.lote = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btActualizarLote = New System.Windows.Forms.Button()
-        Me.btAceptarLote = New System.Windows.Forms.Button()
-        Me.btVerLote = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btActualizarLote = New System.Windows.Forms.Button()
+        Me.btVerLote = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.autito.SuspendLayout
@@ -51,9 +50,9 @@ Partial Class Info_de_Autillos
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.lote.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
-        Me.TableLayoutPanel5.SuspendLayout
         Me.Panel2.SuspendLayout
         CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Panel3.SuspendLayout
         Me.SuspendLayout
         '
         'Panel1
@@ -239,6 +238,7 @@ Partial Class Info_de_Autillos
         Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 74)
         Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
         Me.DataGridViewVehiculos.ReadOnly = true
+        Me.DataGridViewVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewVehiculos.ShowCellToolTips = false
         Me.DataGridViewVehiculos.ShowEditingIcon = false
         Me.DataGridViewVehiculos.Size = New System.Drawing.Size(901, 424)
@@ -259,8 +259,8 @@ Partial Class Info_de_Autillos
         '
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 2)
         Me.TableLayoutPanel4.Controls.Add(Me.Panel2, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel3, 0, 2)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -271,79 +271,6 @@ Partial Class Info_de_Autillos
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(907, 573)
         Me.TableLayoutPanel4.TabIndex = 1
-        '
-        'TableLayoutPanel5
-        '
-        Me.TableLayoutPanel5.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.TableLayoutPanel5.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel5.ColumnCount = 3
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel5.Controls.Add(Me.btActualizarLote, 0, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.btAceptarLote, 0, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.btVerLote, 1, 0)
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(361, 504)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
-        Me.TableLayoutPanel5.RowCount = 1
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(543, 66)
-        Me.TableLayoutPanel5.TabIndex = 6
-        '
-        'btActualizarLote
-        '
-        Me.btActualizarLote.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btActualizarLote.BackColor = System.Drawing.Color.DimGray
-        Me.btActualizarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btActualizarLote.FlatAppearance.BorderSize = 0
-        Me.btActualizarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btActualizarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btActualizarLote.ForeColor = System.Drawing.Color.Orange
-        Me.btActualizarLote.Location = New System.Drawing.Point(200, 8)
-        Me.btActualizarLote.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btActualizarLote.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btActualizarLote.Name = "btActualizarLote"
-        Me.btActualizarLote.Size = New System.Drawing.Size(143, 53)
-        Me.btActualizarLote.TabIndex = 2
-        Me.btActualizarLote.Text = "Actualizar"
-        Me.btActualizarLote.UseVisualStyleBackColor = false
-        '
-        'btAceptarLote
-        '
-        Me.btAceptarLote.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btAceptarLote.BackColor = System.Drawing.Color.DimGray
-        Me.btAceptarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btAceptarLote.FlatAppearance.BorderSize = 0
-        Me.btAceptarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btAceptarLote.ForeColor = System.Drawing.Color.Orange
-        Me.btAceptarLote.Location = New System.Drawing.Point(39, 8)
-        Me.btAceptarLote.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btAceptarLote.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btAceptarLote.Name = "btAceptarLote"
-        Me.btAceptarLote.Size = New System.Drawing.Size(143, 53)
-        Me.btAceptarLote.TabIndex = 0
-        Me.btAceptarLote.Text = "Aceptar"
-        Me.btAceptarLote.UseVisualStyleBackColor = false
-        '
-        'btVerLote
-        '
-        Me.btVerLote.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btVerLote.BackColor = System.Drawing.Color.DimGray
-        Me.btVerLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btVerLote.FlatAppearance.BorderSize = 0
-        Me.btVerLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btVerLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btVerLote.ForeColor = System.Drawing.Color.Orange
-        Me.btVerLote.Location = New System.Drawing.Point(361, 8)
-        Me.btVerLote.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btVerLote.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btVerLote.Name = "btVerLote"
-        Me.btVerLote.Size = New System.Drawing.Size(143, 53)
-        Me.btVerLote.TabIndex = 1
-        Me.btVerLote.Text = "Ver"
-        Me.btVerLote.UseVisualStyleBackColor = false
         '
         'Panel2
         '
@@ -364,10 +291,59 @@ Partial Class Info_de_Autillos
         Me.DataGridViewLotes.Location = New System.Drawing.Point(0, 0)
         Me.DataGridViewLotes.Name = "DataGridViewLotes"
         Me.DataGridViewLotes.ReadOnly = true
+        Me.DataGridViewLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewLotes.ShowCellToolTips = false
         Me.DataGridViewLotes.ShowEditingIcon = false
         Me.DataGridViewLotes.Size = New System.Drawing.Size(901, 424)
         Me.DataGridViewLotes.TabIndex = 5
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.btActualizarLote)
+        Me.Panel3.Controls.Add(Me.btVerLote)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(3, 511)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(901, 59)
+        Me.Panel3.TabIndex = 8
+        '
+        'btActualizarLote
+        '
+        Me.btActualizarLote.BackColor = System.Drawing.Color.DimGray
+        Me.btActualizarLote.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btActualizarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btActualizarLote.FlatAppearance.BorderSize = 0
+        Me.btActualizarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btActualizarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btActualizarLote.ForeColor = System.Drawing.Color.Orange
+        Me.btActualizarLote.Location = New System.Drawing.Point(615, 0)
+        Me.btActualizarLote.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btActualizarLote.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btActualizarLote.Name = "btActualizarLote"
+        Me.btActualizarLote.Size = New System.Drawing.Size(143, 53)
+        Me.btActualizarLote.TabIndex = 4
+        Me.btActualizarLote.Text = "Actualizar"
+        Me.btActualizarLote.UseVisualStyleBackColor = false
+        '
+        'btVerLote
+        '
+        Me.btVerLote.BackColor = System.Drawing.Color.DimGray
+        Me.btVerLote.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btVerLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btVerLote.FlatAppearance.BorderSize = 0
+        Me.btVerLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btVerLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btVerLote.ForeColor = System.Drawing.Color.Orange
+        Me.btVerLote.Location = New System.Drawing.Point(758, 0)
+        Me.btVerLote.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.btVerLote.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btVerLote.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btVerLote.Name = "btVerLote"
+        Me.btVerLote.Size = New System.Drawing.Size(143, 53)
+        Me.btVerLote.TabIndex = 3
+        Me.btVerLote.Text = "Ver"
+        Me.btVerLote.UseVisualStyleBackColor = false
         '
         'Info_de_Autillos
         '
@@ -388,9 +364,9 @@ Partial Class Info_de_Autillos
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.lote.ResumeLayout(false)
         Me.TableLayoutPanel4.ResumeLayout(false)
-        Me.TableLayoutPanel5.ResumeLayout(false)
         Me.Panel2.ResumeLayout(false)
         CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
+        Me.Panel3.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub
@@ -408,11 +384,10 @@ End Sub
     Friend WithEvents btBuscar As Button
     Friend WithEvents tbxBuscarVin As TextBox
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents btActualizarLote As Button
-    Friend WithEvents btAceptarLote As Button
-    Friend WithEvents btVerLote As Button
     Friend WithEvents DataGridViewVehiculos As DataGridView
     Friend WithEvents Panel2 As Panel
     Friend WithEvents DataGridViewLotes As DataGridView
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents btActualizarLote As Button
+    Friend WithEvents btVerLote As Button
 End Class

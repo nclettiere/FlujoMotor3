@@ -64,10 +64,20 @@ Public Class Info_de_Autillos
 
     Private Sub BtInfoVehiculo_Click(sender As Object, e As EventArgs) Handles btInfoVehiculo.Click
         Try
-            Dim IndiceSeleccion As Integer = DataGridViewVehiculos.SelectedCells(0).RowIndex
             Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
-            Ver_Vehiculillo.Instance.Data(Me, DataGridViewVehiculos.Rows(IndiceSeleccion).Cells(0).Value.ToString, VentanaVer, FormParent.Conexion)
+            Ver_Vehiculillo.Instance.Data(Me, DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString(), VentanaVer, FormParent.Conexion)
             VentanaVer.LoadControl(Ver_Vehiculillo.Instance)
+            VentanaVer.ShowDialog()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub BtVerLote_Click_1(sender As Object, e As EventArgs) Handles btVerLote.Click
+        Try
+            Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
+            Ver_Lotesillo.Instance.Data(Me, DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString(), VentanaVer, FormParent.Conexion)
+            VentanaVer.LoadControl(Ver_Lotesillo.Instance)
             VentanaVer.ShowDialog()
         Catch ex As Exception
 

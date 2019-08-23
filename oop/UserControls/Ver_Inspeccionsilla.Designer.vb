@@ -105,7 +105,7 @@ Partial Class Ver_Inspeccionsilla
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(143, 51)
         Me.btCancelar.TabIndex = 1
-        Me.btCancelar.Text = "Cancelar"
+        Me.btCancelar.Text = "Ir Atras"
         Me.btCancelar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel2

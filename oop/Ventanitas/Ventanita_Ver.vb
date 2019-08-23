@@ -9,6 +9,10 @@ Public Class Ventanita_Ver
         mainContent.Controls.Add(verVehiculo)
     End Sub
 
+    Friend Sub LoadControl(verLote As Ver_Lotesillo)
+        mainContent.Controls.Add(verLote)
+    End Sub
+
     ''' <summary>
     ''' Metodo usado para cambiar dinamicamente el contenido del MainContent
     ''' </summary>
@@ -21,6 +25,8 @@ Public Class Ventanita_Ver
         Select Case Section
             Case 0
                 Selection = Ver_Inspeccionsilla.Instance
+            Case 1
+                Selection = Ver_Vehiculillo.Instance
             Case Else
                 Selection = Ver_Inspeccionsilla.Instance
         End Select
@@ -40,7 +46,12 @@ Public Class Ventanita_Ver
             Select Case Section
                 Case 0
                     Selection = Ver_Inspeccionsilla.Instance
+                    Ver_Inspeccionsilla.Instance.FormParent = Me
                     Ver_Inspeccionsilla.Instance.Populate(VIN, Conexion)
+                Case 1
+                    Selection = Agregar_Inspeccion.Instance
+                    Agregar_Inspeccion.Instance.FormParent = Me
+                    Agregar_Inspeccion.Instance.CargarDatos(VIN, Conexion)
                 Case Else
                     Selection = Ver_Inspeccionsilla.Instance
             End Select

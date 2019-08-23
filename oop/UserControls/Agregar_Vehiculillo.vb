@@ -68,7 +68,6 @@ Public Class Agregar_Vehiculillo
                                 If Not String.IsNullOrWhiteSpace(txtColor.Text)
                                     If LoteModo
                                         If LoteDatos
-                                            MessageBox.Show("Valid data.")
                                             Return True
                                         Else
                                             MessageBox.Show("Debes seleccionar o crear un lote.")
@@ -76,7 +75,6 @@ Public Class Agregar_Vehiculillo
                                         End If
                                     Else
                                         If SelectedLote IsNot Nothing And LoteDatos
-                                            MessageBox.Show("Valid data.")
                                             Return True
                                         Else
                                             MessageBox.Show("Debes seleccionar o crear un lote.")
@@ -113,27 +111,19 @@ Public Class Agregar_Vehiculillo
         End If
     End Function
 
-    Private Sub BtnAgregar_Click_1(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        If CheckFields() Then
-            Dim ChequearVin As DataTable = 
-                FormParent.Conexion.consultar("SELECT COUNT(*) FROM vehiculos WHERE vehiculovin ='"+ txtVin.Text +"';")
-            If String.Equals(ChequearVin.Rows(0).Item(0).ToString, "0")
-                If LoteModo
-                    If LoteDatos
-                        Try
-                            Dim LoteCount = FormParent.Conexion.consultar("SELECT COUNT(*) FROM lotes")
-                            Dim InsertarLote As DataTable = FormParent.Conexion.consultar("INSERT INTO lotes (loteid, lotedescripcion, lotenombre , operariopuertoid) VALUES ("+ (LoteCount.Rows(0).Item(0) + 1).ToString +", '"+ NuevoLoteInfo(0).ToString() +"', 'LOT_C', 1)")
-                            Serilog.Log.Verbose("Datos insertados correctamente.")
-                        Catch ex As Exception
-                            Serilog.Log.Fatal(ex, "No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarLote")
-                        End Try
-                        
-                    End If
-                End If
-            Else
-                MessageBox.Show("Error: Vehiculo existente.")
-            End If
-        End If
+    Private Sub ClearFields()
+        txtVin.Text = String.Empty
+        txtColor.Text = String.Empty
+        txtMarca.Text = String.Empty
+        txtModelo.Text = String.Empty
+        SelectedLote = Nothing
+        btnNuevoLote.Visible = True
+        btnLoteExistente.Visible = True
+        lblLoteSelection.Visible = False
+        btnQuitarLote.Visible = False
+        LoteDatos = False
+
+        FormParent.UpdateVehiculos()
     End Sub
 
     Private Sub BtnLoteExistente_Click_1(sender As Object, e As EventArgs) Handles btnLoteExistente.Click
@@ -155,5 +145,38 @@ Public Class Agregar_Vehiculillo
         lblLoteSelection.Visible = False
         btnQuitarLote.Visible = False
         LoteDatos = False
+    End Sub
+
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        If CheckFields() Then
+            Dim ChequearVin As DataTable = 
+                FormParent.Conexion.consultar("SELECT COUNT(*) FROM vehiculos WHERE vehiculovin ='"+ txtVin.Text +"';")
+            If ChequearVin.Rows(0).Item(0) = 0
+                If LoteModo
+                    If LoteDatos
+                        Try
+                            Dim LoteCount = FormParent.Conexion.consultar("SELECT COUNT(*) FROM lotes")
+                            Dim VehiculoCount = FormParent.Conexion.consultar("SELECT COUNT(*) FROM vehiculos")
+                            Dim InsertarLote As DataTable = FormParent.Conexion.consultar("INSERT INTO lotes (loteid, lotedescripcion, lotenombre, operariopuertoid) VALUES ("+ (LoteCount.Rows(0).Item(0) + 1).ToString +", '"+ NuevoLoteInfo(0).ToString() +"', 'LOT_C', 1)")
+                            Dim InsertarVehiculo As DataTable = FormParent.Conexion.consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('"+ txtVin.Text.ToUpper +"','"+ txtColor.Text +"', '"+ txtMarca.Text +"', '"+ txtModelo.Text +"', "+ VehiculoAno.Value.Year.ToString +", '"+ cbxTipo.Text.ToLower() +"', 1, "+ (LoteCount.Rows(0).Item(0) + 1).ToString + ")")
+                            Messagebox.Show("Vehiculo Ingresado Correctamente.")
+                            Serilog.Log.Information("Vehiculo insertado correctamente.")
+                            ClearFields()
+                        Catch ex As Exception
+                            Serilog.Log.Fatal(ex, "No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarLote")
+                        End Try
+                    End If
+                    Else
+                        If LoteDatos
+                            Dim InsertarVehiculo As DataTable = FormParent.Conexion.consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('"+ txtVin.Text.ToUpper +"','"+ txtColor.Text +"', '"+ txtMarca.Text +"', '"+ txtModelo.Text +"', "+ VehiculoAno.Value.Year.ToString +", '"+ cbxTipo.Text.ToLower() +"', 1, "+ (SelectedLote.Item(0).Value).ToString + ")")
+                            Messagebox.Show("Vehiculo Ingresado Correctamente.")
+                            Serilog.Log.Information("Vehiculo insertado correctamente.")
+                            ClearFields()
+                        End If
+                End If
+            Else
+                MessageBox.Show("Error: El VIN ingresado ya existe.")
+            End If
+        End If
     End Sub
 End Class

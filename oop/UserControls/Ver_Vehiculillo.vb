@@ -36,17 +36,30 @@ Public Class Ver_Vehiculillo
             Dim resultadoLote As DataTable = Conexion.consultar("SELECT * FROM lotes WHERE loteid='" + resultadoVehiculo.Rows(0).Item(8).ToString + "'")
             If resultadoVehiculo IsNot Nothing
                 Dim resultadoPatio As DataTable = Conexion.consultar("SELECT * FROM patios WHERE patioid='" + resultadoVehiculo.Rows(0).Item(8).ToString + "'")
+
                 lblVin.Text = resultadoVehiculo.Rows(0).Item(0)
+                Log.Information(lblVin.Text)
                 VIN = resultadoVehiculo.Rows(0).Item(0)
                 'labFecha.Text = resultadoVehiculo.Rows(0).Item(1)
                 labColor.Text = resultadoVehiculo.Rows(0).Item(2)
+                Log.Information(labColor.Text)
                 labMarca.Text = resultadoVehiculo.Rows(0).Item(3)
+                Log.Information(labMarca.Text)
                 labModelo.Text = resultadoVehiculo.Rows(0).Item(4)
+                Log.Information(labModelo.Text)
                 labAno.Text = resultadoVehiculo.Rows(0).Item(5)
+                Log.Information(labAno.Text)
                 labTipo.Text = resultadoVehiculo.Rows(0).Item(6)  
+                Log.Information(labTipo.Text)
                 labLoteName.Text = resultadoLote.Rows(0).Item(1)
+                Log.Information(labLoteName.Text)
                 If resultadoPatio IsNot Nothing
-                    labPatio.Text = resultadoPatio.Rows(0).Item(1)
+                    Try
+                        labPatio.Text = resultadoPatio.Rows(0).Item(1)
+                    Catch ex As Exception
+                        Log.Warning(ex, "Error out of index")
+                    End Try
+                    
                 End If
             End If
         End If
@@ -58,7 +71,10 @@ Public Class Ver_Vehiculillo
     End Sub
 
     Private Sub BtVerInspeccion_Click(sender As Object, e As EventArgs) Handles btVerInspeccion.Click
-        MessageBox.Show(VIN)
         Ventana.GotoSection(0, VIN, Conexion)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Ventana.GotoSection(1, VIN, Conexion)
     End Sub
 End Class

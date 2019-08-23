@@ -45,14 +45,7 @@ Public Class Menu_Wapo
     End Sub
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim resultado As DataTable = Conexion.consultar("SELECT COUNT(*) FROM vehiculos")
-
-        If resultado IsNot Nothing
-            lblTotalVehiculos.Text = "Total de Vehiculos Ingresados: " + resultado.Rows(0).Item(0).ToString
-        Else
-            MessageBox.Show("Error Al cargar datos. Vea el Log para mas informacion.")
-        End If
-            
+        UpdateVehiculos() 
 
         Me.AutoSize = true
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
@@ -95,6 +88,16 @@ Public Class Menu_Wapo
             Selection.Instance.BringToFront()
         Else
             Selection.Instance.BringToFront()
+        End If
+    End Sub
+
+    Friend Sub UpdateVehiculos()
+        Dim resultado As DataTable = Conexion.consultar("SELECT COUNT(*) FROM vehiculos")
+
+        If resultado IsNot Nothing
+            lblTotalVehiculos.Text = "Total de Vehiculos Ingresados: " + resultado.Rows(0).Item(0).ToString
+        Else
+            MessageBox.Show("Error Al cargar datos. Vea el Log para mas informacion.")
         End If
     End Sub
 End Class

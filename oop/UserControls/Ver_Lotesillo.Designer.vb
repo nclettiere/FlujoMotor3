@@ -25,28 +25,28 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btEditar = New System.Windows.Forms.Button()
-        Me.btAceptar = New System.Windows.Forms.Button()
         Me.btCerrar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.labNombre = New System.Windows.Forms.Label()
+        Me.labId = New System.Windows.Forms.Label()
         Me.labCliente = New System.Windows.Forms.Label()
         Me.labRutaI = New System.Windows.Forms.Label()
         Me.labRutaF = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.riTeBoDescripcion = New System.Windows.Forms.RichTextBox()
-        Me.lisBoVehiculos = New System.Windows.Forms.ListBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.Panel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
+        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'TableLayoutPanel1
@@ -75,7 +75,6 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.Controls.Add(Me.btEditar, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.btAceptar, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.btCerrar, 2, 0)
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 446)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -93,7 +92,7 @@ Partial Class Ver_Lotesillo
         Me.btEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEditar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btEditar.ForeColor = System.Drawing.Color.Orange
-        Me.btEditar.Location = New System.Drawing.Point(152, 8)
+        Me.btEditar.Location = New System.Drawing.Point(3, 8)
         Me.btEditar.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btEditar.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btEditar.Name = "btEditar"
@@ -101,24 +100,6 @@ Partial Class Ver_Lotesillo
         Me.btEditar.TabIndex = 2
         Me.btEditar.Text = "Editar"
         Me.btEditar.UseVisualStyleBackColor = false
-        '
-        'btAceptar
-        '
-        Me.btAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btAceptar.BackColor = System.Drawing.Color.DimGray
-        Me.btAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btAceptar.FlatAppearance.BorderSize = 0
-        Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btAceptar.ForeColor = System.Drawing.Color.Orange
-        Me.btAceptar.Location = New System.Drawing.Point(3, 8)
-        Me.btAceptar.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btAceptar.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btAceptar.Name = "btAceptar"
-        Me.btAceptar.Size = New System.Drawing.Size(143, 53)
-        Me.btAceptar.TabIndex = 0
-        Me.btAceptar.Text = "Aceptar"
-        Me.btAceptar.UseVisualStyleBackColor = false
         '
         'btCerrar
         '
@@ -147,7 +128,7 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.labNombre, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.labId, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.labCliente, 1, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.labRutaI, 1, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.labRutaF, 1, 3)
@@ -186,7 +167,7 @@ Partial Class Ver_Lotesillo
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 26)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "NOMBRE"
+        Me.Label1.Text = "ID"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
@@ -215,18 +196,18 @@ Partial Class Ver_Lotesillo
         Me.Label3.Text = "RUTA INICIAL"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'labNombre
+        'labId
         '
-        Me.labNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.labNombre.AutoSize = true
-        Me.labNombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.labNombre.ForeColor = System.Drawing.Color.Wheat
-        Me.labNombre.Location = New System.Drawing.Point(142, 41)
-        Me.labNombre.Name = "labNombre"
-        Me.labNombre.Size = New System.Drawing.Size(304, 26)
-        Me.labNombre.TabIndex = 6
-        Me.labNombre.Text = "N/A"
-        Me.labNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labId.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labId.AutoSize = true
+        Me.labId.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.labId.ForeColor = System.Drawing.Color.Wheat
+        Me.labId.Location = New System.Drawing.Point(142, 41)
+        Me.labId.Name = "labId"
+        Me.labId.Size = New System.Drawing.Size(304, 26)
+        Me.labId.TabIndex = 6
+        Me.labId.Text = "N/A"
+        Me.labId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'labCliente
         '
@@ -306,19 +287,6 @@ Partial Class Ver_Lotesillo
         Me.riTeBoDescripcion.TabIndex = 4
         Me.riTeBoDescripcion.Text = ""
         '
-        'lisBoVehiculos
-        '
-        Me.lisBoVehiculos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lisBoVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lisBoVehiculos.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lisBoVehiculos.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lisBoVehiculos.FormattingEnabled = true
-        Me.lisBoVehiculos.ItemHeight = 23
-        Me.lisBoVehiculos.Location = New System.Drawing.Point(3, 303)
-        Me.lisBoVehiculos.Name = "lisBoVehiculos"
-        Me.lisBoVehiculos.Size = New System.Drawing.Size(483, 216)
-        Me.lisBoVehiculos.TabIndex = 6
-        '
         'Panel1
         '
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
@@ -338,10 +306,10 @@ Partial Class Ver_Lotesillo
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel3.Controls.Add(Me.lisBoVehiculos, 0, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Label5, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label6, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.riTeBoDescripcion, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.DataGridViewVehiculos, 0, 3)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(464, 3)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 4
@@ -351,6 +319,21 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.11765!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(489, 522)
         Me.TableLayoutPanel3.TabIndex = 1
+        '
+        'DataGridViewVehiculos
+        '
+        Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 303)
+        Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
+        Me.DataGridViewVehiculos.ReadOnly = true
+        Me.DataGridViewVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridViewVehiculos.ShowCellErrors = false
+        Me.DataGridViewVehiculos.ShowCellToolTips = false
+        Me.DataGridViewVehiculos.ShowEditingIcon = false
+        Me.DataGridViewVehiculos.ShowRowErrors = false
+        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(483, 216)
+        Me.DataGridViewVehiculos.TabIndex = 6
         '
         'Ver_Lotesillo
         '
@@ -368,6 +351,7 @@ Partial Class Ver_Lotesillo
         Me.Panel1.ResumeLayout(false)
         Me.TableLayoutPanel3.ResumeLayout(false)
         Me.TableLayoutPanel3.PerformLayout
+        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
@@ -378,18 +362,17 @@ End Sub
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents labNombre As Label
+    Friend WithEvents labId As Label
     Friend WithEvents labCliente As Label
     Friend WithEvents labRutaI As Label
     Friend WithEvents labRutaF As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents riTeBoDescripcion As RichTextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents lisBoVehiculos As ListBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents btAceptar As Button
     Friend WithEvents btCerrar As Button
     Friend WithEvents btEditar As Button
+    Friend WithEvents DataGridViewVehiculos As DataGridView
 End Class

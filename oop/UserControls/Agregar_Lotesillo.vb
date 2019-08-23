@@ -49,4 +49,7 @@ Public Class Agregar_Lotesillo
         Me.Conexion = conexion
     End Sub
 
+    Friend Sub CargarDatos(vIN As String, conexion As ODBC)
+        Throw New NotImplementedException()
+    End Sub
 End Class

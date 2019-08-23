@@ -1,4 +1,6 @@
-﻿Public Class Ver_Inspeccionsilla
+﻿Imports oop
+
+Public Class Ver_Inspeccionsilla
      Private Shared _instance As Ver_Inspeccionsilla
 
     Public Shared Property Instance As Ver_Inspeccionsilla
@@ -13,6 +15,8 @@
         End Set
     End Property
 
+    Public Property FormParent As Ventanita_Ver
+
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -22,14 +26,22 @@
         Dim ResultadoInspecciones As DataTable = Conexion.consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN +"'")
         If ResultadoInspecciones IsNot Nothing
             Dim index As Integer = 0
-            MessageBox.Show(ResultadoInspecciones.Rows.Count.ToString)
-            For Each row As DataRow In ResultadoInspecciones.Rows
-                Dim widget As New InspeccionWidget()
-                MessageBox.Show(row("inspeccionid").ToString)
-                widget.CargarDatos(row("inspeccionid").ToString, Conexion, index)
-                MainWidgets.Controls.Add(widget)
-                index = index + 1
-            Next row
+            If ResultadoInspecciones.Rows.Count <> 0
+                For Each row As DataRow In ResultadoInspecciones.Rows
+                    Dim widget As New InspeccionWidget()
+                    MessageBox.Show(row("inspeccionid").ToString)
+                    widget.CargarDatos(row("inspeccionid").ToString, Conexion, index)
+                    MainWidgets.Controls.Add(widget)
+                    index += 1
+                Next row
+            Else
+                MessageBox.Show("Este vehiculo no tiene inspecciones.")
+                ParentForm.Close()
+            End If
         End If
+    End Sub
+
+    Private Sub BtCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
+        FormParent.GoToSection(1)
     End Sub
 End Class

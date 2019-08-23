@@ -23,9 +23,6 @@ Partial Class Agregar_Vehiculillo
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TableLayoutPanelMain = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.btCancelar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtColor = New System.Windows.Forms.TextBox()
@@ -43,16 +40,18 @@ Partial Class Agregar_Vehiculillo
         Me.VehiculoAno = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.btnNuevoLote = New System.Windows.Forms.Button()
         Me.btnLoteExistente = New System.Windows.Forms.Button()
+        Me.btnNuevoLote = New System.Windows.Forms.Button()
         Me.lblLoteSelection = New System.Windows.Forms.Label()
         Me.btnQuitarLote = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.TableLayoutPanelMain.SuspendLayout
-        Me.TableLayoutPanel5.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
         Me.FlowLayoutPanel1.SuspendLayout
+        Me.Panel3.SuspendLayout
         Me.SuspendLayout
         '
         'TableLayoutPanelMain
@@ -62,8 +61,8 @@ Partial Class Agregar_Vehiculillo
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanelMain.ColumnCount = 1
         Me.TableLayoutPanelMain.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanelMain.Controls.Add(Me.TableLayoutPanel5, 0, 1)
         Me.TableLayoutPanelMain.Controls.Add(Me.TableLayoutPanel1, 0, 0)
+        Me.TableLayoutPanelMain.Controls.Add(Me.Panel3, 0, 1)
         Me.TableLayoutPanelMain.Location = New System.Drawing.Point(8, 8)
         Me.TableLayoutPanelMain.Name = "TableLayoutPanelMain"
         Me.TableLayoutPanelMain.RowCount = 2
@@ -72,61 +71,6 @@ Partial Class Agregar_Vehiculillo
         Me.TableLayoutPanelMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanelMain.Size = New System.Drawing.Size(529, 483)
         Me.TableLayoutPanelMain.TabIndex = 0
-        '
-        'TableLayoutPanel5
-        '
-        Me.TableLayoutPanel5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TableLayoutPanel5.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel5.ColumnCount = 2
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel5.Controls.Add(Me.btnAgregar, 0, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.btCancelar, 1, 0)
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(82, 412)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
-        Me.TableLayoutPanel5.RowCount = 1
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(364, 67)
-        Me.TableLayoutPanel5.TabIndex = 3
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Me.btnAgregar.BackColor = System.Drawing.Color.DimGray
-        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnAgregar.FlatAppearance.BorderSize = 0
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnAgregar.ForeColor = System.Drawing.Color.Orange
-        Me.btnAgregar.Location = New System.Drawing.Point(33, 8)
-        Me.btnAgregar.MaximumSize = New System.Drawing.Size(143, 51)
-        Me.btnAgregar.MinimumSize = New System.Drawing.Size(143, 51)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(143, 51)
-        Me.btnAgregar.TabIndex = 0
-        Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = false
-        '
-        'btCancelar
-        '
-        Me.btCancelar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btCancelar.BackColor = System.Drawing.Color.DimGray
-        Me.btCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Goldenrod
-        Me.btCancelar.FlatAppearance.BorderSize = 0
-        Me.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCancelar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.Orange
-        Me.btCancelar.Location = New System.Drawing.Point(188, 8)
-        Me.btCancelar.MaximumSize = New System.Drawing.Size(143, 51)
-        Me.btCancelar.MinimumSize = New System.Drawing.Size(143, 51)
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(143, 51)
-        Me.btCancelar.TabIndex = 1
-        Me.btCancelar.Text = "Cancelar"
-        Me.btCancelar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel1
         '
@@ -366,24 +310,6 @@ Partial Class Agregar_Vehiculillo
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(369, 54)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
-        'btnNuevoLote
-        '
-        Me.btnNuevoLote.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnNuevoLote.BackColor = System.Drawing.Color.DimGray
-        Me.btnNuevoLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnNuevoLote.FlatAppearance.BorderSize = 0
-        Me.btnNuevoLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevoLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnNuevoLote.ForeColor = System.Drawing.Color.Orange
-        Me.btnNuevoLote.Location = New System.Drawing.Point(152, 3)
-        Me.btnNuevoLote.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnNuevoLote.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnNuevoLote.Name = "btnNuevoLote"
-        Me.btnNuevoLote.Size = New System.Drawing.Size(143, 53)
-        Me.btnNuevoLote.TabIndex = 23
-        Me.btnNuevoLote.Text = "Nuevo Lote"
-        Me.btnNuevoLote.UseVisualStyleBackColor = false
-        '
         'btnLoteExistente
         '
         Me.btnLoteExistente.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -401,6 +327,24 @@ Partial Class Agregar_Vehiculillo
         Me.btnLoteExistente.TabIndex = 22
         Me.btnLoteExistente.Text = "Lote Existente"
         Me.btnLoteExistente.UseVisualStyleBackColor = false
+        '
+        'btnNuevoLote
+        '
+        Me.btnNuevoLote.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnNuevoLote.BackColor = System.Drawing.Color.DimGray
+        Me.btnNuevoLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnNuevoLote.FlatAppearance.BorderSize = 0
+        Me.btnNuevoLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevoLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnNuevoLote.ForeColor = System.Drawing.Color.Orange
+        Me.btnNuevoLote.Location = New System.Drawing.Point(152, 3)
+        Me.btnNuevoLote.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnNuevoLote.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnNuevoLote.Name = "btnNuevoLote"
+        Me.btnNuevoLote.Size = New System.Drawing.Size(143, 53)
+        Me.btnNuevoLote.TabIndex = 23
+        Me.btnNuevoLote.Text = "Nuevo Lote"
+        Me.btnNuevoLote.UseVisualStyleBackColor = false
         '
         'lblLoteSelection
         '
@@ -435,6 +379,34 @@ Partial Class Agregar_Vehiculillo
         Me.btnQuitarLote.UseVisualStyleBackColor = false
         Me.btnQuitarLote.Visible = false
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.btnAgregar)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(3, 411)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(523, 69)
+        Me.Panel3.TabIndex = 1
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.btnAgregar.BackColor = System.Drawing.Color.DimGray
+        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAgregar.FlatAppearance.BorderSize = 0
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnAgregar.ForeColor = System.Drawing.Color.Orange
+        Me.btnAgregar.Location = New System.Drawing.Point(190, 9)
+        Me.btnAgregar.MaximumSize = New System.Drawing.Size(143, 51)
+        Me.btnAgregar.MinimumSize = New System.Drawing.Size(143, 51)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(143, 51)
+        Me.btnAgregar.TabIndex = 1
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = false
+        '
         'Agregar_Vehiculillo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -445,13 +417,13 @@ Partial Class Agregar_Vehiculillo
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(545, 499)
         Me.TableLayoutPanelMain.ResumeLayout(false)
-        Me.TableLayoutPanel5.ResumeLayout(false)
         Me.TableLayoutPanel1.ResumeLayout(false)
         Me.TableLayoutPanel1.PerformLayout
         Me.Panel1.ResumeLayout(false)
         Me.Panel2.ResumeLayout(false)
         Me.FlowLayoutPanel1.ResumeLayout(false)
         Me.FlowLayoutPanel1.PerformLayout
+        Me.Panel3.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub
@@ -472,13 +444,12 @@ End Sub
     Friend WithEvents cbxTipo As ComboBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents VehiculoAno As DateTimePicker
-    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents btnAgregar As Button
-    Friend WithEvents btCancelar As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents btnLoteExistente As Button
     Friend WithEvents btnNuevoLote As Button
     Friend WithEvents lblLoteSelection As Label
     Friend WithEvents btnQuitarLote As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents btnAgregar As Button
 End Class

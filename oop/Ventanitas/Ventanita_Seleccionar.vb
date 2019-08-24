@@ -77,12 +77,15 @@ Public Class Ventanita_Seleccionar
         Select Case Section
             Case 0
                 Selection = Agregar_Lotesillo.Instance
+                Me.ClientSize = Selection.Size
                 Agregar_Lotesillo.Instance.CargarDatos(Me, Parent, conexion)
             Case 1
                 Selection = Seleccionar_Vehiculillo.Instance
+                Me.ClientSize = Selection.Size
                 Selection.FormParent = DirectCast(Parent, Agregar_Lotesillo)
             Case 2
                 Selection = Seleccionar_Lotesillo.Instance
+                Me.ClientSize = Selection.Size
                 Seleccionar_Lotesillo.Instance.CargarDatos(Me, Parent, conexion)
             Case Else
                 Selection = Agregar_Lotesillo.Instance
@@ -95,5 +98,10 @@ Public Class Ventanita_Seleccionar
         Else
             Selection.Instance.BringToFront()
         End If
+    End Sub
+
+    Private Sub Ventanita_Seleccionar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
     End Sub
 End Class

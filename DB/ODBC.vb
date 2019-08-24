@@ -1,8 +1,9 @@
 ﻿Imports System.Data.Odbc
 Imports Serilog
+Imports IBM.Data.Informix
 
 Public Class ODBC
-    Dim conODBC As New OdbcConnection
+    Public Property conODBC As New OdbcConnection
 
     Private _USER As String
     Private _PWD As String
@@ -46,11 +47,36 @@ Public Class ODBC
     Public Function consultar(query As String) As DataTable
         Log.Information("Consultando Query => " + query)
         Try
-            Dim data As New DataTable
+            Dim datos As New DataTable
             Dim adapter As New OdbcDataAdapter(query, conODBC)
-            adapter.Fill(data)
+            adapter.Fill(datos)
             Log.Information("Consulta Exitosa.")
-            Return data
+            Return datos
+        Catch ex As Exception
+            Log.Error(ex, "Consulta Erronea " + query)
+            Return Nothing
+        End Try
+    End Function
+
+    
+    Public Function consultaDanio(query As String, bytes As Byte()) As DataTable
+        Log.Information("Consultando Query (DANIO) => " + query)
+        If bytes Is Nothing
+            Log.Error("NULL")
+        End If
+        Try
+            Dim insertQuery As String = "INSERT INTO blobtest(value) VALUES(?)"
+   
+            Dim command As OdbcCommand = New OdbcCommand(insertQuery)
+            Dim parameters As OdbcParameterCollection = command.Parameters
+
+            parameters.Add("value", OdbcType.Image)
+            parameters("value").Value = bytes
+
+            command.Connection = conODBC
+            command.ExecuteNonQuery()
+
+            Return Nothing
         Catch ex As Exception
             Log.Error(ex, "Consulta Erronea " + query)
             Return Nothing
@@ -62,7 +88,7 @@ Public Class ODBC
         conexion = "
         DSN=bigmamma;
         Database=big;
-        Host=192.168.1.32;
+        Host=192.168.1.48;
         Server=ol_esi;
         Service=9088;
         Protocol=onsoctcp;

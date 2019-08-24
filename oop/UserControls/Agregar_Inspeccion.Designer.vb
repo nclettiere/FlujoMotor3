@@ -30,12 +30,29 @@ Partial Class Agregar_Inspeccion
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnInsertar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnCrear = New System.Windows.Forms.Button()
+        Me.PanelDanio = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnAgregarFoto = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.rtbx = New System.Windows.Forms.RichTextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PbDanio = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel2.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
         Me.Panel1.SuspendLayout
+        Me.Panel2.SuspendLayout
+        Me.PanelDanio.SuspendLayout
+        Me.TableLayoutPanel4.SuspendLayout
+        Me.TableLayoutPanel5.SuspendLayout
+        Me.TableLayoutPanel6.SuspendLayout
+        CType(Me.PbDanio,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'TableLayoutPanel2
@@ -141,49 +158,191 @@ Partial Class Agregar_Inspeccion
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(613, 125)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(613, 121)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.btnCancelar)
-        Me.Panel1.Controls.Add(Me.btnCrear)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.PanelDanio)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(5, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(613, 212)
+        Me.Panel1.Size = New System.Drawing.Size(613, 544)
         Me.Panel1.TabIndex = 1
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.btnInsertar)
+        Me.Panel2.Controls.Add(Me.btnCancelar)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 288)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 20, 3, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(613, 65)
+        Me.Panel2.TabIndex = 3
+        '
+        'btnInsertar
+        '
+        Me.btnInsertar.BackColor = System.Drawing.Color.DimGray
+        Me.btnInsertar.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnInsertar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnInsertar.FlatAppearance.BorderSize = 0
+        Me.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInsertar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnInsertar.ForeColor = System.Drawing.Color.Orange
+        Me.btnInsertar.Location = New System.Drawing.Point(219, 0)
+        Me.btnInsertar.Name = "btnInsertar"
+        Me.btnInsertar.Size = New System.Drawing.Size(223, 65)
+        Me.btnInsertar.TabIndex = 5
+        Me.btnInsertar.Text = "AGREGAR INSPECCION"
+        Me.btnInsertar.UseVisualStyleBackColor = false
         '
         'btnCancelar
         '
         Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
+        Me.btnCancelar.Dock = System.Windows.Forms.DockStyle.Right
         Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Orange
-        Me.btnCancelar.Location = New System.Drawing.Point(447, 156)
+        Me.btnCancelar.Location = New System.Drawing.Point(442, 0)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(163, 48)
-        Me.btnCancelar.TabIndex = 5
-        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(171, 65)
+        Me.btnCancelar.TabIndex = 4
+        Me.btnCancelar.Text = "CANCELAR"
         Me.btnCancelar.UseVisualStyleBackColor = false
         '
-        'btnCrear
+        'PanelDanio
         '
-        Me.btnCrear.BackColor = System.Drawing.Color.DimGray
-        Me.btnCrear.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnCrear.FlatAppearance.BorderSize = 0
-        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnCrear.ForeColor = System.Drawing.Color.Orange
-        Me.btnCrear.Location = New System.Drawing.Point(278, 156)
-        Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(163, 48)
-        Me.btnCrear.TabIndex = 4
-        Me.btnCrear.Text = "Crear Inspeccion"
-        Me.btnCrear.UseVisualStyleBackColor = false
+        Me.PanelDanio.AutoSize = true
+        Me.PanelDanio.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.PanelDanio.Controls.Add(Me.TableLayoutPanel4)
+        Me.PanelDanio.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelDanio.Location = New System.Drawing.Point(0, 121)
+        Me.PanelDanio.Name = "PanelDanio"
+        Me.PanelDanio.Size = New System.Drawing.Size(613, 167)
+        Me.PanelDanio.TabIndex = 1
+        Me.PanelDanio.Visible = false
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.AutoSize = true
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel6, 0, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(3, 3, 3, 20)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 2
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(613, 167)
+        Me.TableLayoutPanel4.TabIndex = 1
+        '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.ColumnCount = 3
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel5.Controls.Add(Me.PbDanio, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnAgregarFoto, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label3, 0, 0)
+        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 63)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 1
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(607, 96)
+        Me.TableLayoutPanel5.TabIndex = 1
+        '
+        'btnAgregarFoto
+        '
+        Me.btnAgregarFoto.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.btnAgregarFoto.BackColor = System.Drawing.Color.DimGray
+        Me.btnAgregarFoto.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAgregarFoto.FlatAppearance.BorderSize = 0
+        Me.btnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarFoto.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnAgregarFoto.ForeColor = System.Drawing.Color.Orange
+        Me.btnAgregarFoto.Location = New System.Drawing.Point(165, 19)
+        Me.btnAgregarFoto.Name = "btnAgregarFoto"
+        Me.btnAgregarFoto.Size = New System.Drawing.Size(166, 58)
+        Me.btnAgregarFoto.TabIndex = 3
+        Me.btnAgregarFoto.Text = "INSERTAR FOTO"
+        Me.btnAgregarFoto.UseVisualStyleBackColor = false
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(3, 35)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(156, 26)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "FOTO"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel6.Controls.Add(Me.Label4, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.rtbx, 1, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 1
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(607, 54)
+        Me.TableLayoutPanel6.TabIndex = 0
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = true
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Orange
+        Me.Label4.Location = New System.Drawing.Point(3, 14)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(154, 26)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "DESCRIPCION"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'rtbx
+        '
+        Me.rtbx.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtbx.Location = New System.Drawing.Point(163, 3)
+        Me.rtbx.Name = "rtbx"
+        Me.rtbx.Size = New System.Drawing.Size(441, 48)
+        Me.rtbx.TabIndex = 3
+        Me.rtbx.Text = ""
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'PbDanio
+        '
+        Me.PbDanio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PbDanio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PbDanio.Location = New System.Drawing.Point(337, 3)
+        Me.PbDanio.Name = "PbDanio"
+        Me.PbDanio.Size = New System.Drawing.Size(267, 90)
+        Me.PbDanio.TabIndex = 4
+        Me.PbDanio.TabStop = false
         '
         'Agregar_Inspeccion
         '
@@ -194,13 +353,23 @@ Partial Class Agregar_Inspeccion
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Agregar_Inspeccion"
         Me.Padding = New System.Windows.Forms.Padding(5)
-        Me.Size = New System.Drawing.Size(623, 222)
+        Me.Size = New System.Drawing.Size(623, 554)
         Me.TableLayoutPanel2.ResumeLayout(false)
         Me.TableLayoutPanel2.PerformLayout
         Me.TableLayoutPanel3.ResumeLayout(false)
         Me.TableLayoutPanel3.PerformLayout
         Me.TableLayoutPanel1.ResumeLayout(false)
         Me.Panel1.ResumeLayout(false)
+        Me.Panel1.PerformLayout
+        Me.Panel2.ResumeLayout(false)
+        Me.PanelDanio.ResumeLayout(false)
+        Me.PanelDanio.PerformLayout
+        Me.TableLayoutPanel4.ResumeLayout(false)
+        Me.TableLayoutPanel5.ResumeLayout(false)
+        Me.TableLayoutPanel5.PerformLayout
+        Me.TableLayoutPanel6.ResumeLayout(false)
+        Me.TableLayoutPanel6.PerformLayout
+        CType(Me.PbDanio,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
@@ -213,6 +382,17 @@ End Sub
     Friend WithEvents Label2 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents PanelDanio As Panel
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents btnAgregarFoto As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents rtbx As RichTextBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents btnInsertar As Button
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents btnCrear As Button
+    Friend WithEvents PbDanio As PictureBox
 End Class

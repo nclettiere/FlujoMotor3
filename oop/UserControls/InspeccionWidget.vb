@@ -23,8 +23,13 @@ Public Class InspeccionWidget
                 If resultadoInspeccionDanio IsNot Nothing
                     Dim resultadoDanio As DataTable = Conexion.consultar("SELECT danioid, daniodescripcion FROM danios WHERE danioid=1")
                     If resultadoDanio IsNot Nothing
-                        lbl_name.Text = "INSPECCION_" + resultadoDanio.Rows(0).Item("danioid").ToString
-                        rchtbxDesc.Text = resultadoDanio.Rows(0).Item("daniodescripcion").ToString
+                        Try
+                            lbl_name.Text = "INSPECCION_" + resultadoDanio.Rows(0).Item("danioid").ToString
+                            rchtbxDesc.Text = resultadoDanio.Rows(0).Item("daniodescripcion").ToString
+                        Catch ex As Exception
+                            Log.Information(ex, "Error InspeccionWidget")
+                        End Try
+                        
                     End If
                 End If
             End If
@@ -39,7 +44,7 @@ Public Class InspeccionWidget
         End Try
     End Sub
 
-    Private Sub BtnVerDan_Click(sender As Object, e As EventArgs) Handles btnVerDan.Click
+    Private Sub BtnVerDan_Click(sender As Object, e As EventArgs) 
 
     End Sub
 End Class

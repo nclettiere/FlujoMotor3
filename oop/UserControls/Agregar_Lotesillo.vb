@@ -30,13 +30,12 @@ Public Class Agregar_Lotesillo
     End Sub
 
     Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles btAgregar.Click
-        If Not String.IsNullOrWhiteSpace(riTeBoDescripcion.Text)
-            If Not String.IsNullOrWhiteSpace(txtRutaInicial.Text)
-                If Not String.IsNullOrWhiteSpace(txtRutaFinal.Text)
-                    Dim datos As String() = {riTeBoDescripcion.Text, txtRutaInicial.Text, txtRutaFinal.Text}
-                    ParentControl.UpdateLotes(datos)
-                    FormParent.Close()
-                End If
+        If Not String.IsNullOrWhiteSpace(riTeBoDescripcion.Text) Then
+
+            If Not String.IsNullOrWhiteSpace(txtRutaInicial.Text) Then
+                Dim datos As String() = {riTeBoDescripcion.Text, txtRutaInicial.Text, cbxPatio.SelectedText.ToString}
+                ParentControl.UpdateLotes(datos)
+                FormParent.Close()
             End If
         Else
             MessageBox.Show("La descripcion no debe quedar vacia.")
@@ -47,9 +46,15 @@ Public Class Agregar_Lotesillo
         FormParent = ventanita_Seleccionar
         ParentControl = DirectCast(parent, Agregar_Vehiculillo)
         Me.Conexion = conexion
+
+        Try
+            Dim ConsultaPatios As DataTable = conexion.consultar("SELECT * FROM patios")
+            For Each item As DataRow In ConsultaPatios.Rows
+                cbxPatio.Items.Add(item(1).ToString)
+            Next
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error wachin")
+        End Try
     End Sub
 
-    Friend Sub CargarDatos(vIN As String, conexion As ODBC)
-        Throw New NotImplementedException()
-    End Sub
 End Class

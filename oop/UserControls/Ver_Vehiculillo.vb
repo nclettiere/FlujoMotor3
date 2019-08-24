@@ -71,7 +71,15 @@ Public Class Ver_Vehiculillo
     End Sub
 
     Private Sub BtVerInspeccion_Click(sender As Object, e As EventArgs) Handles btVerInspeccion.Click
-        Ventana.GotoSection(0, VIN, Conexion)
+        Dim ResultadoInspecciones As DataTable = Conexion.consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN +"'")
+        If ResultadoInspecciones IsNot Nothing
+            Dim index As Integer = 0
+            If ResultadoInspecciones.Rows.Count <> 0
+                Ventana.GotoSection(0, VIN, Conexion)
+            Else
+                 MessageBox.Show("Este vehiculo no tiene inspecciones.")
+            End If
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

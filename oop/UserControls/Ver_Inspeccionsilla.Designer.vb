@@ -29,7 +29,7 @@ Partial Class Ver_Inspeccionsilla
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblVehiculoVin = New System.Windows.Forms.Label()
-        Me.MainWidgets = New System.Windows.Forms.Panel()
+        Me.MainWidgets = New System.Windows.Forms.FlowLayoutPanel()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel7.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
@@ -144,6 +144,7 @@ Partial Class Ver_Inspeccionsilla
         '
         'MainWidgets
         '
+        Me.MainWidgets.AutoScroll = true
         Me.MainWidgets.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainWidgets.Location = New System.Drawing.Point(3, 54)
         Me.MainWidgets.Name = "MainWidgets"
@@ -175,5 +176,5 @@ End Sub
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblVehiculoVin As Label
-    Friend WithEvents MainWidgets As Panel
+    Friend WithEvents MainWidgets As FlowLayoutPanel
 End Class

@@ -1,7 +1,8 @@
-﻿Imports oop
+﻿Imports System.Threading
+Imports oop
 
 Public Class Ver_Inspeccionsilla
-     Private Shared _instance As Ver_Inspeccionsilla
+    Private Shared _instance As Ver_Inspeccionsilla
 
     Public Shared Property Instance As Ver_Inspeccionsilla
         Get
@@ -21,23 +22,32 @@ Public Class Ver_Inspeccionsilla
 
     End Sub
 
-    Friend Sub Populate(VIN As String,ByRef Conexion As DB.ODBC)
+    Friend Sub Populate(VIN As String, ByRef Conexion As DB.ODBC)
         lblVehiculoVin.Text = "Viendo Vehiculo: " + VIN
-        Dim ResultadoInspecciones As DataTable = Conexion.consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN +"'")
+        Dim ResultadoInspecciones As DataTable = Conexion.consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN + "'")
         If ResultadoInspecciones IsNot Nothing
             Dim index As Integer = 0
             If ResultadoInspecciones.Rows.Count <> 0
+                MainWidgets.Controls.Clear
                 For Each row As DataRow In ResultadoInspecciones.Rows
                     Dim widget As New InspeccionWidget()
-                    MessageBox.Show(row("inspeccionid").ToString)
                     widget.CargarDatos(row("inspeccionid").ToString, Conexion, index)
                     MainWidgets.Controls.Add(widget)
+                    widget.Height = 220
+                    widget.Width = 1000
+                    widget.Dock = DockStyle.Top
+                    Me.ClientSize = widget.Size
                     index += 1
                 Next row
             Else
                 MessageBox.Show("Este vehiculo no tiene inspecciones.")
-                ParentForm.Close()
+                Thread.Sleep(1000)
+                FormParent.GoToSection(1)
             End If
+        Else
+            MessageBox.Show("Este vehiculo no tiene inspecciones.")
+            Thread.Sleep(1000)
+            FormParent.GoToSection(1)
         End If
     End Sub
 

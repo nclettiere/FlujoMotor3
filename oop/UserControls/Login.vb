@@ -1,6 +1,9 @@
 ﻿Imports Logica
 Imports DB
 Imports oop
+Imports System.Data.Odbc
+Imports System.Text
+Imports System.IO
 
 Public Class Login
 
@@ -58,27 +61,49 @@ Public Class Login
                 MessageBox.Show("Usuario o Contrasena invalidos.")
             End If
         End If
-            
+
 #End If
 
     End Sub
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        #If DEBUG
-            Conexion.USER = "root"
-            Conexion.PWD = "root"
-            If Conexion.Conectar(Conexion.Conectar())
-                Conexion.Cerrar()
-            Else
-                MessageBox.Show("No se pedo establecer conexion con la DB." + Environment.NewLine + "Chequee que la VM este corriendo y que los datos sean correctos.", "Error de Conexion", 
-                                MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Serilog.Log.Fatal("No se pudo establecer con la DB." +
-                              Environment.NewLine +
-                              "Query de conexion usado:" +
-                              Environment.NewLine +
-                              Conexion.Conectar())
-                
-            End If
-        #End If
+#If DEBUG
+        Conexion.USER = "root"
+        Conexion.PWD = "root"
+        If Conexion.Conectar(Conexion.Conectar())
+            RetrieveLargeText()
+            Conexion.Cerrar()
+        Else
+            MessageBox.Show("No se pedo establecer conexion con la DB." + Environment.NewLine + "Chequee que la VM este corriendo y que los datos sean correctos.", "Error de Conexion",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Serilog.Log.Fatal("No se pudo establecer con la DB." +
+                          Environment.NewLine +
+                          "Query de conexion usado:" +
+                          Environment.NewLine +
+                          Conexion.Conectar())
+
+        End If
+#End If
     End Sub
+
+    Private Sub RetrieveLargeText()
+        Dim query = "SELECT * FROM blobtest"
+        Dim command As OdbcCommand = New OdbcCommand(query)
+        command.Connection = Conexion.conODBC
+        Dim reader As OdbcDataReader = command.ExecuteReader()
+
+        If reader.Read()
+            Dim value As byte() = reader.GetValue(0)
+            PictureBox1.Image = BytesToBitmap(value)
+        End If
+        
+        reader.Close()
+    End Sub
+
+    Private Function BytesToBitmap(byteArray As Byte()) As Bitmap
+        Using ms As MemoryStream = New MemoryStream(byteArray)
+            Dim img As Bitmap = DirectCast(Image.FromStream(ms), Bitmap)
+            Return img
+        End Using
+    End Function
 End Class

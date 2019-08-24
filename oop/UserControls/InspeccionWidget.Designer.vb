@@ -22,127 +22,204 @@ Partial Class InspeccionWidget
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_name = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnVerDan = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnFotos = New System.Windows.Forms.Button()
         Me.rchtbxDesc = New System.Windows.Forms.RichTextBox()
-        Me.TableLayoutPanel1.SuspendLayout
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout
-        Me.Panel2.SuspendLayout
-        Me.Panel3.SuspendLayout
+        Me.TableLayoutPanel1.SuspendLayout
+        Me.TableLayoutPanel2.SuspendLayout
+        Me.TableLayoutPanel3.SuspendLayout
         Me.SuspendLayout
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(617, 167)
+        Me.Panel1.TabIndex = 0
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Gray
         Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.10221!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.89779!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 1, 0)
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.04182!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.95818!))
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.lbl_name, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(610, 96)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(617, 167)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.lbl_name)
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(81, 90)
-        Me.Panel1.TabIndex = 0
         '
         'lbl_name
         '
-        Me.lbl_name.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbl_name.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lbl_name.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lbl_name.AutoSize = true
+        Me.lbl_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lbl_name.ForeColor = System.Drawing.Color.Orange
-        Me.lbl_name.Location = New System.Drawing.Point(0, 0)
+        Me.lbl_name.Location = New System.Drawing.Point(3, 0)
         Me.lbl_name.Name = "lbl_name"
-        Me.lbl_name.Size = New System.Drawing.Size(81, 90)
-        Me.lbl_name.TabIndex = 9
-        Me.lbl_name.Text = "INSPECCION (A)"
-        Me.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lbl_name.Size = New System.Drawing.Size(85, 17)
+        Me.lbl_name.TabIndex = 0
+        Me.lbl_name.Text = "Lote_[Index]"
+        Me.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Panel2
+        'TableLayoutPanel2
         '
-        Me.Panel2.Controls.Add(Me.btnVerDan)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(436, 3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(171, 90)
-        Me.Panel2.TabIndex = 1
+        Me.TableLayoutPanel2.ColumnCount = 1
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.rchtbxDesc, 0, 1)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(94, 3)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.81367!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.18633!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(272, 161)
+        Me.TableLayoutPanel2.TabIndex = 1
         '
-        'btnVerDan
+        'Label2
         '
-        Me.btnVerDan.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnVerDan.BackColor = System.Drawing.Color.DimGray
-        Me.btnVerDan.Enabled = false
-        Me.btnVerDan.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnVerDan.FlatAppearance.BorderSize = 0
-        Me.btnVerDan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVerDan.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnVerDan.ForeColor = System.Drawing.Color.Orange
-        Me.btnVerDan.Location = New System.Drawing.Point(20, 19)
-        Me.btnVerDan.MaximumSize = New System.Drawing.Size(130, 53)
-        Me.btnVerDan.MinimumSize = New System.Drawing.Size(130, 53)
-        Me.btnVerDan.Name = "btnVerDan"
-        Me.btnVerDan.Size = New System.Drawing.Size(130, 53)
-        Me.btnVerDan.TabIndex = 12
-        Me.btnVerDan.Text = "Ver Daño"
-        Me.btnVerDan.UseVisualStyleBackColor = false
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Orange
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(82, 17)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Descripcion"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Panel3
+        'TableLayoutPanel3
         '
-        Me.Panel3.Controls.Add(Me.rchtbxDesc)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(90, 3)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(340, 90)
-        Me.Panel3.TabIndex = 2
+        Me.TableLayoutPanel3.ColumnCount = 1
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel3.Controls.Add(Me.Label1, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.btnFotos, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label4, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(372, 3)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 3
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(242, 161)
+        Me.TableLayoutPanel3.TabIndex = 2
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(3, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(143, 17)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Hecha por: [operario]"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label4.AutoSize = true
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Orange
+        Me.Label4.Location = New System.Drawing.Point(3, 17)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(93, 17)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Lugar: [lugar]"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnFotos
+        '
+        Me.btnFotos.BackColor = System.Drawing.Color.DimGray
+        Me.btnFotos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnFotos.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnFotos.FlatAppearance.BorderSize = 0
+        Me.btnFotos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFotos.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnFotos.ForeColor = System.Drawing.Color.Orange
+        Me.btnFotos.Location = New System.Drawing.Point(3, 54)
+        Me.btnFotos.Name = "btnFotos"
+        Me.btnFotos.Size = New System.Drawing.Size(236, 48)
+        Me.btnFotos.TabIndex = 5
+        Me.btnFotos.Text = "Ver Foto"
+        Me.btnFotos.UseVisualStyleBackColor = false
         '
         'rchtbxDesc
         '
-        Me.rchtbxDesc.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rchtbxDesc.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rchtbxDesc.Font = New System.Drawing.Font("Calibri", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.rchtbxDesc.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.rchtbxDesc.Location = New System.Drawing.Point(0, 0)
+        Me.rchtbxDesc.Location = New System.Drawing.Point(3, 51)
         Me.rchtbxDesc.Name = "rchtbxDesc"
         Me.rchtbxDesc.ReadOnly = true
-        Me.rchtbxDesc.Size = New System.Drawing.Size(340, 90)
-        Me.rchtbxDesc.TabIndex = 13
-        Me.rchtbxDesc.Text = ""
+        Me.rchtbxDesc.Size = New System.Drawing.Size(266, 107)
+        Me.rchtbxDesc.TabIndex = 2
+        Me.rchtbxDesc.Text = "Sin Descripcion"
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label1.AutoSize = true
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Orange
+        Me.Label1.Location = New System.Drawing.Point(3, 34)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(98, 17)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Fecha: [fecha]"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'InspeccionWidget
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackColor = System.Drawing.Color.DarkGray
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "InspeccionWidget"
-        Me.Size = New System.Drawing.Size(610, 96)
-        Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.Size = New System.Drawing.Size(617, 167)
         Me.Panel1.ResumeLayout(false)
-        Me.Panel2.ResumeLayout(false)
-        Me.Panel3.ResumeLayout(false)
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.TableLayoutPanel1.PerformLayout
+        Me.TableLayoutPanel2.ResumeLayout(false)
+        Me.TableLayoutPanel2.PerformLayout
+        Me.TableLayoutPanel3.ResumeLayout(false)
+        Me.TableLayoutPanel3.PerformLayout
         Me.ResumeLayout(false)
 
 End Sub
 
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
     Friend WithEvents lbl_name As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnFotos As Button
     Friend WithEvents rchtbxDesc As RichTextBox
-    Friend WithEvents btnVerDan As Button
+    Friend WithEvents Label1 As Label
 End Class

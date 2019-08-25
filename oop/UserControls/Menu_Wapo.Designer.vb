@@ -39,9 +39,6 @@ Partial Class Menu_Wapo
         Me.piBoPuerto = New System.Windows.Forms.PictureBox()
         Me.btPatio = New System.Windows.Forms.Button()
         Me.piBoPatio = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanelInfoUsuario = New System.Windows.Forms.TableLayoutPanel()
-        Me.labUsuario = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanelSesion = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -55,7 +52,6 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanel1.SuspendLayout
         CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TableLayoutPanelInfoUsuario.SuspendLayout
         Me.TableLayoutPanelSesion.SuspendLayout
         CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
@@ -226,7 +222,6 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanelOpciones.ColumnCount = 1
         Me.TableLayoutPanelOpciones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanel1, 0, 0)
-        Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanelInfoUsuario, 0, 1)
         Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanelSesion, 0, 2)
         Me.TableLayoutPanelOpciones.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanelOpciones.Margin = New System.Windows.Forms.Padding(0)
@@ -315,55 +310,6 @@ Partial Class Menu_Wapo
         Me.piBoPatio.TabIndex = 3
         Me.piBoPatio.TabStop = false
         '
-        'TableLayoutPanelInfoUsuario
-        '
-        Me.TableLayoutPanelInfoUsuario.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanelInfoUsuario.ColumnCount = 1
-        Me.TableLayoutPanelInfoUsuario.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanelInfoUsuario.Controls.Add(Me.labUsuario, 0, 2)
-        Me.TableLayoutPanelInfoUsuario.Controls.Add(Me.Label1, 0, 1)
-        Me.TableLayoutPanelInfoUsuario.Location = New System.Drawing.Point(3, 236)
-        Me.TableLayoutPanelInfoUsuario.Name = "TableLayoutPanelInfoUsuario"
-        Me.TableLayoutPanelInfoUsuario.RowCount = 3
-        Me.TableLayoutPanelInfoUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.35135!))
-        Me.TableLayoutPanelInfoUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.40541!))
-        Me.TableLayoutPanelInfoUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.7027!))
-        Me.TableLayoutPanelInfoUsuario.Size = New System.Drawing.Size(273, 244)
-        Me.TableLayoutPanelInfoUsuario.TabIndex = 1
-        '
-        'labUsuario
-        '
-        Me.labUsuario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.labUsuario.AutoSize = true
-        Me.labUsuario.BackColor = System.Drawing.Color.Transparent
-        Me.labUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.labUsuario.Font = New System.Drawing.Font("Calibri", 12!)
-        Me.labUsuario.ForeColor = System.Drawing.Color.Wheat
-        Me.labUsuario.Location = New System.Drawing.Point(3, 187)
-        Me.labUsuario.Name = "labUsuario"
-        Me.labUsuario.Size = New System.Drawing.Size(267, 19)
-        Me.labUsuario.TabIndex = 0
-        Me.labUsuario.Text = "N/A"
-        Me.labUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = true
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 10!)
-        Me.Label1.ForeColor = System.Drawing.Color.Orange
-        Me.Label1.Location = New System.Drawing.Point(3, 147)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(267, 17)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Usuario"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'TableLayoutPanelSesion
         '
         Me.TableLayoutPanelSesion.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
@@ -428,8 +374,6 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanel1.ResumeLayout(false)
         CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).EndInit
-        Me.TableLayoutPanelInfoUsuario.ResumeLayout(false)
-        Me.TableLayoutPanelInfoUsuario.PerformLayout
         Me.TableLayoutPanelSesion.ResumeLayout(false)
         CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
@@ -443,9 +387,6 @@ End Sub
     Friend WithEvents piBoPuerto As PictureBox
     Friend WithEvents btPatio As Button
     Friend WithEvents piBoPatio As PictureBox
-    Friend WithEvents TableLayoutPanelInfoUsuario As TableLayoutPanel
-    Friend WithEvents labUsuario As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanelSesion As TableLayoutPanel
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Button2 As Button

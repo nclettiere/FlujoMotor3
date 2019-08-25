@@ -155,24 +155,35 @@ Public Class Agregar_Vehiculillo
                 If LoteModo
                     If LoteDatos
                         Try
+                            Dim vehiculoTipo As String = cbxTipo.Text
+
+                            If Not (String.Equals("SUV", cbxTipo.Text))
+                                vehiculoTipo = cbxTipo.Text.ToLower()
+                            End If
+                            
                             Dim LoteCount = FormParent.Conexion.consultar("SELECT COUNT(*) FROM lotes")
                             Dim VehiculoCount = FormParent.Conexion.consultar("SELECT COUNT(*) FROM vehiculos")
-                            Dim InsertarLote As DataTable = FormParent.Conexion.consultar("INSERT INTO lotes (loteid, lotedescripcion, lotenombre, operariopuertoid) VALUES ("+ (LoteCount.Rows(0).Item(0) + 1).ToString +", '"+ NuevoLoteInfo(0).ToString() +"', 'LOT_C', 1)")
-                            Dim InsertarVehiculo As DataTable = FormParent.Conexion.consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('"+ txtVin.Text.ToUpper +"','"+ txtColor.Text +"', '"+ txtMarca.Text +"', '"+ txtModelo.Text +"', "+ VehiculoAno.Value.Year.ToString +", '"+ cbxTipo.Text.ToLower() +"', 1, "+ (LoteCount.Rows(0).Item(0) + 1).ToString + ")")
+                            Dim PatioInfo = FormParent.Conexion.consultar("SELECT pationombre FROM patios WHERE patio="+ NuevoLoteInfo(0))
+                            Dim InsertarLote As DataTable = FormParent.Conexion.consultar("INSERT INTO lotes (loteid, lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES (" + (LoteCount.Rows(0).Item(0) + 1).ToString + ", '" + NuevoLoteInfo(0).ToString() + "', 'LOTE #"& (LoteCount.Rows(0).Item(0) + 1).ToString &"', 1,"+ PatioInfo.Rows(0).Item(0).ToString +")")
+                            Dim InsertarVehiculo As DataTable = FormParent.Conexion.consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('"+ txtVin.Text.ToUpper +"','"+ txtColor.Text +"', '"+ txtMarca.Text +"', '"+ txtModelo.Text +"', "+ VehiculoAno.Value.Year.ToString +", '"+ vehiculoTipo +"', 1, "+ (LoteCount.Rows(0).Item(0) + 1).ToString + ")")
                             Messagebox.Show("Vehiculo Ingresado Correctamente.")
                             Serilog.Log.Information("Vehiculo insertado correctamente.")
                             ClearFields()
                         Catch ex As Exception
-                            Serilog.Log.Fatal(ex, "No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarLote")
+                            Serilog.Log.Fatal(ex, "No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarLote, IngresarVehiculo")
                         End Try
                     End If
-                    Else
-                        If LoteDatos
+                Else
+                    If LoteDatos
+                        Try
                             Dim InsertarVehiculo As DataTable = FormParent.Conexion.consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('"+ txtVin.Text.ToUpper +"','"+ txtColor.Text +"', '"+ txtMarca.Text +"', '"+ txtModelo.Text +"', "+ VehiculoAno.Value.Year.ToString +", '"+ cbxTipo.Text.ToLower() +"', 1, "+ (SelectedLote.Item(0).Value).ToString + ")")
                             Messagebox.Show("Vehiculo Ingresado Correctamente.")
                             Serilog.Log.Information("Vehiculo insertado correctamente.")
                             ClearFields()
-                        End If
+                        Catch ex As Exception
+                            Serilog.Log.Error(ex, "Error No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarVehiculo")
+                        End Try                            
+                    End If
                 End If
             Else
                 MessageBox.Show("Error: El VIN ingresado ya existe.")

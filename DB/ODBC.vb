@@ -65,20 +65,18 @@ Public Class ODBC
             Log.Error("NULL")
         End If
         Try
-            Dim insertQuery As String = "INSERT INTO blobtest(value) VALUES(?)"
-   
-            Dim command As OdbcCommand = New OdbcCommand(insertQuery)
+            Dim command As OdbcCommand = New OdbcCommand(query)
             Dim parameters As OdbcParameterCollection = command.Parameters
 
-            parameters.Add("value", OdbcType.Image)
-            parameters("value").Value = bytes
+            parameters.Add("daniofoto", OdbcType.Image)
+            parameters("daniofoto").Value = bytes
 
             command.Connection = conODBC
             command.ExecuteNonQuery()
 
             Return Nothing
         Catch ex As Exception
-            Log.Error(ex, "Consulta Erronea " + query)
+            Log.Error(ex, "Consulta Erronea en DB.ODBC.consultaDanio" + query)
             Return Nothing
         End Try
     End Function

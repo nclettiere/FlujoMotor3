@@ -261,7 +261,7 @@ Partial Class Agregar_Vehiculillo
         Me.cbxTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.cbxTipo.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.cbxTipo.FormattingEnabled = true
-        Me.cbxTipo.Items.AddRange(New Object() {"Auto", "Camion", "Camioneta", "Mini van", "Van", "SUV"})
+        Me.cbxTipo.Items.AddRange(New Object() {"Auto", "Camion", "Minivan", "Van", "SUV"})
         Me.cbxTipo.Location = New System.Drawing.Point(158, 73)
         Me.cbxTipo.Margin = New System.Windows.Forms.Padding(10)
         Me.cbxTipo.Name = "cbxTipo"

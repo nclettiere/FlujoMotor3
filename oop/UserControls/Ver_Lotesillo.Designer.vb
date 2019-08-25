@@ -40,7 +40,9 @@ Partial Class Ver_Lotesillo
         Me.riTeBoDescripcion = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
+        Me.btnEntregar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
@@ -136,10 +138,10 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 4
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.70208!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08545!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.54734!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.12702!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(449, 433)
         Me.TableLayoutPanel2.TabIndex = 0
@@ -150,7 +152,7 @@ Partial Class Ver_Lotesillo
         Me.Label4.AutoSize = true
         Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Orange
-        Me.Label4.Location = New System.Drawing.Point(3, 365)
+        Me.Label4.Location = New System.Drawing.Point(3, 278)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(133, 26)
         Me.Label4.TabIndex = 5
@@ -163,7 +165,7 @@ Partial Class Ver_Lotesillo
         Me.Label1.AutoSize = true
         Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Orange
-        Me.Label1.Location = New System.Drawing.Point(3, 41)
+        Me.Label1.Location = New System.Drawing.Point(3, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 26)
         Me.Label1.TabIndex = 2
@@ -176,7 +178,7 @@ Partial Class Ver_Lotesillo
         Me.Label2.AutoSize = true
         Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
-        Me.Label2.Location = New System.Drawing.Point(3, 149)
+        Me.Label2.Location = New System.Drawing.Point(3, 64)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(133, 26)
         Me.Label2.TabIndex = 3
@@ -189,7 +191,7 @@ Partial Class Ver_Lotesillo
         Me.Label3.AutoSize = true
         Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(3, 257)
+        Me.Label3.Location = New System.Drawing.Point(3, 112)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(133, 26)
         Me.Label3.TabIndex = 4
@@ -202,7 +204,7 @@ Partial Class Ver_Lotesillo
         Me.labId.AutoSize = true
         Me.labId.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labId.ForeColor = System.Drawing.Color.Wheat
-        Me.labId.Location = New System.Drawing.Point(142, 41)
+        Me.labId.Location = New System.Drawing.Point(142, 14)
         Me.labId.Name = "labId"
         Me.labId.Size = New System.Drawing.Size(304, 26)
         Me.labId.TabIndex = 6
@@ -215,7 +217,7 @@ Partial Class Ver_Lotesillo
         Me.labCliente.AutoSize = true
         Me.labCliente.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labCliente.ForeColor = System.Drawing.Color.Wheat
-        Me.labCliente.Location = New System.Drawing.Point(142, 149)
+        Me.labCliente.Location = New System.Drawing.Point(142, 64)
         Me.labCliente.Name = "labCliente"
         Me.labCliente.Size = New System.Drawing.Size(304, 26)
         Me.labCliente.TabIndex = 7
@@ -228,7 +230,7 @@ Partial Class Ver_Lotesillo
         Me.labRutaI.AutoSize = true
         Me.labRutaI.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labRutaI.ForeColor = System.Drawing.Color.Wheat
-        Me.labRutaI.Location = New System.Drawing.Point(142, 257)
+        Me.labRutaI.Location = New System.Drawing.Point(142, 112)
         Me.labRutaI.Name = "labRutaI"
         Me.labRutaI.Size = New System.Drawing.Size(304, 26)
         Me.labRutaI.TabIndex = 8
@@ -241,7 +243,7 @@ Partial Class Ver_Lotesillo
         Me.labRutaF.AutoSize = true
         Me.labRutaF.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.labRutaF.ForeColor = System.Drawing.Color.Wheat
-        Me.labRutaF.Location = New System.Drawing.Point(142, 365)
+        Me.labRutaF.Location = New System.Drawing.Point(142, 278)
         Me.labRutaF.Name = "labRutaF"
         Me.labRutaF.Size = New System.Drawing.Size(304, 26)
         Me.labRutaF.TabIndex = 9
@@ -254,7 +256,7 @@ Partial Class Ver_Lotesillo
         Me.Label6.AutoSize = true
         Me.Label6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Orange
-        Me.Label6.Location = New System.Drawing.Point(3, 265)
+        Me.Label6.Location = New System.Drawing.Point(3, 156)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(483, 26)
         Me.Label6.TabIndex = 5
@@ -267,7 +269,7 @@ Partial Class Ver_Lotesillo
         Me.Label5.AutoSize = true
         Me.Label5.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Orange
-        Me.Label5.Location = New System.Drawing.Point(3, 10)
+        Me.Label5.Location = New System.Drawing.Point(3, 6)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(483, 26)
         Me.Label5.TabIndex = 3
@@ -280,10 +282,10 @@ Partial Class Ver_Lotesillo
         Me.riTeBoDescripcion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.riTeBoDescripcion.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.riTeBoDescripcion.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.riTeBoDescripcion.Location = New System.Drawing.Point(7, 53)
+        Me.riTeBoDescripcion.Location = New System.Drawing.Point(7, 45)
         Me.riTeBoDescripcion.Margin = New System.Windows.Forms.Padding(7)
         Me.riTeBoDescripcion.Name = "riTeBoDescripcion"
-        Me.riTeBoDescripcion.Size = New System.Drawing.Size(475, 197)
+        Me.riTeBoDescripcion.Size = New System.Drawing.Size(475, 103)
         Me.riTeBoDescripcion.TabIndex = 4
         Me.riTeBoDescripcion.Text = ""
         '
@@ -306,25 +308,42 @@ Partial Class Ver_Lotesillo
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel3.Controls.Add(Me.Label7, 0, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Label5, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label6, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.riTeBoDescripcion, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.DataGridViewVehiculos, 0, 3)
+        Me.TableLayoutPanel3.Controls.Add(Me.btnEntregar, 0, 5)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(464, 3)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 4
+        Me.TableLayoutPanel3.RowCount = 6
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.941176!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.23529!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.235294!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.11765!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.2093!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.511628!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.44186!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(489, 522)
         Me.TableLayoutPanel3.TabIndex = 1
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = true
+        Me.Label7.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Orange
+        Me.Label7.Location = New System.Drawing.Point(3, 430)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(483, 25)
+        Me.Label7.TabIndex = 7
+        Me.Label7.Text = "Listo Para Partir?"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'DataGridViewVehiculos
         '
         Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 303)
+        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 186)
         Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
         Me.DataGridViewVehiculos.ReadOnly = true
         Me.DataGridViewVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -332,8 +351,26 @@ Partial Class Ver_Lotesillo
         Me.DataGridViewVehiculos.ShowCellToolTips = false
         Me.DataGridViewVehiculos.ShowEditingIcon = false
         Me.DataGridViewVehiculos.ShowRowErrors = false
-        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(483, 216)
+        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(483, 241)
         Me.DataGridViewVehiculos.TabIndex = 6
+        '
+        'btnEntregar
+        '
+        Me.btnEntregar.BackColor = System.Drawing.Color.DimGray
+        Me.btnEntregar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnEntregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnEntregar.FlatAppearance.BorderSize = 0
+        Me.btnEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnEntregar.ForeColor = System.Drawing.Color.Orange
+        Me.btnEntregar.Location = New System.Drawing.Point(3, 458)
+        Me.btnEntregar.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnEntregar.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnEntregar.Name = "btnEntregar"
+        Me.btnEntregar.Size = New System.Drawing.Size(143, 53)
+        Me.btnEntregar.TabIndex = 8
+        Me.btnEntregar.Text = "Entregar"
+        Me.btnEntregar.UseVisualStyleBackColor = false
         '
         'Ver_Lotesillo
         '
@@ -375,4 +412,6 @@ End Sub
     Friend WithEvents btCerrar As Button
     Friend WithEvents btEditar As Button
     Friend WithEvents DataGridViewVehiculos As DataGridView
+    Friend WithEvents Label7 As Label
+    Friend WithEvents btnEntregar As Button
 End Class

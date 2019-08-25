@@ -95,7 +95,7 @@ Public Class Agregar_Inspeccion
                 Dim InpeccioensCount As DataTable = Conexion.consultar("SELECT COUNT(*) FROM inspecciones")
                 Dim CrearInspeccion As DataTable = Conexion.consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operariopatioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + vin + "', 3)")
                 Dim DaniosCount As DataTable = Conexion.consultar("SELECT COUNT(*) FROM danios")
-                Dim CrearDanio As DataTable = Conexion.consultaDanio("INSERT INTO danios (danioid, daniodescripcion, daniofoto) VALUES(" + (DaniosCount.Rows(0).Item(0) + 1).ToString + ",'" + rtbx.Text + "', @Binary)", ByteFotoDanio)
+                Dim CrearDanio As DataTable = Conexion.consultaDanio("INSERT INTO danios (danioid, daniodescripcion, daniofoto) VALUES(" + (DaniosCount.Rows(0).Item(0) + 1).ToString + ",'" + rtbx.Text + "', ?)", ByteFotoDanio)
                 Dim CrearInspeccionDanio As DataTable = Conexion.consultar("INSERT INTO inspecciondanio (danioid, inspeccionid) VALUES("+ (InpeccioensCount.Rows(0).Item(0) + 1).ToString +", "+ (DaniosCount.Rows(0).Item(0) + 1).ToString +")")
                 MessageBox.Show("Inspeccion Agregada Correctamente")
             Catch ex As Exception

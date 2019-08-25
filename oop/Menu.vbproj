@@ -263,6 +263,24 @@
     <Compile Include="UserControls\Seleccionar_Lotesillo.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\VerPatio.Designer.vb">
+      <DependentUpon>VerPatio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VerPatio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\VerPosicion.Designer.vb">
+      <DependentUpon>VerPosicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VerPosicion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ver_Foto.Designer.vb">
+      <DependentUpon>Ver_Foto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ver_Foto.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ventanitas\Menu.Designer.vb">
       <DependentUpon>Menu.vb</DependentUpon>
     </Compile>
@@ -525,6 +543,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Seleccionar_Lotesillo.resx">
       <DependentUpon>Seleccionar_Lotesillo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\VerPatio.resx">
+      <DependentUpon>VerPatio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\VerPosicion.resx">
+      <DependentUpon>VerPosicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ver_Foto.resx">
+      <DependentUpon>Ver_Foto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>

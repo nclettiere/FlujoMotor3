@@ -31,11 +31,12 @@ Public Class Agregar_Lotesillo
 
     Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles btAgregar.Click
         If Not String.IsNullOrWhiteSpace(riTeBoDescripcion.Text) Then
-
-            If Not String.IsNullOrWhiteSpace(txtRutaInicial.Text) Then
-                Dim datos As String() = {riTeBoDescripcion.Text, txtRutaInicial.Text, cbxPatio.SelectedText.ToString}
+            If cbxPatio.SelectedIndex >= 0
+                Dim datos As String() = {riTeBoDescripcion.Text, cbxPatio.SelectedText.ToString}
                 ParentControl.UpdateLotes(datos)
                 FormParent.Close()
+            Else
+                MessageBox.Show("Debes seleccionar un patio.")
             End If
         Else
             MessageBox.Show("La descripcion no debe quedar vacia.")
@@ -53,7 +54,7 @@ Public Class Agregar_Lotesillo
                 cbxPatio.Items.Add(item(1).ToString)
             Next
         Catch ex As Exception
-            Serilog.Log.Error(ex, "Error wachin")
+            Serilog.Log.Error(ex, "Error.")
         End Try
     End Sub
 

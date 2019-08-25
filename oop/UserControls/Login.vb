@@ -71,7 +71,6 @@ Public Class Login
         Conexion.USER = "root"
         Conexion.PWD = "root"
         If Conexion.Conectar(Conexion.Conectar())
-            RetrieveLargeText()
             Conexion.Cerrar()
         Else
             MessageBox.Show("No se pedo establecer conexion con la DB." + Environment.NewLine + "Chequee que la VM este corriendo y que los datos sean correctos.", "Error de Conexion",
@@ -85,25 +84,4 @@ Public Class Login
         End If
 #End If
     End Sub
-
-    Private Sub RetrieveLargeText()
-        Dim query = "SELECT * FROM blobtest"
-        Dim command As OdbcCommand = New OdbcCommand(query)
-        command.Connection = Conexion.conODBC
-        Dim reader As OdbcDataReader = command.ExecuteReader()
-
-        If reader.Read()
-            Dim value As byte() = reader.GetValue(0)
-            PictureBox1.Image = BytesToBitmap(value)
-        End If
-        
-        reader.Close()
-    End Sub
-
-    Private Function BytesToBitmap(byteArray As Byte()) As Bitmap
-        Using ms As MemoryStream = New MemoryStream(byteArray)
-            Dim img As Bitmap = DirectCast(Image.FromStream(ms), Bitmap)
-            Return img
-        End Using
-    End Function
 End Class

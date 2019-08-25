@@ -7,10 +7,20 @@ Public Class Ventanita_Ver
 
     Friend Sub LoadControl(verVehiculo As Ver_Vehiculillo)
         mainContent.Controls.Add(verVehiculo)
+        verVehiculo.AutoSize = True
+        Me.ClientSize = verVehiculo.Size
     End Sub
 
     Friend Sub LoadControl(verLote As Ver_Lotesillo)
         mainContent.Controls.Add(verLote)
+        verLote.AutoSize = True
+        Me.ClientSize = verLote.Size
+    End Sub
+
+    Friend Sub LoadControl(verFoto As Ver_Foto)
+        mainContent.Controls.Add(verFoto)
+        verFoto.AutoSize = True
+        Me.ClientSize = verFoto.Size
     End Sub
 
     ''' <summary>

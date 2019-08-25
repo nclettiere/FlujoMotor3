@@ -29,18 +29,26 @@ Public Class Ver_Lotesillo
 
         Try
             Dim ListaVehiculos As DataTable = Conexion.consultar("SELECT * FROM vehiculos WHERE loteid=" + loteid)
-            Dim Lote = Conexion.consultar("SELECT * FROM vehiculos WHERE loteid=" + loteid).Rows(0)
+            Dim Lote = Conexion.consultar("SELECT * FROM lotes WHERE loteid=" + loteid).Rows(0)
             If ListaVehiculos IsNot Nothing
                 DataGridViewVehiculos.DataSource = ListaVehiculos
                 labId.Text = Lote.Item("loteid")
                 riTeBoDescripcion.Text = Lote.Item("lotedescripcion")
             End If
         Catch ex As Exception
-
+            Serilog.Log.Error(ex, "Error Al listar vehiculo o lote. ref Ver_Lote.vb")
         End Try
     End Sub
 
     Private Sub Ver_Lotesillo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub BtnEntregar_Click(sender As Object, e As EventArgs) Handles btnEntregar.Click
+        Dim result As Integer = MessageBox.Show("Los se encargaran de movilizar el lote.", "Desea entregar el lote?", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Conexion.consultar("UPDATE lotes SET lotedescripcion ='"+ riTeBoDescripcion.Text + ";'" +" WHERE loteid="+ LoteId +";")   
+            MessageBox.Show("Lote entregado correctamente.")
+        End If
     End Sub
 End Class

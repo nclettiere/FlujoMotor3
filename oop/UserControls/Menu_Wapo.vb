@@ -1,5 +1,4 @@
 ﻿Imports DB
-Imports oop
 
 Public Class Menu_Wapo
 
@@ -27,7 +26,6 @@ Public Class Menu_Wapo
         btPuerto.BackColor = Color.DarkGray
         btPuerto.Font = New Font(btPuerto.Font.FontFamily, 17)
         piBoPuerto.Size = New Size(56, 70)
-
     End Sub
 
     Private Sub BtPatio_Click(sender As Object, e As EventArgs) Handles btPatio.Click
@@ -46,9 +44,17 @@ Public Class Menu_Wapo
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateVehiculos() 
-
         Me.AutoSize = true
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
+        
+        ''Selecciona el patio automaticamente
+        GoToSection(0)
+        btPatio.Font = New Font(btPatio.Font.FontFamily, 14)
+        piBoPatio.Size = New Size(56, 30)
+        btPatio.BackColor = Color.Transparent
+        btPuerto.BackColor = Color.DarkGray
+        btPuerto.Font = New Font(btPuerto.Font.FontFamily, 17)
+        piBoPuerto.Size = New Size(56, 70)
     End Sub
 
     Private Sub BtnAddVehicle_Click(sender As Object, e As EventArgs) Handles btnAddVehicle.Click
@@ -99,5 +105,9 @@ Public Class Menu_Wapo
         Else
             MessageBox.Show("Error Al cargar datos. Vea el Log para mas informacion.")
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        ParentForm.Close()
     End Sub
 End Class

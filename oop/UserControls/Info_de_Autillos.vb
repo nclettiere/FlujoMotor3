@@ -62,11 +62,12 @@ Public Class Info_de_Autillos
     Private Sub BtInfoVehiculo_Click(sender As Object, e As EventArgs) Handles btInfoVehiculo.Click
         Try
             Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
-            Ver_Vehiculillo.Instance.Data(Me, DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString(), VentanaVer, FormParent.Conexion)
-            VentanaVer.LoadControl(Ver_Vehiculillo.Instance)
+            Dim VerVehiculo As Ver_Vehiculillo = New Ver_Vehiculillo
+            VerVehiculo.Data(Me, DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString(), VentanaVer, FormParent.Conexion)
+            VentanaVer.LoadControl(VerVehiculo)
             VentanaVer.ShowDialog()
         Catch ex As Exception
-
+            Serilog.Log.Warning(ex, "InfoAutos")
         End Try
     End Sub
 

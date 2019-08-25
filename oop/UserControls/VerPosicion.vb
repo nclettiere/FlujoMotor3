@@ -86,10 +86,15 @@ Public Class VerPosicion
         Try
             Dim LoteId As String = Conexion.consultar("SELECT loteid FROM vehiculos WHERE vehiculovin='" + VIN + "'").Rows(0).Item(0).ToString
             Patio    = Conexion.consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
-            ZonaId   = Conexion.consultar("SELECT * FROM zonas WHERE patioid=" + Patio.Rows(0).Item(0).ToString).Rows(0).Item(0).ToString
+            Dim Zona = Conexion.consultar("SELECT * FROM zonas WHERE patioid=" + Patio.Rows(0).Item(0).ToString)
+
+            If Zona IsNot Nothing And Zona.Rows.Count > 0
+                ZonaId = Zona.Rows(0).Item(0).ToString
+            End If
+
             SubZonas = Conexion.consultar("SELECT * FROM subzonas WHERE zonaid=" + ZonaId)
 
-            If SubZonas.Rows.Count > 0
+            If SubZonas IsNot Nothing And SubZonas.Rows.Count > 0
                 For Each item As DataRow In SubZonas.Rows
                     cbxZona.Items.Add(item("subzonanombre").ToString)
                 Next

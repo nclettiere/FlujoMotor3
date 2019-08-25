@@ -15,7 +15,7 @@ Public Class Agregar_Vehiculillo
         End Set
     End Property
 
-    Public Property FormParent As Menu_Wapo
+    Public Property FormParent As MenuControl
     Public Property SelectedLote As DataGridViewCellCollection
     Public Property LoteModo As Boolean
     Public Property LoteDatos As Boolean
@@ -122,8 +122,6 @@ Public Class Agregar_Vehiculillo
         lblLoteSelection.Visible = False
         btnQuitarLote.Visible = False
         LoteDatos = False
-
-        FormParent.UpdateVehiculos()
     End Sub
 
     Private Sub BtnLoteExistente_Click_1(sender As Object, e As EventArgs) Handles btnLoteExistente.Click
@@ -189,5 +187,9 @@ Public Class Agregar_Vehiculillo
                 MessageBox.Show("Error: El VIN ingresado ya existe.")
             End If
         End If
+    End Sub
+
+    Private Sub BtnIrAtras_Click(sender As Object, e As EventArgs) Handles btnIrAtras.Click
+        FormParent.GoToSection(0)
     End Sub
 End Class

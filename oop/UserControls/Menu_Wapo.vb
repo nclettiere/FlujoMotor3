@@ -20,6 +20,7 @@ Public Class Menu_Wapo
     Public Property Conexion As ODBC
 
     Private Sub BtPuerto_Click(sender As Object, e As EventArgs) Handles btPuerto.Click
+        GoToSection(0)
         btPatio.Font = New Font(btPatio.Font.FontFamily, 14)
         piBoPatio.Size = New Size(56, 30)
         btPatio.BackColor = Color.Transparent
@@ -29,6 +30,7 @@ Public Class Menu_Wapo
     End Sub
 
     Private Sub BtPatio_Click(sender As Object, e As EventArgs) Handles btPatio.Click
+        GoToSection(2)
         btPuerto.Font = New Font(btPuerto.Font.FontFamily, 14)
         piBoPuerto.Size = New Size(56, 30)
         btPuerto.BackColor = Color.Transparent
@@ -46,8 +48,7 @@ Public Class Menu_Wapo
         UpdateVehiculos() 
         Me.AutoSize = true
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
-        
-        ''Selecciona el patio automaticamente
+       
         GoToSection(0)
         btPatio.Font = New Font(btPatio.Font.FontFamily, 14)
         piBoPatio.Size = New Size(56, 30)
@@ -70,31 +71,37 @@ Public Class Menu_Wapo
 
         Dim Selection As Object
 
-        Select Case Section
-            Case 0
-                Selection = Info_de_Autillos.Instance
-                Info_de_Autillos.Instance.FormParent = Me
-                btnAddVehicle.BackColor = Color.DimGray
-                btnVerVehicle.BackColor = Color.DarkGray
-            Case 1
-                Selection = Agregar_Vehiculillo.Instance
-                Agregar_Vehiculillo.Instance.FormParent = Me
-                btnVerVehicle.BackColor = Color.DimGray
-                btnAddVehicle.BackColor = Color.DarkGray
-            Case Else
-                Selection = Info_de_Autillos.Instance
-                Info_de_Autillos.Instance.FormParent = Me
-                btnAddVehicle.BackColor = Color.DimGray
-                btnVerVehicle.BackColor = Color.DarkGray
-        End Select
+        '''Select Case Section
+        '''    Case 0
+        '''        Selection = Info_de_Autillos.Instance
+        '''        Info_de_Autillos.Instance.FormParent = Me
+        '''        btnAddVehicle.BackColor = Color.DimGray
+        '''        btnVerVehicle.BackColor = Color.DarkGray
+        '''    Case 1
+        '''        Selection = Agregar_Vehiculillo.Instance
+        '''        Agregar_Vehiculillo.Instance.FormParent = Me
+        '''        btnVerVehicle.BackColor = Color.DimGray
+        '''        btnAddVehicle.BackColor = Color.DarkGray
+        '''Case 2
+        '''        Selection = VerPatio.Instance
+        '''        VerPatio.Instance.FormParent = Me
+        '''        VerPatio.Instance.Conexion = Conexion
+        '''        btnVerVehicle.BackColor = Color.DimGray
+        '''        btnAddVehicle.BackColor = Color.DarkGray
+        '''    Case Else
+        '''        Selection = Info_de_Autillos.Instance
+        '''        Info_de_Autillos.Instance.FormParent = Me
+        '''        btnAddVehicle.BackColor = Color.DimGray
+        '''        btnVerVehicle.BackColor = Color.DarkGray
+        '''End Select
 
-        If Not mainContent.Contains(Selection) Then
-            MainContent.Controls.Add(Selection.Instance)
-            Selection.Instance.Dock = DockStyle.Fill
-            Selection.Instance.BringToFront()
-        Else
-            Selection.Instance.BringToFront()
-        End If
+        '''If Not mainContent.Contains(Selection) Then
+        '''    MainContent.Controls.Add(Selection.Instance)
+        '''    Selection.Instance.Dock = DockStyle.Fill
+        '''    Selection.Instance.BringToFront()
+        '''Else
+        '''    Selection.Instance.BringToFront()
+        '''End If
     End Sub
 
     Friend Sub UpdateVehiculos()

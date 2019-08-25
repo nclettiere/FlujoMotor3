@@ -17,19 +17,16 @@ Public Class Info_de_Autillos
         End Set
     End Property
 
-    Public Property FormParent As Menu_Wapo
+    Public Property FormParent As MenuControl
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-#If DEBUG
-        If FormParent.FormParent.Conexion IsNot Nothing
+        Try
             Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
             DataGridViewVehiculos.DataSource = resultado
-        Else
-            Console.WriteLine("######[POTENTIAL ERROR]######" + Environment.NewLine + "Menu.Conexion was NULL on 'Info_de_Autillos.vb'" + Environment.NewLine + "######[END POTENTIAL ERROR]######")
-        End If
-#End If
-
-        DataGridViewVehiculos.MultiSelect = False
+            DataGridViewVehiculos.MultiSelect = False
+        Catch ex As Exception
+            Log.Warning(ex, "Error Al Cargar Vehiculos. InfoDeAutos")
+        End Try
     End Sub
 
     Private Sub BtBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
@@ -82,5 +79,9 @@ Public Class Info_de_Autillos
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+        FormParent.GotoSection(1)
     End Sub
 End Class

@@ -36,12 +36,12 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanelOpciones = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btPuerto = New System.Windows.Forms.Button()
-        Me.piBoPuerto = New System.Windows.Forms.PictureBox()
         Me.btPatio = New System.Windows.Forms.Button()
-        Me.piBoPatio = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanelSesion = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.piBoPuerto = New System.Windows.Forms.PictureBox()
+        Me.piBoPatio = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanelMenu.SuspendLayout
         Me.pnCOntenedor.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
@@ -50,9 +50,9 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanelOpciones.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
+        Me.TableLayoutPanelSesion.SuspendLayout
         CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TableLayoutPanelSesion.SuspendLayout
         CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -272,17 +272,6 @@ Partial Class Menu_Wapo
         Me.btPuerto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btPuerto.UseVisualStyleBackColor = true
         '
-        'piBoPuerto
-        '
-        Me.piBoPuerto.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.piBoPuerto.BackgroundImage = Global.oop.My.Resources.Resources.next_1aaaa
-        Me.piBoPuerto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.piBoPuerto.Location = New System.Drawing.Point(3, 41)
-        Me.piBoPuerto.Name = "piBoPuerto"
-        Me.piBoPuerto.Size = New System.Drawing.Size(55, 30)
-        Me.piBoPuerto.TabIndex = 1
-        Me.piBoPuerto.TabStop = false
-        '
         'btPatio
         '
         Me.btPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -298,17 +287,6 @@ Partial Class Menu_Wapo
         Me.btPatio.Text = "PATIO"
         Me.btPatio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btPatio.UseVisualStyleBackColor = false
-        '
-        'piBoPatio
-        '
-        Me.piBoPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.piBoPatio.BackgroundImage = Global.oop.My.Resources.Resources.next_1aaaa
-        Me.piBoPatio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.piBoPatio.Location = New System.Drawing.Point(3, 155)
-        Me.piBoPatio.Name = "piBoPatio"
-        Me.piBoPatio.Size = New System.Drawing.Size(55, 30)
-        Me.piBoPatio.TabIndex = 3
-        Me.piBoPatio.TabStop = false
         '
         'TableLayoutPanelSesion
         '
@@ -328,17 +306,6 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanelSesion.Size = New System.Drawing.Size(273, 211)
         Me.TableLayoutPanelSesion.TabIndex = 2
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.BackgroundImage = Global.oop.My.Resources.Resources.logoutss
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox3.Location = New System.Drawing.Point(3, 137)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(66, 41)
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = false
-        '
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -356,6 +323,39 @@ Partial Class Menu_Wapo
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.UseVisualStyleBackColor = true
         '
+        'piBoPuerto
+        '
+        Me.piBoPuerto.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.piBoPuerto.BackgroundImage = Global.oop.My.Resources.Resources.next_1aaaa
+        Me.piBoPuerto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.piBoPuerto.Location = New System.Drawing.Point(3, 41)
+        Me.piBoPuerto.Name = "piBoPuerto"
+        Me.piBoPuerto.Size = New System.Drawing.Size(55, 30)
+        Me.piBoPuerto.TabIndex = 1
+        Me.piBoPuerto.TabStop = false
+        '
+        'piBoPatio
+        '
+        Me.piBoPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.piBoPatio.BackgroundImage = Global.oop.My.Resources.Resources.next_1aaaa
+        Me.piBoPatio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.piBoPatio.Location = New System.Drawing.Point(3, 155)
+        Me.piBoPatio.Name = "piBoPatio"
+        Me.piBoPatio.Size = New System.Drawing.Size(55, 30)
+        Me.piBoPatio.TabIndex = 3
+        Me.piBoPatio.TabStop = false
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.BackgroundImage = Global.oop.My.Resources.Resources.logoutss
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox3.Location = New System.Drawing.Point(3, 137)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(66, 41)
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = false
+        '
         'Menu_Wapo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -372,9 +372,9 @@ Partial Class Menu_Wapo
         Me.TableLayoutPanel4.ResumeLayout(false)
         Me.TableLayoutPanelOpciones.ResumeLayout(false)
         Me.TableLayoutPanel1.ResumeLayout(false)
+        Me.TableLayoutPanelSesion.ResumeLayout(false)
         CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).EndInit
-        Me.TableLayoutPanelSesion.ResumeLayout(false)
         CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 

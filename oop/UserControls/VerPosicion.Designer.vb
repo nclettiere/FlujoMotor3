@@ -23,8 +23,12 @@ Partial Class VerPosicion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbxZona = New System.Windows.Forms.ComboBox()
@@ -33,16 +37,13 @@ Partial Class VerPosicion
         Me.tbxFila = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tbxColumna = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.Panel3.SuspendLayout
+        Me.Panel1.SuspendLayout
         Me.Panel4.SuspendLayout
         Me.FlowLayoutPanel1.SuspendLayout
-        Me.Panel1.SuspendLayout
         Me.SuspendLayout
         '
         'Panel2
@@ -51,12 +52,49 @@ Partial Class VerPosicion
         Me.Panel2.Controls.Add(Me.btnAceptar)
         Me.Panel2.Controls.Add(Me.btnCancelar)
         Me.Panel2.Controls.Add(Me.TableLayoutPanel2)
+        Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(10)
         Me.Panel2.Size = New System.Drawing.Size(370, 177)
         Me.Panel2.TabIndex = 2
+        '
+        'btnAceptar
+        '
+        Me.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnAceptar.BackColor = System.Drawing.Color.DimGray
+        Me.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAceptar.FlatAppearance.BorderSize = 0
+        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnAceptar.ForeColor = System.Drawing.Color.Orange
+        Me.btnAceptar.Location = New System.Drawing.Point(68, 111)
+        Me.btnAceptar.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnAceptar.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(143, 53)
+        Me.btnAceptar.TabIndex = 6
+        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.UseVisualStyleBackColor = false
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
+        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Orange
+        Me.btnCancelar.Location = New System.Drawing.Point(217, 111)
+        Me.btnCancelar.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnCancelar.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(143, 53)
+        Me.btnCancelar.TabIndex = 5
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel2
         '
@@ -69,7 +107,7 @@ Partial Class VerPosicion
         Me.TableLayoutPanel2.Controls.Add(Me.cbxZona, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.FlowLayoutPanel1, 1, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(10, 10)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(10, 37)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -86,6 +124,28 @@ Partial Class VerPosicion
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(126, 32)
         Me.Panel3.TabIndex = 7
+        '
+        'Panel1
+        '
+        Me.Panel1.AutoSize = true
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(126, 32)
+        Me.Panel1.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Orange
+        Me.Label2.Location = New System.Drawing.Point(20, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 17)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Posicion"
         '
         'Panel4
         '
@@ -170,63 +230,19 @@ Partial Class VerPosicion
         Me.tbxColumna.Size = New System.Drawing.Size(30, 20)
         Me.tbxColumna.TabIndex = 3
         '
-        'Panel1
+        'Label5
         '
-        Me.Panel1.AutoSize = true
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(126, 32)
-        Me.Panel1.TabIndex = 7
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = true
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Orange
-        Me.Label2.Location = New System.Drawing.Point(20, 12)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 17)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Posicion"
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
-        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnCancelar.FlatAppearance.BorderSize = 0
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnCancelar.ForeColor = System.Drawing.Color.Orange
-        Me.btnCancelar.Location = New System.Drawing.Point(217, 111)
-        Me.btnCancelar.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnCancelar.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(143, 53)
-        Me.btnCancelar.TabIndex = 5
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = false
-        '
-        'btnAceptar
-        '
-        Me.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnAceptar.BackColor = System.Drawing.Color.DimGray
-        Me.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnAceptar.FlatAppearance.BorderSize = 0
-        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnAceptar.ForeColor = System.Drawing.Color.Orange
-        Me.btnAceptar.Location = New System.Drawing.Point(68, 111)
-        Me.btnAceptar.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnAceptar.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(143, 53)
-        Me.btnAceptar.TabIndex = 6
-        Me.btnAceptar.Text = "Aceptar"
-        Me.btnAceptar.UseVisualStyleBackColor = false
+        Me.Label5.AutoSize = true
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Orange
+        Me.Label5.Location = New System.Drawing.Point(10, 10)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(10)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
+        Me.Label5.Size = New System.Drawing.Size(150, 27)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "Posicion del Vehiculo: "
         '
         'VerPosicion
         '
@@ -241,12 +257,12 @@ Partial Class VerPosicion
         Me.TableLayoutPanel2.PerformLayout
         Me.Panel3.ResumeLayout(false)
         Me.Panel3.PerformLayout
+        Me.Panel1.ResumeLayout(false)
+        Me.Panel1.PerformLayout
         Me.Panel4.ResumeLayout(false)
         Me.Panel4.PerformLayout
         Me.FlowLayoutPanel1.ResumeLayout(false)
         Me.FlowLayoutPanel1.PerformLayout
-        Me.Panel1.ResumeLayout(false)
-        Me.Panel1.PerformLayout
         Me.ResumeLayout(false)
 
 End Sub
@@ -266,4 +282,5 @@ End Sub
     Friend WithEvents tbxColumna As TextBox
     Friend WithEvents btnAceptar As Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents Label5 As Label
 End Class

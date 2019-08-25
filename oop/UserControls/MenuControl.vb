@@ -1,0 +1,97 @@
+﻿Public Class MenuControl
+    Private Shared _instance As MenuControl
+
+    Public Shared Property Instance As MenuControl
+        Get
+            If _instance Is Nothing Then
+                _instance = New MenuControl()
+            End If
+            Return _instance
+        End Get
+        Set(value As MenuControl)
+            _instance = value
+        End Set
+    End Property
+
+    Public Property FormParent As Menu
+    Public Property Conexion As DB.ODBC
+
+    Private Sub OnControlLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.AutoSize = true
+        Me.AutoSizeMode = AutoSizeMode.GrowOnly
+       
+        GoToSection(0)
+        btPatio.Font = New Font(btPatio.Font.FontFamily, 14)
+        piBoPatio.Size = New Size(56, 30)
+        btPatio.BackColor = Color.Transparent
+        btPuerto.BackColor = Color.DarkGray
+        btPuerto.Font = New Font(btPuerto.Font.FontFamily, 17)
+        piBoPuerto.Size = New Size(56, 70)
+    End Sub
+
+    ''' <summary>
+    ''' Metodo usado para cambiar dinamicamente el contenido del ContenidoPrincipal
+    ''' </summary>
+    ''' <param name="Section">Integer que especifica el ID de la seccion.</param>
+    Friend Sub GoToSection(ByVal Section As Integer)
+        '' Section => {0=>"VerVehiculos";1=>AgregarVehiculos};
+        Dim Selection As Object
+
+        Select Case Section
+            Case 0
+                Selection = Info_de_Autillos.Instance
+                Info_de_Autillos.Instance.FormParent = Me
+                ''btnAgregarVehiculo.BackColor = Color.DimGray
+                ''btnVerVehiculo.BackColor = Color.DarkGray
+            Case 1
+                Selection = Agregar_Vehiculillo.Instance
+                Agregar_Vehiculillo.Instance.FormParent = Me
+                ''btnVerVehicle.BackColor = Color.DimGray
+                ''btnAgregarVehicle.BackColor = Color.DarkGray
+        Case 2
+                Selection = VerPatio.Instance
+                VerPatio.Instance.FormParent = Me
+                VerPatio.Instance.Conexion = Conexion
+                'btnVerVehicle.BackColor = Color.DimGray
+                'btnAgregarVehicle.BackColor = Color.DarkGray
+            Case Else
+                Selection = Info_de_Autillos.Instance
+                Info_de_Autillos.Instance.FormParent = Me
+                'btnAgregarVehicle.BackColor = Color.DimGray
+                'btnVerVehicle.BackColor = Color.DarkGray
+        End Select
+
+        If Not ContenidoPrincipal.Contains(Selection) Then
+            ContenidoPrincipal.Controls.Add(Selection.Instance)
+            Selection.Instance.Dock = DockStyle.Fill
+            Selection.Instance.BringToFront()
+        Else
+            Selection.Instance.BringToFront()
+        End If
+    End Sub
+
+    Private Sub BtPuerto_Click(sender As Object, e As EventArgs) Handles btPuerto.Click
+        GoToSection(0)
+        btPatio.Font = New Font(btPatio.Font.FontFamily, 14)
+        piBoPatio.Size = New Size(56, 30)
+        btPatio.BackColor = Color.Transparent
+        btPuerto.BackColor = Color.DarkGray
+        btPuerto.Font = New Font(btPuerto.Font.FontFamily, 17)
+        piBoPuerto.Size = New Size(56, 70)
+    End Sub
+
+    Private Sub BtPatio_Click(sender As Object, e As EventArgs) Handles btPatio.Click
+        GoToSection(2)
+        btPuerto.Font = New Font(btPuerto.Font.FontFamily, 14)
+        piBoPuerto.Size = New Size(56, 30)
+        btPuerto.BackColor = Color.Transparent
+        btPatio.BackColor = Color.DarkGray
+        btPatio.Font = New Font(btPatio.Font.FontFamily, 17)
+        piBoPatio.Size = New Size(56, 70)
+    End Sub
+
+    Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Conexion.Cerrar()
+        ParentForm.Close()
+    End Sub
+End Class

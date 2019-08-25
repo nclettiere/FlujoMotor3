@@ -35,10 +35,16 @@ Public Class Ventanita_Ver
         Select Case Section
             Case 0
                 Selection = Ver_Inspeccionsilla.Instance
+                Me.ClientSize = Ver_Inspeccionsilla.Instance.Size
             Case 1
                 Selection = Ver_Vehiculillo.Instance
+                 Me.ClientSize = Ver_Vehiculillo.Instance.Size
+            Case 2
+                Selection = VerPosicion.Instance
+                Me.ClientSize = VerPosicion.Instance.Size
             Case Else
                 Selection = Ver_Inspeccionsilla.Instance
+                Me.ClientSize = Ver_Inspeccionsilla.Instance.Size
         End Select
 
         If Not mainContent.Contains(Selection) Then

@@ -45,6 +45,8 @@ Partial Class Agregar_Vehiculillo
         Me.lblLoteSelection = New System.Windows.Forms.Label()
         Me.btnQuitarLote = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.btnIrAtras = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.TableLayoutPanelMain.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
@@ -52,6 +54,7 @@ Partial Class Agregar_Vehiculillo
         Me.Panel2.SuspendLayout
         Me.FlowLayoutPanel1.SuspendLayout
         Me.Panel3.SuspendLayout
+        Me.FlowLayoutPanel2.SuspendLayout
         Me.SuspendLayout
         '
         'TableLayoutPanelMain
@@ -381,24 +384,56 @@ Partial Class Agregar_Vehiculillo
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.btnAgregar)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.Panel3.AutoSize = true
+        Me.Panel3.Controls.Add(Me.FlowLayoutPanel2)
         Me.Panel3.Location = New System.Drawing.Point(3, 411)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(523, 69)
+        Me.Panel3.Size = New System.Drawing.Size(318, 69)
         Me.Panel3.TabIndex = 1
+        '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.AutoSize = true
+        Me.FlowLayoutPanel2.Controls.Add(Me.btnIrAtras)
+        Me.FlowLayoutPanel2.Controls.Add(Me.btnAgregar)
+        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(10)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Padding = New System.Windows.Forms.Padding(10)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(318, 69)
+        Me.FlowLayoutPanel2.TabIndex = 3
+        '
+        'btnIrAtras
+        '
+        Me.btnIrAtras.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.btnIrAtras.BackColor = System.Drawing.Color.DimGray
+        Me.btnIrAtras.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnIrAtras.FlatAppearance.BorderSize = 0
+        Me.btnIrAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnIrAtras.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnIrAtras.ForeColor = System.Drawing.Color.Orange
+        Me.btnIrAtras.Location = New System.Drawing.Point(13, 13)
+        Me.btnIrAtras.MaximumSize = New System.Drawing.Size(143, 51)
+        Me.btnIrAtras.MinimumSize = New System.Drawing.Size(143, 51)
+        Me.btnIrAtras.Name = "btnIrAtras"
+        Me.btnIrAtras.Size = New System.Drawing.Size(143, 51)
+        Me.btnIrAtras.TabIndex = 2
+        Me.btnIrAtras.Text = "Ir Atras"
+        Me.btnIrAtras.UseVisualStyleBackColor = false
         '
         'btnAgregar
         '
-        Me.btnAgregar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom),System.Windows.Forms.AnchorStyles)
         Me.btnAgregar.BackColor = System.Drawing.Color.DimGray
         Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
         Me.btnAgregar.FlatAppearance.BorderSize = 0
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Orange
-        Me.btnAgregar.Location = New System.Drawing.Point(190, 9)
+        Me.btnAgregar.Location = New System.Drawing.Point(162, 13)
         Me.btnAgregar.MaximumSize = New System.Drawing.Size(143, 51)
         Me.btnAgregar.MinimumSize = New System.Drawing.Size(143, 51)
         Me.btnAgregar.Name = "btnAgregar"
@@ -417,6 +452,7 @@ Partial Class Agregar_Vehiculillo
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(545, 499)
         Me.TableLayoutPanelMain.ResumeLayout(false)
+        Me.TableLayoutPanelMain.PerformLayout
         Me.TableLayoutPanel1.ResumeLayout(false)
         Me.TableLayoutPanel1.PerformLayout
         Me.Panel1.ResumeLayout(false)
@@ -424,6 +460,8 @@ Partial Class Agregar_Vehiculillo
         Me.FlowLayoutPanel1.ResumeLayout(false)
         Me.FlowLayoutPanel1.PerformLayout
         Me.Panel3.ResumeLayout(false)
+        Me.Panel3.PerformLayout
+        Me.FlowLayoutPanel2.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub
@@ -451,5 +489,7 @@ End Sub
     Friend WithEvents lblLoteSelection As Label
     Friend WithEvents btnQuitarLote As Button
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents btnIrAtras As Button
     Friend WithEvents btnAgregar As Button
 End Class

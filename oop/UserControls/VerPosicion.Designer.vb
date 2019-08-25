@@ -37,7 +37,8 @@ Partial Class VerPosicion
         Me.tbxFila = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tbxColumna = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblPatio = New System.Windows.Forms.Label()
+        Me.lblVehiculoPos = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.Panel3.SuspendLayout
@@ -52,12 +53,13 @@ Partial Class VerPosicion
         Me.Panel2.Controls.Add(Me.btnAceptar)
         Me.Panel2.Controls.Add(Me.btnCancelar)
         Me.Panel2.Controls.Add(Me.TableLayoutPanel2)
-        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.lblPatio)
+        Me.Panel2.Controls.Add(Me.lblVehiculoPos)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel2.Size = New System.Drawing.Size(370, 177)
+        Me.Panel2.Size = New System.Drawing.Size(370, 222)
         Me.Panel2.TabIndex = 2
         '
         'btnAceptar
@@ -69,7 +71,7 @@ Partial Class VerPosicion
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.Orange
-        Me.btnAceptar.Location = New System.Drawing.Point(68, 111)
+        Me.btnAceptar.Location = New System.Drawing.Point(68, 156)
         Me.btnAceptar.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btnAceptar.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnAceptar.Name = "btnAceptar"
@@ -87,7 +89,7 @@ Partial Class VerPosicion
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Orange
-        Me.btnCancelar.Location = New System.Drawing.Point(217, 111)
+        Me.btnCancelar.Location = New System.Drawing.Point(217, 156)
         Me.btnCancelar.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btnCancelar.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnCancelar.Name = "btnCancelar"
@@ -107,7 +109,7 @@ Partial Class VerPosicion
         Me.TableLayoutPanel2.Controls.Add(Me.cbxZona, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.FlowLayoutPanel1, 1, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(10, 37)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(10, 64)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -230,19 +232,33 @@ Partial Class VerPosicion
         Me.tbxColumna.Size = New System.Drawing.Size(30, 20)
         Me.tbxColumna.TabIndex = 3
         '
-        'Label5
+        'lblPatio
         '
-        Me.Label5.AutoSize = true
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Orange
-        Me.Label5.Location = New System.Drawing.Point(10, 10)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(10)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
-        Me.Label5.Size = New System.Drawing.Size(150, 27)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Posicion del Vehiculo: "
+        Me.lblPatio.AutoSize = true
+        Me.lblPatio.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblPatio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblPatio.ForeColor = System.Drawing.Color.Orange
+        Me.lblPatio.Location = New System.Drawing.Point(10, 37)
+        Me.lblPatio.Margin = New System.Windows.Forms.Padding(10)
+        Me.lblPatio.Name = "lblPatio"
+        Me.lblPatio.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
+        Me.lblPatio.Size = New System.Drawing.Size(48, 27)
+        Me.lblPatio.TabIndex = 7
+        Me.lblPatio.Text = "Patio: "
+        '
+        'lblVehiculoPos
+        '
+        Me.lblVehiculoPos.AutoSize = true
+        Me.lblVehiculoPos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblVehiculoPos.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblVehiculoPos.ForeColor = System.Drawing.Color.Orange
+        Me.lblVehiculoPos.Location = New System.Drawing.Point(10, 10)
+        Me.lblVehiculoPos.Margin = New System.Windows.Forms.Padding(10)
+        Me.lblVehiculoPos.Name = "lblVehiculoPos"
+        Me.lblVehiculoPos.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
+        Me.lblVehiculoPos.Size = New System.Drawing.Size(150, 27)
+        Me.lblVehiculoPos.TabIndex = 8
+        Me.lblVehiculoPos.Text = "Posicion del Vehiculo: "
         '
         'VerPosicion
         '
@@ -250,7 +266,7 @@ Partial Class VerPosicion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Panel2)
         Me.Name = "VerPosicion"
-        Me.Size = New System.Drawing.Size(370, 177)
+        Me.Size = New System.Drawing.Size(370, 222)
         Me.Panel2.ResumeLayout(false)
         Me.Panel2.PerformLayout
         Me.TableLayoutPanel2.ResumeLayout(false)
@@ -282,5 +298,6 @@ End Sub
     Friend WithEvents tbxColumna As TextBox
     Friend WithEvents btnAceptar As Button
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblPatio As Label
+    Friend WithEvents lblVehiculoPos As Label
 End Class

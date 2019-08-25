@@ -33,7 +33,7 @@ Public Class InspeccionWidget
                 If resultadoInspeccionDanio IsNot Nothing
                     If resultadoInspeccionDanio.Rows().Count > 0
                         QueryFoto = "SELECT daniofoto FROM danios WHERE danioid="+ resultadoInspeccionDanio.Rows(0).Item("danioid").ToString
-                        Dim resultadoDanio As DataTable = Conexion.consultar("SELECT danioid, daniodescripcion FROM danios WHERE danioid=1")
+                        Dim resultadoDanio As DataTable = Conexion.consultar("SELECT danioid, daniodescripcion FROM danios WHERE danioid="+ resultadoInspeccionDanio.Rows(0).Item("danioid").ToString)
                         If resultadoDanio IsNot Nothing
                             Try
                                 rchtbxDesc.Text = resultadoDanio.Rows(0).Item("daniodescripcion").ToString

@@ -18,7 +18,8 @@
 
     Private Sub BtnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
         Dim VentanaVer = New Ventanita_Ver()
-        VentanaVer.GoToSection(2)
+        Dim vin = DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString
+        VentanaVer.GoToSection(2, vin, Conexion)
         VentanaVer.ShowDialog()
     End Sub
 

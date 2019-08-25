@@ -160,7 +160,7 @@ Partial Class Info_de_Autillos
         Me.btnIngresar.MaximumSize = New System.Drawing.Size(0, 53)
         Me.btnIngresar.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(183, 53)
+        Me.btnIngresar.Size = New System.Drawing.Size(162, 53)
         Me.btnIngresar.TabIndex = 0
         Me.btnIngresar.Text = "Ingresar Vehiculos"
         Me.btnIngresar.UseVisualStyleBackColor = false

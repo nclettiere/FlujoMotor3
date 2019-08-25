@@ -68,6 +68,10 @@ Public Class Ventanita_Ver
                     Selection = Agregar_Inspeccion.Instance
                     Agregar_Inspeccion.Instance.FormParent = Me
                     Agregar_Inspeccion.Instance.CargarDatos(VIN, Conexion)
+                Case 2
+                    Selection = VerPosicion.Instance
+                    VerPosicion.Instance.CargarDatos(VIN,Conexion)
+                    Me.ClientSize = VerPosicion.Instance.Size
                 Case Else
                     Selection = Ver_Inspeccionsilla.Instance
             End Select

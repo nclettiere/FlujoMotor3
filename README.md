@@ -4,7 +4,7 @@ Conexion a INFROMIX:
 <p>Poner el siguiente string en la clase ODBC del paquete DB:</p>
 <p>Usando computadoras de la UTU:</p>
 <p>Driver={IBM INFORMIX ODBC DRIVER};
-Database=big;
+Database=data;
 Host=[comando hostname];
 Server=ol_esi;
 Service=9088;
@@ -13,7 +13,7 @@ UID=root;PWD=root;</p>
 
 <p>Usando computadoras con el driver ODBC de la pag de la utu xd:</p>
 <p>Driver={IBM INFORMIX ODBC DRIVER 32/64Bits};
-Database=big;
+Database=data;
 Host=[comando hostname];
 Server=ol_esi;
 Service=9088;

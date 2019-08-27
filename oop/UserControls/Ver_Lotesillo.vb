@@ -29,8 +29,12 @@ Public Class Ver_Lotesillo
 
         Try
             Dim ListaVehiculos As DataTable = Conexion.consultar("SELECT * FROM vehiculos WHERE loteid=" + loteid)
-            Dim Lote = Conexion.consultar("SELECT * FROM lotes WHERE loteid=" + loteid).Rows(0)
+            Dim Lote = Conexion.consultar("SELECT * FROM lotes WHERE loteid=" + loteid.ToString).Rows(0)
             If ListaVehiculos IsNot Nothing
+                Dim Patio = Conexion.consultar("SELECT * FROM patios WHERE patioid=" + Lote.Item("patioid").ToString).Rows(0)
+                If Patio IsNot Nothing
+                    labPatio.Text = Patio.Item("pationombre")
+                End If
                 DataGridViewVehiculos.DataSource = ListaVehiculos
                 labId.Text = Lote.Item("loteid")
                 riTeBoDescripcion.Text = Lote.Item("lotedescripcion")
@@ -44,11 +48,15 @@ Public Class Ver_Lotesillo
 
     End Sub
 
-    Private Sub BtnEntregar_Click(sender As Object, e As EventArgs) Handles btnEntregar.Click
+    Private Sub BtnEntregar_Click_1(sender As Object, e As EventArgs) Handles btnEntregar.Click
         Dim result As Integer = MessageBox.Show("Los se encargaran de movilizar el lote.", "Desea entregar el lote?", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
-            Conexion.consultar("UPDATE lotes SET lotedescripcion ='"+ riTeBoDescripcion.Text + ";'" +" WHERE loteid="+ LoteId +";")   
-            MessageBox.Show("Lote entregado correctamente.")
+            Try
+                Conexion.consultar("UPDATE lotes SET lotedescripcion ='"+ riTeBoDescripcion.Text + ";'" +" WHERE loteid="+ LoteId +";")   
+                MessageBox.Show("Lote entregado correctamente.")
+            Catch ex As Exception
+                Serilog.Log.Error(ex, "Error al entregar lote.")
+            End Try
         End If
     End Sub
 End Class

@@ -19,6 +19,8 @@ Public Class Info_de_Autillos
 
     Public Property FormParent As MenuControl
 
+    Private Property VinSeleccionado As String
+
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
@@ -63,7 +65,8 @@ Public Class Info_de_Autillos
         Try
             Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
             Dim VerVehiculo As Ver_Vehiculillo = New Ver_Vehiculillo
-            VerVehiculo.Data(Me, DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString(), VentanaVer, FormParent.Conexion)
+            MessageBox.Show(VinSeleccionado)
+            VerVehiculo.Data(Me, VinSeleccionado, VentanaVer, FormParent.Conexion)
             VentanaVer.LoadControl(VerVehiculo)
             VentanaVer.ShowDialog()
         Catch ex As Exception
@@ -84,5 +87,12 @@ Public Class Info_de_Autillos
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
         FormParent.GotoSection(1)
+    End Sub
+
+    Private Sub CambioSeleccion(sender As Object, e As EventArgs) Handles DataGridViewVehiculos.SelectionChanged
+        if DataGridViewVehiculos.SelectedRows.Count <> 0
+            Dim fila As DataGridViewRow = DataGridViewVehiculos.SelectedRows(0)
+            VinSeleccionado = fila.Cells("vehiculovin").Value
+        End If
     End Sub
 End Class

@@ -166,85 +166,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AgregarInspeccion.Designer.vb">
-      <DependentUpon>AgregarInspeccion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AgregarInspeccion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Agregar_Lote.Designer.vb">
-      <DependentUpon>Agregar_Lote.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Agregar_Lote.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AgregarVehiculo.Designer.vb">
-      <DependentUpon>AgregarVehiculo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AgregarVehiculo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Configuracion.Designer.vb">
-      <DependentUpon>Configuracion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Configuracion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Asignar_Herencia.Designer.vb">
-      <DependentUpon>Asignar_Herencia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Asignar_Herencia.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Editar Vehiculo.Designer.vb">
-      <DependentUpon>Editar Vehiculo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Editar Vehiculo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Editar_Lote.Designer.vb">
-      <DependentUpon>Editar_Lote.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Editar_Lote.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Eliminar_Lote.Designer.vb">
-      <DependentUpon>Eliminar_Lote.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Eliminar_Lote.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Eliminar_Vehiculo.Designer.vb">
-      <DependentUpon>Eliminar_Vehiculo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Eliminar_Vehiculo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Inicio_de_sesion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Inicio_de_sesion.Designer.vb">
-      <DependentUpon>Inicio_de_sesion.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Menu_Operario.Designer.vb">
-      <DependentUpon>Menu_Operario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Menu_Operario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SeleccionarCliente.Designer.vb">
-      <DependentUpon>SeleccionarCliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SeleccionarCliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SeleccionarCSV.Designer.vb">
-      <DependentUpon>SeleccionarCSV.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SeleccionarCSV.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UserControls\Entrega.Designer.vb">
       <DependentUpon>Entrega.vb</DependentUpon>
     </Compile>
@@ -319,54 +240,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Forms\Op_patio.Designer.vb">
-      <DependentUpon>Op_patio.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Op_patio.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SeleccionarVehiculos.Designer.vb">
-      <DependentUpon>SeleccionarVehiculos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SeleccionarVehiculos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Transporte.Designer.vb">
-      <DependentUpon>Transporte.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Transporte.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Vehiculos.Designer.vb">
-      <DependentUpon>Vehiculos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Vehiculos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VerInspeccion.Designer.vb">
-      <DependentUpon>VerInspeccion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\VerInspeccion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VerLote.Designer.vb">
-      <DependentUpon>VerLote.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\VerLote.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VerVehiculo.Designer.vb">
-      <DependentUpon>VerVehiculo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\VerVehiculo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VerVehiculoPatio.Designer.vb">
-      <DependentUpon>VerVehiculoPatio.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\VerVehiculoPatio.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserControls\Agregar_Inspeccion.Designer.vb">
       <DependentUpon>Agregar_Inspeccion.vb</DependentUpon>
@@ -502,45 +375,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\AgregarInspeccion.resx">
-      <DependentUpon>AgregarInspeccion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Agregar_Lote.resx">
-      <DependentUpon>Agregar_Lote.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AgregarVehiculo.resx">
-      <DependentUpon>AgregarVehiculo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Configuracion.resx">
-      <DependentUpon>Configuracion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Asignar_Herencia.resx">
-      <DependentUpon>Asignar_Herencia.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Editar Vehiculo.resx">
-      <DependentUpon>Editar Vehiculo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Editar_Lote.resx">
-      <DependentUpon>Editar_Lote.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Eliminar_Lote.resx">
-      <DependentUpon>Eliminar_Lote.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Eliminar_Vehiculo.resx">
-      <DependentUpon>Eliminar_Vehiculo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Inicio_de_sesion.resx">
-      <DependentUpon>Inicio_de_sesion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Menu_Operario.resx">
-      <DependentUpon>Menu_Operario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SeleccionarCliente.resx">
-      <DependentUpon>SeleccionarCliente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SeleccionarCSV.resx">
-      <DependentUpon>SeleccionarCSV.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Entrega.resx">
       <DependentUpon>Entrega.vb</DependentUpon>
     </EmbeddedResource>
@@ -576,30 +410,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Op_patio.resx">
-      <DependentUpon>Op_patio.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SeleccionarVehiculos.resx">
-      <DependentUpon>SeleccionarVehiculos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Transporte.resx">
-      <DependentUpon>Transporte.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Vehiculos.resx">
-      <DependentUpon>Vehiculos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VerInspeccion.resx">
-      <DependentUpon>VerInspeccion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VerLote.resx">
-      <DependentUpon>VerLote.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VerVehiculo.resx">
-      <DependentUpon>VerVehiculo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VerVehiculoPatio.resx">
-      <DependentUpon>VerVehiculoPatio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Agregar_Inspeccion.resx">
       <DependentUpon>Agregar_Inspeccion.vb</DependentUpon>

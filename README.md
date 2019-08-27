@@ -1,21 +1,42 @@
-Conexion a INFROMIX:
+# FlujoMotor
 
-<p>Abrir la VM y poner el comando hostname -I, el cual dara la IP para conectarse con ODBC.</p>
-<p>Poner el siguiente string en la clase ODBC del paquete DB:</p>
-<p>Usando computadoras de la UTU:</p>
-<p>Driver={IBM INFORMIX ODBC DRIVER};
-Database=data;
-Host=[comando hostname];
-Server=ol_esi;
-Service=9088;
-Protocol=onsoctcp;
-UID=root;PWD=root;</p>
 
-<p>Usando computadoras con el driver ODBC de la pag de la utu xd:</p>
-<p>Driver={IBM INFORMIX ODBC DRIVER 32/64Bits};
-Database=data;
-Host=[comando hostname];
-Server=ol_esi;
-Service=9088;
-Protocol=onsoctcp;
-UID=root;PWD=root;</p>
+### Explicacion CSV
+
+Operario
+
+| Operario ID | Nombre | Apellido | usuario | password | Fecha | Tipo(puerto,operario) | Operario ID |
+| ----------- | ------ | -------- | ------- | -------- | ----- | --------------------- | ----------- |
+| 0           | 1      | 2        | 3       | 4        | 5     | 6                     | 7           |
+
+Vehiculo
+
+| VIN | Marca | Modelo | Tipo | Color | Fecha | Cant. Inspecciones | OperarioID | UbicacionID | Cliente |
+| --- | ----- | -------| ---- | ----- | ----- | ------------------ | ---------- | ----------- | ------- |
+| 0   | 1     | 2      | 3    | 4     | 5     | 6                  | 7          | 8           | 9       |
+
+Patio
+
+| Patio ID | Nombre | Latitud | Longitud |
+| -------- | ------ | ------- | -------- |
+| 0        | 1      | 2       | 3        |
+
+
+Ubucacion
+
+| UbicacionID | Latitud | Longitud | Status | PatioID |
+| ----------- | ------- | -------- | ------ | ------- |
+| 0           | 1       | 2        | 3      | 4       |
+
+Inspeccion
+
+| InspeccionID | VINRef  | Descripcion | OperarioID | Fecha |
+| ------------ | ------- | ----------- | ---------- | ----- |
+| 0            | 1       | 2           | 3          | 4     |
+ 
+Cliente
+
+| ClienteID | Nombre  | Apellido |
+| --------- | ------- | -------- |
+| 0         | 1       | 2        |
+ 

@@ -17,10 +17,14 @@
     Public Property Conexion As DB.ODBC
 
     Private Sub BtnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
-        Dim VentanaVer = New Ventanita_Ver()
-        Dim vin = DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString
-        VentanaVer.GoToSection(2, vin, Conexion)
-        VentanaVer.ShowDialog()
+        Try
+            Dim VentanaVer = New Ventanita_Ver()
+            Dim vin = DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString
+            VentanaVer.LoadControl(vin, Conexion)
+            VentanaVer.ShowDialog()
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "boi")
+        End Try
     End Sub
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load

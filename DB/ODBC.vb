@@ -85,7 +85,7 @@ Public Class ODBC
         Dim conexion As String
         conexion = "
         DSN=bigmamma;
-        Database=big;
+        Database=datos;
         Host=192.168.1.48;
         Server=ol_esi;
         Service=9088;

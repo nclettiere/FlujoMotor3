@@ -67,21 +67,22 @@ Public Class Login
     End Sub
 
     Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-#If DEBUG
-        Conexion.USER = "root"
-        Conexion.PWD = "root"
-        If Conexion.Conectar(Conexion.Conectar())
-            Conexion.Cerrar()
-        Else
-            MessageBox.Show("No se pedo establecer conexion con la DB." + Environment.NewLine + "Chequee que la VM este corriendo y que los datos sean correctos.", "Error de Conexion",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Serilog.Log.Fatal("No se pudo establecer con la DB." +
-                          Environment.NewLine +
-                          "Query de conexion usado:" +
-                          Environment.NewLine +
-                          Conexion.Conectar())
-
-        End If
-#End If
+        Try
+            Conexion.USER = "root"
+            Conexion.PWD = "root"
+            If Conexion.Conectar(Conexion.Conectar())
+                Conexion.Cerrar()
+            Else
+                MessageBox.Show("No se pedo establecer conexion con la DB." + Environment.NewLine + "Chequee que la VM este corriendo y que los datos sean correctos.", "Error de Conexion",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Serilog.Log.Fatal("No se pudo establecer con la DB." +
+                              Environment.NewLine +
+                              "Query de conexion usado:" +
+                              Environment.NewLine +
+                              Conexion.Conectar())
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al chquear conexion.")
+        End Try
     End Sub
 End Class

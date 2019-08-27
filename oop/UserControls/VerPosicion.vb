@@ -30,6 +30,7 @@ Public Class VerPosicion
             If Integer.TryParse(tbxColumna.Text , Columna) Then
                 If cbxZona.SelectedIndex >= 0
                     Dim resultadoPatio As String = Conexion.consultar("SELECT pationombre FROM patios WHERE patioid=" + Patio.Rows(0).Item(0).ToString).Rows(0).Item(0).ToString
+                    MessageBox.Show(resultadoPatio)
                     If TieneSubzona
                         Try
                             Conexion.consultar("UPDATE vehiculosubzona SET fila="+ Fila.ToString +", columna="+ Columna.ToString  +" WHERE vehiculovin='"+ VIN +"' AND subzonanombre='"+ cbxZona.Text +"'")  
@@ -86,28 +87,25 @@ Public Class VerPosicion
         Try
             Dim LoteId As String = Conexion.consultar("SELECT loteid FROM vehiculos WHERE vehiculovin='" + VIN + "'").Rows(0).Item(0).ToString
             Patio    = Conexion.consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
-            Dim Zona = Conexion.consultar("SELECT * FROM zonas WHERE patioid=" + Patio.Rows(0).Item(0).ToString)
-
-            If Zona IsNot Nothing And Zona.Rows.Count > 0
-                ZonaId = Zona.Rows(0).Item(0).ToString
-            End If
-
+            Dim Zona = Conexion.consultar("SELECT * FROM zonas WHERE patioid=" + Patio.Rows(0).Item("patioid").ToString)
+            ZonaId = Zona.Rows(0).Item(0).ToString
             SubZonas = Conexion.consultar("SELECT * FROM subzonas WHERE zonaid=" + ZonaId)
-
-            If SubZonas IsNot Nothing And SubZonas.Rows.Count > 0
-                For Each item As DataRow In SubZonas.Rows
-                    cbxZona.Items.Add(item("subzonanombre").ToString)
-                Next
-                If TieneSubzona
-                    Dim ConsultaSubZonas =  Conexion.consultar("SELECT * FROM vehiculosubzona WHERE vehiculovin='" + VIN +"';").Rows(0)
-                    For Each Item As String in cbxZona.Items
-                        If String.Equals(Item, SubZonas.Rows(0).Item("subzonanombre").ToString)
-                            cbxZona.SelectedItem = Item
-                        End If
-                    Next
-                    
-                    tbxColumna.Text = ConsultaSubZonas.Item("columna").ToString
-                    tbxFila.Text = ConsultaSubZonas.Item("fila").ToString
+            For Each item As DataRow In SubZonas.Rows
+                cbxZona.Items.Add(item("subzonanombre").ToString)
+            Next
+            If SubZonas IsNot Nothing
+                If SubZonas.Rows.Count > 0
+                    If TieneSubzona
+                        Dim ConsultaSubZonas =  Conexion.consultar("SELECT * FROM vehiculosubzona WHERE vehiculovin='" + VIN +"';").Rows(0)
+                        For Each Item As String in cbxZona.Items
+                            If String.Equals(Item, SubZonas.Rows(0).Item("subzonanombre").ToString)
+                                cbxZona.SelectedItem = Item
+                            End If
+                        Next
+                        
+                        tbxColumna.Text = ConsultaSubZonas.Item("columna").ToString
+                        tbxFila.Text = ConsultaSubZonas.Item("fila").ToString
+                    End If
                 End If
             End If
 

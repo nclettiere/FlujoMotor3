@@ -33,9 +33,9 @@ Public Class Ver_Vehiculillo
 
         Dim resultadoVehiculo As DataTable = Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin='" + vin + "'")
         If resultadoVehiculo IsNot Nothing
-            Dim resultadoLote As DataTable = Conexion.consultar("SELECT * FROM lotes WHERE loteid='" + resultadoVehiculo.Rows(0).Item(8).ToString + "'")
+            Dim resultadoLote As DataTable = Conexion.consultar("SELECT * FROM lotes WHERE loteid=" + resultadoVehiculo.Rows(0).Item("loteid").ToString + "")
             If resultadoVehiculo IsNot Nothing
-                Dim resultadoPatio As DataTable = Conexion.consultar("SELECT * FROM patios WHERE patioid='" + resultadoVehiculo.Rows(0).Item(8).ToString + "'")
+                Dim resultadoPatio As DataTable = Conexion.consultar("SELECT * FROM patios WHERE patioid=" + resultadoLote.Rows(0).Item("patioid").ToString + "")
                 Dim resultadoSubZonaVehiculo As DataTable = Conexion.consultar("SELECT * FROM vehiculoSubZona WHERE vehiculovin='" + resultadoVehiculo.Rows(0).Item(0).ToString + "'")
                 lblVin.Text = resultadoVehiculo.Rows(0).Item(0).ToString
                 VIN = resultadoVehiculo.Rows(0).Item(0).ToString
@@ -45,10 +45,16 @@ Public Class Ver_Vehiculillo
                 labModelo.Text = resultadoVehiculo.Rows(0).Item(4).ToString
                 labAno.Text = resultadoVehiculo.Rows(0).Item(5).ToString
                 labTipo.Text = resultadoVehiculo.Rows(0).Item(6).ToString 
-                labLoteName.Text = resultadoLote.Rows(0).Item(1).ToString
+
+                If resultadoLote IsNot Nothing
+                    If resultadoLote.Rows.Count > 0
+                        labLoteName.Text = resultadoLote.Rows(0).Item(1).ToString
+                    End If
+                End If
+                
                 If resultadoPatio IsNot Nothing
                     Try
-                        labPatio.Text = resultadoPatio.Rows(0).Item(1)
+                        labPatio.Text = resultadoPatio.Rows(0).Item("pationombre").ToString
                     Catch ex As Exception
                         Log.Warning(ex, "Error out of index")
                     End Try
@@ -87,6 +93,11 @@ Public Class Ver_Vehiculillo
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Ventana.GotoSection(1, VIN, Conexion)
+        Try
+            Ventana.GotoSection(1, VIN, Conexion)
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error")
+        End Try
+        
     End Sub
 End Class

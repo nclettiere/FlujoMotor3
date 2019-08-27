@@ -161,7 +161,7 @@ Public Class Agregar_Vehiculillo
                             
                             Dim LoteCount = FormParent.Conexion.consultar("SELECT COUNT(*) FROM lotes")
                             Dim VehiculoCount = FormParent.Conexion.consultar("SELECT COUNT(*) FROM vehiculos")
-                            Dim PatioInfo = FormParent.Conexion.consultar("SELECT pationombre FROM patios WHERE patio="+ NuevoLoteInfo(0))
+                            Dim PatioInfo = FormParent.Conexion.consultar("SELECT patioid FROM patios WHERE pationombre='"+ NuevoLoteInfo(1) +"'")
                             Dim InsertarLote As DataTable = FormParent.Conexion.consultar("INSERT INTO lotes (loteid, lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES (" + (LoteCount.Rows(0).Item(0) + 1).ToString + ", '" + NuevoLoteInfo(0).ToString() + "', 'LOTE #"& (LoteCount.Rows(0).Item(0) + 1).ToString &"', 1,"+ PatioInfo.Rows(0).Item(0).ToString +")")
                             Dim InsertarVehiculo As DataTable = FormParent.Conexion.consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('"+ txtVin.Text.ToUpper +"','"+ txtColor.Text +"', '"+ txtMarca.Text +"', '"+ txtModelo.Text +"', "+ VehiculoAno.Value.Year.ToString +", '"+ vehiculoTipo +"', 1, "+ (LoteCount.Rows(0).Item(0) + 1).ToString + ")")
                             Messagebox.Show("Vehiculo Ingresado Correctamente.")

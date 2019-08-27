@@ -32,7 +32,7 @@ Public Class Agregar_Lotesillo
     Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles btAgregar.Click
         If Not String.IsNullOrWhiteSpace(riTeBoDescripcion.Text) Then
             If cbxPatio.SelectedIndex >= 0
-                Dim datos As String() = {riTeBoDescripcion.Text, cbxPatio.SelectedText.ToString}
+                Dim datos As String() = {riTeBoDescripcion.Text, cbxPatio.Text.ToString}
                 ParentControl.UpdateLotes(datos)
                 FormParent.Close()
             Else

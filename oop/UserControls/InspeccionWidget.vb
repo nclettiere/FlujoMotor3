@@ -23,17 +23,17 @@ Public Class InspeccionWidget
     Friend Sub CargarDatos(ByVal inspeccionId As String, ByRef Conexion As DB.ODBC, ByVal index As Integer)
         Me.Conexion = Conexion
         Try
-            Dim resultadoInspeccion As DataTable = Conexion.consultar("SELECT * FROM inspecciones WHERE inspeccionid='" + inspeccionId + "'")
+            Dim resultadoInspeccion As DataTable = Conexion.Consultar("SELECT * FROM inspecciones WHERE inspeccionid='" + inspeccionId + "'")
             If resultadoInspeccion IsNot Nothing
                 lbl_name.Text = "INSPECCION #" + index.ToString
-                Dim resultadoEmpleado As DataTable = Conexion.consultar("SELECT empleadonombre, empleadoapellido FROM empleados WHERE empleadoid='" + resultadoInspeccion.Rows(0).Item("operarioid").ToString + "'")
+                Dim resultadoEmpleado As DataTable = Conexion.Consultar("SELECT empleadonombre, empleadoapellido FROM empleados WHERE empleadoid='" + resultadoInspeccion.Rows(0).Item("operarioid").ToString + "'")
                 lblOperario.Text = "Hecha por: " + resultadoEmpleado.Rows(0).Item(0) + " " + resultadoEmpleado.Rows(0).Item(1)
                 lblFecha.Text = "Fecha: " + resultadoInspeccion.Rows(0).Item("inspeccionfecha")
-                Dim resultadoInspeccionDanio As DataTable = Conexion.consultar("SELECT * FROM inspeccionDanio WHERE inspeccionid='" + inspeccionId + "'")
+                Dim resultadoInspeccionDanio As DataTable = Conexion.Consultar("SELECT * FROM inspeccionDanio WHERE inspeccionid='" + inspeccionId + "'")
                 If resultadoInspeccionDanio IsNot Nothing
                     If resultadoInspeccionDanio.Rows().Count > 0
                         QueryFoto = "SELECT daniofoto FROM danios WHERE danioid="+ resultadoInspeccionDanio.Rows(0).Item("danioid").ToString
-                        Dim resultadoDanio As DataTable = Conexion.consultar("SELECT danioid, daniodescripcion FROM danios WHERE danioid="+ resultadoInspeccionDanio.Rows(0).Item("danioid").ToString)
+                        Dim resultadoDanio As DataTable = Conexion.Consultar("SELECT danioid, daniodescripcion FROM danios WHERE danioid="+ resultadoInspeccionDanio.Rows(0).Item("danioid").ToString)
                         If resultadoDanio IsNot Nothing
                             Try
                                 rchtbxDesc.Text = resultadoDanio.Rows(0).Item("daniodescripcion").ToString
@@ -59,7 +59,7 @@ Public Class InspeccionWidget
 
     Private Sub BtnFotos_Click(sender As Object, e As EventArgs) Handles btnFotos.Click
         Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver()
-        Dim VerFoto As Ver_Foto = New Ver_Foto
+        Dim VerFoto As VerFoto = New VerFoto
         If QueryFoto IsNot Nothing
             VerFoto.SetFoto(ObtenerDanioImagen(QueryFoto))
         End If
@@ -68,8 +68,9 @@ Public Class InspeccionWidget
     End Sub
 
     Private Function ObtenerDanioImagen(query As String) As Bitmap
-        Dim command As OdbcCommand = New OdbcCommand(query)
-        command.Connection = Conexion.conODBC
+        Dim command As OdbcCommand = New OdbcCommand(query) With {
+            .Connection = Conexion.ConODBC
+        }
         Dim reader As OdbcDataReader = command.ExecuteReader()
 
         If reader.Read()

@@ -117,7 +117,7 @@ Partial Class MenuControl
         'piBoPuerto
         '
         Me.piBoPuerto.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.piBoPuerto.BackgroundImage = Global.oop.My.Resources.Resources.next_1aaaa
+        Me.piBoPuerto.BackgroundImage = Global.Menu.My.Resources.Resources.next_1aaaa
         Me.piBoPuerto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.piBoPuerto.Location = New System.Drawing.Point(3, 15)
         Me.piBoPuerto.Name = "piBoPuerto"
@@ -144,7 +144,7 @@ Partial Class MenuControl
         'piBoPatio
         '
         Me.piBoPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.piBoPatio.BackgroundImage = Global.oop.My.Resources.Resources.next_1aaaa
+        Me.piBoPatio.BackgroundImage = Global.Menu.My.Resources.Resources.next_1aaaa
         Me.piBoPatio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.piBoPatio.Location = New System.Drawing.Point(3, 77)
         Me.piBoPatio.Name = "piBoPatio"
@@ -173,7 +173,7 @@ Partial Class MenuControl
         'PictureBox3
         '
         Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.BackgroundImage = Global.oop.My.Resources.Resources.logoutss
+        Me.PictureBox3.BackgroundImage = Global.Menu.My.Resources.Resources.logoutss
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox3.Location = New System.Drawing.Point(3, 65)
         Me.PictureBox3.Name = "PictureBox3"

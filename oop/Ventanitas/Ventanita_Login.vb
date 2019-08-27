@@ -3,8 +3,6 @@ Imports Logica
 Imports Serilog
 
 Public Class Ventanita_Login
-    Private OperarioId As Integer
-    Private Conexion As ODBC
 
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Log.Logger = New LoggerConfiguration().MinimumLevel.Information().WriteTo.Console().WriteTo.File("logs\\log_.txt", rollingInterval:= RollingInterval.Day).CreateLogger()

@@ -116,7 +116,7 @@ Partial Class Login
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackgroundImage = Global.oop.My.Resources.Resources.operario_Iconillo
+        Me.PictureBox1.BackgroundImage = Global.Menu.My.Resources.Resources.operario_Iconillo
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Location = New System.Drawing.Point(3, 3)

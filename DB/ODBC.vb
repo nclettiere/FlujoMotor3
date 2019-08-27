@@ -5,7 +5,7 @@ Imports System
 Imports System.IO
 
 Public Class ODBC
-    Public Property conODBC As New OdbcConnection
+    Public Property ConODBC As New OdbcConnection
 
     Private _USER As String
     Private _PWD As String
@@ -29,28 +29,28 @@ Public Class ODBC
     End Property
 
     Public Function Conectar(connection_string As String) As Boolean
-        conODBC.ConnectionString = connection_string
+        ConODBC.ConnectionString = connection_string
         Try
-            conODBC.Open()
+            ConODBC.Open()
             Console.WriteLine("Conectado")
             Return True
         Catch ex As OdbcException
             Log.Information(ex, "Error de Conexion.")
-            conODBC.Close()
+            ConODBC.Close()
             Return False
         End Try
 
     End Function
 
     Public Sub Cerrar()
-        conODBC.Close()
+        ConODBC.Close()
     End Sub
 
-    Public Function consultar(query As String) As DataTable
+    Public Function Consultar(query As String) As DataTable
         Log.Information("Consultando Query => " + query)
         Try
             Dim datos As New DataTable
-            Dim adapter As New OdbcDataAdapter(query, conODBC)
+            Dim adapter As New OdbcDataAdapter(query, ConODBC)
             adapter.Fill(datos)
             Log.Information("Consulta Exitosa.")
             Return datos
@@ -61,7 +61,7 @@ Public Class ODBC
     End Function
 
 
-    Public Function consultaDanio(query As String, bytes As Byte()) As DataTable
+    Public Function ConsultaDanio(query As String, bytes As Byte()) As DataTable
         Log.Information("Consultando Query (DANIO) => " + query)
 
         If bytes Is Nothing
@@ -76,7 +76,7 @@ Public Class ODBC
             parameters.Add("daniofoto", OdbcType.Image)
             parameters("daniofoto").Value = bytes
 
-            command.Connection = conODBC
+            command.Connection = ConODBC
             command.ExecuteNonQuery()
 
             Return Nothing

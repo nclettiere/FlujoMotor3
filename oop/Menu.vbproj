@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AA7E34BC-1FC7-4EDD-9DB8-9D6D96E72423}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>oop.My.MyApplication</StartupObject>
-    <RootNamespace>oop</RootNamespace>
-    <AssemblyName>oop</AssemblyName>
+    <StartupObject>Menu.My.MyApplication</StartupObject>
+    <RootNamespace>Menu</RootNamespace>
+    <AssemblyName>Menu</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -38,7 +38,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>oop.xml</DocumentationFile>
+    <DocumentationFile>Menu.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
@@ -49,7 +49,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>oop.xml</DocumentationFile>
+    <DocumentationFile>Menu.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -69,7 +69,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DocumentationFile>oop.xml</DocumentationFile>
+    <DocumentationFile>Menu.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -79,7 +79,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DocumentationFile>oop.xml</DocumentationFile>
+    <DocumentationFile>Menu.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -104,7 +104,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x64\Debug\</OutputPath>
-    <DocumentationFile>oop.xml</DocumentationFile>
+    <DocumentationFile>Menu.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
@@ -114,7 +114,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x64\Release\</OutputPath>
-    <DocumentationFile>oop.xml</DocumentationFile>
+    <DocumentationFile>Menu.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -166,12 +166,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserControls\Entrega.Designer.vb">
-      <DependentUpon>Entrega.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Entrega.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UserControls\InspeccionWidget.Designer.vb">
       <DependentUpon>InspeccionWidget.vb</DependentUpon>
     </Compile>
@@ -184,10 +178,10 @@
     <Compile Include="UserControls\MenuControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Seleccionar_Lotesillo.Designer.vb">
-      <DependentUpon>Seleccionar_Lotesillo.vb</DependentUpon>
+    <Compile Include="UserControls\SeleccionarLotes.Designer.vb">
+      <DependentUpon>SeleccionarLotes.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Seleccionar_Lotesillo.vb">
+    <Compile Include="UserControls\SeleccionarLotes.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\VerPatio.Designer.vb">
@@ -202,10 +196,10 @@
     <Compile Include="UserControls\VerPosicion.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Ver_Foto.Designer.vb">
-      <DependentUpon>Ver_Foto.vb</DependentUpon>
+    <Compile Include="UserControls\VerFoto.Designer.vb">
+      <DependentUpon>VerFoto.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Ver_Foto.vb">
+    <Compile Include="UserControls\VerFoto.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ventanitas\Menu.Designer.vb">
@@ -219,6 +213,7 @@
     </Compile>
     <Compile Include="Ventanitas\Ventanita_Login.vb">
       <SubType>Form</SubType>
+      <CustomToolNamespace>Menu</CustomToolNamespace>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -241,52 +236,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="UserControls\Agregar_Inspeccion.Designer.vb">
-      <DependentUpon>Agregar_Inspeccion.vb</DependentUpon>
+    <Compile Include="UserControls\AgregarInspeccion.Designer.vb">
+      <DependentUpon>AgregarInspeccion.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Agregar_Inspeccion.vb">
+    <Compile Include="UserControls\AgregarInspeccion.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Agregar_Lotesillo.Designer.vb">
-      <DependentUpon>Agregar_Lotesillo.vb</DependentUpon>
+    <Compile Include="UserControls\AgregarLote.Designer.vb">
+      <DependentUpon>AgregarLote.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Agregar_Lotesillo.vb">
+    <Compile Include="UserControls\AgregarLote.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Agregar_Vehiculillo.Designer.vb">
-      <DependentUpon>Agregar_Vehiculillo.vb</DependentUpon>
+    <Compile Include="UserControls\AgregarVehiculo.Designer.vb">
+      <DependentUpon>AgregarVehiculo.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Agregar_Vehiculillo.vb">
+    <Compile Include="UserControls\AgregarVehiculo.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Editar_Lotesillo.Designer.vb">
-      <DependentUpon>Editar_Lotesillo.vb</DependentUpon>
+    <Compile Include="UserControls\InfoAutos.Designer.vb">
+      <DependentUpon>InfoAutos.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Editar_Lotesillo.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Editar_Vehiculillo.Designer.vb">
-      <DependentUpon>Editar_Vehiculillo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Editar_Vehiculillo.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Eliminar_Lotesillo.Designer.vb">
-      <DependentUpon>Eliminar_Lotesillo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Eliminar_Lotesillo.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Eliminar_Vehiculillo.Designer.vb">
-      <DependentUpon>Eliminar_Vehiculillo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Eliminar_Vehiculillo.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Info_de_Autillos.Designer.vb">
-      <DependentUpon>Info_de_Autillos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Info_de_Autillos.vb">
+    <Compile Include="UserControls\InfoAutos.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\Login.Designer.vb">
@@ -295,52 +266,28 @@
     <Compile Include="UserControls\Login.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Menu_Wapo.Designer.vb">
-      <DependentUpon>Menu_Wapo.vb</DependentUpon>
+    <Compile Include="UserControls\SeleccionarVehiculo.Designer.vb">
+      <DependentUpon>SeleccionarVehiculo.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Menu_Wapo.vb">
+    <Compile Include="UserControls\SeleccionarVehiculo.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\PreviewLote.Designer.vb">
-      <DependentUpon>PreviewLote.vb</DependentUpon>
+    <Compile Include="UserControls\VerInspeccion.Designer.vb">
+      <DependentUpon>VerInspeccion.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\PreviewLote.vb">
+    <Compile Include="UserControls\VerInspeccion.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Seleccionar_Clientillo.Designer.vb">
-      <DependentUpon>Seleccionar_Clientillo.vb</DependentUpon>
+    <Compile Include="UserControls\VerLotes.Designer.vb">
+      <DependentUpon>VerLotes.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Seleccionar_Clientillo.vb">
+    <Compile Include="UserControls\VerLotes.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Seleccionar_Vehiculillo.Designer.vb">
-      <DependentUpon>Seleccionar_Vehiculillo.vb</DependentUpon>
+    <Compile Include="UserControls\VerVehiculo.Designer.vb">
+      <DependentUpon>VerVehiculo.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Seleccionar_Vehiculillo.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Summary.Designer.vb">
-      <DependentUpon>Summary.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Ver_Inspeccionsilla.Designer.vb">
-      <DependentUpon>Ver_Inspeccionsilla.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Ver_Inspeccionsilla.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Ver_Lotesillo.Designer.vb">
-      <DependentUpon>Ver_Lotesillo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Ver_Lotesillo.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Ver_Vehiculillo.Designer.vb">
-      <DependentUpon>Ver_Vehiculillo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Ver_Vehiculillo.vb">
+    <Compile Include="UserControls\VerVehiculo.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ventanitas\Ventanita_Agregar.Designer.vb">
@@ -375,17 +322,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserControls\Entrega.resx">
-      <DependentUpon>Entrega.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\InspeccionWidget.resx">
       <DependentUpon>InspeccionWidget.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MenuControl.resx">
       <DependentUpon>MenuControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Seleccionar_Lotesillo.resx">
-      <DependentUpon>Seleccionar_Lotesillo.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\SeleccionarLotes.resx">
+      <DependentUpon>SeleccionarLotes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VerPatio.resx">
       <DependentUpon>VerPatio.vb</DependentUpon>
@@ -393,8 +337,8 @@
     <EmbeddedResource Include="UserControls\VerPosicion.resx">
       <DependentUpon>VerPosicion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Ver_Foto.resx">
-      <DependentUpon>Ver_Foto.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\VerFoto.resx">
+      <DependentUpon>VerFoto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
@@ -411,56 +355,32 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Agregar_Inspeccion.resx">
-      <DependentUpon>Agregar_Inspeccion.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\AgregarInspeccion.resx">
+      <DependentUpon>AgregarInspeccion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Agregar_Lotesillo.resx">
-      <DependentUpon>Agregar_Lotesillo.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\AgregarLote.resx">
+      <DependentUpon>AgregarLote.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Agregar_Vehiculillo.resx">
-      <DependentUpon>Agregar_Vehiculillo.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\AgregarVehiculo.resx">
+      <DependentUpon>AgregarVehiculo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Editar_Lotesillo.resx">
-      <DependentUpon>Editar_Lotesillo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Editar_Vehiculillo.resx">
-      <DependentUpon>Editar_Vehiculillo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Eliminar_Lotesillo.resx">
-      <DependentUpon>Eliminar_Lotesillo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Eliminar_Vehiculillo.resx">
-      <DependentUpon>Eliminar_Vehiculillo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Info_de_Autillos.resx">
-      <DependentUpon>Info_de_Autillos.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\InfoAutos.resx">
+      <DependentUpon>InfoAutos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Menu_Wapo.resx">
-      <DependentUpon>Menu_Wapo.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\SeleccionarVehiculo.resx">
+      <DependentUpon>SeleccionarVehiculo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\PreviewLote.resx">
-      <DependentUpon>PreviewLote.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\VerInspeccion.resx">
+      <DependentUpon>VerInspeccion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Seleccionar_Clientillo.resx">
-      <DependentUpon>Seleccionar_Clientillo.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\VerLotes.resx">
+      <DependentUpon>VerLotes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Seleccionar_Vehiculillo.resx">
-      <DependentUpon>Seleccionar_Vehiculillo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Summary.resx">
-      <DependentUpon>Summary.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Ver_Inspeccionsilla.resx">
-      <DependentUpon>Ver_Inspeccionsilla.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Ver_Lotesillo.resx">
-      <DependentUpon>Ver_Lotesillo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Ver_Vehiculillo.resx">
-      <DependentUpon>Ver_Vehiculillo.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\VerVehiculo.resx">
+      <DependentUpon>VerVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\Ventanita_Agregar.resx">
       <DependentUpon>Ventanita_Agregar.vb</DependentUpon>
@@ -479,24 +399,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CSV\clientes.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="CSV\inspecciones.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="CSV\vehiculos.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="CSV\operarios.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="CSV\patios.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="CSV\ubicaciones.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

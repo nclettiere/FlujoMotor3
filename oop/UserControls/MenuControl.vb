@@ -39,13 +39,13 @@
 
         Select Case Section
             Case 0
-                Selection = Info_de_Autillos.Instance
-                Info_de_Autillos.Instance.FormParent = Me
+                Selection = InfoAutos.Instance
+                InfoAutos.Instance.FormParent = Me
                 ''btnAgregarVehiculo.BackColor = Color.DimGray
                 ''btnVerVehiculo.BackColor = Color.DarkGray
             Case 1
-                Selection = Agregar_Vehiculillo.Instance
-                Agregar_Vehiculillo.Instance.FormParent = Me
+                Selection = AgregarVehiculo.Instance
+                AgregarVehiculo.Instance.FormParent = Me
                 ''btnVerVehicle.BackColor = Color.DimGray
                 ''btnAgregarVehicle.BackColor = Color.DarkGray
         Case 2
@@ -55,8 +55,8 @@
                 'btnVerVehicle.BackColor = Color.DimGray
                 'btnAgregarVehicle.BackColor = Color.DarkGray
             Case Else
-                Selection = Info_de_Autillos.Instance
-                Info_de_Autillos.Instance.FormParent = Me
+                Selection = InfoAutos.Instance
+                InfoAutos.Instance.FormParent = Me
                 'btnAgregarVehicle.BackColor = Color.DimGray
                 'btnVerVehicle.BackColor = Color.DarkGray
         End Select

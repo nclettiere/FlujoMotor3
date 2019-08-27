@@ -1,8 +1,7 @@
 ﻿Imports DB
-Imports oop
 
 Public Class Ventanita_Seleccionar
-    Public Property ParentLoad As Agregar_Vehiculillo
+    Public Property ParentLoad As AgregarVehiculo
 
     Public Property SelectedLote As String
         Get
@@ -24,16 +23,16 @@ Public Class Ventanita_Seleccionar
 
         Select Case Section
             Case 0
-                Selection = Agregar_Lotesillo.Instance
+                Selection = AgregarLote.Instance
             Case 1
-                Selection = Seleccionar_Vehiculillo.Instance
+                Selection = SeleccionarVehiculo.Instance
                 Selection.FormParent = Me
             Case 2
-                Selection = Seleccionar_Lotesillo.Instance
+                Selection = SeleccionarLotes.Instance
                 Selection.FormParent = Me
                 
             Case Else
-                Selection = Agregar_Lotesillo.Instance
+                Selection = AgregarLote.Instance
         End Select
 
         If Not mainContent.Contains(Selection) Then
@@ -53,14 +52,14 @@ Public Class Ventanita_Seleccionar
         Dim Selection As Object
         Select Case Section
             Case 0
-                Selection = Agregar_Lotesillo.Instance
+                Selection = AgregarLote.Instance
             Case 1
-                Selection = Seleccionar_Vehiculillo.Instance
-                Selection.FormParent = DirectCast(Parent, Agregar_Lotesillo)
+                Selection = SeleccionarVehiculo.Instance
+                Selection.FormParent = DirectCast(Parent, AgregarLote)
             Case 2
-                Selection = Seleccionar_Lotesillo.Instance
+                Selection = SeleccionarLotes.Instance
             Case Else
-                Selection = Agregar_Lotesillo.Instance
+                Selection = AgregarLote.Instance
         End Select
 
         If Not mainContent.Contains(Selection) Then
@@ -76,19 +75,19 @@ Public Class Ventanita_Seleccionar
         Dim Selection As Object
         Select Case Section
             Case 0
-                Selection = Agregar_Lotesillo.Instance
+                Selection = AgregarLote.Instance
                 Me.ClientSize = Selection.Size
-                Agregar_Lotesillo.Instance.CargarDatos(Me, Parent, conexion)
+                AgregarLote.Instance.CargarDatos(Me, Parent, conexion)
             Case 1
-                Selection = Seleccionar_Vehiculillo.Instance
+                Selection = SeleccionarVehiculo.Instance
                 Me.ClientSize = Selection.Size
-                Selection.FormParent = DirectCast(Parent, Agregar_Lotesillo)
+                Selection.FormParent = DirectCast(Parent, AgregarLote)
             Case 2
-                Selection = Seleccionar_Lotesillo.Instance
+                Selection = SeleccionarLotes.Instance
                 Me.ClientSize = Selection.Size
-                Seleccionar_Lotesillo.Instance.CargarDatos(Me, Parent, conexion)
+                SeleccionarLotes.Instance.CargarDatos(Me, Parent, conexion)
             Case Else
-                Selection = Agregar_Lotesillo.Instance
+                Selection = AgregarLote.Instance
         End Select
 
         If Not mainContent.Contains(Selection) Then

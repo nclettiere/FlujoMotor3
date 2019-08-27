@@ -1,6 +1,5 @@
 ﻿Imports Logica
 Imports DB
-Imports oop
 Imports System.Data.Odbc
 Imports System.Text
 Imports System.IO
@@ -9,14 +8,7 @@ Public Class Login
 
     Private Shared _instance As Login
 
-    Private Usuarios As List(Of Operario)
-
-    Private facade As Facade
-    Private main As Ventanita_Login
-
-    Private OperarioId As Integer
-
-    Private Conexion As ODBC = New ODBC()
+    Private ReadOnly Conexion As ODBC = New ODBC()
 
     Public Shared Property Instance As Login
         Get
@@ -31,19 +23,28 @@ Public Class Login
     End Property
 
     Private Sub Btn_LogIn_Click_1(sender As Object, e As EventArgs) Handles btn_LogIn.Click
-        Conexion.USER = tbx_user.Text
-        Conexion.PWD = tbx_passwd.Text
+        If Not String.IsNullOrWhiteSpace(tbx_user.Text)
+            If Not String.IsNullOrWhiteSpace(tbx_passwd.Text)
 
-        Dim EstablacerConexionDB = Conexion.Conectar(Conexion.Conectar())
-        If (EstablacerConexionDB) Then
-            MessageBox.Show("Conectado Exitosamente.")
-            Ventanita_Login.ChangeControlSummary(0, Conexion)
+                Conexion.USER = tbx_user.Text
+                Conexion.PWD = tbx_passwd.Text
+                Dim EstablacerConexionDB = Conexion.Conectar(Conexion.Conectar())
+
+                If (EstablacerConexionDB) Then
+                    MessageBox.Show("Conectado Exitosamente.")
+                    Ventanita_Login.ChangeControlSummary(0, Conexion)
+                Else
+                    MessageBox.Show("Usuario o Contrasena invalidos.")
+                End If
+            Else
+                MessageBox.Show("Debes ingresar una contrasena.")
+            End If
         Else
-            MessageBox.Show("Usuario o Contrasena invalidos.")
+            MessageBox.Show("Debes ingresar un usuario.")
         End If
     End Sub
 
-    Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub OnLoginLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Conexion.USER = "root"
             Conexion.PWD = "root"

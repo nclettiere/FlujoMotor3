@@ -1,24 +1,23 @@
 ﻿Imports DB
-Imports oop
 
 Public Class Ventanita_Ver
     Private Sub Ventanita_Ver_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Friend Sub LoadControl(verVehiculo As Ver_Vehiculillo)
+    Friend Sub LoadControl(verVehiculo As VerVehiculo)
         verVehiculo.AutoSize = True
         Me.ClientSize = verVehiculo.Size
         mainContent.Controls.Add(verVehiculo)
     End Sub
 
-    Friend Sub LoadControl(verLote As Ver_Lotesillo)
+    Friend Sub LoadControl(verLote As VerLotes)
         Me.ClientSize = verLote.Size
         mainContent.Controls.Add(verLote)
         verLote.AutoSize = True
     End Sub
 
-    Friend Sub LoadControl(verFoto As Ver_Foto)
+    Friend Sub LoadControl(verFoto As VerFoto)
         Me.ClientSize = verFoto.Size
         mainContent.Controls.Add(verFoto)
     End Sub
@@ -43,17 +42,17 @@ Public Class Ventanita_Ver
 
         Select Case Section
             Case 0
-                Selection = Ver_Inspeccionsilla.Instance
-                Me.ClientSize = Ver_Inspeccionsilla.Instance.Size
+                Selection = VerInspeccion.Instance
+                Me.ClientSize = VerInspeccion.Instance.Size
             Case 1
-                Selection = Ver_Vehiculillo.Instance
-                Me.ClientSize = Ver_Vehiculillo.Instance.Size
+                Selection = VerVehiculo.Instance
+                Me.ClientSize = VerVehiculo.Instance.Size
             Case 2
                 Selection = VerPosicion.Instance
                 Me.ClientSize = VerPosicion.Instance.Size
             Case Else
-                Selection = Ver_Inspeccionsilla.Instance
-                Me.ClientSize = Ver_Inspeccionsilla.Instance.Size
+                Selection = VerInspeccion.Instance
+                Me.ClientSize = VerInspeccion.Instance.Size
         End Select
 
         If Not mainContent.Contains(Selection) Then
@@ -70,23 +69,23 @@ Public Class Ventanita_Ver
 
         Select Case Section
             Case 0
-                Selection = Ver_Inspeccionsilla.Instance
-                Ver_Inspeccionsilla.Instance.FormParent = Me
-                Ver_Inspeccionsilla.Instance.Populate(VIN, Conexion)
-                Ver_Inspeccionsilla.Instance.AutoSize = True
-                Me.ClientSize = Ver_Inspeccionsilla.Instance.Size
+                Selection = VerInspeccion.Instance
+                VerInspeccion.Instance.FormParent = Me
+                VerInspeccion.Instance.Populate(VIN, Conexion)
+                VerInspeccion.Instance.AutoSize = True
+                Me.ClientSize = VerInspeccion.Instance.Size
             Case 1
-                Selection = Agregar_Inspeccion.Instance
-                Agregar_Inspeccion.Instance.FormParent = Me
-                Agregar_Inspeccion.Instance.CargarDatos(VIN, Conexion)
-                Agregar_Inspeccion.Instance.AutoSize = True
-                Me.ClientSize = Agregar_Inspeccion.Instance.Size
+                Selection = AgregarInspeccion.Instance
+                AgregarInspeccion.Instance.FormParent = Me
+                AgregarInspeccion.Instance.CargarDatos(VIN, Conexion)
+                AgregarInspeccion.Instance.AutoSize = True
+                Me.ClientSize = AgregarInspeccion.Instance.Size
             Case 2
                 Selection = New VerPosicion
                 DirectCast(Selection, VerPosicion).CargarDatos(VIN, Conexion)
                 Me.ClientSize = DirectCast(Selection, VerPosicion).Size
             Case Else
-                Selection = Ver_Inspeccionsilla.Instance
+                Selection = VerInspeccion.Instance
         End Select
 
         If Not mainContent.Contains(Selection) Then

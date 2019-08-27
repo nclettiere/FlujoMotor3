@@ -15,7 +15,7 @@ Public Class VerPosicion
         End Set
     End Property
 
-    Public Property FormParent As Menu_Wapo
+    Public Property FormParent As MenuControl
     Public Property Conexion As DB.ODBC
     Public Property VIN As String
     Public Property TieneSubzona As Boolean
@@ -29,11 +29,11 @@ Public Class VerPosicion
         If Integer.TryParse(tbxFila.Text , Fila) Then
             If Integer.TryParse(tbxColumna.Text , Columna) Then
                 If cbxZona.SelectedIndex >= 0
-                    Dim resultadoPatio As String = Conexion.consultar("SELECT pationombre FROM patios WHERE patioid=" + Patio.Rows(0).Item("patioid").ToString).Rows(0).Item(0).ToString
+                    Dim resultadoPatio As String = Conexion.Consultar("SELECT pationombre FROM patios WHERE patioid=" + Patio.Rows(0).Item("patioid").ToString).Rows(0).Item(0).ToString
                     MessageBox.Show(resultadoPatio)
                     If TieneSubzona
                         Try
-                            Conexion.consultar("UPDATE vehiculosubzona SET fila="+ Fila.ToString +", columna="+ Columna.ToString  +" WHERE vehiculovin='"+ VIN +"' AND subzonanombre='"+ cbxZona.Text +"'")  
+                            Conexion.Consultar("UPDATE vehiculosubzona SET fila="+ Fila.ToString +", columna="+ Columna.ToString  +" WHERE vehiculovin='"+ VIN +"' AND subzonanombre='"+ cbxZona.Text +"'")  
                             MessageBox.Show("La posicion del vehiculo: " + VIN + "ha sido actualizada." + Environment.NewLine +
                                             "Patio:" + resultadoPatio + Environment.NewLine +
                                             "Columna: " + Columna.ToString + Environment.NewLine +
@@ -43,7 +43,7 @@ Public Class VerPosicion
                         End Try
                     Else
                         Try
-                            Conexion.consultar("INSERT INTO vehiculosubzona (vehiculoVIN, subZonaNombre, zonaID, columna, fila) VALUES ('"+ VIN +"', '"+ cbxZona.Text +"', "+ ZonaId +", "+ Columna.ToString +", "+ Fila.ToString +")")
+                            Conexion.Consultar("INSERT INTO vehiculosubzona (vehiculoVIN, subZonaNombre, zonaID, columna, fila) VALUES ('"+ VIN +"', '"+ cbxZona.Text +"', "+ ZonaId +", "+ Columna.ToString +", "+ Fila.ToString +")")
                             MessageBox.Show("La posicion del vehiculo: " + VIN + "ha sido actualizada." + Environment.NewLine +
                                         "Patio:" + resultadoPatio + Environment.NewLine +
                                         "Columna: " + Columna.ToString + Environment.NewLine +
@@ -68,7 +68,7 @@ Public Class VerPosicion
         Me.VIN = VIN
         Try
             Dim SubZonaContador As Integer = Nothing
-            Dim ConsultaContadorSubZonas =  Conexion.consultar("SELECT COUNT(*) FROM vehiculosubzona WHERE vehiculovin='" + VIN +"';").Rows(0).Item(0).ToString
+            Dim ConsultaContadorSubZonas =  Conexion.Consultar("SELECT COUNT(*) FROM vehiculosubzona WHERE vehiculovin='" + VIN +"';").Rows(0).Item(0).ToString
             If Integer.TryParse(ConsultaContadorSubZonas, SubZonaContador)
                 If SubZonaContador > 0
                     TieneSubzona = True
@@ -83,20 +83,20 @@ Public Class VerPosicion
         End Try
     End Sub
 
-    Private Sub OnLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub OnPosicionLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim LoteId As String = Conexion.consultar("SELECT loteid FROM vehiculos WHERE vehiculovin='" + VIN + "'").Rows(0).Item(0).ToString
-            Patio    = Conexion.consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
-            Dim Zona = Conexion.consultar("SELECT * FROM zonas WHERE patioid=" + Patio.Rows(0).Item("patioid").ToString)
+            Dim LoteId As String = Conexion.Consultar("SELECT loteid FROM vehiculos WHERE vehiculovin='" + VIN + "'").Rows(0).Item(0).ToString
+            Patio    = Conexion.Consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
+            Dim Zona = Conexion.Consultar("SELECT * FROM zonas WHERE patioid=" + Patio.Rows(0).Item("patioid").ToString)
             ZonaId = Zona.Rows(0).Item(0).ToString
-            SubZonas = Conexion.consultar("SELECT * FROM subzonas WHERE zonaid=" + ZonaId)
+            SubZonas = Conexion.Consultar("SELECT * FROM subzonas WHERE zonaid=" + ZonaId)
             For Each item As DataRow In SubZonas.Rows
                 cbxZona.Items.Add(item("subzonanombre").ToString)
             Next
             If SubZonas IsNot Nothing
                 If SubZonas.Rows.Count > 0
                     If TieneSubzona
-                        Dim ConsultaSubZonas =  Conexion.consultar("SELECT * FROM vehiculosubzona WHERE vehiculovin='" + VIN +"';").Rows(0)
+                        Dim ConsultaSubZonas =  Conexion.Consultar("SELECT * FROM vehiculosubzona WHERE vehiculovin='" + VIN +"';").Rows(0)
                         For Each Item As String in cbxZona.Items
                             If String.Equals(Item, SubZonas.Rows(0).Item("subzonanombre").ToString)
                                 cbxZona.SelectedItem = Item

@@ -1,6 +1,8 @@
 ﻿Imports System.Data.Odbc
 Imports Serilog
 Imports IBM.Data.Informix
+Imports System
+Imports System.IO
 
 Public Class ODBC
     Public Property conODBC As New OdbcConnection
@@ -58,12 +60,15 @@ Public Class ODBC
         End Try
     End Function
 
-    
+
     Public Function consultaDanio(query As String, bytes As Byte()) As DataTable
         Log.Information("Consultando Query (DANIO) => " + query)
+
         If bytes Is Nothing
             Log.Error("NULL")
+            Return Nothing
         End If
+
         Try
             Dim command As OdbcCommand = New OdbcCommand(query)
             Dim parameters As OdbcParameterCollection = command.Parameters
@@ -83,15 +88,23 @@ Public Class ODBC
 
     Public Function Conectar() As String
         Dim conexion As String
-        conexion = "
-        DSN=bigmamma;
-        Database=datos;
-        Host=192.168.1.48;
-        Server=ol_esi;
-        Service=9088;
-        Protocol=onsoctcp;
-        UID=" & USER &
-        ";Password=" & PWD & ";"
+
+        Try
+            Dim fileReader As String
+            fileReader = My.Computer.FileSystem.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "conexioninformix.yaml"))
+            conexion = fileReader + "UID=" + USER + ";Password=" + PWD + ";"
+        Catch ex As Exception
+            Serilog.Log.Fatal("No se pudo leer el archivo de configuracion informix. Se utilizara el string por defecto.")
+            conexion = "
+                Driver={IBM INFORMIX ODBC DRIVER};
+                Database=big;
+                Host=192.168.9.37;
+                Server=ol_esi;
+                Service=9088;
+                Protocol=onsoctcp;
+                UID=" + USER + ";Password=" + PWD + ";"
+        End Try
+
         Return conexion
     End Function
 End Class

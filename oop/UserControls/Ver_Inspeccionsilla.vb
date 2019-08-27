@@ -36,7 +36,6 @@ Public Class Ver_Inspeccionsilla
                     widget.Height = 220
                     widget.Width = 1000
                     widget.Dock = DockStyle.Top
-                    Me.ClientSize = widget.Size
                     index += 1
                 Next row
             Else
@@ -49,6 +48,7 @@ Public Class Ver_Inspeccionsilla
             Thread.Sleep(1000)
             FormParent.GoToSection(1)
         End If
+        Me.Size = MainWidgets.Size
     End Sub
 
     Private Sub BtCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click

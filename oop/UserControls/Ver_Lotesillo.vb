@@ -16,13 +16,11 @@ Public Class Ver_Lotesillo
     End Property
 
     Private Property Ventana As Ventanita_Ver
-    Private Property InfoAutos As Info_de_Autillos
     Private Property Conexion As ODBC
 
     Private Property LoteId As String
 
-    Friend Sub Data(info_de_Autillos As Info_de_Autillos, loteid As String, ByRef Ventana As Ventanita_Ver, ByRef Conexion As ODBC)
-        InfoAutos = info_de_Autillos
+    Friend Sub Data(loteid As String, ByRef Ventana As Ventanita_Ver, ByRef Conexion As ODBC)
         Me.Ventana = Ventana
         Me.Conexion = Conexion
         Me.LoteId = loteid

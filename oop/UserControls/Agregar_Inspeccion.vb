@@ -33,12 +33,16 @@ Public Class Agregar_Inspeccion
         labVIN.Text = VIN
         Me.vin = VIN
         Me.Conexion = conexion
+
+        If conexion Is Nothing
+            MessageBox.Show("nada")
+        End If
     End Sub
 
     Private Sub BtnCrear_Click(sender As Object, e As EventArgs)
         Try
             Dim InpeccioensCount As DataTable = Conexion.consultar("SELECT COUNT(*) FROM inspecciones")
-            Dim CrearInspeccion As DataTable = Conexion.consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operariopatioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + vin + "', 3)")
+            Dim CrearInspeccion As DataTable = Conexion.consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operarioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + vin + "', 3)")
         Catch ex As Exception
             Serilog.Log.Error(ex, "Posible valor nulo en Agregar Inspeccion.")
         End Try
@@ -93,10 +97,10 @@ Public Class Agregar_Inspeccion
         If TieneDanio
             Try
                 Dim InpeccioensCount As DataTable = Conexion.consultar("SELECT COUNT(*) FROM inspecciones")
-                Dim CrearInspeccion As DataTable = Conexion.consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operariopatioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + vin + "', 3)")
+                Dim CrearInspeccion As DataTable = Conexion.consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operarioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + vin + "', 3)")
                 Dim DaniosCount As DataTable = Conexion.consultar("SELECT COUNT(*) FROM danios")
                 Dim CrearDanio As DataTable = Conexion.consultaDanio("INSERT INTO danios (danioid, daniodescripcion, daniofoto) VALUES(" + (DaniosCount.Rows(0).Item(0) + 1).ToString + ",'" + rtbx.Text + "', ?)", ByteFotoDanio)
-                Dim CrearInspeccionDanio As DataTable = Conexion.consultar("INSERT INTO inspecciondanio (danioid, inspeccionid) VALUES("+ (InpeccioensCount.Rows(0).Item(0) + 1).ToString +", "+ (DaniosCount.Rows(0).Item(0) + 1).ToString +")")
+                Dim CrearInspeccionDanio As DataTable = Conexion.consultar("INSERT INTO inspecciondanio (inspeccionid, danioid) VALUES("+ (InpeccioensCount.Rows(0).Item(0) + 1).ToString +", "+ (DaniosCount.Rows(0).Item(0) + 1).ToString +")")
                 MessageBox.Show("Inspeccion Agregada Correctamente")
             Catch ex As Exception
                 Serilog.Log.Error(ex, "Posible valor nulo en Agregar Inspeccion.")
@@ -104,7 +108,7 @@ Public Class Agregar_Inspeccion
         Else
             Try
                 Dim InpeccioensCount As DataTable = Conexion.consultar("SELECT COUNT(*) FROM inspecciones")
-                Dim CrearInspeccion As DataTable = Conexion.consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operariopatioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + vin + "', 3)")
+                Dim CrearInspeccion As DataTable = Conexion.consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operarioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + vin + "', 3)")
                 MessageBox.Show("Inspeccion Agregada Correctamente")
             Catch ex As Exception
                 Serilog.Log.Error(ex, "Posible valor nulo en Agregar Inspeccion.")

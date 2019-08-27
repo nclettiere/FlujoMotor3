@@ -7,21 +7,20 @@ Public Class Ventanita_Ver
     End Sub
 
     Friend Sub LoadControl(verVehiculo As Ver_Vehiculillo)
-        mainContent.Controls.Add(verVehiculo)
         verVehiculo.AutoSize = True
         Me.ClientSize = verVehiculo.Size
+        mainContent.Controls.Add(verVehiculo)
     End Sub
 
     Friend Sub LoadControl(verLote As Ver_Lotesillo)
+        Me.ClientSize = verLote.Size
         mainContent.Controls.Add(verLote)
         verLote.AutoSize = True
-        Me.ClientSize = verLote.Size
     End Sub
 
     Friend Sub LoadControl(verFoto As Ver_Foto)
-        mainContent.Controls.Add(verFoto)
-        verFoto.AutoSize = True
         Me.ClientSize = verFoto.Size
+        mainContent.Controls.Add(verFoto)
     End Sub
 
     Friend Sub LoadControl(vin As String, Conexion As ODBC)
@@ -74,10 +73,14 @@ Public Class Ventanita_Ver
                 Selection = Ver_Inspeccionsilla.Instance
                 Ver_Inspeccionsilla.Instance.FormParent = Me
                 Ver_Inspeccionsilla.Instance.Populate(VIN, Conexion)
+                Ver_Inspeccionsilla.Instance.AutoSize = True
+                Me.ClientSize = Ver_Inspeccionsilla.Instance.Size
             Case 1
                 Selection = Agregar_Inspeccion.Instance
                 Agregar_Inspeccion.Instance.FormParent = Me
                 Agregar_Inspeccion.Instance.CargarDatos(VIN, Conexion)
+                Agregar_Inspeccion.Instance.AutoSize = True
+                Me.ClientSize = Agregar_Inspeccion.Instance.Size
             Case 2
                 Selection = New VerPosicion
                 DirectCast(Selection, VerPosicion).CargarDatos(VIN, Conexion)

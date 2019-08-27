@@ -1,4 +1,6 @@
-﻿Public Class VerPatio
+﻿Imports System.Data.Odbc
+
+Public Class VerPatio
     Private Shared _instance As VerPatio
 
     Public Shared Property Instance As VerPatio
@@ -15,6 +17,7 @@
 
     Public Property FormParent As MenuControl
     Public Property Conexion As DB.ODBC
+    Public Property VinSeleccionado As String
 
     Private Sub BtnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
         Try
@@ -34,6 +37,103 @@
             DataGridViewVehiculos.MultiSelect = False
         Catch ex As Exception
             Serilog.Log.Warning(ex, "Error Al Cargar Vehiculos. VerPatio")
+        End Try
+    End Sub
+
+    Private Sub BtnLavado_Click(sender As Object, e As EventArgs) Handles btnLavado.Click
+        Dim DialogoLavado As DialogResult = MessageBox.Show("Deseas hacer un lavado para el vehiculo: " + VinSeleccionado + "?", "Lavados", MessageBoxButtons.YesNo)
+        If DialogoLavado = DialogResult.Yes
+            Try
+                Dim command As OdbcCommand = New OdbcCommand("INSERT INTO lavadovehiculo (vehiculovin, operariopatioid) VALUES(?, 3)")
+                Dim parameters As OdbcParameterCollection = command.Parameters
+
+                parameters.Add("vehiculovin", OdbcType.VarChar)
+                parameters("vehiculovin").Value = VinSeleccionado
+
+                command.Connection = Conexion.conODBC
+                command.ExecuteNonQuery()
+            Catch ex As Exception
+                Serilog.Log.Error(ex, "Imposible crear registro de lavado.")
+                MessageBox.Show("Surgio un error al intentar crear el lavado. Vea el LOG para mas informacion.")
+            End Try
+        End If
+    End Sub
+
+    Private Sub CambioSeleccion(sender As Object, e As EventArgs) Handles DataGridViewVehiculos.SelectionChanged
+        If DataGridViewVehiculos.SelectedRows.Count <> 0
+            Dim fila As DataGridViewRow = DataGridViewVehiculos.SelectedRows(0)
+            VinSeleccionado = fila.Cells("vehiculovin").Value
+        End If
+    End Sub
+
+    Private Sub BtInfoVehiculo_Click(sender As Object, e As EventArgs) Handles btInfoVehiculo.Click
+        Try
+            Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
+            Dim VerVehiculo As Ver_Vehiculillo = New Ver_Vehiculillo
+            VerVehiculo.Data(Me, VinSeleccionado, VentanaVer, FormParent.Conexion)
+            VentanaVer.LoadControl(VerVehiculo)
+            VentanaVer.ShowDialog()
+        Catch ex As Exception
+            Serilog.Log.Warning(ex, "InfoAutos")
+        End Try
+    End Sub
+
+    Private Sub BtBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+        Try
+            If tbxBuscarVin.Text.Length > 0
+                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
+                DataGridViewVehiculos.DataSource = resultado
+            Else
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
+                DataGridViewVehiculos.DataSource = resultado
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al filtrar.")
+            MessageBox.Show("Error al filtrar.")
+        End Try
+    End Sub
+
+    Private Sub BtActualizarVehiculo_Click(sender As Object, e As EventArgs) Handles btActualizarVehiculo.Click
+        Try
+            If tbxBuscarVin.Text.Length > 0
+                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
+                DataGridViewVehiculos.DataSource = resultado
+            Else
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
+                DataGridViewVehiculos.DataSource = resultado
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al actualizar.")
+            MessageBox.Show("Error al actualizar.")
+        End Try
+    End Sub
+
+    Private Sub CambioTab(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        If TabControl1.SelectedIndex = 1
+            Try
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM lotes")
+                DataGridViewLotes.DataSource = resultado
+            Catch ex As Exception
+                MessageBox.Show("Error al listar lotes.")
+                Serilog.Log.Error(ex, "Error al listar lotes.")
+            End Try
+        End If
+    End Sub
+
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) 
+
+    End Sub
+
+    Private Sub BtnVer_Click(sender As Object, e As EventArgs) Handles btnVer.Click
+        Try
+            Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
+            Ver_Lotesillo.Instance.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString(), VentanaVer, FormParent.Conexion)
+            VentanaVer.LoadControl(Ver_Lotesillo.Instance)
+            VentanaVer.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show("Error al ver lote.")
         End Try
     End Sub
 End Class

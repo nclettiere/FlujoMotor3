@@ -26,7 +26,7 @@ Public Class InspeccionWidget
             Dim resultadoInspeccion As DataTable = Conexion.consultar("SELECT * FROM inspecciones WHERE inspeccionid='" + inspeccionId + "'")
             If resultadoInspeccion IsNot Nothing
                 lbl_name.Text = "INSPECCION #" + index.ToString
-                Dim resultadoEmpleado As DataTable = Conexion.consultar("SELECT empleadonombre, empleadoapellido FROM empleados WHERE empleadoid='" + resultadoInspeccion.Rows(0).Item("operariopatioid").ToString + "'")
+                Dim resultadoEmpleado As DataTable = Conexion.consultar("SELECT empleadonombre, empleadoapellido FROM empleados WHERE empleadoid='" + resultadoInspeccion.Rows(0).Item("operarioid").ToString + "'")
                 lblOperario.Text = "Hecha por: " + resultadoEmpleado.Rows(0).Item(0) + " " + resultadoEmpleado.Rows(0).Item(1)
                 lblFecha.Text = "Fecha: " + resultadoInspeccion.Rows(0).Item("inspeccionfecha")
                 Dim resultadoInspeccionDanio As DataTable = Conexion.consultar("SELECT * FROM inspeccionDanio WHERE inspeccionid='" + inspeccionId + "'")

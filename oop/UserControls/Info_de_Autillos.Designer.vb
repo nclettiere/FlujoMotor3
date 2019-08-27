@@ -39,7 +39,6 @@ Partial Class Info_de_Autillos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btActualizarLote = New System.Windows.Forms.Button()
         Me.btVerLote = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.TabControl1.SuspendLayout
@@ -230,19 +229,24 @@ Partial Class Info_de_Autillos
         '
         'DataGridViewVehiculos
         '
+        Me.DataGridViewVehiculos.AllowUserToAddRows = false
+        Me.DataGridViewVehiculos.AllowUserToDeleteRows = false
         Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewVehiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewVehiculos.EnableHeadersVisualStyles = false
         Me.DataGridViewVehiculos.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 74)
+        Me.DataGridViewVehiculos.MultiSelect = false
         Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
         Me.DataGridViewVehiculos.ReadOnly = true
         Me.DataGridViewVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewVehiculos.ShowCellToolTips = false
         Me.DataGridViewVehiculos.ShowEditingIcon = false
+        Me.DataGridViewVehiculos.ShowRowErrors = false
         Me.DataGridViewVehiculos.Size = New System.Drawing.Size(901, 424)
         Me.DataGridViewVehiculos.TabIndex = 4
+        Me.DataGridViewVehiculos.TabStop = false
         '
         'lote
         '
@@ -283,6 +287,8 @@ Partial Class Info_de_Autillos
         '
         'DataGridViewLotes
         '
+        Me.DataGridViewLotes.AllowUserToAddRows = false
+        Me.DataGridViewLotes.AllowUserToDeleteRows = false
         Me.DataGridViewLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewLotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewLotes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
@@ -299,7 +305,6 @@ Partial Class Info_de_Autillos
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.btActualizarLote)
         Me.Panel3.Controls.Add(Me.btVerLote)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(3, 511)
@@ -307,24 +312,6 @@ Partial Class Info_de_Autillos
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(901, 59)
         Me.Panel3.TabIndex = 8
-        '
-        'btActualizarLote
-        '
-        Me.btActualizarLote.BackColor = System.Drawing.Color.DimGray
-        Me.btActualizarLote.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btActualizarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btActualizarLote.FlatAppearance.BorderSize = 0
-        Me.btActualizarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btActualizarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btActualizarLote.ForeColor = System.Drawing.Color.Orange
-        Me.btActualizarLote.Location = New System.Drawing.Point(615, 0)
-        Me.btActualizarLote.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btActualizarLote.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btActualizarLote.Name = "btActualizarLote"
-        Me.btActualizarLote.Size = New System.Drawing.Size(143, 53)
-        Me.btActualizarLote.TabIndex = 4
-        Me.btActualizarLote.Text = "Actualizar"
-        Me.btActualizarLote.UseVisualStyleBackColor = false
         '
         'btVerLote
         '
@@ -389,6 +376,5 @@ End Sub
     Friend WithEvents Panel2 As Panel
     Friend WithEvents DataGridViewLotes As DataGridView
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents btActualizarLote As Button
     Friend WithEvents btVerLote As Button
 End Class

@@ -77,7 +77,7 @@ Partial Class VerPosicion
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(143, 53)
         Me.btnAceptar.TabIndex = 6
-        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.Text = "Actualizar"
         Me.btnAceptar.UseVisualStyleBackColor = false
         '
         'btnCancelar

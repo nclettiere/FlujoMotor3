@@ -27,26 +27,26 @@ Partial Class Ver_Lotesillo
         Me.btEditar = New System.Windows.Forms.Button()
         Me.btCerrar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.labId = New System.Windows.Forms.Label()
         Me.labPatio = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnEntregar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.riTeBoDescripcion = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnEntregar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
+        Me.Panel2.SuspendLayout
         Me.Panel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel2.SuspendLayout
         Me.SuspendLayout
         '
         'TableLayoutPanel1
@@ -141,6 +141,19 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(449, 433)
         Me.TableLayoutPanel2.TabIndex = 0
         '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(3, 66)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(160, 52)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "ENTREGAR A TRNSPORTISTA"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'Label1
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -192,6 +205,33 @@ Partial Class Ver_Lotesillo
         Me.labPatio.TabIndex = 7
         Me.labPatio.Text = "N/A"
         Me.labPatio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.btnEntregar)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(169, 55)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(277, 75)
+        Me.Panel2.TabIndex = 9
+        '
+        'btnEntregar
+        '
+        Me.btnEntregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.btnEntregar.BackColor = System.Drawing.Color.DimGray
+        Me.btnEntregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnEntregar.FlatAppearance.BorderSize = 0
+        Me.btnEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnEntregar.ForeColor = System.Drawing.Color.Orange
+        Me.btnEntregar.Location = New System.Drawing.Point(81, 11)
+        Me.btnEntregar.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnEntregar.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnEntregar.Name = "btnEntregar"
+        Me.btnEntregar.Size = New System.Drawing.Size(143, 53)
+        Me.btnEntregar.TabIndex = 2
+        Me.btnEntregar.Text = "Entregar"
+        Me.btnEntregar.UseVisualStyleBackColor = false
         '
         'Label6
         '
@@ -282,46 +322,6 @@ Partial Class Ver_Lotesillo
         Me.DataGridViewVehiculos.Size = New System.Drawing.Size(483, 241)
         Me.DataGridViewVehiculos.TabIndex = 6
         '
-        'Label3
-        '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = true
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(3, 66)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(160, 52)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "ENTREGAR A TRNSPORTISTA"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.btnEntregar)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(169, 55)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(277, 75)
-        Me.Panel2.TabIndex = 9
-        '
-        'btnEntregar
-        '
-        Me.btnEntregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnEntregar.BackColor = System.Drawing.Color.DimGray
-        Me.btnEntregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnEntregar.FlatAppearance.BorderSize = 0
-        Me.btnEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEntregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnEntregar.ForeColor = System.Drawing.Color.Orange
-        Me.btnEntregar.Location = New System.Drawing.Point(81, 11)
-        Me.btnEntregar.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnEntregar.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnEntregar.Name = "btnEntregar"
-        Me.btnEntregar.Size = New System.Drawing.Size(143, 53)
-        Me.btnEntregar.TabIndex = 2
-        Me.btnEntregar.Text = "Entregar"
-        Me.btnEntregar.UseVisualStyleBackColor = false
-        '
         'Ver_Lotesillo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -335,11 +335,11 @@ Partial Class Ver_Lotesillo
         Me.TableLayoutPanel4.ResumeLayout(false)
         Me.TableLayoutPanel2.ResumeLayout(false)
         Me.TableLayoutPanel2.PerformLayout
+        Me.Panel2.ResumeLayout(false)
         Me.Panel1.ResumeLayout(false)
         Me.TableLayoutPanel3.ResumeLayout(false)
         Me.TableLayoutPanel3.PerformLayout
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
-        Me.Panel2.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub

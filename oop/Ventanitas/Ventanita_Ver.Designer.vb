@@ -24,7 +24,7 @@ Partial Class Ventanita_Ver
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventanita_Ver))
         Me.mainContent = New System.Windows.Forms.Panel()
-        Me.SuspendLayout()
+        Me.SuspendLayout
         '
         'mainContent
         '
@@ -36,16 +36,17 @@ Partial Class Ventanita_Ver
         '
         'Ventanita_Ver
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(972, 452)
         Me.Controls.Add(Me.mainContent)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.Name = "Ventanita_Ver"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Informacion"
-        Me.ResumeLayout(False)
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents mainContent As Panel
 End Class

@@ -29,7 +29,7 @@ Public Class VerPosicion
         If Integer.TryParse(tbxFila.Text , Fila) Then
             If Integer.TryParse(tbxColumna.Text , Columna) Then
                 If cbxZona.SelectedIndex >= 0
-                    Dim resultadoPatio As String = Conexion.consultar("SELECT pationombre FROM patios WHERE patioid=" + Patio.Rows(0).Item(0).ToString).Rows(0).Item(0).ToString
+                    Dim resultadoPatio As String = Conexion.consultar("SELECT pationombre FROM patios WHERE patioid=" + Patio.Rows(0).Item("patioid").ToString).Rows(0).Item(0).ToString
                     MessageBox.Show(resultadoPatio)
                     If TieneSubzona
                         Try

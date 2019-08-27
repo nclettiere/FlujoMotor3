@@ -27,28 +27,26 @@ Partial Class VerPatio
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnVer = New System.Windows.Forms.Button()
         Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnPos = New System.Windows.Forms.Button()
         Me.btnLavado = New System.Windows.Forms.Button()
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
         Me.btInfoVehiculo = New System.Windows.Forms.Button()
         Me.autito = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnPos = New System.Windows.Forms.Button()
         Me.lote.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
-        CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel2.SuspendLayout
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.TableLayoutPanel1.SuspendLayout
@@ -75,7 +73,7 @@ Partial Class VerPatio
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel4, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.DataGridView1, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.DataGridViewLotes, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel2, 0, 2)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
@@ -134,89 +132,55 @@ Partial Class VerPatio
         Me.Button2.Text = "Buscar ID"
         Me.Button2.UseVisualStyleBackColor = false
         '
-        'DataGridView1
+        'DataGridViewLotes
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DataGridView1.EnableHeadersVisualStyles = false
-        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 59)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = true
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.ShowCellToolTips = false
-        Me.DataGridView1.ShowEditingIcon = false
-        Me.DataGridView1.Size = New System.Drawing.Size(722, 310)
-        Me.DataGridView1.TabIndex = 4
+        Me.DataGridViewLotes.AllowUserToAddRows = false
+        Me.DataGridViewLotes.AllowUserToDeleteRows = false
+        Me.DataGridViewLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewLotes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewLotes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DataGridViewLotes.EnableHeadersVisualStyles = false
+        Me.DataGridViewLotes.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.DataGridViewLotes.Location = New System.Drawing.Point(3, 59)
+        Me.DataGridViewLotes.Name = "DataGridViewLotes"
+        Me.DataGridViewLotes.ReadOnly = true
+        Me.DataGridViewLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridViewLotes.ShowCellToolTips = false
+        Me.DataGridViewLotes.ShowEditingIcon = false
+        Me.DataGridViewLotes.Size = New System.Drawing.Size(722, 310)
+        Me.DataGridViewLotes.TabIndex = 4
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.Button4)
-        Me.Panel2.Controls.Add(Me.Button5)
+        Me.Panel2.Controls.Add(Me.btnVer)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(3, 375)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(722, 74)
         Me.Panel2.TabIndex = 5
         '
-        'Button3
+        'btnVer
         '
-        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button3.BackColor = System.Drawing.Color.DimGray
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Orange
-        Me.Button3.Location = New System.Drawing.Point(289, 11)
-        Me.Button3.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.Button3.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(143, 53)
-        Me.Button3.TabIndex = 6
-        Me.Button3.Text = "Hacer Lavado"
-        Me.Button3.UseVisualStyleBackColor = false
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button4.BackColor = System.Drawing.Color.DimGray
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.Orange
-        Me.Button4.Location = New System.Drawing.Point(103, 11)
-        Me.Button4.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.Button4.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(143, 53)
-        Me.Button4.TabIndex = 5
-        Me.Button4.Text = "Actualizar"
-        Me.Button4.UseVisualStyleBackColor = false
-        '
-        'Button5
-        '
-        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button5.BackColor = System.Drawing.Color.DimGray
-        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.Orange
-        Me.Button5.Location = New System.Drawing.Point(476, 11)
-        Me.Button5.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.Button5.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(143, 53)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Posicion"
-        Me.Button5.UseVisualStyleBackColor = false
+        Me.btnVer.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnVer.BackColor = System.Drawing.Color.DimGray
+        Me.btnVer.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnVer.FlatAppearance.BorderSize = 0
+        Me.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVer.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnVer.ForeColor = System.Drawing.Color.Orange
+        Me.btnVer.Location = New System.Drawing.Point(20, 11)
+        Me.btnVer.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnVer.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnVer.Name = "btnVer"
+        Me.btnVer.Size = New System.Drawing.Size(143, 53)
+        Me.btnVer.TabIndex = 4
+        Me.btnVer.Text = "Informacion"
+        Me.btnVer.UseVisualStyleBackColor = false
         '
         'DataGridViewVehiculos
         '
+        Me.DataGridViewVehiculos.AllowUserToAddRows = false
+        Me.DataGridViewVehiculos.AllowUserToDeleteRows = false
         Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridViewVehiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
@@ -306,6 +270,24 @@ Partial Class VerPatio
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(722, 74)
         Me.Panel4.TabIndex = 5
+        '
+        'btnPos
+        '
+        Me.btnPos.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnPos.BackColor = System.Drawing.Color.DimGray
+        Me.btnPos.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnPos.FlatAppearance.BorderSize = 0
+        Me.btnPos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPos.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnPos.ForeColor = System.Drawing.Color.Orange
+        Me.btnPos.Location = New System.Drawing.Point(162, 11)
+        Me.btnPos.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnPos.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnPos.Name = "btnPos"
+        Me.btnPos.Size = New System.Drawing.Size(143, 53)
+        Me.btnPos.TabIndex = 7
+        Me.btnPos.Text = "Posicion"
+        Me.btnPos.UseVisualStyleBackColor = false
         '
         'btnLavado
         '
@@ -399,24 +381,6 @@ Partial Class VerPatio
         Me.Panel1.Size = New System.Drawing.Size(748, 490)
         Me.Panel1.TabIndex = 1
         '
-        'btnPos
-        '
-        Me.btnPos.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnPos.BackColor = System.Drawing.Color.DimGray
-        Me.btnPos.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnPos.FlatAppearance.BorderSize = 0
-        Me.btnPos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPos.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnPos.ForeColor = System.Drawing.Color.Orange
-        Me.btnPos.Location = New System.Drawing.Point(162, 11)
-        Me.btnPos.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnPos.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnPos.Name = "btnPos"
-        Me.btnPos.Size = New System.Drawing.Size(143, 53)
-        Me.btnPos.TabIndex = 7
-        Me.btnPos.Text = "Posicion"
-        Me.btnPos.UseVisualStyleBackColor = false
-        '
         'VerPatio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -428,7 +392,7 @@ Partial Class VerPatio
         Me.TableLayoutPanel2.ResumeLayout(false)
         Me.TableLayoutPanel4.ResumeLayout(false)
         Me.TableLayoutPanel4.PerformLayout
-        CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel2.ResumeLayout(false)
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.TableLayoutPanel1.ResumeLayout(false)
@@ -454,11 +418,9 @@ End Sub
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewLotes As DataGridView
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnVer As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents btnLavado As Button
     Friend WithEvents btActualizarVehiculo As Button

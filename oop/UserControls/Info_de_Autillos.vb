@@ -32,40 +32,53 @@ Public Class Info_de_Autillos
     End Sub
 
     Private Sub BtBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-        If tbxBuscarVin.Text.Length > 0
-            '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-            Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
-            DataGridViewVehiculos.DataSource = resultado
-        Else
-            Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
-            DataGridViewVehiculos.DataSource = resultado
-        End If
-
+        Try
+            If tbxBuscarVin.Text.Length > 0
+                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
+                DataGridViewVehiculos.DataSource = resultado
+            Else
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
+                DataGridViewVehiculos.DataSource = resultado
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al filtrar.")
+            MessageBox.Show("Error al filtrar.")
+        End Try
     End Sub
 
     Private Sub OnTabChange(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
         If TabControl1.SelectedIndex = 1
-            Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM lotes")
-            DataGridViewLotes.DataSource = resultado
+            Try
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM lotes")
+                DataGridViewLotes.DataSource = resultado
+            Catch ex As Exception
+                MessageBox.Show("Error al listar lotes.")
+                Serilog.Log.Error(ex, "Error al listar lotes.")
+            End Try
         End If
     End Sub
 
     Private Sub BtActualizarVehiculo_Click(sender As Object, e As EventArgs) Handles btActualizarVehiculo.Click
-        If tbxBuscarVin.Text.Length > 0
-            '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-            Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
-            DataGridViewVehiculos.DataSource = resultado
-        Else
-            Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
-            DataGridViewVehiculos.DataSource = resultado
-        End If
+        Try
+            If tbxBuscarVin.Text.Length > 0
+                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
+                DataGridViewVehiculos.DataSource = resultado
+            Else
+                Dim resultado As DataTable = FormParent.Conexion.consultar("SELECT * FROM vehiculos")
+                DataGridViewVehiculos.DataSource = resultado
+            End If
+        Catch ex As Exception
+            Log.Error(ex, "Error al actualizar.")
+            MessageBox.Show("Error al actualizar.")
+        End Try
     End Sub
 
     Private Sub BtInfoVehiculo_Click(sender As Object, e As EventArgs) Handles btInfoVehiculo.Click
         Try
             Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
             Dim VerVehiculo As Ver_Vehiculillo = New Ver_Vehiculillo
-            MessageBox.Show(VinSeleccionado)
             VerVehiculo.Data(Me, VinSeleccionado, VentanaVer, FormParent.Conexion)
             VentanaVer.LoadControl(VerVehiculo)
             VentanaVer.ShowDialog()
@@ -77,7 +90,7 @@ Public Class Info_de_Autillos
     Private Sub BtVerLote_Click_1(sender As Object, e As EventArgs) Handles btVerLote.Click
         Try
             Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
-            Ver_Lotesillo.Instance.Data(Me, DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString(), VentanaVer, FormParent.Conexion)
+            Ver_Lotesillo.Instance.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString(), VentanaVer, FormParent.Conexion)
             VentanaVer.LoadControl(Ver_Lotesillo.Instance)
             VentanaVer.ShowDialog()
         Catch ex As Exception

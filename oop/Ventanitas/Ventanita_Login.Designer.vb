@@ -23,29 +23,30 @@ Partial Class Ventanita_Login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MainContent = New System.Windows.Forms.Panel()
-        Me.SuspendLayout()
+        Me.SuspendLayout
         '
         'MainContent
         '
-        Me.MainContent.AutoSize = True
+        Me.MainContent.AutoSize = true
         Me.MainContent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainContent.Location = New System.Drawing.Point(0, 0)
         Me.MainContent.Name = "MainContent"
         Me.MainContent.Size = New System.Drawing.Size(385, 435)
         Me.MainContent.TabIndex = 0
         '
-        'MainWindow
+        'Ventanita_Login
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(385, 435)
         Me.Controls.Add(Me.MainContent)
-        Me.Name = "MainWindow"
-        Me.Text = "MainWindow"
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.Name = "Ventanita_Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Login Operario"
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
 
     Friend WithEvents MainContent As Panel
 End Class

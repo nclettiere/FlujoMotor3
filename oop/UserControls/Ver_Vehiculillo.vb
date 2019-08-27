@@ -20,31 +20,43 @@ Public Class Ver_Vehiculillo
         End Set
     End Property
     Private Property Ventana As Ventanita_Ver
-    Private Property InfoAutos As Info_de_Autillos
+    Private Property FormParent As Object
+    Private Property TipoForm As Boolean
     Private Property Conexion As DB.ODBC
 
     Private Property VIN As String
 
-    Friend Sub Data(info_de_Autillos As Info_de_Autillos, vin As String, ByRef Ventana As Ventanita_Ver, ByRef Conexion As ODBC)
-        InfoAutos = info_de_Autillos
+    Friend Sub Data(parent As Object, vin As String, ByRef Ventana As Ventanita_Ver, ByRef Conexion As ODBC)
         Me.Ventana = Ventana
         Me.Conexion = Conexion
         Me.VIN = vin
 
+        If TypeOf parent Is Info_de_Autillos Then
+            FormParent = DirectCast(parent, Info_de_Autillos)
+            TipoForm = 0
+        Else
+            FormParent = DirectCast(parent, VerPatio)
+            TipoForm = 1
+        End If
+
+        ProcesarDatos()
+    End Sub
+
+    Private Sub ProcesarDatos()
         Dim resultadoVehiculo As DataTable = Conexion.consultar("SELECT * FROM vehiculos WHERE vehiculovin='" + vin + "'")
         If resultadoVehiculo IsNot Nothing
             Dim resultadoLote As DataTable = Conexion.consultar("SELECT * FROM lotes WHERE loteid=" + resultadoVehiculo.Rows(0).Item("loteid").ToString + "")
             If resultadoVehiculo IsNot Nothing
                 Dim resultadoPatio As DataTable = Conexion.consultar("SELECT * FROM patios WHERE patioid=" + resultadoLote.Rows(0).Item("patioid").ToString + "")
                 Dim resultadoSubZonaVehiculo As DataTable = Conexion.consultar("SELECT * FROM vehiculoSubZona WHERE vehiculovin='" + resultadoVehiculo.Rows(0).Item(0).ToString + "'")
-                lblVin.Text = resultadoVehiculo.Rows(0).Item(0).ToString
-                VIN = resultadoVehiculo.Rows(0).Item(0).ToString
-                labFecha.Text = resultadoVehiculo.Rows(0).Item(1).ToString
-                labColor.Text = resultadoVehiculo.Rows(0).Item(2).ToString
-                labMarca.Text = resultadoVehiculo.Rows(0).Item(3).ToString
-                labModelo.Text = resultadoVehiculo.Rows(0).Item(4).ToString
-                labAno.Text = resultadoVehiculo.Rows(0).Item(5).ToString
-                labTipo.Text = resultadoVehiculo.Rows(0).Item(6).ToString 
+                VIN = resultadoVehiculo.Rows(0).Item("vehiculovin").ToString
+                lblVin.Text = VIN
+                labFecha.Text = resultadoVehiculo.Rows(0).Item("vehiculofecha").ToString
+                labColor.Text = resultadoVehiculo.Rows(0).Item("vehiculocolor").ToString
+                labMarca.Text = resultadoVehiculo.Rows(0).Item("vehiculomarca").ToString
+                labModelo.Text = resultadoVehiculo.Rows(0).Item("vehiculomodelo").ToString
+                labAno.Text = resultadoVehiculo.Rows(0).Item("vehiculoanio").ToString
+                labTipo.Text = resultadoVehiculo.Rows(0).Item("vehiculotipo").ToString 
 
                 If resultadoLote IsNot Nothing
                     If resultadoLote.Rows.Count > 0
@@ -73,11 +85,10 @@ Public Class Ver_Vehiculillo
                 End If
             End If
         End If
-    
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Ventana.Close()
+        DirectCast(ParentForm, Ventanita_Ver).Close()
     End Sub
 
     Private Sub BtVerInspeccion_Click(sender As Object, e As EventArgs) Handles btVerInspeccion.Click
@@ -85,7 +96,7 @@ Public Class Ver_Vehiculillo
         If ResultadoInspecciones IsNot Nothing
             Dim index As Integer = 0
             If ResultadoInspecciones.Rows.Count <> 0
-                Ventana.GotoSection(0, VIN, Conexion)
+                DirectCast(ParentForm, Ventanita_Ver).GotoSection(0, VIN, Conexion)
             Else
                  MessageBox.Show("Este vehiculo no tiene inspecciones.")
             End If
@@ -94,7 +105,7 @@ Public Class Ver_Vehiculillo
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            Ventana.GotoSection(1, VIN, Conexion)
+            DirectCast(ParentForm, Ventanita_Ver).GotoSection(1, VIN, Conexion)
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error")
         End Try

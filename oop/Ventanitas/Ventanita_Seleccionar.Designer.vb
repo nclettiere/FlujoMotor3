@@ -42,6 +42,7 @@ Partial Class Ventanita_Seleccionar
         Me.Controls.Add(Me.MainContent)
         Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.Name = "Ventanita_Seleccionar"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccionar"
         Me.ResumeLayout(false)
 

@@ -50,13 +50,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Serilog">
-      <HintPath>..\..\..\Desktop\New folder (5)\FlujoMotor3\oop\Serilog.dll</HintPath>
+      <HintPath>.\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.Sinks.Console">
-      <HintPath>..\..\..\Desktop\New folder (5)\FlujoMotor3\oop\Serilog.Sinks.Console.dll</HintPath>
+      <HintPath>.\Serilog.Sinks.Console.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.Sinks.File">
-      <HintPath>..\..\..\Desktop\New folder (5)\FlujoMotor3\oop\Serilog.Sinks.File.dll</HintPath>
+      <HintPath>.\Serilog.Sinks.File.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

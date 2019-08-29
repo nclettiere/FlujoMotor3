@@ -24,8 +24,9 @@ Partial Class SeleccionarVehiculo
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btAceptar = New System.Windows.Forms.Button()
-        Me.lisBoVehiculos = New System.Windows.Forms.ListBox()
+        Me.DataGridVehiculos = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel1.SuspendLayout
+        CType(Me.DataGridVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'TableLayoutPanel1
@@ -36,7 +37,7 @@ Partial Class SeleccionarVehiculo
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
         Me.TableLayoutPanel1.Controls.Add(Me.btAceptar, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lisBoVehiculos, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.DataGridVehiculos, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 8)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
@@ -63,34 +64,32 @@ Partial Class SeleccionarVehiculo
         Me.btAceptar.Text = "Aceptar"
         Me.btAceptar.UseVisualStyleBackColor = false
         '
-        'lisBoVehiculos
+        'DataGridVehiculos
         '
-        Me.lisBoVehiculos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lisBoVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lisBoVehiculos.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lisBoVehiculos.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.lisBoVehiculos.FormattingEnabled = true
-        Me.lisBoVehiculos.ItemHeight = 23
-        Me.lisBoVehiculos.Location = New System.Drawing.Point(5, 5)
-        Me.lisBoVehiculos.Margin = New System.Windows.Forms.Padding(5)
-        Me.lisBoVehiculos.Name = "lisBoVehiculos"
-        Me.lisBoVehiculos.Size = New System.Drawing.Size(340, 345)
-        Me.lisBoVehiculos.TabIndex = 2
+        Me.DataGridVehiculos.AllowUserToAddRows = false
+        Me.DataGridVehiculos.AllowUserToDeleteRows = false
+        Me.DataGridVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridVehiculos.Location = New System.Drawing.Point(3, 3)
+        Me.DataGridVehiculos.Name = "DataGridVehiculos"
+        Me.DataGridVehiculos.Size = New System.Drawing.Size(344, 349)
+        Me.DataGridVehiculos.TabIndex = 2
         '
-        'Seleccionar_Vehiculillo
+        'SeleccionarVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Name = "Seleccionar_Vehiculillo"
+        Me.Name = "SeleccionarVehiculo"
         Me.Size = New System.Drawing.Size(366, 436)
         Me.TableLayoutPanel1.ResumeLayout(false)
+        CType(Me.DataGridVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents btAceptar As Button
-    Friend WithEvents lisBoVehiculos As ListBox
+    Friend WithEvents DataGridVehiculos As DataGridView
 End Class

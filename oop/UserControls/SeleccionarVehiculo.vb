@@ -2,6 +2,7 @@
 
 Public Class SeleccionarVehiculo
     Private Shared _instance As SeleccionarVehiculo
+    Friend Property Conexion As DB.ODBC
 
     Friend _FormParent As Ventana_Seleccionar
 
@@ -27,11 +28,36 @@ Public Class SeleccionarVehiculo
     End Property
 
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
-        Dim SelectedItems = lisBoVehiculos.SelectedItems
-        Dim ListaVehiculos = New List(Of String)
-        For Each item As String In SelectedItems
-            ListaVehiculos.Add(item)
-        Next
-        FormParent.GoToSection(0)
+        
+    End Sub
+
+    Private Sub OnSelecVecloLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim VehiculosAparcados = Conexion.Consultar("SELECT vehiculovin FROM vehiculosubzona")
+            Dim QueryFiltro As String = ""
+            Dim Contador As Integer = 0
+            Dim Max = VehiculosAparcados.Rows.Count
+            For Each AparcadoRow As DataRow In VehiculosAparcados.Rows
+                If Contador < Max - 1
+                    QueryFiltro = QueryFiltro + " vehiculovin='"+ AparcadoRow.Item("vehiculovin") + "' OR"
+                Else
+                    QueryFiltro = QueryFiltro + " vehiculovin='"+ AparcadoRow.Item("vehiculovin") + "'"
+                End If
+                Serilog.Log.Information(Contador.ToString)
+                Contador += 1
+            Next
+
+            Dim VehiculosDataTable As DataTable
+            If Not String.IsNullOrWhiteSpace(QueryFiltro)
+                VehiculosDataTable = Conexion.Consultar("SELECT DISTINCT * FROM vehiculos WHERE vehiculovin NOT IN (SELECT vehiculovin FROM vehiculosubzona WHERE"+ QueryFiltro +")")
+            Else
+                VehiculosDataTable = Conexion.Consultar("SELECT * FROM vehiculos")
+            End If
+            
+            DataGridVehiculos.DataSource = VehiculosDataTable
+
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al obtener vehiculos.")
+        End Try
     End Sub
 End Class

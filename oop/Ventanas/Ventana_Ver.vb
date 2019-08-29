@@ -101,6 +101,11 @@ Public Class Ventana_Ver
                 '' ============================
                 Me.ClientSize = VerZonasControl.Size
                 Selection = VerZonasControl
+            Case 6
+                Dim SelecVehiculo = New SeleccionarVehiculo
+                SelecVehiculo.Conexion = Conexion
+                Me.ClientSize = SelecVehiculo.Size
+                Selection = SelecVehiculo
             Case Else
                 Selection = VerInspeccion.Instance
         End Select

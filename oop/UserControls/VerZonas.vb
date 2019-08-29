@@ -74,7 +74,7 @@
 
         LabelSubZonaNombre.Text = "SubZona Nombre: "+ SubZonaNombre
         LabelCapacidad.Text = "Capacidad: "+ Capacidad
-        LabelCantidad.Text = "SubZonas: "+ Vehiculos
+        LabelCantidad.Text = "Vehiculos en Subzona: "+ Vehiculos
 
         LabelSubZonaNombre.Location = New Point(14, 16)
         LabelCapacidad.Location = New Point(14, 41)
@@ -91,18 +91,18 @@
         LabelCantidad.Font = fuente
 
         Dim BtnSubZonaMod As Button = New Button
-        BtnSubZonaMod.Size = New Size(108, 23)
+        BtnSubZonaMod.AutoSize = True
         BtnSubZonaMod.Font = fuente
         BtnSubZonaMod.ForeColor = Color.Orange
-        BtnSubZonaMod.Text = "Ver/Agregar SubZonas"
+        BtnSubZonaMod.Text = "Modificar"
 
         Dim BtnSubZonaAparcar As Button = New Button
-        BtnSubZonaAparcar.Size = New Size(108, 23)
+        BtnSubZonaAparcar.AutoSize = True
         BtnSubZonaAparcar.Font = fuente
         BtnSubZonaAparcar.ForeColor = Color.Orange
-        BtnSubZonaAparcar.Text = "Ver/Agregar SubZonas"
+        BtnSubZonaAparcar.Text = "Aparcar Vehiculo"
 
-       ' AddHandler BtnSubZonaMod.Click , Sub(s, ea) VerSubZonas(s, ea, PanelFlow, SubzonaNombre)
+       AddHandler BtnSubZonaAparcar.Click , Sub(s, ea) AparcarVehiculo(s, ea, SubzonaNombre)
 
         BtnSubZonaMod.Location = New Point(360, 12)
         BtnSubZonaAparcar.Location = New Point(360, 57)
@@ -117,16 +117,27 @@
         Return PanelFlow
     End Function
 
+    Private Sub AparcarVehiculo(s As Object, ea As EventArgs, subzonaNombre As String)
+        Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+        VentanaVer.GoToSection(6, "", Conexion)
+        VentanaVer.ShowDialog()
+    End Sub
+
     Private Abierto As Boolean = False
+
     Private Sub SubZonasClick(s As Object, ea As EventArgs, panelContenido As FlowLayoutPanel, zonaId As String)
         If Abierto
             Dim CantidadSubZonas = panelContenido.Controls.Count -1
 
-            For indice = 0 To CantidadSubZonas
-                panelContenido.Controls.RemoveAt(indice)
-            Next
+            Try
+                For indice = CantidadSubZonas To 1 step -1
+                    panelContenido.Controls.RemoveAt(indice)
+                Next
+            Catch
+            End Try
 
             Abierto = False
+            DirectCast(s, Button).Text = "Ver/Agregar SubZonas"
         Else
             Dim ContadorSubZonas = 0
             Integer.TryParse(Conexion.Consultar("SELECT COUNT(*) FROM subzonas WHERE zonaid="+ zonaId).Rows(0).Item(0), ContadorSubZonas)
@@ -135,7 +146,7 @@
                 Dim ConsultaSubZona = Conexion.Consultar("SELECT * FROM subzonas WHERE zonaid="+ zonaId)
 
                 Dim ContadorVehiculos = 0
-                Integer.TryParse(Conexion.Consultar("SELECT COUNT(*) FROM vehiculosubzona WHERE subzonanombre='"+ ConsultaSubZona.Rows(0).Item("subzonanombre")+"'").Rows(0).Item(0), ContadorSubZonas)
+                Integer.TryParse(Conexion.Consultar("SELECT COUNT(*) FROM vehiculosubzona WHERE subzonanombre='"+ ConsultaSubZona.Rows(0).Item("subzonanombre")+"'").Rows(0).Item(0).ToString, ContadorSubZonas)
 
                 For Each SubZonaRow As DataRow In ConsultaSubZona.Rows
                     panelContenido.Controls.Add(CrearSubZona(SubZonaRow.Item("subzonanombre"), SubZonaRow.Item("subzonacapacidad"), ContadorVehiculos.ToString))
@@ -143,6 +154,7 @@
             End If
 
             Abierto = True
+            DirectCast(s, Button).Text = "Ocultar"
         End If
     End Sub
 

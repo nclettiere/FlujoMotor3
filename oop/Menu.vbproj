@@ -178,6 +178,12 @@
     <Compile Include="UserControls\MenuControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\ModificarSubzona.Designer.vb">
+      <DependentUpon>ModificarSubzona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ModificarSubzona.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\SeleccionarLotes.Designer.vb">
       <DependentUpon>SeleccionarLotes.vb</DependentUpon>
     </Compile>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MenuControl.resx">
       <DependentUpon>MenuControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ModificarSubzona.resx">
+      <DependentUpon>ModificarSubzona.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SeleccionarLotes.resx">
       <DependentUpon>SeleccionarLotes.vb</DependentUpon>

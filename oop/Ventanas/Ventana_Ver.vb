@@ -1,4 +1,5 @@
 ﻿Imports DB
+Imports Menu
 
 Public Class Ventana_Ver
 
@@ -19,6 +20,12 @@ Public Class Ventana_Ver
         mainContent.Controls.Add(verFoto)
     End Sub
 
+   Friend Sub LoadControl(SelecVehiculo As SeleccionarVehiculo)
+        Me.ClientSize = SelecVehiculo.Size
+        mainContent.Controls.Add(SelecVehiculo)
+        SelecVehiculo.AutoSize = True
+    End Sub
+
     Friend Sub LoadControl(vin As String, Conexion As ODBC)
         Dim Selection = New VerPosicion
         Selection.CargarDatos(VIN, Conexion)
@@ -26,6 +33,12 @@ Public Class Ventana_Ver
         mainContent.Controls.Add(Selection)
         Selection.Dock = DockStyle.Fill
         Selection.BringToFront()
+    End Sub
+
+    Friend Sub LoadControl(modSubZona As ModificarSubzona)
+        Me.ClientSize = modSubZona.Size
+        mainContent.Controls.Add(modSubZona)
+        modSubZona.AutoSize = True
     End Sub
 
     ''' <summary>

@@ -4,7 +4,9 @@ Public Class SeleccionarVehiculo
     Private Shared _instance As SeleccionarVehiculo
     Friend Property Conexion As DB.ODBC
 
-    Friend _FormParent As Ventana_Seleccionar
+    Friend FormParent As Ventana_Seleccionar
+
+    Private _VinSeleccionado As String
 
     Public Shared Property Instance As SeleccionarVehiculo
         Get
@@ -18,17 +20,39 @@ Public Class SeleccionarVehiculo
         End Set
     End Property
 
-    Public Property FormParent As Ventana_Seleccionar
+    Friend Property SubZonaNombre As String
+    Friend Property ZonaId As String
+
+    Public Property VinSeleccionado As String
         Get
-            Return _FormParent
+            Return _VinSeleccionado
         End Get
-        Set(value As Ventana_Seleccionar)
-            _FormParent = value
+        Set(value As String)
+            _VinSeleccionado = value
         End Set
     End Property
 
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
-        
+        Dim Columna As Integer
+        Dim Fila As Integer
+        If Not String.IsNullOrWhiteSpace(VinSeleccionado)
+            If Not String.IsNullOrWhiteSpace(tbxColumna.Text)
+                If Integer.TryParse(tbxColumna.Text, Columna)
+                    If Not String.IsNullOrWhiteSpace(tbxFila.Text)
+                        If Integer.TryParse(tbxFila.Text, Fila)
+                            Try
+                                Dim VehiculosAparcados = Conexion.Consultar("INSERT INTO vehiculosubzona (vehiculovin, subzonanombre, zonaid, columna, fila) VALUES ('"+ VinSeleccionado +"', '"+ SubZonaNombre +"', "+ ZonaId +", "+ Columna.ToString +", "+ Fila.ToString +")")
+                                MessageBox.Show("Vehiculo agregado en subzona correctamente.")
+                                ParentForm.Close()
+                            Catch ex As Exception
+                                Serilog.Log.Error(ex, "Error al insertarvehiculo en subzona.")
+                            End Try
+                             
+                        End If
+                    End If
+                End If
+            End If
+        End If
     End Sub
 
     Private Sub OnSelecVecloLoad(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -49,6 +73,7 @@ Public Class SeleccionarVehiculo
 
             Dim VehiculosDataTable As DataTable
             If Not String.IsNullOrWhiteSpace(QueryFiltro)
+                '' Obtiene los vehiculos que no estan en una subzona.
                 VehiculosDataTable = Conexion.Consultar("SELECT DISTINCT * FROM vehiculos WHERE vehiculovin NOT IN (SELECT vehiculovin FROM vehiculosubzona WHERE"+ QueryFiltro +")")
             Else
                 VehiculosDataTable = Conexion.Consultar("SELECT * FROM vehiculos")
@@ -59,5 +84,13 @@ Public Class SeleccionarVehiculo
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al obtener vehiculos.")
         End Try
+    End Sub
+
+    Private Sub CambioSeleccion(sender As Object, e As EventArgs) Handles DataGridVehiculos.SelectionChanged
+        if DataGridVehiculos.SelectedRows.Count <> 0
+            Dim fila As DataGridViewRow = DataGridVehiculos.SelectedRows(0)
+            VinSeleccionado = fila.Cells("vehiculovin").Value.ToString
+            lblSeleccionVin.Text = "Vehiculo Seleccionado: "+ VinSeleccionado
+        End If
     End Sub
 End Class

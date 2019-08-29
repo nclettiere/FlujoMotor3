@@ -53,7 +53,7 @@
         Return PanelFlow
     End Function
 
-    Private Function CrearSubZona(SubZonaNombre As String, Capacidad As String, Vehiculos As String) As Control
+    Private Function CrearSubZona(SubZonaNombre As String, ZonaId As String, Capacidad As String, Vehiculos As String) As Control
         Dim PanelFlow As FlowLayoutPanel = New FlowLayoutPanel
         Dim PanelContenido As Panel = New Panel
 
@@ -102,7 +102,8 @@
         BtnSubZonaAparcar.ForeColor = Color.Orange
         BtnSubZonaAparcar.Text = "Aparcar Vehiculo"
 
-       AddHandler BtnSubZonaAparcar.Click , Sub(s, ea) AparcarVehiculo(s, ea, SubzonaNombre)
+        AddHandler BtnSubZonaAparcar.Click , Sub(s, ea) AparcarVehiculo(s, ea, SubzonaNombre, ZonaId)
+        AddHandler BtnSubZonaMod.Click , Sub(s, ea) ModificarVehiculo(s, ea, SubzonaNombre)
 
         BtnSubZonaMod.Location = New Point(360, 12)
         BtnSubZonaAparcar.Location = New Point(360, 57)
@@ -117,9 +118,22 @@
         Return PanelFlow
     End Function
 
-    Private Sub AparcarVehiculo(s As Object, ea As EventArgs, subzonaNombre As String)
+    Private Sub ModificarVehiculo(s As Object, ea As EventArgs, subzonaNombre As String)
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-        VentanaVer.GoToSection(6, "", Conexion)
+        Dim ModSubZona = New ModificarSubzona
+        ModSubZona.Conexion = Conexion
+        ModSubZona.SubZonaNombre = subzonaNombre
+        VentanaVer.LoadControl(ModSubZona)
+        VentanaVer.ShowDialog()
+    End Sub
+
+    Private Sub AparcarVehiculo(s As Object, ea As EventArgs, subzonaNombre As String, zonaid As String)
+        Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+        Dim SelecVehiculo = New SeleccionarVehiculo
+        SelecVehiculo.ZonaId = zonaid
+        SelecVehiculo.Conexion = Conexion
+        SelecVehiculo.SubZonaNombre = subzonaNombre
+        VentanaVer.LoadControl(SelecVehiculo)
         VentanaVer.ShowDialog()
     End Sub
 
@@ -149,7 +163,7 @@
                 Integer.TryParse(Conexion.Consultar("SELECT COUNT(*) FROM vehiculosubzona WHERE subzonanombre='"+ ConsultaSubZona.Rows(0).Item("subzonanombre")+"'").Rows(0).Item(0).ToString, ContadorSubZonas)
 
                 For Each SubZonaRow As DataRow In ConsultaSubZona.Rows
-                    panelContenido.Controls.Add(CrearSubZona(SubZonaRow.Item("subzonanombre"), SubZonaRow.Item("subzonacapacidad"), ContadorVehiculos.ToString))
+                    panelContenido.Controls.Add(CrearSubZona(SubZonaRow.Item("subzonanombre"), SubZonaRow.Item("zonaId"), SubZonaRow.Item("subzonacapacidad"), ContadorVehiculos.ToString))
                 Next
             End If
 

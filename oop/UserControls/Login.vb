@@ -22,7 +22,9 @@ Public Class Login
         End Set
     End Property
 
-    Private Sub Btn_LogIn_Click_1(sender As Object, e As EventArgs) Handles btn_LogIn.Click
+    Public Property Cargado As Boolean = False
+
+    Private Sub Btn_LogIn_Click_1(sender As Object, e As EventArgs) 
         If Not String.IsNullOrWhiteSpace(tbx_user.Text)
             If Not String.IsNullOrWhiteSpace(tbx_passwd.Text)
 
@@ -62,5 +64,21 @@ Public Class Login
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al chquear conexion.")
         End Try
+
+        cbxIdioma.SelectedIndex = 0
+        Cargado = True
+    End Sub
+
+    Private Sub CambioIndiceIdioma(sender As Object, e As EventArgs) Handles cbxIdioma.SelectedIndexChanged
+        If Cargado
+            Select cbxIdioma.SelectedIndex
+                Case 0
+                    MessageBox.Show("oie shico, si!")
+                Case 1
+                    MessageBox.Show("Oh, Right!")
+                Case 2:
+                    MessageBox.Show("!عربيعربى")
+            End Select
+        End If
     End Sub
 End Class

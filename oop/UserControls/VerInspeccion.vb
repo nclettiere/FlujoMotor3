@@ -15,7 +15,7 @@ Public Class VerInspeccion
         End Set
     End Property
 
-    Public Property FormParent As Ventanita_Ver
+    Public Property FormParent As Ventana_Ver
 
     Friend Sub Populate(VIN As String, ByRef Conexion As DB.ODBC)
         lblVehiculoVin.Text = "Viendo Vehiculo: " + VIN

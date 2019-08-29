@@ -1,0 +1,64 @@
+﻿Imports DB
+
+Public Class Login
+    Private Shared _instance As Login
+
+    Friend Conexion As ODBC = New ODBC()
+    Friend Property MainWindowForm As MainWindow
+
+    Public Shared Property Instance As Login
+        Get
+            If _instance Is Nothing Then
+                _instance = New Login()
+            End If
+            Return _instance
+        End Get
+        Set(value As Login)
+            _instance = value
+        End Set
+    End Property
+
+    Private Sub Btn_LogIn_Click_1(sender As Object, e As EventArgs) Handles btn_LogIn.Click
+        MainWindowForm = DirectCast(ParentForm, MainWindow)
+
+        If Not String.IsNullOrWhiteSpace(tbx_user.Text)
+            If Not String.IsNullOrWhiteSpace(tbx_passwd.Text)
+
+                Conexion.USER = tbx_user.Text
+                Conexion.PWD = tbx_passwd.Text
+                Dim EstablacerConexionDB = Conexion.Conectar(Conexion.Conectar())
+
+                If (EstablacerConexionDB) Then
+                    MessageBox.Show("Conectado Exitosamente.")
+                    MainWindow.CambiarControl(0)
+                Else
+                    MessageBox.Show("Usuario o Contrasena invalidos.")
+                End If
+            Else
+                MessageBox.Show("Debes ingresar una contrasena.")
+            End If
+        Else
+            MessageBox.Show("Debes ingresar un usuario.")
+        End If
+    End Sub
+
+    Private Sub OnLoginLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Conexion.USER = "root"
+            Conexion.PWD = "root"
+            If Conexion.Conectar(Conexion.Conectar())
+                Conexion.Cerrar()
+            Else
+                MessageBox.Show("No se pedo establecer conexion con la DB." + Environment.NewLine + "Chequee que la VM este corriendo y que los datos sean correctos.", "Error de Conexion",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Serilog.Log.Fatal("No se pudo establecer con la DB." +
+                              Environment.NewLine +
+                              "Query de conexion usado:" +
+                              Environment.NewLine +
+                              Conexion.Conectar())
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al chquear conexion.")
+        End Try
+    End Sub
+End Class

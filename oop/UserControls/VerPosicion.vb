@@ -19,7 +19,8 @@ Public Class VerPosicion
     Public Property Conexion As DB.ODBC
     Public Property VIN As String
     Public Property TieneSubzona As Boolean
-    Public Property Patio
+    Public Property Lote As DataTable
+    Public Property Patio As DataTable
     Public Property ZonaId As String
     Public Property SubZonas As DataTable
 
@@ -29,7 +30,7 @@ Public Class VerPosicion
         If Integer.TryParse(tbxFila.Text , Fila) Then
             If Integer.TryParse(tbxColumna.Text , Columna) Then
                 If cbxZona.SelectedIndex >= 0
-                    Dim resultadoPatio As String = Conexion.Consultar("SELECT pationombre FROM patios WHERE patioid=" + Patio.Rows(0).Item("patioid").ToString).Rows(0).Item(0).ToString
+                    Dim resultadoPatio As String = Conexion.Consultar("SELECT pationombre FROM patios WHERE patioid=" + Lote.Rows(0).Item("patioid").ToString).Rows(0).Item(0).ToString
                     MessageBox.Show(resultadoPatio)
                     If TieneSubzona
                         Try
@@ -86,9 +87,10 @@ Public Class VerPosicion
     Private Sub OnPosicionLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim LoteId As String = Conexion.Consultar("SELECT loteid FROM vehiculos WHERE vehiculovin='" + VIN + "'").Rows(0).Item(0).ToString
-            Patio    = Conexion.Consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
-            Dim Zona = Conexion.Consultar("SELECT * FROM zonas WHERE patioid=" + Patio.Rows(0).Item("patioid").ToString)
-            ZonaId = Zona.Rows(0).Item(0).ToString
+            Lote     = Conexion.Consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
+            Patio    = Conexion.Consultar("SELECT * FROM patios WHERE patioid=" + Lote.Rows(0).Item("patioid").ToString)
+            Dim Zona = Conexion.Consultar("SELECT * FROM zonas WHERE patioid=" + Lote.Rows(0).Item("patioid").ToString)
+            ZonaId   = Zona.Rows(0).Item(0).ToString
             SubZonas = Conexion.Consultar("SELECT * FROM subzonas WHERE zonaid=" + ZonaId)
             For Each item As DataRow In SubZonas.Rows
                 cbxZona.Items.Add(item("subzonanombre").ToString)
@@ -110,7 +112,7 @@ Public Class VerPosicion
             End If
 
             lblVehiculoPos.Text = "Posicion del Vehiculo: " + VIN
-            lblPatio.Text = "Patio " + Patio.Rows(0).Item(1).ToString
+            lblPatio.Text = "Patio " + Patio.Rows(0).Item("pationombre").ToString
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al obtener zonas.")
         End Try

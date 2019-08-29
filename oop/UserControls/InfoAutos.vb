@@ -76,7 +76,7 @@ Public Class InfoAutos
 
     Private Sub BtInfoVehiculo_Click(sender As Object, e As EventArgs) Handles btInfoVehiculo.Click
         Try
-            Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
+            Dim VentanaVer As Ventana_Ver = New Ventana_Ver
             Dim VerVehiculo As VerVehiculo = New VerVehiculo
             VerVehiculo.Data(VinSeleccionado, FormParent.Conexion)
             VentanaVer.LoadControl(VerVehiculo)
@@ -88,7 +88,7 @@ Public Class InfoAutos
 
     Private Sub BtVerLote_Click_1(sender As Object, e As EventArgs) Handles btVerLote.Click
         Try
-            Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
+            Dim VentanaVer As Ventana_Ver = New Ventana_Ver
             VerLotes.Instance.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString(), FormParent.Conexion)
             VentanaVer.LoadControl(VerLotes.Instance)
             VentanaVer.ShowDialog()

@@ -15,17 +15,17 @@ Public Class AgregarLote
     End Property
 
     Public Shared Property ListaVehiculosSeleccionados As List(Of String)
-    Public Property FormParent As Ventanita_Seleccionar
+    Public Property FormParent As Ventana_Seleccionar
     Public Property ParentControl As AgregarVehiculo
     Public Property Conexion As DB.ODBC
     Public Property Cliente As String
 
     Private Sub BtnAgrExistente_Click(sender As Object, e As EventArgs) 
-        DirectCast(FormParent, Ventanita_Seleccionar).GotoSection(2)
+        DirectCast(FormParent, Ventana_Seleccionar).GotoSection(2)
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        DirectCast(FormParent, Ventanita_Seleccionar).Close()
+        DirectCast(FormParent, Ventana_Seleccionar).Close()
     End Sub
 
     Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles btAgregar.Click
@@ -42,7 +42,7 @@ Public Class AgregarLote
         End If
     End Sub
 
-    Friend Sub CargarDatos(ventanita_Seleccionar As Ventanita_Seleccionar, parent As Object, conexion As ODBC)
+    Friend Sub CargarDatos(ventanita_Seleccionar As Ventana_Seleccionar, parent As Object, conexion As ODBC)
         FormParent = ventanita_Seleccionar
         ParentControl = DirectCast(parent, AgregarVehiculo)
         Me.Conexion = conexion

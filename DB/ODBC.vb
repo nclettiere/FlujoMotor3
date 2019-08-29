@@ -92,6 +92,7 @@ Public Class ODBC
         Try
             Dim fileReader As String
             fileReader = My.Computer.FileSystem.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "conexioninformix.yaml"))
+            Console.WriteLine(fileReader)
             conexion = fileReader + "UID=" + USER + ";Password=" + PWD + ";"
         Catch ex As Exception
             Serilog.Log.Fatal("No se pudo leer el archivo de configuracion informix. Se utilizara el string por defecto.")

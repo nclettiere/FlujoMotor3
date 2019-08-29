@@ -15,7 +15,7 @@ Public Class SeleccionarLotes
         End Set
     End Property
 
-    Public Property FormParent As Ventanita_Seleccionar
+    Public Property FormParent As Ventana_Seleccionar
     Public Property ParentControl As AgregarVehiculo
     Public Property Conexion As DB.ODBC
 
@@ -26,7 +26,7 @@ Public Class SeleccionarLotes
          'End If
     End Sub
 
-    Friend Sub CargarDatos(ventanita_Seleccionar As Ventanita_Seleccionar, parent As Object, conexion As ODBC)
+    Friend Sub CargarDatos(ventanita_Seleccionar As Ventana_Seleccionar, parent As Object, conexion As ODBC)
         FormParent = ventanita_Seleccionar
         ParentControl = DirectCast(parent, AgregarVehiculo)
         Me.Conexion = conexion

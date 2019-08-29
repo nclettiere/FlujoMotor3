@@ -3,7 +3,7 @@
 Public Class SeleccionarVehiculo
     Private Shared _instance As SeleccionarVehiculo
 
-    Friend _FormParent As Ventanita_Seleccionar
+    Friend _FormParent As Ventana_Seleccionar
 
     Public Shared Property Instance As SeleccionarVehiculo
         Get
@@ -17,11 +17,11 @@ Public Class SeleccionarVehiculo
         End Set
     End Property
 
-    Public Property FormParent As Ventanita_Seleccionar
+    Public Property FormParent As Ventana_Seleccionar
         Get
             Return _FormParent
         End Get
-        Set(value As Ventanita_Seleccionar)
+        Set(value As Ventana_Seleccionar)
             _FormParent = value
         End Set
     End Property

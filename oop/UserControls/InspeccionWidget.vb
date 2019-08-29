@@ -58,7 +58,7 @@ Public Class InspeccionWidget
     End Sub
 
     Private Sub BtnFotos_Click(sender As Object, e As EventArgs) Handles btnFotos.Click
-        Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver()
+        Dim VentanaVer As Ventana_Ver = New Ventana_Ver()
         Dim VerFoto As VerFoto = New VerFoto
         If QueryFoto IsNot Nothing
             VerFoto.SetFoto(ObtenerDanioImagen(QueryFoto))

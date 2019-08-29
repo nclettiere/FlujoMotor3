@@ -21,7 +21,7 @@ Public Class VerPatio
 
     Private Sub BtnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
         Try
-            Dim VentanaVer = New Ventanita_Ver()
+            Dim VentanaVer = New Ventana_Ver()
             Dim vin = DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString
             VentanaVer.LoadControl(vin, Conexion)
             VentanaVer.ShowDialog()
@@ -68,7 +68,7 @@ Public Class VerPatio
 
     Private Sub BtInfoVehiculo_Click(sender As Object, e As EventArgs) Handles btInfoVehiculo.Click
         Try
-            Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
+            Dim VentanaVer As Ventana_Ver = New Ventana_Ver
             Dim VerVehiculo As VerVehiculo = New VerVehiculo
             VerVehiculo.Data(VinSeleccionado, FormParent.Conexion)
             VentanaVer.LoadControl(VerVehiculo)
@@ -128,12 +128,18 @@ Public Class VerPatio
 
     Private Sub BtnVer_Click(sender As Object, e As EventArgs) Handles btnVer.Click
         Try
-            Dim VentanaVer As Ventanita_Ver = New Ventanita_Ver
+            Dim VentanaVer As Ventana_Ver = New Ventana_Ver
             VerLotes.Instance.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString(), FormParent.Conexion)
             VentanaVer.LoadControl(VerLotes.Instance)
             VentanaVer.ShowDialog()
         Catch ex As Exception
             MessageBox.Show("Error al ver lote.")
         End Try
+    End Sub
+
+    Private Sub BtnPatios_Click(sender As Object, e As EventArgs) Handles btnPatios.Click
+        Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+        VentanaVer.GoToSection(4, String.Empty, Conexion)
+        VentanaVer.ShowDialog()
     End Sub
 End Class

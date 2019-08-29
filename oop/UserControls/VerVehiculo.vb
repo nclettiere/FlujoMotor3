@@ -76,14 +76,14 @@ Public Class VerVehiculo
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        DirectCast(ParentForm, Ventanita_Ver).Close()
+        DirectCast(ParentForm, Ventana_Ver).Close()
     End Sub
 
     Private Sub BtVerInspeccion_Click(sender As Object, e As EventArgs) Handles btVerInspeccion.Click
         Dim ResultadoInspecciones As DataTable = Conexion.Consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN +"'")
         If ResultadoInspecciones IsNot Nothing
             If ResultadoInspecciones.Rows.Count <> 0
-                DirectCast(ParentForm, Ventanita_Ver).GotoSection(0, VIN, Conexion)
+                DirectCast(ParentForm, Ventana_Ver).GotoSection(0, VIN, Conexion)
             Else
                  MessageBox.Show("Este vehiculo no tiene inspecciones.")
             End If
@@ -92,10 +92,13 @@ Public Class VerVehiculo
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            DirectCast(ParentForm, Ventanita_Ver).GotoSection(1, VIN, Conexion)
+            DirectCast(ParentForm, Ventana_Ver).GotoSection(1, VIN, Conexion)
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error")
         End Try
-        
+    End Sub
+
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        DirectCast(ParentForm, Ventana_Ver).GoToSection(3, VIN, Conexion)
     End Sub
 End Class

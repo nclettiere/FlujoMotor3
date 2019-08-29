@@ -190,6 +190,12 @@
     <Compile Include="UserControls\VerPatio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\VerPatios.Designer.vb">
+      <DependentUpon>VerPatios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VerPatios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\VerPosicion.Designer.vb">
       <DependentUpon>VerPosicion.vb</DependentUpon>
     </Compile>
@@ -202,16 +208,22 @@
     <Compile Include="UserControls\VerFoto.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ventanitas\Menu.Designer.vb">
+    <Compile Include="UserControls\VerZonas.Designer.vb">
+      <DependentUpon>VerZonas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VerZonas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Menu.Designer.vb">
       <DependentUpon>Menu.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventanitas\Menu.vb">
+    <Compile Include="Ventanas\Menu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Login.Designer.vb">
-      <DependentUpon>Ventanita_Login.vb</DependentUpon>
+    <Compile Include="Ventanas\Ventana_Login.Designer.vb">
+      <DependentUpon>Ventana_Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Login.vb">
+    <Compile Include="Ventanas\Ventana_Login.vb">
       <SubType>Form</SubType>
       <CustomToolNamespace>Menu</CustomToolNamespace>
     </Compile>
@@ -290,34 +302,34 @@
     <Compile Include="UserControls\VerVehiculo.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Agregar.Designer.vb">
-      <DependentUpon>Ventanita_Agregar.vb</DependentUpon>
+    <Compile Include="Ventanas\Ventana_Agregar.Designer.vb">
+      <DependentUpon>Ventana_Agregar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Agregar.vb">
+    <Compile Include="Ventanas\Ventana_Agregar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Editar.Designer.vb">
-      <DependentUpon>Ventanita_Editar.vb</DependentUpon>
+    <Compile Include="Ventanas\Ventana_Editar.Designer.vb">
+      <DependentUpon>Ventana_Editar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Editar.vb">
+    <Compile Include="Ventanas\Ventana_Editar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Eliminar.Designer.vb">
-      <DependentUpon>Ventanita_Eliminar.vb</DependentUpon>
+    <Compile Include="Ventanas\Ventana_Eliminar.Designer.vb">
+      <DependentUpon>Ventana_Eliminar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Eliminar.vb">
+    <Compile Include="Ventanas\Ventana_Eliminar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Ver.Designer.vb">
-      <DependentUpon>Ventanita_Ver.vb</DependentUpon>
+    <Compile Include="Ventanas\Ventana_Ver.Designer.vb">
+      <DependentUpon>Ventana_Ver.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Ver.vb">
+    <Compile Include="Ventanas\Ventana_Ver.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Seleccionar.Designer.vb">
-      <DependentUpon>Ventanita_Seleccionar.vb</DependentUpon>
+    <Compile Include="Ventanas\Ventana_Seleccionar.Designer.vb">
+      <DependentUpon>Ventana_Seleccionar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventanitas\Ventanita_Seleccionar.vb">
+    <Compile Include="Ventanas\Ventana_Seleccionar.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -334,17 +346,23 @@
     <EmbeddedResource Include="UserControls\VerPatio.resx">
       <DependentUpon>VerPatio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\VerPatios.resx">
+      <DependentUpon>VerPatios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VerPosicion.resx">
       <DependentUpon>VerPosicion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VerFoto.resx">
       <DependentUpon>VerFoto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanitas\Menu.resx">
+    <EmbeddedResource Include="UserControls\VerZonas.resx">
+      <DependentUpon>VerZonas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanitas\Ventanita_Login.resx">
-      <DependentUpon>Ventanita_Login.vb</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Ventana_Login.resx">
+      <DependentUpon>Ventana_Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -382,20 +400,20 @@
     <EmbeddedResource Include="UserControls\VerVehiculo.resx">
       <DependentUpon>VerVehiculo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanitas\Ventanita_Agregar.resx">
-      <DependentUpon>Ventanita_Agregar.vb</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Ventana_Agregar.resx">
+      <DependentUpon>Ventana_Agregar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanitas\Ventanita_Editar.resx">
-      <DependentUpon>Ventanita_Editar.vb</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Ventana_Editar.resx">
+      <DependentUpon>Ventana_Editar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanitas\Ventanita_Eliminar.resx">
-      <DependentUpon>Ventanita_Eliminar.vb</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Ventana_Eliminar.resx">
+      <DependentUpon>Ventana_Eliminar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanitas\Ventanita_Ver.resx">
-      <DependentUpon>Ventanita_Ver.vb</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Ventana_Ver.resx">
+      <DependentUpon>Ventana_Ver.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanitas\Ventanita_Seleccionar.resx">
-      <DependentUpon>Ventanita_Seleccionar.vb</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Ventana_Seleccionar.resx">
+      <DependentUpon>Ventana_Seleccionar.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

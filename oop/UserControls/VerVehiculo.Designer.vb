@@ -33,6 +33,7 @@ Partial Class VerVehiculo
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.labFila = New System.Windows.Forms.Label()
@@ -222,6 +223,7 @@ Partial Class VerVehiculo
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.Controls.Add(Me.Button1, 2, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.btnModificar, 1, 0)
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 453)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
@@ -247,6 +249,24 @@ Partial Class VerVehiculo
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Cerrar"
         Me.Button1.UseVisualStyleBackColor = false
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnModificar.BackColor = System.Drawing.Color.DimGray
+        Me.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.Orange
+        Me.btnModificar.Location = New System.Drawing.Point(212, 8)
+        Me.btnModificar.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnModificar.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(143, 53)
+        Me.btnModificar.TabIndex = 3
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel8
         '
@@ -639,13 +659,13 @@ Partial Class VerVehiculo
         Me.labColor.Text = "N/A"
         Me.labColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Ver_Vehiculillo
+        'VerVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "Ver_Vehiculillo"
+        Me.Name = "VerVehiculo"
         Me.Size = New System.Drawing.Size(972, 544)
         Me.Panel1.ResumeLayout(false)
         Me.TableLayoutPanel3.ResumeLayout(false)
@@ -700,4 +720,5 @@ End Sub
     Friend WithEvents Label9 As Label
     Friend WithEvents labFila As Label
     Friend WithEvents Label16 As Label
+    Friend WithEvents btnModificar As Button
 End Class

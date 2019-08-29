@@ -17,7 +17,7 @@ Public Class AgregarInspeccion
     End Property
 
     Public Shared Property ListaVehiculosSeleccionados As List(Of String)
-    Public Property FormParent As Ventanita_Ver
+    Public Property FormParent As Ventana_Ver
     Public Property ParentControl As AgregarVehiculo
     Public Property Conexion As DB.ODBC
     Public Property Cliente As String
@@ -110,5 +110,9 @@ Public Class AgregarInspeccion
                 Serilog.Log.Error(ex, "Posible valor nulo en Agregar Inspeccion.")
             End Try
         End If
+    End Sub
+
+    Private Sub BtnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        ParentForm.Close()
     End Sub
 End Class

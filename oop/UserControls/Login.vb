@@ -32,7 +32,7 @@ Public Class Login
 
                 If (EstablacerConexionDB) Then
                     MessageBox.Show("Conectado Exitosamente.")
-                    Ventanita_Login.ChangeControlSummary(0, Conexion)
+                    Ventana_Login.ChangeControlSummary(0, Conexion)
                 Else
                     MessageBox.Show("Usuario o Contrasena invalidos.")
                 End If

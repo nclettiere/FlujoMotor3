@@ -24,28 +24,6 @@ Public Class Login
 
     Public Property Cargado As Boolean = False
 
-    Private Sub Btn_LogIn_Click_1(sender As Object, e As EventArgs) 
-        If Not String.IsNullOrWhiteSpace(tbx_user.Text)
-            If Not String.IsNullOrWhiteSpace(tbx_passwd.Text)
-
-                Conexion.USER = tbx_user.Text
-                Conexion.PWD = tbx_passwd.Text
-                Dim EstablacerConexionDB = Conexion.Conectar(Conexion.Conectar())
-
-                If (EstablacerConexionDB) Then
-                    MessageBox.Show("Conectado Exitosamente.")
-                    Ventana_Login.ChangeControlSummary(0, Conexion)
-                Else
-                    MessageBox.Show("Usuario o Contrasena invalidos.")
-                End If
-            Else
-                MessageBox.Show("Debes ingresar una contrasena.")
-            End If
-        Else
-            MessageBox.Show("Debes ingresar un usuario.")
-        End If
-    End Sub
-
     Private Sub OnLoginLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Conexion.USER = "root"
@@ -79,6 +57,29 @@ Public Class Login
                 Case 2:
                     MessageBox.Show("!عربيعربى")
             End Select
+        End If
+    End Sub
+
+    Private Sub btn_LogIn_Click(sender As Object, e As EventArgs) Handles btn_LogIn.Click
+        If Not String.IsNullOrWhiteSpace(tbx_user.Text) Then
+
+            If Not String.IsNullOrWhiteSpace(tbx_passwd.Text) Then
+
+                Conexion.USER = tbx_user.Text
+                Conexion.PWD = tbx_passwd.Text
+                Dim EstablacerConexionDB = Conexion.Conectar(Conexion.Conectar())
+
+                If (EstablacerConexionDB) Then
+                    MessageBox.Show("Conectado Exitosamente.")
+                    Ventana_Login.ChangeControlSummary(0, Conexion)
+                Else
+                    MessageBox.Show("Usuario o Contrasena invalidos.")
+                End If
+            Else
+                MessageBox.Show("Debes ingresar una contrasena.")
+            End If
+        Else
+            MessageBox.Show("Debes ingresar un usuario.")
         End If
     End Sub
 End Class

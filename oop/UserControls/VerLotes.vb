@@ -50,11 +50,23 @@ Public Class VerLotes
         End Try
     End Sub
 
+    Friend Sub AgregarVehiculo(vinSeleccionado As String)
+        Try
+            Conexion.consultar("UPDATE vehiculos SET loteid="+ LoteId + " WHERE vehiculovin='"+ vinSeleccionado +"'")
+            MessageBox.Show("Vehiculo Agregado Correctamente.")
+            Dim ListaVehiculos As DataTable = Conexion.Consultar("SELECT * FROM vehiculos WHERE loteid=" + loteid)
+            DataGridViewVehiculos.DataSource = ListaVehiculos
+        Catch ex As Exception
+            MessageBox.Show("Hubo un error inespesperadamente inesperado. Chequee el log. Zapallo.")
+            Serilog.Log.Error(ex, "Error al agregar vehiculo a lote.")
+        End Try
+    End Sub
+
     Private Sub BtnEntregar_Click_1(sender As Object, e As EventArgs) Handles btnEntregar.Click
-        Dim result As Integer = MessageBox.Show("Los se encargaran de movilizar el lote.", "Desea entregar el lote?", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Los transportistas se encargaran de movilizar el lote.", "Desea entregar el lote?", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             Try
-                Conexion.Consultar("UPDATE lotes SET lotedescripcion ='"+ riTeBoDescripcion.Text + ";'" +" WHERE loteid="+ LoteId +";")   
+                Conexion.Consultar("UPDATE lotes SET lotefechasalida='"+ Now.ToString("yyyy-MM-dd hh:mm:ss") +"' WHERE loteid="+ LoteId +";")   
                 MessageBox.Show("Lote entregado correctamente.")
             Catch ex As Exception
                 Serilog.Log.Error(ex, "Error al entregar lote.")
@@ -154,5 +166,13 @@ Public Class VerLotes
         btnMod.Visible = False
 
         CargarDatos()
+    End Sub
+
+    Private Sub BtnAgregarVehiculo_Click(sender As Object, e As EventArgs) Handles btnAgregarVehiculo.Click
+        Dim VentanaVerControl As Ventana_Ver = New Ventana_Ver
+        Dim SelecVehiculo As SelecVehiculo = New SelecVehiculo
+        SelecVehiculo.CargarDatos(Conexion, Me)
+        VentanaVerControl.LoadControl(SelecVehiculo)
+        VentanaVerControl.ShowDialog
     End Sub
 End Class

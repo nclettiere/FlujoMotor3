@@ -22,188 +22,125 @@ Partial Class InspeccionWidget
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lblFecha = New System.Windows.Forms.Label()
-        Me.btnFotos = New System.Windows.Forms.Button()
-        Me.lblOperario = New System.Windows.Forms.Label()
-        Me.lbl_name = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.FlowContent = New System.Windows.Forms.FlowLayoutPanel()
+        Me.lblId = New System.Windows.Forms.Label()
         Me.rchtbxDesc = New System.Windows.Forms.RichTextBox()
-        Me.Panel1.SuspendLayout
-        Me.TableLayoutPanel1.SuspendLayout
-        Me.TableLayoutPanel3.SuspendLayout
-        Me.TableLayoutPanel2.SuspendLayout
+        Me.btnFoto = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.lblOp = New System.Windows.Forms.Label()
+        Me.lblfecha = New System.Windows.Forms.Label()
+        Me.FlowContent.SuspendLayout
         Me.SuspendLayout
         '
-        'Panel1
+        'FlowContent
         '
-        Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(617, 167)
-        Me.Panel1.TabIndex = 0
+        Me.FlowContent.AutoSize = true
+        Me.FlowContent.Controls.Add(Me.lblId)
+        Me.FlowContent.Controls.Add(Me.rchtbxDesc)
+        Me.FlowContent.Controls.Add(Me.btnFoto)
+        Me.FlowContent.Controls.Add(Me.Button1)
+        Me.FlowContent.Controls.Add(Me.lblOp)
+        Me.FlowContent.Controls.Add(Me.lblfecha)
+        Me.FlowContent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowContent.Location = New System.Drawing.Point(0, 0)
+        Me.FlowContent.Name = "FlowContent"
+        Me.FlowContent.Size = New System.Drawing.Size(500, 181)
+        Me.FlowContent.TabIndex = 0
         '
-        'TableLayoutPanel1
+        'lblId
         '
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.04182!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.95818!))
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.lbl_name, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(617, 167)
-        Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.ColumnCount = 1
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel3.Controls.Add(Me.lblFecha, 0, 2)
-        Me.TableLayoutPanel3.Controls.Add(Me.btnFotos, 0, 2)
-        Me.TableLayoutPanel3.Controls.Add(Me.lblOperario, 0, 0)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(372, 3)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 3
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(242, 161)
-        Me.TableLayoutPanel3.TabIndex = 2
-        '
-        'lblFecha
-        '
-        Me.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblFecha.AutoSize = true
-        Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblFecha.ForeColor = System.Drawing.Color.Orange
-        Me.lblFecha.Location = New System.Drawing.Point(3, 17)
-        Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(98, 17)
-        Me.lblFecha.TabIndex = 6
-        Me.lblFecha.Text = "Fecha: [fecha]"
-        Me.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnFotos
-        '
-        Me.btnFotos.BackColor = System.Drawing.Color.DimGray
-        Me.btnFotos.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnFotos.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnFotos.FlatAppearance.BorderSize = 0
-        Me.btnFotos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFotos.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnFotos.ForeColor = System.Drawing.Color.Orange
-        Me.btnFotos.Location = New System.Drawing.Point(3, 37)
-        Me.btnFotos.Name = "btnFotos"
-        Me.btnFotos.Size = New System.Drawing.Size(236, 48)
-        Me.btnFotos.TabIndex = 5
-        Me.btnFotos.Text = "Ver Foto"
-        Me.btnFotos.UseVisualStyleBackColor = false
-        '
-        'lblOperario
-        '
-        Me.lblOperario.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblOperario.AutoSize = true
-        Me.lblOperario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblOperario.ForeColor = System.Drawing.Color.Orange
-        Me.lblOperario.Location = New System.Drawing.Point(3, 0)
-        Me.lblOperario.Name = "lblOperario"
-        Me.lblOperario.Size = New System.Drawing.Size(143, 17)
-        Me.lblOperario.TabIndex = 1
-        Me.lblOperario.Text = "Hecha por: [operario]"
-        Me.lblOperario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lbl_name
-        '
-        Me.lbl_name.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.lbl_name.AutoSize = true
-        Me.lbl_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lbl_name.ForeColor = System.Drawing.Color.Orange
-        Me.lbl_name.Location = New System.Drawing.Point(3, 0)
-        Me.lbl_name.Name = "lbl_name"
-        Me.lbl_name.Size = New System.Drawing.Size(85, 17)
-        Me.lbl_name.TabIndex = 0
-        Me.lbl_name.Text = "Lote_[Index]"
-        Me.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.rchtbxDesc, 0, 1)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(94, 3)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.81367!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.18633!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(272, 161)
-        Me.TableLayoutPanel2.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = true
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Orange
-        Me.Label2.Location = New System.Drawing.Point(3, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 17)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Descripcion"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblId.AutoSize = true
+        Me.lblId.Location = New System.Drawing.Point(3, 0)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(39, 13)
+        Me.lblId.TabIndex = 0
+        Me.lblId.Text = "Label1"
         '
         'rchtbxDesc
         '
-        Me.rchtbxDesc.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rchtbxDesc.Location = New System.Drawing.Point(3, 51)
+        Me.rchtbxDesc.Location = New System.Drawing.Point(48, 3)
         Me.rchtbxDesc.Name = "rchtbxDesc"
-        Me.rchtbxDesc.ReadOnly = true
-        Me.rchtbxDesc.Size = New System.Drawing.Size(266, 107)
-        Me.rchtbxDesc.TabIndex = 2
-        Me.rchtbxDesc.Text = "Sin Descripcion"
+        Me.rchtbxDesc.Size = New System.Drawing.Size(336, 96)
+        Me.rchtbxDesc.TabIndex = 1
+        Me.rchtbxDesc.Text = ""
+        '
+        'btnFoto
+        '
+        Me.btnFoto.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnFoto.BackColor = System.Drawing.Color.DimGray
+        Me.btnFoto.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnFoto.FlatAppearance.BorderSize = 0
+        Me.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFoto.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnFoto.ForeColor = System.Drawing.Color.Orange
+        Me.btnFoto.Location = New System.Drawing.Point(3, 105)
+        Me.btnFoto.MaximumSize = New System.Drawing.Size(143, 51)
+        Me.btnFoto.MinimumSize = New System.Drawing.Size(143, 51)
+        Me.btnFoto.Name = "btnFoto"
+        Me.btnFoto.Size = New System.Drawing.Size(143, 51)
+        Me.btnFoto.TabIndex = 2
+        Me.btnFoto.Text = "foto"
+        Me.btnFoto.UseVisualStyleBackColor = false
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button1.BackColor = System.Drawing.Color.DimGray
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Orange
+        Me.Button1.Location = New System.Drawing.Point(152, 105)
+        Me.Button1.MaximumSize = New System.Drawing.Size(143, 51)
+        Me.Button1.MinimumSize = New System.Drawing.Size(143, 51)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(143, 51)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "danio"
+        Me.Button1.UseVisualStyleBackColor = false
+        '
+        'lblOp
+        '
+        Me.lblOp.AutoSize = true
+        Me.lblOp.Location = New System.Drawing.Point(301, 102)
+        Me.lblOp.Name = "lblOp"
+        Me.lblOp.Size = New System.Drawing.Size(39, 13)
+        Me.lblOp.TabIndex = 4
+        Me.lblOp.Text = "Label2"
+        '
+        'lblfecha
+        '
+        Me.lblfecha.AutoSize = true
+        Me.lblfecha.Location = New System.Drawing.Point(346, 102)
+        Me.lblfecha.Name = "lblfecha"
+        Me.lblfecha.Size = New System.Drawing.Size(39, 13)
+        Me.lblfecha.TabIndex = 5
+        Me.lblfecha.Text = "Label3"
         '
         'InspeccionWidget
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.AutoSize = true
         Me.BackColor = System.Drawing.Color.DarkGray
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.FlowContent)
+        Me.MaximumSize = New System.Drawing.Size(500, 250)
+        Me.MinimumSize = New System.Drawing.Size(300, 150)
         Me.Name = "InspeccionWidget"
-        Me.Size = New System.Drawing.Size(617, 167)
-        Me.Panel1.ResumeLayout(false)
-        Me.TableLayoutPanel1.ResumeLayout(false)
-        Me.TableLayoutPanel1.PerformLayout
-        Me.TableLayoutPanel3.ResumeLayout(false)
-        Me.TableLayoutPanel3.PerformLayout
-        Me.TableLayoutPanel2.ResumeLayout(false)
-        Me.TableLayoutPanel2.PerformLayout
+        Me.Size = New System.Drawing.Size(500, 181)
+        Me.FlowContent.ResumeLayout(false)
+        Me.FlowContent.PerformLayout
         Me.ResumeLayout(false)
+        Me.PerformLayout
 
 End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents lblOperario As Label
-    Friend WithEvents lbl_name As Label
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btnFotos As Button
+    Friend WithEvents FlowContent As FlowLayoutPanel
+    Friend WithEvents lblId As Label
     Friend WithEvents rchtbxDesc As RichTextBox
-    Friend WithEvents lblFecha As Label
+    Friend WithEvents btnFoto As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents lblOp As Label
+    Friend WithEvents lblfecha As Label
 End Class

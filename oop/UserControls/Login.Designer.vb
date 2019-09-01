@@ -26,22 +26,22 @@ Partial Class Login
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_LogIn = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.tbx_passwd = New System.Windows.Forms.TextBox()
-        Me.tbx_user = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tbx_user = New System.Windows.Forms.TextBox()
+        Me.tbx_passwd = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel1.SuspendLayout
-        Me.TableLayoutPanel2.SuspendLayout
-        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TableLayoutPanel1.SuspendLayout
-        Me.SuspendLayout
+        Me.Panel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.SuspendLayout()
         '
         'cbxIdioma
         '
         Me.cbxIdioma.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.cbxIdioma.FormattingEnabled = true
+        Me.cbxIdioma.FormattingEnabled = True
         Me.cbxIdioma.Items.AddRange(New Object() {"Espanol", "English", " العربية"})
         Me.cbxIdioma.Location = New System.Drawing.Point(112, 456)
         Me.cbxIdioma.Name = "cbxIdioma"
@@ -63,7 +63,7 @@ Partial Class Login
         Me.btn_LogIn.BackColor = System.Drawing.Color.Gray
         Me.btn_LogIn.FlatAppearance.BorderSize = 0
         Me.btn_LogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_LogIn.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btn_LogIn.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_LogIn.ForeColor = System.Drawing.Color.Orange
         Me.btn_LogIn.Location = New System.Drawing.Point(114, 9)
         Me.btn_LogIn.MaximumSize = New System.Drawing.Size(143, 53)
@@ -72,12 +72,12 @@ Partial Class Login
         Me.btn_LogIn.Size = New System.Drawing.Size(143, 53)
         Me.btn_LogIn.TabIndex = 15
         Me.btn_LogIn.Text = "Iniciar Sesion"
-        Me.btn_LogIn.UseVisualStyleBackColor = false
+        Me.btn_LogIn.UseVisualStyleBackColor = False
         '
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.tbx_user, 0, 1)
@@ -86,45 +86,32 @@ Partial Class Login
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 154)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 4
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(370, 219)
         Me.TableLayoutPanel2.TabIndex = 2
         '
-        'tbx_passwd
+        'Label3
         '
-        Me.tbx_passwd.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.tbx_passwd.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tbx_passwd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.tbx_passwd.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.tbx_passwd.Location = New System.Drawing.Point(50, 179)
-        Me.tbx_passwd.Margin = New System.Windows.Forms.Padding(50, 3, 50, 3)
-        Me.tbx_passwd.Name = "tbx_passwd"
-        Me.tbx_passwd.Size = New System.Drawing.Size(270, 22)
-        Me.tbx_passwd.TabIndex = 16
-        Me.tbx_passwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.tbx_passwd.UseSystemPasswordChar = true
-        '
-        'tbx_user
-        '
-        Me.tbx_user.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.tbx_user.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tbx_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.tbx_user.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.tbx_user.Location = New System.Drawing.Point(50, 70)
-        Me.tbx_user.Margin = New System.Windows.Forms.Padding(50, 3, 50, 3)
-        Me.tbx_user.Name = "tbx_user"
-        Me.tbx_user.Size = New System.Drawing.Size(270, 22)
-        Me.tbx_user.TabIndex = 13
-        Me.tbx_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(3, 137)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(3)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(364, 22)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "CONTRASEÑA"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
         Me.Label2.Location = New System.Drawing.Point(3, 29)
         Me.Label2.Margin = New System.Windows.Forms.Padding(3)
@@ -134,19 +121,32 @@ Partial Class Login
         Me.Label2.Text = "USUARIO"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label3
+        'tbx_user
         '
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(3, 137)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(3)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(364, 22)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "CONTRASEÑA"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.tbx_user.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tbx_user.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbx_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbx_user.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.tbx_user.Location = New System.Drawing.Point(50, 70)
+        Me.tbx_user.Margin = New System.Windows.Forms.Padding(50, 3, 50, 3)
+        Me.tbx_user.Name = "tbx_user"
+        Me.tbx_user.Size = New System.Drawing.Size(270, 22)
+        Me.tbx_user.TabIndex = 13
+        Me.tbx_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'tbx_passwd
+        '
+        Me.tbx_passwd.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tbx_passwd.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbx_passwd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbx_passwd.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.tbx_passwd.Location = New System.Drawing.Point(50, 179)
+        Me.tbx_passwd.Margin = New System.Windows.Forms.Padding(50, 3, 50, 3)
+        Me.tbx_passwd.Name = "tbx_passwd"
+        Me.tbx_passwd.Size = New System.Drawing.Size(270, 22)
+        Me.tbx_passwd.TabIndex = 16
+        Me.tbx_passwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbx_passwd.UseSystemPasswordChar = True
         '
         'PictureBox1
         '

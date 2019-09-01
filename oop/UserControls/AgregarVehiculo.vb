@@ -101,25 +101,7 @@ Public Class AgregarVehiculo
                         If Not String.IsNullOrWhiteSpace(txtModelo.Text)
                             If Not VehiculoAno.Value.Year > Now.Year And Not VehiculoAno.Value.Year < 1808
                                 If Not String.IsNullOrWhiteSpace(txtColor.Text)
-                                    If Not EstaModificando
-                                        If LoteModo
-                                            If LoteDatos
-                                                Return True
-                                            Else
-                                                MessageBox.Show("Debes seleccionar o crear un lote.")
-                                                Return False
-                                            End If
-                                        Else
-                                            If SelectedLote IsNot Nothing And LoteDatos
-                                                Return True
-                                            Else
-                                                MessageBox.Show("Debes seleccionar o crear un lote.")
-                                                Return False
-                                            End If
-                                        End If
-                                    Else
-                                        Return True
-                                    End If
+                                    Return True
                                 Else
                                     MessageBox.Show("El campo color no debe quedar vacio.")
                                     Return False
@@ -234,17 +216,74 @@ Public Class AgregarVehiculo
                                 Dim PatioInfo = FormParent.Conexion.Consultar("SELECT patioid FROM patios WHERE pationombre='" + NuevoLoteInfo(1) + "'")
                                 Dim InsertarLote As DataTable = FormParent.Conexion.Consultar("INSERT INTO lotes (loteid, lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES (" + (LoteCount.Rows(0).Item(0) + 1).ToString + ", '" + NuevoLoteInfo(0).ToString() + "', 'LOTE #" & (LoteCount.Rows(0).Item(0) + 1).ToString & "', 1," + PatioInfo.Rows(0).Item(0).ToString + ")")
                                 Dim InsertarVehiculo As DataTable = FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1, " + (LoteCount.Rows(0).Item(0) + 1).ToString + ")")
+
+                                Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
+                                AgregarInspeccionControl.CargarDatos(txtVin.Text, FormParent.Conexion, Me)
+                                Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+                                VentanaVer.LoadControl(AgregarInspeccionControl)
+                                VentanaVer.ShowDialog()
+
                                 MessageBox.Show("Vehiculo Ingresado Correctamente.")
                                 Serilog.Log.Information("Vehiculo insertado correctamente.")
                                 ClearFields()
                             Catch ex As Exception
                                 Serilog.Log.Fatal(ex, "No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarLote, IngresarVehiculo")
                             End Try
+                        Else
+                            MessageBox.Show("NO LOTE")
+
+                            Dim vehiculoTipo As String = cbxTipo.Text
+
+                            If Not (String.Equals("SUV", cbxTipo.Text))
+                                vehiculoTipo = cbxTipo.Text.ToLower()
+                            End If
+
+                            Dim VehiculoCount = FormParent.Conexion.Consultar("SELECT COUNT(*) FROM vehiculos")
+                            Dim InsertarVehiculo As DataTable = FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1 )")
+
+                            Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
+                            AgregarInspeccionControl.CargarDatos(txtVin.Text, FormParent.Conexion, Me)
+                            Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+                            VentanaVer.LoadControl(AgregarInspeccionControl)
+                            VentanaVer.ShowDialog()
+
+                            MessageBox.Show("Vehiculo Ingresado Correctamente.")
+                            Serilog.Log.Information("Vehiculo insertado correctamente.")
                         End If
                     Else
                         If LoteDatos
                             Try
                                 Dim InsertarVehiculo As DataTable = FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + cbxTipo.Text.ToLower() + "', 1, " + (SelectedLote.Item(0).Value).ToString + ")")
+
+                                Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
+                                AgregarInspeccionControl.CargarDatos(txtVin.Text, FormParent.Conexion, Me)
+                                Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+                                VentanaVer.LoadControl(AgregarInspeccionControl)
+                                VentanaVer.ShowDialog()
+
+                                MessageBox.Show("Vehiculo Ingresado Correctamente.")
+                                Serilog.Log.Information("Vehiculo insertado correctamente.")
+                                ClearFields()
+                            Catch ex As Exception
+                                Serilog.Log.Error(ex, "Error No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarVehiculo")
+                            End Try
+                        Else
+                            Try
+                                Dim vehiculoTipo As String = cbxTipo.Text
+
+                                If Not (String.Equals("SUV", cbxTipo.Text))
+                                    vehiculoTipo = cbxTipo.Text.ToLower()
+                                End If
+
+                                Dim VehiculoCount = FormParent.Conexion.Consultar("SELECT COUNT(*) FROM vehiculos")
+                                Dim InsertarVehiculo As DataTable = FormParent.FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1 )")
+
+                                Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
+                                AgregarInspeccionControl.CargarDatos(txtVin.Text, FormParent.Conexion, Me)
+                                Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+                                VentanaVer.LoadControl(AgregarInspeccionControl)
+                                VentanaVer.ShowDialog()
+
                                 MessageBox.Show("Vehiculo Ingresado Correctamente.")
                                 Serilog.Log.Information("Vehiculo insertado correctamente.")
                                 ClearFields()

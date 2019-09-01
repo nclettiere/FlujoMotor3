@@ -28,6 +28,7 @@ Partial Class VerLotes
         Me.btCerrar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.cbxPatios = New System.Windows.Forms.ComboBox()
         Me.lblPatio = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -48,10 +49,13 @@ Partial Class VerLotes
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnMod = New System.Windows.Forms.Button()
+        Me.btnAgregarVehiculo = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
@@ -63,6 +67,7 @@ Partial Class VerLotes
         Me.Panel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TableLayoutPanel5.SuspendLayout
         Me.SuspendLayout
         '
         'TableLayoutPanel1
@@ -150,24 +155,27 @@ Partial Class VerLotes
         Me.TableLayoutPanel2.Controls.Add(Me.Panel3, 1, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.Label8, 0, 5)
         Me.TableLayoutPanel2.Controls.Add(Me.Label5, 0, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnMod, 1, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnMod, 1, 7)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnAgregarVehiculo, 1, 6)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 7
+        Me.TableLayoutPanel2.RowCount = 8
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(449, 433)
         Me.TableLayoutPanel2.TabIndex = 0
         '
         'Panel6
         '
         Me.Panel6.AutoSize = true
+        Me.Panel6.Controls.Add(Me.Button1)
         Me.Panel6.Controls.Add(Me.cbxPatios)
         Me.Panel6.Controls.Add(Me.lblPatio)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
@@ -175,6 +183,26 @@ Partial Class VerLotes
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(277, 26)
         Me.Panel6.TabIndex = 20
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom),System.Windows.Forms.AnchorStyles)
+        Me.Button1.AutoSize = true
+        Me.Button1.BackColor = System.Drawing.Color.DimGray
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Orange
+        Me.Button1.Location = New System.Drawing.Point(53, -14)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 20, 3, 3)
+        Me.Button1.MaximumSize = New System.Drawing.Size(999, 55)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(171, 55)
+        Me.Button1.TabIndex = 23
+        Me.Button1.Text = "Aceptar y Modificar"
+        Me.Button1.UseVisualStyleBackColor = false
+        Me.Button1.Visible = false
         '
         'cbxPatios
         '
@@ -416,15 +444,34 @@ Partial Class VerLotes
         Me.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMod.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnMod.ForeColor = System.Drawing.Color.Orange
-        Me.btnMod.Location = New System.Drawing.Point(222, 329)
+        Me.btnMod.Location = New System.Drawing.Point(222, 382)
         Me.btnMod.Margin = New System.Windows.Forms.Padding(3, 20, 3, 3)
         Me.btnMod.MaximumSize = New System.Drawing.Size(999, 55)
         Me.btnMod.Name = "btnMod"
-        Me.btnMod.Size = New System.Drawing.Size(171, 55)
+        Me.btnMod.Size = New System.Drawing.Size(171, 48)
         Me.btnMod.TabIndex = 21
         Me.btnMod.Text = "Aceptar y Modificar"
         Me.btnMod.UseVisualStyleBackColor = false
         Me.btnMod.Visible = false
+        '
+        'btnAgregarVehiculo
+        '
+        Me.btnAgregarVehiculo.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnAgregarVehiculo.AutoSize = true
+        Me.btnAgregarVehiculo.BackColor = System.Drawing.Color.DimGray
+        Me.btnAgregarVehiculo.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAgregarVehiculo.FlatAppearance.BorderSize = 0
+        Me.btnAgregarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnAgregarVehiculo.ForeColor = System.Drawing.Color.Orange
+        Me.btnAgregarVehiculo.Location = New System.Drawing.Point(222, 309)
+        Me.btnAgregarVehiculo.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAgregarVehiculo.MaximumSize = New System.Drawing.Size(999, 55)
+        Me.btnAgregarVehiculo.Name = "btnAgregarVehiculo"
+        Me.btnAgregarVehiculo.Size = New System.Drawing.Size(171, 53)
+        Me.btnAgregarVehiculo.TabIndex = 23
+        Me.btnAgregarVehiculo.Text = "Agregar Vehiculo"
+        Me.btnAgregarVehiculo.UseVisualStyleBackColor = false
         '
         'Label6
         '
@@ -460,9 +507,10 @@ Partial Class VerLotes
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label6, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.DataGridViewVehiculos, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel5, 0, 2)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(464, 3)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowCount = 3
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
@@ -473,7 +521,7 @@ Partial Class VerLotes
         'DataGridViewVehiculos
         '
         Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Top
         Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 29)
         Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
         Me.DataGridViewVehiculos.ReadOnly = true
@@ -482,8 +530,41 @@ Partial Class VerLotes
         Me.DataGridViewVehiculos.ShowCellToolTips = false
         Me.DataGridViewVehiculos.ShowEditingIcon = false
         Me.DataGridViewVehiculos.ShowRowErrors = false
-        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(483, 490)
+        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(483, 362)
         Me.DataGridViewVehiculos.TabIndex = 6
+        '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.ColumnCount = 1
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanel5.Controls.Add(Me.Button3, 0, 0)
+        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 397)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 1
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(483, 122)
+        Me.TableLayoutPanel5.TabIndex = 7
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Button3.AutoSize = true
+        Me.Button3.BackColor = System.Drawing.Color.DimGray
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.Orange
+        Me.Button3.Location = New System.Drawing.Point(0, 33)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button3.MaximumSize = New System.Drawing.Size(999, 55)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(483, 55)
+        Me.Button3.TabIndex = 24
+        Me.Button3.Text = "Eliminar Vehiculo"
+        Me.Button3.UseVisualStyleBackColor = false
+        Me.Button3.Visible = false
         '
         'VerLotes
         '
@@ -511,6 +592,8 @@ Partial Class VerLotes
         Me.TableLayoutPanel3.ResumeLayout(false)
         Me.TableLayoutPanel3.PerformLayout
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
+        Me.TableLayoutPanel5.ResumeLayout(false)
+        Me.TableLayoutPanel5.PerformLayout
         Me.ResumeLayout(false)
 
 End Sub
@@ -545,4 +628,8 @@ End Sub
     Friend WithEvents cbxPatios As ComboBox
     Friend WithEvents lblPatio As Label
     Friend WithEvents btnMod As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAgregarVehiculo As Button
+    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents Button3 As Button
 End Class

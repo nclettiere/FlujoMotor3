@@ -20,19 +20,33 @@ Public Class VerInspeccion
     Friend Sub Populate(VIN As String, ByRef Conexion As DB.ODBC)
         lblVehiculoVin.Text = "Viendo Vehiculo: " + VIN
         Dim ResultadoInspecciones As DataTable = Conexion.Consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN + "'")
-        If ResultadoInspecciones IsNot Nothing
+        If ResultadoInspecciones IsNot Nothing Then
             Dim index As Integer = 0
-            If ResultadoInspecciones.Rows.Count <> 0
-                MainWidgets.Controls.Clear
-                For Each row As DataRow In ResultadoInspecciones.Rows
-                    Dim widget As New InspeccionWidget()
-                    widget.CargarDatos(row("inspeccionid").ToString, Conexion, index)
-                    MainWidgets.Controls.Add(widget)
-                    widget.Height = 220
-                    widget.Width = 1000
-                    widget.Dock = DockStyle.Top
-                    index += 1
-                Next row
+            If ResultadoInspecciones.Rows.Count <> 0 Then
+                Dim Inspecciones As DataTable = Conexion.Consultar("select * from inspecciones where vehiculovin='" + VIN + "' AND inspeccionid not in(select inspeccionid from inspecciondanio)")
+                DataGridInspecciones.DataSource = Inspecciones
+                Dim QueryFiltro As String = String.Empty
+                Dim Length = ResultadoInspecciones.Rows.Count - 1
+                Dim Contador As Integer = 0
+                For Each Row As DataRow in ResultadoInspecciones.Rows
+                    Try
+                        If Contador < Length
+                            QueryFiltro = QueryFiltro + "inspeccionid=" +  Row.Item("inspeccionid").ToString + " OR "
+                        Else
+                            QueryFiltro = QueryFiltro  + "inspeccionid=" + Row.Item("inspeccionid").ToString
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Contador += 1
+                Next
+
+                Dim InspeccionesDanio As DataTable = Conexion.Consultar("SELECT * FROM danios WHERE danioid IN (SELECT danioid FROM inspecciondanio WHERE "+ QueryFiltro +")")
+                DataGridDanios.DataSource = InspeccionesDanio
+                DataGridDanios.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                DataGridDanios.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                DataGridDanios.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                DataGridDanios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells
             Else
                 MessageBox.Show("Este vehiculo no tiene inspecciones.")
                 Thread.Sleep(1000)
@@ -43,7 +57,6 @@ Public Class VerInspeccion
             Thread.Sleep(1000)
             FormParent.GoToSection(1)
         End If
-        Me.Size = MainWidgets.Size
     End Sub
 
     Private Sub BtCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click

@@ -190,6 +190,12 @@
     <Compile Include="UserControls\SeleccionarLotes.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\SelecVehiculo.Designer.vb">
+      <DependentUpon>SelecVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelecVehiculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\VerPatio.Designer.vb">
       <DependentUpon>VerPatio.vb</DependentUpon>
     </Compile>
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SeleccionarLotes.resx">
       <DependentUpon>SeleccionarLotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelecVehiculo.resx">
+      <DependentUpon>SelecVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VerPatio.resx">
       <DependentUpon>VerPatio.vb</DependentUpon>

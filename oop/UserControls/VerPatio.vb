@@ -32,7 +32,7 @@ Public Class VerPatio
 
     Private Sub OnVerPatioLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos")
+            Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos WHERE loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
             DataGridViewVehiculos.DataSource = resultado
             DataGridViewVehiculos.MultiSelect = False
         Catch ex As Exception

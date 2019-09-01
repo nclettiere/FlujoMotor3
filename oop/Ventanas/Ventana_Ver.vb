@@ -41,6 +41,18 @@ Public Class Ventana_Ver
         modSubZona.AutoSize = True
     End Sub
 
+    Friend Sub LoadControl(agregarInsp As AgregarInspeccion)
+        Me.ClientSize = agregarInsp.Size
+        mainContent.Controls.Add(agregarInsp)
+        agregarInsp.AutoSize = True
+    End Sub
+
+    Friend Sub LoadControl(selecVehiculo As SelecVehiculo)
+         Me.ClientSize = selecVehiculo.Size
+        mainContent.Controls.Add(selecVehiculo)
+        selecVehiculo.AutoSize = True
+    End Sub
+
     ''' <summary>
     ''' Metodo usado para cambiar dinamicamente el contenido del MainContent
     ''' </summary>
@@ -110,7 +122,7 @@ Public Class Ventana_Ver
                 Dim VerZonasControl = New VerZonas
                 VerZonasControl.Conexion = Conexion
                 '' USA VIN COMO PATIOID <======
-                VerZonasControl.PatioId = VIN'=
+                VerZonasControl.PatioId = VIN '=
                 '' ============================
                 Me.ClientSize = VerZonasControl.Size
                 Selection = VerZonasControl

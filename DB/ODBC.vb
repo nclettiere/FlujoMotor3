@@ -93,17 +93,16 @@ Public Class ODBC
             Dim fileReader As String
             fileReader = My.Computer.FileSystem.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "conexioninformix.yaml"))
             Console.WriteLine(fileReader)
-            conexion = fileReader + "UID=" + USER + ";Password=" + PWD + ";"
+            conexion = fileReader
         Catch ex As Exception
             Serilog.Log.Fatal("No se pudo leer el archivo de configuracion informix. Se utilizara el string por defecto.")
             conexion = "
                 Driver={IBM INFORMIX ODBC DRIVER};
                 Database=big;
-                Host=192.168.9.37;
+                Host=192.168.6.148;
                 Server=ol_esi;
                 Service=9088;
-                Protocol=onsoctcp;
-                UID=" + USER + ";Password=" + PWD + ";"
+                Protocol=onsoctcp;"
         End Try
 
         Return conexion

@@ -23,7 +23,7 @@ Partial Class AgregarInspeccion
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.labVIN = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.btAgregar = New System.Windows.Forms.Button()
@@ -36,14 +36,13 @@ Partial Class AgregarInspeccion
         Me.PanelDanio = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.PbDanio = New System.Windows.Forms.PictureBox()
         Me.btnAgregarFoto = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.rtbx = New System.Windows.Forms.RichTextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.PbDanio = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
@@ -52,8 +51,8 @@ Partial Class AgregarInspeccion
         Me.PanelDanio.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel5.SuspendLayout
-        Me.TableLayoutPanel6.SuspendLayout
         CType(Me.PbDanio,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TableLayoutPanel6.SuspendLayout
         Me.SuspendLayout
         '
         'TableLayoutPanel2
@@ -61,7 +60,7 @@ Partial Class AgregarInspeccion
         Me.TableLayoutPanel2.ColumnCount = 2
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.38623!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.61377!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblTitulo, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.labVIN, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
@@ -72,19 +71,19 @@ Partial Class AgregarInspeccion
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(607, 54)
         Me.TableLayoutPanel2.TabIndex = 0
         '
-        'Label1
+        'lblTitulo
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = true
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Orange
-        Me.Label1.Location = New System.Drawing.Point(3, 14)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(154, 26)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "VEHICULO"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblTitulo.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lblTitulo.AutoSize = true
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.Orange
+        Me.lblTitulo.Location = New System.Drawing.Point(3, 14)
+        Me.lblTitulo.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(154, 26)
+        Me.lblTitulo.TabIndex = 2
+        Me.lblTitulo.Text = "VEHICULO"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'labVIN
         '
@@ -178,7 +177,7 @@ Partial Class AgregarInspeccion
         Me.Panel2.Controls.Add(Me.btnInsertar)
         Me.Panel2.Controls.Add(Me.btnCancelar)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 337)
+        Me.Panel2.Location = New System.Drawing.Point(0, 283)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 20, 3, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(613, 65)
@@ -224,7 +223,7 @@ Partial Class AgregarInspeccion
         Me.PanelDanio.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelDanio.Location = New System.Drawing.Point(0, 121)
         Me.PanelDanio.Name = "PanelDanio"
-        Me.PanelDanio.Size = New System.Drawing.Size(613, 216)
+        Me.PanelDanio.Size = New System.Drawing.Size(613, 162)
         Me.PanelDanio.TabIndex = 1
         Me.PanelDanio.Visible = false
         '
@@ -233,7 +232,6 @@ Partial Class AgregarInspeccion
         Me.TableLayoutPanel4.AutoSize = true
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Button1, 0, 2)
         Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel6, 0, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top
@@ -246,7 +244,7 @@ Partial Class AgregarInspeccion
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(613, 216)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(613, 162)
         Me.TableLayoutPanel4.TabIndex = 1
         '
         'TableLayoutPanel5
@@ -265,6 +263,16 @@ Partial Class AgregarInspeccion
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(607, 96)
         Me.TableLayoutPanel5.TabIndex = 1
+        '
+        'PbDanio
+        '
+        Me.PbDanio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PbDanio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PbDanio.Location = New System.Drawing.Point(337, 3)
+        Me.PbDanio.Name = "PbDanio"
+        Me.PbDanio.Size = New System.Drawing.Size(267, 90)
+        Me.PbDanio.TabIndex = 4
+        Me.PbDanio.TabStop = false
         '
         'btnAgregarFoto
         '
@@ -338,32 +346,6 @@ Partial Class AgregarInspeccion
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'PbDanio
-        '
-        Me.PbDanio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PbDanio.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PbDanio.Location = New System.Drawing.Point(337, 3)
-        Me.PbDanio.Name = "PbDanio"
-        Me.PbDanio.Size = New System.Drawing.Size(267, 90)
-        Me.PbDanio.TabIndex = 4
-        Me.PbDanio.TabStop = false
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DimGray
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Orange
-        Me.Button1.Location = New System.Drawing.Point(3, 165)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(607, 48)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Agregar"
-        Me.Button1.UseVisualStyleBackColor = false
-        '
         'AgregarInspeccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -387,15 +369,15 @@ Partial Class AgregarInspeccion
         Me.TableLayoutPanel4.ResumeLayout(false)
         Me.TableLayoutPanel5.ResumeLayout(false)
         Me.TableLayoutPanel5.PerformLayout
+        CType(Me.PbDanio,System.ComponentModel.ISupportInitialize).EndInit
         Me.TableLayoutPanel6.ResumeLayout(false)
         Me.TableLayoutPanel6.PerformLayout
-        CType(Me.PbDanio,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
 
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTitulo As Label
     Friend WithEvents labVIN As Label
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents btAgregar As Button
@@ -415,5 +397,4 @@ End Sub
     Friend WithEvents btnInsertar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents PbDanio As PictureBox
-    Friend WithEvents Button1 As Button
 End Class

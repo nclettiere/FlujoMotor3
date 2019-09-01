@@ -33,10 +33,7 @@ Public Class VerVehiculo
     Private Sub ProcesarDatos()
         Dim resultadoVehiculo As DataTable = Conexion.Consultar("SELECT * FROM vehiculos WHERE vehiculovin='" + vin + "'")
         If resultadoVehiculo IsNot Nothing
-            Dim resultadoLote As DataTable = Conexion.Consultar("SELECT * FROM lotes WHERE loteid=" + resultadoVehiculo.Rows(0).Item("loteid").ToString + "")
-            If resultadoVehiculo IsNot Nothing
-                Dim resultadoPatio As DataTable = Conexion.Consultar("SELECT * FROM patios WHERE patioid=" + resultadoLote.Rows(0).Item("patioid").ToString + "")
-                Dim resultadoSubZonaVehiculo As DataTable = Conexion.Consultar("SELECT * FROM vehiculoSubZona WHERE vehiculovin='" + resultadoVehiculo.Rows(0).Item(0).ToString + "'")
+            If resultadoVehiculo.Rows.Count > 0
                 VIN = resultadoVehiculo.Rows(0).Item("vehiculovin").ToString
                 lblVin.Text = VIN
                 labFecha.Text = resultadoVehiculo.Rows(0).Item("vehiculofecha").ToString
@@ -46,30 +43,30 @@ Public Class VerVehiculo
                 labAno.Text = resultadoVehiculo.Rows(0).Item("vehiculoanio").ToString
                 labTipo.Text = resultadoVehiculo.Rows(0).Item("vehiculotipo").ToString 
 
-                If resultadoLote IsNot Nothing
-                    If resultadoLote.Rows.Count > 0
-                        labLoteName.Text = resultadoLote.Rows(0).Item(1).ToString
+                If resultadoVehiculo.Rows(0).Item("loteid") IsNot Nothing
+                    Dim resultadoLote As DataTable = Conexion.Consultar("SELECT * FROM lotes WHERE loteid=" + resultadoVehiculo.Rows(0).Item("loteid").ToString + "")
+                    If resultadoLote IsNot Nothing
+                        If resultadoLote.Rows.Count > 0
+                            labLoteName.Text = resultadoLote.Rows(0).Item(1).ToString
+                            Dim resultadoPatio As DataTable = Conexion.Consultar("SELECT * FROM patios WHERE patioid=" + resultadoLote.Rows(0).Item("patioid").ToString + "")
+                            If resultadoPatio IsNot Nothing
+                                Try
+                                    labPatio.Text = resultadoPatio.Rows(0).Item("pationombre").ToString
+                                    Dim resultadoSubZonaVehiculo As DataTable = Conexion.Consultar("SELECT * FROM vehiculoSubZona WHERE vehiculovin='" + resultadoVehiculo.Rows(0).Item(0).ToString + "'")
+                                    If resultadoSubZonaVehiculo IsNot Nothing
+                                        If resultadoSubZonaVehiculo.Rows.Count > 0
+                                            labSubzona.Text = resultadoSubZonaVehiculo.Rows(0).Item("subzonanombre").ToString
+                                            labColumna.Text = resultadoSubZonaVehiculo.Rows(0).Item("columna").ToString
+                                            labFila.Text = resultadoSubZonaVehiculo.Rows(0).Item("fila").ToString
+                                            labZona.Text = resultadoSubZonaVehiculo.Rows(0).Item("zonaid").ToString
+                                        End If
+                                    End If
+                                Catch ex As Exception
+                                    Log.Warning(ex, "Error out of index")
+                                End Try
+                            End If
+                        End If
                     End If
-                End If
-                
-                If resultadoPatio IsNot Nothing
-                    Try
-                        labPatio.Text = resultadoPatio.Rows(0).Item("pationombre").ToString
-                    Catch ex As Exception
-                        Log.Warning(ex, "Error out of index")
-                    End Try
-                End If
-
-                If resultadoSubZonaVehiculo.Rows.Count > 0
-                    Try
-                        Dim resultadoZonaVehiculo As DataTable = Conexion.Consultar("SELECT * FROM vehiculoSubZona WHERE vehiculovin='" + resultadoVehiculo.Rows(0).Item(0).ToString + "'")
-                        labSubzona.Text = resultadoSubZonaVehiculo.Rows(0).Item("subzonanombre").ToString
-                        labColumna.Text = resultadoSubZonaVehiculo.Rows(0).Item("columna").ToString
-                        labFila.Text = resultadoSubZonaVehiculo.Rows(0).Item("fila").ToString
-                        labZona.Text = resultadoSubZonaVehiculo.Rows(0).Item("zonaid").ToString
-                    Catch ex As Exception
-                        Log.Warning(ex, "Error al cargar datos.")
-                    End Try
                 End If
             End If
         End If

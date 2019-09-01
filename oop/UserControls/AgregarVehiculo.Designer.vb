@@ -115,11 +115,11 @@ Partial Class AgregarVehiculo
         Me.Label3.AutoSize = true
         Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(3, 359)
+        Me.Label3.Location = New System.Drawing.Point(3, 346)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(142, 26)
+        Me.Label3.Size = New System.Drawing.Size(142, 52)
         Me.Label3.TabIndex = 19
-        Me.Label3.Text = "LOTE"
+        Me.Label3.Text = "LOTE (OPCIONAL)"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtColor
@@ -442,13 +442,13 @@ Partial Class AgregarVehiculo
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = false
         '
-        'Agregar_Vehiculillo
+        'AgregarVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanelMain)
-        Me.Name = "Agregar_Vehiculillo"
+        Me.Name = "AgregarVehiculo"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(545, 499)
         Me.TableLayoutPanelMain.ResumeLayout(false)

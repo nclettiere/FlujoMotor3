@@ -1,6 +1,4 @@
-﻿Imports DB
-
-Public Class Ventana_Seleccionar
+﻿Public Class Ventana_Seleccionar
     Public Property ParentLoad As AgregarVehiculo
 
     Public Property SelectedLote As String
@@ -44,40 +42,13 @@ Public Class Ventana_Seleccionar
         End If
     End Sub
 
-    Public Shared Sub UpdateLotes()
-       
-    End Sub
-
     Friend Sub GoToSection(ByVal Section As Integer, Parent As Object)
         Dim Selection As Object
         Select Case Section
             Case 0
                 Selection = AgregarLote.Instance
-            Case 1
-                Selection = SeleccionarVehiculo.Instance
-                Selection.FormParent = DirectCast(Parent, AgregarLote)
-            Case 2
-                Selection = SeleccionarLotes.Instance
-            Case Else
-                Selection = AgregarLote.Instance
-        End Select
-
-        If Not mainContent.Contains(Selection) Then
-            MainContent.Controls.Add(Selection.Instance)
-            Selection.Instance.Dock = DockStyle.Fill
-            Selection.Instance.BringToFront()
-        Else
-            Selection.Instance.BringToFront()
-        End If
-    End Sub
-
-    Friend Sub GoToSection(ByVal Section As Integer, Parent As Object, conexion As ODBC)
-        Dim Selection As Object
-        Select Case Section
-            Case 0
-                Selection = AgregarLote.Instance
                 Me.ClientSize = Selection.Size
-                AgregarLote.Instance.CargarDatos(Me, Parent, conexion)
+                AgregarLote.Instance.CargarDatos(Me, Parent)
             Case 1
                 Selection = SeleccionarVehiculo.Instance
                 Me.ClientSize = Selection.Size
@@ -85,7 +56,7 @@ Public Class Ventana_Seleccionar
             Case 2
                 Selection = SeleccionarLotes.Instance
                 Me.ClientSize = Selection.Size
-                SeleccionarLotes.Instance.CargarDatos(Me, Parent, conexion)
+                SeleccionarLotes.Instance.CargarDatos(Me, Parent)
             Case Else
                 Selection = AgregarLote.Instance
         End Select

@@ -27,41 +27,49 @@ Public Class VerVehiculo
     End Sub
 
     Private Sub ProcesarDatos()
-        Dim Vehiculo As DataRow = VObtenerVIN(VIN)
-        If Vehiculo IsNot Nothing
-            VIN = Vehiculo.Item("vehiculovin").ToString
-            lblVin.Text = VIN
-            labFecha.Text = Vehiculo.Item("vehiculofecha").ToString
-            labColor.Text = Vehiculo.Item("vehiculocolor").ToString
-            labMarca.Text = Vehiculo.Item("vehiculomarca").ToString
-            labModelo.Text = Vehiculo.Item("vehiculomodelo").ToString
-            labAno.Text = Vehiculo.Item("vehiculoanio").ToString
-            labTipo.Text = Vehiculo.Item("vehiculotipo").ToString 
+        Try
+            Dim Vehiculo As DataRow = VObtenerVIN(VIN)
+            If Vehiculo IsNot Nothing
+                VIN = Vehiculo.Item("vehiculovin").ToString
+                lblVin.Text = VIN
+                labFecha.Text = Vehiculo.Item("vehiculofecha").ToString
+                labColor.Text = Vehiculo.Item("vehiculocolor").ToString
+                labMarca.Text = Vehiculo.Item("vehiculomarca").ToString
+                labModelo.Text = Vehiculo.Item("vehiculomodelo").ToString
+                labAno.Text = Vehiculo.Item("vehiculoanio").ToString
+                labTipo.Text = Vehiculo.Item("vehiculotipo").ToString 
 
-            If Vehiculo.Item("loteid") IsNot Nothing
-                Dim Lote As DataRow = LObtenerID(Vehiculo.Item("loteid"))
-                If Lote IsNot Nothing
-                    labLoteName.Text = Lote.Item("lotenombre")
-                    Dim Patio As DataRow = PObtenerID(Lote.Item("patioid").ToString)
-                    Dim Zonas As DataRow = ZObtenerPatioID(Lote.Item("patioid").ToString)
-                    If Patio IsNot Nothing
+                If Vehiculo.Item("loteid") IsNot Nothing
+                    Dim Lote As DataRow = LObtenerID(Vehiculo.Item("loteid"))
+                    If Lote IsNot Nothing
+                        labLoteName.Text = Lote.Item("lotenombre")
                         Try
-                            labPatio.Text = Patio.Item("pationombre")
-                            Dim SubZona = SZObtenerId(Zonas.Item("zonaid"))
-                            If SubZona IsNot Nothing
-                                Dim VSubZona = VSZObtener(Vehiculo.Item("vehiculovin"))
-                                labSubzona.Text = SubZona(0).Item("subzonanombre").ToString
-                                labColumna.Text = VSubZona.Item("columna").ToString
-                                labFila.Text = VSubZona.Item("fila").ToString
-                                labZona.Text = SubZona(0).Item("zonaid").ToString
+                            Dim Patio As DataRow = PObtenerID(Lote.Item("patioid").ToString)
+                            Dim Zonas As DataRow = ZObtenerPatioID(Lote.Item("patioid").ToString)
+                            If Patio IsNot Nothing
+                                Try
+                                    labPatio.Text = Patio.Item("pationombre")
+                                    Dim SubZona = SZObtenerId(Zonas.Item("zonaid"))
+                                    If SubZona IsNot Nothing
+                                        Dim VSubZona = VSZObtener(Vehiculo.Item("vehiculovin"))
+                                        labSubzona.Text = SubZona(0).Item("subzonanombre").ToString
+                                        labZona.Text = SubZona(0).Item("zonaid").ToString
+                                        labColumna.Text = VSubZona.Item("columna").ToString
+                                        labFila.Text = VSubZona.Item("fila").ToString
+                                    End If
+                                Catch ex As Exception
+                                    Log.Warning(ex, "Error out of index")
+                                End Try
                             End If
                         Catch ex As Exception
-                            Log.Warning(ex, "Error out of index")
+                            Serilog.Log.Warning(ex, "El vehiculo tiene subzona asignada?")
                         End Try
                     End If
                 End If
             End If
-        End If
+        Catch ex As Exception
+            Serilog.Log.Warning(ex, "Error al extraer cierta informacion del vehiculo. Chequee el log para mas informacion.")
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

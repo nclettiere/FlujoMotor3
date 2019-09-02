@@ -1,4 +1,4 @@
-﻿Imports DB
+﻿Imports Logica
 
 Public Class SeleccionarLotes
     Private Shared _instance As SeleccionarLotes
@@ -17,7 +17,6 @@ Public Class SeleccionarLotes
 
     Public Property FormParent As Ventana_Seleccionar
     Public Property ParentControl As AgregarVehiculo
-    Public Property Conexion As DB.ODBC
 
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) 
          'If lisBoLote.SelectedItems.Count > 0
@@ -26,12 +25,11 @@ Public Class SeleccionarLotes
          'End If
     End Sub
 
-    Friend Sub CargarDatos(ventanita_Seleccionar As Ventana_Seleccionar, parent As Object, conexion As ODBC)
+    Friend Sub CargarDatos(ventanita_Seleccionar As Ventana_Seleccionar, parent As Object)
         FormParent = ventanita_Seleccionar
         ParentControl = DirectCast(parent, AgregarVehiculo)
-        Me.Conexion = conexion
         Try
-            Dim resultadoLotes As DataTable = conexion.Consultar("SELECT * FROM lotes")
+            Dim resultadoLotes As DataTable = LObtenerAll
             If resultadoLotes IsNot Nothing
                 DataGridViewLotes.DataSource = resultadoLotes
                 Else

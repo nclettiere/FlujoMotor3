@@ -1,4 +1,4 @@
-﻿Imports DB
+﻿Imports Logica
 
 Public Class AgregarLote
     Private Shared _instance As AgregarLote
@@ -17,7 +17,6 @@ Public Class AgregarLote
     Public Shared Property ListaVehiculosSeleccionados As List(Of String)
     Public Property FormParent As Ventana_Seleccionar
     Public Property ParentControl As AgregarVehiculo
-    Public Property Conexion As DB.ODBC
     Public Property Cliente As String
 
     Private Sub BtnAgrExistente_Click(sender As Object, e As EventArgs) 
@@ -42,13 +41,12 @@ Public Class AgregarLote
         End If
     End Sub
 
-    Friend Sub CargarDatos(ventanita_Seleccionar As Ventana_Seleccionar, parent As Object, conexion As ODBC)
+    Friend Sub CargarDatos(ventanita_Seleccionar As Ventana_Seleccionar, parent As Object)
         FormParent = ventanita_Seleccionar
         ParentControl = DirectCast(parent, AgregarVehiculo)
-        Me.Conexion = conexion
 
         Try
-            Dim ConsultaPatios As DataTable = conexion.Consultar("SELECT * FROM patios")
+            Dim ConsultaPatios As DataTable = PObtenerAll
             For Each item As DataRow In ConsultaPatios.Rows
                 cbxPatio.Items.Add(item(1).ToString)
             Next

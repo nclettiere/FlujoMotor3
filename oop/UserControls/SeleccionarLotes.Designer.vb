@@ -108,13 +108,13 @@ Partial Class SeleccionarLotes
         Me.btSelecc.Text = "Seleccionar"
         Me.btSelecc.UseVisualStyleBackColor = false
         '
-        'Seleccionar_Lotesillo
+        'SeleccionarLotes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Name = "Seleccionar_Lotesillo"
+        Me.Name = "SeleccionarLotes"
         Me.Size = New System.Drawing.Size(366, 436)
         Me.TableLayoutPanel1.ResumeLayout(false)
         CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit

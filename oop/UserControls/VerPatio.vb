@@ -23,7 +23,7 @@ Public Class VerPatio
         Try
             Dim VentanaVer = New Ventana_Ver()
             Dim vin = DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString
-            VentanaVer.LoadControl(vin, Conexion)
+            VentanaVer.LoadControl(vin)
             VentanaVer.ShowDialog()
         Catch ex As Exception
             Serilog.Log.Error(ex, "boi")
@@ -70,7 +70,7 @@ Public Class VerPatio
         Try
             Dim VentanaVer As Ventana_Ver = New Ventana_Ver
             Dim VerVehiculo As VerVehiculo = New VerVehiculo
-            VerVehiculo.Data(VinSeleccionado, FormParent.Conexion)
+            VerVehiculo.Data(VinSeleccionado)
             VentanaVer.LoadControl(VerVehiculo)
             VentanaVer.ShowDialog()
         Catch ex As Exception
@@ -139,7 +139,7 @@ Public Class VerPatio
 
     Private Sub BtnPatios_Click(sender As Object, e As EventArgs) Handles btnPatios.Click
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-        VentanaVer.GoToSection(4, String.Empty, Conexion)
+        VentanaVer.GoToSection(4, String.Empty)
         VentanaVer.ShowDialog()
     End Sub
 End Class

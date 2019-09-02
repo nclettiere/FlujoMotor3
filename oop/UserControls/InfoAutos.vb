@@ -1,4 +1,5 @@
 ﻿Imports Serilog
+Imports Logica
 
 Public Class InfoAutos
 
@@ -22,9 +23,11 @@ Public Class InfoAutos
 
     Private Sub OnInfoLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos")
-            DataGridViewVehiculos.DataSource = resultado
-            DataGridViewVehiculos.MultiSelect = False
+            Dim Lista = VObtenerNoEntregados()
+            If Lista IsNot Nothing
+                DataGridViewVehiculos.DataSource = Lista
+                DataGridViewVehiculos.MultiSelect = False
+            End If
         Catch ex As Exception
             Log.Warning(ex, "Error Al Cargar Vehiculos. InfoDeAutos")
         End Try
@@ -34,11 +37,18 @@ Public Class InfoAutos
         Try
             If tbxBuscarVin.Text.Length > 0
                 '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
-                DataGridViewVehiculos.DataSource = resultado
+                Dim Filtro As DataTable = VObtenerLike(tbxBuscarVin.Text.ToUpper)
+                DataGridViewVehiculos.DataSource = Filtro
             Else
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos")
-                DataGridViewVehiculos.DataSource = resultado
+                Try
+                    Dim Lista = VObtenerNoEntregados()
+                    If Lista IsNot Nothing
+                        DataGridViewVehiculos.DataSource = Lista
+                        DataGridViewVehiculos.MultiSelect = False
+                    End If
+                Catch ex As Exception
+                    Log.Warning(ex, "Error Al Cargar Vehiculos. InfoDeAutos")
+                End Try
             End If
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al filtrar.")
@@ -49,8 +59,15 @@ Public Class InfoAutos
     Private Sub OnTabChange(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
         If TabControl1.SelectedIndex = 1
             Try
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM lotes")
-                DataGridViewLotes.DataSource = resultado
+                Try
+                    Dim Lista = LObtenerNoSalida()
+                    If Lista IsNot Nothing
+                        DataGridViewLotes.DataSource = Lista
+                        DataGridViewLotes.MultiSelect = False
+                    End If
+                Catch ex As Exception
+                    Log.Warning(ex, "Error Al Cargar Vehiculos. InfoDeAutos")
+                End Try
             Catch ex As Exception
                 MessageBox.Show("Error al listar lotes.")
                 Serilog.Log.Error(ex, "Error al listar lotes.")
@@ -62,11 +79,11 @@ Public Class InfoAutos
         Try
             If tbxBuscarVin.Text.Length > 0
                 '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
-                DataGridViewVehiculos.DataSource = resultado
+                Dim Filtro As DataTable = VObtenerLike(tbxBuscarVin.Text.ToUpper)
+                DataGridViewVehiculos.DataSource = Filtro
             Else
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos")
-                DataGridViewVehiculos.DataSource = resultado
+                Dim Lista As DataTable = VObtenerNoEntregados
+                DataGridViewVehiculos.DataSource = Lista
             End If
         Catch ex As Exception
             Log.Error(ex, "Error al actualizar.")
@@ -78,7 +95,7 @@ Public Class InfoAutos
         Try
             Dim VentanaVer As Ventana_Ver = New Ventana_Ver
             Dim VerVehiculo As VerVehiculo = New VerVehiculo
-            VerVehiculo.Data(VinSeleccionado, FormParent.Conexion)
+            VerVehiculo.Data(VinSeleccionado)
             VentanaVer.LoadControl(VerVehiculo)
             VentanaVer.ShowDialog()
         Catch ex As Exception

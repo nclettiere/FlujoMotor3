@@ -26,9 +26,9 @@ Public Class Ventana_Ver
         SelecVehiculo.AutoSize = True
     End Sub
 
-    Friend Sub LoadControl(vin As String, Conexion As ODBC)
+    Friend Sub LoadControl(vin As String)
         Dim Selection = New VerPosicion
-        Selection.CargarDatos(VIN, Conexion)
+        Selection.CargarDatos(VIN)
         Me.ClientSize = Selection.Size
         mainContent.Controls.Add(Selection)
         Selection.Dock = DockStyle.Fill
@@ -86,41 +86,38 @@ Public Class Ventana_Ver
         End If
     End Sub
 
-    Friend Sub GoToSection(ByVal Section As Integer, ByVal VIN As String, ByRef Conexion As DB.ODBC)
+    Friend Sub GoToSection(ByVal Section As Integer, ByVal VIN As String)
         Dim Selection As Object
 
         Select Case Section
             Case 0
                 Selection = VerInspeccion.Instance
                 VerInspeccion.Instance.FormParent = Me
-                VerInspeccion.Instance.Populate(VIN, Conexion)
+                VerInspeccion.Instance.Populate(VIN)
                 VerInspeccion.Instance.AutoSize = True
                 Me.ClientSize = VerInspeccion.Instance.Size
             Case 1
                 Selection = AgregarInspeccion.Instance
                 AgregarInspeccion.Instance.FormParent = Me
-                AgregarInspeccion.Instance.CargarDatos(VIN, Conexion)
+                AgregarInspeccion.Instance.CargarDatos(VIN)
                 AgregarInspeccion.Instance.AutoSize = True
                 Me.ClientSize = AgregarInspeccion.Instance.Size
             Case 2
                 Selection = New VerPosicion
-                DirectCast(Selection, VerPosicion).CargarDatos(VIN, Conexion)
+                DirectCast(Selection, VerPosicion).CargarDatos(VIN)
                 Me.ClientSize = DirectCast(Selection, VerPosicion).Size
             Case 3
                 Dim AgrVehiculo = New AgregarVehiculo
                 AgrVehiculo.EstaModificando = True
                 AgrVehiculo.VinAModificar = VIN
-                AgrVehiculo.Conexion = Conexion
                 Me.ClientSize = AgrVehiculo.Size
                 Selection = AgrVehiculo
             Case 4
                 Dim VerPatiosControl = New VerPatios
-                VerPatiosControl.Conexion = Conexion
                 Me.ClientSize = VerPatiosControl.Size
                 Selection = VerPatiosControl
             Case 5
                 Dim VerZonasControl = New VerZonas
-                VerZonasControl.Conexion = Conexion
                 '' USA VIN COMO PATIOID <======
                 VerZonasControl.PatioId = VIN '=
                 '' ============================
@@ -128,7 +125,6 @@ Public Class Ventana_Ver
                 Selection = VerZonasControl
             Case 6
                 Dim SelecVehiculo = New SeleccionarVehiculo
-                SelecVehiculo.Conexion = Conexion
                 Me.ClientSize = SelecVehiculo.Size
                 Selection = SelecVehiculo
             Case Else

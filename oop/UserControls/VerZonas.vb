@@ -1,6 +1,7 @@
-﻿Public Class VerZonas
+﻿Imports Logica
 
-    Friend Property Conexion As DB.ODBC
+Public Class VerZonas
+
     Friend Property PatioId As String
 
     Private Function CrearZonaInfo(ZonaId As String, SubZonas As String) As Control
@@ -121,7 +122,6 @@
     Private Sub ModificarVehiculo(s As Object, ea As EventArgs, subzonaNombre As String)
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver
         Dim ModSubZona = New ModificarSubzona
-        ModSubZona.Conexion = Conexion
         ModSubZona.SubZonaNombre = subzonaNombre
         VentanaVer.LoadControl(ModSubZona)
         VentanaVer.ShowDialog()
@@ -131,7 +131,6 @@
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver
         Dim SelecVehiculo = New SeleccionarVehiculo
         SelecVehiculo.ZonaId = zonaid
-        SelecVehiculo.Conexion = Conexion
         SelecVehiculo.SubZonaNombre = subzonaNombre
         VentanaVer.LoadControl(SelecVehiculo)
         VentanaVer.ShowDialog()
@@ -153,16 +152,14 @@
             Abierto = False
             DirectCast(s, Button).Text = "Ver/Agregar SubZonas"
         Else
-            Dim ContadorSubZonas = 0
-            Integer.TryParse(Conexion.Consultar("SELECT COUNT(*) FROM subzonas WHERE zonaid="+ zonaId).Rows(0).Item(0), ContadorSubZonas)
-
+            Dim ContadorSubZonas = SZObtenerCount(zonaId)
+   
             If ContadorSubZonas > 0
-                Dim ConsultaSubZona = Conexion.Consultar("SELECT * FROM subzonas WHERE zonaid="+ zonaId)
+                Dim ConsultaSubZona = SZObtenerId(zonaId)
 
-                Dim ContadorVehiculos = 0
-                Integer.TryParse(Conexion.Consultar("SELECT COUNT(*) FROM vehiculosubzona WHERE subzonanombre='"+ ConsultaSubZona.Rows(0).Item("subzonanombre")+"'").Rows(0).Item(0).ToString, ContadorSubZonas)
+                Dim ContadorVehiculos = SZObtenerCountNombre(ConsultaSubZona(0).Item("subzonanombre"))
 
-                For Each SubZonaRow As DataRow In ConsultaSubZona.Rows
+                For Each SubZonaRow As DataRow In ConsultaSubZona
                     panelContenido.Controls.Add(CrearSubZona(SubZonaRow.Item("subzonanombre"), SubZonaRow.Item("zonaId"), SubZonaRow.Item("subzonacapacidad"), ContadorVehiculos.ToString))
                 Next
             End If
@@ -174,17 +171,13 @@
 
     Private Sub OnVerZonasLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim PatioDatos = Conexion.Consultar("SELECT * FROM patios WHERE patioid="+ PatioId)
-            Dim ZonaDatos = Conexion.Consultar("SELECT * FROM zonas WHERE patioid="+ PatioId)
-            lblPatioInfo.Text = "Viendo Zonas de: "+ PatioDatos.Rows(0).Item("pationombre")
+            Dim PatioDatos = PObtenerID(PatioId)
+            Dim ZonaDatos = ZObtenerPatioID(PatioId)
+            lblPatioInfo.Text = "Viendo Zonas de: "+ PatioDatos.Item("pationombre")
             If ZonaDatos IsNot Nothing
-                If ZonaDatos.Rows.Count > 0
-                    Dim ContadorSubZonas = Conexion.Consultar("SELECT COUNT(*) FROM subzonas WHERE zonaid="+ ZonaDatos.Rows(0).Item("zonaid").ToString)
-                    If ZonaDatos IsNot Nothing
-                        If ZonaDatos.Rows.Count > 0
-                            FPContenido.Controls.Add(CrearZonaInfo(ZonaDatos.Rows(0).Item("zonaid").ToString, ContadorSubZonas.Rows(0).Item(0).ToString))
-                        End If
-                    End If
+                Dim ContadorSubZonas = SZObtenerCountId(ZonaDatos.Item("zonaid").ToString)
+                If ZonaDatos IsNot Nothing
+                    FPContenido.Controls.Add(CrearZonaInfo(ZonaDatos.Item("zonaid").ToString, ContadorSubZonas.ToString))
                 End If
             End If
             ParentForm.ClientSize = Me.Size

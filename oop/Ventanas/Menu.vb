@@ -1,8 +1,4 @@
-﻿Imports DB
-
-Public Class Menu
-
-    Public Property Conexion As ODBC
+﻿Public Class Menu
 
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.AutoSize = True
@@ -10,7 +6,6 @@ Public Class Menu
 
         If Not mainContent.Contains(MenuControl.Instance) Then
             MenuControl.Instance.FormParent = Me
-            MenuControl.Instance.Conexion = Conexion
             mainContent.Controls.Add(MenuControl.Instance)
             MenuControl.Instance.Dock = DockStyle.Fill
             MenuControl.Instance.BringToFront()

@@ -1,7 +1,6 @@
 ﻿Imports DB
 Imports Serilog
-Imports Serilog.Sinks.SystemConsole
-Imports System
+Imports Logica
 
 Public Class VerVehiculo
 
@@ -19,53 +18,46 @@ Public Class VerVehiculo
         End Set
     End Property
 
-    Private Property Conexion As DB.ODBC
-
     Private Property VIN As String
 
-    Friend Sub Data(vin As String, ByRef Conexion As ODBC)
-        Me.Conexion = Conexion
+    Friend Sub Data(vin As String)
         Me.VIN = vin
 
         ProcesarDatos()
     End Sub
 
     Private Sub ProcesarDatos()
-        Dim resultadoVehiculo As DataTable = Conexion.Consultar("SELECT * FROM vehiculos WHERE vehiculovin='" + vin + "'")
-        If resultadoVehiculo IsNot Nothing
-            If resultadoVehiculo.Rows.Count > 0
-                VIN = resultadoVehiculo.Rows(0).Item("vehiculovin").ToString
-                lblVin.Text = VIN
-                labFecha.Text = resultadoVehiculo.Rows(0).Item("vehiculofecha").ToString
-                labColor.Text = resultadoVehiculo.Rows(0).Item("vehiculocolor").ToString
-                labMarca.Text = resultadoVehiculo.Rows(0).Item("vehiculomarca").ToString
-                labModelo.Text = resultadoVehiculo.Rows(0).Item("vehiculomodelo").ToString
-                labAno.Text = resultadoVehiculo.Rows(0).Item("vehiculoanio").ToString
-                labTipo.Text = resultadoVehiculo.Rows(0).Item("vehiculotipo").ToString 
+        Dim Vehiculo As DataRow = VObtenerVIN(VIN)
+        If Vehiculo IsNot Nothing
+            VIN = Vehiculo.Item("vehiculovin").ToString
+            lblVin.Text = VIN
+            labFecha.Text = Vehiculo.Item("vehiculofecha").ToString
+            labColor.Text = Vehiculo.Item("vehiculocolor").ToString
+            labMarca.Text = Vehiculo.Item("vehiculomarca").ToString
+            labModelo.Text = Vehiculo.Item("vehiculomodelo").ToString
+            labAno.Text = Vehiculo.Item("vehiculoanio").ToString
+            labTipo.Text = Vehiculo.Item("vehiculotipo").ToString 
 
-                If resultadoVehiculo.Rows(0).Item("loteid") IsNot Nothing
-                    Dim resultadoLote As DataTable = Conexion.Consultar("SELECT * FROM lotes WHERE loteid=" + resultadoVehiculo.Rows(0).Item("loteid").ToString + "")
-                    If resultadoLote IsNot Nothing
-                        If resultadoLote.Rows.Count > 0
-                            labLoteName.Text = resultadoLote.Rows(0).Item(1).ToString
-                            Dim resultadoPatio As DataTable = Conexion.Consultar("SELECT * FROM patios WHERE patioid=" + resultadoLote.Rows(0).Item("patioid").ToString + "")
-                            If resultadoPatio IsNot Nothing
-                                Try
-                                    labPatio.Text = resultadoPatio.Rows(0).Item("pationombre").ToString
-                                    Dim resultadoSubZonaVehiculo As DataTable = Conexion.Consultar("SELECT * FROM vehiculoSubZona WHERE vehiculovin='" + resultadoVehiculo.Rows(0).Item(0).ToString + "'")
-                                    If resultadoSubZonaVehiculo IsNot Nothing
-                                        If resultadoSubZonaVehiculo.Rows.Count > 0
-                                            labSubzona.Text = resultadoSubZonaVehiculo.Rows(0).Item("subzonanombre").ToString
-                                            labColumna.Text = resultadoSubZonaVehiculo.Rows(0).Item("columna").ToString
-                                            labFila.Text = resultadoSubZonaVehiculo.Rows(0).Item("fila").ToString
-                                            labZona.Text = resultadoSubZonaVehiculo.Rows(0).Item("zonaid").ToString
-                                        End If
-                                    End If
-                                Catch ex As Exception
-                                    Log.Warning(ex, "Error out of index")
-                                End Try
+            If Vehiculo.Item("loteid") IsNot Nothing
+                Dim Lote As DataRow = LObtenerID(Vehiculo.Item("loteid"))
+                If Lote IsNot Nothing
+                    labLoteName.Text = Lote.Item("lotenombre")
+                    Dim Patio As DataRow = PObtenerID(Lote.Item("patioid").ToString)
+                    Dim Zonas As DataRow = ZObtenerPatioID(Lote.Item("patioid").ToString)
+                    If Patio IsNot Nothing
+                        Try
+                            labPatio.Text = Patio.Item("pationombre")
+                            Dim SubZona = SZObtenerId(Zonas.Item("zonaid"))
+                            If SubZona IsNot Nothing
+                                Dim VSubZona = VSZObtener(Vehiculo.Item("vehiculovin"))
+                                labSubzona.Text = SubZona(0).Item("subzonanombre").ToString
+                                labColumna.Text = VSubZona.Item("columna").ToString
+                                labFila.Text = VSubZona.Item("fila").ToString
+                                labZona.Text = SubZona(0).Item("zonaid").ToString
                             End If
-                        End If
+                        Catch ex As Exception
+                            Log.Warning(ex, "Error out of index")
+                        End Try
                     End If
                 End If
             End If
@@ -77,25 +69,22 @@ Public Class VerVehiculo
     End Sub
 
     Private Sub BtVerInspeccion_Click(sender As Object, e As EventArgs) Handles btVerInspeccion.Click
-        Dim ResultadoInspecciones As DataTable = Conexion.Consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN +"'")
-        If ResultadoInspecciones IsNot Nothing
-            If ResultadoInspecciones.Rows.Count <> 0
-                DirectCast(ParentForm, Ventana_Ver).GotoSection(0, VIN, Conexion)
-            Else
-                 MessageBox.Show("Este vehiculo no tiene inspecciones.")
-            End If
+        If IObtenerCount <> 0
+            DirectCast(ParentForm, Ventana_Ver).GotoSection(0, VIN)
+        Else
+             MessageBox.Show("Este Vehiculo no tiene inspecciones.")
         End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            DirectCast(ParentForm, Ventana_Ver).GotoSection(1, VIN, Conexion)
+            DirectCast(ParentForm, Ventana_Ver).GotoSection(1, VIN)
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error")
         End Try
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        DirectCast(ParentForm, Ventana_Ver).GoToSection(3, VIN, Conexion)
+        DirectCast(ParentForm, Ventana_Ver).GoToSection(3, VIN)
     End Sub
 End Class

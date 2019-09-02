@@ -332,13 +332,13 @@ Partial Class InfoAutos
         Me.btVerLote.Text = "Ver"
         Me.btVerLote.UseVisualStyleBackColor = false
         '
-        'Info_de_Autillos
+        'InfoAutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "Info_de_Autillos"
+        Me.Name = "InfoAutos"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(937, 621)
         Me.Panel1.ResumeLayout(false)

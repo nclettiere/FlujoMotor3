@@ -99,7 +99,7 @@ Public Class InspeccionWidget
     Private Sub btnVincularDanio_Click(sender As Object, e As EventArgs) 
         Dim AgregarInsp As AgregarInspeccion = New AgregarInspeccion
         AgregarInsp.Modo = "VINCULAR"
-        AgregarInsp.CargarDatos(VIN, Conexion)
+        AgregarInsp.CargarDatos(VIN)
         Dim vntVer As Ventana_Ver = New Ventana_Ver
         vntVer.LoadControl(AgregarInsp)
         vntVer.ShowDialog()

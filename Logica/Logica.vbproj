@@ -66,6 +66,16 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FlujoMotor ESI\Parte Programacion\FlujoMotor3\oop\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console">
+      <HintPath>..\..\..\..\FlujoMotor ESI\Parte Programacion\FlujoMotor3\oop\Serilog.Sinks.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File">
+      <HintPath>..\..\..\..\FlujoMotor ESI\Parte Programacion\FlujoMotor3\oop\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -86,16 +96,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Cliente.vb" />
-    <Compile Include="Clases\Facade.vb" />
-    <Compile Include="Clases\Funcionario.vb" />
-    <Compile Include="Clases\Inspeccion.vb" />
-    <Compile Include="Clases\Lote.vb" />
-    <Compile Include="Clases\Operario.vb" />
-    <Compile Include="Clases\Patio.vb" />
-    <Compile Include="Clases\Ubicacion.vb" />
-    <Compile Include="Clases\VehiculoManagement.vb" />
-    <Compile Include="Clases\Vehiculo.vb" />
+    <Compile Include="Conexion.vb" />
+    <Compile Include="Modulos\Inspecciones.vb" />
+    <Compile Include="Modulos\Lotes.vb" />
+    <Compile Include="Modulos\Patios.vb" />
+    <Compile Include="Modulos\Vehiculos.vb" />
+    <Compile Include="Modulos\Zonas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="conexionInformix.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

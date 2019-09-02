@@ -1,4 +1,4 @@
-﻿Imports DB
+﻿Imports Logica
 
 Public Class VerPosicion
     Private Shared _instance As VerPosicion
@@ -16,11 +16,10 @@ Public Class VerPosicion
     End Property
 
     Public Property FormParent As MenuControl
-    Public Property Conexion As DB.ODBC
     Public Property VIN As String
     Public Property TieneSubzona As Boolean
     Public Property Lote As DataTable
-    Public Property Patio As DataTable
+    Public Property Patio As DataRow
     Public Property ZonaId As String
     Public Property SubZonas As DataTable
 
@@ -64,18 +63,12 @@ Public Class VerPosicion
         End If
     End Sub
 
-    Friend Sub CargarDatos(VIN As String, Conexion As ODBC)
-        Me.Conexion = Conexion
+    Friend Sub CargarDatos(VIN As String)
         Me.VIN = VIN
         Try
-            Dim SubZonaContador As Integer = Nothing
-            Dim ConsultaContadorSubZonas =  Conexion.Consultar("SELECT COUNT(*) FROM vehiculosubzona WHERE vehiculovin='" + VIN +"';").Rows(0).Item(0).ToString
-            If Integer.TryParse(ConsultaContadorSubZonas, SubZonaContador)
-                If SubZonaContador > 0
-                    TieneSubzona = True
-                Else
-                    TieneSubzona = False
-                End If
+            Dim SubZonaContador As Integer = VSZObtenerCount(VIN)
+            If SubZonaContador > 0
+                TieneSubzona = True
             Else
                 TieneSubzona = False
             End If
@@ -86,19 +79,18 @@ Public Class VerPosicion
 
     Private Sub OnPosicionLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim LoteId As String = Conexion.Consultar("SELECT loteid FROM vehiculos WHERE vehiculovin='" + VIN + "'").Rows(0).Item(0).ToString
-            Lote     = Conexion.Consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
-            Patio    = Conexion.Consultar("SELECT * FROM patios WHERE patioid=" + Lote.Rows(0).Item("patioid").ToString)
-            Dim Zona = Conexion.Consultar("SELECT * FROM zonas WHERE patioid=" + Lote.Rows(0).Item("patioid").ToString)
-            ZonaId   = Zona.Rows(0).Item(0).ToString
-            SubZonas = Conexion.Consultar("SELECT * FROM subzonas WHERE zonaid=" + ZonaId)
+            Dim Lote As DataRow = LObtenerVIN(VIN)
+            Patio    = PObtenerID(Lote.Item("loteid"))
+            Dim Zona = ZObtenerPatioID(Lote.Item("patioid"))
+            ZonaId   = Zona.Item("zonaid").ToString
+            SubZonas = SZObtenerIdTable(ZonaId)
             For Each item As DataRow In SubZonas.Rows
                 cbxZona.Items.Add(item("subzonanombre").ToString)
             Next
             If SubZonas IsNot Nothing
                 If SubZonas.Rows.Count > 0
                     If TieneSubzona
-                        Dim ConsultaSubZonas =  Conexion.Consultar("SELECT * FROM vehiculosubzona WHERE vehiculovin='" + VIN +"';").Rows(0)
+                        Dim ConsultaSubZonas = SZObtenerVIN(VIN).Rows(0)
                         For Each Item As String in cbxZona.Items
                             If String.Equals(Item, SubZonas.Rows(0).Item("subzonanombre").ToString)
                                 cbxZona.SelectedItem = Item
@@ -112,7 +104,7 @@ Public Class VerPosicion
             End If
 
             lblVehiculoPos.Text = "Posicion del Vehiculo: " + VIN
-            lblPatio.Text = "Patio " + Patio.Rows(0).Item("pationombre").ToString
+            lblPatio.Text = "Patio " + Patio.Item("pationombre").ToString
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al obtener zonas.")
         End Try

@@ -1,6 +1,5 @@
 ﻿Imports System.Drawing.Imaging
-Imports DB
-Imports System.Data.Odbc
+Imports Logica
 
 Public Class AgregarInspeccion
     Private Shared _instance As AgregarInspeccion
@@ -30,32 +29,25 @@ Public Class AgregarInspeccion
 
     Private Sub Agregar_Inspeccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not String.IsNullOrEmpty(Modo) Then
-            Dim ResultadoDanios = Conexion.Consultar("SELECT COUNT(*) FROM inspecciones WHERE vehiculovin='"+ Vin +"'")
-            If ResultadoDanios IsNot Nothing
-                If ResultadoDanios.Rows.Count
-                   If ResultadoDanios.Rows(0).Item(0) > 0
-                        lblTitulo.Text = "Danio #"+ ResultadoDanios.Rows(0).Item(0).ToString +" Al Vehiculo:"
-                        labVIN.Text = VIN.ToUpper
-                   End If
-                End If
+            If IObtenerCount(VIN) > 0
+                lblTitulo.Text = "Danio #"+ IObtenerCount(VIN).ToString +" Al Vehiculo:"
+                labVIN.Text = VIN.ToUpper
             End If
         End If
     End Sub
 
-    Friend Sub CargarDatos(VIN As String, conexion As ODBC)
+    Friend Sub CargarDatos(VIN As String)
         labVIN.Text = VIN.ToUpper
         Me.Vin = VIN.ToUpper
-        Me.Conexion = conexion
 
         If conexion Is Nothing
             MessageBox.Show("nada")
         End If
     End Sub
 
-    Friend Sub CargarDatos(VIN As String, conexion As ODBC, AgVehciulo As AgregarVehiculo)
+    Friend Sub CargarDatos(VIN As String, AgVehciulo As AgregarVehiculo)
         labVIN.Text = VIN.ToUpper
         Me.Vin = VIN.ToUpper
-        Me.Conexion = conexion
         Me.AgVehciulo = AgVehciulo
         PrimeraInspeccion = True
         btnCancelar.Visible = False
@@ -67,8 +59,11 @@ Public Class AgregarInspeccion
 
     Private Sub BtnCrear_Click(sender As Object, e As EventArgs)
         Try
-            Dim InpeccioensCount As DataTable = Conexion.Consultar("SELECT COUNT(*) FROM inspecciones")
-            Dim CrearInspeccion As DataTable = Conexion.Consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operarioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + Vin + "', 3)")
+            If IInsertar(Vin)
+                MessageBox.Show("Inspeccion Agregada Corractamente.")
+            Else
+                MessageBox.Show("Error totalmente desconocido al agregar inspeccion. Checkia el log para mas info maestro.")
+            End If
         Catch ex As Exception
             Serilog.Log.Error(ex, "Posible valor nulo en Agregar Inspeccion.")
         End Try
@@ -113,31 +108,29 @@ Public Class AgregarInspeccion
     Private Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
         If TieneDanio
             Try
-                Dim InpeccioensCount As DataTable = Conexion.Consultar("SELECT COUNT(*) FROM inspecciones")
-                Dim CrearInspeccion As DataTable = Conexion.Consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operarioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + Vin.ToUpper + "', 3)")
-                Dim DaniosCount As DataTable = Conexion.Consultar("SELECT COUNT(*) FROM danios")
-                Dim CrearDanio As DataTable = Conexion.ConsultaDanio("INSERT INTO danios (danioid, daniodescripcion, daniofoto) VALUES(" + (DaniosCount.Rows(0).Item(0) + 1).ToString + ",'" + rtbx.Text + "', ?)", ByteFotoDanio)
-                Dim CrearInspeccionDanio As DataTable = Conexion.Consultar("INSERT INTO inspecciondanio (inspeccionid, danioid) VALUES("+ (InpeccioensCount.Rows(0).Item(0) + 1).ToString +", "+ (DaniosCount.Rows(0).Item(0) + 1).ToString +")")
-
-                If PrimeraInspeccion
-                    MessageBox.Show("Vehiculo e Inspeccion Agregados Correctamente.")
-                    ParentForm.Close()
+                If IInsertar(Vin, rtbx.Text, ByteFotoDanio)
+                    If PrimeraInspeccion
+                        MessageBox.Show("Vehiculo e Inspeccion Agregados Correctamente.")
+                        ParentForm.Close()
+                    Else
+                        MessageBox.Show("Inspeccion Agregada Correctamente.")
+                    End If
                 Else
-                    MessageBox.Show("Inspeccion Agregada Correctamente.")
+                    MessageBox.Show("Error al crear inspeccion.")
                 End If
+
             Catch ex As Exception
                 Serilog.Log.Error(ex, "Posible valor nulo en Agregar Inspeccion.")
             End Try
         Else
             Try
-                Dim InpeccioensCount As DataTable = Conexion.Consultar("SELECT COUNT(*) FROM inspecciones")
-                Dim CrearInspeccion As DataTable = Conexion.Consultar("INSERT INTO inspecciones (inspeccionid, vehiculovin, operarioid) VALUES(" + (InpeccioensCount.Rows(0).Item(0) + 1).ToString + ",'" + Vin + "', 3)")
-
-                If PrimeraInspeccion
-                    MessageBox.Show("Vehiculo e Inspeccion Agregados Correctamente.")
-                    ParentForm.Close()
-                Else
-                    MessageBox.Show("Inspeccion Agregada Correctamente.")
+                If IInsertar(Vin)
+                    If PrimeraInspeccion
+                        MessageBox.Show("Vehiculo e Inspeccion Agregados Correctamente.")
+                        ParentForm.Close()
+                    Else
+                        MessageBox.Show("Inspeccion Agregada Correctamente.")
+                    End If
                 End If
             Catch ex As Exception
                 Serilog.Log.Error(ex, "Posible valor nulo en Agregar Inspeccion.")

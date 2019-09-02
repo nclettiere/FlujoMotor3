@@ -1,4 +1,5 @@
 ﻿Imports System.Threading
+Imports Logica
 
 Public Class VerInspeccion
     Private Shared _instance As VerInspeccion
@@ -17,13 +18,13 @@ Public Class VerInspeccion
 
     Public Property FormParent As Ventana_Ver
 
-    Friend Sub Populate(VIN As String, ByRef Conexion As DB.ODBC)
+    Friend Sub Populate(VIN As String)
         lblVehiculoVin.Text = "Viendo Vehiculo: " + VIN
-        Dim ResultadoInspecciones As DataTable = Conexion.Consultar("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN + "'")
+        Dim ResultadoInspecciones As DataTable = IObtenerVIN(VIN)
         If ResultadoInspecciones IsNot Nothing Then
             Dim index As Integer = 0
             If ResultadoInspecciones.Rows.Count <> 0 Then
-                Dim Inspecciones As DataTable = Conexion.Consultar("select * from inspecciones where vehiculovin='" + VIN + "' AND inspeccionid not in(select inspeccionid from inspecciondanio)")
+                Dim Inspecciones As DataTable = IObtenerVIN(VIN, " AND inspeccionid not in(select inspeccionid from inspecciondanio)")
                 DataGridInspecciones.DataSource = Inspecciones
                 Dim QueryFiltro As String = String.Empty
                 Dim Length = ResultadoInspecciones.Rows.Count - 1
@@ -41,7 +42,7 @@ Public Class VerInspeccion
                     Contador += 1
                 Next
 
-                Dim InspeccionesDanio As DataTable = Conexion.Consultar("SELECT * FROM danios WHERE danioid IN (SELECT danioid FROM inspecciondanio WHERE "+ QueryFiltro +")")
+                Dim InspeccionesDanio As DataTable = DObtenerFiltro("danioid IN (SELECT danioid FROM inspecciondanio WHERE "+ QueryFiltro +")")
                 DataGridDanios.DataSource = InspeccionesDanio
                 DataGridDanios.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                 DataGridDanios.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells

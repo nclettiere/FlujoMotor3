@@ -18,10 +18,9 @@ Public Class Ventana_Login
         Log.Information(Me.Name.ToString + " Ha cargado con exito.")
     End Sub
 
-    Friend Sub ChangeControlSummary(operarioId As Integer, Conexion As ODBC)
+    Friend Sub ChangeControlSummary(operarioId As Integer)
         Dim mainVentana = New Menu
         Hide()
-        mainVentana.Conexion = Conexion
         mainVentana.ShowDialog()
         Close()
     End Sub

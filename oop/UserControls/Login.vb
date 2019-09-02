@@ -1,5 +1,4 @@
 ﻿Imports Logica
-Imports DB
 Imports System.Data.Odbc
 Imports System.Text
 Imports System.IO
@@ -7,8 +6,6 @@ Imports System.IO
 Public Class Login
 
     Private Shared _instance As Login
-
-    Private ReadOnly Conexion As ODBC = New ODBC()
 
     Public Shared Property Instance As Login
         Get
@@ -27,17 +24,14 @@ Public Class Login
     Private Sub OnLoginLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Conexion.USER = "root"
-            Conexion.PWD = "root"
-            If Conexion.Conectar(Conexion.Conectar())
+            Conexion.PSWD = "root"
+
+            If Conexion.Conectar()
                 Conexion.Cerrar()
             Else
                 MessageBox.Show("No se pedo establecer conexion con la DB." + Environment.NewLine + "Chequee que la VM este corriendo y que los datos sean correctos.", "Error de Conexion",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Serilog.Log.Fatal("No se pudo establecer con la DB." +
-                              Environment.NewLine +
-                              "Query de conexion usado:" +
-                              Environment.NewLine +
-                              Conexion.Conectar())
+                Conexion.Cerrar()
             End If
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al chquear conexion.")
@@ -62,24 +56,27 @@ Public Class Login
 
     Private Sub btn_LogIn_Click(sender As Object, e As EventArgs) Handles btn_LogIn.Click
         If Not String.IsNullOrWhiteSpace(tbx_user.Text) Then
-
             If Not String.IsNullOrWhiteSpace(tbx_passwd.Text) Then
 
                 Conexion.USER = tbx_user.Text
-                Conexion.PWD = tbx_passwd.Text
-                Dim EstablacerConexionDB = Conexion.Conectar(Conexion.Conectar())
+                Conexion.PSWD = tbx_passwd.Text
+                Conexion.Conectar()
 
-                If (EstablacerConexionDB) Then
+                If (Conexion.Conectar()) Then
                     MessageBox.Show("Conectado Exitosamente.")
-                    Ventana_Login.ChangeControlSummary(0, Conexion)
+                    Ventana_Login.ChangeControlSummary(0)
+                    Cerrar
                 Else
                     MessageBox.Show("Usuario o Contrasena invalidos.")
+                    Cerrar
                 End If
             Else
                 MessageBox.Show("Debes ingresar una contrasena.")
+                Cerrar
             End If
         Else
             MessageBox.Show("Debes ingresar un usuario.")
+            Cerrar
         End If
     End Sub
 End Class

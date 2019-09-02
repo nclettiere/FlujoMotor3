@@ -84,6 +84,6 @@ Public Class VerPatios
     End Function
 
     Private Sub ZonasClick(s As Object, ea As EventArgs, PatioId As String)
-        DirectCast(ParentForm, Ventana_Ver).GoToSection(5, PatioId, Conexion)
+        DirectCast(ParentForm, Ventana_Ver).GoToSection(5, PatioId)
     End Sub
 End Class

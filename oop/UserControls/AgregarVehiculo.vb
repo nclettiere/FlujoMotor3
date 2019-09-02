@@ -218,7 +218,7 @@ Public Class AgregarVehiculo
                                 Dim InsertarVehiculo As DataTable = FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1, " + (LoteCount.Rows(0).Item(0) + 1).ToString + ")")
 
                                 Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                                AgregarInspeccionControl.CargarDatos(txtVin.Text, FormParent.Conexion, Me)
+                                AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
                                 Dim VentanaVer As Ventana_Ver = New Ventana_Ver
                                 VentanaVer.LoadControl(AgregarInspeccionControl)
                                 VentanaVer.ShowDialog()
@@ -242,7 +242,7 @@ Public Class AgregarVehiculo
                             Dim InsertarVehiculo As DataTable = FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1 )")
 
                             Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                            AgregarInspeccionControl.CargarDatos(txtVin.Text, FormParent.Conexion, Me)
+                            AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
                             Dim VentanaVer As Ventana_Ver = New Ventana_Ver
                             VentanaVer.LoadControl(AgregarInspeccionControl)
                             VentanaVer.ShowDialog()
@@ -256,7 +256,7 @@ Public Class AgregarVehiculo
                                 Dim InsertarVehiculo As DataTable = FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + cbxTipo.Text.ToLower() + "', 1, " + (SelectedLote.Item(0).Value).ToString + ")")
 
                                 Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                                AgregarInspeccionControl.CargarDatos(txtVin.Text, FormParent.Conexion, Me)
+                                AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
                                 Dim VentanaVer As Ventana_Ver = New Ventana_Ver
                                 VentanaVer.LoadControl(AgregarInspeccionControl)
                                 VentanaVer.ShowDialog()
@@ -275,14 +275,14 @@ Public Class AgregarVehiculo
                                     vehiculoTipo = cbxTipo.Text.ToLower()
                                 End If
 
-                                Dim VehiculoCount = FormParent.Conexion.Consultar("SELECT COUNT(*) FROM vehiculos")
-                                Dim InsertarVehiculo As DataTable = FormParent.FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1 )")
+                                ''Dim VehiculoCount = FormParent.Conexion.Consultar("SELECT COUNT(*) FROM vehiculos")
+                                ''Dim InsertarVehiculo As DataTable = FormParent.FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1 )")
 
-                                Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                                AgregarInspeccionControl.CargarDatos(txtVin.Text, FormParent.Conexion, Me)
-                                Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-                                VentanaVer.LoadControl(AgregarInspeccionControl)
-                                VentanaVer.ShowDialog()
+                                ''Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
+                                ''AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
+                                ''Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+                                ''VentanaVer.LoadControl(AgregarInspeccionControl)
+                                ''VentanaVer.ShowDialog()
 
                                 MessageBox.Show("Vehiculo Ingresado Correctamente.")
                                 Serilog.Log.Information("Vehiculo insertado correctamente.")

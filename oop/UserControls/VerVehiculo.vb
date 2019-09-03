@@ -95,4 +95,13 @@ Public Class VerVehiculo
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         DirectCast(ParentForm, Ventana_Ver).GoToSection(3, VIN)
     End Sub
+
+    Private Sub BtnGenerarQR_Click(sender As Object, e As EventArgs) Handles btnGenerarQR.Click
+        Dim icono As New Bitmap(My.Resources.FE01001LOGO)
+        Dim vFoto As VerFoto = New VerFoto
+        vFoto.SetFoto(GenerarQR(VIN, icono))
+        Dim vVer = New Ventana_Ver
+        vVer.LoadControl(vFoto)
+        vVer.ShowDialog()
+    End Sub
 End Class

@@ -28,23 +28,24 @@ Partial Class InfoLotes
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
-        Me.btAceptarVehiculo = New System.Windows.Forms.Button()
+        Me.btnIniciar = New System.Windows.Forms.Button()
         Me.btInfoVehiculo = New System.Windows.Forms.Button()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
         Me.btBuscar = New System.Windows.Forms.Button()
-        Me.DataGridViewLotesillos = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.lotesito.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
-        CType(Me.DataGridViewLotesillos,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'Panel1
         '
+        Me.Panel1.AutoSize = true
         Me.Panel1.Controls.Add(Me.TabControl1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(5, 5)
@@ -83,7 +84,7 @@ Partial Class InfoLotes
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.DataGridViewLotesillos, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.DataGridViewLotes, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -103,7 +104,7 @@ Partial Class InfoLotes
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.Controls.Add(Me.btActualizarVehiculo, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btAceptarVehiculo, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnIniciar, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btInfoVehiculo, 1, 0)
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(391, 504)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -131,23 +132,23 @@ Partial Class InfoLotes
         Me.btActualizarVehiculo.Text = "Actualizar"
         Me.btActualizarVehiculo.UseVisualStyleBackColor = false
         '
-        'btAceptarVehiculo
+        'btnIniciar
         '
-        Me.btAceptarVehiculo.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btAceptarVehiculo.BackColor = System.Drawing.Color.DimGray
-        Me.btAceptarVehiculo.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btAceptarVehiculo.FlatAppearance.BorderSize = 0
-        Me.btAceptarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAceptarVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btAceptarVehiculo.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btAceptarVehiculo.Location = New System.Drawing.Point(34, 8)
-        Me.btAceptarVehiculo.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btAceptarVehiculo.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btAceptarVehiculo.Name = "btAceptarVehiculo"
-        Me.btAceptarVehiculo.Size = New System.Drawing.Size(143, 53)
-        Me.btAceptarVehiculo.TabIndex = 0
-        Me.btAceptarVehiculo.Text = "Aceptar"
-        Me.btAceptarVehiculo.UseVisualStyleBackColor = false
+        Me.btnIniciar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnIniciar.BackColor = System.Drawing.Color.DimGray
+        Me.btnIniciar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnIniciar.FlatAppearance.BorderSize = 0
+        Me.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnIniciar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnIniciar.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.btnIniciar.Location = New System.Drawing.Point(34, 8)
+        Me.btnIniciar.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnIniciar.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnIniciar.Name = "btnIniciar"
+        Me.btnIniciar.Size = New System.Drawing.Size(143, 53)
+        Me.btnIniciar.TabIndex = 0
+        Me.btnIniciar.Text = "Iniciar Viaje"
+        Me.btnIniciar.UseVisualStyleBackColor = false
         '
         'btInfoVehiculo
         '
@@ -212,21 +213,24 @@ Partial Class InfoLotes
         Me.btBuscar.Text = "Buscar Lote"
         Me.btBuscar.UseVisualStyleBackColor = false
         '
-        'DataGridViewLotesillos
+        'DataGridViewLotes
         '
-        Me.DataGridViewLotesillos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewLotesillos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewLotesillos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DataGridViewLotesillos.EnableHeadersVisualStyles = false
-        Me.DataGridViewLotesillos.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridViewLotesillos.Location = New System.Drawing.Point(3, 74)
-        Me.DataGridViewLotesillos.Name = "DataGridViewLotesillos"
-        Me.DataGridViewLotesillos.ReadOnly = true
-        Me.DataGridViewLotesillos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewLotesillos.ShowCellToolTips = false
-        Me.DataGridViewLotesillos.ShowEditingIcon = false
-        Me.DataGridViewLotesillos.Size = New System.Drawing.Size(904, 424)
-        Me.DataGridViewLotesillos.TabIndex = 4
+        Me.DataGridViewLotes.AllowUserToAddRows = false
+        Me.DataGridViewLotes.AllowUserToDeleteRows = false
+        Me.DataGridViewLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewLotes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewLotes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DataGridViewLotes.EnableHeadersVisualStyles = false
+        Me.DataGridViewLotes.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.DataGridViewLotes.Location = New System.Drawing.Point(3, 74)
+        Me.DataGridViewLotes.MultiSelect = false
+        Me.DataGridViewLotes.Name = "DataGridViewLotes"
+        Me.DataGridViewLotes.ReadOnly = true
+        Me.DataGridViewLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridViewLotes.ShowCellToolTips = false
+        Me.DataGridViewLotes.ShowEditingIcon = false
+        Me.DataGridViewLotes.Size = New System.Drawing.Size(904, 424)
+        Me.DataGridViewLotes.TabIndex = 4
         '
         'InfoLotes
         '
@@ -244,8 +248,9 @@ Partial Class InfoLotes
         Me.TableLayoutPanel2.ResumeLayout(false)
         Me.TableLayoutPanel3.ResumeLayout(false)
         Me.TableLayoutPanel3.PerformLayout
-        CType(Me.DataGridViewLotesillos,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
+        Me.PerformLayout
 
 End Sub
 
@@ -255,10 +260,10 @@ End Sub
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents btActualizarVehiculo As Button
-    Friend WithEvents btAceptarVehiculo As Button
+    Friend WithEvents btnIniciar As Button
     Friend WithEvents btInfoVehiculo As Button
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents tbxBuscarVin As TextBox
     Friend WithEvents btBuscar As Button
-    Friend WithEvents DataGridViewLotesillos As DataGridView
+    Friend WithEvents DataGridViewLotes As DataGridView
 End Class

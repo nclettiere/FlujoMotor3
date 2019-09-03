@@ -157,7 +157,7 @@ Public Class VerZonas
             If ContadorSubZonas > 0
                 Dim ConsultaSubZona = SZObtenerId(zonaId)
 
-                Dim ContadorVehiculos = SZObtenerCountNombre(ConsultaSubZona(0).Item("subzonanombre"))
+                Dim ContadorVehiculos = VSZObtenerCountNombre(ConsultaSubZona(0).Item("subzonanombre"))
 
                 For Each SubZonaRow As DataRow In ConsultaSubZona
                     panelContenido.Controls.Add(CrearSubZona(SubZonaRow.Item("subzonanombre"), SubZonaRow.Item("zonaId"), SubZonaRow.Item("subzonacapacidad"), ContadorVehiculos.ToString))

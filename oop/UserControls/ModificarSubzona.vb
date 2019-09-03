@@ -1,22 +1,19 @@
 ﻿Imports System.Threading
-Imports DB
+Imports Logica
 
 Public Class ModificarSubzona
-    Public Property Conexion As ODBC
     Public Property SubZonaNombre As String
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
             Dim capacidad As Integer
             If Integer.TryParse(tbxCapacidad.Text, capacidad)
-                Dim ContadorSubZona As DataTable = Conexion.Consultar("SELECT COUNT(*) FROM subzonas WHERE subzonanombre='" + tbxNombre.Text + "';")
-                If ContadorSubZona.Rows.Count > 0
+                Dim ContadorSubZona As Integer = SubZObtenerCountNombre(tbxNombre.Text)
                     If Not String.Equals(SubZonaNombre, tbxNombre.Text)
-                        If ContadorSubZona.Rows(0).Item(0) = 0
-                            Dim Resultado As DataTable = Conexion.Consultar("UPDATE subzonas SET subzonanombre ='" + tbxNombre.Text + "', subzonacapacidad = " + tbxCapacidad.Text + " WHERE subzonanombre='" + SubZonaNombre + "';")
+                        If ContadorSubZona = 0
+                            Dim Resultado As DataTable = SZUpdate(tbxNombre.Text, tbxCapacidad.Text, SubZonaNombre)
                         Else
                             MessageBox.Show("El nombre selccionado ya existe en otra subzona.")
-                        End If
                     End If
                 End If
             Else
@@ -30,7 +27,7 @@ Public Class ModificarSubzona
     Private Sub OnModSubZLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             lblSubZona.Text = "Modificar SubZona: " + SubZonaNombre
-            Dim Resultado As DataTable = Conexion.Consultar("SELECT * FROM subzonas WHERE subzonanombre='" + SubZonaNombre + "'")
+            Dim Resultado As DataTable = SZObtenerNombre(SubZonaNombre)
             If Resultado IsNot Nothing
                 If Resultado.Rows.Count > 0
                     tbxNombre.Text = Resultado.Rows(0).Item("subzonanombre").ToString

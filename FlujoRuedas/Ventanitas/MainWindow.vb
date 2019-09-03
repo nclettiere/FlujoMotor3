@@ -1,14 +1,11 @@
-﻿Public Class MainWindow
+﻿Imports Logica
 
-    Private Property Conexion As DB.ODBC = New DB.ODBC
+Public Class MainWindow
 
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Conexion = New DB.ODBC
         Dim VentanaLogin = Login.Instance
-        VentanaLogin.Conexion = Conexion
 
         If Not mainContent.Contains(VentanaLogin) Then
-            VentanaLogin.Conexion = Conexion
             Me.ClientSize = VentanaLogin.Size
             MainContent.Controls.Add(VentanaLogin)
             VentanaLogin.Dock = DockStyle.Fill
@@ -18,24 +15,16 @@
         End If
     End Sub
 
-    Friend Sub CambiarControl(index As Integer)
-        Dim Seleccion As Object
+    Friend Sub CargarMenuPrincipal()
+        Dim Menu = MenuPrincipal.Instance
 
-        Select Case index
-            Case 0
-                Seleccion = MenuPrincipal.Instance
-                Me.ClientSize = MenuPrincipal.Instance.Size
-            Case Else
-                Seleccion = MenuPrincipal.Instance
-                Me.ClientSize = MenuPrincipal.Instance.Size
-        End Select
-
-        If Not mainContent.Contains(Seleccion) Then
-            MainContent.Controls.Add(Seleccion)
-            Seleccion.Dock = DockStyle.Fill
-            Seleccion.BringToFront()
+        If Not mainContent.Contains(Menu) Then
+            Me.ClientSize = Menu.Size
+            MainContent.Controls.Add(Menu)
+            Menu.Dock = DockStyle.Fill
+            Menu.BringToFront()
         Else
-            Seleccion.BringToFront()
+            Menu.BringToFront()
         End If
     End Sub
 End Class

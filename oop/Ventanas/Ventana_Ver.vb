@@ -53,6 +53,12 @@ Public Class Ventana_Ver
         selecVehiculo.AutoSize = True
     End Sub
 
+    Friend Sub LoadControl(verLvd As VerLavados)
+        Me.ClientSize = verLvd.Size
+        mainContent.Controls.Add(verLvd)
+        verLvd.AutoSize = True
+    End Sub
+
     ''' <summary>
     ''' Metodo usado para cambiar dinamicamente el contenido del MainContent
     ''' </summary>

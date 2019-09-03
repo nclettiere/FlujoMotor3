@@ -32,11 +32,11 @@ Partial Class ModificarSubzona
         Me.tbxCapacidad = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.FlowLayoutPanel1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout
+        Me.Panel1.SuspendLayout
+        Me.Panel2.SuspendLayout
+        Me.Panel3.SuspendLayout
+        Me.SuspendLayout
         '
         'FlowLayoutPanel1
         '
@@ -63,7 +63,7 @@ Partial Class ModificarSubzona
         'lblSubZona
         '
         Me.lblSubZona.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lblSubZona.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubZona.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblSubZona.ForeColor = System.Drawing.Color.Orange
         Me.lblSubZona.Location = New System.Drawing.Point(0, 0)
         Me.lblSubZona.Name = "lblSubZona"
@@ -75,7 +75,7 @@ Partial Class ModificarSubzona
         '
         'Panel2
         '
-        Me.Panel2.AutoSize = True
+        Me.Panel2.AutoSize = true
         Me.Panel2.Controls.Add(Me.tbxNombre)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Location = New System.Drawing.Point(7, 51)
@@ -93,9 +93,9 @@ Partial Class ModificarSubzona
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        Me.Label2.AutoSize = true
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Margin = New System.Windows.Forms.Padding(15, 0, 3, 10)

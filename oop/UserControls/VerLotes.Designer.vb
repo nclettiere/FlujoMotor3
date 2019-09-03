@@ -55,7 +55,7 @@ Partial Class VerLotes
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btneliminar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
@@ -520,9 +520,12 @@ Partial Class VerLotes
         '
         'DataGridViewVehiculos
         '
+        Me.DataGridViewVehiculos.AllowUserToAddRows = false
+        Me.DataGridViewVehiculos.AllowUserToDeleteRows = false
         Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Top
         Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 29)
+        Me.DataGridViewVehiculos.MultiSelect = false
         Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
         Me.DataGridViewVehiculos.ReadOnly = true
         Me.DataGridViewVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -537,7 +540,7 @@ Partial Class VerLotes
         '
         Me.TableLayoutPanel5.ColumnCount = 1
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Button3, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.btneliminar, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 397)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
@@ -546,25 +549,25 @@ Partial Class VerLotes
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(483, 122)
         Me.TableLayoutPanel5.TabIndex = 7
         '
-        'Button3
+        'btneliminar
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Button3.AutoSize = true
-        Me.Button3.BackColor = System.Drawing.Color.DimGray
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Orange
-        Me.Button3.Location = New System.Drawing.Point(0, 33)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button3.MaximumSize = New System.Drawing.Size(999, 55)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(483, 55)
-        Me.Button3.TabIndex = 24
-        Me.Button3.Text = "Eliminar Vehiculo"
-        Me.Button3.UseVisualStyleBackColor = false
-        Me.Button3.Visible = false
+        Me.btneliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.btneliminar.AutoSize = true
+        Me.btneliminar.BackColor = System.Drawing.Color.DimGray
+        Me.btneliminar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btneliminar.FlatAppearance.BorderSize = 0
+        Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btneliminar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btneliminar.ForeColor = System.Drawing.Color.Orange
+        Me.btneliminar.Location = New System.Drawing.Point(0, 33)
+        Me.btneliminar.Margin = New System.Windows.Forms.Padding(0)
+        Me.btneliminar.MaximumSize = New System.Drawing.Size(999, 55)
+        Me.btneliminar.Name = "btneliminar"
+        Me.btneliminar.Size = New System.Drawing.Size(483, 55)
+        Me.btneliminar.TabIndex = 24
+        Me.btneliminar.Text = "Eliminar Seleccionado"
+        Me.btneliminar.UseVisualStyleBackColor = false
+        Me.btneliminar.Visible = false
         '
         'VerLotes
         '
@@ -631,5 +634,5 @@ End Sub
     Friend WithEvents Button1 As Button
     Friend WithEvents btnAgregarVehiculo As Button
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btneliminar As Button
 End Class

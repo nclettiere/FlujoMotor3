@@ -1,4 +1,4 @@
-﻿Imports System.Data.Odbc
+﻿Imports Logica
 
 Public Class VerPatio
     Private Shared _instance As VerPatio
@@ -32,7 +32,7 @@ Public Class VerPatio
 
     Private Sub OnVerPatioLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos WHERE loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
+            Dim resultado As DataTable = VObtenerAllFiltro("loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL) AND loteid IS NOT NULL")
             DataGridViewVehiculos.DataSource = resultado
             DataGridViewVehiculos.MultiSelect = False
         Catch ex As Exception
@@ -41,22 +41,15 @@ Public Class VerPatio
     End Sub
 
     Private Sub BtnLavado_Click(sender As Object, e As EventArgs) Handles btnLavado.Click
-        Dim DialogoLavado As DialogResult = MessageBox.Show("Deseas hacer un lavado para el vehiculo: " + VinSeleccionado + "?", "Lavados", MessageBoxButtons.YesNo)
-        If DialogoLavado = DialogResult.Yes
-            Try
-                Dim command As OdbcCommand = New OdbcCommand("INSERT INTO lavadovehiculo (vehiculovin, operariopatioid) VALUES(?, 3)")
-                Dim parameters As OdbcParameterCollection = command.Parameters
-
-                parameters.Add("vehiculovin", OdbcType.VarChar)
-                parameters("vehiculovin").Value = VinSeleccionado
-
-                command.Connection = Conexion.ConODBC
-                command.ExecuteNonQuery()
-            Catch ex As Exception
-                Serilog.Log.Error(ex, "Imposible crear registro de lavado.")
-                MessageBox.Show("Surgio un error al intentar crear el lavado. Vea el LOG para mas informacion.")
-            End Try
-        End If
+        Try
+            Dim CVentanaVer As Ventana_Ver = New Ventana_Ver
+            Dim VerLvd = New VerLavados()
+            VerLvd.CargarDatos(VinSeleccionado)
+            CVentanaVer.LoadControl(VerLvd)
+            CVentanaVer.ShowDialog
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al abrir VerLavados")
+        End Try
     End Sub
 
     Private Sub CambioSeleccion(sender As Object, e As EventArgs) Handles DataGridViewVehiculos.SelectionChanged
@@ -82,10 +75,10 @@ Public Class VerPatio
         Try
             If tbxBuscarVin.Text.Length > 0
                 '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
+                Dim resultado As DataTable = VObtenerAllFiltro("vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%' AND loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
                 DataGridViewVehiculos.DataSource = resultado
             Else
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos")
+                Dim resultado As DataTable = VObtenerAllFiltro("SELECT * FROM vehiculos WHERE loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
                 DataGridViewVehiculos.DataSource = resultado
             End If
         Catch ex As Exception
@@ -98,10 +91,10 @@ Public Class VerPatio
         Try
             If tbxBuscarVin.Text.Length > 0
                 '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos WHERE vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%'")
+                Dim resultado As DataTable = VObtenerAllFiltro("vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%' AND loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
                 DataGridViewVehiculos.DataSource = resultado
             Else
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM vehiculos")
+                Dim resultado As DataTable = VObtenerAllFiltro("loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
                 DataGridViewVehiculos.DataSource = resultado
             End If
         Catch ex As Exception
@@ -113,7 +106,7 @@ Public Class VerPatio
     Private Sub CambioTab(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
         If TabControl1.SelectedIndex = 1
             Try
-                Dim resultado As DataTable = FormParent.Conexion.Consultar("SELECT * FROM lotes")
+                Dim resultado As DataTable = LObtenerAllFitro("lotefechallegada IS NOT NULL")
                 DataGridViewLotes.DataSource = resultado
             Catch ex As Exception
                 MessageBox.Show("Error al listar lotes.")
@@ -129,7 +122,7 @@ Public Class VerPatio
     Private Sub BtnVer_Click(sender As Object, e As EventArgs) Handles btnVer.Click
         Try
             Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-            VerLotes.Instance.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString(), FormParent.Conexion)
+            VerLotes.Instance.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString())
             VentanaVer.LoadControl(VerLotes.Instance)
             VentanaVer.ShowDialog()
         Catch ex As Exception

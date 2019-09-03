@@ -49,6 +49,11 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Serilog">
       <HintPath>.\Serilog.dll</HintPath>
     </Reference>
@@ -59,7 +64,9 @@
       <HintPath>.\Serilog.Sinks.File.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -83,6 +90,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControl\VerViajes.Designer.vb">
+      <DependentUpon>VerViajes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\VerViajes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ventanitas\MainWindow.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\VerViajes.resx">
+      <DependentUpon>VerViajes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\MainWindow.resx">
       <DependentUpon>MainWindow.vb</DependentUpon>

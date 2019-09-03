@@ -32,13 +32,6 @@ Public Module Conexion
         DBConexion.Close()
     End Sub
 
-    Public Function Consultar(query As String) As DataTable
-        Dim datos As New DataTable
-        Dim adaptador As New OdbcDataAdapter(query, DBConexion)
-        adaptador.Fill(datos)
-        Return datos
-    End Function
-
     Private Function GetArchivoConexion() As String
         Try
             Dim fileReader As String

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Module Name="Logica.Conexion">
+    <Position X="1" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAgAAAAGAAAAAgACAAAEgAAAAgAAAAAA=</HashCode>
+      <FileName>Conexion.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="Logica.Inspecciones">
+    <Position X="3.75" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAEAAAAAAAABAAAAAAAACAAAAAACAA=</HashCode>
+      <FileName>Modulos\Inspecciones.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="Logica.Lotes">
+    <Position X="10" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIABAAQIAAAAAhAAAIAAAAAAAAIIAAAACBEAAAAAA=</HashCode>
+      <FileName>Modulos\Lotes.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="Logica.Misc">
+    <Position X="13" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modulos\Misc.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="Logica.Patios">
+    <Position X="13" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAMAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modulos\Patios.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="Logica.Vehiculos">
+    <Position X="7" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAAAAAAAAAABAAAAAAEAAAAAAAUAIAAAAAAADI=</HashCode>
+      <FileName>Modulos\Vehiculos.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="Logica.Zonas">
+    <Position X="15.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAIAAiAwICABIABAAAGCAAABAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Modulos\Zonas.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

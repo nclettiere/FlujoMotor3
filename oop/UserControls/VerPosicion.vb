@@ -29,11 +29,11 @@ Public Class VerPosicion
         If Integer.TryParse(tbxFila.Text , Fila) Then
             If Integer.TryParse(tbxColumna.Text , Columna) Then
                 If cbxZona.SelectedIndex >= 0
-                    Dim resultadoPatio As String = Conexion.Consultar("SELECT pationombre FROM patios WHERE patioid=" + Lote.Rows(0).Item("patioid").ToString).Rows(0).Item(0).ToString
+                    Dim resultadoPatio As String = PObtenerID(Lote.Rows(0).Item("patioid").ToString).Item("pationombre")
                     MessageBox.Show(resultadoPatio)
                     If TieneSubzona
                         Try
-                            Conexion.Consultar("UPDATE vehiculosubzona SET fila="+ Fila.ToString +", columna="+ Columna.ToString  +" WHERE vehiculovin='"+ VIN +"' AND subzonanombre='"+ cbxZona.Text +"'")  
+                            VSUpdate(Fila.ToString, Columna.ToString, cbxZona.Text, VIN)
                             MessageBox.Show("La posicion del vehiculo: " + VIN + "ha sido actualizada." + Environment.NewLine +
                                             "Patio:" + resultadoPatio + Environment.NewLine +
                                             "Columna: " + Columna.ToString + Environment.NewLine +
@@ -43,7 +43,7 @@ Public Class VerPosicion
                         End Try
                     Else
                         Try
-                            Conexion.Consultar("INSERT INTO vehiculosubzona (vehiculoVIN, subZonaNombre, zonaID, columna, fila) VALUES ('"+ VIN +"', '"+ cbxZona.Text +"', "+ ZonaId +", "+ Columna.ToString +", "+ Fila.ToString +")")
+                            VSZInsertar(VIN,  cbxZona.Text, zonaID, Columna.ToString, Fila.ToString)
                             MessageBox.Show("La posicion del vehiculo: " + VIN + "ha sido actualizada." + Environment.NewLine +
                                         "Patio:" + resultadoPatio + Environment.NewLine +
                                         "Columna: " + Columna.ToString + Environment.NewLine +
@@ -90,15 +90,15 @@ Public Class VerPosicion
             If SubZonas IsNot Nothing
                 If SubZonas.Rows.Count > 0
                     If TieneSubzona
-                        Dim ConsultaSubZonas = SZObtenerVIN(VIN).Rows(0)
                         For Each Item As String in cbxZona.Items
                             If String.Equals(Item, SubZonas.Rows(0).Item("subzonanombre").ToString)
                                 cbxZona.SelectedItem = Item
                             End If
                         Next
-                        
-                        tbxColumna.Text = ConsultaSubZonas.Item("columna").ToString
-                        tbxFila.Text = ConsultaSubZonas.Item("fila").ToString
+
+                        Dim ConsultaVSubZonas = VSZObtenerVIN(VIN)                      
+                        tbxColumna.Text = ConsultaVSubZonas.Rows(0).Item("columna").ToString
+                        tbxFila.Text = ConsultaVSubZonas.Rows(0).Item("fila").ToString
                     End If
                 End If
             End If

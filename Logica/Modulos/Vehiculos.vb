@@ -12,6 +12,63 @@ Public Module Vehiculos
         Else
             Return Nothing
         End If
+        Cerrar
+    End Function
+
+    Public Function VUpdateLote(LoteId As String, VIN As String) As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("UPDATE vehiculos SET loteid ="+Loteid+" WHERE vehiculovin='"+VIN+"'", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+    Public Function VObtenerAllFiltro(Filtro As String) As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos WHERE "+ Filtro, DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+    Public Function VObtenerLoteId(LoteId As String) As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos WHERE loteid="+ LoteId, DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+    Public Function VUpdateLoteId(LoteIdNuevo As String, VIN As String) As Boolean
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("UPDATE vehiculos SET loteid ="+ LoteIdNuevo +"  WHERE vehiculovin='"+ VIN +"'", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return True
+        Else
+            Return False
+        End If
+        Cerrar
     End Function
 
     Public Function VInsertar(Metadata As String()) As Boolean

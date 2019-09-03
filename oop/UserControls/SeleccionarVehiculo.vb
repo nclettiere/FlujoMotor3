@@ -1,8 +1,7 @@
-﻿Imports DB
+﻿Imports Logica
 
 Public Class SeleccionarVehiculo
     Private Shared _instance As SeleccionarVehiculo
-    Friend Property Conexion As DB.ODBC
 
     Friend FormParent As Ventana_Seleccionar
 
@@ -41,7 +40,7 @@ Public Class SeleccionarVehiculo
                     If Not String.IsNullOrWhiteSpace(tbxFila.Text)
                         If Integer.TryParse(tbxFila.Text, Fila)
                             Try
-                                Dim VehiculosAparcados = Conexion.Consultar("INSERT INTO vehiculosubzona (vehiculovin, subzonanombre, zonaid, columna, fila) VALUES ('"+ VinSeleccionado +"', '"+ SubZonaNombre +"', "+ ZonaId +", "+ Columna.ToString +", "+ Fila.ToString +")")
+                                Dim VehiculosAparcados = VSZInsertar(VinSeleccionado, SubzonaNombre, ZonaId, Columna.ToString, Fila.ToString)
                                 MessageBox.Show("Vehiculo agregado en subzona correctamente.")
                                 ParentForm.Close()
                             Catch ex As Exception
@@ -57,7 +56,7 @@ Public Class SeleccionarVehiculo
 
     Private Sub OnSelecVecloLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim VehiculosAparcados = Conexion.Consultar("SELECT vehiculovin FROM vehiculosubzona")
+            Dim VehiculosAparcados = VSZObtenerVIN()
             Dim QueryFiltro As String = ""
             Dim Contador As Integer = 0
             Dim Max = VehiculosAparcados.Rows.Count
@@ -65,7 +64,7 @@ Public Class SeleccionarVehiculo
                 If Contador < Max - 1
                     QueryFiltro = QueryFiltro + " vehiculovin='"+ AparcadoRow.Item("vehiculovin") + "' OR"
                 Else
-                    QueryFiltro = QueryFiltro + " vehiculovin='"+ AparcadoRow.Item("vehiculovin") + "'"
+                    QueryFiltro = QueryFiltro + " vehiculovin='"+ AparcadoRow.Item("vehiculovin") + "')"
                 End If
                 Serilog.Log.Information(Contador.ToString)
                 Contador += 1
@@ -74,9 +73,9 @@ Public Class SeleccionarVehiculo
             Dim VehiculosDataTable As DataTable
             If Not String.IsNullOrWhiteSpace(QueryFiltro)
                 '' Obtiene los vehiculos que no estan en una subzona.
-                VehiculosDataTable = Conexion.Consultar("SELECT DISTINCT * FROM vehiculos WHERE vehiculovin NOT IN (SELECT vehiculovin FROM vehiculosubzona WHERE"+ QueryFiltro +")")
+                VehiculosDataTable = VObtenerAllFiltro("vehiculovin NOT IN (SELECT vehiculovin FROM vehiculosubzona WHERE"+ QueryFiltro)
             Else
-                VehiculosDataTable = Conexion.Consultar("SELECT * FROM vehiculos")
+                VehiculosDataTable = VObtenerAll()
             End If
             
             DataGridVehiculos.DataSource = VehiculosDataTable

@@ -28,16 +28,20 @@ Public Class AgregarLote
     End Sub
 
     Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles btAgregar.Click
-        If Not String.IsNullOrWhiteSpace(riTeBoDescripcion.Text) Then
-            If cbxPatio.SelectedIndex >= 0
-                Dim datos As String() = {riTeBoDescripcion.Text, cbxPatio.Text.ToString}
-                ParentControl.UpdateLotes(datos)
-                FormParent.Close()
+        If Not String.IsNullOrWhiteSpace(tbxNombre.Text)
+            If Not String.IsNullOrWhiteSpace(riTeBoDescripcion.Text) Then
+                If cbxPatio.SelectedIndex >= 0
+                    Dim datos As String() = {riTeBoDescripcion.Text, cbxPatio.Text.ToString, tbxNombre.ToString}
+                    ParentControl.UpdateLotes(datos)
+                    FormParent.Close()
+                Else
+                    MessageBox.Show("Debes seleccionar un patio.")
+                End If
             Else
-                MessageBox.Show("Debes seleccionar un patio.")
+                MessageBox.Show("La descripcion no debe quedar vacia.")
             End If
         Else
-            MessageBox.Show("La descripcion no debe quedar vacia.")
+            MessageBox.Show("El Nombre no debe quedar vacio.")
         End If
     End Sub
 

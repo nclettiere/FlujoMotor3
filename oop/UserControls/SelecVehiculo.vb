@@ -1,14 +1,14 @@
-﻿Public Class SelecVehiculo
-    Private Property Conexion As DB.ODBC
+﻿Imports Logica
+
+Public Class SelecVehiculo
     Private Property FormParent As VerLotes
     Private Property VinSeleccionado As String
 
-    Friend Sub CargarDatos(Conexion As DB.ODBC, FormParent As VerLotes)
-        Me.Conexion = Conexion
+    Friend Sub CargarDatos(FormParent As VerLotes)
         Me.FormParent = FormParent
 
         Try
-            Dim ResultadoVehiculos = Conexion.Consultar("SELECT * FROM vehiculos WHERE loteid IS NULL")
+            Dim ResultadoVehiculos = VObtenerAllFiltro("loteid IS NULL")
             DataGridVehiculos.DataSource = ResultadoVehiculos
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al cargar vehiculos")

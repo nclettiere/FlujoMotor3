@@ -106,11 +106,12 @@ Public Class InfoAutos
     Private Sub BtVerLote_Click_1(sender As Object, e As EventArgs) Handles btVerLote.Click
         Try
             Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-            VerLotes.Instance.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString(), FormParent.Conexion)
-            VentanaVer.LoadControl(VerLotes.Instance)
+            Dim VerLotes As VerLotes = New VerLotes
+            VerLotes.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString())
+            VentanaVer.LoadControl(VerLotes)
             VentanaVer.ShowDialog()
         Catch ex As Exception
-
+            Serilog.Log.Error(ex, "bruh")
         End Try
     End Sub
 

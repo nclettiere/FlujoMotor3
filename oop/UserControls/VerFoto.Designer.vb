@@ -33,18 +33,19 @@ Partial Class VerFoto
         Me.PbFoto.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PbFoto.Location = New System.Drawing.Point(0, 0)
         Me.PbFoto.Name = "PbFoto"
-        Me.PbFoto.Size = New System.Drawing.Size(150, 150)
+        Me.PbFoto.Size = New System.Drawing.Size(579, 555)
         Me.PbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PbFoto.TabIndex = 0
         Me.PbFoto.TabStop = false
         '
-        'Ver_Foto
+        'VerFoto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = true
         Me.Controls.Add(Me.PbFoto)
-        Me.Name = "Ver_Foto"
+        Me.Name = "VerFoto"
+        Me.Size = New System.Drawing.Size(579, 555)
         CType(Me.PbFoto,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout

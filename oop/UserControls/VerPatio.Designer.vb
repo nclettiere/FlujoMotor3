@@ -36,6 +36,7 @@ Partial Class VerPatio
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnPatios = New System.Windows.Forms.Button()
         Me.btnPos = New System.Windows.Forms.Button()
         Me.btnLavado = New System.Windows.Forms.Button()
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
@@ -43,7 +44,6 @@ Partial Class VerPatio
         Me.autito = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnPatios = New System.Windows.Forms.Button()
         Me.lote.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
@@ -65,7 +65,7 @@ Partial Class VerPatio
         Me.lote.Location = New System.Drawing.Point(4, 22)
         Me.lote.Name = "lote"
         Me.lote.Padding = New System.Windows.Forms.Padding(3)
-        Me.lote.Size = New System.Drawing.Size(747, 458)
+        Me.lote.Size = New System.Drawing.Size(835, 458)
         Me.lote.TabIndex = 1
         Me.lote.Text = "LOTES"
         '
@@ -85,7 +85,7 @@ Partial Class VerPatio
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.47788!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(741, 452)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(829, 452)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'TableLayoutPanel4
@@ -102,7 +102,7 @@ Partial Class VerPatio
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(735, 50)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(823, 50)
         Me.TableLayoutPanel4.TabIndex = 3
         '
         'TextBox1
@@ -113,7 +113,7 @@ Partial Class VerPatio
         Me.TextBox1.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.TextBox1.Location = New System.Drawing.Point(3, 11)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(568, 27)
+        Me.TextBox1.Size = New System.Drawing.Size(637, 27)
         Me.TextBox1.TabIndex = 3
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -126,7 +126,7 @@ Partial Class VerPatio
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Orange
-        Me.Button2.Location = New System.Drawing.Point(599, 5)
+        Me.Button2.Location = New System.Drawing.Point(677, 5)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(111, 40)
         Me.Button2.TabIndex = 2
@@ -148,7 +148,7 @@ Partial Class VerPatio
         Me.DataGridViewLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewLotes.ShowCellToolTips = false
         Me.DataGridViewLotes.ShowEditingIcon = false
-        Me.DataGridViewLotes.Size = New System.Drawing.Size(735, 310)
+        Me.DataGridViewLotes.Size = New System.Drawing.Size(823, 310)
         Me.DataGridViewLotes.TabIndex = 4
         '
         'Panel2
@@ -157,7 +157,7 @@ Partial Class VerPatio
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(3, 375)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(735, 74)
+        Me.Panel2.Size = New System.Drawing.Size(823, 74)
         Me.Panel2.TabIndex = 5
         '
         'btnVer
@@ -169,7 +169,7 @@ Partial Class VerPatio
         Me.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVer.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnVer.ForeColor = System.Drawing.Color.Orange
-        Me.btnVer.Location = New System.Drawing.Point(20, 11)
+        Me.btnVer.Location = New System.Drawing.Point(64, 11)
         Me.btnVer.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btnVer.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnVer.Name = "btnVer"
@@ -273,6 +273,24 @@ Partial Class VerPatio
         Me.Panel4.Size = New System.Drawing.Size(823, 74)
         Me.Panel4.TabIndex = 5
         '
+        'btnPatios
+        '
+        Me.btnPatios.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnPatios.BackColor = System.Drawing.Color.DimGray
+        Me.btnPatios.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnPatios.FlatAppearance.BorderSize = 0
+        Me.btnPatios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPatios.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnPatios.ForeColor = System.Drawing.Color.Orange
+        Me.btnPatios.Location = New System.Drawing.Point(487, 11)
+        Me.btnPatios.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnPatios.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnPatios.Name = "btnPatios"
+        Me.btnPatios.Size = New System.Drawing.Size(143, 53)
+        Me.btnPatios.TabIndex = 8
+        Me.btnPatios.Text = "Lista Patios"
+        Me.btnPatios.UseVisualStyleBackColor = false
+        '
         'btnPos
         '
         Me.btnPos.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -306,7 +324,7 @@ Partial Class VerPatio
         Me.btnLavado.Name = "btnLavado"
         Me.btnLavado.Size = New System.Drawing.Size(143, 53)
         Me.btnLavado.TabIndex = 6
-        Me.btnLavado.Text = "Hacer Lavado"
+        Me.btnLavado.Text = "Lavados"
         Me.btnLavado.UseVisualStyleBackColor = false
         '
         'btActualizarVehiculo
@@ -382,24 +400,6 @@ Partial Class VerPatio
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(849, 490)
         Me.Panel1.TabIndex = 1
-        '
-        'btnPatios
-        '
-        Me.btnPatios.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnPatios.BackColor = System.Drawing.Color.DimGray
-        Me.btnPatios.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnPatios.FlatAppearance.BorderSize = 0
-        Me.btnPatios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPatios.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnPatios.ForeColor = System.Drawing.Color.Orange
-        Me.btnPatios.Location = New System.Drawing.Point(487, 11)
-        Me.btnPatios.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnPatios.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnPatios.Name = "btnPatios"
-        Me.btnPatios.Size = New System.Drawing.Size(143, 53)
-        Me.btnPatios.TabIndex = 8
-        Me.btnPatios.Text = "Lista Patios"
-        Me.btnPatios.UseVisualStyleBackColor = false
         '
         'VerPatio
         '

@@ -33,27 +33,26 @@ Public Class AgregarVehiculo
         LoteModo = False
 
         If EstaModificando
+            txtVin.Enabled = False
             Try
-                Dim VehiculoDatos = Conexion.Consultar("SELECT * FROM vehiculos WHERE vehiculovin='" + VinAModificar + "'")
+                Dim VehiculoDatos = VObtenerVIN(VinAModificar)
                 If VehiculoDatos IsNot Nothing
-                    If VehiculoDatos.Rows.Count > 0
-                        Dim LoteId = VehiculoDatos.Rows(0).Item("loteid").ToString
-                        If LoteId >= 0
-                            Dim LoteDatos =  Conexion.Consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
-                            If LoteDatos IsNot Nothing
-                                If LoteDatos.Rows.Count > 0
-                                    txtVin.Text = VehiculoDatos.Rows(0).Item("vehiculovin")
-                                    txtMarca.Text = VehiculoDatos.Rows(0).Item("vehiculomarca")
-                                    txtModelo.Text = VehiculoDatos.Rows(0).Item("vehiculomodelo")
-                                    txtColor.Text = VehiculoDatos.Rows(0).Item("vehiculocolor")
-                                    cbxTipo.SelectedValue = VehiculoDatos.Rows(0).Item("vehiculotipo")
-                                    VehiculoAno.Value = DateTime.ParseExact(VehiculoDatos.Rows(0).Item("vehiculoanio"), "yyyy", Nothing)
-                                    btnNuevoLote.Visible = False
-                                    btnLoteExistente.Visible = False
-                                    lblLoteSelection.Visible = True
-                                    lblLoteSelection.Text = "Lote Seleccionado: ID=" + LoteDatos.Rows(0).Item("loteid").ToString + ", Nombre=" + LoteDatos.Rows(0).Item("lotenombre").ToString
-                                    btnAgregar.Text = "Modificar"
-                                End If
+                    Dim LoteId = VehiculoDatos.Item("loteid").ToString
+                    If LoteId >= 0
+                        Dim LoteDatos = Consultar("SELECT * FROM lotes WHERE loteid=" + LoteId)
+                        If LoteDatos IsNot Nothing
+                            If LoteDatos.Rows.Count > 0
+                                txtVin.Text = VehiculoDatos.Item("vehiculovin")
+                                txtMarca.Text = VehiculoDatos.Item("vehiculomarca")
+                                txtModelo.Text = VehiculoDatos.Item("vehiculomodelo")
+                                txtColor.Text = VehiculoDatos.Item("vehiculocolor")
+                                cbxTipo.SelectedValue = VehiculoDatos.Item("vehiculotipo")
+                                VehiculoAno.Value = DateTime.ParseExact(VehiculoDatos.Item("vehiculoanio"), "yyyy", Nothing)
+                                btnNuevoLote.Visible = False
+                                btnLoteExistente.Visible = False
+                                lblLoteSelection.Visible = True
+                                lblLoteSelection.Text = "Lote Seleccionado: ID=" + LoteDatos.Rows(0).Item("loteid").ToString + ", Nombre=" + LoteDatos.Rows(0).Item("lotenombre").ToString
+                                btnAgregar.Text = "Modificar"
                             End If
                         End If
                     End If
@@ -169,25 +168,25 @@ Public Class AgregarVehiculo
         If CheckFields() Then
             If EstaModificando
                 If String.Equals(VinAModificar, txtVin.Text)
-                    Dim VehiculoDatos = Conexion.Consultar("SELECT * FROM vehiculos WHERE vehiculovin='" + VinAModificar + "'").Rows(0)
+                    Dim VehiculoDatos = Consultar("SELECT * FROM vehiculos WHERE vehiculovin='" + VinAModificar + "'").Rows(0)
                     If Not String.Equals(txtMarca.Text, VehiculoDatos.Item("vehiculomarca"))
-                        Conexion.Consultar("UPDATE vehiculos SET vehiculomarca='"+ txtMarca.Text +"' WHERE vehiculovin='"+ VinAModificar +"'")
+                        Consultar("UPDATE vehiculos SET vehiculomarca='"+ txtMarca.Text +"' WHERE vehiculovin='"+ VinAModificar +"'")
                     End If
 
                     If Not String.Equals(txtModelo.Text, VehiculoDatos.Item("vehiculomodelo"))
-                        Conexion.Consultar("UPDATE vehiculos SET vehiculomodelo='"+ txtModelo.Text +"' WHERE vehiculovin='"+ VinAModificar +"'")
+                        Consultar("UPDATE vehiculos SET vehiculomodelo='"+ txtModelo.Text +"' WHERE vehiculovin='"+ VinAModificar +"'")
                     End If
 
                     If Not String.Equals(txtColor.Text, VehiculoDatos.Item("vehiculocolor"))
-                        Conexion.Consultar("UPDATE vehiculos SET vehiculocolor='"+ txtColor.Text +"' WHERE vehiculovin='"+ VinAModificar +"'")
+                        Consultar("UPDATE vehiculos SET vehiculocolor='"+ txtColor.Text +"' WHERE vehiculovin='"+ VinAModificar +"'")
                     End If
 
                     If Not String.Equals(txtColor.Text, VehiculoDatos.Item("vehiculocolor"))
-                        Conexion.Consultar("UPDATE vehiculos SET vehiculocolor='"+ txtColor.Text +"' WHERE vehiculovin='"+ VinAModificar +"'")
+                        Consultar("UPDATE vehiculos SET vehiculocolor='"+ txtColor.Text +"' WHERE vehiculovin='"+ VinAModificar +"'")
                     End If
 
                     If Not String.Equals(VehiculoAno.Value.Year.ToString, VehiculoDatos.Item("vehiculoanio"))
-                        Conexion.Consultar("UPDATE vehiculos SET vehiculoanio='"+ VehiculoAno.Value.Year.ToString +"' WHERE vehiculovin='"+ VinAModificar +"'")
+                        Consultar("UPDATE vehiculos SET vehiculoanio='"+ VehiculoAno.Value.Year.ToString +"' WHERE vehiculovin='"+ VinAModificar +"'")
                     End If
 
                      Dim vehiculoTipo = cbxTipo.Text
@@ -195,7 +194,10 @@ Public Class AgregarVehiculo
                         vehiculoTipo = cbxTipo.Text.ToLower()
                     End If
 
-                    Conexion.Consultar("UPDATE vehiculos SET vehiculotipo='"+ vehiculoTipo +"' WHERE vehiculovin='"+ VinAModificar +"'")
+                    Consultar("UPDATE vehiculos SET vehiculotipo='"+ vehiculoTipo +"' WHERE vehiculovin='"+ VinAModificar +"'")
+
+                    MessageBox.Show("Vehiculo Modificado Correctamente.")
+                    ParentForm.Close
                 End If
             Else
                 Dim ChequearVin As Integer = VCheckVin(txtVin.Text)
@@ -211,7 +213,7 @@ Public Class AgregarVehiculo
 
                                 Dim LoteCount = LObtenerCountAll()
                                 Dim PatioInfo = PObtenerNombre(NuevoLoteInfo(1))
-                                Dim LMetaDatos As String() = {(LoteCount + 1).ToString, NuevoLoteInfo(0).ToString(), "'LOTE #" & (LoteCount + 1).ToString & "'",  "1",  PatioInfo.Item("patioid").ToString} 
+                                Dim LMetaDatos As String() = {(LoteCount + 1).ToString, NuevoLoteInfo(0).ToString(), NuevoLoteInfo(2),  "1",  PatioInfo.Item("patioid").ToString} 
                                 LInsertar(LMetaDatos)
                                 Dim VMetaDatos As String() = {txtVin.Text.ToUpper, txtColor.Text, txtMarca.Text, txtModelo.Text, VehiculoAno.Value.Year.ToString, vehiculoTipo, "1", (LoteCount + 1).ToString} 
                                 VInsertar(VMetaDatos)
@@ -284,14 +286,14 @@ Public Class AgregarVehiculo
                                     vehiculoTipo = cbxTipo.Text.ToLower()
                                 End If
 
-                                ''Dim VehiculoCount = FormParent.Conexion.Consultar("SELECT COUNT(*) FROM vehiculos")
-                                ''Dim InsertarVehiculo As DataTable = FormParent.FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1 )")
+                                Dim VMetaDatos As String() = {txtVin.Text.ToUpper, txtColor.Text, txtMarca.Text, txtModelo.Text, VehiculoAno.Value.Year.ToString, vehiculoTipo, "1"} 
+                                VInsertar(VMetaDatos)
 
-                                ''Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                                ''AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
-                                ''Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-                                ''VentanaVer.LoadControl(AgregarInspeccionControl)
-                                ''VentanaVer.ShowDialog()
+                                Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
+                                AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
+                                Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+                                VentanaVer.LoadControl(AgregarInspeccionControl)
+                                VentanaVer.ShowDialog()
 
                                 MessageBox.Show("Vehiculo Ingresado Correctamente.")
                                 Serilog.Log.Information("Vehiculo insertado correctamente.")

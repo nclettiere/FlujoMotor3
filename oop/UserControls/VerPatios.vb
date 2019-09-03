@@ -1,31 +1,25 @@
-﻿Imports DB
+﻿Imports Logica
 
 Public Class VerPatios
 
-    Public Property Conexion As ODBC
-
     Private Sub VerPatios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim PatioDatos = Conexion.Consultar("SELECT * FROM patios")
+            Dim PatioDatos = PObtenerAll()
             If PatioDatos IsNot Nothing
-                If PatioDatos.Rows.Count > 0
-                    For Each PatioRow As DataRow In PatioDatos.Rows
-                        Dim PatioId As String = PatioRow.Item("patioid").ToString
-                        Dim PatioNombre As String = PatioRow.Item("pationombre").ToString
-                        Dim PatioCantidad = 0
-                        Try
-                            Dim Cantidad = Conexion.Consultar("SELECT COUNT(*) FROM lotes WHERE patioid="+ PatioId)
-                            If Cantidad IsNot Nothing
-                                If Cantidad.Rows.Count > 0
-                                    Integer.TryParse(Cantidad.Rows(0).Item(0), PatioCantidad)
-                                End If
-                            End If
-                        Catch ex As Exception
-                            Serilog.Log.Warning(ex, "Posible valor nulo.")
-                        End Try
-                        FPContenido.Controls.Add(CrearPatioInfo(PatioId, PatioNombre, PatioCantidad.ToString))
-                    Next
-                End If
+                For Each PatioRow As DataRow In PatioDatos.Rows
+                    Dim PatioId As String = PatioRow.Item("patioid").ToString
+                    Dim PatioNombre As String = PatioRow.Item("pationombre").ToString
+                    Dim PatioCantidad = 0
+                    Try
+                        Dim Cantidad = LObtenerCountID(PatioId)
+                        If Cantidad > 0
+                            Integer.TryParse(Cantidad, PatioCantidad)
+                        End If
+                    Catch ex As Exception
+                        Serilog.Log.Warning(ex, "Posible valor nulo.")
+                    End Try
+                    FPContenido.Controls.Add(CrearPatioInfo(PatioId, PatioNombre, PatioCantidad.ToString))
+                Next
             End If
             ParentForm.ClientSize = Me.Size
         Catch ex As Exception

@@ -61,6 +61,7 @@ Partial Class VerVehiculo
         Me.Label8 = New System.Windows.Forms.Label()
         Me.labAno = New System.Windows.Forms.Label()
         Me.labColor = New System.Windows.Forms.Label()
+        Me.btnGenerarQR = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         Me.TableLayoutPanel5.SuspendLayout
@@ -222,6 +223,7 @@ Partial Class VerVehiculo
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel4.Controls.Add(Me.btnGenerarQR, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Button1, 2, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.btnModificar, 1, 0)
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 453)
@@ -659,6 +661,24 @@ Partial Class VerVehiculo
         Me.labColor.Text = "N/A"
         Me.labColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'btnGenerarQR
+        '
+        Me.btnGenerarQR.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnGenerarQR.BackColor = System.Drawing.Color.DimGray
+        Me.btnGenerarQR.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnGenerarQR.FlatAppearance.BorderSize = 0
+        Me.btnGenerarQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGenerarQR.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGenerarQR.ForeColor = System.Drawing.Color.Orange
+        Me.btnGenerarQR.Location = New System.Drawing.Point(43, 8)
+        Me.btnGenerarQR.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnGenerarQR.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnGenerarQR.Name = "btnGenerarQR"
+        Me.btnGenerarQR.Size = New System.Drawing.Size(143, 53)
+        Me.btnGenerarQR.TabIndex = 4
+        Me.btnGenerarQR.Text = "Generar QR"
+        Me.btnGenerarQR.UseVisualStyleBackColor = false
+        '
         'VerVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -721,4 +741,5 @@ End Sub
     Friend WithEvents labFila As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents btnModificar As Button
+    Friend WithEvents btnGenerarQR As Button
 End Class

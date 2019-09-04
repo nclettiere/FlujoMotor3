@@ -26,7 +26,6 @@ Partial Class VerViajes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.btEntregar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1.SuspendLayout
@@ -120,7 +119,6 @@ End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents DataGridViewLotes As DataGridView
-    Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
     Friend WithEvents btEntregar As Button
     Friend WithEvents Panel1 As Panel
 End Class

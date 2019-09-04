@@ -67,10 +67,7 @@ Public Module Misc
             Using qrCodeData As QRCodeData = qrGenerator.CreateQrCode(Texto, eccLevel)
 
                 Using qrCode As QRCode = New QRCode(qrCodeData)
-                    Return qrCode.GetGraphic(20, Color.Black, Color.White, icono, 25)
-                    ''Me.pictureBoxQRCode.Size = New System.Drawing.Size(pictureBoxQRCode.Width, pictureBoxQRCode.Height)
-                    ''Me.pictureBoxQRCode.SizeMode = PictureBoxSizeMode.CenterImage
-                    ''pictureBoxQRCode.SizeMode = PictureBoxSizeMode.StretchImage
+                    Return qrCode.GetGraphic(20, Color.Black, Color.White, 25)
                 End Using
             End Using
         End Using

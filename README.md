@@ -12,7 +12,7 @@ Repositorio Oficial de FlujoMotor por ESPI Solutions Inc.
 ### :pushpin: Tareas | TODO
 
 - [ ] Finalizar Transportista.
-- [ ] Finalizar Transportista
+- [ ] Finalizar Administrador
 
 ### :large_blue_diamond: Caracteristicas
 

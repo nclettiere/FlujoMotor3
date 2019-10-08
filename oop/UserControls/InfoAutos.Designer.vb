@@ -39,7 +39,10 @@ Partial Class InfoAutos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btVerLote = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnAgregarLote = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.autito.SuspendLayout
@@ -52,6 +55,7 @@ Partial Class InfoAutos
         Me.Panel2.SuspendLayout
         CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel3.SuspendLayout
+        Me.Panel4.SuspendLayout
         Me.SuspendLayout
         '
         'Panel1
@@ -265,6 +269,7 @@ Partial Class InfoAutos
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel4.Controls.Add(Me.Panel2, 0, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.Panel3, 0, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel4, 0, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -305,6 +310,7 @@ Partial Class InfoAutos
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.btnActualizar)
         Me.Panel3.Controls.Add(Me.btVerLote)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(3, 511)
@@ -312,6 +318,23 @@ Partial Class InfoAutos
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(901, 59)
         Me.Panel3.TabIndex = 8
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.Color.DimGray
+        Me.btnActualizar.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActualizar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.Orange
+        Me.btnActualizar.Location = New System.Drawing.Point(615, 0)
+        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(10, 3, 20, 3)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(143, 59)
+        Me.btnActualizar.TabIndex = 4
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = false
         '
         'btVerLote
         '
@@ -324,13 +347,37 @@ Partial Class InfoAutos
         Me.btVerLote.ForeColor = System.Drawing.Color.Orange
         Me.btVerLote.Location = New System.Drawing.Point(758, 0)
         Me.btVerLote.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
-        Me.btVerLote.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btVerLote.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btVerLote.Name = "btVerLote"
-        Me.btVerLote.Size = New System.Drawing.Size(143, 53)
+        Me.btVerLote.Size = New System.Drawing.Size(143, 59)
         Me.btVerLote.TabIndex = 3
         Me.btVerLote.Text = "Ver"
         Me.btVerLote.UseVisualStyleBackColor = false
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.btnAgregarLote)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(3, 3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(901, 65)
+        Me.Panel4.TabIndex = 9
+        '
+        'btnAgregarLote
+        '
+        Me.btnAgregarLote.BackColor = System.Drawing.Color.DimGray
+        Me.btnAgregarLote.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btnAgregarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAgregarLote.FlatAppearance.BorderSize = 0
+        Me.btnAgregarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnAgregarLote.ForeColor = System.Drawing.Color.Orange
+        Me.btnAgregarLote.Location = New System.Drawing.Point(0, 0)
+        Me.btnAgregarLote.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.btnAgregarLote.Name = "btnAgregarLote"
+        Me.btnAgregarLote.Size = New System.Drawing.Size(218, 65)
+        Me.btnAgregarLote.TabIndex = 4
+        Me.btnAgregarLote.Text = "Crear Nuevo Lote"
+        Me.btnAgregarLote.UseVisualStyleBackColor = false
         '
         'InfoAutos
         '
@@ -355,6 +402,7 @@ Partial Class InfoAutos
         Me.Panel2.ResumeLayout(false)
         CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel3.ResumeLayout(false)
+        Me.Panel4.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub
@@ -377,4 +425,7 @@ End Sub
     Friend WithEvents DataGridViewLotes As DataGridView
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btVerLote As Button
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents btnAgregarLote As Button
+    Friend WithEvents btnActualizar As Button
 End Class

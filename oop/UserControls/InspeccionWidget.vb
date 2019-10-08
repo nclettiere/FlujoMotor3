@@ -96,15 +96,6 @@ Public Class InspeccionWidget
         End Using
     End Function
 
-    Private Sub btnVincularDanio_Click(sender As Object, e As EventArgs) 
-        Dim AgregarInsp As AgregarInspeccion = New AgregarInspeccion
-        AgregarInsp.Modo = "VINCULAR"
-        AgregarInsp.CargarDatos(VIN)
-        Dim vntVer As Ventana_Ver = New Ventana_Ver
-        vntVer.LoadControl(AgregarInsp)
-        vntVer.ShowDialog()
-    End Sub
-
     Private Sub Btnfoto_Click(sender As Object, e As EventArgs) 
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver()
         Dim VerFoto As VerFoto = New VerFoto

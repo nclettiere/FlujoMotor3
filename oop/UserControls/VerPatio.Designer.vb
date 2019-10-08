@@ -31,10 +31,10 @@ Partial Class VerPatio
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnVer = New System.Windows.Forms.Button()
         Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
-        Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
-        Me.btBuscar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btBuscar = New System.Windows.Forms.Button()
+        Me.cbxFiltro = New System.Windows.Forms.ComboBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnPatios = New System.Windows.Forms.Button()
         Me.btnPos = New System.Windows.Forms.Button()
@@ -44,6 +44,9 @@ Partial Class VerPatio
         Me.autito = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
+        Me.cbxZonaPatio = New System.Windows.Forms.ComboBox()
         Me.lote.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
@@ -56,6 +59,7 @@ Partial Class VerPatio
         Me.autito.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.Panel1.SuspendLayout
+        Me.Panel3.SuspendLayout
         Me.SuspendLayout
         '
         'lote
@@ -196,34 +200,6 @@ Partial Class VerPatio
         Me.DataGridViewVehiculos.Size = New System.Drawing.Size(823, 310)
         Me.DataGridViewVehiculos.TabIndex = 4
         '
-        'tbxBuscarVin
-        '
-        Me.tbxBuscarVin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.tbxBuscarVin.BackColor = System.Drawing.Color.White
-        Me.tbxBuscarVin.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tbxBuscarVin.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.tbxBuscarVin.Location = New System.Drawing.Point(3, 11)
-        Me.tbxBuscarVin.Name = "tbxBuscarVin"
-        Me.tbxBuscarVin.Size = New System.Drawing.Size(637, 27)
-        Me.tbxBuscarVin.TabIndex = 3
-        Me.tbxBuscarVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btBuscar
-        '
-        Me.btBuscar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btBuscar.BackColor = System.Drawing.Color.DimGray
-        Me.btBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btBuscar.FlatAppearance.BorderSize = 0
-        Me.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btBuscar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btBuscar.ForeColor = System.Drawing.Color.Orange
-        Me.btBuscar.Location = New System.Drawing.Point(677, 5)
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(111, 40)
-        Me.btBuscar.TabIndex = 2
-        Me.btBuscar.Text = "Buscar VIN"
-        Me.btBuscar.UseVisualStyleBackColor = false
-        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 1
@@ -248,17 +224,46 @@ Partial Class VerPatio
         Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
             Or System.Windows.Forms.AnchorStyles.Left)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel3.ColumnCount = 2
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.13541!))
+        Me.TableLayoutPanel3.ColumnCount = 3
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.1354!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.8646!))
-        Me.TableLayoutPanel3.Controls.Add(Me.tbxBuscarVin, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.btBuscar, 1, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.btBuscar, 2, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.cbxFiltro, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Panel3, 1, 0)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(823, 50)
         Me.TableLayoutPanel3.TabIndex = 3
+        '
+        'btBuscar
+        '
+        Me.btBuscar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btBuscar.BackColor = System.Drawing.Color.DimGray
+        Me.btBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btBuscar.FlatAppearance.BorderSize = 0
+        Me.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBuscar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btBuscar.ForeColor = System.Drawing.Color.Orange
+        Me.btBuscar.Location = New System.Drawing.Point(688, 5)
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(111, 40)
+        Me.btBuscar.TabIndex = 2
+        Me.btBuscar.Text = "Filtrar"
+        Me.btBuscar.UseVisualStyleBackColor = false
+        '
+        'cbxFiltro
+        '
+        Me.cbxFiltro.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cbxFiltro.FormattingEnabled = true
+        Me.cbxFiltro.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
+        Me.cbxFiltro.Location = New System.Drawing.Point(3, 9)
+        Me.cbxFiltro.Name = "cbxFiltro"
+        Me.cbxFiltro.Size = New System.Drawing.Size(94, 31)
+        Me.cbxFiltro.TabIndex = 4
         '
         'Panel4
         '
@@ -401,6 +406,39 @@ Partial Class VerPatio
         Me.Panel1.Size = New System.Drawing.Size(849, 490)
         Me.Panel1.TabIndex = 1
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.cbxZonaPatio)
+        Me.Panel3.Controls.Add(Me.tbxBuscarVin)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(103, 3)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(558, 44)
+        Me.Panel3.TabIndex = 5
+        '
+        'tbxBuscarVin
+        '
+        Me.tbxBuscarVin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.tbxBuscarVin.BackColor = System.Drawing.Color.White
+        Me.tbxBuscarVin.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbxBuscarVin.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.tbxBuscarVin.Location = New System.Drawing.Point(0, 9)
+        Me.tbxBuscarVin.Name = "tbxBuscarVin"
+        Me.tbxBuscarVin.Size = New System.Drawing.Size(558, 27)
+        Me.tbxBuscarVin.TabIndex = 4
+        Me.tbxBuscarVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'cbxZonaPatio
+        '
+        Me.cbxZonaPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cbxZonaPatio.FormattingEnabled = true
+        Me.cbxZonaPatio.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
+        Me.cbxZonaPatio.Location = New System.Drawing.Point(0, 7)
+        Me.cbxZonaPatio.Name = "cbxZonaPatio"
+        Me.cbxZonaPatio.Size = New System.Drawing.Size(527, 31)
+        Me.cbxZonaPatio.TabIndex = 5
+        Me.cbxZonaPatio.Visible = false
+        '
         'VerPatio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -417,20 +455,18 @@ Partial Class VerPatio
         CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.TableLayoutPanel1.ResumeLayout(false)
         Me.TableLayoutPanel3.ResumeLayout(false)
-        Me.TableLayoutPanel3.PerformLayout
         Me.Panel4.ResumeLayout(false)
         Me.autito.ResumeLayout(false)
         Me.TabControl1.ResumeLayout(false)
         Me.Panel1.ResumeLayout(false)
+        Me.Panel3.ResumeLayout(false)
+        Me.Panel3.PerformLayout
         Me.ResumeLayout(false)
 
 End Sub
     Friend WithEvents lote As TabPage
     Friend WithEvents DataGridViewVehiculos As DataGridView
-    Friend WithEvents tbxBuscarVin As TextBox
-    Friend WithEvents btBuscar As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents autito As TabPage
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents Panel1 As Panel
@@ -447,4 +483,10 @@ End Sub
     Friend WithEvents btInfoVehiculo As Button
     Friend WithEvents btnPos As Button
     Friend WithEvents btnPatios As Button
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents btBuscar As Button
+    Friend WithEvents cbxFiltro As ComboBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents cbxZonaPatio As ComboBox
+    Friend WithEvents tbxBuscarVin As TextBox
 End Class

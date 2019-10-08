@@ -3,6 +3,9 @@ Imports Menu
 
 Public Class Ventana_Ver
 
+    Friend CameraActiva As Boolean = False
+    Private InicCamera As IniciarCamara = Nothing
+
     Friend Sub LoadControl(verVehiculo As VerVehiculo)
         verVehiculo.AutoSize = True
         Me.ClientSize = verVehiculo.Size
@@ -41,12 +44,6 @@ Public Class Ventana_Ver
         modSubZona.AutoSize = True
     End Sub
 
-    Friend Sub LoadControl(agregarInsp As AgregarInspeccion)
-        Me.ClientSize = agregarInsp.Size
-        mainContent.Controls.Add(agregarInsp)
-        agregarInsp.AutoSize = True
-    End Sub
-
     Friend Sub LoadControl(selecVehiculo As SelecVehiculo)
          Me.ClientSize = selecVehiculo.Size
         mainContent.Controls.Add(selecVehiculo)
@@ -57,6 +54,40 @@ Public Class Ventana_Ver
         Me.ClientSize = verLvd.Size
         mainContent.Controls.Add(verLvd)
         verLvd.AutoSize = True
+    End Sub
+    Friend Sub LoadControl(inicCamera As IniciarCamara)
+        Me.ClientSize = inicCamera.Size
+        mainContent.Controls.Add(inicCamera)
+        Me.InicCamera = inicCamera
+        inicCamera.AutoSize = True
+    End Sub
+    Friend Sub LoadControl(AgLote As AgregarLote)
+        Me.ClientSize = AgLote.Size
+        mainContent.Controls.Add(AgLote)
+        AgLote.AutoSize = True
+        AgLote.BringToFront
+    End Sub
+
+    Friend Sub LoadControl(VerInsp As VerInspeccion, VIN As String)
+        Me.ClientSize = VerInsp.Size
+        VerInsp.Populate(VIN)
+        mainContent.Controls.Add(VerInsp)
+        VerInsp.AutoSize = True
+        VerInsp.BringToFront
+    End Sub
+
+    Friend Sub LoadControl(AgrDanio As AgregarDanio)
+        Me.ClientSize = AgrDanio.Size
+        mainContent.Controls.Add(AgrDanio)
+        AgrDanio.AutoSize = True
+        AgrDanio.BringToFront
+    End Sub
+
+    Friend Sub LoadControl(VerD As VerDanios)
+        Me.ClientSize = VerD.Size
+        mainContent.Controls.Add(VerD)
+        VerD.AutoSize = True
+        VerD.BringToFront
     End Sub
 
     ''' <summary>
@@ -97,17 +128,11 @@ Public Class Ventana_Ver
 
         Select Case Section
             Case 0
-                Selection = VerInspeccion.Instance
-                VerInspeccion.Instance.FormParent = Me
-                VerInspeccion.Instance.Populate(VIN)
-                VerInspeccion.Instance.AutoSize = True
-                Me.ClientSize = VerInspeccion.Instance.Size
-            Case 1
-                Selection = AgregarInspeccion.Instance
-                AgregarInspeccion.Instance.FormParent = Me
-                AgregarInspeccion.Instance.CargarDatos(VIN)
-                AgregarInspeccion.Instance.AutoSize = True
-                Me.ClientSize = AgregarInspeccion.Instance.Size
+                Selection = New VerInspeccion
+                Selection.FormParent = Me
+                Selection.Populate(VIN)
+                Selection.AutoSize = True
+                Me.ClientSize = Selection.Size
             Case 2
                 Selection = New VerPosicion
                 DirectCast(Selection, VerPosicion).CargarDatos(VIN)
@@ -143,6 +168,13 @@ Public Class Ventana_Ver
             Selection.BringToFront()
         Else
             Selection.BringToFront()
+        End If
+    End Sub
+
+    Private Sub Closing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If CameraActiva
+            InicCamera.Timer2.Stop
+            InicCamera.StopWebcam
         End If
     End Sub
 End Class

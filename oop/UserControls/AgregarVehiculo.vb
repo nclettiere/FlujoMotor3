@@ -217,11 +217,6 @@ Public Class AgregarVehiculo
                                 LInsertar(LMetaDatos)
                                 Dim VMetaDatos As String() = {txtVin.Text.ToUpper, txtColor.Text, txtMarca.Text, txtModelo.Text, VehiculoAno.Value.Year.ToString, vehiculoTipo, "1", (LoteCount + 1).ToString} 
                                 VInsertar(VMetaDatos)
-                                Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                                AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
-                                Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-                                VentanaVer.LoadControl(AgregarInspeccionControl)
-                                VentanaVer.ShowDialog()
 
                                 MessageBox.Show("Vehiculo Ingresado Correctamente.")
                                 Serilog.Log.Information("Vehiculo insertado correctamente.")
@@ -237,17 +232,8 @@ Public Class AgregarVehiculo
                                 vehiculoTipo = cbxTipo.Text.ToLower()
                             End If
 
-                            'Dim VehiculoCount = FormParent.Conexion.Consultar("SELECT COUNT(*) FROM vehiculos")
-                            'Dim InsertarVehiculo As DataTable = FormParent.Conexion.Consultar("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID) VALUES ('" + txtVin.Text.ToUpper + "','" + txtColor.Text + "', '" + txtMarca.Text + "', '" + txtModelo.Text + "', " + VehiculoAno.Value.Year.ToString + ", '" + vehiculoTipo + "', 1 )")
-
                             Dim VMetaDatos As String() = {txtVin.Text.ToUpper, txtColor.Text, txtMarca.Text, txtModelo.Text, VehiculoAno.Value.Year.ToString, vehiculoTipo, "1"} 
                             VInsertar(VMetaDatos)
-
-                            Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                            AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
-                            Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-                            VentanaVer.LoadControl(AgregarInspeccionControl)
-                            VentanaVer.ShowDialog()
 
                             MessageBox.Show("Vehiculo Ingresado Correctamente.")
                             Serilog.Log.Information("Vehiculo insertado correctamente.")
@@ -266,12 +252,6 @@ Public Class AgregarVehiculo
                                 Dim VMetaDatos As String() = {txtVin.Text.ToUpper, txtColor.Text, txtMarca.Text, txtModelo.Text, VehiculoAno.Value.Year.ToString, vehiculoTipo, "1", (SelectedLote.Item(0).Value).ToString} 
                                 VInsertar(VMetaDatos)
 
-                                Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                                AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
-                                Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-                                VentanaVer.LoadControl(AgregarInspeccionControl)
-                                VentanaVer.ShowDialog()
-
                                 MessageBox.Show("Vehiculo Ingresado Correctamente.")
                                 Serilog.Log.Information("Vehiculo insertado correctamente.")
                                 ClearFields()
@@ -288,12 +268,6 @@ Public Class AgregarVehiculo
 
                                 Dim VMetaDatos As String() = {txtVin.Text.ToUpper, txtColor.Text, txtMarca.Text, txtModelo.Text, VehiculoAno.Value.Year.ToString, vehiculoTipo, "1"} 
                                 VInsertar(VMetaDatos)
-
-                                Dim AgregarInspeccionControl As AgregarInspeccion = New AgregarInspeccion
-                                AgregarInspeccionControl.CargarDatos(txtVin.Text, Me)
-                                Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-                                VentanaVer.LoadControl(AgregarInspeccionControl)
-                                VentanaVer.ShowDialog()
 
                                 MessageBox.Show("Vehiculo Ingresado Correctamente.")
                                 Serilog.Log.Information("Vehiculo insertado correctamente.")

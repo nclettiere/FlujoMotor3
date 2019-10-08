@@ -32,6 +32,7 @@ Partial Class VerVehiculo
         Me.labLoteName = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnGenerarQR = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
@@ -61,7 +62,6 @@ Partial Class VerVehiculo
         Me.Label8 = New System.Windows.Forms.Label()
         Me.labAno = New System.Windows.Forms.Label()
         Me.labColor = New System.Windows.Forms.Label()
-        Me.btnGenerarQR = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         Me.TableLayoutPanel5.SuspendLayout
@@ -233,6 +233,24 @@ Partial Class VerVehiculo
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(567, 64)
         Me.TableLayoutPanel4.TabIndex = 2
+        '
+        'btnGenerarQR
+        '
+        Me.btnGenerarQR.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnGenerarQR.BackColor = System.Drawing.Color.DimGray
+        Me.btnGenerarQR.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnGenerarQR.FlatAppearance.BorderSize = 0
+        Me.btnGenerarQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGenerarQR.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGenerarQR.ForeColor = System.Drawing.Color.Orange
+        Me.btnGenerarQR.Location = New System.Drawing.Point(43, 8)
+        Me.btnGenerarQR.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnGenerarQR.MinimumSize = New System.Drawing.Size(143, 53)
+        Me.btnGenerarQR.Name = "btnGenerarQR"
+        Me.btnGenerarQR.Size = New System.Drawing.Size(143, 53)
+        Me.btnGenerarQR.TabIndex = 4
+        Me.btnGenerarQR.Text = "Generar QR"
+        Me.btnGenerarQR.UseVisualStyleBackColor = false
         '
         'Button1
         '
@@ -660,24 +678,6 @@ Partial Class VerVehiculo
         Me.labColor.TabIndex = 14
         Me.labColor.Text = "N/A"
         Me.labColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnGenerarQR
-        '
-        Me.btnGenerarQR.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnGenerarQR.BackColor = System.Drawing.Color.DimGray
-        Me.btnGenerarQR.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnGenerarQR.FlatAppearance.BorderSize = 0
-        Me.btnGenerarQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGenerarQR.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnGenerarQR.ForeColor = System.Drawing.Color.Orange
-        Me.btnGenerarQR.Location = New System.Drawing.Point(43, 8)
-        Me.btnGenerarQR.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnGenerarQR.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnGenerarQR.Name = "btnGenerarQR"
-        Me.btnGenerarQR.Size = New System.Drawing.Size(143, 53)
-        Me.btnGenerarQR.TabIndex = 4
-        Me.btnGenerarQR.Text = "Generar QR"
-        Me.btnGenerarQR.UseVisualStyleBackColor = false
         '
         'VerVehiculo
         '

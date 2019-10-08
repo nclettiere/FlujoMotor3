@@ -1,7 +1,7 @@
 ﻿Imports System.Data.Odbc
 Imports System.Drawing
+Imports System.IO
 Imports QRCoder
-
 Public Module Misc
     Public Function MInsertarLavado(VIN As String) As Boolean
         Conectar()
@@ -45,20 +45,6 @@ Public Module Misc
         Cerrar
     End Function
 
-    Private Function GetIconBitmap(Icono As String) As Bitmap
-        Dim img As Bitmap = Nothing
-
-        If Icono.Length > 0 Then
-            Try
-                img = New Bitmap(Icono)
-            Catch __Excepcion_de_mierda_2008__ As Exception
-                MsgBox(__Excepcion_de_mierda_2008__.Message)
-            End Try
-        End If
-
-        Return img
-    End Function
-
     Public Function GenerarQR(Texto As String, Icono As Bitmap) As Bitmap
         Dim level As String = "L"
         Dim eccLevel As QRCodeGenerator.ECCLevel = CType(If(level = "L", 0, If(level = "M", 1, If(level = "Q", 2, 3))), QRCodeGenerator.ECCLevel)
@@ -71,5 +57,30 @@ Public Module Misc
                 End Using
             End Using
         End Using
+    End Function
+
+    Public Function ConvertirAByteArray(ByVal Img As Bitmap) As Byte()
+        Dim bitmapBytes As Byte()
+        Using stream As New System.IO.MemoryStream
+            Img.Save(stream, Img.RawFormat)
+            bitmapBytes = stream.ToArray
+            Serilog.Log.Information(bitmapBytes.ToString)
+        End Using
+        Return bitmapBytes
+    End Function
+
+    Public Function ConvertirAByteArray(ByVal Img As Image) As Byte()
+        Dim imgCon As New ImageConverter()
+        Return DirectCast(imgCon.ConvertTo(Img, GetType(Byte())), Byte())
+    End Function
+
+    Friend Function ByteABitmap(ImagenByt As Byte()) As Bitmap 
+        Dim bmp As Bitmap
+
+        Using ms = New MemoryStream(ImagenByt)
+            bmp = New Bitmap(ms)
+        End Using
+
+        Return bmp
     End Function
 End Module

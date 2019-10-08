@@ -125,4 +125,16 @@ Public Class InfoAutos
             VinSeleccionado = fila.Cells("vehiculovin").Value
         End If
     End Sub
+    Private Sub BtnAgregarLote_Click(sender As Object, e As EventArgs) Handles btnAgregarLote.Click
+        Dim VVer As Ventana_Ver = New Ventana_Ver
+        Dim AgLote As AgregarLote = New AgregarLote
+        AgLote.Modo = 1
+        VVer.LoadControl(AgLote)
+        VVer.ShowDialog
+    End Sub
+
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        DataGridViewLotes.DataSource = Nothing
+        DataGridViewLotes.DataSource = LObtenerNoSalida()
+    End Sub
 End Class

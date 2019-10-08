@@ -132,6 +132,9 @@
     <ApplicationIcon>Resources\icono_ Operario.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MessagingToolkit.QRCode">
+      <HintPath>.\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="Serilog">
       <HintPath>.\Serilog.dll</HintPath>
     </Reference>
@@ -151,6 +154,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WebCam_Capture">
+      <HintPath>.\WebCam_Capture.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -166,6 +172,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControls\AgregarDanio.Designer.vb">
+      <DependentUpon>AgregarDanio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AgregarDanio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\IniciarCamara.Designer.vb">
+      <DependentUpon>IniciarCamara.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\IniciarCamara.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\InspeccionWidget.Designer.vb">
       <DependentUpon>InspeccionWidget.vb</DependentUpon>
     </Compile>
@@ -194,6 +212,12 @@
       <DependentUpon>SelecVehiculo.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SelecVehiculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\VerDanios.Designer.vb">
+      <DependentUpon>VerDanios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VerDanios.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\VerLavados.Designer.vb">
@@ -265,12 +289,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="UserControls\AgregarInspeccion.Designer.vb">
-      <DependentUpon>AgregarInspeccion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\AgregarInspeccion.vb">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\AgregarLote.Designer.vb">
       <DependentUpon>AgregarLote.vb</DependentUpon>
@@ -352,6 +370,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UserControls\AgregarDanio.resx">
+      <DependentUpon>AgregarDanio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\IniciarCamara.resx">
+      <DependentUpon>IniciarCamara.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\InspeccionWidget.resx">
       <DependentUpon>InspeccionWidget.vb</DependentUpon>
     </EmbeddedResource>
@@ -366,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SelecVehiculo.resx">
       <DependentUpon>SelecVehiculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\VerDanios.resx">
+      <DependentUpon>VerDanios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VerLavados.resx">
       <DependentUpon>VerLavados.vb</DependentUpon>
@@ -399,9 +426,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\AgregarInspeccion.resx">
-      <DependentUpon>AgregarInspeccion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AgregarLote.resx">
       <DependentUpon>AgregarLote.vb</DependentUpon>
@@ -444,7 +468,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="UML Operario.cd" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

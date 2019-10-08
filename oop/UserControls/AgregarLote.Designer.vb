@@ -26,18 +26,18 @@ Partial Class AgregarLote
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.labRutaF = New System.Windows.Forms.Label()
+        Me.labDescripcion = New System.Windows.Forms.Label()
+        Me.riTeBoDescripcion = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbxPatio = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbxNombre = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btAgregar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.riTeBoDescripcion = New System.Windows.Forms.RichTextBox()
-        Me.labDescripcion = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbxNombre = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
@@ -119,6 +119,32 @@ Partial Class AgregarLote
         Me.labRutaF.Text = "PATIO"
         Me.labRutaF.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'labDescripcion
+        '
+        Me.labDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labDescripcion.AutoSize = true
+        Me.labDescripcion.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.labDescripcion.ForeColor = System.Drawing.Color.Orange
+        Me.labDescripcion.Location = New System.Drawing.Point(3, 77)
+        Me.labDescripcion.Name = "labDescripcion"
+        Me.labDescripcion.Size = New System.Drawing.Size(150, 26)
+        Me.labDescripcion.TabIndex = 4
+        Me.labDescripcion.Text = "DESCRIPCION"
+        Me.labDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'riTeBoDescripcion
+        '
+        Me.riTeBoDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.riTeBoDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.riTeBoDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.riTeBoDescripcion.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.riTeBoDescripcion.Location = New System.Drawing.Point(166, 60)
+        Me.riTeBoDescripcion.Margin = New System.Windows.Forms.Padding(10)
+        Me.riTeBoDescripcion.Name = "riTeBoDescripcion"
+        Me.riTeBoDescripcion.Size = New System.Drawing.Size(207, 61)
+        Me.riTeBoDescripcion.TabIndex = 18
+        Me.riTeBoDescripcion.Text = ""
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label1)
@@ -171,6 +197,27 @@ Partial Class AgregarLote
         Me.cbxPatio.Size = New System.Drawing.Size(207, 21)
         Me.cbxPatio.TabIndex = 25
         '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
+        Me.Label3.Location = New System.Drawing.Point(3, 12)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(150, 26)
+        Me.Label3.TabIndex = 26
+        Me.Label3.Text = "Lote Nombre"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'tbxNombre
+        '
+        Me.tbxNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.tbxNombre.Location = New System.Drawing.Point(159, 15)
+        Me.tbxNombre.Name = "tbxNombre"
+        Me.tbxNombre.Size = New System.Drawing.Size(221, 20)
+        Me.tbxNombre.TabIndex = 27
+        '
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -217,53 +264,6 @@ Partial Class AgregarLote
         Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = false
-        '
-        'riTeBoDescripcion
-        '
-        Me.riTeBoDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.riTeBoDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.riTeBoDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.riTeBoDescripcion.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.riTeBoDescripcion.Location = New System.Drawing.Point(166, 60)
-        Me.riTeBoDescripcion.Margin = New System.Windows.Forms.Padding(10)
-        Me.riTeBoDescripcion.Name = "riTeBoDescripcion"
-        Me.riTeBoDescripcion.Size = New System.Drawing.Size(207, 61)
-        Me.riTeBoDescripcion.TabIndex = 18
-        Me.riTeBoDescripcion.Text = ""
-        '
-        'labDescripcion
-        '
-        Me.labDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.labDescripcion.AutoSize = true
-        Me.labDescripcion.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.labDescripcion.ForeColor = System.Drawing.Color.Orange
-        Me.labDescripcion.Location = New System.Drawing.Point(3, 77)
-        Me.labDescripcion.Name = "labDescripcion"
-        Me.labDescripcion.Size = New System.Drawing.Size(150, 26)
-        Me.labDescripcion.TabIndex = 4
-        Me.labDescripcion.Text = "DESCRIPCION"
-        Me.labDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = true
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(3, 12)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(150, 26)
-        Me.Label3.TabIndex = 26
-        Me.Label3.Text = "Lote Nombre"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'tbxNombre
-        '
-        Me.tbxNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.tbxNombre.Location = New System.Drawing.Point(159, 15)
-        Me.tbxNombre.Name = "tbxNombre"
-        Me.tbxNombre.Size = New System.Drawing.Size(221, 20)
-        Me.tbxNombre.TabIndex = 27
         '
         'AgregarLote
         '

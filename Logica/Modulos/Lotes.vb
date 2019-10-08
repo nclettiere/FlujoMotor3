@@ -227,12 +227,15 @@ Public Module Lotes
 
         Try
             Dim datos As New DataTable
-            Dim adapter As New OdbcDataAdapter("INSERT INTO lotes (loteid, lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES (" + Metadata(0) + ", '" + Metadata(1) + "'," + Metadata(2) + "," + Metadata(3) + ","+Metadata(4)+")", DBConexion)
+            Dim adapter As New OdbcDataAdapter("INSERT INTO lotes (lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES ('" + Metadata(0) + "'," + Metadata(2) + ",1,"+ PObtenerNombre(Metadata(1)).Item(0).ToString +")", DBConexion)
             adapter.Fill(datos)
             Serilog.Log.Information("Consulta Exitosa.")
             Return True
         Catch ex As Exception
-            Serilog.Log.Error(ex, "Consulta Erronea." + Environment.NewLine + "INSERT INTO lotes (loteid, lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES (" + Metadata(0) + ", '" + Metadata(1) + "'," + Metadata(2) + "," + Metadata(3) + ","+Metadata(4)+")")
+            For Each item As String In Metadata
+                Console.WriteLine(item)
+            Next
+            Serilog.Log.Error(ex, "Consulta Erronea." + Environment.NewLine + "INSERT INTO lotes (lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES ('" + Metadata(0) + "'," + Metadata(2) + ",1,"+ PObtenerNombre(Metadata(1)).Item(0).ToString+")")
             Return False
         End Try
 

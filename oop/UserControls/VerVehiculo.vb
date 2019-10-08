@@ -5,7 +5,6 @@ Imports Logica
 Public Class VerVehiculo
 
     Private Shared _instance As VerVehiculo
-
     Public Shared Property Instance As VerVehiculo
         Get
             If _instance Is Nothing Then
@@ -78,7 +77,7 @@ Public Class VerVehiculo
 
     Private Sub BtVerInspeccion_Click(sender As Object, e As EventArgs) Handles btVerInspeccion.Click
         If IObtenerCount <> 0
-            DirectCast(ParentForm, Ventana_Ver).GotoSection(0, VIN)
+            DirectCast(ParentForm, Ventana_Ver).LoadControl(New VerInspeccion, VIN)
         Else
              MessageBox.Show("Este Vehiculo no tiene inspecciones.")
         End If
@@ -102,6 +101,7 @@ Public Class VerVehiculo
         vFoto.SetFoto(GenerarQR(VIN, icono))
         Dim vVer = New Ventana_Ver
         vVer.LoadControl(vFoto)
+        vVer.TopMost = True
         vVer.ShowDialog()
     End Sub
 End Class

@@ -1,4 +1,5 @@
-﻿Public Class MenuControl
+﻿Imports Logica
+Public Class MenuControl
     Private Shared _instance As MenuControl
 
     Public Shared Property Instance As MenuControl
@@ -93,5 +94,11 @@
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Conexion.Cerrar()
         ParentForm.Close()
+    End Sub
+
+    Private Sub ScanQR_Click(sender As Object, e As EventArgs) Handles ScanQR.Click
+        Dim Ver As Ventana_Ver = New Ventana_Ver
+        Ver.LoadControl(New IniciarCamara)
+        Ver.ShowDialog()
     End Sub
 End Class

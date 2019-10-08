@@ -1,5 +1,5 @@
-# FlujoMotor PI
-Repositorio Oficial de FlujoMotor por ESPI Solutions Inc.
+# FlujoMotor
+Repositorio Oficial de FlujoMotor por ESPI Solutions.
 
 <img src="https://i.imgur.com/wf31bpF.png" alt="ESPI Solutions" width="150" height="150">
 

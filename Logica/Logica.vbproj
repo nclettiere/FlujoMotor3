@@ -154,7 +154,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="QRCoder.dll" />
+    <Content Include="Serilog.dll" />
+    <Content Include="Serilog.Sinks.Console.dll" />
+    <Content Include="Serilog.Sinks.File.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -28,20 +28,21 @@ Partial Class Ventana_Ver
         '
         'mainContent
         '
+        Me.mainContent.AutoScroll = true
         Me.mainContent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.mainContent.Location = New System.Drawing.Point(0, 0)
         Me.mainContent.Name = "mainContent"
         Me.mainContent.Size = New System.Drawing.Size(972, 452)
         Me.mainContent.TabIndex = 0
         '
-        'Ventanita_Ver
+        'Ventana_Ver
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(972, 452)
         Me.Controls.Add(Me.mainContent)
         Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
-        Me.Name = "Ventanita_Ver"
+        Me.Name = "Ventana_Ver"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Informacion"
         Me.ResumeLayout(false)

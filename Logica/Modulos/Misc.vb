@@ -83,12 +83,4 @@ Public Module Misc
 
         Return bmp
     End Function
-
-    Private Function Encriptar(Texto As String, out ) As Byte()
-        Dim data As Byte() = System.Text.Encoding.ASCII.GetBytes(Texto)
-        data = New System.Security.Cryptography.SHA256Managed().ComputeHash(data)
-        Dim hash As String = System.Text.Encoding.ASCII.GetString(data)
-
-        Return data 
-    End Function
 End Module

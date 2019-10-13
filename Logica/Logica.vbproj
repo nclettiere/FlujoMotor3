@@ -103,6 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.vb" />
+    <Compile Include="Encriptacion.vb" />
+    <Compile Include="Modulos\Empleados.vb" />
     <Compile Include="Modulos\Inspecciones.vb" />
     <Compile Include="Modulos\Lotes.vb" />
     <Compile Include="Modulos\Misc.vb" />
@@ -154,9 +156,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Serilog.dll" />
-    <Content Include="Serilog.Sinks.Console.dll" />
-    <Content Include="Serilog.Sinks.File.dll" />
+    <Content Include="QRCoder.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Serilog.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Serilog.Sinks.Console.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Serilog.Sinks.File.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

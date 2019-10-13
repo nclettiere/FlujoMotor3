@@ -204,6 +204,7 @@ Public Class AgregarVehiculo
                 If ChequearVin = 0
                     If LoteModo
                         If LoteDatos
+                            MsgBox("trigger2")
                             Try
                                 Dim vehiculoTipo As String = cbxTipo.Text
 
@@ -225,7 +226,7 @@ Public Class AgregarVehiculo
                                 Serilog.Log.Fatal(ex, "No se pudo insertar los datos en Agregar_Vehiculo. ref: InsertarLote, IngresarVehiculo")
                             End Try
                         Else
-
+                            MsgBox("trigger1")
                             Dim vehiculoTipo As String = cbxTipo.Text
 
                             If Not (String.Equals("SUV", cbxTipo.Text))
@@ -241,7 +242,7 @@ Public Class AgregarVehiculo
                     Else
                         If LoteDatos
                             Try
-
+                                MsgBox("trigger3")
                                 Dim vehiculoTipo As String = cbxTipo.Text
                                  If Not (String.Equals("SUV", cbxTipo.Text))
                                     vehiculoTipo = cbxTipo.Text.ToLower()
@@ -266,7 +267,7 @@ Public Class AgregarVehiculo
                                     vehiculoTipo = cbxTipo.Text.ToLower()
                                 End If
 
-                                Dim VMetaDatos As String() = {txtVin.Text.ToUpper, txtColor.Text, txtMarca.Text, txtModelo.Text, VehiculoAno.Value.Year.ToString, vehiculoTipo, "1"} 
+                                Dim VMetaDatos As String() = {txtVin.Text.ToUpper, txtColor.Text, txtMarca.Text, txtModelo.Text, VehiculoAno.Value.Year.ToString, vehiculoTipo} 
                                 VInsertar(VMetaDatos)
 
                                 MessageBox.Show("Vehiculo Ingresado Correctamente.")

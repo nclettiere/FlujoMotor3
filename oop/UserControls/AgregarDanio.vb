@@ -58,4 +58,8 @@ Public Class AgregarDanio
             MsgBox("La descripcion no debe quedar vacia.")
         End If
     End Sub
+
+    Private Sub OnAgrInspLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblvin.Text = "Vehiculo: "+ VIN
+    End Sub
 End Class

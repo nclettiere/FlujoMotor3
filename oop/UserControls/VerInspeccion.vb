@@ -122,8 +122,14 @@ Public Class VerInspeccion
     End Sub
 
     Private Sub BtnAddInspeccion_Click(sender As Object, e As EventArgs) Handles btnAddInspeccion.Click
-        If MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-        Else
+        If MessageBox.Show("Desea agregar una inpeccion? Se asignara la inspeccion a su cuenta.", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Try
+                IInsertar(VIN)
+                FlowInspecciones.Controls.Clear
+                Populate(VIN)
+            Catch ex As Exception
+                Serilog.Log.Error(ex, "Error al insertar inspeccion.")
+            End Try
         End If
     End Sub
 End Class

@@ -35,7 +35,7 @@ Public Class VerPatio
     Private Sub OnVerPatioLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxFiltro.SelectedIndex = 0
         Try
-            Dim resultado As DataTable = VObtenerAllFiltro("loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL) AND loteid IS NOT NULL")
+            Dim resultado As DataTable = VObtenerAllPatio
             DataGridViewVehiculos.DataSource = resultado
             DataGridViewVehiculos.MultiSelect = False
         Catch ex As Exception
@@ -78,10 +78,10 @@ Public Class VerPatio
         Try
             If tbxBuscarVin.Text.Length > 0
                 '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = VObtenerAllFiltro("vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%' AND loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
+                Dim resultado As DataTable = VObtenerAllPatioFiltro(tbxBuscarVin.Text.ToUpper)
                 DataGridViewVehiculos.DataSource = resultado
             Else
-                Dim resultado As DataTable = VObtenerAllFiltro("SELECT * FROM vehiculos WHERE loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
+                Dim resultado As DataTable = VObtenerAllPatio
                 DataGridViewVehiculos.DataSource = resultado
             End If
         Catch ex As Exception
@@ -94,10 +94,10 @@ Public Class VerPatio
         Try
             If tbxBuscarVin.Text.Length > 0
                 '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = VObtenerAllFiltro("vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%' AND loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
+                Dim resultado As DataTable = VObtenerAllPatioFiltro(tbxBuscarVin.Text.ToUpper)
                 DataGridViewVehiculos.DataSource = resultado
             Else
-                Dim resultado As DataTable = VObtenerAllFiltro("loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
+                Dim resultado As DataTable = VObtenerAllPatio
                 DataGridViewVehiculos.DataSource = resultado
             End If
         Catch ex As Exception
@@ -106,42 +106,14 @@ Public Class VerPatio
         End Try
     End Sub
 
-    Private Sub CambioTab(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
-        If TabControl1.SelectedIndex = 1
-            Try
-                Dim resultado As DataTable = LObtenerAllFitro("lotefechallegada IS NOT NULL")
-                DataGridViewLotes.DataSource = resultado
-            Catch ex As Exception
-                MessageBox.Show("Error al listar lotes.")
-                Serilog.Log.Error(ex, "Error al listar lotes.")
-            End Try
-        End If
-    End Sub
-
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs)
 
-    End Sub
-
-    Private Sub BtnVer_Click(sender As Object, e As EventArgs) Handles btnVer.Click
-        Try
-            Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-            VerLotes.Instance.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString())
-            VentanaVer.LoadControl(VerLotes.Instance)
-            VentanaVer.ShowDialog()
-        Catch ex As Exception
-            MessageBox.Show("Error al ver lote.")
-        End Try
     End Sub
 
     Private Sub BtnPatios_Click(sender As Object, e As EventArgs) Handles btnPatios.Click
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver
         VentanaVer.GoToSection(4, String.Empty)
         VentanaVer.ShowDialog()
-    End Sub
-
-
-    Private Sub OnFiltroChange(sender As Object, e As EventArgs) Handles cbxZonaPatio.SelectedIndexChanged
-
     End Sub
 
     Private Sub OnSelectChange(sender As Object, e As EventArgs) Handles cbxFiltro.SelectedIndexChanged

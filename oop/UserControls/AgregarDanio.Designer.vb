@@ -32,7 +32,7 @@ Partial Class AgregarDanio
         Me.btnAdjArchivo = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PBDanio = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblvin = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1.SuspendLayout
@@ -158,18 +158,18 @@ Partial Class AgregarDanio
         Me.PBDanio.TabIndex = 25
         Me.PBDanio.TabStop = false
         '
-        'Label2
+        'lblvin
         '
-        Me.Label2.AutoSize = true
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Orange
-        Me.Label2.Location = New System.Drawing.Point(16, 17)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(206, 26)
-        Me.Label2.TabIndex = 28
-        Me.Label2.Text = "Vehiculo: ###########"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblvin.AutoSize = true
+        Me.lblvin.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblvin.ForeColor = System.Drawing.Color.Orange
+        Me.lblvin.Location = New System.Drawing.Point(16, 17)
+        Me.lblvin.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
+        Me.lblvin.Name = "lblvin"
+        Me.lblvin.Size = New System.Drawing.Size(206, 26)
+        Me.lblvin.TabIndex = 28
+        Me.lblvin.Text = "Vehiculo: ###########"
+        Me.lblvin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'OpenFileDialog1
         '
@@ -196,7 +196,7 @@ Partial Class AgregarDanio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
         Me.Controls.Add(Me.btnAgregar)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblvin)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.PBDanio)
         Me.Name = "AgregarDanio"
@@ -222,7 +222,7 @@ End Sub
     Friend WithEvents btnAdjArchivo As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents PBDanio As PictureBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblvin As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btnAgregar As Button
 End Class

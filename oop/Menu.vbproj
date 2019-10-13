@@ -536,6 +536,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MessagingToolkit.QRCode.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Serilog.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Serilog.Sinks.Console.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Serilog.Sinks.File.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WebCam_Capture.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\next-1aaaa.png" />
     <None Include="Resources\logoutss.png" />
     <None Include="Resources\operario_Iconillo.png" />

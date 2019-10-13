@@ -22,183 +22,69 @@ Partial Class VerPatio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lote = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnVer = New System.Windows.Forms.Button()
-        Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.autito = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.cbxFiltro = New System.Windows.Forms.ComboBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.cbxZonaPatio = New System.Windows.Forms.ComboBox()
+        Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
+        Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnPatios = New System.Windows.Forms.Button()
         Me.btnPos = New System.Windows.Forms.Button()
         Me.btnLavado = New System.Windows.Forms.Button()
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
         Me.btInfoVehiculo = New System.Windows.Forms.Button()
-        Me.autito = New System.Windows.Forms.TabPage()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
-        Me.cbxZonaPatio = New System.Windows.Forms.ComboBox()
-        Me.lote.SuspendLayout
-        Me.TableLayoutPanel2.SuspendLayout
-        Me.TableLayoutPanel4.SuspendLayout
-        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel2.SuspendLayout
-        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Panel1.SuspendLayout
+        Me.TabControl1.SuspendLayout
+        Me.autito.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
-        Me.Panel4.SuspendLayout
-        Me.autito.SuspendLayout
-        Me.TabControl1.SuspendLayout
-        Me.Panel1.SuspendLayout
         Me.Panel3.SuspendLayout
+        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Panel4.SuspendLayout
         Me.SuspendLayout
         '
-        'lote
+        'Panel1
         '
-        Me.lote.BackColor = System.Drawing.Color.Gray
-        Me.lote.Controls.Add(Me.TableLayoutPanel2)
-        Me.lote.Location = New System.Drawing.Point(4, 22)
-        Me.lote.Name = "lote"
-        Me.lote.Padding = New System.Windows.Forms.Padding(3)
-        Me.lote.Size = New System.Drawing.Size(835, 458)
-        Me.lote.TabIndex = 1
-        Me.lote.Text = "LOTES"
+        Me.Panel1.Controls.Add(Me.TabControl1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(849, 490)
+        Me.Panel1.TabIndex = 1
         '
-        'TableLayoutPanel2
+        'TabControl1
         '
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel4, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.DataGridViewLotes, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Panel2, 0, 2)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 3
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.39093!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.13274!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.47788!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(829, 452)
-        Me.TableLayoutPanel2.TabIndex = 1
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
             Or System.Windows.Forms.AnchorStyles.Left)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.13541!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.8646!))
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox1, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.Button2, 1, 0)
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 3)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(823, 50)
-        Me.TableLayoutPanel4.TabIndex = 3
+        Me.TabControl1.Controls.Add(Me.autito)
+        Me.TabControl1.Font = New System.Drawing.Font("Calibri", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.TabControl1.ItemSize = New System.Drawing.Size(70, 18)
+        Me.TabControl1.Location = New System.Drawing.Point(3, 3)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(843, 484)
+        Me.TabControl1.TabIndex = 0
         '
-        'TextBox1
+        'autito
         '
-        Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(3, 11)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(637, 27)
-        Me.TextBox1.TabIndex = 3
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button2.BackColor = System.Drawing.Color.DimGray
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Orange
-        Me.Button2.Location = New System.Drawing.Point(677, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(111, 40)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Buscar ID"
-        Me.Button2.UseVisualStyleBackColor = false
-        '
-        'DataGridViewLotes
-        '
-        Me.DataGridViewLotes.AllowUserToAddRows = false
-        Me.DataGridViewLotes.AllowUserToDeleteRows = false
-        Me.DataGridViewLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewLotes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewLotes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DataGridViewLotes.EnableHeadersVisualStyles = false
-        Me.DataGridViewLotes.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridViewLotes.Location = New System.Drawing.Point(3, 59)
-        Me.DataGridViewLotes.Name = "DataGridViewLotes"
-        Me.DataGridViewLotes.ReadOnly = true
-        Me.DataGridViewLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewLotes.ShowCellToolTips = false
-        Me.DataGridViewLotes.ShowEditingIcon = false
-        Me.DataGridViewLotes.Size = New System.Drawing.Size(823, 310)
-        Me.DataGridViewLotes.TabIndex = 4
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.btnVer)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(3, 375)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(823, 74)
-        Me.Panel2.TabIndex = 5
-        '
-        'btnVer
-        '
-        Me.btnVer.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnVer.BackColor = System.Drawing.Color.DimGray
-        Me.btnVer.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnVer.FlatAppearance.BorderSize = 0
-        Me.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVer.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnVer.ForeColor = System.Drawing.Color.Orange
-        Me.btnVer.Location = New System.Drawing.Point(64, 11)
-        Me.btnVer.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnVer.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnVer.Name = "btnVer"
-        Me.btnVer.Size = New System.Drawing.Size(143, 53)
-        Me.btnVer.TabIndex = 4
-        Me.btnVer.Text = "Informacion"
-        Me.btnVer.UseVisualStyleBackColor = false
-        '
-        'DataGridViewVehiculos
-        '
-        Me.DataGridViewVehiculos.AllowUserToAddRows = false
-        Me.DataGridViewVehiculos.AllowUserToDeleteRows = false
-        Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewVehiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DataGridViewVehiculos.EnableHeadersVisualStyles = false
-        Me.DataGridViewVehiculos.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 59)
-        Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
-        Me.DataGridViewVehiculos.ReadOnly = true
-        Me.DataGridViewVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewVehiculos.ShowCellToolTips = false
-        Me.DataGridViewVehiculos.ShowEditingIcon = false
-        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(823, 310)
-        Me.DataGridViewVehiculos.TabIndex = 4
+        Me.autito.BackColor = System.Drawing.Color.Gray
+        Me.autito.Controls.Add(Me.TableLayoutPanel1)
+        Me.autito.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.autito.ForeColor = System.Drawing.Color.Orange
+        Me.autito.ImageKey = "(ninguno)"
+        Me.autito.Location = New System.Drawing.Point(4, 22)
+        Me.autito.Name = "autito"
+        Me.autito.Padding = New System.Windows.Forms.Padding(3)
+        Me.autito.Size = New System.Drawing.Size(835, 458)
+        Me.autito.TabIndex = 0
+        Me.autito.Text = "VEHICULOS"
         '
         'TableLayoutPanel1
         '
@@ -235,7 +121,7 @@ Partial Class VerPatio
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(823, 50)
         Me.TableLayoutPanel3.TabIndex = 3
         '
@@ -260,10 +146,61 @@ Partial Class VerPatio
         Me.cbxFiltro.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.cbxFiltro.FormattingEnabled = true
         Me.cbxFiltro.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
-        Me.cbxFiltro.Location = New System.Drawing.Point(3, 9)
+        Me.cbxFiltro.Location = New System.Drawing.Point(3, 14)
         Me.cbxFiltro.Name = "cbxFiltro"
         Me.cbxFiltro.Size = New System.Drawing.Size(94, 31)
         Me.cbxFiltro.TabIndex = 4
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.cbxZonaPatio)
+        Me.Panel3.Controls.Add(Me.tbxBuscarVin)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(103, 3)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(558, 44)
+        Me.Panel3.TabIndex = 5
+        '
+        'cbxZonaPatio
+        '
+        Me.cbxZonaPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cbxZonaPatio.FormattingEnabled = true
+        Me.cbxZonaPatio.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
+        Me.cbxZonaPatio.Location = New System.Drawing.Point(0, 7)
+        Me.cbxZonaPatio.Name = "cbxZonaPatio"
+        Me.cbxZonaPatio.Size = New System.Drawing.Size(527, 31)
+        Me.cbxZonaPatio.TabIndex = 5
+        Me.cbxZonaPatio.Visible = false
+        '
+        'tbxBuscarVin
+        '
+        Me.tbxBuscarVin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.tbxBuscarVin.BackColor = System.Drawing.Color.White
+        Me.tbxBuscarVin.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbxBuscarVin.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.tbxBuscarVin.Location = New System.Drawing.Point(0, 9)
+        Me.tbxBuscarVin.Name = "tbxBuscarVin"
+        Me.tbxBuscarVin.Size = New System.Drawing.Size(558, 27)
+        Me.tbxBuscarVin.TabIndex = 4
+        Me.tbxBuscarVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'DataGridViewVehiculos
+        '
+        Me.DataGridViewVehiculos.AllowUserToAddRows = false
+        Me.DataGridViewVehiculos.AllowUserToDeleteRows = false
+        Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridViewVehiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DataGridViewVehiculos.EnableHeadersVisualStyles = false
+        Me.DataGridViewVehiculos.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 59)
+        Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
+        Me.DataGridViewVehiculos.ReadOnly = true
+        Me.DataGridViewVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridViewVehiculos.ShowCellToolTips = false
+        Me.DataGridViewVehiculos.ShowEditingIcon = false
+        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(823, 310)
+        Me.DataGridViewVehiculos.TabIndex = 4
         '
         'Panel4
         '
@@ -368,77 +305,6 @@ Partial Class VerPatio
         Me.btInfoVehiculo.Text = "Informacion"
         Me.btInfoVehiculo.UseVisualStyleBackColor = false
         '
-        'autito
-        '
-        Me.autito.BackColor = System.Drawing.Color.Gray
-        Me.autito.Controls.Add(Me.TableLayoutPanel1)
-        Me.autito.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.autito.ForeColor = System.Drawing.Color.Orange
-        Me.autito.ImageKey = "(ninguno)"
-        Me.autito.Location = New System.Drawing.Point(4, 22)
-        Me.autito.Name = "autito"
-        Me.autito.Padding = New System.Windows.Forms.Padding(3)
-        Me.autito.Size = New System.Drawing.Size(835, 458)
-        Me.autito.TabIndex = 0
-        Me.autito.Text = "VEHICULOS"
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.TabControl1.Controls.Add(Me.autito)
-        Me.TabControl1.Controls.Add(Me.lote)
-        Me.TabControl1.Font = New System.Drawing.Font("Calibri", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.TabControl1.ItemSize = New System.Drawing.Size(70, 18)
-        Me.TabControl1.Location = New System.Drawing.Point(3, 3)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(843, 484)
-        Me.TabControl1.TabIndex = 0
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.TabControl1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(849, 490)
-        Me.Panel1.TabIndex = 1
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.cbxZonaPatio)
-        Me.Panel3.Controls.Add(Me.tbxBuscarVin)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(103, 3)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(558, 44)
-        Me.Panel3.TabIndex = 5
-        '
-        'tbxBuscarVin
-        '
-        Me.tbxBuscarVin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.tbxBuscarVin.BackColor = System.Drawing.Color.White
-        Me.tbxBuscarVin.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tbxBuscarVin.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.tbxBuscarVin.Location = New System.Drawing.Point(0, 9)
-        Me.tbxBuscarVin.Name = "tbxBuscarVin"
-        Me.tbxBuscarVin.Size = New System.Drawing.Size(558, 27)
-        Me.tbxBuscarVin.TabIndex = 4
-        Me.tbxBuscarVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'cbxZonaPatio
-        '
-        Me.cbxZonaPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.cbxZonaPatio.FormattingEnabled = true
-        Me.cbxZonaPatio.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
-        Me.cbxZonaPatio.Location = New System.Drawing.Point(0, 7)
-        Me.cbxZonaPatio.Name = "cbxZonaPatio"
-        Me.cbxZonaPatio.Size = New System.Drawing.Size(527, 31)
-        Me.cbxZonaPatio.TabIndex = 5
-        Me.cbxZonaPatio.Visible = false
-        '
         'VerPatio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -446,47 +312,33 @@ Partial Class VerPatio
         Me.Controls.Add(Me.Panel1)
         Me.Name = "VerPatio"
         Me.Size = New System.Drawing.Size(849, 490)
-        Me.lote.ResumeLayout(false)
-        Me.TableLayoutPanel2.ResumeLayout(false)
-        Me.TableLayoutPanel4.ResumeLayout(false)
-        Me.TableLayoutPanel4.PerformLayout
-        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
-        Me.Panel2.ResumeLayout(false)
-        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
+        Me.Panel1.ResumeLayout(false)
+        Me.TabControl1.ResumeLayout(false)
+        Me.autito.ResumeLayout(false)
         Me.TableLayoutPanel1.ResumeLayout(false)
         Me.TableLayoutPanel3.ResumeLayout(false)
-        Me.Panel4.ResumeLayout(false)
-        Me.autito.ResumeLayout(false)
-        Me.TabControl1.ResumeLayout(false)
-        Me.Panel1.ResumeLayout(false)
         Me.Panel3.ResumeLayout(false)
         Me.Panel3.PerformLayout
+        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
+        Me.Panel4.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub
-    Friend WithEvents lote As TabPage
-    Friend WithEvents DataGridViewVehiculos As DataGridView
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents autito As TabPage
-    Friend WithEvents TabControl1 As TabControl
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents DataGridViewLotes As DataGridView
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents btnVer As Button
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents btnLavado As Button
-    Friend WithEvents btActualizarVehiculo As Button
-    Friend WithEvents btInfoVehiculo As Button
-    Friend WithEvents btnPos As Button
-    Friend WithEvents btnPatios As Button
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents autito As TabPage
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents btBuscar As Button
     Friend WithEvents cbxFiltro As ComboBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents cbxZonaPatio As ComboBox
     Friend WithEvents tbxBuscarVin As TextBox
+    Friend WithEvents DataGridViewVehiculos As DataGridView
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents btnPatios As Button
+    Friend WithEvents btnPos As Button
+    Friend WithEvents btnLavado As Button
+    Friend WithEvents btActualizarVehiculo As Button
+    Friend WithEvents btInfoVehiculo As Button
 End Class

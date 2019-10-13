@@ -15,6 +15,75 @@ Public Module Vehiculos
         Cerrar
     End Function
 
+    Public Function VObtenerAllPuertoLike(filtro As String) As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos A LEFT JOIN lotes B ON A.loteid = B.loteid WHERE A.vehiculofechaentrega IS NULL AND B.lotefechallegada IS NULL AND B.lotefechasalida IS NULL AND A.vehiculovin LIKE '%" + filtro + "%'", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+    Public Function VObtenerAllPuerto() As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos A LEFT JOIN lotes B ON A.loteid = B.loteid WHERE A.vehiculofechaentrega IS NULL AND B.lotefechallegada IS NULL AND B.lotefechasalida IS NULL", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+    Public Function VObtenerAllPatio() As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos A LEFT JOIN lotes B ON A.loteid = B.loteid WHERE A.vehiculofechaentrega IS NULL AND B.lotefechallegada IS NOT NULL AND B.lotefechasalida IS NOT NULL", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+    Public Function VObtenerAllPatioFiltro(Filtro As String) As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos A LEFT JOIN lotes B ON A.loteid = B.loteid WHERE A.vehiculofechaentrega IS NULL AND B.lotefechallegada IS NOT NULL AND B.lotefechasalida IS NOT NULL AND A.vehiculovin LIKE '%" + filtro + "%'", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+    Public Function VObtenerAllVendidos() As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos WHERE vehiculofechaentrega IS NOT NULL", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
     Public Function VUpdateLote(LoteId As String, VIN As String) As DataTable
         Conectar
         Dim tabla As New DataTable
@@ -73,7 +142,6 @@ Public Module Vehiculos
 
     Public Function VInsertar(Metadata As String()) As Boolean
         Conectar
-
         Try
             If Metadata.Count >= 7
                 Dim Dcommand As OdbcCommand = New OdbcCommand("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")

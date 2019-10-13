@@ -189,9 +189,9 @@ Public Class VerLotes
         If result = DialogResult.Yes Then
             Try
                 VUpdateLote("NULL", VinSeleccionado)
-                MessageBox.Show("Lote entregado correctamente.")
+                MessageBox.Show("Vehiculo eliminado correctamente.")
             Catch ex As Exception
-                Serilog.Log.Error(ex, "Error al entregar lote.")
+                Serilog.Log.Error(ex, "Error al eliminar vehiculo.")
             End Try
         End If
     End Sub

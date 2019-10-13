@@ -15,6 +15,20 @@ Public Module Lotes
         Cerrar
     End Function
 
+    Public Function LObtenerAllTransportista() As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM lotes WHERE lotefechallegada IS NOT NULL AND lotefechasalida IS NOT NULL", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
     Public Function LObtenerAllFitro(Filtro As String) As DataTable
         Conectar()
         Dim tabla As New DataTable
@@ -225,6 +239,10 @@ Public Module Lotes
     Public Function LInsertar(Metadata As String()) As Boolean
         Conectar
 
+            For Each item As String In Metadata
+                Console.WriteLine(item)
+            Next
+
         Try
             Dim datos As New DataTable
             Dim adapter As New OdbcDataAdapter("INSERT INTO lotes (lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES ('" + Metadata(0) + "'," + Metadata(2) + ",1,"+ PObtenerNombre(Metadata(1)).Item(0).ToString +")", DBConexion)
@@ -232,10 +250,6 @@ Public Module Lotes
             Serilog.Log.Information("Consulta Exitosa.")
             Return True
         Catch ex As Exception
-            For Each item As String In Metadata
-                Console.WriteLine(item)
-            Next
-            Serilog.Log.Error(ex, "Consulta Erronea." + Environment.NewLine + "INSERT INTO lotes (lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES ('" + Metadata(0) + "'," + Metadata(2) + ",1,"+ PObtenerNombre(Metadata(1)).Item(0).ToString+")")
             Return False
         End Try
 

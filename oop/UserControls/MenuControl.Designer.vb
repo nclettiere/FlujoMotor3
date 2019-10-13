@@ -30,19 +30,19 @@ Partial Class MenuControl
         Me.btPatio = New System.Windows.Forms.Button()
         Me.piBoPatio = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanelSesion = New System.Windows.Forms.TableLayoutPanel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ScanQR = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.ContenidoPrincipal = New System.Windows.Forms.Panel()
-        Me.ScanQR = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanelOpciones.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).BeginInit
         Me.TableLayoutPanelSesion.SuspendLayout
-        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'TableLayoutPanel1
@@ -176,6 +176,33 @@ Partial Class MenuControl
         Me.TableLayoutPanelSesion.Size = New System.Drawing.Size(244, 115)
         Me.TableLayoutPanelSesion.TabIndex = 2
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.BackgroundImage = Global.Menu.My.Resources.Resources.next_1aaaa
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(58, 30)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = false
+        '
+        'ScanQR
+        '
+        Me.ScanQR.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.ScanQR.BackColor = System.Drawing.Color.Transparent
+        Me.ScanQR.FlatAppearance.BorderSize = 0
+        Me.ScanQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ScanQR.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.ScanQR.ForeColor = System.Drawing.Color.Orange
+        Me.ScanQR.Location = New System.Drawing.Point(67, 3)
+        Me.ScanQR.Name = "ScanQR"
+        Me.ScanQR.Size = New System.Drawing.Size(174, 51)
+        Me.ScanQR.TabIndex = 3
+        Me.ScanQR.Text = "QR Scan"
+        Me.ScanQR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ScanQR.UseVisualStyleBackColor = false
+        '
         'PictureBox3
         '
         Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -213,33 +240,6 @@ Partial Class MenuControl
         Me.ContenidoPrincipal.Size = New System.Drawing.Size(497, 383)
         Me.ContenidoPrincipal.TabIndex = 1
         '
-        'ScanQR
-        '
-        Me.ScanQR.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.ScanQR.BackColor = System.Drawing.Color.Transparent
-        Me.ScanQR.FlatAppearance.BorderSize = 0
-        Me.ScanQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ScanQR.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.ScanQR.ForeColor = System.Drawing.Color.Orange
-        Me.ScanQR.Location = New System.Drawing.Point(67, 3)
-        Me.ScanQR.Name = "ScanQR"
-        Me.ScanQR.Size = New System.Drawing.Size(174, 51)
-        Me.ScanQR.TabIndex = 3
-        Me.ScanQR.Text = "QR Scan"
-        Me.ScanQR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ScanQR.UseVisualStyleBackColor = false
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.BackgroundImage = Global.Menu.My.Resources.Resources.next_1aaaa
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 13)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(58, 30)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = false
-        '
         'MenuControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -253,8 +253,8 @@ Partial Class MenuControl
         CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).EndInit
         Me.TableLayoutPanelSesion.ResumeLayout(false)
-        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub

@@ -23,7 +23,7 @@ Public Class InfoAutos
 
     Private Sub OnInfoLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim Lista = VObtenerNoEntregados()
+            Dim Lista = VObtenerAllPuerto()
             If Lista IsNot Nothing
                 DataGridViewVehiculos.DataSource = Lista
                 DataGridViewVehiculos.MultiSelect = False
@@ -37,11 +37,11 @@ Public Class InfoAutos
         Try
             If tbxBuscarVin.Text.Length > 0
                 '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim Filtro As DataTable = VObtenerLike(tbxBuscarVin.Text.ToUpper)
+                Dim Filtro As DataTable = VObtenerAllPuerto
                 DataGridViewVehiculos.DataSource = Filtro
             Else
                 Try
-                    Dim Lista = VObtenerNoEntregados()
+                    Dim Lista = VObtenerAllPuerto()
                     If Lista IsNot Nothing
                         DataGridViewVehiculos.DataSource = Lista
                         DataGridViewVehiculos.MultiSelect = False
@@ -79,10 +79,10 @@ Public Class InfoAutos
         Try
             If tbxBuscarVin.Text.Length > 0
                 '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim Filtro As DataTable = VObtenerLike(tbxBuscarVin.Text.ToUpper)
+                Dim Filtro As DataTable = VObtenerAllPuertoLike(tbxBuscarVin.Text.ToUpper)
                 DataGridViewVehiculos.DataSource = Filtro
             Else
-                Dim Lista As DataTable = VObtenerNoEntregados
+                Dim Lista As DataTable = VObtenerAllPuerto
                 DataGridViewVehiculos.DataSource = Lista
             End If
         Catch ex As Exception

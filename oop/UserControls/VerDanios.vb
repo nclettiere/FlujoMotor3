@@ -25,19 +25,23 @@ Public Class VerDanios
         PanelContenido.Margin = New Padding(3, 3, 3, 10)
 
         Dim lblNumero As Label = New Label
+        Dim lblDesc As Label = New Label
         Dim PBDanio As PictureBox = New PictureBox
         Dim rchDesc As RichTextBox = New RichTextBox
 
         lblNumero.AutoSize = True
+        lblDesc.AutoSize = True
         PBDanio.Size = New Size(152, 127)
         rchDesc.Size = New Size(413, 81)
 
 
         lblNumero.Text = "Danio #" + Numero
+        lblDesc.Text = "Descripcion"
         PBDanio.Image = Imagen
         rchDesc.Text = Desc
 
         lblNumero.Location = New Point(3, 12)
+        lblDesc.Location = New Point(161, 12)
         PBDanio.Location = New Point(3, 38)
         rchDesc.Location = New Point(161, 38)
 
@@ -47,10 +51,12 @@ Public Class VerDanios
         Dim fuente = New Font("Arial", 10)
 
         lblNumero.Font = fuente
+        lblDesc.Font = fuente
 
         PanelContenido.Controls.Add(lblNumero)
         PanelContenido.Controls.Add(PBDanio)
         PanelContenido.Controls.Add(rchDesc)
+        PanelContenido.Controls.Add(lblDesc)
 
         Return PanelContenido
     End Function

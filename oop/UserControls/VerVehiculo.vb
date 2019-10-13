@@ -76,14 +76,12 @@ Public Class VerVehiculo
     End Sub
 
     Private Sub BtVerInspeccion_Click(sender As Object, e As EventArgs) Handles btVerInspeccion.Click
-        If IObtenerCount <> 0
-            DirectCast(ParentForm, Ventana_Ver).LoadControl(New VerInspeccion, VIN)
-        Else
-             MessageBox.Show("Este Vehiculo no tiene inspecciones.")
-        End If
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Ventana.LoadControl(New VerInspeccion, VIN)
+        Ventana.ShowDialog
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) 
         Try
             DirectCast(ParentForm, Ventana_Ver).GotoSection(1, VIN)
         Catch ex As Exception

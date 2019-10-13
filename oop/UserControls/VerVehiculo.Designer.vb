@@ -27,7 +27,6 @@ Partial Class VerVehiculo
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.btVerInspeccion = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.labLoteName = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -128,11 +127,9 @@ Partial Class VerVehiculo
         'TableLayoutPanel7
         '
         Me.TableLayoutPanel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel7.ColumnCount = 2
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.ColumnCount = 1
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel7.Controls.Add(Me.btVerInspeccion, 0, 0)
-        Me.TableLayoutPanel7.Controls.Add(Me.Button2, 1, 0)
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(255, 95)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 1
@@ -149,32 +146,13 @@ Partial Class VerVehiculo
         Me.btVerInspeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btVerInspeccion.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btVerInspeccion.ForeColor = System.Drawing.Color.Orange
-        Me.btVerInspeccion.Location = New System.Drawing.Point(12, 3)
-        Me.btVerInspeccion.MaximumSize = New System.Drawing.Size(130, 53)
+        Me.btVerInspeccion.Location = New System.Drawing.Point(45, 3)
         Me.btVerInspeccion.MinimumSize = New System.Drawing.Size(130, 53)
         Me.btVerInspeccion.Name = "btVerInspeccion"
-        Me.btVerInspeccion.Size = New System.Drawing.Size(130, 53)
+        Me.btVerInspeccion.Size = New System.Drawing.Size(220, 53)
         Me.btVerInspeccion.TabIndex = 9
         Me.btVerInspeccion.Text = "Ver"
         Me.btVerInspeccion.UseVisualStyleBackColor = false
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button2.BackColor = System.Drawing.Color.DimGray
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Orange
-        Me.Button2.Location = New System.Drawing.Point(167, 3)
-        Me.Button2.MaximumSize = New System.Drawing.Size(130, 53)
-        Me.Button2.MinimumSize = New System.Drawing.Size(130, 53)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(130, 53)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "Agregar"
-        Me.Button2.UseVisualStyleBackColor = false
         '
         'Label11
         '
@@ -736,7 +714,6 @@ End Sub
     Friend WithEvents labZona As Label
     Friend WithEvents labSubzona As Label
     Friend WithEvents labColumna As Label
-    Friend WithEvents Button2 As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents labFila As Label
     Friend WithEvents Label16 As Label

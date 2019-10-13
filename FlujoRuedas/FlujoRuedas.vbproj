@@ -185,6 +185,10 @@
       <Project>{dbb27519-5238-4fd6-af9d-80d4eb10c862}</Project>
       <Name>Logica</Name>
     </ProjectReference>
+    <ProjectReference Include="..\oop\Menu.vbproj">
+      <Project>{AA7E34BC-1FC7-4EDD-9DB8-9D6D96E72423}</Project>
+      <Name>Menu</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resource\" />

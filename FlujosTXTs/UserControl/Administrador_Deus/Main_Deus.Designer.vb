@@ -24,191 +24,74 @@ Partial Class Main_Deus
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Deus))
         Me.TableLayoutPanelMenu = New System.Windows.Forms.TableLayoutPanel()
-        Me.pnCOntenedor = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.MainContent = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblTotalVehiculos = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btIniciar = New System.Windows.Forms.Button()
         Me.TableLayoutPanelOpciones = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btOperario = New System.Windows.Forms.Button()
+        Me.piBoPuerto = New System.Windows.Forms.PictureBox()
         Me.btTransportista = New System.Windows.Forms.Button()
+        Me.piBoPatio = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanelInfoUsuario = New System.Windows.Forms.TableLayoutPanel()
         Me.labUsuario = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanelSesion = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.piBoPuerto = New System.Windows.Forms.PictureBox()
-        Me.piBoPatio = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanelMenu.SuspendLayout()
-        Me.pnCOntenedor.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.TableLayoutPanelOpciones.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanelInfoUsuario.SuspendLayout()
-        Me.TableLayoutPanelSesion.SuspendLayout()
-        CType(Me.piBoPuerto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.piBoPatio, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.btnAgregarUsuario = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanelMenu.SuspendLayout
+        Me.TableLayoutPanelOpciones.SuspendLayout
+        Me.TableLayoutPanel1.SuspendLayout
+        CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TableLayoutPanelInfoUsuario.SuspendLayout
+        Me.TableLayoutPanelSesion.SuspendLayout
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Panel1.SuspendLayout
+        Me.GroupBox2.SuspendLayout
+        Me.Panel3.SuspendLayout
+        Me.GroupBox1.SuspendLayout
+        Me.FlowLayoutPanel1.SuspendLayout
+        Me.Panel2.SuspendLayout
+        Me.SuspendLayout
         '
         'TableLayoutPanelMenu
         '
-        Me.TableLayoutPanelMenu.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanelMenu.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanelMenu.BackColor = System.Drawing.Color.LightGray
         Me.TableLayoutPanelMenu.ColumnCount = 2
         Me.TableLayoutPanelMenu.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.28042!))
         Me.TableLayoutPanelMenu.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.71957!))
-        Me.TableLayoutPanelMenu.Controls.Add(Me.pnCOntenedor, 1, 0)
         Me.TableLayoutPanelMenu.Controls.Add(Me.TableLayoutPanelOpciones, 0, 0)
+        Me.TableLayoutPanelMenu.Controls.Add(Me.Panel1, 1, 0)
         Me.TableLayoutPanelMenu.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanelMenu.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanelMenu.Name = "TableLayoutPanelMenu"
         Me.TableLayoutPanelMenu.RowCount = 1
-        Me.TableLayoutPanelMenu.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanelMenu.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanelMenu.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanelMenu.Size = New System.Drawing.Size(1200, 700)
         Me.TableLayoutPanelMenu.TabIndex = 3
-        '
-        'pnCOntenedor
-        '
-        Me.pnCOntenedor.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.pnCOntenedor.BackColor = System.Drawing.Color.Transparent
-        Me.pnCOntenedor.Controls.Add(Me.TableLayoutPanel2)
-        Me.pnCOntenedor.Location = New System.Drawing.Point(282, 3)
-        Me.pnCOntenedor.Name = "pnCOntenedor"
-        Me.pnCOntenedor.Size = New System.Drawing.Size(915, 694)
-        Me.pnCOntenedor.TabIndex = 0
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.MainContent, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 0, 1)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.Padding = New System.Windows.Forms.Padding(1)
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.62974!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.37026!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(909, 694)
-        Me.TableLayoutPanel2.TabIndex = 3
-        '
-        'MainContent
-        '
-        Me.MainContent.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MainContent.BackColor = System.Drawing.Color.Gainsboro
-        Me.MainContent.Location = New System.Drawing.Point(4, 4)
-        Me.MainContent.Name = "MainContent"
-        Me.MainContent.Size = New System.Drawing.Size(901, 607)
-        Me.MainContent.TabIndex = 2
-        '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel3.ColumnCount = 2
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel5, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 0)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(4, 617)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(901, 73)
-        Me.TableLayoutPanel3.TabIndex = 3
-        '
-        'TableLayoutPanel5
-        '
-        Me.TableLayoutPanel5.ColumnCount = 1
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Label2, 0, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.lblTotalVehiculos, 0, 0)
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(453, 3)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 2
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(444, 66)
-        Me.TableLayoutPanel5.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 15.0!)
-        Me.Label2.ForeColor = System.Drawing.Color.Crimson
-        Me.Label2.Location = New System.Drawing.Point(110, 34)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(223, 30)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Lotes entregados: 0"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblTotalVehiculos
-        '
-        Me.lblTotalVehiculos.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lblTotalVehiculos.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotalVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblTotalVehiculos.Font = New System.Drawing.Font("Calibri", 15.0!)
-        Me.lblTotalVehiculos.ForeColor = System.Drawing.Color.Crimson
-        Me.lblTotalVehiculos.Location = New System.Drawing.Point(110, 1)
-        Me.lblTotalVehiculos.Name = "lblTotalVehiculos"
-        Me.lblTotalVehiculos.Size = New System.Drawing.Size(223, 30)
-        Me.lblTotalVehiculos.TabIndex = 3
-        Me.lblTotalVehiculos.Text = "Lotes en espera: 0"
-        Me.lblTotalVehiculos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.btIniciar, 0, 0)
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 3)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(444, 67)
-        Me.TableLayoutPanel4.TabIndex = 0
-        '
-        'btIniciar
-        '
-        Me.btIniciar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btIniciar.BackColor = System.Drawing.Color.DimGray
-        Me.btIniciar.FlatAppearance.BorderSize = 0
-        Me.btIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btIniciar.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btIniciar.ForeColor = System.Drawing.Color.Crimson
-        Me.btIniciar.Location = New System.Drawing.Point(28, 7)
-        Me.btIniciar.Name = "btIniciar"
-        Me.btIniciar.Size = New System.Drawing.Size(165, 53)
-        Me.btIniciar.TabIndex = 0
-        Me.btIniciar.Text = "Iniciar Viaje"
-        Me.btIniciar.UseVisualStyleBackColor = False
         '
         'TableLayoutPanelOpciones
         '
         Me.TableLayoutPanelOpciones.BackColor = System.Drawing.Color.Gray
         Me.TableLayoutPanelOpciones.ColumnCount = 1
-        Me.TableLayoutPanelOpciones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanelOpciones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanel1, 0, 0)
         Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanelInfoUsuario, 0, 1)
         Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanelSesion, 0, 2)
@@ -219,16 +102,16 @@ Partial Class Main_Deus
         Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.8209!))
         Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.97015!))
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanelOpciones.Size = New System.Drawing.Size(279, 700)
         Me.TableLayoutPanelOpciones.TabIndex = 1
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.59615!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.40385!))
@@ -239,18 +122,18 @@ Partial Class Main_Deus
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(273, 227)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'btOperario
         '
-        Me.btOperario.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btOperario.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.btOperario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btOperario.FlatAppearance.BorderSize = 0
         Me.btOperario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btOperario.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btOperario.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btOperario.ForeColor = System.Drawing.Color.Crimson
         Me.btOperario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btOperario.Location = New System.Drawing.Point(64, 25)
@@ -259,15 +142,26 @@ Partial Class Main_Deus
         Me.btOperario.TabIndex = 0
         Me.btOperario.Text = "OPERARIOS"
         Me.btOperario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btOperario.UseVisualStyleBackColor = True
+        Me.btOperario.UseVisualStyleBackColor = true
+        '
+        'piBoPuerto
+        '
+        Me.piBoPuerto.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.piBoPuerto.BackgroundImage = CType(resources.GetObject("piBoPuerto.BackgroundImage"),System.Drawing.Image)
+        Me.piBoPuerto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.piBoPuerto.Location = New System.Drawing.Point(3, 41)
+        Me.piBoPuerto.Name = "piBoPuerto"
+        Me.piBoPuerto.Size = New System.Drawing.Size(55, 30)
+        Me.piBoPuerto.TabIndex = 1
+        Me.piBoPuerto.TabStop = false
         '
         'btTransportista
         '
-        Me.btTransportista.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btTransportista.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.btTransportista.BackColor = System.Drawing.Color.Transparent
         Me.btTransportista.FlatAppearance.BorderSize = 0
         Me.btTransportista.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btTransportista.Font = New System.Drawing.Font("Calibri", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btTransportista.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btTransportista.ForeColor = System.Drawing.Color.Crimson
         Me.btTransportista.Location = New System.Drawing.Point(64, 142)
         Me.btTransportista.Name = "btTransportista"
@@ -275,15 +169,26 @@ Partial Class Main_Deus
         Me.btTransportista.TabIndex = 2
         Me.btTransportista.Text = "TRANSPORTISTAS"
         Me.btTransportista.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btTransportista.UseVisualStyleBackColor = False
+        Me.btTransportista.UseVisualStyleBackColor = false
+        '
+        'piBoPatio
+        '
+        Me.piBoPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.piBoPatio.BackgroundImage = CType(resources.GetObject("piBoPatio.BackgroundImage"),System.Drawing.Image)
+        Me.piBoPatio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.piBoPatio.Location = New System.Drawing.Point(3, 155)
+        Me.piBoPatio.Name = "piBoPatio"
+        Me.piBoPatio.Size = New System.Drawing.Size(55, 30)
+        Me.piBoPatio.TabIndex = 3
+        Me.piBoPatio.TabStop = false
         '
         'TableLayoutPanelInfoUsuario
         '
-        Me.TableLayoutPanelInfoUsuario.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanelInfoUsuario.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanelInfoUsuario.ColumnCount = 1
-        Me.TableLayoutPanelInfoUsuario.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanelInfoUsuario.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanelInfoUsuario.Controls.Add(Me.labUsuario, 0, 2)
         Me.TableLayoutPanelInfoUsuario.Controls.Add(Me.Label1, 0, 1)
         Me.TableLayoutPanelInfoUsuario.Location = New System.Drawing.Point(3, 236)
@@ -297,12 +202,12 @@ Partial Class Main_Deus
         '
         'labUsuario
         '
-        Me.labUsuario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.labUsuario.AutoSize = True
+        Me.labUsuario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.labUsuario.AutoSize = true
         Me.labUsuario.BackColor = System.Drawing.Color.Transparent
         Me.labUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.labUsuario.Font = New System.Drawing.Font("Calibri", 12.0!)
+        Me.labUsuario.Font = New System.Drawing.Font("Calibri", 12!)
         Me.labUsuario.ForeColor = System.Drawing.Color.Pink
         Me.labUsuario.Location = New System.Drawing.Point(3, 187)
         Me.labUsuario.Name = "labUsuario"
@@ -313,11 +218,11 @@ Partial Class Main_Deus
         '
         'Label1
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = true
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 10.0!)
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 10!)
         Me.Label1.ForeColor = System.Drawing.Color.Crimson
         Me.Label1.Location = New System.Drawing.Point(3, 147)
         Me.Label1.Name = "Label1"
@@ -328,9 +233,9 @@ Partial Class Main_Deus
         '
         'TableLayoutPanelSesion
         '
-        Me.TableLayoutPanelSesion.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanelSesion.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanelSesion.ColumnCount = 2
         Me.TableLayoutPanelSesion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.44231!))
         Me.TableLayoutPanelSesion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.55769!))
@@ -339,18 +244,29 @@ Partial Class Main_Deus
         Me.TableLayoutPanelSesion.Location = New System.Drawing.Point(3, 486)
         Me.TableLayoutPanelSesion.Name = "TableLayoutPanelSesion"
         Me.TableLayoutPanelSesion.RowCount = 2
-        Me.TableLayoutPanelSesion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanelSesion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanelSesion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanelSesion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
         Me.TableLayoutPanelSesion.Size = New System.Drawing.Size(273, 211)
         Me.TableLayoutPanelSesion.TabIndex = 2
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.BackgroundImage = Global.FlujosTXTs.My.Resources.Resources.logoutssss
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox3.Location = New System.Drawing.Point(3, 137)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(66, 41)
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = false
+        '
         'Button2
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Calibri", 15!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Crimson
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(75, 132)
@@ -359,76 +275,203 @@ Partial Class Main_Deus
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Salir"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = true
         '
-        'piBoPuerto
+        'Panel1
         '
-        Me.piBoPuerto.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.piBoPuerto.BackgroundImage = CType(resources.GetObject("piBoPuerto.BackgroundImage"), System.Drawing.Image)
-        Me.piBoPuerto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.piBoPuerto.Location = New System.Drawing.Point(3, 41)
-        Me.piBoPuerto.Name = "piBoPuerto"
-        Me.piBoPuerto.Size = New System.Drawing.Size(55, 30)
-        Me.piBoPuerto.TabIndex = 1
-        Me.piBoPuerto.TabStop = False
+        Me.Panel1.Controls.Add(Me.GroupBox2)
+        Me.Panel1.Controls.Add(Me.GroupBox1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(282, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(915, 694)
+        Me.Panel1.TabIndex = 2
         '
-        'piBoPatio
+        'GroupBox2
         '
-        Me.piBoPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.piBoPatio.BackgroundImage = CType(resources.GetObject("piBoPatio.BackgroundImage"), System.Drawing.Image)
-        Me.piBoPatio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.piBoPatio.Location = New System.Drawing.Point(3, 155)
-        Me.piBoPatio.Name = "piBoPatio"
-        Me.piBoPatio.Size = New System.Drawing.Size(55, 30)
-        Me.piBoPatio.TabIndex = 3
-        Me.piBoPatio.TabStop = False
+        Me.GroupBox2.Controls.Add(Me.Panel3)
+        Me.GroupBox2.Location = New System.Drawing.Point(375, 25)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(10, 25, 3, 3)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(537, 657)
+        Me.GroupBox2.TabIndex = 4
+        Me.GroupBox2.TabStop = false
+        Me.GroupBox2.Text = "Administracion de Usuarios"
         '
-        'PictureBox3
+        'Panel3
         '
-        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.BackgroundImage = Global.FlujosTXTs.My.Resources.Resources.logoutssss
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox3.Location = New System.Drawing.Point(3, 137)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(66, 41)
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
+        Me.Panel3.BackColor = System.Drawing.Color.Silver
+        Me.Panel3.Controls.Add(Me.ListView1)
+        Me.Panel3.Controls.Add(Me.btnAgregarUsuario)
+        Me.Panel3.Controls.Add(Me.Button5)
+        Me.Panel3.Controls.Add(Me.Button4)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(3, 16)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(531, 638)
+        Me.Panel3.TabIndex = 0
+        '
+        'ListView1
+        '
+        Me.ListView1.Location = New System.Drawing.Point(12, 62)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(502, 558)
+        Me.ListView1.TabIndex = 3
+        Me.ListView1.UseCompatibleStateImageBehavior = false
+        '
+        'btnAgregarUsuario
+        '
+        Me.btnAgregarUsuario.Location = New System.Drawing.Point(358, 10)
+        Me.btnAgregarUsuario.Name = "btnAgregarUsuario"
+        Me.btnAgregarUsuario.Size = New System.Drawing.Size(156, 36)
+        Me.btnAgregarUsuario.TabIndex = 2
+        Me.btnAgregarUsuario.Text = "Agregar"
+        Me.btnAgregarUsuario.UseVisualStyleBackColor = true
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(186, 10)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(156, 36)
+        Me.Button5.TabIndex = 1
+        Me.Button5.Text = "Eliminar"
+        Me.Button5.UseVisualStyleBackColor = true
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(12, 10)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(158, 36)
+        Me.Button4.TabIndex = 0
+        Me.Button4.Text = "Modificar"
+        Me.Button4.UseVisualStyleBackColor = true
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.FlowLayoutPanel1)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 22)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(10, 25, 3, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(352, 657)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = false
+        Me.GroupBox1.Text = "Usuarios Conectados"
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Controls.Add(Me.Panel2)
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 16)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(10)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(346, 638)
+        Me.FlowLayoutPanel1.TabIndex = 0
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Silver
+        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(13, 13)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(321, 134)
+        Me.Panel2.TabIndex = 0
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(14, 99)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(113, 23)
+        Me.Button3.TabIndex = 6
+        Me.Button3.Text = "Cerrar Sesion"
+        Me.Button3.UseVisualStyleBackColor = true
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(196, 99)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(112, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Ver Mas"
+        Me.Button1.UseVisualStyleBackColor = true
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = true
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 10!)
+        Me.Label4.ForeColor = System.Drawing.Color.Crimson
+        Me.Label4.Location = New System.Drawing.Point(11, 63)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(104, 17)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Ultima Conexion:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = true
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 10!)
+        Me.Label3.ForeColor = System.Drawing.Color.Crimson
+        Me.Label3.Location = New System.Drawing.Point(11, 36)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(54, 17)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Nombre"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = true
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 10!)
+        Me.Label2.ForeColor = System.Drawing.Color.Crimson
+        Me.Label2.Location = New System.Drawing.Point(11, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(51, 17)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Usuario"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Main_Deus
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.TableLayoutPanelMenu)
         Me.Name = "Main_Deus"
         Me.Size = New System.Drawing.Size(1200, 700)
-        Me.TableLayoutPanelMenu.ResumeLayout(False)
-        Me.pnCOntenedor.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanelOpciones.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanelInfoUsuario.ResumeLayout(False)
-        Me.TableLayoutPanelInfoUsuario.PerformLayout()
-        Me.TableLayoutPanelSesion.ResumeLayout(False)
-        CType(Me.piBoPuerto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.piBoPatio, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
+        Me.TableLayoutPanelMenu.ResumeLayout(false)
+        Me.TableLayoutPanelOpciones.ResumeLayout(false)
+        Me.TableLayoutPanel1.ResumeLayout(false)
+        CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).EndInit
+        Me.TableLayoutPanelInfoUsuario.ResumeLayout(false)
+        Me.TableLayoutPanelInfoUsuario.PerformLayout
+        Me.TableLayoutPanelSesion.ResumeLayout(false)
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
+        Me.Panel1.ResumeLayout(false)
+        Me.GroupBox2.ResumeLayout(false)
+        Me.Panel3.ResumeLayout(false)
+        Me.GroupBox1.ResumeLayout(false)
+        Me.FlowLayoutPanel1.ResumeLayout(false)
+        Me.Panel2.ResumeLayout(false)
+        Me.Panel2.PerformLayout
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents TableLayoutPanelMenu As TableLayoutPanel
-    Friend WithEvents pnCOntenedor As Panel
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents MainContent As Panel
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents lblTotalVehiculos As Label
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents btIniciar As Button
     Friend WithEvents TableLayoutPanelOpciones As TableLayoutPanel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents btOperario As Button
@@ -441,4 +484,19 @@ Partial Class Main_Deus
     Friend WithEvents TableLayoutPanelSesion As TableLayoutPanel
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents btnAgregarUsuario As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
 End Class

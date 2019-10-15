@@ -1,9 +1,14 @@
 ﻿Imports Logica
+Imports BrightIdeasSoftware
 
 Public Class Main_Deus
 
     Private Sub OnMenuLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        dataLstUsuarios.DataSource = UObtenerAll
 
+        For Each column As ColumnHeader In dataLstUsuarios.Columns
+            column.Width = -2
+        Next
     End Sub
 
     Private Function CrearUsuariosInfo(Informacion As DataRow, Nombre As String) As Control
@@ -66,7 +71,30 @@ Public Class Main_Deus
     Private Sub BtnAgregarUsuario_Click(sender As Object, e As EventArgs) Handles btnAgregarUsuario.Click
         Dim Ventana As Ventana_Ver = New Ventana_Ver
         Dim AgregarUsuario = New AgregarUsuario
+        AgregarUsuario.FormAnterior = Me
         Ventana.LoadControl(AgregarUsuario)
         Ventana.ShowDialog
+    End Sub
+
+    Friend Sub ActualizarLista
+        dataLstUsuarios.DataSource = Nothing
+        dataLstUsuarios.DataSource = UObtenerAll
+    End Sub
+
+    Private Sub SelectionChanged(sender As Object, e As EventArgs) Handles dataLstUsuarios.SelectedIndexChanged
+        If dataLstUsuarios.SelectedIndex >= 0
+            btnEliminar.Enabled = True
+        Else
+            btnEliminar.Enabled = False
+        End If
+    End Sub
+
+    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        String Usuario = dataLstUsuarios.Selected
+        Dim dialogResult As DialogResult = MessageBox.Show("Deseas Eliminar a: "+  +"?", "Eliminar Usuario", MessageBoxButtons.YesNo)
+
+        If dialogResult = DialogResult.Yes Then
+
+        End If
     End Sub
 End Class

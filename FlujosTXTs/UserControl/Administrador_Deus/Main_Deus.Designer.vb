@@ -39,9 +39,8 @@ Partial Class Main_Deus
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.btnAgregarUsuario = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -51,6 +50,7 @@ Partial Class Main_Deus
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.dataLstUsuarios = New BrightIdeasSoftware.DataListView()
         Me.TableLayoutPanelMenu.SuspendLayout
         Me.TableLayoutPanelOpciones.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
@@ -65,6 +65,7 @@ Partial Class Main_Deus
         Me.GroupBox1.SuspendLayout
         Me.FlowLayoutPanel1.SuspendLayout
         Me.Panel2.SuspendLayout
+        CType(Me.dataLstUsuarios,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'TableLayoutPanelMenu
@@ -301,23 +302,15 @@ Partial Class Main_Deus
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Silver
-        Me.Panel3.Controls.Add(Me.ListView1)
+        Me.Panel3.Controls.Add(Me.dataLstUsuarios)
         Me.Panel3.Controls.Add(Me.btnAgregarUsuario)
-        Me.Panel3.Controls.Add(Me.Button5)
+        Me.Panel3.Controls.Add(Me.btnEliminar)
         Me.Panel3.Controls.Add(Me.Button4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(3, 16)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(531, 638)
         Me.Panel3.TabIndex = 0
-        '
-        'ListView1
-        '
-        Me.ListView1.Location = New System.Drawing.Point(12, 62)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(502, 558)
-        Me.ListView1.TabIndex = 3
-        Me.ListView1.UseCompatibleStateImageBehavior = false
         '
         'btnAgregarUsuario
         '
@@ -328,14 +321,14 @@ Partial Class Main_Deus
         Me.btnAgregarUsuario.Text = "Agregar"
         Me.btnAgregarUsuario.UseVisualStyleBackColor = true
         '
-        'Button5
+        'btnEliminar
         '
-        Me.Button5.Location = New System.Drawing.Point(186, 10)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(156, 36)
-        Me.Button5.TabIndex = 1
-        Me.Button5.Text = "Eliminar"
-        Me.Button5.UseVisualStyleBackColor = true
+        Me.btnEliminar.Location = New System.Drawing.Point(186, 10)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(156, 36)
+        Me.btnEliminar.TabIndex = 1
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = true
         '
         'Button4
         '
@@ -444,6 +437,19 @@ Partial Class Main_Deus
         Me.Label2.Text = "Usuario"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'dataLstUsuarios
+        '
+        Me.dataLstUsuarios.CellEditUseWholeCell = false
+        Me.dataLstUsuarios.DataSource = Nothing
+        Me.dataLstUsuarios.FullRowSelect = true
+        Me.dataLstUsuarios.Location = New System.Drawing.Point(12, 52)
+        Me.dataLstUsuarios.Name = "dataLstUsuarios"
+        Me.dataLstUsuarios.ShowGroups = false
+        Me.dataLstUsuarios.Size = New System.Drawing.Size(502, 568)
+        Me.dataLstUsuarios.TabIndex = 3
+        Me.dataLstUsuarios.UseCompatibleStateImageBehavior = false
+        Me.dataLstUsuarios.View = System.Windows.Forms.View.Details
+        '
         'Main_Deus
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -467,6 +473,7 @@ Partial Class Main_Deus
         Me.FlowLayoutPanel1.ResumeLayout(false)
         Me.Panel2.ResumeLayout(false)
         Me.Panel2.PerformLayout
+        CType(Me.dataLstUsuarios,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
@@ -487,9 +494,8 @@ End Sub
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents ListView1 As ListView
     Friend WithEvents btnAgregarUsuario As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnEliminar As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
@@ -499,4 +505,5 @@ End Sub
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents dataLstUsuarios As BrightIdeasSoftware.DataListView
 End Class

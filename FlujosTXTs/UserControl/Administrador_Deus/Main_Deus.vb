@@ -90,7 +90,8 @@ Public Class Main_Deus
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        String Usuario = dataLstUsuarios.Selected
+        Dim Usuario As String = dataLstUsuarios.SelectedItem.SubItems.Item(0).ToString
+        MsgBox(Usuario)
         Dim dialogResult As DialogResult = MessageBox.Show("Deseas Eliminar a: "+  +"?", "Eliminar Usuario", MessageBoxButtons.YesNo)
 
         If dialogResult = DialogResult.Yes Then

@@ -3,7 +3,7 @@ Imports Logica.Encriptacion
 
 Public Class AgregarUsuario
 
-    Friend FormAnterior As Main_Deus
+    Friend FormAnterior As ManageUsuarios
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try

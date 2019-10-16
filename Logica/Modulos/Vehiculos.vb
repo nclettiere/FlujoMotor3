@@ -212,6 +212,83 @@ Public Module Vehiculos
         Cerrar
     End Function
 
+        Public Function VInsertar(ByVal VIN As String, ByVal Marca As String, ByVal Modelo As String, ByVal Color As String, ByVal Tipo As String, ByVal Anio As String, ByVal LoteId As String, ByVal OperarioID As String) As Boolean
+        Conectar
+            Try
+                Dim Dcommand As OdbcCommand = New OdbcCommand("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+                Dim Dparameters As OdbcParameterCollection = Dcommand.Parameters
+
+                Dparameters.Add("vehiculovin", OdbcType.VarChar)
+                Dparameters("vehiculovin").Value = VIN
+
+                Dparameters.Add("vehiculocolor", OdbcType.VarChar)
+                Dparameters("vehiculocolor").Value = Color
+
+                Dparameters.Add("vehiculomarca", OdbcType.VarChar)
+                Dparameters("vehiculomarca").Value = Marca
+
+                Dparameters.Add("vehiculomodelo", OdbcType.VarChar)
+                Dparameters("vehiculomodelo").Value = Modelo
+
+                Dparameters.Add("vehiculoanio", OdbcType.SmallInt)
+                Dparameters("vehiculoanio").Value = Integer.Parse(Anio)
+
+                Dparameters.Add("vehiculotipo", OdbcType.VarChar)
+                Dparameters("vehiculotipo").Value = Tipo
+
+                Dparameters.Add("operariopuertoid", OdbcType.Int)
+                Dparameters("operariopuertoid").Value = Integer.Parse(OperarioID)
+
+                Dparameters.Add("loteid", OdbcType.Int)
+                Dparameters("loteid").Value = Integer.Parse(LoteId)
+
+                Dcommand.Connection = DBConexion
+                Dcommand.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Serilog.Log.Error(ex, "Error al Ingresar Vehiculo.")
+                Return False
+            End Try
+        Cerrar
+    End Function
+
+        Public Function VInsertar(ByVal VIN As String, ByVal Marca As String, ByVal Modelo As String, ByVal Color As String, ByVal Tipo As String, ByVal Anio As String, ByVal OperarioID As String) As Boolean
+        Conectar
+            Try
+                Dim Dcommand As OdbcCommand = New OdbcCommand("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID) VALUES (?, ?, ?, ?, ?, ?, ?)")
+                Dim Dparameters As OdbcParameterCollection = Dcommand.Parameters
+
+                Dparameters.Add("vehiculovin", OdbcType.VarChar)
+                Dparameters("vehiculovin").Value = VIN
+
+                Dparameters.Add("vehiculocolor", OdbcType.VarChar)
+                Dparameters("vehiculocolor").Value = Color
+
+                Dparameters.Add("vehiculomarca", OdbcType.VarChar)
+                Dparameters("vehiculomarca").Value = Marca
+
+                Dparameters.Add("vehiculomodelo", OdbcType.VarChar)
+                Dparameters("vehiculomodelo").Value = Modelo
+
+                Dparameters.Add("vehiculoanio", OdbcType.SmallInt)
+                Dparameters("vehiculoanio").Value = Integer.Parse(Anio)
+
+                Dparameters.Add("vehiculotipo", OdbcType.VarChar)
+                Dparameters("vehiculotipo").Value = Tipo
+
+                Dparameters.Add("operariopuertoid", OdbcType.Int)
+                Dparameters("operariopuertoid").Value = Integer.Parse(OperarioID)
+
+                Dcommand.Connection = DBConexion
+                Dcommand.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Serilog.Log.Error(ex, "Error al Ingresar Vehiculo.")
+                Return False
+            End Try
+        Cerrar
+    End Function
+
     Public Function VObtenerNoEntregados() As DataTable
         Conectar
         Dim tabla As New DataTable

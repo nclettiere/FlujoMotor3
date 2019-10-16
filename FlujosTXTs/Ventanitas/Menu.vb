@@ -1,6 +1,10 @@
-﻿Public Class Menu
+﻿Imports Serilog
+
+Public Class Menu
 
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Log.Logger = New LoggerConfiguration().MinimumLevel.Information().WriteTo.Console().WriteTo.File("logs\\log_.txt", rollingInterval:= RollingInterval.Day).CreateLogger()
+
         Me.AutoSize = True
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
         Dim a = New Login_Deus

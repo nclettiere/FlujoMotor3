@@ -204,7 +204,6 @@ Public Class AgregarVehiculo
                 If ChequearVin = 0
                     If LoteModo
                         If LoteDatos
-                            MsgBox("trigger2")
                             Try
                                 Dim vehiculoTipo As String = cbxTipo.Text
 

@@ -56,4 +56,8 @@ Public Module Conexion
             Return False
         End If
     End Function
+
+    Public Function ObtenerOpId() As Integer
+        Return 1
+    End Function
 End Module

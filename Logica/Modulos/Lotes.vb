@@ -29,6 +29,20 @@ Public Module Lotes
         Cerrar
     End Function
 
+    Public Function LObtenerAllPuerto() As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM lotes WHERE lotefechallegada IS NULL AND lotefechasalida IS NULL", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
     Public Function LObtenerAllFitro(Filtro As String) As DataTable
         Conectar()
         Dim tabla As New DataTable
@@ -255,4 +269,21 @@ Public Module Lotes
 
         Cerrar
     End Function
+
+    Public Function LInsertar(ByVal Descripcion As String, ByVal Nombre As String, ByVal Operariopuertoid As String, ByVal PNombre As String) As Boolean
+        Conectar
+
+        Try
+            Dim datos As New DataTable
+            Dim adapter As New OdbcDataAdapter("INSERT INTO lotes (lotedescripcion, lotenombre, operariopuertoid, patioid) VALUES ('" + Descripcion + "'," + Nombre + ","+Operariopuertoid+","+ PObtenerNombre(PNombre).Item(0).ToString +")", DBConexion)
+            adapter.Fill(datos)
+            Serilog.Log.Information("Consulta Exitosa.")
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+        Cerrar
+    End Function
+
 End Module

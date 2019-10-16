@@ -38,6 +38,21 @@ Public Module Empleados
         Cerrar
     End Function
 
+    Public Function EObtener(EmpleadoId As String) As DataRow
+        Conectar()
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM empleados WHERE empleadoid="+EmpleadoId, DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla.Rows(0)
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+
     Public Function UInsertar(ByVal empleadoId As Integer, ByVal Usuario As String) As Boolean
         Conectar
         Try
@@ -107,4 +122,110 @@ Public Module Empleados
         Return True
         Cerrar
     End Function
+
+
+    Public Function UEliminar(ByVal EmpleadoId As String) As Boolean
+        Conectar
+        Try
+            If OPEliminar(EmpleadoId)
+                Dim Dcommand As OdbcCommand = New OdbcCommand("DELETE FROM usuarios WHERE empleadoid = "+ EmpleadoId +";")
+                Dcommand.Connection = DBConexion
+                Dcommand.ExecuteNonQuery()
+                MsgBox("Usuario Eliminado exitosamente.")
+                Return True
+            Else
+                MsgBox("1")
+            End If
+            Return False
+        Catch ex As Exception
+            MsgBox("Error al ingresar usuario.")
+            Serilog.Log.Error(ex, "Error al ingresar usuario.")
+            Return False
+        End Try
+
+        Cerrar
+    End Function
+
+    Public Function EEliminar(EmpleadoId As String) As Boolean
+        Conectar
+        Try
+            Dim Dcommand As OdbcCommand = New OdbcCommand("DELETE FROM empleados WHERE empleadoid = "+ EmpleadoId +";")
+            Dcommand.Connection = DBConexion
+            Dcommand.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err")
+            Return False
+        End Try
+        Cerrar
+    End Function
+
+    Public Function OPEliminar(ByVal EmpleadoId As String) As Boolean
+        Conectar
+        Try
+
+        Dim Dcommand As OdbcCommand
+
+        If(CheckearTipoOperario("SELECT COUNT(*) FROM operariopuertos WHERE empleadoid = "+ EmpleadoId +";"))
+            Dcommand = New OdbcCommand("DELETE FROM operariopuertos WHERE empleadoid = "+ EmpleadoId +";")
+        Else If(CheckearTipoOperario("SELECT COUNT(*) FROM operariopatios WHERE empleadoid = "+ EmpleadoId +";"))
+            Dcommand = New OdbcCommand("DELETE FROM operariopatios WHERE empleadoid = "+ EmpleadoId +";")
+        Else If(CheckearTipoOperario("SELECT COUNT(*) FROM transportistas WHERE empleadoid = "+ EmpleadoId +";"))
+            Dcommand = New OdbcCommand("DELETE FROM transportistas WHERE empleadoid = "+ EmpleadoId +";")
+        End If
+
+        Dcommand.Connection = DBConexion
+        Dcommand.ExecuteNonQuery()
+
+        Return True
+
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error")
+            Return False
+        End Try
+        Cerrar
+    End Function
+
+    Private Function CheckearTipoOperario(ByVal Query As String) As Boolean
+        Conectar()
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter(Query, DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Dim Result As Integer
+            If Integer.TryParse(tabla.Rows(0).Item(0), Result)
+                If Result > 0
+                    Return True
+                Else
+                    Return False
+                End If
+            Else
+                Return False
+            End If
+        Else
+            Return False
+        End If
+        Cerrar
+    End Function
+
+    Public Function ObtenerTipoOperario(ByVal EmpleadoId As String) As Integer
+        Conectar()
+        Try
+            If(CheckearTipoOperario("SELECT COUNT(*) FROM operariopuertos WHERE empleadoid = "+ EmpleadoId +";"))
+                Return 0
+            Else If(CheckearTipoOperario("SELECT COUNT(*) FROM operariopatios WHERE empleadoid = "+ EmpleadoId +";"))
+                Return 1
+            Else If(CheckearTipoOperario("SELECT COUNT(*) FROM transportistas WHERE empleadoid = "+ EmpleadoId +";"))
+                Return 2
+            Else
+                Return 0
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err")
+        End Try
+
+        Cerrar
+    End Function
+
 End Module

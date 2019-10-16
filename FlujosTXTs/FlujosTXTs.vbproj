@@ -107,10 +107,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarLote.Designer.vb">
+      <DependentUpon>AgregarLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarLote.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Administrador_Deus\AgregarUsuario.Designer.vb">
       <DependentUpon>AgregarUsuario.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\AgregarUsuario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarVehiculo.Designer.vb">
+      <DependentUpon>AgregarVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarVehiculo.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\Login_Deus.Designer.vb">
@@ -123,6 +135,24 @@
       <DependentUpon>Main_Deus.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\Main_Deus.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\ManageUsuarios.Designer.vb">
+      <DependentUpon>ManageUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\ManageUsuarios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\SeleccionarLote.Designer.vb">
+      <DependentUpon>SeleccionarLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\SeleccionarLote.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VehiculosLotes.Designer.vb">
+      <DependentUpon>VehiculosLotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VehiculosLotes.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ventanitas\Menu.Designer.vb">
@@ -145,14 +175,29 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarLote.resx">
+      <DependentUpon>AgregarLote.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarVehiculo.resx">
+      <DependentUpon>AgregarVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\Login_Deus.resx">
       <DependentUpon>Login_Deus.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\Main_Deus.resx">
       <DependentUpon>Main_Deus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\ManageUsuarios.resx">
+      <DependentUpon>ManageUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\SeleccionarLote.resx">
+      <DependentUpon>SeleccionarLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\VehiculosLotes.resx">
+      <DependentUpon>VehiculosLotes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>

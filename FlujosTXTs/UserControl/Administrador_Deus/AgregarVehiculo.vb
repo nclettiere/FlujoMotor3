@@ -3,6 +3,7 @@ Public Class AgregarVehiculo
 
     Private LoteIngresado As Boolean = False
     Private PreLote As Boolean = False
+    Private Insertar As Action
     Friend LoteId As String
 
     Friend UC_VehiculosLotes As VehiculosLotes
@@ -21,13 +22,29 @@ Public Class AgregarVehiculo
                     Tipo = cbxTipo.Text.ToLower()
                 End If
 
+                MsgBox("VInsertar("+VIN+", "+Marca+", "+Modelo+", "+Color+", "+Tipo+", "+Anio+", "+Me.LoteId+", 1")
+
                If LoteIngresado
-                    VInsertar(VIN, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, 1)
+                   If VInsertar(VIN, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, 1)
+                        IInsertar(VIN)
+                        MsgBox("Vehiculo Insertado Exitosamente.")
+                   End If
                 ElseIf PreLote
-                    ''LInsertar()
-                    VInsertar(VIN, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, 1)
+                
+                    If Insertar IsNot Nothing
+                        Insertar.Invoke
+                        If VInsertar(VIN, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, 1)
+                            IInsertar(VIN)
+                            MsgBox("Vehiculo y Lote Insertados Exitosamente.")
+                        End If
+                    Else
+                        
+                    End If
                 Else
-                    VInsertar(VIN, Marca, Modelo, Color, Tipo, Anio, 1)
+                    If VInsertar(VIN, Marca, Modelo, Color, Tipo, Anio, 1)
+                        IInsertar(VIN)
+                        MsgBox("Vehiculo Insertado Exitosamente.")
+                    End If
                End If
             Else
                 MsgBox("Ya eiste un vehiculo con ese VIN.")
@@ -94,6 +111,13 @@ Public Class AgregarVehiculo
         Me.LoteId = LoteId
         btnQuitarLote.Visible = True
         Me.PreLote = PreLote
+    End Sub
+
+    Friend Sub CargarLoteNuevo(LoteId As String, PreLote As Boolean, Insertar As Action)
+        Me.LoteId = LoteId
+        btnQuitarLote.Visible = True
+        Me.PreLote = PreLote
+        Me.Insertar = Insertar
     End Sub
 
     Private Sub BtnExist_Click(sender As Object, e As EventArgs) Handles btnExist.Click

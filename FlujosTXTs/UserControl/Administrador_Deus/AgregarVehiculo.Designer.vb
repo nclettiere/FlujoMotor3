@@ -24,6 +24,7 @@ Partial Class AgregarVehiculo
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnQuitarLote = New System.Windows.Forms.Button()
         Me.VehiculoAno = New System.Windows.Forms.DateTimePicker()
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.btnExist = New System.Windows.Forms.Button()
@@ -41,7 +42,6 @@ Partial Class AgregarVehiculo
         Me.tbxVin = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnQuitarLote = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
         Me.SuspendLayout
@@ -83,6 +83,20 @@ Partial Class AgregarVehiculo
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(331, 471)
         Me.Panel2.TabIndex = 0
+        '
+        'btnQuitarLote
+        '
+        Me.btnQuitarLote.BackColor = System.Drawing.Color.DarkGray
+        Me.btnQuitarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitarLote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnQuitarLote.ForeColor = System.Drawing.Color.Crimson
+        Me.btnQuitarLote.Location = New System.Drawing.Point(99, 357)
+        Me.btnQuitarLote.Name = "btnQuitarLote"
+        Me.btnQuitarLote.Size = New System.Drawing.Size(214, 35)
+        Me.btnQuitarLote.TabIndex = 25
+        Me.btnQuitarLote.Text = "X Quitar X"
+        Me.btnQuitarLote.UseVisualStyleBackColor = false
+        Me.btnQuitarLote.Visible = false
         '
         'VehiculoAno
         '
@@ -232,7 +246,7 @@ Partial Class AgregarVehiculo
         'tbxVin
         '
         Me.tbxVin.Location = New System.Drawing.Point(16, 75)
-        Me.tbxVin.MaxLength = 24
+        Me.tbxVin.MaxLength = 17
         Me.tbxVin.Name = "tbxVin"
         Me.tbxVin.Size = New System.Drawing.Size(297, 20)
         Me.tbxVin.TabIndex = 2
@@ -258,20 +272,6 @@ Partial Class AgregarVehiculo
         Me.Label1.Size = New System.Drawing.Size(131, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Agregar Vehiculo"
-        '
-        'btnQuitarLote
-        '
-        Me.btnQuitarLote.BackColor = System.Drawing.Color.DarkGray
-        Me.btnQuitarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitarLote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnQuitarLote.ForeColor = System.Drawing.Color.Crimson
-        Me.btnQuitarLote.Location = New System.Drawing.Point(99, 357)
-        Me.btnQuitarLote.Name = "btnQuitarLote"
-        Me.btnQuitarLote.Size = New System.Drawing.Size(214, 35)
-        Me.btnQuitarLote.TabIndex = 25
-        Me.btnQuitarLote.Text = "X Quitar X"
-        Me.btnQuitarLote.UseVisualStyleBackColor = false
-        Me.btnQuitarLote.Visible = false
         '
         'AgregarVehiculo
         '

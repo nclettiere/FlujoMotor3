@@ -7,12 +7,18 @@ Public Class SeleccionarLote
     Friend TipoLista As Integer
     Friend MultiSelect As Boolean = False
 
+    Friend Modo As Integer = 0
+
     Friend UC_AgregarVehiculo As AgregarVehiculo
 
     Private Sub BtnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         If UC_AgregarVehiculo IsNot Nothing
             If Not MultiSelect
-                UC_AgregarVehiculo.CargarLoteNuevo(IdSeleccionado, False)
+                If Modo = 0
+                    UC_AgregarVehiculo.CargarLoteNuevo(IdSeleccionado, False)
+                Else
+                    UC_AgregarVehiculo.CambiarLote(IdSeleccionado, False)
+                End If
             Else
 
             End If
@@ -35,10 +41,14 @@ Public Class SeleccionarLote
             Case 0
                 listaLotes.DataSource = LObtenerAll
             Case 1
-                listaLotes.DataSource = LObtenerAllPuerto
+                listaLotes.DataSource = LObtenerAllPuertoNice
             Case 2
                 listaLotes.DataSource = LObtenerAllTransportista
         End Select
+
+        For Each column As ColumnHeader In listaLotes.Columns
+            column.Width = -2
+        Next
 
         If MultiSelect
             listaLotes.MultiSelect = True

@@ -24,29 +24,29 @@ Partial Class VehiculosLotes
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.listaVehiculos = New BrightIdeasSoftware.FastDataListView()
-        Me.btnAgrVehculo = New System.Windows.Forms.Button()
-        Me.btnMod = New System.Windows.Forms.Button()
-        Me.btnElim = New System.Windows.Forms.Button()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnInsp = New System.Windows.Forms.Button()
+        Me.btnElim = New System.Windows.Forms.Button()
+        Me.btnMngLote = New System.Windows.Forms.Button()
+        Me.btnMod = New System.Windows.Forms.Button()
+        Me.btnLavado = New System.Windows.Forms.Button()
+        Me.btnAgrVehculo = New System.Windows.Forms.Button()
+        Me.PbQR = New System.Windows.Forms.PictureBox()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblVin = New System.Windows.Forms.Label()
         Me.lblOpIngresado = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.lbllote = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblLoteStatus = New System.Windows.Forms.Label()
-        Me.PbQR = New System.Windows.Forms.PictureBox()
-        Me.btnLavado = New System.Windows.Forms.Button()
-        Me.btnMngLote = New System.Windows.Forms.Button()
-        Me.btnInsp = New System.Windows.Forms.Button()
+        Me.listaVehiculos = New BrightIdeasSoftware.FastDataListView()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
-        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.FlowLayoutPanel1.SuspendLayout
         Me.Panel1.SuspendLayout
         CType(Me.PbQR,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.FlowLayoutPanel1.SuspendLayout
+        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'TabControl1
@@ -72,74 +72,6 @@ Partial Class VehiculosLotes
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(192, 74)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = true
-        '
-        'listaVehiculos
-        '
-        Me.listaVehiculos.CellEditUseWholeCell = false
-        Me.listaVehiculos.DataSource = Nothing
-        Me.listaVehiculos.Dock = System.Windows.Forms.DockStyle.Top
-        Me.listaVehiculos.FullRowSelect = true
-        Me.listaVehiculos.Location = New System.Drawing.Point(3, 3)
-        Me.listaVehiculos.Name = "listaVehiculos"
-        Me.listaVehiculos.ShowGroups = false
-        Me.listaVehiculos.Size = New System.Drawing.Size(711, 214)
-        Me.listaVehiculos.TabIndex = 0
-        Me.listaVehiculos.UseCompatibleStateImageBehavior = false
-        Me.listaVehiculos.View = System.Windows.Forms.View.Details
-        Me.listaVehiculos.VirtualMode = true
-        '
-        'btnAgrVehculo
-        '
-        Me.btnAgrVehculo.Location = New System.Drawing.Point(3, 11)
-        Me.btnAgrVehculo.Name = "btnAgrVehculo"
-        Me.btnAgrVehculo.Size = New System.Drawing.Size(124, 23)
-        Me.btnAgrVehculo.TabIndex = 1
-        Me.btnAgrVehculo.Text = "Agregar Vehiculo"
-        Me.btnAgrVehculo.UseVisualStyleBackColor = true
-        '
-        'btnMod
-        '
-        Me.btnMod.Location = New System.Drawing.Point(133, 11)
-        Me.btnMod.Name = "btnMod"
-        Me.btnMod.Size = New System.Drawing.Size(84, 23)
-        Me.btnMod.TabIndex = 2
-        Me.btnMod.Text = "Modificar"
-        Me.btnMod.UseVisualStyleBackColor = true
-        '
-        'btnElim
-        '
-        Me.btnElim.Location = New System.Drawing.Point(223, 11)
-        Me.btnElim.Name = "btnElim"
-        Me.btnElim.Size = New System.Drawing.Size(84, 23)
-        Me.btnElim.TabIndex = 3
-        Me.btnElim.Text = "Eliminar"
-        Me.btnElim.UseVisualStyleBackColor = true
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.DarkGray
-        Me.FlowLayoutPanel1.Controls.Add(Me.lblVin)
-        Me.FlowLayoutPanel1.Controls.Add(Me.lblOpIngresado)
-        Me.FlowLayoutPanel1.Controls.Add(Me.lblFecha)
-        Me.FlowLayoutPanel1.Controls.Add(Me.lbllote)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label5)
-        Me.FlowLayoutPanel1.Controls.Add(Me.lblLoteStatus)
-        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 40)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(10)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(330, 272)
-        Me.FlowLayoutPanel1.TabIndex = 4
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Silver
@@ -156,6 +88,85 @@ Partial Class VehiculosLotes
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(711, 316)
         Me.Panel1.TabIndex = 5
+        '
+        'btnInsp
+        '
+        Me.btnInsp.Location = New System.Drawing.Point(582, 11)
+        Me.btnInsp.Name = "btnInsp"
+        Me.btnInsp.Size = New System.Drawing.Size(111, 23)
+        Me.btnInsp.TabIndex = 8
+        Me.btnInsp.Text = "Inspecciones"
+        Me.btnInsp.UseVisualStyleBackColor = true
+        '
+        'btnElim
+        '
+        Me.btnElim.Location = New System.Drawing.Point(223, 11)
+        Me.btnElim.Name = "btnElim"
+        Me.btnElim.Size = New System.Drawing.Size(84, 23)
+        Me.btnElim.TabIndex = 3
+        Me.btnElim.Text = "Eliminar"
+        Me.btnElim.UseVisualStyleBackColor = true
+        '
+        'btnMngLote
+        '
+        Me.btnMngLote.Location = New System.Drawing.Point(444, 11)
+        Me.btnMngLote.Name = "btnMngLote"
+        Me.btnMngLote.Size = New System.Drawing.Size(132, 23)
+        Me.btnMngLote.TabIndex = 7
+        Me.btnMngLote.Text = "Ingresar/Cambiar Lote"
+        Me.btnMngLote.UseVisualStyleBackColor = true
+        '
+        'btnMod
+        '
+        Me.btnMod.Location = New System.Drawing.Point(133, 11)
+        Me.btnMod.Name = "btnMod"
+        Me.btnMod.Size = New System.Drawing.Size(84, 23)
+        Me.btnMod.TabIndex = 2
+        Me.btnMod.Text = "Modificar"
+        Me.btnMod.UseVisualStyleBackColor = true
+        '
+        'btnLavado
+        '
+        Me.btnLavado.Location = New System.Drawing.Point(339, 11)
+        Me.btnLavado.Name = "btnLavado"
+        Me.btnLavado.Size = New System.Drawing.Size(99, 23)
+        Me.btnLavado.TabIndex = 6
+        Me.btnLavado.Text = "Hacer Lavado"
+        Me.btnLavado.UseVisualStyleBackColor = true
+        '
+        'btnAgrVehculo
+        '
+        Me.btnAgrVehculo.Location = New System.Drawing.Point(3, 11)
+        Me.btnAgrVehculo.Name = "btnAgrVehculo"
+        Me.btnAgrVehculo.Size = New System.Drawing.Size(124, 23)
+        Me.btnAgrVehculo.TabIndex = 1
+        Me.btnAgrVehculo.Text = "Agregar Vehiculo"
+        Me.btnAgrVehculo.UseVisualStyleBackColor = true
+        '
+        'PbQR
+        '
+        Me.PbQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PbQR.Location = New System.Drawing.Point(397, 51)
+        Me.PbQR.Name = "PbQR"
+        Me.PbQR.Size = New System.Drawing.Size(250, 250)
+        Me.PbQR.TabIndex = 5
+        Me.PbQR.TabStop = false
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.DarkGray
+        Me.FlowLayoutPanel1.Controls.Add(Me.lblVin)
+        Me.FlowLayoutPanel1.Controls.Add(Me.lblOpIngresado)
+        Me.FlowLayoutPanel1.Controls.Add(Me.lblFecha)
+        Me.FlowLayoutPanel1.Controls.Add(Me.lbllote)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label5)
+        Me.FlowLayoutPanel1.Controls.Add(Me.lblLoteStatus)
+        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 40)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(10)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(330, 272)
+        Me.FlowLayoutPanel1.TabIndex = 4
         '
         'lblVin
         '
@@ -217,40 +228,30 @@ Partial Class VehiculosLotes
         Me.lblLoteStatus.TabIndex = 5
         Me.lblLoteStatus.Text = "Lote Status: Transportista"
         '
-        'PbQR
+        'listaVehiculos
         '
-        Me.PbQR.Location = New System.Drawing.Point(397, 51)
-        Me.PbQR.Name = "PbQR"
-        Me.PbQR.Size = New System.Drawing.Size(250, 250)
-        Me.PbQR.TabIndex = 5
-        Me.PbQR.TabStop = false
+        Me.listaVehiculos.CellEditUseWholeCell = false
+        Me.listaVehiculos.DataSource = Nothing
+        Me.listaVehiculos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.listaVehiculos.FullRowSelect = true
+        Me.listaVehiculos.Location = New System.Drawing.Point(3, 3)
+        Me.listaVehiculos.Name = "listaVehiculos"
+        Me.listaVehiculos.ShowGroups = false
+        Me.listaVehiculos.Size = New System.Drawing.Size(711, 214)
+        Me.listaVehiculos.TabIndex = 0
+        Me.listaVehiculos.UseCompatibleStateImageBehavior = false
+        Me.listaVehiculos.View = System.Windows.Forms.View.Details
+        Me.listaVehiculos.VirtualMode = true
         '
-        'btnLavado
+        'TabPage2
         '
-        Me.btnLavado.Location = New System.Drawing.Point(339, 11)
-        Me.btnLavado.Name = "btnLavado"
-        Me.btnLavado.Size = New System.Drawing.Size(99, 23)
-        Me.btnLavado.TabIndex = 6
-        Me.btnLavado.Text = "Hacer Lavado"
-        Me.btnLavado.UseVisualStyleBackColor = true
-        '
-        'btnMngLote
-        '
-        Me.btnMngLote.Location = New System.Drawing.Point(444, 11)
-        Me.btnMngLote.Name = "btnMngLote"
-        Me.btnMngLote.Size = New System.Drawing.Size(132, 23)
-        Me.btnMngLote.TabIndex = 7
-        Me.btnMngLote.Text = "Ingresar/Cambiar Lote"
-        Me.btnMngLote.UseVisualStyleBackColor = true
-        '
-        'btnInsp
-        '
-        Me.btnInsp.Location = New System.Drawing.Point(582, 11)
-        Me.btnInsp.Name = "btnInsp"
-        Me.btnInsp.Size = New System.Drawing.Size(111, 23)
-        Me.btnInsp.TabIndex = 8
-        Me.btnInsp.Text = "Inspecciones"
-        Me.btnInsp.UseVisualStyleBackColor = true
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(717, 536)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = true
         '
         'VehiculosLotes
         '
@@ -261,11 +262,11 @@ Partial Class VehiculosLotes
         Me.Size = New System.Drawing.Size(725, 562)
         Me.TabControl1.ResumeLayout(false)
         Me.TabPage1.ResumeLayout(false)
-        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).EndInit
-        Me.FlowLayoutPanel1.ResumeLayout(false)
-        Me.FlowLayoutPanel1.PerformLayout
         Me.Panel1.ResumeLayout(false)
         CType(Me.PbQR,System.ComponentModel.ISupportInitialize).EndInit
+        Me.FlowLayoutPanel1.ResumeLayout(false)
+        Me.FlowLayoutPanel1.PerformLayout
+        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub

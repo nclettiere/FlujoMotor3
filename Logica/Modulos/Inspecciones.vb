@@ -157,9 +157,9 @@ Public Module Inspecciones
 
     Public Function IInsertar(VIN As String) As Boolean
         Conectar()
-
+        MsgBox(VIN.ToString)
         Try
-            Dim command As OdbcCommand = New OdbcCommand("INSERT INTO inspecciones (vehiculovin, operarioid) VALUES('" + VIN.ToUpper + "', 3)")
+            Dim command As OdbcCommand = New OdbcCommand("INSERT INTO inspecciones (vehiculovin, operarioid) VALUES('" + VIN.ToUpper + "', "+ ObtenerOpId.ToString +")")
             Dim parameters As OdbcParameterCollection = command.Parameters
 
             command.Connection = DBConexion

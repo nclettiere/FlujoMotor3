@@ -22,8 +22,13 @@ Public Class AgregarLote
             If Not String.IsNullOrWhiteSpace(rtbDesc.Text)
                 If cbxPatios.SelectedIndex >= 0
                     If UC_AgregarVehiculo IsNot Nothing
-                        Dim loteid As String = (Consultar("SELECT MAX(loteid) FROM lotes").Rows(0).Item(0) + 1).ToString
-                        UC_AgregarVehiculo.CargarLoteNuevo(loteid, false, New Action(Sub() LInsertar(rtbDesc.Text, tbxNombre.Text, ObtenerOpID, cbxPatios.Text)))
+                        Dim loteid = "0"
+                        Try
+                            loteid = (Consultar("SELECT MAX(loteid) FROM lotes").Rows(0).Item(0) + 1).ToString
+                        Catch ex As Exception
+
+                        End Try
+                        UC_AgregarVehiculo.CargarLoteNuevo(loteid, true, rtbDesc.Text, tbxNombre.Text, ObtenerOpID, cbxPatios.Text)
                         ParentForm.Hide
                     Else 
                         LInsertar(rtbDesc.Text, tbxNombre.Text, ObtenerOpID, cbxPatios.Text)

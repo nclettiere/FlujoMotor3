@@ -54,7 +54,6 @@ Partial Class SeleccionarLote
         Me.btnSeleccionar.TabIndex = 26
         Me.btnSeleccionar.Text = "Seleccionar"
         Me.btnSeleccionar.UseVisualStyleBackColor = false
-        Me.btnSeleccionar.Visible = false
         '
         'SeleccionarLote
         '

@@ -29,7 +29,7 @@ Partial Class AgregarVehiculo
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.btnExist = New System.Windows.Forms.Button()
         Me.btnLnew = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblLotedesc = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tbxColor = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -41,7 +41,10 @@ Partial Class AgregarVehiculo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbxVin = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblmodagr = New System.Windows.Forms.Label()
+        Me.btncambiarlote = New System.Windows.Forms.Button()
+        Me.btnremover2 = New System.Windows.Forms.Button()
+        Me.btnmod = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
         Me.SuspendLayout
@@ -59,12 +62,15 @@ Partial Class AgregarVehiculo
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Silver
+        Me.Panel2.Controls.Add(Me.btnmod)
         Me.Panel2.Controls.Add(Me.btnQuitarLote)
+        Me.Panel2.Controls.Add(Me.btnremover2)
+        Me.Panel2.Controls.Add(Me.btncambiarlote)
         Me.Panel2.Controls.Add(Me.VehiculoAno)
         Me.Panel2.Controls.Add(Me.cbxTipo)
         Me.Panel2.Controls.Add(Me.btnExist)
         Me.Panel2.Controls.Add(Me.btnLnew)
-        Me.Panel2.Controls.Add(Me.Label8)
+        Me.Panel2.Controls.Add(Me.lblLotedesc)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.tbxColor)
         Me.Panel2.Controls.Add(Me.Label5)
@@ -76,7 +82,7 @@ Partial Class AgregarVehiculo
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.tbxVin)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.lblmodagr)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
@@ -140,16 +146,16 @@ Partial Class AgregarVehiculo
         Me.btnLnew.Text = "Nuevo"
         Me.btnLnew.UseVisualStyleBackColor = false
         '
-        'Label8
+        'lblLotedesc
         '
-        Me.Label8.AutoSize = true
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Crimson
-        Me.Label8.Location = New System.Drawing.Point(14, 368)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(79, 13)
-        Me.Label8.TabIndex = 20
-        Me.Label8.Text = "Lote (Opcional)"
+        Me.lblLotedesc.AutoSize = true
+        Me.lblLotedesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblLotedesc.ForeColor = System.Drawing.Color.Crimson
+        Me.lblLotedesc.Location = New System.Drawing.Point(14, 368)
+        Me.lblLotedesc.Name = "lblLotedesc"
+        Me.lblLotedesc.Size = New System.Drawing.Size(79, 13)
+        Me.lblLotedesc.TabIndex = 20
+        Me.lblLotedesc.Text = "Lote (Opcional)"
         '
         'Label7
         '
@@ -262,16 +268,58 @@ Partial Class AgregarVehiculo
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "VIN"
         '
-        'Label1
+        'lblmodagr
         '
-        Me.Label1.AutoSize = true
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Crimson
-        Me.Label1.Location = New System.Drawing.Point(13, 18)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 20)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Agregar Vehiculo"
+        Me.lblmodagr.AutoSize = true
+        Me.lblmodagr.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblmodagr.ForeColor = System.Drawing.Color.Crimson
+        Me.lblmodagr.Location = New System.Drawing.Point(13, 18)
+        Me.lblmodagr.Name = "lblmodagr"
+        Me.lblmodagr.Size = New System.Drawing.Size(131, 20)
+        Me.lblmodagr.TabIndex = 0
+        Me.lblmodagr.Text = "Agregar Vehiculo"
+        '
+        'btncambiarlote
+        '
+        Me.btncambiarlote.BackColor = System.Drawing.Color.DarkGray
+        Me.btncambiarlote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncambiarlote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btncambiarlote.ForeColor = System.Drawing.Color.Crimson
+        Me.btncambiarlote.Location = New System.Drawing.Point(99, 357)
+        Me.btncambiarlote.Name = "btncambiarlote"
+        Me.btncambiarlote.Size = New System.Drawing.Size(104, 35)
+        Me.btncambiarlote.TabIndex = 26
+        Me.btncambiarlote.Text = "Cambiar"
+        Me.btncambiarlote.UseVisualStyleBackColor = false
+        Me.btncambiarlote.Visible = false
+        '
+        'btnremover2
+        '
+        Me.btnremover2.BackColor = System.Drawing.Color.DarkGray
+        Me.btnremover2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnremover2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnremover2.ForeColor = System.Drawing.Color.Crimson
+        Me.btnremover2.Location = New System.Drawing.Point(209, 357)
+        Me.btnremover2.Name = "btnremover2"
+        Me.btnremover2.Size = New System.Drawing.Size(104, 35)
+        Me.btnremover2.TabIndex = 27
+        Me.btnremover2.Text = "X Quitar X"
+        Me.btnremover2.UseVisualStyleBackColor = false
+        Me.btnremover2.Visible = false
+        '
+        'btnmod
+        '
+        Me.btnmod.BackColor = System.Drawing.Color.DarkGray
+        Me.btnmod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmod.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnmod.ForeColor = System.Drawing.Color.Crimson
+        Me.btnmod.Location = New System.Drawing.Point(16, 422)
+        Me.btnmod.Name = "btnmod"
+        Me.btnmod.Size = New System.Drawing.Size(297, 35)
+        Me.btnmod.TabIndex = 28
+        Me.btnmod.Text = "Modificar"
+        Me.btnmod.UseVisualStyleBackColor = false
+        Me.btnmod.Visible = false
         '
         'AgregarVehiculo
         '
@@ -291,7 +339,7 @@ End Sub
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnExist As Button
     Friend WithEvents btnLnew As Button
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lblLotedesc As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents tbxColor As TextBox
     Friend WithEvents Label5 As Label
@@ -303,8 +351,11 @@ End Sub
     Friend WithEvents Label3 As Label
     Friend WithEvents tbxVin As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblmodagr As Label
     Friend WithEvents cbxTipo As ComboBox
     Friend WithEvents VehiculoAno As DateTimePicker
     Friend WithEvents btnQuitarLote As Button
+    Friend WithEvents btnremover2 As Button
+    Friend WithEvents btncambiarlote As Button
+    Friend WithEvents btnmod As Button
 End Class

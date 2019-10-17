@@ -98,6 +98,60 @@ Public Module Vehiculos
         Cerrar
     End Function
 
+    Public Function VEliminar(vIN As String) As Boolean
+        Conectar
+        Try
+        Dim tabla As New DataTable
+        Dim tabla2 As New DataTable
+        Dim tabla3 As New DataTable
+        Try
+            Dim ObtenerInspIds As New OdbcDataAdapter("SELECT inspeccionid FROM inspecciones WHERE vehiculovin='"+VIN+"'", DBConexion)
+            ObtenerInspIds.Fill(tabla)
+            For Each item As DataRow In tabla.Rows
+                Dim Inspdan As New OdbcDataAdapter("SELECT danioid FROM inspeccionDanio WHERE inspeccionid ="+item.Item(0).ToString, DBConexion)
+                Inspdan.Fill(tabla2)
+                Dim deleteInspdan As New OdbcDataAdapter("DELETE FROM inspeccionDanio WHERE inspeccionid ="+item.Item(0).ToString, DBConexion)
+
+                For Each danioid As DataRow In tabla2.Rows
+                    Dim deletedanio As New OdbcDataAdapter("DELETE FROM danio WHERE danioid ="+danioid.Item(0).ToString, DBConexion)
+                    deletedanio.Fill(tabla3)
+                Next
+                Dim deleteInsp As New OdbcDataAdapter("DELETE FROM inspecciones WHERE vehiculoVIN ='"+VIN+"'", DBConexion)
+                deleteInsp.Fill(tabla)
+            Next
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "No se pudo eliminar vehiculo.")
+        End Try
+
+        Try
+        Dim deleteVsUB = New OdbcDataAdapter("DELETE FROM vehiculoSubZona WHERE vehiculovin ='"+VIN+"'", DBConexion)
+        Dim deletelavado = New OdbcDataAdapter("DELETE FROM lavadoVehiculo WHERE vehiculovin ='"+VIN+"'", DBConexion)
+        deleteVsUB.Fill(tabla)
+        deletelavado.Fill(tabla)
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "No se pudo eliminar vehiculo.")
+        End Try
+
+        Dim DelV = New OdbcDataAdapter("DELETE FROM vehiculos WHERE vehiculoVIN ='"+VIN+"'", DBConexion)
+
+        DelV.Fill(tabla)
+        If VerificarTabla(tabla)
+            MsgBox("Vehiculo eliminado correctamente.")
+            Return True
+        Else
+            MsgBox("No se pudo eliminar vehiculo.5")
+            Return False
+        End If
+
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "No se pudo eliminar vehiculo.")
+            MsgBox("No se pudo eliminar vehiculo.")
+            Return False
+        End Try
+
+        Cerrar 
+    End Function
+
     Public Function VObtenerAllFiltro(Filtro As String) As DataTable
         Conectar
         Dim tabla As New DataTable
@@ -212,7 +266,38 @@ Public Module Vehiculos
         Cerrar
     End Function
 
-        Public Function VInsertar(ByVal VIN As String, ByVal Marca As String, ByVal Modelo As String, ByVal Color As String, ByVal Tipo As String, ByVal Anio As String, ByVal LoteId As String, ByVal OperarioID As String) As Boolean
+    Public Function VUpdate(vINmodificacion As String, marca As String, modelo As String, color As String, tipo As String, anio As String) As Boolean
+        Try
+            Dim Dcommand As OdbcCommand = New OdbcCommand("UPDATE vehiculos
+                                                          SET vehiculocolor = ?, vehiculomarca = ?,vehiculomodelo = ?, vehiculoanio = ?, vehiculotipo = ?
+                                                          WHERE vehiculovin = '"+vINmodificacion+"';")
+            Dim Dparameters As OdbcParameterCollection = Dcommand.Parameters
+            Dparameters.Add("vehiculocolor", OdbcType.VarChar)
+            Dparameters("vehiculocolor").Value = Color
+
+            Dparameters.Add("vehiculomarca", OdbcType.VarChar)
+            Dparameters("vehiculomarca").Value = Marca
+
+            Dparameters.Add("vehiculomodelo", OdbcType.VarChar)
+            Dparameters("vehiculomodelo").Value = Modelo
+
+            Dparameters.Add("vehiculoanio", OdbcType.SmallInt)
+            Dparameters("vehiculoanio").Value = Integer.Parse(Anio)
+
+            Dparameters.Add("vehiculotipo", OdbcType.VarChar)
+            Dparameters("vehiculotipo").Value = Tipo
+            
+            Dcommand.Connection = DBConexion
+            Dcommand.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err...")
+            Return False
+        End Try
+    End Function
+
+    Public Function VInsertar(ByVal VIN As String, ByVal Marca As String, ByVal Modelo As String, ByVal Color As String, ByVal Tipo As String, ByVal Anio As String, ByVal LoteId As String, ByVal OperarioID As String) As Boolean
         Conectar
             Try
                 Dim Dcommand As OdbcCommand = New OdbcCommand("INSERT INTO vehiculos (vehiculovin,vehiculoColor,vehiculoMarca,vehiculoModelo,vehiculoAnio,vehiculoTipo,operarioPuertoID,loteID) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")

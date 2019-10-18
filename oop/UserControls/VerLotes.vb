@@ -55,6 +55,21 @@ Public Class VerLotes
         End Try
     End Sub
 
+    Friend Sub TransportistaSeleccionado(eID As String)
+        Dim result As Integer = MessageBox.Show("El lote quedara como completo y el transportista se encargara de entregarlo al patio correspondiente.", "Desea asignar el lote?", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Try
+                MsgBox(Now.ToString("yyyy-MM-dd hh:mm:ss") + " -- " + eID)
+                LUpdateFechaSalida(Now.ToString("yyyy-MM-dd hh:mm:ss"), LoteId)
+                LUpdateTransportista(eID, LoteId)
+                MessageBox.Show("Lote entregado correctamente.")
+            Catch ex As Exception
+                MessageBox.Show("Error al asignar lote, Chequee el log para mas info.")
+                Serilog.Log.Error(ex, "Error al entregar lote.")
+            End Try
+        End If
+    End Sub
+
     Friend Sub AgregarVehiculo(vinSeleccionado As String)
         Try
             VUpdateLoteId(LoteId, vinSeleccionado)
@@ -68,15 +83,12 @@ Public Class VerLotes
     End Sub
 
     Private Sub BtnEntregar_Click_1(sender As Object, e As EventArgs) Handles btnEntregar.Click
-        Dim result As Integer = MessageBox.Show("Los transportistas se encargaran de movilizar el lote.", "Desea entregar el lote?", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            Try
-                LUpdateFechaSalida(Now.ToString("yyyy-MM-dd hh:mm:ss"), LoteId)
-                MessageBox.Show("Lote entregado correctamente.")
-            Catch ex As Exception
-                Serilog.Log.Error(ex, "Error al entregar lote.")
-            End Try
-        End If
+        Dim VentanaVerControl As Ventana_Ver = New Ventana_Ver
+        Dim SelecTransp As SeleccionarTransportista = New SeleccionarTransportista
+        SelecTransp.VL_VerLote = Me
+        VentanaVerControl.LoadControl(SelecTransp)
+        VentanaVerControl.Text = "Asignar Lote A Transportista"
+        VentanaVerControl.ShowDialog
     End Sub
 
     Private Sub BtCerrar_Click(sender As Object, e As EventArgs) Handles btCerrar.Click

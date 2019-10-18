@@ -1,65 +1,64 @@
 ﻿Imports Logica
 
 Public Class AgregarLote
-    Private Shared _instance As AgregarLote
-    Public Shared Property Instance As AgregarLote
-        Get
-            If _instance Is Nothing Then
-                _instance = New AgregarLote()
-            End If
-            Return _instance
-        End Get
-        Set(value As AgregarLote)
-            _instance = value
-        End Set
-    End Property
 
-    Friend Modo As Integer = 0
+    Friend UC_AgregarVehiculo As AgregarVehiculo
 
-    Public Property FormParent As Ventana_Seleccionar
-    Public Property ParentControl As AgregarVehiculo
 
-    Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles btAgregar.Click
-
-        If Not String.IsNullOrWhiteSpace(tbxNombre.Text)
-            If Not String.IsNullOrWhiteSpace(riTeBoDescripcion.Text) Then
-                If cbxPatio.SelectedIndex >= 0
-                    Dim datos As String() = {riTeBoDescripcion.Text.ToString, cbxPatio.Text.ToString, "'"+tbxNombre.Text.ToString+"'"}
-                    If Modo = 0
-                        ParentControl.UpdateLotes(datos)
-                        FormParent.Close()
-                    Else
-                        If LInsertar(datos)
-                            MessageBox.Show("Lote Agregado Correctamente.")
-                            ParentForm.Close
-                        Else
-                            MessageBox.Show("Error al inserar lote. Vea el log porfavort dddxd")
-                        End If
-                    End If
-                Else
-                    MessageBox.Show("Debes seleccionar un patio.")
-                End If
-            Else
-                MessageBox.Show("La descripcion no debe quedar vacia.")
-            End If
-        Else
-            MessageBox.Show("El Nombre no debe quedar vacio.")
-        End If
-    End Sub
-
-    Friend Sub CargarDatos(ventanita_Seleccionar As Ventana_Seleccionar, parent As Object)
-        FormParent = ventanita_Seleccionar
-        ParentControl = DirectCast(parent, AgregarVehiculo)
-    End Sub
-
-    Private Sub OnAgLoteLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub OnAlLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim ConsultaPatios As DataTable = PObtenerAll
+            Dim ConsultaPatios As DataTable = PObtenerAll()
+
             For Each item As DataRow In ConsultaPatios.Rows
-                cbxPatio.Items.Add(item(1).ToString)
+                cbxPatios.Items.Add(item(1).ToString)
             Next
+
+            cbxPatios.SelectedIndex = 0
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error.")
         End Try
     End Sub
+
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        If Not String.IsNullOrWhiteSpace(tbxNombre.Text) Then
+
+            If Not String.IsNullOrWhiteSpace(rtbDesc.Text) Then
+
+                If cbxPatios.SelectedIndex >= 0 Then
+
+                    If UC_AgregarVehiculo IsNot Nothing Then
+                        Dim loteid = "0"
+                        Try
+                            loteid = (Consultar("SELECT MAX(loteid) FROM lotes").Rows(0).Item(0) + 1).ToString
+                        Catch ex As Exception
+
+                        End Try
+                        UC_AgregarVehiculo.CargarLoteNuevo(loteid, True, rtbDesc.Text, tbxNombre.Text, ObtenerOpId, cbxPatios.Text)
+                        ParentForm.Hide()
+                    Else
+                        LInsertar(rtbDesc.Text, tbxNombre.Text, ObtenerOpId, cbxPatios.Text)
+                        MsgBox("Lote Insertado.")
+                        ParentForm.Close()
+                    End If
+                Else
+                    MsgBox("Debes seleccionar un patio")
+                End If
+            Else
+                MsgBox("Debes una descripcion")
+            End If
+        Else
+            MsgBox("Debes ingresar un nombre para el lote")
+        End If
+    End Sub
+
+    Friend Function Insertar() As Boolean
+        MsgBox("Hello")
+        Try
+            LInsertar(rtbDesc.Text, tbxNombre.Text, ObtenerOpId, cbxPatios.Text)
+            Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err")
+            Return False
+        End Try
+    End Function
 End Class

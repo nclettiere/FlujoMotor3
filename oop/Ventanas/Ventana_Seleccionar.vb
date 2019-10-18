@@ -20,17 +20,12 @@
         Dim Selection As Object
 
         Select Case Section
-            Case 0
-                Selection = AgregarLote.Instance
             Case 1
                 Selection = SeleccionarVehiculo.Instance
                 Selection.FormParent = Me
             Case 2
                 Selection = SeleccionarLotes.Instance
                 Selection.FormParent = Me
-                
-            Case Else
-                Selection = AgregarLote.Instance
         End Select
 
         If Not mainContent.Contains(Selection) Then
@@ -45,10 +40,6 @@
     Friend Sub GoToSection(ByVal Section As Integer, Parent As Object)
         Dim Selection As Object
         Select Case Section
-            Case 0
-                Selection = AgregarLote.Instance
-                Me.ClientSize = Selection.Size
-                AgregarLote.Instance.CargarDatos(Me, Parent)
             Case 1
                 Selection = SeleccionarVehiculo.Instance
                 Me.ClientSize = Selection.Size
@@ -57,8 +48,6 @@
                 Selection = SeleccionarLotes.Instance
                 Me.ClientSize = Selection.Size
                 SeleccionarLotes.Instance.CargarDatos(Me, Parent)
-            Case Else
-                Selection = AgregarLote.Instance
         End Select
 
         If Not mainContent.Contains(Selection) Then

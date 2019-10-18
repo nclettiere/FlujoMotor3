@@ -91,6 +91,15 @@ Public Class InfoAutos
         End Try
     End Sub
 
+    Friend Sub ActualizarVehiculos()
+        Try
+            DataGridViewVehiculos.DataSource = Nothing
+            DataGridViewVehiculos.DataSource = VObtenerAllPuerto()
+        Catch ex As Exception
+            Log.Error(ex, "err..")
+        End Try
+    End Sub
+
     Private Sub BtInfoVehiculo_Click(sender As Object, e As EventArgs) Handles btInfoVehiculo.Click
         Try
             Dim VentanaVer As Ventana_Ver = New Ventana_Ver
@@ -116,7 +125,11 @@ Public Class InfoAutos
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
-        FormParent.GotoSection(1)
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim AgVehiculo As AgregarVehiculo = New AgregarVehiculo
+        AgVehiculo.UC_VehiculosLotes = Me
+        Ventana.LoadControl(AgVehiculo)
+        Ventana.ShowDialog()
     End Sub
 
     Private Sub CambioSeleccion(sender As Object, e As EventArgs) Handles DataGridViewVehiculos.SelectionChanged
@@ -128,7 +141,6 @@ Public Class InfoAutos
     Private Sub BtnAgregarLote_Click(sender As Object, e As EventArgs) Handles btnAgregarLote.Click
         Dim VVer As Ventana_Ver = New Ventana_Ver
         Dim AgLote As AgregarLote = New AgregarLote
-        AgLote.Modo = 1
         VVer.LoadControl(AgLote)
         VVer.ShowDialog
     End Sub

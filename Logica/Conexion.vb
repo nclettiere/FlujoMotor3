@@ -8,11 +8,12 @@ Public Module Conexion
     Public USER As String
     Public PSWD As String
 
+    Public OperarioId As Integer = 1
+
     Private PrimeraVez As Boolean = True
 
     Public Function Conectar() As Boolean
         Cerrar
-
         If PrimeraVez
             DBConexion.ConnectionString = GetArchivoConexion
             PrimeraVez = False
@@ -23,7 +24,45 @@ Public Module Conexion
             Console.WriteLine("Conectado")
             Return True
         Catch ex As OdbcException
-            MsgBox(ex.ToString())
+            MsgBox("Hubo un error al conectarse.")
+            Serilog.Log.Fatal(ex, "err")
+            Return False
+        End Try
+    End Function
+
+    Public Function CheckLogueo(OperarioTipo As Integer, ByRef EmpleadoId As Integer) As Boolean
+        Cerrar
+        If PrimeraVez
+            DBConexion.ConnectionString = GetArchivoConexion
+            PrimeraVez = False
+        End If
+
+        Try
+            DBConexion.Open()
+            Dim datos As DataTable = UObtener(USER)
+            If datos IsNot Nothing
+                If datos.Rows.Count > 0
+                    If ObtenerTipoOperario(datos.Rows(0).Item("empleadoid")) = OperarioTipo
+                        Console.WriteLine("Conectado")
+                        EmpleadoId = datos.Rows(0).Item("empleadoid")
+                        Return True
+                    Else
+                        MsgBox("No tienes permisos para utilizar esta aplicacion.")
+                        Return False
+                    End If
+                Else
+                    MsgBox("Contrasena o usuario invalidos.")
+                    Return False
+                End If
+            Else
+                MsgBox("Contrasena o usuario invalidos.")
+                Return False
+            End If
+
+            Return False
+        Catch ex As OdbcException
+            MsgBox("Hubo un error al conectarse.")
+            Serilog.Log.Fatal(ex, "err")
             Return False
         End Try
     End Function
@@ -58,6 +97,6 @@ Public Module Conexion
     End Function
 
     Public Function ObtenerOpId() As Integer
-        Return 1
+        Return OperarioId
     End Function
 End Module

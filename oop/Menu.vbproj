@@ -135,6 +135,10 @@
     <Reference Include="MessagingToolkit.QRCode">
       <HintPath>.\MessagingToolkit.QRCode.dll</HintPath>
     </Reference>
+    <Reference Include="ObjectListView, Version=2.9.1.31849, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ObjectListView.dll</HintPath>
+    </Reference>
     <Reference Include="Serilog">
       <HintPath>.\Serilog.dll</HintPath>
     </Reference>
@@ -202,10 +206,22 @@
     <Compile Include="UserControls\ModificarSubzona.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\SeleccionarLote.Designer.vb">
+      <DependentUpon>SeleccionarLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SeleccionarLote.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\SeleccionarLotes.Designer.vb">
       <DependentUpon>SeleccionarLotes.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SeleccionarLotes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SeleccionarTransportista.Designer.vb">
+      <DependentUpon>SeleccionarTransportista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SeleccionarTransportista.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SelecVehiculo.Designer.vb">
@@ -385,8 +401,14 @@
     <EmbeddedResource Include="UserControls\ModificarSubzona.resx">
       <DependentUpon>ModificarSubzona.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SeleccionarLote.resx">
+      <DependentUpon>SeleccionarLote.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SeleccionarLotes.resx">
       <DependentUpon>SeleccionarLotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SeleccionarTransportista.resx">
+      <DependentUpon>SeleccionarTransportista.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SelecVehiculo.resx">
       <DependentUpon>SelecVehiculo.vb</DependentUpon>
@@ -539,6 +561,7 @@
     <Content Include="MessagingToolkit.QRCode.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="ObjectListView.dll" />
     <Content Include="Serilog.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

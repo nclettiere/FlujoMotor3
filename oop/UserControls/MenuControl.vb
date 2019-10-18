@@ -44,12 +44,7 @@ Public Class MenuControl
                 InfoAutos.Instance.FormParent = Me
                 ''btnAgregarVehiculo.BackColor = Color.DimGray
                 ''btnVerVehiculo.BackColor = Color.DarkGray
-            Case 1
-                Selection = AgregarVehiculo.Instance
-                AgregarVehiculo.Instance.FormParent = Me
-                ''btnVerVehicle.BackColor = Color.DimGray
-                ''btnAgregarVehicle.BackColor = Color.DarkGray
-        Case 2
+            Case 2
                 Selection = VerPatio.Instance
                 VerPatio.Instance.FormParent = Me
                 VerPatio.Instance.Conexion = Conexion

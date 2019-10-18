@@ -7,9 +7,9 @@ Public Class InfoLotes
 
     Private Sub OnInfoLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            DataGridViewLotes.DataSource = LObtenerAllTransportista
+            DataGridViewLotes.DataSource = LObtenerAllTransportista(ObtenerOpId)
         Catch ex As Exception
-            Serilog.Log.Error("Error al cargar lotes")
+            Serilog.Log.Error(ex, "Error al cargar lotes")
         End Try
     End Sub
 

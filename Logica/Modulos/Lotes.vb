@@ -18,7 +18,21 @@ Public Module Lotes
     Public Function LObtenerAllTransportista() As DataTable
         Conectar
         Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("SELECT * FROM lotes WHERE lotefechallegada IS NOT NULL AND lotefechasalida IS NOT NULL", DBConexion)
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM lotes WHERE lotefechallegada IS NULL AND lotefechasalida IS NOT NULL", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+    Public Function LObtenerAllTransportista(EmpleadoId As Integer) As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM lotes WHERE lotefechallegada IS NULL AND lotefechasalida IS NOT NULL AND transportistaID="+EmpleadoId.ToString, DBConexion)
         adaptador.Fill(tabla)
 
         If VerificarTabla(tabla)
@@ -75,7 +89,7 @@ Public Module Lotes
         Conectar()
 
         Try
-            Dim Dcommand As OdbcCommand = New OdbcCommand("UPDATE lotes SET lotefechasalida=? WHERE loteid="+ LoteId +";")
+            Dim Dcommand As OdbcCommand = New OdbcCommand("UPDATE lotes SET lotefechasalida=? WHERE loteid=" + LoteId + ";")
             Dim Dparameters As OdbcParameterCollection = Dcommand.Parameters
 
             Dparameters.Add("lotefechasalida", OdbcType.DateTime)
@@ -85,6 +99,7 @@ Public Module Lotes
             Dcommand.ExecuteNonQuery()
             Return True
         Catch ex As Exception
+            Serilog.Log.Error(ex, "err")
             Return False
         End Try
 

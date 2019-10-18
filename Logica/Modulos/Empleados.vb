@@ -38,6 +38,20 @@ Public Module Empleados
         Cerrar
     End Function
 
+    Public Function UObtener(Usuario As String) As DataTable
+        Conectar()
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM usuarios WHERE usuario='"+Usuario+"'", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
     Public Function EObtener(EmpleadoId As String) As DataRow
         Conectar()
         Dim tabla As New DataTable

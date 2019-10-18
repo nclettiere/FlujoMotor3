@@ -45,8 +45,8 @@ Public Class SeleccionarLotes
     Private Sub BtSelecc_Click(sender As Object, e As EventArgs) Handles btSelecc.Click
         Try
             Dim rowSeleccionado = DataGridViewLotes.SelectedRows(0).Cells()
-            If rowSeleccionado IsNot Nothing
-                ParentControl.UpdateLotes(rowSeleccionado)
+            If rowSeleccionado IsNot Nothing Then
+
                 ParentForm.Close()
             Else
                 Serilog.Log.Error("Posible valor nulo en Seleccionar_Lotesillo. ref: rowSeleccionado")

@@ -25,14 +25,14 @@ Public Class Login
                 Conexion.PSWD = tbx_passwd.Text
                 Conexion.Conectar()
 
-                If (Conexion.Conectar()) Then
+                Dim EmpleadoId As Integer
+
+                If (CheckLogueo(2, EmpleadoId)) Then
                     MessageBox.Show("Conectado Exitosamente.")
-                    
+
+                    OperarioId = EmpleadoId
                     DirectCast(ParentForm, MainWindow).CargarMenuPrincipal()
 
-                    Cerrar
-                Else
-                    MessageBox.Show("Usuario o Contrasena invalidos.")
                     Cerrar
                 End If
             Else

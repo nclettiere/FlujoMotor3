@@ -83,11 +83,25 @@ Public Class Ventana_Ver
         AgrDanio.BringToFront
     End Sub
 
+    Friend Sub LoadControl(selecTransp As SeleccionarTransportista)
+        Me.ClientSize = selecTransp.Size
+        mainContent.Controls.Add(selecTransp)
+        selecTransp.AutoSize = True
+        selecTransp.BringToFront
+    End Sub
+
     Friend Sub LoadControl(VerD As VerDanios)
         Me.ClientSize = VerD.Size
         mainContent.Controls.Add(VerD)
         VerD.AutoSize = True
-        VerD.BringToFront
+        VerD.BringToFront()
+    End Sub
+
+    Friend Sub LoadControl(agv As AgregarVehiculo)
+        Me.ClientSize = agv.Size
+        mainContent.Controls.Add(agv)
+        agv.AutoSize = True
+        agv.BringToFront()
     End Sub
 
     ''' <summary>
@@ -139,8 +153,7 @@ Public Class Ventana_Ver
                 Me.ClientSize = DirectCast(Selection, VerPosicion).Size
             Case 3
                 Dim AgrVehiculo = New AgregarVehiculo
-                AgrVehiculo.EstaModificando = True
-                AgrVehiculo.VinAModificar = VIN
+                AgrVehiculo.VINmodificacion = VIN
                 Me.ClientSize = AgrVehiculo.Size
                 Selection = AgrVehiculo
             Case 4
@@ -176,5 +189,12 @@ Public Class Ventana_Ver
             InicCamera.Timer2.Stop
             InicCamera.StopWebcam
         End If
+    End Sub
+
+    Friend Sub LoadControl(selecLote As SeleccionarLote)
+        Me.ClientSize = selecLote.Size
+        mainContent.Controls.Add(selecLote)
+        selecLote.AutoSize = True
+        selecLote.BringToFront()
     End Sub
 End Class

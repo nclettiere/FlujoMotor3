@@ -64,7 +64,7 @@ Partial Class PatiosZonas
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(278, 140)
+        Me.Panel1.Size = New System.Drawing.Size(278, 161)
         Me.Panel1.TabIndex = 0
         '
         'Button3
@@ -72,7 +72,7 @@ Partial Class PatiosZonas
         Me.Button3.BackColor = System.Drawing.Color.LightGray
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.Color.Crimson
-        Me.Button3.Location = New System.Drawing.Point(165, 97)
+        Me.Button3.Location = New System.Drawing.Point(166, 120)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(99, 26)
         Me.Button3.TabIndex = 3
@@ -84,7 +84,7 @@ Partial Class PatiosZonas
         Me.Button2.BackColor = System.Drawing.Color.LightGray
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.Crimson
-        Me.Button2.Location = New System.Drawing.Point(16, 97)
+        Me.Button2.Location = New System.Drawing.Point(16, 120)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(99, 26)
         Me.Button2.TabIndex = 2

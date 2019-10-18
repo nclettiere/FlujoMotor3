@@ -26,6 +26,8 @@ Partial Class AgregarPatio
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbxDir = New System.Windows.Forms.TextBox()
         Me.SuspendLayout
         '
         'tbxPatioNombre
@@ -62,24 +64,43 @@ Partial Class AgregarPatio
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Crimson
-        Me.Button1.Location = New System.Drawing.Point(16, 98)
+        Me.Button1.Location = New System.Drawing.Point(16, 149)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(250, 36)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Agregar"
         Me.Button1.UseVisualStyleBackColor = false
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = true
+        Me.Label3.ForeColor = System.Drawing.Color.Crimson
+        Me.Label3.Location = New System.Drawing.Point(13, 97)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(127, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Direccion (Google Maps):"
+        '
+        'tbxDir
+        '
+        Me.tbxDir.Location = New System.Drawing.Point(16, 113)
+        Me.tbxDir.Name = "tbxDir"
+        Me.tbxDir.Size = New System.Drawing.Size(250, 20)
+        Me.tbxDir.TabIndex = 4
+        '
         'AgregarPatio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.tbxDir)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.tbxPatioNombre)
         Me.Name = "AgregarPatio"
-        Me.Size = New System.Drawing.Size(290, 152)
+        Me.Size = New System.Drawing.Size(290, 204)
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -89,4 +110,6 @@ End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents tbxDir As TextBox
 End Class

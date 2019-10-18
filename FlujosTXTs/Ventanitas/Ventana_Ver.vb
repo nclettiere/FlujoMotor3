@@ -70,4 +70,11 @@ Public Class Ventana_Ver
         agregarPt.Dock = DockStyle.Fill
         agregarPt.BringToFront()
     End Sub
+
+    Friend Sub LoadControl(verPt As VerPatio)
+        Me.ClientSize = verPt.Size
+        mainContent.Controls.Add(verPt)
+        verPt.Dock = DockStyle.Fill
+        verPt.BringToFront()
+    End Sub
 End Class

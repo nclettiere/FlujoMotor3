@@ -56,7 +56,21 @@ Public Module Patios
         Cerrar
     End Function
 
-    Public Function PInsertar(Nombre As String) As Boolean
+    Public Function PInsertar(Nombre As String, Ubicacion As String) As Boolean
+        Conectar
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("INSERT INTO patios (pationombre, ubicacion) VALUES('"+Nombre+"', '"+Ubicacion+"')", DBConexion)
+            adaptador.Fill(tabla)
+            Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err")
+            Return False
+        End Try
+        Cerrar
+    End Function
+
+    Public Function PEliminar(Nombre As String) As Boolean
         Conectar
         Try
             Dim tabla As New DataTable

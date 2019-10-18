@@ -305,6 +305,23 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Firefox\omni.ja" />
+    <None Include="Firefox\Profile\cert9.db" />
+    <None Include="Firefox\Profile\cookies.sqlite" />
+    <None Include="Firefox\Profile\cookies.sqlite-shm" />
+    <None Include="Firefox\Profile\cookies.sqlite-wal" />
+    <None Include="Firefox\Profile\favicons.sqlite" />
+    <None Include="Firefox\Profile\favicons.sqlite-shm" />
+    <None Include="Firefox\Profile\favicons.sqlite-wal" />
+    <None Include="Firefox\Profile\key4.db" />
+    <None Include="Firefox\Profile\permissions.sqlite" />
+    <None Include="Firefox\Profile\places.sqlite" />
+    <None Include="Firefox\Profile\places.sqlite-shm" />
+    <None Include="Firefox\Profile\places.sqlite-wal" />
+    <None Include="Firefox\Profile\startupCache\startupCache.8.little" />
+    <None Include="Firefox\Profile\webappsstore.sqlite" />
+    <None Include="Firefox\Profile\webappsstore.sqlite-shm" />
+    <None Include="Firefox\Profile\webappsstore.sqlite-wal" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -346,6 +363,26 @@
     <None Include="Resources\logoutssss.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Firefox\AccessibleHandler.dll" />
+    <Content Include="Firefox\AccessibleMarshal.dll" />
+    <Content Include="Firefox\d3dcompiler_47.dll" />
+    <Content Include="Firefox\freebl3.dll" />
+    <Content Include="Firefox\IA2Marshal.dll" />
+    <Content Include="Firefox\lgpllibs.dll" />
+    <Content Include="Firefox\libEGL.dll" />
+    <Content Include="Firefox\libGLESv2.dll" />
+    <Content Include="Firefox\mozavcodec.dll" />
+    <Content Include="Firefox\mozavutil.dll" />
+    <Content Include="Firefox\mozglue.dll" />
+    <Content Include="Firefox\nss3.dll" />
+    <Content Include="Firefox\nssckbi.dll" />
+    <Content Include="Firefox\nssdbm3.dll" />
+    <Content Include="Firefox\plugin-container.exe" />
+    <Content Include="Firefox\plugin-hang-ui.exe" />
+    <Content Include="Firefox\Profile\pkcs11.txt" />
+    <Content Include="Firefox\qipcap64.dll" />
+    <Content Include="Firefox\softokn3.dll" />
+    <Content Include="Firefox\xul.dll" />
     <Content Include="Geckofx-Core.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -401,6 +438,9 @@
       <Project>{dbb27519-5238-4fd6-af9d-80d4eb10c862}</Project>
       <Name>Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Firefox\Profile\safebrowsing\google4\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

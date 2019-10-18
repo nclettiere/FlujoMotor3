@@ -59,7 +59,6 @@ Public Class VerLotes
         Dim result As Integer = MessageBox.Show("El lote quedara como completo y el transportista se encargara de entregarlo al patio correspondiente.", "Desea asignar el lote?", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             Try
-                MsgBox(Now.ToString("yyyy-MM-dd hh:mm:ss") + " -- " + eID)
                 LUpdateFechaSalida(Now.ToString("yyyy-MM-dd hh:mm:ss"), LoteId)
                 LUpdateTransportista(eID, LoteId)
                 MessageBox.Show("Lote entregado correctamente.")

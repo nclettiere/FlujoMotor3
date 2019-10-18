@@ -18,8 +18,9 @@ Public Class Ventana_Login
         Log.Information(Me.Name.ToString + " Ha cargado con exito.")
     End Sub
 
-    Friend Sub ChangeControlSummary(operarioId As Integer)
+    Friend Sub ChangeControlSummary(operarioId As Integer, PuertoPatio As Boolean)
         Dim mainVentana = New Menu
+        mainVentana.PuertoPatio = PuertoPatio
         Hide()
         mainVentana.ShowDialog()
         Close()

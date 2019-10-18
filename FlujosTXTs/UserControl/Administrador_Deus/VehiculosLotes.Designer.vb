@@ -31,7 +31,6 @@ Partial Class VehiculosLotes
         Me.btnMod = New System.Windows.Forms.Button()
         Me.btnLavado = New System.Windows.Forms.Button()
         Me.btnAgrVehculo = New System.Windows.Forms.Button()
-        Me.PbQR = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblVin = New System.Windows.Forms.Label()
         Me.lblOpIngresado = New System.Windows.Forms.Label()
@@ -41,12 +40,13 @@ Partial Class VehiculosLotes
         Me.lblLoteStatus = New System.Windows.Forms.Label()
         Me.listaVehiculos = New BrightIdeasSoftware.FastDataListView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.PbQR = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
         Me.Panel1.SuspendLayout
-        CType(Me.PbQR,System.ComponentModel.ISupportInitialize).BeginInit
         Me.FlowLayoutPanel1.SuspendLayout
         CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.PbQR,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'TabControl1
@@ -91,6 +91,7 @@ Partial Class VehiculosLotes
         '
         'btnInsp
         '
+        Me.btnInsp.Enabled = false
         Me.btnInsp.Location = New System.Drawing.Point(582, 11)
         Me.btnInsp.Name = "btnInsp"
         Me.btnInsp.Size = New System.Drawing.Size(111, 23)
@@ -100,6 +101,7 @@ Partial Class VehiculosLotes
         '
         'btnElim
         '
+        Me.btnElim.Enabled = false
         Me.btnElim.Location = New System.Drawing.Point(223, 11)
         Me.btnElim.Name = "btnElim"
         Me.btnElim.Size = New System.Drawing.Size(84, 23)
@@ -109,6 +111,7 @@ Partial Class VehiculosLotes
         '
         'btnMngLote
         '
+        Me.btnMngLote.Enabled = false
         Me.btnMngLote.Location = New System.Drawing.Point(444, 11)
         Me.btnMngLote.Name = "btnMngLote"
         Me.btnMngLote.Size = New System.Drawing.Size(132, 23)
@@ -118,6 +121,7 @@ Partial Class VehiculosLotes
         '
         'btnMod
         '
+        Me.btnMod.Enabled = false
         Me.btnMod.Location = New System.Drawing.Point(133, 11)
         Me.btnMod.Name = "btnMod"
         Me.btnMod.Size = New System.Drawing.Size(84, 23)
@@ -127,6 +131,7 @@ Partial Class VehiculosLotes
         '
         'btnLavado
         '
+        Me.btnLavado.Enabled = false
         Me.btnLavado.Location = New System.Drawing.Point(339, 11)
         Me.btnLavado.Name = "btnLavado"
         Me.btnLavado.Size = New System.Drawing.Size(99, 23)
@@ -142,15 +147,6 @@ Partial Class VehiculosLotes
         Me.btnAgrVehculo.TabIndex = 1
         Me.btnAgrVehculo.Text = "Agregar Vehiculo"
         Me.btnAgrVehculo.UseVisualStyleBackColor = true
-        '
-        'PbQR
-        '
-        Me.PbQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PbQR.Location = New System.Drawing.Point(397, 51)
-        Me.PbQR.Name = "PbQR"
-        Me.PbQR.Size = New System.Drawing.Size(250, 250)
-        Me.PbQR.TabIndex = 5
-        Me.PbQR.TabStop = false
         '
         'FlowLayoutPanel1
         '
@@ -253,6 +249,15 @@ Partial Class VehiculosLotes
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = true
         '
+        'PbQR
+        '
+        Me.PbQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PbQR.Location = New System.Drawing.Point(397, 51)
+        Me.PbQR.Name = "PbQR"
+        Me.PbQR.Size = New System.Drawing.Size(250, 250)
+        Me.PbQR.TabIndex = 5
+        Me.PbQR.TabStop = false
+        '
         'VehiculosLotes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -263,10 +268,10 @@ Partial Class VehiculosLotes
         Me.TabControl1.ResumeLayout(false)
         Me.TabPage1.ResumeLayout(false)
         Me.Panel1.ResumeLayout(false)
-        CType(Me.PbQR,System.ComponentModel.ISupportInitialize).EndInit
         Me.FlowLayoutPanel1.ResumeLayout(false)
         Me.FlowLayoutPanel1.PerformLayout
         CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.PbQR,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub

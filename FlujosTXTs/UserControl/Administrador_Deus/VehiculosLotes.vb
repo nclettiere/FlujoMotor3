@@ -92,4 +92,13 @@ Public Class VehiculosLotes
         Ventana.LoadControl(AgVehiculo)
         Ventana.ShowDialog
     End Sub
+
+    Private Sub BtnInsp_Click(sender As Object, e As EventArgs) Handles btnInsp.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim VerIns As VerInspeccion = New VerInspeccion
+        Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
+        VerIns.Populate(VIN)
+        Ventana.LoadControl(VerIns)
+        Ventana.ShowDialog
+    End Sub
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports Logica
 Public Class MenuControl
     Private Shared _instance As MenuControl
+    Friend PuertoPatio As Boolean
 
     Public Shared Property Instance As MenuControl
         Get
@@ -21,20 +22,35 @@ Public Class MenuControl
         Me.AutoSize = true
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
        
-        GoToSection(0)
-        btPatio.Font = New Font(btPatio.Font.FontFamily, 14)
-        piBoPatio.Size = New Size(56, 30)
-        btPatio.BackColor = Color.Transparent
-        btPuerto.BackColor = Color.DarkGray
-        btPuerto.Font = New Font(btPuerto.Font.FontFamily, 17)
-        piBoPuerto.Size = New Size(56, 70)
+        MsgBox(PuertoPatio.ToString)
+        If Not PuertoPatio
+            btPatio.Enabled = False
+            btPuerto.Enabled = True
+            GoToSection(0)
+            btPatio.Font = New Font(btPatio.Font.FontFamily, 14)
+            piBoPatio.Size = New Size(56, 30)
+            btPatio.BackColor = Color.Transparent
+            btPuerto.BackColor = Color.DarkGray
+            btPuerto.Font = New Font(btPuerto.Font.FontFamily, 17)
+            piBoPuerto.Size = New Size(56, 70)
+        Else
+            btPuerto.Enabled = False
+            btPatio.Enabled = True
+            GoToSection(2)
+            btPuerto.Font = New Font(btPuerto.Font.FontFamily, 14)
+            piBoPuerto.Size = New Size(56, 30)
+            btPuerto.BackColor = Color.Transparent
+            btPatio.BackColor = Color.DarkGray
+            btPatio.Font = New Font(btPatio.Font.FontFamily, 17)
+            piBoPatio.Size = New Size(56, 70)
+        End If
     End Sub
 
     ''' <summary>
     ''' Metodo usado para cambiar dinamicamente el contenido del ContenidoPrincipal
     ''' </summary>
     ''' <param name="Section">Integer que especifica el ID de la seccion.</param>
-    Friend Sub GoToSection(ByVal Section As Integer)
+    Friend Sub GoToSection(Section As Integer)
         '' Section => {0=>"VerVehiculos";1=>AgregarVehiculos};
         Dim Selection As Object
 

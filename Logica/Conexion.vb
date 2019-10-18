@@ -67,6 +67,51 @@ Public Module Conexion
         End Try
     End Function
 
+    Public Function CheckLogueo(ByRef EmpleadoId As Integer, ByRef PuertoPatio As Boolean) As Boolean
+        Cerrar
+        If PrimeraVez
+            DBConexion.ConnectionString = GetArchivoConexion
+            PrimeraVez = False
+        End If
+
+        Try
+            DBConexion.Open()
+            Dim datos As DataTable = UObtener(USER)
+            If datos IsNot Nothing
+                If datos.Rows.Count > 0
+                    Dim tipo As Integer = ObtenerTipoOperario(datos.Rows(0).Item("empleadoid"))
+                    MsgBox(tipo.ToString)
+                    If tipo = 0
+                        Console.WriteLine("Conectado")
+                        EmpleadoId = datos.Rows(0).Item("empleadoid")
+                        PuertoPatio = False
+                        Return True
+                    Else If tipo = 1
+                        Console.WriteLine("Conectado")
+                        EmpleadoId = datos.Rows(0).Item("empleadoid")
+                        PuertoPatio = True
+                        Return True
+                    Else
+                        MsgBox("No tienes permisos para utilizar esta aplicacion.")
+                        Return False
+                    End If
+                Else
+                    MsgBox("Contrasena o usuario invalidos.")
+                    Return False
+                End If
+            Else
+                MsgBox("Contrasena o usuario invalidos.")
+                Return False
+            End If
+
+            Return False
+        Catch ex As OdbcException
+            MsgBox("Hubo un error al conectarse.")
+            Serilog.Log.Fatal(ex, "err")
+            Return False
+        End Try
+    End Function
+
     Public Sub Cerrar()
         DBConexion.Close()
     End Sub

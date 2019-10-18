@@ -37,7 +37,7 @@ Public Class AgregarVehiculo
 
                If LoteIngresado
                    If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, ObtenerOpId)
-                        IInsertar(VIN.ToUpper)
+                        IInsertar(VIN.ToUpper, ObtenerOpId)
                         MsgBox("Vehiculo Insertado Exitosamente.")
                         UC_VehiculosLotes.ActualizarVehiculos
                         ParentForm.Close
@@ -46,7 +46,7 @@ Public Class AgregarVehiculo
                     If LInsertar(Desc, Nombre, OpId.ToString, Patio)
                         Me.LoteId = (Consultar("SELECT MAX(loteid) FROM lotes").Rows(0).Item(0)).ToString
                         If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, 1)
-                            IInsertar(VIN.ToUpper)
+                            IInsertar(VIN.ToUpper, ObtenerOpId)
                             MsgBox("Vehiculo y Lote Insertados Exitosamente.")
                             UC_VehiculosLotes.ActualizarVehiculos
                             ParentForm.Close
@@ -58,7 +58,7 @@ Public Class AgregarVehiculo
                     End If
                 Else
                     If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, 1)
-                        IInsertar(VIN.ToUpper)
+                        IInsertar(VIN.ToUpper, ObtenerOpId)
                         MsgBox("Vehiculo Insertado Exitosamente.")
                         UC_VehiculosLotes.ActualizarVehiculos
                         ParentForm.Close

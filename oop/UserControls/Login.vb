@@ -62,9 +62,13 @@ Public Class Login
                 Conexion.PSWD = tbx_passwd.Text
                 Conexion.Conectar()
 
-                If (Conexion.Conectar()) Then
+                Dim EmpleadoId As Integer
+                Dim PuertoPatio As Boolean
+                If (Conexion.CheckLogueo(EmpleadoId, PuertoPatio)) Then
                     MessageBox.Show("Conectado Exitosamente.")
-                    Ventana_Login.ChangeControlSummary(0)
+                    MsgBox(PuertoPatio.ToString)
+                    Conexion.OperarioId = EmpleadoId
+                    Ventana_Login.ChangeControlSummary(0, PuertoPatio)
                     Cerrar
                 Else
                     MessageBox.Show("Usuario o Contrasena invalidos.")

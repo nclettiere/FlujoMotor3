@@ -124,7 +124,7 @@ Public Class VerInspeccion
     Private Sub BtnAddInspeccion_Click(sender As Object, e As EventArgs) Handles btnAddInspeccion.Click
         If MessageBox.Show("Desea agregar una inpeccion? Se asignara la inspeccion a su cuenta.", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
-                IInsertar(VIN)
+                IInsertar(VIN, ObtenerOpId)
                 FlowInspecciones.Controls.Clear
                 Populate(VIN)
             Catch ex As Exception

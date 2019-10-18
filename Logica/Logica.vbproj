@@ -103,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.vb" />
-    <Compile Include="Encriptacion.vb" />
     <Compile Include="Modulos\Empleados.vb" />
     <Compile Include="Modulos\Inspecciones.vb" />
     <Compile Include="Modulos\Lotes.vb" />

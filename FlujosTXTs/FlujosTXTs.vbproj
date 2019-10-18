@@ -48,6 +48,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.0.3541.23206, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="ObjectListView, Version=2.9.1.31284, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\ObjectListView.dll</HintPath>
@@ -76,6 +80,10 @@
     <Reference Include="VisualStudioTabControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\VisualStudioTabControl.dll</HintPath>
+    </Reference>
+    <Reference Include="WebCam_Capture, Version=1.0.2395.24959, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\WebCam_Capture.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -107,10 +115,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarDanio.Designer.vb">
+      <DependentUpon>AgregarDanio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarDanio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Administrador_Deus\AgregarLote.Designer.vb">
       <DependentUpon>AgregarLote.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\AgregarLote.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarPatio.Designer.vb">
+      <DependentUpon>AgregarPatio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarPatio.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\AgregarUsuario.Designer.vb">
@@ -123,6 +143,12 @@
       <DependentUpon>AgregarVehiculo.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\AgregarVehiculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\IniciarCamara.Designer.vb">
+      <DependentUpon>IniciarCamara.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\IniciarCamara.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\Login_Deus.Designer.vb">
@@ -143,6 +169,18 @@
     <Compile Include="UserControl\Administrador_Deus\ManageUsuarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\Administrador_Deus\ModificarSubzona.Designer.vb">
+      <DependentUpon>ModificarSubzona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\ModificarSubzona.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\PatiosZonas.Designer.vb">
+      <DependentUpon>PatiosZonas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\PatiosZonas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Administrador_Deus\SeleccionarLote.Designer.vb">
       <DependentUpon>SeleccionarLote.vb</DependentUpon>
     </Compile>
@@ -153,6 +191,24 @@
       <DependentUpon>VehiculosLotes.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\VehiculosLotes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerDanios.Designer.vb">
+      <DependentUpon>VerDanios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerDanios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerInspeccion.Designer.vb">
+      <DependentUpon>VerInspeccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerInspeccion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerZonas.Designer.vb">
+      <DependentUpon>VerZonas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerZonas.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ventanitas\Menu.Designer.vb">
@@ -175,14 +231,23 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarDanio.resx">
+      <DependentUpon>AgregarDanio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarLote.resx">
       <DependentUpon>AgregarLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarPatio.resx">
+      <DependentUpon>AgregarPatio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarVehiculo.resx">
       <DependentUpon>AgregarVehiculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\IniciarCamara.resx">
+      <DependentUpon>IniciarCamara.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\Login_Deus.resx">
       <DependentUpon>Login_Deus.vb</DependentUpon>
@@ -193,11 +258,26 @@
     <EmbeddedResource Include="UserControl\Administrador_Deus\ManageUsuarios.resx">
       <DependentUpon>ManageUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\ModificarSubzona.resx">
+      <DependentUpon>ModificarSubzona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\PatiosZonas.resx">
+      <DependentUpon>PatiosZonas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\SeleccionarLote.resx">
       <DependentUpon>SeleccionarLote.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\VehiculosLotes.resx">
       <DependentUpon>VehiculosLotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\VerDanios.resx">
+      <DependentUpon>VerDanios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\VerInspeccion.resx">
+      <DependentUpon>VerInspeccion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\VerZonas.resx">
+      <DependentUpon>VerZonas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
@@ -231,10 +311,16 @@
     <None Include="Resources\logoutssss.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MessagingToolkit.QRCode.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ObjectListView.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="VisualStudioTabControl.dll" />
+    <Content Include="WebCam_Capture.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Logica\Logica.vbproj">

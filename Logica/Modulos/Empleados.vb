@@ -237,8 +237,8 @@ Public Module Empleados
             End If
         Catch ex As Exception
             Serilog.Log.Error(ex, "err")
+            Return 0
         End Try
-
         Cerrar
     End Function
 

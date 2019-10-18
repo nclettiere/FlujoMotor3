@@ -3,11 +3,21 @@
 Public Class AgregarLote
 
     Friend UC_AgregarVehiculo As AgregarVehiculo
-
+    Friend Modo As Integer = 0
 
     Private Sub OnAlLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim ConsultaPatios As DataTable = PObtenerAll()
+            If ConsultaPatios IsNot Nothing
+                If ConsultaPatios.Rows.Count > 0
+                Else
+                    MsgBox("No hay patios disponibles. Cree uno para continuar.")
+                    btnAgregar.Enabled = False
+                End If
+            Else
+                MsgBox("No hay patios disponibles. Cree uno para continuar.")
+                btnAgregar.Enabled = False
+            End If
 
             For Each item As DataRow In ConsultaPatios.Rows
                 cbxPatios.Items.Add(item(1).ToString)

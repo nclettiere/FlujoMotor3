@@ -24,16 +24,16 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-![Dd]ebug/Firefox
-![Dd]ebugPublic/Firefox
-![Rr]elease/Firefox
-![Rr]eleases/Firefox
-!x64/Firefox
-!x86/Firefox
-!bld/Firefox
-![Bb]in/Firefox
-![Oo]bj/Firefox
-![Ll]og/Firefox
+![Dd]ebug/Firefox/*
+![Dd]ebugPublic/Firefox/*
+![Rr]elease/Firefox/*
+![Rr]eleases/Firefox/*
+!x64/Firefox/*
+!x86/Firefox/*
+!bld/Firefox/*
+![Bb]in/Firefox/*
+![Oo]bj/Firefox/*
+![Ll]og/Firefox/*
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

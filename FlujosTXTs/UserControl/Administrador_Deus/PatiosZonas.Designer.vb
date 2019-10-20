@@ -42,17 +42,19 @@ Partial Class PatiosZonas
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(13, 18)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(293, 668)
+        Me.GroupBox1.Size = New System.Drawing.Size(842, 668)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = false
         Me.GroupBox1.Text = "Lista de Patios"
         '
         'flpPatios
         '
+        Me.flpPatios.AutoScroll = true
         Me.flpPatios.Controls.Add(Me.Panel1)
-        Me.flpPatios.Location = New System.Drawing.Point(6, 61)
+        Me.flpPatios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.flpPatios.Location = New System.Drawing.Point(3, 16)
         Me.flpPatios.Name = "flpPatios"
-        Me.flpPatios.Size = New System.Drawing.Size(281, 601)
+        Me.flpPatios.Size = New System.Drawing.Size(836, 649)
         Me.flpPatios.TabIndex = 1
         '
         'Panel1

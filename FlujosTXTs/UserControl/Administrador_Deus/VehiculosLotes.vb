@@ -1,6 +1,9 @@
 ﻿Imports Logica
 
 Public Class VehiculosLotes
+
+    Private LoteIdSelec As String
+
     Private Sub OnVLload(sender As Object, e As EventArgs) Handles MyBase.Load
         ActualizarVehiculos
     End Sub
@@ -20,6 +23,14 @@ Public Class VehiculosLotes
                 Dim Fecha As String = listaVehiculos.SelectedItem.SubItems.Item(1).Text
                 Dim FechaVendido As String = listaVehiculos.SelectedItem.SubItems.Item(2).Text
                 Dim Lote As String = listaVehiculos.SelectedItem.SubItems.Item(9).Text
+
+                If VEstaEnPatio(VIN)
+                    btnAparcar.Enabled = True
+                    btnVender.Enabled = True
+                Else
+                    btnAparcar.Enabled = False
+                    btnVender.Enabled = False
+                End If
 
                 lblVin.Text = "VIN: "+ VIN
                 lblOpIngresado.Text = "Ingresado Por:" + OpDatos.Item("empleadonombre") + " " + OpDatos.Item("empleadoapellido")
@@ -43,11 +54,39 @@ Public Class VehiculosLotes
                 btnLavado.Enabled = False
                 btnMngLote.Enabled = False
                 btnMod.Enabled = False
+                btnAparcar.Enabled = False
             End If
 
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error desconocido.")
         End Try
+    End Sub
+
+    Friend Sub ActualizarLV()
+        Try
+            listaLV.DataSource = VObtenerLoteId(LoteIdSelec)
+            For Each column As ColumnHeader In listaLV.Columns
+                column.Width = -2
+            Next
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Friend Sub TransportistaSeleccionado(eID As String)
+        Dim result As Integer = MessageBox.Show("El lote quedara como completo y el transportista se encargara de entregarlo al patio correspondiente.", "Desea asignar el lote?", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Try
+                Dim ID As String = ListaLotes.SelectedItem.SubItems.Item(0).Text
+                LUpdateFechaSalida(Now.ToString("yyyy-MM-dd hh:mm:ss"), ID)
+                LUpdateTransportista(eID, ID)
+                ActualizarLotes
+                MessageBox.Show("Lote entregado correctamente.")
+            Catch ex As Exception
+                MessageBox.Show("Error al asignar lote, Chequee el log para mas info.")
+                Serilog.Log.Error(ex, "Error al entregar lote.")
+            End Try
+        End If
     End Sub
 
     Private Sub BtnAgrVehculo_Click(sender As Object, e As EventArgs) Handles btnAgrVehculo.Click
@@ -69,6 +108,20 @@ Public Class VehiculosLotes
         Catch ex As Exception
             MsgBox("Error Al obtener vehiculos")
             Serilog.Log.Error(ex, "Error Al obtener vehiculos")
+        End Try
+    End Sub
+
+    Friend Sub ActualizarLotes
+        Try
+            ListaLotes.DataSource = Nothing
+            ListaLotes.DataSource = LObtenerAll
+
+            For Each column As ColumnHeader In ListaLotes.Columns
+                column.Width = -2
+            Next
+        Catch ex As Exception
+            MsgBox("Error Al obtener lotes")
+            Serilog.Log.Error(ex, "Error Al obtener lotes")
         End Try
     End Sub
 
@@ -100,5 +153,160 @@ Public Class VehiculosLotes
         VerIns.Populate(VIN)
         Ventana.LoadControl(VerIns)
         Ventana.ShowDialog
+    End Sub
+
+    Private Sub BtnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
+        Try
+            Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
+            If VMarcarVendido(VIN)
+                MessageBox.Show("Vehiculo vendido exitosamente.")
+                ActualizarVehiculos
+            End If
+        Catch ex As Exception
+            MsgBox("Error al vender makako")
+            Serilog.Log.Error(ex, "err")
+        End Try
+    End Sub
+
+    Private Sub BtnAparcar_Click(sender As Object, e As EventArgs) Handles btnAparcar.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim Aparcar As AparcarVehiculo = New AparcarVehiculo
+        Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
+        Aparcar.VIN = (VIN)
+        Try
+            Dim PatioId = LObtenerID(listaVehiculos.SelectedItem.SubItems.Item(9).Text).Item("patioid").ToString
+            Aparcar.PatioId = PatioId
+            Ventana.LoadControl(Aparcar)
+            Ventana.ShowDialog
+        Catch ex As Exception
+            MessageBox.Show("Error al obtener patioid.")
+            Serilog.Log.Error(ex, "err..")
+        End Try
+    End Sub
+
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        If TabControl1.SelectedIndex = 1
+            ActualizarLotes
+        End If
+    End Sub
+
+    Private Sub ListaLotes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListaLotes.SelectedIndexChanged
+        Try
+            If ListaLotes.SelectedIndex >= 0
+                btnElimL.Enabled = True
+
+                '' Obtener Datos
+                Dim ID As String = ListaLotes.SelectedItem.SubItems.Item(0).Text
+                LoteIdSelec = ID
+                Dim loteNombre As String = ListaLotes.SelectedItem.SubItems.Item(1).Text
+                Dim loteDescripcion  As String = ListaLotes.SelectedItem.SubItems.Item(2).Text
+                Dim operarioPuertoID  As DataRow = EObtener(ListaLotes.SelectedItem.SubItems.Item(3).Text)
+                Dim loteFecha As String = ListaLotes.SelectedItem.SubItems.Item(4).Text
+                Dim patioid As String = ListaLotes.SelectedItem.SubItems.Item(8).Text
+                Dim transid As String = ListaLotes.SelectedItem.SubItems.Item(7).Text
+                Dim loteFechaSalida = ListaLotes.SelectedItem.SubItems.Item(5).Text
+                Dim loteFechaLl = ListaLotes.SelectedItem.SubItems.Item(6).Text
+
+                If String.IsNullOrEmpty(loteFechaSalida) And String.IsNullOrEmpty(loteFechaLl)
+                    btnEntregarT.Enabled = True
+                Else
+                    btnEntregarT.Enabled = False
+                End If
+
+                If String.IsNullOrEmpty(loteFechaLl) And Not String.IsNullOrEmpty(loteFechaSalida)
+                    btnEntreado.Enabled = True
+                Else
+                    btnEntreado.Enabled = False
+                End If
+                
+                lblloteid.Text = "LoteId: " + ID
+                lblopL.Text = "Ingresado Por:" + operarioPuertoID.Item("empleadonombre") + " " + operarioPuertoID.Item("empleadoapellido")
+                lblLFecha.Text = "Fecha Ingresado: "+loteFecha
+
+                Try
+                    listaLV.DataSource = VObtenerLoteId(ID)
+                    For Each column As ColumnHeader In listaLV.Columns
+                        column.Width = -2
+                    Next
+                Catch ex As Exception
+
+                End Try
+
+            Else
+                btnElimL.Enabled = False
+                btnEntregarT.Enabled = False
+                btnEntreado.Enabled = False
+            End If
+
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error desconocido.")
+        End Try
+    End Sub
+
+    Private Sub BtnEntregarT_Click(sender As Object, e As EventArgs) Handles btnEntregarT.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim Entre As SeleccionarTransportista = New SeleccionarTransportista
+        Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
+        Entre.VL_VehiculosLotes = Me
+        Ventana.LoadControl(Entre)
+        Ventana.ShowDialog
+    End Sub
+
+    Private Sub BtnEntreado_Click(sender As Object, e As EventArgs) Handles btnEntreado.Click
+        Try
+            Dim ID As String = ListaLotes.SelectedItem.SubItems.Item(0).Text
+            Dim DialogoLavado As DialogResult = MessageBox.Show("Deseas terminar el viaje para el lote: ID=" + ID + "?", "Terminar Viaje", MessageBoxButtons.YesNo)
+            If DialogoLavado = DialogResult.Yes
+                If LUpdateFechaLlegada(Now, ID)
+                    MessageBox.Show("El lote ha sido entregado con exito.")
+                End If
+            End If
+            ActualizarLotes
+        Catch ex As Exception
+            MsgBox("error al entregar")
+            Serilog.Log.Error(ex, "err")
+        End Try
+    End Sub
+
+    Private Sub BtnElimL_Click(sender As Object, e As EventArgs) Handles btnElimL.Click
+
+    End Sub
+
+    Private Sub ListaLV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaLV.SelectedIndexChanged
+        Try
+            If ListaLV.SelectedIndex >= 0
+                btnagvl.Enabled = True
+                Dim VIN As String = ListaLotes.SelectedItem.SubItems.Item(0).Text
+                Dim fechaentrega = ListaLotes.SelectedItem.SubItems.Item(2)
+                Dim loteid As String = LoteIdSelec
+                
+                If fechaentrega Is Nothing
+                    btnquitarv.Enabled = True
+                Else
+                    btnquitarv.Enabled = False
+                End If
+            Else
+                btnagvl.Enabled = False
+                btnquitarv.Enabled = False
+            End If
+
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error desconocido.")
+        End Try
+    End Sub
+
+    Private Sub Btnagvl_Click(sender As Object, e As EventArgs) Handles btnagvl.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim AGL As AgregarVehiculo = New AgregarVehiculo
+        Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
+        AGL.UC_VehiculosLotes = Me
+        AGL.LoteId = LoteIdSelec
+        AGL.Loteado = True
+        Ventana.LoadControl(AGL)
+        Ventana.ShowDialog
+    End Sub
+
+    Private Sub Btnquitarv_Click(sender As Object, e As EventArgs) Handles btnquitarv.Click
+
     End Sub
 End Class

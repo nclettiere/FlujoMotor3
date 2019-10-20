@@ -146,7 +146,7 @@ Partial Class VerPatio
         Me.cbxFiltro.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.cbxFiltro.FormattingEnabled = true
         Me.cbxFiltro.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
-        Me.cbxFiltro.Location = New System.Drawing.Point(3, 9)
+        Me.cbxFiltro.Location = New System.Drawing.Point(3, 14)
         Me.cbxFiltro.Name = "cbxFiltro"
         Me.cbxFiltro.Size = New System.Drawing.Size(94, 31)
         Me.cbxFiltro.TabIndex = 4

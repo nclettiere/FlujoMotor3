@@ -25,22 +25,21 @@ Partial Class MenuPrincipal
         Me.Button2 = New System.Windows.Forms.Button()
         Me.pnCOntenedor = New System.Windows.Forms.Panel()
         Me.TableLayoutPanelSesion = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanelInfoUsuario = New System.Windows.Forms.TableLayoutPanel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btLotes = New System.Windows.Forms.Button()
         Me.btViajes = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanelOpciones = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanelMenu = New System.Windows.Forms.TableLayoutPanel()
         Me.piBoPuerto = New System.Windows.Forms.PictureBox()
         Me.piBoPatio = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.TableLayoutPanelOpciones = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanelSesion.SuspendLayout
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         Me.TableLayoutPanel1.SuspendLayout
-        Me.TableLayoutPanelOpciones.SuspendLayout
-        Me.TableLayoutPanelMenu.SuspendLayout
         CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TableLayoutPanelOpciones.SuspendLayout
+        Me.Panel1.SuspendLayout
         Me.SuspendLayout
         '
         'Button2
@@ -65,9 +64,9 @@ Partial Class MenuPrincipal
         Me.pnCOntenedor.AutoSize = true
         Me.pnCOntenedor.BackColor = System.Drawing.Color.Transparent
         Me.pnCOntenedor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnCOntenedor.Location = New System.Drawing.Point(282, 3)
+        Me.pnCOntenedor.Location = New System.Drawing.Point(279, 0)
         Me.pnCOntenedor.Name = "pnCOntenedor"
-        Me.pnCOntenedor.Size = New System.Drawing.Size(915, 694)
+        Me.pnCOntenedor.Size = New System.Drawing.Size(921, 700)
         Me.pnCOntenedor.TabIndex = 0
         '
         'TableLayoutPanelSesion
@@ -88,21 +87,16 @@ Partial Class MenuPrincipal
         Me.TableLayoutPanelSesion.Size = New System.Drawing.Size(273, 211)
         Me.TableLayoutPanelSesion.TabIndex = 2
         '
-        'TableLayoutPanelInfoUsuario
+        'PictureBox3
         '
-        Me.TableLayoutPanelInfoUsuario.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanelInfoUsuario.ColumnCount = 1
-        Me.TableLayoutPanelInfoUsuario.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanelInfoUsuario.Location = New System.Drawing.Point(3, 236)
-        Me.TableLayoutPanelInfoUsuario.Name = "TableLayoutPanelInfoUsuario"
-        Me.TableLayoutPanelInfoUsuario.RowCount = 3
-        Me.TableLayoutPanelInfoUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.35135!))
-        Me.TableLayoutPanelInfoUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.40541!))
-        Me.TableLayoutPanelInfoUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.7027!))
-        Me.TableLayoutPanelInfoUsuario.Size = New System.Drawing.Size(273, 244)
-        Me.TableLayoutPanelInfoUsuario.TabIndex = 1
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.BackgroundImage = Global.FlujoRuedas.My.Resources.Resources.logoutsss
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox3.Location = New System.Drawing.Point(3, 137)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(66, 41)
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = false
         '
         'btLotes
         '
@@ -157,45 +151,6 @@ Partial Class MenuPrincipal
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(273, 227)
         Me.TableLayoutPanel1.TabIndex = 0
         '
-        'TableLayoutPanelOpciones
-        '
-        Me.TableLayoutPanelOpciones.BackColor = System.Drawing.Color.Gray
-        Me.TableLayoutPanelOpciones.ColumnCount = 1
-        Me.TableLayoutPanelOpciones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanel1, 0, 0)
-        Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanelInfoUsuario, 0, 1)
-        Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanelSesion, 0, 2)
-        Me.TableLayoutPanelOpciones.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanelOpciones.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanelOpciones.Name = "TableLayoutPanelOpciones"
-        Me.TableLayoutPanelOpciones.RowCount = 3
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.8209!))
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.97015!))
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanelOpciones.Size = New System.Drawing.Size(279, 700)
-        Me.TableLayoutPanelOpciones.TabIndex = 1
-        '
-        'TableLayoutPanelMenu
-        '
-        Me.TableLayoutPanelMenu.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanelMenu.BackColor = System.Drawing.Color.LightGray
-        Me.TableLayoutPanelMenu.ColumnCount = 2
-        Me.TableLayoutPanelMenu.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.28042!))
-        Me.TableLayoutPanelMenu.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.71957!))
-        Me.TableLayoutPanelMenu.Controls.Add(Me.pnCOntenedor, 1, 0)
-        Me.TableLayoutPanelMenu.Controls.Add(Me.TableLayoutPanelOpciones, 0, 0)
-        Me.TableLayoutPanelMenu.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanelMenu.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanelMenu.Name = "TableLayoutPanelMenu"
-        Me.TableLayoutPanelMenu.RowCount = 1
-        Me.TableLayoutPanelMenu.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanelMenu.Size = New System.Drawing.Size(1200, 700)
-        Me.TableLayoutPanelMenu.TabIndex = 2
-        '
         'piBoPuerto
         '
         Me.piBoPuerto.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -218,32 +173,51 @@ Partial Class MenuPrincipal
         Me.piBoPatio.TabIndex = 3
         Me.piBoPatio.TabStop = false
         '
-        'PictureBox3
+        'TableLayoutPanelOpciones
         '
-        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.BackgroundImage = Global.FlujoRuedas.My.Resources.Resources.logoutsss
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox3.Location = New System.Drawing.Point(3, 137)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(66, 41)
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = false
+        Me.TableLayoutPanelOpciones.BackColor = System.Drawing.Color.Gray
+        Me.TableLayoutPanelOpciones.ColumnCount = 1
+        Me.TableLayoutPanelOpciones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanel1, 0, 0)
+        Me.TableLayoutPanelOpciones.Controls.Add(Me.TableLayoutPanelSesion, 0, 2)
+        Me.TableLayoutPanelOpciones.Dock = System.Windows.Forms.DockStyle.Left
+        Me.TableLayoutPanelOpciones.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanelOpciones.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanelOpciones.Name = "TableLayoutPanelOpciones"
+        Me.TableLayoutPanelOpciones.RowCount = 3
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.8209!))
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.97015!))
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
+        Me.TableLayoutPanelOpciones.Size = New System.Drawing.Size(279, 700)
+        Me.TableLayoutPanelOpciones.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.pnCOntenedor)
+        Me.Panel1.Controls.Add(Me.TableLayoutPanelOpciones)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1200, 700)
+        Me.Panel1.TabIndex = 2
         '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.TableLayoutPanelMenu)
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "MenuPrincipal"
         Me.Size = New System.Drawing.Size(1200, 700)
         Me.TableLayoutPanelSesion.ResumeLayout(false)
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         Me.TableLayoutPanel1.ResumeLayout(false)
-        Me.TableLayoutPanelOpciones.ResumeLayout(false)
-        Me.TableLayoutPanelMenu.ResumeLayout(false)
-        Me.TableLayoutPanelMenu.PerformLayout
         CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
+        Me.TableLayoutPanelOpciones.ResumeLayout(false)
+        Me.Panel1.ResumeLayout(false)
+        Me.Panel1.PerformLayout
         Me.ResumeLayout(false)
 
 End Sub
@@ -252,12 +226,11 @@ End Sub
     Friend WithEvents pnCOntenedor As Panel
     Friend WithEvents TableLayoutPanelSesion As TableLayoutPanel
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents TableLayoutPanelInfoUsuario As TableLayoutPanel
     Friend WithEvents btLotes As Button
     Friend WithEvents piBoPuerto As PictureBox
     Friend WithEvents btViajes As Button
     Friend WithEvents piBoPatio As PictureBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanelOpciones As TableLayoutPanel
-    Friend WithEvents TableLayoutPanelMenu As TableLayoutPanel
+    Friend WithEvents Panel1 As Panel
 End Class

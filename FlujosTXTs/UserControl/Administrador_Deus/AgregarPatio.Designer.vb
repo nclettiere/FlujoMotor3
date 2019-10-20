@@ -100,7 +100,7 @@ Partial Class AgregarPatio
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.tbxPatioNombre)
         Me.Name = "AgregarPatio"
-        Me.Size = New System.Drawing.Size(290, 204)
+        Me.Size = New System.Drawing.Size(281, 204)
         Me.ResumeLayout(false)
         Me.PerformLayout
 

@@ -41,6 +41,7 @@ Public Class VerViajes
 
     Private Sub CambioSeleccion(sender As Object, e As EventArgs) Handles ListaViajes.SelectedIndexChanged
         If ListaViajes.SelectedIndex >= 0
+            btnEntregar.Enabled = True
             Try
                 IdSeleccionado = ListaViajes.SelectedItem.SubItems.Item(0).Text
                 Dim LoteInfo = LObtenerID(IdSeleccionado)
@@ -51,6 +52,8 @@ Public Class VerViajes
             Catch ex As Exception
 
             End Try
+        Else
+            btnEntregar.Enabled = False
         End If
     End Sub
 
@@ -58,10 +61,10 @@ Public Class VerViajes
         Dim DialogoLavado As DialogResult = MessageBox.Show("Deseas terminar el viaje para el lote: ID=" + IdSeleccionado + "?", "Terminar Viaje", MessageBoxButtons.YesNo)
         If DialogoLavado = DialogResult.Yes
             If LUpdateFechaLlegada(Now, IdSeleccionado)
-                MessageBox.Show("El lote ha sido entregado con exitoso exito mi lord.")
-                ActualizarLista
+                MessageBox.Show("El lote ha sido entregado con exito.")
             End If
         End If
+        ActualizarLista
     End Sub
 
     Private Sub ActualizarLista

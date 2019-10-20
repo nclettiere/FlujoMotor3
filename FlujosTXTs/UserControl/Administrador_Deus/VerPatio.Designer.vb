@@ -23,51 +23,38 @@ Partial Class VerPatio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.panelMapa = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.flpSubZonas = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.panelMapa = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAgZona = New System.Windows.Forms.Button()
+        Me.btnAgSubZona = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout
-        Me.panelMapa.SuspendLayout
         Me.flpSubZonas.SuspendLayout
         Me.Panel1.SuspendLayout
+        Me.panelMapa.SuspendLayout
+        Me.Panel2.SuspendLayout
+        Me.Panel3.SuspendLayout
         Me.SuspendLayout
         '
         'GroupBox1
         '
+        Me.GroupBox1.AutoSize = true
         Me.GroupBox1.Controls.Add(Me.flpSubZonas)
-        Me.GroupBox1.Location = New System.Drawing.Point(749, 60)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 47)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(247, 702)
+        Me.GroupBox1.Size = New System.Drawing.Size(258, 702)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = false
         Me.GroupBox1.Text = "SubZonas Del Patio"
-        '
-        'panelMapa
-        '
-        Me.panelMapa.BackColor = System.Drawing.Color.Gainsboro
-        Me.panelMapa.Controls.Add(Me.Label1)
-        Me.panelMapa.Dock = System.Windows.Forms.DockStyle.Left
-        Me.panelMapa.Location = New System.Drawing.Point(0, 0)
-        Me.panelMapa.Name = "panelMapa"
-        Me.panelMapa.Size = New System.Drawing.Size(743, 771)
-        Me.panelMapa.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = true
-        Me.Label1.Location = New System.Drawing.Point(291, 193)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(92, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cargando Mapa..."
         '
         'flpSubZonas
         '
@@ -77,7 +64,7 @@ Partial Class VerPatio
         Me.flpSubZonas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flpSubZonas.Location = New System.Drawing.Point(3, 16)
         Me.flpSubZonas.Name = "flpSubZonas"
-        Me.flpSubZonas.Size = New System.Drawing.Size(241, 683)
+        Me.flpSubZonas.Size = New System.Drawing.Size(252, 683)
         Me.flpSubZonas.TabIndex = 0
         '
         'Panel1
@@ -93,32 +80,14 @@ Partial Class VerPatio
         Me.Panel1.Size = New System.Drawing.Size(236, 127)
         Me.Panel1.TabIndex = 0
         '
-        'Label2
+        'Button2
         '
-        Me.Label2.AutoSize = true
-        Me.Label2.Location = New System.Drawing.Point(3, 10)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "ZonaId: #1"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = true
-        Me.Label3.Location = New System.Drawing.Point(3, 37)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Nombre: A_12"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = true
-        Me.Label4.Location = New System.Drawing.Point(3, 60)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(125, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Capacidad: 20 Vehiculos"
+        Me.Button2.Location = New System.Drawing.Point(136, 91)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(87, 28)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "Modificar"
+        Me.Button2.UseVisualStyleBackColor = true
         '
         'Button1
         '
@@ -129,56 +98,118 @@ Partial Class VerPatio
         Me.Button1.Text = "Eliminar"
         Me.Button1.UseVisualStyleBackColor = true
         '
-        'Button2
+        'Label4
         '
-        Me.Button2.Location = New System.Drawing.Point(136, 91)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(87, 28)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Modificar"
-        Me.Button2.UseVisualStyleBackColor = true
+        Me.Label4.AutoSize = true
+        Me.Label4.Location = New System.Drawing.Point(3, 60)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(125, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Capacidad: 20 Vehiculos"
         '
-        'Button3
+        'Label3
         '
-        Me.Button3.BackColor = System.Drawing.Color.Silver
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.Color.Crimson
-        Me.Button3.Location = New System.Drawing.Point(749, 16)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(120, 38)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Agregar Zona"
-        Me.Button3.UseVisualStyleBackColor = false
+        Me.Label3.AutoSize = true
+        Me.Label3.Location = New System.Drawing.Point(3, 37)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(75, 13)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Nombre: A_12"
         '
-        'Button4
+        'Label2
         '
-        Me.Button4.BackColor = System.Drawing.Color.Silver
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.Color.Crimson
-        Me.Button4.Location = New System.Drawing.Point(875, 16)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(116, 38)
-        Me.Button4.TabIndex = 6
-        Me.Button4.Text = "Agregar SubZona"
-        Me.Button4.UseVisualStyleBackColor = false
+        Me.Label2.AutoSize = true
+        Me.Label2.Location = New System.Drawing.Point(3, 10)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(60, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "ZonaId: #1"
+        '
+        'panelMapa
+        '
+        Me.panelMapa.BackColor = System.Drawing.Color.Gainsboro
+        Me.panelMapa.Controls.Add(Me.Label1)
+        Me.panelMapa.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelMapa.Location = New System.Drawing.Point(0, 0)
+        Me.panelMapa.Name = "panelMapa"
+        Me.panelMapa.Size = New System.Drawing.Size(1040, 771)
+        Me.panelMapa.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = true
+        Me.Label1.BackColor = System.Drawing.Color.Gray
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label1.Location = New System.Drawing.Point(203, 298)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(288, 39)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Cargando Mapa..."
+        '
+        'btnAgZona
+        '
+        Me.btnAgZona.BackColor = System.Drawing.Color.Silver
+        Me.btnAgZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgZona.ForeColor = System.Drawing.Color.Crimson
+        Me.btnAgZona.Location = New System.Drawing.Point(17, 3)
+        Me.btnAgZona.Name = "btnAgZona"
+        Me.btnAgZona.Size = New System.Drawing.Size(120, 38)
+        Me.btnAgZona.TabIndex = 5
+        Me.btnAgZona.Text = "Agregar Zona"
+        Me.btnAgZona.UseVisualStyleBackColor = false
+        '
+        'btnAgSubZona
+        '
+        Me.btnAgSubZona.BackColor = System.Drawing.Color.Silver
+        Me.btnAgSubZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgSubZona.ForeColor = System.Drawing.Color.Crimson
+        Me.btnAgSubZona.Location = New System.Drawing.Point(142, 3)
+        Me.btnAgSubZona.Name = "btnAgSubZona"
+        Me.btnAgSubZona.Size = New System.Drawing.Size(116, 38)
+        Me.btnAgSubZona.TabIndex = 6
+        Me.btnAgSubZona.Text = "Agregar SubZona"
+        Me.btnAgSubZona.UseVisualStyleBackColor = false
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Controls.Add(Me.GroupBox1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(1040, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(309, 771)
+        Me.Panel2.TabIndex = 7
+        '
+        'Panel3
+        '
+        Me.Panel3.AutoSize = true
+        Me.Panel3.Controls.Add(Me.btnAgZona)
+        Me.Panel3.Controls.Add(Me.btnAgSubZona)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(309, 44)
+        Me.Panel3.TabIndex = 7
         '
         'VerPatio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.panelMapa)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "VerPatio"
-        Me.Size = New System.Drawing.Size(1012, 771)
+        Me.Size = New System.Drawing.Size(1349, 771)
         Me.GroupBox1.ResumeLayout(false)
-        Me.panelMapa.ResumeLayout(false)
-        Me.panelMapa.PerformLayout
         Me.flpSubZonas.ResumeLayout(false)
         Me.Panel1.ResumeLayout(false)
         Me.Panel1.PerformLayout
+        Me.panelMapa.ResumeLayout(false)
+        Me.panelMapa.PerformLayout
+        Me.Panel2.ResumeLayout(false)
+        Me.Panel2.PerformLayout
+        Me.Panel3.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub
@@ -193,6 +224,8 @@ End Sub
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnAgZona As Button
+    Friend WithEvents btnAgSubZona As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
 End Class

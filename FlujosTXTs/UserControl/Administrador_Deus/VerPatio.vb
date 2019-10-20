@@ -5,48 +5,53 @@ Imports CefSharp.WinForms
 Imports Logica
 
 Public Class VerPatio
+    
+    Private Shared _instance As VerPatio
 
     Public Chromium As ChromiumWebBrowser
     Friend PatioId As String
 
+    Friend Direccion As String
+
+    Friend PrimeraVez As Boolean = True
+
+    Public Shared Property Instance As VerPatio
+        Get
+            If _instance Is Nothing Then
+                _instance = New VerPatio
+            End If
+
+            Return _instance
+        End Get
+        Set(value As VerPatio)
+            _instance = value
+        End Set
+    End Property
+
     Public Sub New()
         InitializeComponent
-
         '' Iniciar Chromium
         '' En otro thread para no congestionar la UI mientras carga.
         Dim thread As Thread = New Thread(AddressOf InciarChromium)
         thread.Start()
+        PrimeraVez = False
     End Sub
 
     Private Sub VerPatio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-       flpSubZonas.Controls.Clear
-        Try
-            If PatioId IsNot Nothing
-                Dim ZonasPatio As DataTable = Consultar("SELECT * FROM zonas WHERE patioid="+ PatioId)
-                If ZonasPatio IsNot Nothing
-                    If ZonasPatio.Rows.Count > 0
-                        For Each Zona As DataRow In ZonasPatio.Rows
-                            Dim SubZonas As DataTable = Consultar("SELECT * FROM subZonas  WHERE patioid="+ PatioId)
-                            If SubZonas IsNot Nothing
-                                If SubZonas.Rows.Count > 0
-                                    For Each SubZona As DataRow In SubZonas.Rows
-                                        Dim ctrlSubZona As Control = CrearControlSubZona(SubZona.Item("ZonaId"),
-                                                                                         SubZona.Item("subZonaNombre"),
-                                                                                         SubZona.Item("subZonaCapacidad"))
-                                        flpSubZonas.Controls.Add(ctrlSubZona)
-                                    Next
-                                End If
-                            End If
-                        Next
-                    End If
+        ActualizarSubZonas
+
+        If Not PrimeraVez And Chromium IsNot Nothing
+            If Chromium.IsBrowserInitialized
+                If CefSharp.Cef.IsInitialized
+                    CefSharp.Cef.Shutdown
+                    Dim Config As CefSettings = New CefSettings()
+                    'Iniciar CefSharp con las configuraciones dadas
+                    CefSharp.Cef.Initialize(Config)
+                    Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion+"/@-34.8453539,-56.0098319,14.5z/data=!4m5!3m4!1s0x959f87e117a691e3:0x223b5948614efdd0!8m2!3d-34.8379636!4d-56.0229841?hl=es-419")
+                    ActualizarSubZonas
                 End If
-
-            Else
-                MsgBox("Hubo un error al cargar las zonas del patio.")
             End If
-        Catch ex As Exception
-
-        End Try
+        End If
     End Sub
 
     Private Function CrearControlSubZona(ZonaId As String, Nombre As String, Capacidad As String) As Control
@@ -59,7 +64,7 @@ Public Class VerPatio
         Dim LabelNombre As Label = New Label
         Dim LabelCapacidad As Label = New Label
         Dim BtnElim As Button = New Button
-        Dim BtnVer As Button = New Button
+        Dim BtnMod As Button = New Button
 
         LabelId.AutoSize = True
         LabelNombre.AutoSize = True
@@ -90,24 +95,40 @@ Public Class VerPatio
         BtnElim.Text = "Eliminar"
         BtnElim.Location = New Point(6, 91)
 
-        BtnVer.Size = New Size(87, 28)
-        BtnVer.Font = fuente
-        BtnVer.ForeColor = Color.Crimson
-        BtnVer.FlatStyle = FlatStyle.Flat
-        BtnVer.Text = "Modificar"
-        BtnVer.Location = New Point(136, 91)
+        BtnMod.Size = New Size(87, 28)
+        BtnMod.Font = fuente
+        BtnMod.ForeColor = Color.Crimson
+        BtnMod.FlatStyle = FlatStyle.Flat
+        BtnMod.Text = "Modificar"
+        BtnMod.Location = New Point(136, 91)
 
         'AddHandler BtnElim.Click , Sub(s, ea) EliminarClick(s, ea, PatioId)
-        'AddHandler BtnVer.Click , Sub(s, ea) VerClick(s, ea, PatioId)
+        AddHandler BtnMod.Click , Sub(s, ea) ModClick(s, ea, Nombre)
         
         PanelContenido.Controls.Add(LabelId)
         PanelContenido.Controls.Add(LabelNombre)
         PanelContenido.Controls.Add(LabelCapacidad)
         PanelContenido.Controls.Add(BtnElim)
-        PanelContenido.Controls.Add(BtnVer)
+        PanelContenido.Controls.Add(BtnMod)
 
         Return PanelContenido
     End Function
+
+    Friend Sub ShutDown()
+        'MsgBox("closing")
+        'CefSharp.Cef.Shutdown
+    End Sub
+
+    Private Sub ModClick(s As Object, ea As EventArgs, SZnombre As String)
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim AgSubZ As AgregarSubzona = New AgregarSubzona
+        AgSubZ.PatioId = PatioId
+        AgSubZ.VP_VerPatio = Me
+        AgSubZ.Modo = 1
+        AgSubZ.SZNombre = SZnombre
+        Ventana.LoadControl(AgSubZ)
+        Ventana.ShowDialog
+    End Sub
 
     Private Delegate Sub InciarChromiumDelegate()
     Private Sub InciarChromium()
@@ -121,13 +142,13 @@ Public Class VerPatio
             CefSharp.Cef.Initialize(Config)
 
             ' Aniadir el control al panel
-            Chromium = New ChromiumWebBrowser("https://www.google.com/maps/dir/Port+of+Montevideo,+Juan+Carlos+Gómez,+11000+Montevideo/Canstatt+3052,+Montevideo/")
+            Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/place/"+Direccion+"/@-34.8453539,-56.0098319,14.5z/data=!4m5!3m4!1s0x959f87e117a691e3:0x223b5948614efdd0!8m2!3d-34.8379636!4d-56.0229841?hl=es-419")
             panelMapa.Controls.Add(Chromium)
             Chromium.Dock = DockStyle.Fill
             Chromium.BringToFront
         Catch ex As Exception
             Dim web As WebBrowser = New WebBrowser
-            web.Url = New Uri("https://www.google.com/maps/dir/Port+of+Montevideo,+Juan+Carlos+Gómez,+11000+Montevideo/Canstatt+3052,+Montevideo/")
+            web.Url = New Uri("https://www.google.com.uy/maps/place/"+Direccion+"/@-34.8453539,-56.0098319,14.5z/data=!4m5!3m4!1s0x959f87e117a691e3:0x223b5948614efdd0!8m2!3d-34.8379636!4d-56.0229841?hl=es-419")
             panelMapa.Controls.Add(web)
             web.Dock = DockStyle.Fill
             web.BringToFront
@@ -135,5 +156,57 @@ Public Class VerPatio
             Serilog.Log.Error(ex, "Error al cargar CefSharp. Cargando Webview del legado.")
         End Try
     End If
+    End Sub
+
+    Private Sub BtnAgZona_Click(sender As Object, e As EventArgs) Handles btnAgZona.Click
+        Dim result As Integer = MessageBox.Show("Deseas agregar una zona para este patio?", "Agregar Zona", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            If ZInsertar(PatioId)
+                MessageBox.Show("Zona insertada exitosamente.")
+            Else
+                MessageBox.Show("Hubo un error al insertar zona.")
+            End If
+        End If
+    End Sub
+
+    Private Sub BtnAgSubZona_Click(sender As Object, e As EventArgs) Handles btnAgSubZona.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim AgSubZ As AgregarSubzona = New AgregarSubzona
+        AgSubZ.PatioId = PatioId
+        AgSubZ.VP_VerPatio = Me
+        Ventana.LoadControl(AgSubZ)
+        Ventana.ShowDialog
+    End Sub
+
+    Friend Sub ActualizarSubZonas
+       flpSubZonas.Controls.Clear
+        Try
+            If PatioId IsNot Nothing
+                Dim ZonasPatio As DataTable = Consultar("SELECT * FROM zonas WHERE patioid="+ PatioId.ToString)
+                If ZonasPatio IsNot Nothing
+                    If ZonasPatio.Rows.Count > 0
+                        For Each Zona As DataRow In ZonasPatio.Rows
+                            Dim SubZonas As DataTable = Consultar("SELECT * FROM subZonas WHERE zonaID ="+ Zona.Item("zonaid").ToString)
+                            If SubZonas IsNot Nothing
+                                If SubZonas.Rows.Count > 0
+                                    For Each SubZona As DataRow In SubZonas.Rows
+                                        Dim ctrlSubZona As Control = CrearControlSubZona(SubZona.Item("ZonaId").ToString,
+                                                                                         SubZona.Item("subZonaNombre"),
+                                                                                         SubZona.Item("subZonaCapacidad"))
+                                        flpSubZonas.Controls.Add(ctrlSubZona)
+                                    Next
+                                End If
+                            End If
+                        Next
+                    End If
+                End If
+
+            Else
+                MsgBox("Hubo un error al cargar las zonas del patio.")
+            End If
+        Catch ex As Exception
+            MsgBox("Error al crear subzonas.")
+            Serilog.Log.Error(ex, "err..")
+        End Try
     End Sub
 End Class

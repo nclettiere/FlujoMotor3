@@ -24,7 +24,10 @@ Partial Class AgregarVehiculo
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnmod = New System.Windows.Forms.Button()
         Me.btnQuitarLote = New System.Windows.Forms.Button()
+        Me.btnremover2 = New System.Windows.Forms.Button()
+        Me.btncambiarlote = New System.Windows.Forms.Button()
         Me.VehiculoAno = New System.Windows.Forms.DateTimePicker()
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.btnExist = New System.Windows.Forms.Button()
@@ -42,9 +45,6 @@ Partial Class AgregarVehiculo
         Me.tbxVin = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblmodagr = New System.Windows.Forms.Label()
-        Me.btncambiarlote = New System.Windows.Forms.Button()
-        Me.btnremover2 = New System.Windows.Forms.Button()
-        Me.btnmod = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
         Me.SuspendLayout
@@ -90,6 +90,20 @@ Partial Class AgregarVehiculo
         Me.Panel2.Size = New System.Drawing.Size(331, 471)
         Me.Panel2.TabIndex = 0
         '
+        'btnmod
+        '
+        Me.btnmod.BackColor = System.Drawing.Color.DarkGray
+        Me.btnmod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmod.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnmod.ForeColor = System.Drawing.Color.Crimson
+        Me.btnmod.Location = New System.Drawing.Point(16, 422)
+        Me.btnmod.Name = "btnmod"
+        Me.btnmod.Size = New System.Drawing.Size(297, 35)
+        Me.btnmod.TabIndex = 28
+        Me.btnmod.Text = "Modificar"
+        Me.btnmod.UseVisualStyleBackColor = false
+        Me.btnmod.Visible = false
+        '
         'btnQuitarLote
         '
         Me.btnQuitarLote.BackColor = System.Drawing.Color.DarkGray
@@ -103,6 +117,34 @@ Partial Class AgregarVehiculo
         Me.btnQuitarLote.Text = "X Quitar X"
         Me.btnQuitarLote.UseVisualStyleBackColor = false
         Me.btnQuitarLote.Visible = false
+        '
+        'btnremover2
+        '
+        Me.btnremover2.BackColor = System.Drawing.Color.DarkGray
+        Me.btnremover2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnremover2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnremover2.ForeColor = System.Drawing.Color.Crimson
+        Me.btnremover2.Location = New System.Drawing.Point(209, 357)
+        Me.btnremover2.Name = "btnremover2"
+        Me.btnremover2.Size = New System.Drawing.Size(104, 35)
+        Me.btnremover2.TabIndex = 27
+        Me.btnremover2.Text = "X Quitar X"
+        Me.btnremover2.UseVisualStyleBackColor = false
+        Me.btnremover2.Visible = false
+        '
+        'btncambiarlote
+        '
+        Me.btncambiarlote.BackColor = System.Drawing.Color.DarkGray
+        Me.btncambiarlote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncambiarlote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btncambiarlote.ForeColor = System.Drawing.Color.Crimson
+        Me.btncambiarlote.Location = New System.Drawing.Point(99, 357)
+        Me.btncambiarlote.Name = "btncambiarlote"
+        Me.btncambiarlote.Size = New System.Drawing.Size(104, 35)
+        Me.btncambiarlote.TabIndex = 26
+        Me.btncambiarlote.Text = "Cambiar"
+        Me.btncambiarlote.UseVisualStyleBackColor = false
+        Me.btncambiarlote.Visible = false
         '
         'VehiculoAno
         '
@@ -278,48 +320,6 @@ Partial Class AgregarVehiculo
         Me.lblmodagr.Size = New System.Drawing.Size(131, 20)
         Me.lblmodagr.TabIndex = 0
         Me.lblmodagr.Text = "Agregar Vehiculo"
-        '
-        'btncambiarlote
-        '
-        Me.btncambiarlote.BackColor = System.Drawing.Color.DarkGray
-        Me.btncambiarlote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncambiarlote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btncambiarlote.ForeColor = System.Drawing.Color.Crimson
-        Me.btncambiarlote.Location = New System.Drawing.Point(99, 357)
-        Me.btncambiarlote.Name = "btncambiarlote"
-        Me.btncambiarlote.Size = New System.Drawing.Size(104, 35)
-        Me.btncambiarlote.TabIndex = 26
-        Me.btncambiarlote.Text = "Cambiar"
-        Me.btncambiarlote.UseVisualStyleBackColor = false
-        Me.btncambiarlote.Visible = false
-        '
-        'btnremover2
-        '
-        Me.btnremover2.BackColor = System.Drawing.Color.DarkGray
-        Me.btnremover2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnremover2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnremover2.ForeColor = System.Drawing.Color.Crimson
-        Me.btnremover2.Location = New System.Drawing.Point(209, 357)
-        Me.btnremover2.Name = "btnremover2"
-        Me.btnremover2.Size = New System.Drawing.Size(104, 35)
-        Me.btnremover2.TabIndex = 27
-        Me.btnremover2.Text = "X Quitar X"
-        Me.btnremover2.UseVisualStyleBackColor = false
-        Me.btnremover2.Visible = false
-        '
-        'btnmod
-        '
-        Me.btnmod.BackColor = System.Drawing.Color.DarkGray
-        Me.btnmod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmod.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnmod.ForeColor = System.Drawing.Color.Crimson
-        Me.btnmod.Location = New System.Drawing.Point(16, 422)
-        Me.btnmod.Name = "btnmod"
-        Me.btnmod.Size = New System.Drawing.Size(297, 35)
-        Me.btnmod.TabIndex = 28
-        Me.btnmod.Text = "Modificar"
-        Me.btnmod.UseVisualStyleBackColor = false
-        Me.btnmod.Visible = false
         '
         'AgregarVehiculo
         '

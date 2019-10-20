@@ -11,7 +11,7 @@ Public Class ModificarSubzona
                 Dim ContadorSubZona As Integer = SubZObtenerCountNombre(tbxNombre.Text)
                     If Not String.Equals(SubZonaNombre, tbxNombre.Text)
                         If ContadorSubZona = 0
-                            Dim Resultado As DataTable = SZUpdate(tbxNombre.Text, tbxCapacidad.Text, SubZonaNombre)
+                            'Dim Resultado As DataTable = SZUpdate(tbxNombre.Text, tbxCapacidad.Text, SubZonaNombre)
                         Else
                             MessageBox.Show("El nombre selccionado ya existe en otra subzona.")
                     End If

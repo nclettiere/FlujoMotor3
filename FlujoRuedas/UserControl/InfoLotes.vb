@@ -21,7 +21,7 @@ Public Class InfoLotes
         End If
     End Sub
 
-    Private Sub BtnIniciar_Click(sender As Object, e As EventArgs) Handles btnIniciar.Click
+    Private Sub BtnIniciar_Click(sender As Object, e As EventArgs) 
         Dim DialogoLavado As DialogResult = MessageBox.Show("Deseas iniciar el viaje para el lote: ID=" + IdSeleccionado + " Nombre=" + NombreSeleccionado + "?", "Iniciar Viaje", MessageBoxButtons.YesNo)
         If DialogoLavado = DialogResult.Yes
             LUpdateTransportista("5", IdSeleccionado)

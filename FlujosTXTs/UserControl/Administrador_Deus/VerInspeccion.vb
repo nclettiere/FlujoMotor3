@@ -3,6 +3,20 @@ Imports Logica
 
 
 Public Class VerInspeccion
+    Private Shared _instance As VerInspeccion
+
+    Public Shared Property Instance As VerInspeccion
+        Get
+            If _instance Is Nothing Then
+                _instance = New VerInspeccion()
+            End If
+            Return _instance
+        End Get
+        Set(value As VerInspeccion)
+            _instance = value
+        End Set
+    End Property
+
     Public Property FormParent As Ventana_Ver
     Private VIN As String
 
@@ -23,10 +37,6 @@ Public Class VerInspeccion
         Catch ex As Exception
 
         End Try
-    End Sub
-
-    Private Sub BtCancelar_Click(sender As Object, e As EventArgs) 
-        ''FormParent.GoToSection(1)
     End Sub
 
     Private Function DrawInspeccion(InspID As String, Numero As String, InspeccionFecha As String, Operario As String) As Control

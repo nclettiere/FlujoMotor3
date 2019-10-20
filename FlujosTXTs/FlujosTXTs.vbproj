@@ -50,26 +50,44 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>FlujosTXTs.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>FlujosTXTs.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CefSharp, Version=75.1.142.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>CefSharp\x64\CefSharp.dll</HintPath>
+    <Reference Include="CefSharp">
+      <HintPath>..\CefSharp\x64\CefSharp.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.BrowserSubprocess, Version=75.1.142.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>CefSharp\x64\CefSharp.BrowserSubprocess.exe</HintPath>
+    <Reference Include="CefSharp.BrowserSubprocess">
+      <HintPath>..\CefSharp\x64\CefSharp.BrowserSubprocess.exe</HintPath>
     </Reference>
-    <Reference Include="CefSharp.BrowserSubprocess.Core, Version=75.1.142.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>CefSharp\x64\CefSharp.BrowserSubprocess.Core.dll</HintPath>
+    <Reference Include="CefSharp.BrowserSubprocess.Core">
+      <HintPath>..\CefSharp\x64\CefSharp.BrowserSubprocess.Core.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.Core, Version=75.1.142.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>CefSharp\x64\CefSharp.Core.dll</HintPath>
+    <Reference Include="CefSharp.Core">
+      <HintPath>..\CefSharp\x64\CefSharp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.WinForms, Version=75.1.142.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>CefSharp\x64\CefSharp.WinForms.dll</HintPath>
+    <Reference Include="CefSharp.WinForms">
+      <HintPath>..\CefSharp\x64\CefSharp.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="MessagingToolkit.QRCode, Version=1.0.3541.23206, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -157,6 +175,12 @@
     <Compile Include="UserControl\Administrador_Deus\AgregarPatio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarSubzona.Designer.vb">
+      <DependentUpon>AgregarSubzona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AgregarSubzona.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Administrador_Deus\AgregarUsuario.Designer.vb">
       <DependentUpon>AgregarUsuario.vb</DependentUpon>
     </Compile>
@@ -167,6 +191,12 @@
       <DependentUpon>AgregarVehiculo.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\AgregarVehiculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AparcarVehiculo.Designer.vb">
+      <DependentUpon>AparcarVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\AparcarVehiculo.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\IniciarCamara.Designer.vb">
@@ -193,12 +223,6 @@
     <Compile Include="UserControl\Administrador_Deus\ManageUsuarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\Administrador_Deus\ModificarSubzona.Designer.vb">
-      <DependentUpon>ModificarSubzona.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\Administrador_Deus\ModificarSubzona.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UserControl\Administrador_Deus\PatiosZonas.Designer.vb">
       <DependentUpon>PatiosZonas.vb</DependentUpon>
     </Compile>
@@ -209,6 +233,12 @@
       <DependentUpon>SeleccionarLote.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\SeleccionarLote.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\SeleccionarTransportista.Designer.vb">
+      <DependentUpon>SeleccionarTransportista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\SeleccionarTransportista.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\VehiculosLotes.Designer.vb">
@@ -223,6 +253,12 @@
     <Compile Include="UserControl\Administrador_Deus\VerDanios.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerFoto.Designer.vb">
+      <DependentUpon>VerFoto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerFoto.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Administrador_Deus\VerInspeccion.Designer.vb">
       <DependentUpon>VerInspeccion.vb</DependentUpon>
     </Compile>
@@ -233,12 +269,6 @@
       <DependentUpon>VerPatio.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\VerPatio.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\Administrador_Deus\VerZonas.Designer.vb">
-      <DependentUpon>VerZonas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\Administrador_Deus\VerZonas.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ventanitas\Menu.Designer.vb">
@@ -270,11 +300,17 @@
     <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarPatio.resx">
       <DependentUpon>AgregarPatio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarSubzona.resx">
+      <DependentUpon>AgregarSubzona.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\AgregarVehiculo.resx">
       <DependentUpon>AgregarVehiculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\AparcarVehiculo.resx">
+      <DependentUpon>AparcarVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\IniciarCamara.resx">
       <DependentUpon>IniciarCamara.vb</DependentUpon>
@@ -288,14 +324,14 @@
     <EmbeddedResource Include="UserControl\Administrador_Deus\ManageUsuarios.resx">
       <DependentUpon>ManageUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\Administrador_Deus\ModificarSubzona.resx">
-      <DependentUpon>ModificarSubzona.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\PatiosZonas.resx">
       <DependentUpon>PatiosZonas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\SeleccionarLote.resx">
       <DependentUpon>SeleccionarLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\SeleccionarTransportista.resx">
+      <DependentUpon>SeleccionarTransportista.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\VehiculosLotes.resx">
       <DependentUpon>VehiculosLotes.vb</DependentUpon>
@@ -303,14 +339,14 @@
     <EmbeddedResource Include="UserControl\Administrador_Deus\VerDanios.resx">
       <DependentUpon>VerDanios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\VerFoto.resx">
+      <DependentUpon>VerFoto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\VerInspeccion.resx">
       <DependentUpon>VerInspeccion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\VerPatio.resx">
       <DependentUpon>VerPatio.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\Administrador_Deus\VerZonas.resx">
-      <DependentUpon>VerZonas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
@@ -320,86 +356,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CefSharp\x64\cef.pak" />
-    <None Include="CefSharp\x64\cef_100_percent.pak" />
-    <None Include="CefSharp\x64\cef_200_percent.pak" />
-    <None Include="CefSharp\x64\cef_extensions.pak" />
-    <None Include="CefSharp\x64\debug.log" />
-    <None Include="CefSharp\x64\devtools_resources.pak" />
-    <None Include="CefSharp\x64\icudtl.dat" />
-    <None Include="CefSharp\x64\locales\am.pak" />
-    <None Include="CefSharp\x64\locales\ar.pak" />
-    <None Include="CefSharp\x64\locales\bg.pak" />
-    <None Include="CefSharp\x64\locales\bn.pak" />
-    <None Include="CefSharp\x64\locales\ca.pak" />
-    <None Include="CefSharp\x64\locales\cs.pak" />
-    <None Include="CefSharp\x64\locales\da.pak" />
-    <None Include="CefSharp\x64\locales\de.pak" />
-    <None Include="CefSharp\x64\locales\el.pak" />
-    <None Include="CefSharp\x64\locales\en-GB.pak" />
-    <None Include="CefSharp\x64\locales\en-US.pak" />
-    <None Include="CefSharp\x64\locales\es-419.pak" />
-    <None Include="CefSharp\x64\locales\es.pak" />
-    <None Include="CefSharp\x64\locales\et.pak" />
-    <None Include="CefSharp\x64\locales\fa.pak" />
-    <None Include="CefSharp\x64\locales\fi.pak" />
-    <None Include="CefSharp\x64\locales\fil.pak" />
-    <None Include="CefSharp\x64\locales\fr.pak" />
-    <None Include="CefSharp\x64\locales\gu.pak" />
-    <None Include="CefSharp\x64\locales\he.pak" />
-    <None Include="CefSharp\x64\locales\hi.pak" />
-    <None Include="CefSharp\x64\locales\hr.pak" />
-    <None Include="CefSharp\x64\locales\hu.pak" />
-    <None Include="CefSharp\x64\locales\id.pak" />
-    <None Include="CefSharp\x64\locales\it.pak" />
-    <None Include="CefSharp\x64\locales\ja.pak" />
-    <None Include="CefSharp\x64\locales\kn.pak" />
-    <None Include="CefSharp\x64\locales\ko.pak" />
-    <None Include="CefSharp\x64\locales\lt.pak" />
-    <None Include="CefSharp\x64\locales\lv.pak" />
-    <None Include="CefSharp\x64\locales\ml.pak" />
-    <None Include="CefSharp\x64\locales\mr.pak" />
-    <None Include="CefSharp\x64\locales\ms.pak" />
-    <None Include="CefSharp\x64\locales\nb.pak" />
-    <None Include="CefSharp\x64\locales\nl.pak" />
-    <None Include="CefSharp\x64\locales\pl.pak" />
-    <None Include="CefSharp\x64\locales\pt-BR.pak" />
-    <None Include="CefSharp\x64\locales\pt-PT.pak" />
-    <None Include="CefSharp\x64\locales\ro.pak" />
-    <None Include="CefSharp\x64\locales\ru.pak" />
-    <None Include="CefSharp\x64\locales\sk.pak" />
-    <None Include="CefSharp\x64\locales\sl.pak" />
-    <None Include="CefSharp\x64\locales\sr.pak" />
-    <None Include="CefSharp\x64\locales\sv.pak" />
-    <None Include="CefSharp\x64\locales\sw.pak" />
-    <None Include="CefSharp\x64\locales\ta.pak" />
-    <None Include="CefSharp\x64\locales\te.pak" />
-    <None Include="CefSharp\x64\locales\th.pak" />
-    <None Include="CefSharp\x64\locales\tr.pak" />
-    <None Include="CefSharp\x64\locales\uk.pak" />
-    <None Include="CefSharp\x64\locales\vi.pak" />
-    <None Include="CefSharp\x64\locales\zh-CN.pak" />
-    <None Include="CefSharp\x64\locales\zh-TW.pak" />
-    <None Include="CefSharp\x64\natives_blob.bin" />
-    <None Include="CefSharp\x64\snapshot_blob.bin" />
-    <None Include="CefSharp\x64\v8_context_snapshot.bin" />
-    <None Include="Firefox\omni.ja" />
-    <None Include="Firefox\Profile\cert9.db" />
-    <None Include="Firefox\Profile\cookies.sqlite" />
-    <None Include="Firefox\Profile\cookies.sqlite-shm" />
-    <None Include="Firefox\Profile\cookies.sqlite-wal" />
-    <None Include="Firefox\Profile\favicons.sqlite" />
-    <None Include="Firefox\Profile\favicons.sqlite-shm" />
-    <None Include="Firefox\Profile\favicons.sqlite-wal" />
-    <None Include="Firefox\Profile\key4.db" />
-    <None Include="Firefox\Profile\permissions.sqlite" />
-    <None Include="Firefox\Profile\places.sqlite" />
-    <None Include="Firefox\Profile\places.sqlite-shm" />
-    <None Include="Firefox\Profile\places.sqlite-wal" />
-    <None Include="Firefox\Profile\startupCache\startupCache.8.little" />
-    <None Include="Firefox\Profile\webappsstore.sqlite" />
-    <None Include="Firefox\Profile\webappsstore.sqlite-shm" />
-    <None Include="Firefox\Profile\webappsstore.sqlite-wal" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -441,54 +397,6 @@
     <None Include="Resources\logoutssss.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CefSharp\x64\CefSharp.BrowserSubprocess.Core.dll" />
-    <Content Include="CefSharp\x64\CefSharp.BrowserSubprocess.Core.pdb" />
-    <Content Include="CefSharp\x64\CefSharp.BrowserSubprocess.exe" />
-    <Content Include="CefSharp\x64\CefSharp.BrowserSubprocess.pdb" />
-    <Content Include="CefSharp\x64\CefSharp.Core.dll" />
-    <Content Include="CefSharp\x64\CefSharp.Core.pdb" />
-    <Content Include="CefSharp\x64\CefSharp.Core.xml" />
-    <Content Include="CefSharp\x64\CefSharp.dll" />
-    <Content Include="CefSharp\x64\CefSharp.pdb" />
-    <Content Include="CefSharp\x64\CefSharp.WinForms.dll" />
-    <Content Include="CefSharp\x64\CefSharp.WinForms.pdb" />
-    <Content Include="CefSharp\x64\CefSharp.WinForms.XML" />
-    <Content Include="CefSharp\x64\CefSharp.XML" />
-    <Content Include="CefSharp\x64\chrome_elf.dll" />
-    <Content Include="CefSharp\x64\d3dcompiler_47.dll" />
-    <Content Include="CefSharp\x64\libcef.dll" />
-    <Content Include="CefSharp\x64\libEGL.dll" />
-    <Content Include="CefSharp\x64\libGLESv2.dll" />
-    <Content Include="CefSharp\x64\swiftshader\libEGL.dll" />
-    <Content Include="CefSharp\x64\swiftshader\libGLESv2.dll" />
-    <Content Include="CefSharp\x86\CefSharp.BrowserSubprocess.Core.dll" />
-    <Content Include="CefSharp\x86\CefSharp.BrowserSubprocess.exe" />
-    <Content Include="CefSharp\x86\CefSharp.Core.dll" />
-    <Content Include="CefSharp\x86\CefSharp.Core.xml" />
-    <Content Include="CefSharp\x86\CefSharp.dll" />
-    <Content Include="CefSharp\x86\CefSharp.WinForms.dll" />
-    <Content Include="CefSharp\x86\CefSharp.WinForms.XML" />
-    <Content Include="CefSharp\x86\CefSharp.XML" />
-    <Content Include="Firefox\AccessibleHandler.dll" />
-    <Content Include="Firefox\AccessibleMarshal.dll" />
-    <Content Include="Firefox\d3dcompiler_47.dll" />
-    <Content Include="Firefox\freebl3.dll" />
-    <Content Include="Firefox\IA2Marshal.dll" />
-    <Content Include="Firefox\lgpllibs.dll" />
-    <Content Include="Firefox\libEGL.dll" />
-    <Content Include="Firefox\libGLESv2.dll" />
-    <Content Include="Firefox\mozavcodec.dll" />
-    <Content Include="Firefox\mozavutil.dll" />
-    <Content Include="Firefox\mozglue.dll" />
-    <Content Include="Firefox\nss3.dll" />
-    <Content Include="Firefox\nssckbi.dll" />
-    <Content Include="Firefox\nssdbm3.dll" />
-    <Content Include="Firefox\plugin-container.exe" />
-    <Content Include="Firefox\plugin-hang-ui.exe" />
-    <Content Include="Firefox\Profile\pkcs11.txt" />
-    <Content Include="Firefox\qipcap64.dll" />
-    <Content Include="Firefox\softokn3.dll" />
-    <Content Include="Firefox\xul.dll" />
     <Content Include="MessagingToolkit.QRCode.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -539,11 +447,9 @@
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Firefox\Profile\safebrowsing\google4\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)CefSharp\x64" "$(ProjectDir)$(OutDir)" /Y /I</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(SolutionDir)CefSharp\x64" "$(ProjectDir)$(OutDir)" /Y /I</PostBuildEvent>
   </PropertyGroup>
 </Project>

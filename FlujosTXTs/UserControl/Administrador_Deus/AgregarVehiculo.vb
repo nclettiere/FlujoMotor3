@@ -15,7 +15,7 @@ Public Class AgregarVehiculo
     Private Patio As String
 
 
-    Private Modo As Integer = 0
+    Friend Loteado As Boolean = False
 
     Friend UC_VehiculosLotes As VehiculosLotes
 
@@ -39,13 +39,17 @@ Public Class AgregarVehiculo
                    If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, ObtenerOpId)
                         IInsertar(VIN.ToUpper, ObtenerOpId)
                         MsgBox("Vehiculo Insertado Exitosamente.")
-                        UC_VehiculosLotes.ActualizarVehiculos
+                        If Not Loteado
+                            UC_VehiculosLotes.ActualizarVehiculos
+                        Else
+                            UC_VehiculosLotes.ActualizarLV
+                        End If
                         ParentForm.Close
                    End If
                 ElseIf PreLote
                     If LInsertar(Desc, Nombre, OpId.ToString, Patio)
                         Me.LoteId = (Consultar("SELECT MAX(loteid) FROM lotes").Rows(0).Item(0)).ToString
-                        If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, 1)
+                        If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, ObtenerOpId)
                             IInsertar(VIN.ToUpper, ObtenerOpId)
                             MsgBox("Vehiculo y Lote Insertados Exitosamente.")
                             UC_VehiculosLotes.ActualizarVehiculos
@@ -57,7 +61,7 @@ Public Class AgregarVehiculo
                         MsgBox("No se pudo insertar lote.")
                     End If
                 Else
-                    If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, 1)
+                    If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, ObtenerOpId)
                         IInsertar(VIN.ToUpper, ObtenerOpId)
                         MsgBox("Vehiculo Insertado Exitosamente.")
                         UC_VehiculosLotes.ActualizarVehiculos
@@ -121,6 +125,16 @@ Public Class AgregarVehiculo
         VehiculoAno.CustomFormat = "yyyy"
         VehiculoAno.ShowUpDown = True
         cbxTipo.SelectedIndex = 0
+
+        If Loteado
+            btnQuitarLote.Visible = False
+            btnremover2.Visible = False
+            btnExist.Visible = False
+            btncambiarlote.Visible = False
+            btnLnew.Visible = False
+            lblLotedesc.Text = "Lote Seleccionado: ID ="+ LoteId
+            CargarLoteNuevo(LoteId, False)
+        End If
     End Sub
 
     Private Sub BtnLnew_Click(sender As Object, e As EventArgs) Handles btnLnew.Click
@@ -134,8 +148,10 @@ Public Class AgregarVehiculo
     Friend Sub CargarLoteNuevo(LoteId As String, PreLote As Boolean)
         LoteIngresado = True
         Me.LoteId = LoteId
-        btnQuitarLote.Visible = True
-        Me.PreLote = false
+        If Not Loteado
+            btnQuitarLote.Visible = True
+        End If
+        Me.PreLote = False
     End Sub
 
     Friend Sub CargarLoteNuevo(LoteId As String, PreLote As Boolean, Desc As String, Nombre As String, OpId As Integer, Patio As String)
@@ -180,7 +196,6 @@ Public Class AgregarVehiculo
     End Sub
 
     Friend Sub CargarModificacion(VIN As String)
-        Modo = 1
         btnmod.Visible = True
         lblmodagr.Text = "Modificar Vehiculo"
         tbxVin.Enabled = False

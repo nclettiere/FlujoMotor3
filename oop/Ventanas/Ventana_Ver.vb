@@ -29,15 +29,6 @@ Public Class Ventana_Ver
         SelecVehiculo.AutoSize = True
     End Sub
 
-    Friend Sub LoadControl(vin As String)
-        Dim Selection = New VerPosicion
-        Selection.CargarDatos(VIN)
-        Me.ClientSize = Selection.Size
-        mainContent.Controls.Add(Selection)
-        Selection.Dock = DockStyle.Fill
-        Selection.BringToFront()
-    End Sub
-
     Friend Sub LoadControl(modSubZona As ModificarSubzona)
         Me.ClientSize = modSubZona.Size
         mainContent.Controls.Add(modSubZona)
@@ -120,9 +111,6 @@ Public Class Ventana_Ver
             Case 1
                 Selection = VerVehiculo.Instance
                 Me.ClientSize = VerVehiculo.Instance.Size
-            Case 2
-                Selection = VerPosicion.Instance
-                Me.ClientSize = VerPosicion.Instance.Size
             Case Else
                 Selection = VerInspeccion.Instance
                 Me.ClientSize = VerInspeccion.Instance.Size
@@ -147,10 +135,6 @@ Public Class Ventana_Ver
                 Selection.Populate(VIN)
                 Selection.AutoSize = True
                 Me.ClientSize = Selection.Size
-            Case 2
-                Selection = New VerPosicion
-                DirectCast(Selection, VerPosicion).CargarDatos(VIN)
-                Me.ClientSize = DirectCast(Selection, VerPosicion).Size
             Case 3
                 Dim AgrVehiculo = New AgregarVehiculo
                 AgrVehiculo.VINmodificacion = VIN

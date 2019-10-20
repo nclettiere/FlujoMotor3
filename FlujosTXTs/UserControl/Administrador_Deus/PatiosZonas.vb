@@ -59,7 +59,7 @@ Public Class PatiosZonas
         BtnVer.Location = New Point(165, 120)
 
         AddHandler BtnElim.Click , Sub(s, ea) EliminarClick(s, ea, PatioId)
-        AddHandler BtnVer.Click , Sub(s, ea) VerClick(s, ea, PatioId)
+        AddHandler BtnVer.Click , Sub(s, ea) VerClick(s, ea, PatioId, Direccion)
 
         PanelContenido.Controls.Add(LabelId)
         PanelContenido.Controls.Add(LabelNombre)
@@ -78,10 +78,12 @@ Public Class PatiosZonas
         End If
     End Sub
 
-    Private Sub VerClick(s As Object, ea As EventArgs, PatioId As String)
+    Private Sub VerClick(s As Object, ea As EventArgs, PatioId As String, Direccion As String)
         Dim Ventana As Ventana_Ver = New Ventana_Ver
-        Dim VerPt As VerPatio = New VerPatio
+        Dim VerPt As VerPatio = VerPatio.Instance
         VerPt.PatioId = PatioId
+        Dim dir As String = Direccion.Replace(" ", "+")
+        VerPt.Direccion = dir
         Ventana.LoadControl(VerPt)
         Ventana.ShowDialog
     End Sub

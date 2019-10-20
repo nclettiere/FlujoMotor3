@@ -254,12 +254,6 @@
     <Compile Include="UserControls\VerPatios.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\VerPosicion.Designer.vb">
-      <DependentUpon>VerPosicion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\VerPosicion.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UserControls\VerFoto.Designer.vb">
       <DependentUpon>VerFoto.vb</DependentUpon>
     </Compile>
@@ -424,9 +418,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VerPatios.resx">
       <DependentUpon>VerPatios.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\VerPosicion.resx">
-      <DependentUpon>VerPosicion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VerFoto.resx">
       <DependentUpon>VerFoto.vb</DependentUpon>

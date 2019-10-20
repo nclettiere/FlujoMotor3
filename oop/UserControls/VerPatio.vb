@@ -25,14 +25,7 @@ Public Class VerPatio
     Public Property VinSeleccionado As String
 
     Private Sub BtnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
-        Try
-            Dim VentanaVer = New Ventana_Ver()
-            Dim vin = DataGridViewVehiculos.SelectedItem.SubItems.Item(0).Text
-            VentanaVer.LoadControl(vin)
-            VentanaVer.ShowDialog()
-        Catch ex As Exception
-            Serilog.Log.Error(ex, "boi")
-        End Try
+
     End Sub
 
     Private Sub OnVerPatioLoad(sender As Object, e As EventArgs) Handles MyBase.Load

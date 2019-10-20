@@ -17,6 +17,8 @@ Public Class MenuPrincipal
     End Property
 
     Private Sub OnMPLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim infoL = New InfoLotes
+        infoL.Dock = DockStyle.Fill
         pnCOntenedor.Controls.Add(New InfoLotes)
         btViajes.Font = New Font(btViajes.Font.FontFamily, 14)
         piBoPatio.Size = New Size(56, 30)

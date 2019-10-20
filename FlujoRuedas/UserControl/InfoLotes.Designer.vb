@@ -28,8 +28,6 @@ Partial Class InfoLotes
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
-        Me.btnIniciar = New System.Windows.Forms.Button()
-        Me.btInfoVehiculo = New System.Windows.Forms.Button()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
         Me.btBuscar = New System.Windows.Forms.Button()
@@ -48,20 +46,21 @@ Partial Class InfoLotes
         Me.Panel1.AutoSize = true
         Me.Panel1.Controls.Add(Me.TabControl1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(5, 5)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(927, 611)
+        Me.Panel1.Size = New System.Drawing.Size(937, 621)
         Me.Panel1.TabIndex = 1
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.lotesito)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Font = New System.Drawing.Font("Calibri", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.TabControl1.ItemSize = New System.Drawing.Size(70, 18)
-        Me.TabControl1.Location = New System.Drawing.Point(3, 3)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(924, 605)
+        Me.TabControl1.Size = New System.Drawing.Size(937, 621)
         Me.TabControl1.TabIndex = 0
         '
         'lotesito
@@ -74,7 +73,7 @@ Partial Class InfoLotes
         Me.lotesito.Location = New System.Drawing.Point(4, 22)
         Me.lotesito.Name = "lotesito"
         Me.lotesito.Padding = New System.Windows.Forms.Padding(3)
-        Me.lotesito.Size = New System.Drawing.Size(916, 579)
+        Me.lotesito.Size = New System.Drawing.Size(929, 595)
         Me.lotesito.TabIndex = 0
         Me.lotesito.Text = "LOTES"
         '
@@ -92,7 +91,7 @@ Partial Class InfoLotes
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.39093!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.04363!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.56544!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(910, 573)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(923, 589)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'TableLayoutPanel2
@@ -103,15 +102,13 @@ Partial Class InfoLotes
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btActualizarVehiculo, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnIniciar, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btInfoVehiculo, 1, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(391, 504)
+        Me.TableLayoutPanel2.Controls.Add(Me.btActualizarVehiculo, 2, 0)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(471, 518)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.Padding = New System.Windows.Forms.Padding(30, 5, 30, 5)
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(516, 66)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(449, 66)
         Me.TableLayoutPanel2.TabIndex = 2
         '
         'btActualizarVehiculo
@@ -123,7 +120,7 @@ Partial Class InfoLotes
         Me.btActualizarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btActualizarVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btActualizarVehiculo.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btActualizarVehiculo.Location = New System.Drawing.Point(186, 8)
+        Me.btActualizarVehiculo.Location = New System.Drawing.Point(291, 8)
         Me.btActualizarVehiculo.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btActualizarVehiculo.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btActualizarVehiculo.Name = "btActualizarVehiculo"
@@ -131,42 +128,6 @@ Partial Class InfoLotes
         Me.btActualizarVehiculo.TabIndex = 2
         Me.btActualizarVehiculo.Text = "Actualizar"
         Me.btActualizarVehiculo.UseVisualStyleBackColor = false
-        '
-        'btnIniciar
-        '
-        Me.btnIniciar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnIniciar.BackColor = System.Drawing.Color.DimGray
-        Me.btnIniciar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnIniciar.FlatAppearance.BorderSize = 0
-        Me.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIniciar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnIniciar.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btnIniciar.Location = New System.Drawing.Point(34, 8)
-        Me.btnIniciar.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnIniciar.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btnIniciar.Name = "btnIniciar"
-        Me.btnIniciar.Size = New System.Drawing.Size(143, 53)
-        Me.btnIniciar.TabIndex = 0
-        Me.btnIniciar.Text = "Iniciar Viaje"
-        Me.btnIniciar.UseVisualStyleBackColor = false
-        '
-        'btInfoVehiculo
-        '
-        Me.btInfoVehiculo.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btInfoVehiculo.BackColor = System.Drawing.Color.DimGray
-        Me.btInfoVehiculo.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btInfoVehiculo.FlatAppearance.BorderSize = 0
-        Me.btInfoVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btInfoVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btInfoVehiculo.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btInfoVehiculo.Location = New System.Drawing.Point(338, 8)
-        Me.btInfoVehiculo.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btInfoVehiculo.MinimumSize = New System.Drawing.Size(143, 53)
-        Me.btInfoVehiculo.Name = "btInfoVehiculo"
-        Me.btInfoVehiculo.Size = New System.Drawing.Size(143, 53)
-        Me.btInfoVehiculo.TabIndex = 1
-        Me.btInfoVehiculo.Text = "Informacion"
-        Me.btInfoVehiculo.UseVisualStyleBackColor = false
         '
         'TableLayoutPanel3
         '
@@ -182,7 +143,7 @@ Partial Class InfoLotes
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(904, 65)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(917, 66)
         Me.TableLayoutPanel3.TabIndex = 3
         '
         'tbxBuscarVin
@@ -193,7 +154,7 @@ Partial Class InfoLotes
         Me.tbxBuscarVin.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbxBuscarVin.Location = New System.Drawing.Point(3, 19)
         Me.tbxBuscarVin.Name = "tbxBuscarVin"
-        Me.tbxBuscarVin.Size = New System.Drawing.Size(700, 27)
+        Me.tbxBuscarVin.Size = New System.Drawing.Size(710, 27)
         Me.tbxBuscarVin.TabIndex = 3
         Me.tbxBuscarVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -206,7 +167,7 @@ Partial Class InfoLotes
         Me.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btBuscar.Location = New System.Drawing.Point(733, 12)
+        Me.btBuscar.Location = New System.Drawing.Point(745, 13)
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(143, 40)
         Me.btBuscar.TabIndex = 2
@@ -222,14 +183,14 @@ Partial Class InfoLotes
         Me.DataGridViewLotes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewLotes.EnableHeadersVisualStyles = false
         Me.DataGridViewLotes.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridViewLotes.Location = New System.Drawing.Point(3, 74)
+        Me.DataGridViewLotes.Location = New System.Drawing.Point(3, 75)
         Me.DataGridViewLotes.MultiSelect = false
         Me.DataGridViewLotes.Name = "DataGridViewLotes"
         Me.DataGridViewLotes.ReadOnly = true
         Me.DataGridViewLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewLotes.ShowCellToolTips = false
         Me.DataGridViewLotes.ShowEditingIcon = false
-        Me.DataGridViewLotes.Size = New System.Drawing.Size(904, 424)
+        Me.DataGridViewLotes.Size = New System.Drawing.Size(917, 436)
         Me.DataGridViewLotes.TabIndex = 4
         '
         'InfoLotes
@@ -238,8 +199,8 @@ Partial Class InfoLotes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "InfoLotes"
-        Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(937, 621)
         Me.Panel1.ResumeLayout(false)
         Me.TabControl1.ResumeLayout(false)
@@ -260,8 +221,6 @@ End Sub
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents btActualizarVehiculo As Button
-    Friend WithEvents btnIniciar As Button
-    Friend WithEvents btInfoVehiculo As Button
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents tbxBuscarVin As TextBox
     Friend WithEvents btBuscar As Button

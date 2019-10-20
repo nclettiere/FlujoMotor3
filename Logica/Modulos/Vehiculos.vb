@@ -43,6 +43,33 @@ Public Module Vehiculos
         Cerrar
     End Function
 
+    Public Function VEstaEnPatio(VIN As String) As Boolean
+        Conectar
+        Try
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT COUNT(*) FROM vehiculos A LEFT JOIN lotes B ON A.loteid = B.loteid WHERE A.vehiculofechaentrega IS NULL AND B.lotefechallegada IS NOT NULL AND B.lotefechasalida IS NOT NULL AND A.vehiculovin='"+VIN+"'", DBConexion)
+        adaptador.Fill(tabla)
+
+        If tabla IsNot Nothing
+                If tabla.Rows.Count > 0
+                    If tabla.Rows(0).Item(0) > 0
+                        Return True
+                    Else 
+                        Return False
+                    End If
+                Else 
+                    Return False
+                End If
+        Else
+            Return False
+        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+        Cerrar
+    End Function
+
     Public Function VObtenerAllPatio() As DataTable
         Conectar
         Dim tabla As New DataTable

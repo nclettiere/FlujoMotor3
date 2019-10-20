@@ -32,26 +32,7 @@ Public Class SeleccionarVehiculo
     End Property
 
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
-        Dim Columna As Integer
-        Dim Fila As Integer
-        If Not String.IsNullOrWhiteSpace(VinSeleccionado)
-            If Not String.IsNullOrWhiteSpace(tbxColumna.Text)
-                If Integer.TryParse(tbxColumna.Text, Columna)
-                    If Not String.IsNullOrWhiteSpace(tbxFila.Text)
-                        If Integer.TryParse(tbxFila.Text, Fila)
-                            Try
-                                Dim VehiculosAparcados = VSZInsertar(VinSeleccionado, SubzonaNombre, ZonaId, Columna.ToString, Fila.ToString)
-                                MessageBox.Show("Vehiculo agregado en subzona correctamente.")
-                                ParentForm.Close()
-                            Catch ex As Exception
-                                Serilog.Log.Error(ex, "Error al insertarvehiculo en subzona.")
-                            End Try
-                             
-                        End If
-                    End If
-                End If
-            End If
-        End If
+      
     End Sub
 
     Private Sub OnSelecVecloLoad(sender As Object, e As EventArgs) Handles MyBase.Load

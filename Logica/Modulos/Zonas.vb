@@ -59,29 +59,84 @@ Public Module Zonas
 
     Public Function SZObtenerIdTable(ZonaId As String) As DataTable
         Conectar()
-        Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("SELECT * FROM subzonas WHERE zonaid='"+ ZonaId +"'", DBConexion)
-        adaptador.Fill(tabla)
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT * FROM subzonas WHERE zonaid="+ ZonaId, DBConexion)
+            adaptador.Fill(tabla)
 
-        If VerificarTabla(tabla)
-            Return tabla
-        Else
+            If VerificarTabla(tabla)
+                Return tabla
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
             Return Nothing
-        End If
+        End Try
         Cerrar
     End Function
 
-    Public Function VSZInsertar(VIN As String, SubZonaNombre As String, zonaID As String, Columna As String, Fila As String) As DataTable
+    Public Function VSZInsertar(VIN As String, SubZonaNombre As String, zonaID As String, Columna As String, Fila As String, OpId As String) As Boolean
         Conectar()
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("INSERT INTO vehiculosubzona (vehiculoVIN, subZonaNombre, zonaID, columna, fila, empleadoid) VALUES ('"+ VIN +"', '"+ SubZonaNombre +"', "+ ZonaId +", "+ Columna.ToString +", "+ Fila.ToString +", "+OpId+")", DBConexion)
+            adaptador.Fill(tabla)
+
+            Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+            Return False
+        End Try
+
+        Cerrar
+    End Function
+
+    Public Function VSZUpdate(VIN As String, SubZonaNombre As String, zonaID As String, Columna As String, Fila As String, OpId As String) As Boolean
+        Conectar()
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("UPDATE vehiculosubzona SET vehiculoVIN = '"+ VIN +"', subZonaNombre = '"+ SubZonaNombre +"', zonaID = "+ ZonaId +", columna = "+ Columna.ToString +", fila = "+ Fila.ToString +", empleadoid = "+OpId, DBConexion)
+            adaptador.Fill(tabla)
+
+            Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+            Return False
+        End Try
+
+        Cerrar
+    End Function
+
+    Public Function ZInsertar(PatioId As String) As Boolean
+        Conectar()
+        Try
+
         Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("INSERT INTO vehiculosubzona (vehiculoVIN, subZonaNombre, zonaID, columna, fila) VALUES ('"+ VIN +"', '"+ SubZonaNombre +"', "+ ZonaId +", "+ Columna.ToString +", "+ Fila.ToString +")", DBConexion)
+        Dim adaptador As New OdbcDataAdapter("INSERT INTO Zonas (patioid) VALUES ("+ PatioId +")", DBConexion)
         adaptador.Fill(tabla)
 
-        If VerificarTabla(tabla)
-            Return tabla
-        Else
-            Return Nothing
-        End If
+        Return True
+
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err...")
+            Return False
+        End Try
+        Cerrar
+    End Function
+
+    Public Function SZInsertar(zonaID  As String, subZonaNombre   As String, subZonaCapacidad   As String) As Boolean
+        Conectar()
+        Try
+
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("INSERT INTO SubZonas VALUES ("+ zonaID +", '"+subZonaNombre+"',"+ subZonaCapacidad +")", DBConexion)
+        adaptador.Fill(tabla)
+
+        Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err...")
+            Return False
+        End Try
         Cerrar
     End Function
 
@@ -161,17 +216,17 @@ Public Module Zonas
         Cerrar
     End Function
 
-    Public Function SZUpdate(SZNombre As String, SZCapacidad As String, SZModNombre As String) As DataTable
+    Public Function SZUpdate(SZNombre As String, SZCapacidad As String, SZModNombre As String, ZonaId As String) As Boolean
         Conectar()
-        Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("UPDATE subzonas SET subzonanombre ='" + SZNombre + "', subzonacapacidad = " + SZCapacidad + " WHERE subzonanombre='" + SZModNombre + "';", DBConexion)
-        adaptador.Fill(tabla)
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("UPDATE subzonas SET subzonanombre ='" + SZNombre + "', subzonacapacidad = " + SZCapacidad + ", zonaid = "+ZonaId+" WHERE subzonanombre='" + SZModNombre + "';", DBConexion)
+            adaptador.Fill(tabla)
 
-        If VerificarTabla(tabla)
-            Return tabla
-        Else
-            Return Nothing
-        End If
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
         Cerrar
     End Function
 
@@ -221,6 +276,20 @@ Public Module Zonas
 
         If VerificarTabla(tabla)
             Return tabla.Rows(0)
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
+    Public Function ZObtener(PatioID As String) As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM zonas WHERE patioid="+ PatioID, DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
         Else
             Return Nothing
         End If

@@ -24,6 +24,20 @@ Public Module Empleados
         Cerrar
     End Function
 
+    Public Function ObtenerOpPatios As DataTable
+        Conectar()
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM operariopatios", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
     Public Function UObtenerAll() As DataTable
         Conectar()
         Dim tabla As New DataTable

@@ -30,4 +30,8 @@ Public Class MainWindow
             Menu.BringToFront()
         End If
     End Sub
+
+    Private Sub MainWindow_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        CefSharp.Cef.Shutdown
+    End Sub
 End Class

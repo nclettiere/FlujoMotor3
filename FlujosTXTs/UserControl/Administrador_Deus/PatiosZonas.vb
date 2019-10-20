@@ -81,6 +81,7 @@ Public Class PatiosZonas
     Private Sub VerClick(s As Object, ea As EventArgs, PatioId As String)
         Dim Ventana As Ventana_Ver = New Ventana_Ver
         Dim VerPt As VerPatio = New VerPatio
+        VerPt.PatioId = PatioId
         Ventana.LoadControl(VerPt)
         Ventana.ShowDialog
     End Sub

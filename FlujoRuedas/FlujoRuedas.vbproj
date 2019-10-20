@@ -49,6 +49,25 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CefSharp">
+      <HintPath>CefSharp\x64\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.BrowserSubprocess">
+      <HintPath>CefSharp\x64\CefSharp.BrowserSubprocess.exe</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.BrowserSubprocess.Core">
+      <HintPath>CefSharp\x64\CefSharp.BrowserSubprocess.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core">
+      <HintPath>CefSharp\x64\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms">
+      <HintPath>..\FlujosTXTs\CefSharp\x64\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView, Version=2.9.1.31849, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FlujosTXTs\ObjectListView.dll</HintPath>
+    </Reference>
     <Reference Include="Serilog">
       <HintPath>.\Serilog.dll</HintPath>
     </Reference>
@@ -119,12 +138,6 @@
     <Compile Include="UserControl\InfoLotes.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\IniciarViaje.Designer.vb">
-      <DependentUpon>IniciarViaje.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\IniciarViaje.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UserControl\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -147,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\InfoLotes.resx">
       <DependentUpon>InfoLotes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\IniciarViaje.resx">
-      <DependentUpon>IniciarViaje.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -206,4 +216,7 @@
     <None Include="Resources\transportista_Iconillo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)CefSharp\x64" "$(ProjectDir)$(OutDir)" /Y /I</PostBuildEvent>
+  </PropertyGroup>
 </Project>

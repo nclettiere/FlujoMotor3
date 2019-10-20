@@ -54,7 +54,7 @@ Public Class MenuPrincipal
             Case 0
                 Selection = New InfoLotes
             Case 1
-                Selection = New VerViajes
+                Selection = VerViajes.Instance
             Case Else
                 Selection = New InfoLotes
         End Select

@@ -1,5 +1,7 @@
 ﻿Imports Logica
 Imports Serilog
+Imports CefSharp
+Imports CefSharp.WinForms
 
 Public Class Menu
 
@@ -9,6 +11,7 @@ Public Class Menu
         PSWD = "root"
         Conectar
         CargarMenuPrincipal
+
     End Sub
 
     Friend Sub CargarMenuPrincipal()

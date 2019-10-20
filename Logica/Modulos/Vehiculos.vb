@@ -437,4 +437,26 @@ Public Module Vehiculos
         End If
         Cerrar
     End Function
+
+    Public Function VMarcarVendido(VIN As String) As Boolean
+        Conectar
+        MsgBox(VIN)
+        Try
+            Dim Dcommand As OdbcCommand = New OdbcCommand("UPDATE vehiculos SET vehiculoFechaEntrega = ? WHERE vehiculovin='"+VIN+"'")
+            Dim Dparameters As OdbcParameterCollection = Dcommand.Parameters
+            
+            Dparameters.Add("vehiculoFechaEntrega", OdbcType.DateTime)
+            Dparameters("vehiculoFechaEntrega").Value = Date.Now.ToString
+
+            Dcommand.Connection = DBConexion
+            Dcommand.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            MsgBox("Error al vender auto.")
+            Serilog.Log.Error(ex, "err...")
+            Return False
+        End Try
+        Cerrar
+    End Function
 End Module

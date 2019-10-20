@@ -32,20 +32,20 @@ Partial Class VerPatio
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.cbxZonaPatio = New System.Windows.Forms.ComboBox()
         Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
-        Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnVendido = New System.Windows.Forms.Button()
         Me.btnPatios = New System.Windows.Forms.Button()
         Me.btnPos = New System.Windows.Forms.Button()
         Me.btnLavado = New System.Windows.Forms.Button()
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
         Me.btInfoVehiculo = New System.Windows.Forms.Button()
+        Me.pnlData = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.autito.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         Me.Panel3.SuspendLayout
-        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel4.SuspendLayout
         Me.SuspendLayout
         '
@@ -69,7 +69,7 @@ Partial Class VerPatio
         Me.TabControl1.Location = New System.Drawing.Point(3, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(843, 484)
+        Me.TabControl1.Size = New System.Drawing.Size(935, 484)
         Me.TabControl1.TabIndex = 0
         '
         'autito
@@ -82,7 +82,7 @@ Partial Class VerPatio
         Me.autito.Location = New System.Drawing.Point(4, 22)
         Me.autito.Name = "autito"
         Me.autito.Padding = New System.Windows.Forms.Padding(3)
-        Me.autito.Size = New System.Drawing.Size(835, 458)
+        Me.autito.Size = New System.Drawing.Size(927, 458)
         Me.autito.TabIndex = 0
         Me.autito.Text = "VEHICULOS"
         '
@@ -91,8 +91,8 @@ Partial Class VerPatio
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.DataGridViewVehiculos, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel4, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.pnlData, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -102,7 +102,7 @@ Partial Class VerPatio
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.47788!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(829, 452)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(921, 452)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'TableLayoutPanel3
@@ -122,7 +122,7 @@ Partial Class VerPatio
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(823, 50)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(915, 50)
         Me.TableLayoutPanel3.TabIndex = 3
         '
         'btBuscar
@@ -134,7 +134,7 @@ Partial Class VerPatio
         Me.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.Orange
-        Me.btBuscar.Location = New System.Drawing.Point(688, 5)
+        Me.btBuscar.Location = New System.Drawing.Point(770, 5)
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(111, 40)
         Me.btBuscar.TabIndex = 2
@@ -146,7 +146,7 @@ Partial Class VerPatio
         Me.cbxFiltro.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.cbxFiltro.FormattingEnabled = true
         Me.cbxFiltro.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
-        Me.cbxFiltro.Location = New System.Drawing.Point(3, 14)
+        Me.cbxFiltro.Location = New System.Drawing.Point(3, 9)
         Me.cbxFiltro.Name = "cbxFiltro"
         Me.cbxFiltro.Size = New System.Drawing.Size(94, 31)
         Me.cbxFiltro.TabIndex = 4
@@ -158,7 +158,7 @@ Partial Class VerPatio
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(103, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(558, 44)
+        Me.Panel3.Size = New System.Drawing.Size(630, 44)
         Me.Panel3.TabIndex = 5
         '
         'cbxZonaPatio
@@ -168,7 +168,7 @@ Partial Class VerPatio
         Me.cbxZonaPatio.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
         Me.cbxZonaPatio.Location = New System.Drawing.Point(0, 7)
         Me.cbxZonaPatio.Name = "cbxZonaPatio"
-        Me.cbxZonaPatio.Size = New System.Drawing.Size(527, 31)
+        Me.cbxZonaPatio.Size = New System.Drawing.Size(599, 31)
         Me.cbxZonaPatio.TabIndex = 5
         Me.cbxZonaPatio.Visible = false
         '
@@ -180,30 +180,13 @@ Partial Class VerPatio
         Me.tbxBuscarVin.Font = New System.Drawing.Font("Calibri", 16!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbxBuscarVin.Location = New System.Drawing.Point(0, 9)
         Me.tbxBuscarVin.Name = "tbxBuscarVin"
-        Me.tbxBuscarVin.Size = New System.Drawing.Size(558, 27)
+        Me.tbxBuscarVin.Size = New System.Drawing.Size(630, 27)
         Me.tbxBuscarVin.TabIndex = 4
         Me.tbxBuscarVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'DataGridViewVehiculos
-        '
-        Me.DataGridViewVehiculos.AllowUserToAddRows = false
-        Me.DataGridViewVehiculos.AllowUserToDeleteRows = false
-        Me.DataGridViewVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewVehiculos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewVehiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DataGridViewVehiculos.EnableHeadersVisualStyles = false
-        Me.DataGridViewVehiculos.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridViewVehiculos.Location = New System.Drawing.Point(3, 59)
-        Me.DataGridViewVehiculos.Name = "DataGridViewVehiculos"
-        Me.DataGridViewVehiculos.ReadOnly = true
-        Me.DataGridViewVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewVehiculos.ShowCellToolTips = false
-        Me.DataGridViewVehiculos.ShowEditingIcon = false
-        Me.DataGridViewVehiculos.Size = New System.Drawing.Size(823, 310)
-        Me.DataGridViewVehiculos.TabIndex = 4
-        '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.btnVendido)
         Me.Panel4.Controls.Add(Me.btnPatios)
         Me.Panel4.Controls.Add(Me.btnPos)
         Me.Panel4.Controls.Add(Me.btnLavado)
@@ -212,8 +195,25 @@ Partial Class VerPatio
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(3, 375)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(823, 74)
+        Me.Panel4.Size = New System.Drawing.Size(915, 74)
         Me.Panel4.TabIndex = 5
+        '
+        'btnVendido
+        '
+        Me.btnVendido.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnVendido.BackColor = System.Drawing.Color.DimGray
+        Me.btnVendido.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnVendido.FlatAppearance.BorderSize = 0
+        Me.btnVendido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVendido.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnVendido.ForeColor = System.Drawing.Color.Orange
+        Me.btnVendido.Location = New System.Drawing.Point(498, 11)
+        Me.btnVendido.MaximumSize = New System.Drawing.Size(143, 53)
+        Me.btnVendido.Name = "btnVendido"
+        Me.btnVendido.Size = New System.Drawing.Size(143, 53)
+        Me.btnVendido.TabIndex = 9
+        Me.btnVendido.Text = "Marcar Vendido"
+        Me.btnVendido.UseVisualStyleBackColor = false
         '
         'btnPatios
         '
@@ -224,11 +224,10 @@ Partial Class VerPatio
         Me.btnPatios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPatios.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnPatios.ForeColor = System.Drawing.Color.Orange
-        Me.btnPatios.Location = New System.Drawing.Point(487, 11)
+        Me.btnPatios.Location = New System.Drawing.Point(346, 11)
         Me.btnPatios.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnPatios.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnPatios.Name = "btnPatios"
-        Me.btnPatios.Size = New System.Drawing.Size(143, 53)
+        Me.btnPatios.Size = New System.Drawing.Size(111, 53)
         Me.btnPatios.TabIndex = 8
         Me.btnPatios.Text = "Lista Patios"
         Me.btnPatios.UseVisualStyleBackColor = false
@@ -242,11 +241,10 @@ Partial Class VerPatio
         Me.btnPos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPos.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnPos.ForeColor = System.Drawing.Color.Orange
-        Me.btnPos.Location = New System.Drawing.Point(156, 11)
+        Me.btnPos.Location = New System.Drawing.Point(124, 11)
         Me.btnPos.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnPos.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnPos.Name = "btnPos"
-        Me.btnPos.Size = New System.Drawing.Size(143, 53)
+        Me.btnPos.Size = New System.Drawing.Size(97, 53)
         Me.btnPos.TabIndex = 7
         Me.btnPos.Text = "Posicion"
         Me.btnPos.UseVisualStyleBackColor = false
@@ -260,11 +258,10 @@ Partial Class VerPatio
         Me.btnLavado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLavado.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnLavado.ForeColor = System.Drawing.Color.Orange
-        Me.btnLavado.Location = New System.Drawing.Point(7, 11)
+        Me.btnLavado.Location = New System.Drawing.Point(12, 11)
         Me.btnLavado.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btnLavado.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btnLavado.Name = "btnLavado"
-        Me.btnLavado.Size = New System.Drawing.Size(143, 53)
+        Me.btnLavado.Size = New System.Drawing.Size(106, 53)
         Me.btnLavado.TabIndex = 6
         Me.btnLavado.Text = "Lavados"
         Me.btnLavado.UseVisualStyleBackColor = false
@@ -278,11 +275,10 @@ Partial Class VerPatio
         Me.btActualizarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btActualizarVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btActualizarVehiculo.ForeColor = System.Drawing.Color.Orange
-        Me.btActualizarVehiculo.Location = New System.Drawing.Point(665, 11)
+        Me.btActualizarVehiculo.Location = New System.Drawing.Point(687, 11)
         Me.btActualizarVehiculo.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btActualizarVehiculo.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btActualizarVehiculo.Name = "btActualizarVehiculo"
-        Me.btActualizarVehiculo.Size = New System.Drawing.Size(143, 53)
+        Me.btActualizarVehiculo.Size = New System.Drawing.Size(116, 53)
         Me.btActualizarVehiculo.TabIndex = 5
         Me.btActualizarVehiculo.Text = "Actualizar"
         Me.btActualizarVehiculo.UseVisualStyleBackColor = false
@@ -296,14 +292,21 @@ Partial Class VerPatio
         Me.btInfoVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btInfoVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btInfoVehiculo.ForeColor = System.Drawing.Color.Orange
-        Me.btInfoVehiculo.Location = New System.Drawing.Point(305, 11)
+        Me.btInfoVehiculo.Location = New System.Drawing.Point(227, 11)
         Me.btInfoVehiculo.MaximumSize = New System.Drawing.Size(143, 53)
-        Me.btInfoVehiculo.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btInfoVehiculo.Name = "btInfoVehiculo"
-        Me.btInfoVehiculo.Size = New System.Drawing.Size(143, 53)
+        Me.btInfoVehiculo.Size = New System.Drawing.Size(113, 53)
         Me.btInfoVehiculo.TabIndex = 4
         Me.btInfoVehiculo.Text = "Informacion"
         Me.btInfoVehiculo.UseVisualStyleBackColor = false
+        '
+        'pnlData
+        '
+        Me.pnlData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlData.Location = New System.Drawing.Point(3, 59)
+        Me.pnlData.Name = "pnlData"
+        Me.pnlData.Size = New System.Drawing.Size(915, 310)
+        Me.pnlData.TabIndex = 6
         '
         'VerPatio
         '
@@ -319,7 +322,6 @@ Partial Class VerPatio
         Me.TableLayoutPanel3.ResumeLayout(false)
         Me.Panel3.ResumeLayout(false)
         Me.Panel3.PerformLayout
-        CType(Me.DataGridViewVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel4.ResumeLayout(false)
         Me.ResumeLayout(false)
 
@@ -334,11 +336,12 @@ End Sub
     Friend WithEvents Panel3 As Panel
     Friend WithEvents cbxZonaPatio As ComboBox
     Friend WithEvents tbxBuscarVin As TextBox
-    Friend WithEvents DataGridViewVehiculos As DataGridView
     Friend WithEvents Panel4 As Panel
     Friend WithEvents btnPatios As Button
     Friend WithEvents btnPos As Button
     Friend WithEvents btnLavado As Button
     Friend WithEvents btActualizarVehiculo As Button
     Friend WithEvents btInfoVehiculo As Button
+    Friend WithEvents btnVendido As Button
+    Friend WithEvents pnlData As Panel
 End Class

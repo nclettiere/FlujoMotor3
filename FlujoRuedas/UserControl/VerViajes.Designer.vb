@@ -22,15 +22,13 @@ Partial Class VerViajes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.DataGridViewLotes = New System.Windows.Forms.DataGridView()
-        Me.btEntregar = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel1.SuspendLayout
-        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel1.SuspendLayout
+        Me.ListaViajes = New BrightIdeasSoftware.FastDataListView()
+        Me.panelMapa = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnEntregar = New System.Windows.Forms.Button()
+        CType(Me.ListaViajes,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.panelMapa.SuspendLayout
         Me.SuspendLayout
         '
         'Label1
@@ -38,63 +36,61 @@ Partial Class VerViajes
         Me.Label1.AutoSize = true
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Label1.Location = New System.Drawing.Point(20, 20)
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Margin = New System.Windows.Forms.Padding(20, 20, 20, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(977, 25)
-        Me.Label1.TabIndex = 0
+        Me.Label1.Padding = New System.Windows.Forms.Padding(20)
+        Me.Label1.Size = New System.Drawing.Size(142, 65)
+        Me.Label1.TabIndex = 1
         Me.Label1.Text = "Mis Viajes"
         '
-        'FlowLayoutPanel1
+        'ListaViajes
         '
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Panel1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btEntregar)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(797, 451)
-        Me.FlowLayoutPanel1.TabIndex = 1
+        Me.ListaViajes.CellEditUseWholeCell = false
+        Me.ListaViajes.DataSource = Nothing
+        Me.ListaViajes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ListaViajes.FullRowSelect = true
+        Me.ListaViajes.Location = New System.Drawing.Point(0, 65)
+        Me.ListaViajes.MultiSelect = false
+        Me.ListaViajes.Name = "ListaViajes"
+        Me.ListaViajes.ShowGroups = false
+        Me.ListaViajes.Size = New System.Drawing.Size(797, 203)
+        Me.ListaViajes.TabIndex = 2
+        Me.ListaViajes.UseCompatibleStateImageBehavior = false
+        Me.ListaViajes.View = System.Windows.Forms.View.Details
+        Me.ListaViajes.VirtualMode = true
         '
-        'DataGridViewLotes
+        'panelMapa
         '
-        Me.DataGridViewLotes.AllowUserToAddRows = false
-        Me.DataGridViewLotes.AllowUserToDeleteRows = false
-        Me.DataGridViewLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewLotes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewLotes.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridViewLotes.MultiSelect = false
-        Me.DataGridViewLotes.Name = "DataGridViewLotes"
-        Me.DataGridViewLotes.ReadOnly = true
-        Me.DataGridViewLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewLotes.Size = New System.Drawing.Size(1011, 284)
-        Me.DataGridViewLotes.TabIndex = 1
+        Me.panelMapa.Controls.Add(Me.Label2)
+        Me.panelMapa.Dock = System.Windows.Forms.DockStyle.Left
+        Me.panelMapa.Location = New System.Drawing.Point(0, 268)
+        Me.panelMapa.Name = "panelMapa"
+        Me.panelMapa.Size = New System.Drawing.Size(649, 314)
+        Me.panelMapa.TabIndex = 3
         '
-        'btEntregar
+        'Label2
         '
-        Me.btEntregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom),System.Windows.Forms.AnchorStyles)
-        Me.btEntregar.BackColor = System.Drawing.Color.DimGray
-        Me.btEntregar.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btEntregar.FlatAppearance.BorderSize = 0
-        Me.btEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btEntregar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btEntregar.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btEntregar.Location = New System.Drawing.Point(329, 390)
-        Me.btEntregar.Margin = New System.Windows.Forms.Padding(3, 15, 3, 3)
-        Me.btEntregar.Name = "btEntregar"
-        Me.btEntregar.Size = New System.Drawing.Size(358, 40)
-        Me.btEntregar.TabIndex = 3
-        Me.btEntregar.Text = "Entregar Lote"
-        Me.btEntregar.UseVisualStyleBackColor = false
+        Me.Label2.AutoSize = true
+        Me.Label2.BackColor = System.Drawing.Color.Silver
+        Me.Label2.Location = New System.Drawing.Point(170, 14)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(169, 25)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Cargando Mapa..."
         '
-        'Panel1
+        'btnEntregar
         '
-        Me.Panel1.Controls.Add(Me.DataGridViewLotes)
-        Me.Panel1.Location = New System.Drawing.Point(3, 88)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1011, 284)
-        Me.Panel1.TabIndex = 4
+        Me.btnEntregar.BackColor = System.Drawing.Color.DimGray
+        Me.btnEntregar.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntregar.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.btnEntregar.Location = New System.Drawing.Point(649, 268)
+        Me.btnEntregar.Name = "btnEntregar"
+        Me.btnEntregar.Size = New System.Drawing.Size(148, 41)
+        Me.btnEntregar.TabIndex = 4
+        Me.btnEntregar.Text = "Entregar Lote"
+        Me.btnEntregar.UseVisualStyleBackColor = false
         '
         'VerViajes
         '
@@ -102,23 +98,26 @@ Partial Class VerViajes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = true
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.btnEntregar)
+        Me.Controls.Add(Me.panelMapa)
+        Me.Controls.Add(Me.ListaViajes)
+        Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = true
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 15!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "VerViajes"
-        Me.Size = New System.Drawing.Size(797, 451)
-        Me.FlowLayoutPanel1.ResumeLayout(false)
-        Me.FlowLayoutPanel1.PerformLayout
-        CType(Me.DataGridViewLotes,System.ComponentModel.ISupportInitialize).EndInit
-        Me.Panel1.ResumeLayout(false)
+        Me.Size = New System.Drawing.Size(797, 582)
+        CType(Me.ListaViajes,System.ComponentModel.ISupportInitialize).EndInit
+        Me.panelMapa.ResumeLayout(false)
+        Me.panelMapa.PerformLayout
         Me.ResumeLayout(false)
+        Me.PerformLayout
 
 End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents DataGridViewLotes As DataGridView
-    Friend WithEvents btEntregar As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ListaViajes As BrightIdeasSoftware.FastDataListView
+    Friend WithEvents panelMapa As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnEntregar As Button
 End Class

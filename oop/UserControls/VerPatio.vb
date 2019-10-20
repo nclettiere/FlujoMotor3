@@ -1,9 +1,12 @@
 ﻿Imports System.ComponentModel
 Imports System.Reflection
 Imports Logica
+Imports BrightIdeasSoftware
 
 Public Class VerPatio
     Private Shared _instance As VerPatio
+
+    Private DataGridViewVehiculos As FastDataListView
 
     Public Shared Property Instance As VerPatio
         Get
@@ -24,7 +27,7 @@ Public Class VerPatio
     Private Sub BtnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
         Try
             Dim VentanaVer = New Ventana_Ver()
-            Dim vin = DataGridViewVehiculos.SelectedRows(0).Cells(0).Value.ToString
+            Dim vin = DataGridViewVehiculos.SelectedItem.SubItems.Item(0).Text
             VentanaVer.LoadControl(vin)
             VentanaVer.ShowDialog()
         Catch ex As Exception
@@ -33,14 +36,15 @@ Public Class VerPatio
     End Sub
 
     Private Sub OnVerPatioLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridViewVehiculos = New FastDataListView
+        DataGridViewVehiculos.MultiSelect = False
+        DataGridViewVehiculos.FullRowSelect = True
+        AddHandler DataGridViewVehiculos.SelectionChanged, AddressOf CambioSeleccion
+        pnlData.Controls.Add(DataGridViewVehiculos)
+        DataGridViewVehiculos.Dock = DockStyle.Fill
         cbxFiltro.SelectedIndex = 0
-        Try
-            Dim resultado As DataTable = VObtenerAllPatio
-            DataGridViewVehiculos.DataSource = resultado
-            DataGridViewVehiculos.MultiSelect = False
-        Catch ex As Exception
-            Serilog.Log.Warning(ex, "Error Al Cargar Vehiculos. VerPatio")
-        End Try
+        
+        ActualizarLista
     End Sub
 
     Private Sub BtnLavado_Click(sender As Object, e As EventArgs) Handles btnLavado.Click
@@ -55,10 +59,9 @@ Public Class VerPatio
         End Try
     End Sub
 
-    Private Sub CambioSeleccion(sender As Object, e As EventArgs) Handles DataGridViewVehiculos.SelectionChanged
-        If DataGridViewVehiculos.SelectedRows.Count <> 0
-            Dim fila As DataGridViewRow = DataGridViewVehiculos.SelectedRows(0)
-            VinSeleccionado = fila.Cells("vehiculovin").Value
+    Private Sub CambioSeleccion() 
+        If DataGridViewVehiculos.SelectedIndex >= 0
+            VinSeleccionado = DataGridViewVehiculos.SelectedItem.SubItems.Item(0).Text
         End If
     End Sub
 
@@ -88,26 +91,6 @@ Public Class VerPatio
             Serilog.Log.Error(ex, "Error al filtrar.")
             MessageBox.Show("Error al filtrar.")
         End Try
-    End Sub
-
-    Private Sub BtActualizarVehiculo_Click(sender As Object, e As EventArgs) Handles btActualizarVehiculo.Click
-        Try
-            If tbxBuscarVin.Text.Length > 0
-                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = VObtenerAllPatioFiltro(tbxBuscarVin.Text.ToUpper)
-                DataGridViewVehiculos.DataSource = resultado
-            Else
-                Dim resultado As DataTable = VObtenerAllPatio
-                DataGridViewVehiculos.DataSource = resultado
-            End If
-        Catch ex As Exception
-            Serilog.Log.Error(ex, "Error al actualizar.")
-            MessageBox.Show("Error al actualizar.")
-        End Try
-    End Sub
-
-    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub BtnPatios_Click(sender As Object, e As EventArgs) Handles btnPatios.Click
@@ -163,7 +146,6 @@ Public Class VerPatio
                 Dim resultado As DataTable = VObtenerAllFiltro("SELECT loteid IN (SELECT loteid FROM lotes WHERE patioid IN (SELECT patioid FROM patios WHERE pationombre='"+ cbxZonaPatio.Text +"')")
                 DataGridViewVehiculos.DataSource = resultado
             Else
-                MsgBox("Else trigered")
                 Dim resultado As DataTable = VObtenerAllFiltro("SELECT * FROM vehiculos WHERE loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
                 DataGridViewVehiculos.DataSource = resultado
             End If
@@ -195,5 +177,35 @@ Public Class VerPatio
         Dim pi As PropertyInfo = b.GetType().GetProperty("Events", BindingFlags.NonPublic Or BindingFlags.Instance)
         Dim list As EventHandlerList = DirectCast(pi.GetValue(b, Nothing), EventHandlerList)
         list.RemoveHandler(obj, list(obj))
+    End Sub
+
+    Private Sub BtnVendido_Click(sender As Object, e As EventArgs) Handles btnVendido.Click
+        Try
+            If VMarcarVendido(VinSeleccionado)
+                MessageBox.Show("Vehiculo vendido exitosamente.")
+                ActualizarLista
+            End If
+        Catch ex As Exception
+            MsgBox("Error al vender makako")
+            Serilog.Log.Error(ex, "err")
+        End Try
+    End Sub
+
+    Private Sub ActualizarLista
+        DataGridViewVehiculos.DataSource = Nothing
+        Try
+            DataGridViewVehiculos.DataSource = VObtenerAllPatio
+
+            For Each column As ColumnHeader In DataGridViewVehiculos.Columns
+                column.Width = -2
+            Next
+        Catch ex As Exception
+            MsgBox("Error al actualizar lista")
+            Serilog.Log.Error(ex, "err")
+        End Try
+    End Sub
+
+    Private Sub BtActualizarVehiculo_Click(sender As Object, e As EventArgs) Handles btActualizarVehiculo.Click
+        ActualizarLista
     End Sub
 End Class

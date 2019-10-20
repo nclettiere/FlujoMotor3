@@ -1,7 +1,0 @@
-Driver={IBM INFORMIX ODBC DRIVER};
-Database=big;
-Host=192.168.9.37;
-Server=ol_esi;
-Service=9088;
-Protocol=onsoctcp;
-UID=root;PWD=root;"

@@ -1,0 +1,4 @@
+*/CefSharp/* filter=lfs diff=lfs merge=lfs -text
+FlujoRuedas/CefSharp/* filter=lfs diff=lfs merge=lfs -text
+FlujoTxT/CefSharp/* filter=lfs diff=lfs merge=lfs -text
+FlujosTXTs/CefSharp/* filter=lfs diff=lfs merge=lfs -text

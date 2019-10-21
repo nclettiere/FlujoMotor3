@@ -641,6 +641,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(SolutionDir)CefSharp\x64" "$(ProjectDir)$(OutDir)" /Y /I</PostBuildEvent>
+    <PostBuildEvent>call "$(SolutionDir)compile.bat" "$(PlatformName)" $(ProjectDir)$(OutDir)</PostBuildEvent>
   </PropertyGroup>
 </Project>

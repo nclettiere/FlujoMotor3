@@ -38,11 +38,10 @@ Partial Class PatiosZonas
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.flpPatios)
-        Me.GroupBox1.Controls.Add(Me.btnAgPatio)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 18)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 57)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(842, 668)
+        Me.GroupBox1.Size = New System.Drawing.Size(842, 629)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = false
         Me.GroupBox1.Text = "Lista de Patios"
@@ -54,7 +53,7 @@ Partial Class PatiosZonas
         Me.flpPatios.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flpPatios.Location = New System.Drawing.Point(3, 16)
         Me.flpPatios.Name = "flpPatios"
-        Me.flpPatios.Size = New System.Drawing.Size(836, 649)
+        Me.flpPatios.Size = New System.Drawing.Size(836, 610)
         Me.flpPatios.TabIndex = 1
         '
         'Panel1
@@ -118,11 +117,11 @@ Partial Class PatiosZonas
         Me.btnAgPatio.BackColor = System.Drawing.Color.Silver
         Me.btnAgPatio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgPatio.ForeColor = System.Drawing.Color.Crimson
-        Me.btnAgPatio.Location = New System.Drawing.Point(6, 19)
+        Me.btnAgPatio.Location = New System.Drawing.Point(13, 11)
         Me.btnAgPatio.Name = "btnAgPatio"
-        Me.btnAgPatio.Size = New System.Drawing.Size(281, 36)
+        Me.btnAgPatio.Size = New System.Drawing.Size(210, 40)
         Me.btnAgPatio.TabIndex = 0
-        Me.btnAgPatio.Text = "Agregar"
+        Me.btnAgPatio.Text = "Agregar Patio"
         Me.btnAgPatio.UseVisualStyleBackColor = false
         '
         'PatiosZonas
@@ -130,6 +129,7 @@ Partial Class PatiosZonas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
+        Me.Controls.Add(Me.btnAgPatio)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "PatiosZonas"
         Me.Size = New System.Drawing.Size(808, 708)

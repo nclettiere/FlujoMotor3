@@ -75,6 +75,15 @@ Public Class InfoAutos
         End If
     End Sub
 
+    Friend Sub ActualizarLotes()
+        Try
+            Dim Lista = LObtenerNoSalida()
+            DataGridViewLotes.DataSource = Lista
+        Catch ex As Exception
+            Log.Error(ex, "err..")
+        End Try
+    End Sub
+
     Private Sub BtActualizarVehiculo_Click(sender As Object, e As EventArgs) Handles btActualizarVehiculo.Click
         Try
             If tbxBuscarVin.Text.Length > 0
@@ -116,6 +125,7 @@ Public Class InfoAutos
         Try
             Dim VentanaVer As Ventana_Ver = New Ventana_Ver
             Dim VerLotes As VerLotes = New VerLotes
+            VerLotes.IA_InfoAutos = Me
             VerLotes.Data(DataGridViewLotes.SelectedRows(0).Cells(0).Value.ToString())
             VentanaVer.LoadControl(VerLotes)
             VentanaVer.ShowDialog()

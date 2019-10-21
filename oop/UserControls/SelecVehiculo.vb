@@ -9,7 +9,18 @@ Public Class SelecVehiculo
 
         Try
             Dim ResultadoVehiculos = VObtenerAllFiltro("loteid IS NULL")
-            DataGridVehiculos.DataSource = ResultadoVehiculos
+            If ResultadoVehiculos IsNot Nothing
+                If ResultadoVehiculos.Rows.Count > 0
+                    DataGridVehiculos.DataSource = ResultadoVehiculos
+                Else
+                    MsgBox("No hay ningun vehiculo en el puerto.")
+                    btAceptar.Enabled = False
+                End If
+            Else
+                MsgBox("No hay ningun vehiculo en el puerto.")
+                btAceptar.Enabled = False
+            End If
+
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al cargar vehiculos")
         End Try

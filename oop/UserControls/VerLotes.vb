@@ -18,6 +18,8 @@ Public Class VerLotes
     Private Property LoteId As String
     Private Property VinSeleccionado As String
 
+    Friend IA_InfoAutos As InfoAutos
+
     Friend Sub Data(loteid As String)
         Me.LoteId = loteid
         CargarDatos()
@@ -61,7 +63,12 @@ Public Class VerLotes
             Try
                 LUpdateFechaSalida(Now.ToString("yyyy-MM-dd hh:mm:ss"), LoteId)
                 LUpdateTransportista(eID, LoteId)
+                If IA_InfoAutos IsNot Nothing
+                    IA_InfoAutos.ActualizarVehiculos
+                    IA_InfoAutos.ActualizarLotes
+                End If
                 MessageBox.Show("Lote entregado correctamente.")
+                ParentForm.Close
             Catch ex As Exception
                 MessageBox.Show("Error al asignar lote, Chequee el log para mas info.")
                 Serilog.Log.Error(ex, "Error al entregar lote.")
@@ -82,12 +89,26 @@ Public Class VerLotes
     End Sub
 
     Private Sub BtnEntregar_Click_1(sender As Object, e As EventArgs) Handles btnEntregar.Click
-        Dim VentanaVerControl As Ventana_Ver = New Ventana_Ver
-        Dim SelecTransp As SeleccionarTransportista = New SeleccionarTransportista
-        SelecTransp.VL_VerLote = Me
-        VentanaVerControl.LoadControl(SelecTransp)
-        VentanaVerControl.Text = "Asignar Lote A Transportista"
-        VentanaVerControl.ShowDialog
+        Try
+            Dim VehiculosEnLote = VObtenerLoteId(LoteId)
+            If VehiculosEnLote IsNot Nothing
+                If VehiculosEnLote.Rows.Count > 0
+                    Dim VentanaVerControl As Ventana_Ver = New Ventana_Ver
+                    Dim SelecTransp As SeleccionarTransportista = New SeleccionarTransportista
+                    SelecTransp.VL_VerLote = Me
+                    VentanaVerControl.LoadControl(SelecTransp)
+                    VentanaVerControl.Text = "Asignar Lote A Transportista"
+                    VentanaVerControl.ShowDialog
+                Else
+                    MsgBox("El lote no tiene ningun vehiculo. Agregue uno para continuar.")
+                End If
+            Else
+                MsgBox("El lote no tiene ningun vehiculo. Agregue uno para continuar.")
+            End If
+        Catch ex As Exception
+            MsgBox("Error inesperado.")
+            Serilog.Log.Error(ex, "Error inesperado.")
+        End Try
     End Sub
 
     Private Sub BtCerrar_Click(sender As Object, e As EventArgs) Handles btCerrar.Click

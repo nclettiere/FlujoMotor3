@@ -25,9 +25,9 @@ Partial Class VerDanios
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.FlowInspecciones = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout
         Me.FlowInspecciones.SuspendLayout
         Me.Panel1.SuspendLayout
@@ -67,24 +67,8 @@ Partial Class VerDanios
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(690, 225)
+        Me.Panel1.Size = New System.Drawing.Size(690, 276)
         Me.Panel1.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(271, 219)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = false
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(280, 3)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(407, 120)
-        Me.RichTextBox1.TabIndex = 1
-        Me.RichTextBox1.Text = ""
         '
         'Button1
         '
@@ -92,12 +76,28 @@ Partial Class VerDanios
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Crimson
-        Me.Button1.Location = New System.Drawing.Point(281, 130)
+        Me.Button1.Location = New System.Drawing.Point(280, 178)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(166, 35)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Agrandar Imagen"
         Me.Button1.UseVisualStyleBackColor = false
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(280, 40)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(407, 120)
+        Me.RichTextBox1.TabIndex = 1
+        Me.RichTextBox1.Text = ""
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 40)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(271, 219)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = false
         '
         'VerDanios
         '

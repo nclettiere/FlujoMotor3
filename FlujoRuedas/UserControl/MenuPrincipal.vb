@@ -69,4 +69,10 @@ Public Class MenuPrincipal
             Selection.BringToFront()
         End If
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim Ventana As MainWindow = New MainWindow
+        Ventana.Show
+        ParentForm.Close
+    End Sub
 End Class

@@ -108,8 +108,7 @@ Public Class MenuControl
     End Sub
 
     Private Sub ScanQR_Click(sender As Object, e As EventArgs) Handles ScanQR.Click
-        Dim Ver As Ventana_Ver = New Ventana_Ver
-        Ver.LoadControl(New IniciarCamara)
-        Ver.ShowDialog()
+        Dim VentanaQR = New EscanearQR
+        VentanaQR.ShowDialog()
     End Sub
 End Class

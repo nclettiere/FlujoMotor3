@@ -132,6 +132,22 @@
     <ApplicationIcon>Resources\icono_ Operario.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\QR\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\QR\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\QR\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\QR\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="MessagingToolkit.QRCode">
       <HintPath>.\MessagingToolkit.QRCode.dll</HintPath>
     </Reference>
@@ -160,6 +176,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="WebCam_Capture">
       <HintPath>.\WebCam_Capture.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing">
+      <HintPath>..\QR\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\QR\zxing.presentation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +231,12 @@
       <DependentUpon>ModificarSubzona.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ModificarSubzona.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\QRScan.Designer.vb">
+      <DependentUpon>QRScan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QRScan.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SeleccionarLote.Designer.vb">
@@ -270,6 +298,12 @@
     </Compile>
     <Compile Include="UserControls\VerZonas.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanas\EscanearQR.Designer.vb">
+      <DependentUpon>EscanearQR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\EscanearQR.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventanas\Menu.Designer.vb">
       <DependentUpon>Menu.vb</DependentUpon>
@@ -395,6 +429,9 @@
     <EmbeddedResource Include="UserControls\ModificarSubzona.resx">
       <DependentUpon>ModificarSubzona.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\QRScan.resx">
+      <DependentUpon>QRScan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SeleccionarLote.resx">
       <DependentUpon>SeleccionarLote.vb</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\VerZonas.resx">
       <DependentUpon>VerZonas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\EscanearQR.resx">
+      <DependentUpon>EscanearQR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
@@ -547,6 +587,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ObjectListView.dll" />
+    <None Include="Resources\qr_code_1613767.png" />
     <Content Include="Serilog.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

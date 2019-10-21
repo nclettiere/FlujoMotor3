@@ -6,57 +6,11 @@ Public Class Ventana_Ver
     Friend CameraActiva As Boolean = False
     Private InicCamera As IniciarCamara = Nothing
 
-    Friend Sub LoadControl(verVehiculo As VerVehiculo)
-        verVehiculo.AutoSize = True
-        Me.ClientSize = verVehiculo.Size
-        mainContent.Controls.Add(verVehiculo)
-    End Sub
-
-    Friend Sub LoadControl(verLote As VerLotes)
-        Me.ClientSize = verLote.Size
-        mainContent.Controls.Add(verLote)
-        verLote.AutoSize = True
-    End Sub
-
-    Friend Sub LoadControl(verFoto As VerFoto)
-        Me.ClientSize = verFoto.Size
-        mainContent.Controls.Add(verFoto)
-    End Sub
-
-   Friend Sub LoadControl(SelecVehiculo As SeleccionarVehiculo)
-        Me.ClientSize = SelecVehiculo.Size
-        mainContent.Controls.Add(SelecVehiculo)
-        SelecVehiculo.AutoSize = True
-    End Sub
-
-    Friend Sub LoadControl(modSubZona As ModificarSubzona)
-        Me.ClientSize = modSubZona.Size
-        mainContent.Controls.Add(modSubZona)
-        modSubZona.AutoSize = True
-    End Sub
-
-    Friend Sub LoadControl(selecVehiculo As SelecVehiculo)
-         Me.ClientSize = selecVehiculo.Size
-        mainContent.Controls.Add(selecVehiculo)
-        selecVehiculo.AutoSize = True
-    End Sub
-
-    Friend Sub LoadControl(verLvd As VerLavados)
-        Me.ClientSize = verLvd.Size
-        mainContent.Controls.Add(verLvd)
-        verLvd.AutoSize = True
-    End Sub
-    Friend Sub LoadControl(inicCamera As IniciarCamara)
-        Me.ClientSize = inicCamera.Size
-        mainContent.Controls.Add(inicCamera)
-        Me.InicCamera = inicCamera
-        inicCamera.AutoSize = True
-    End Sub
-    Friend Sub LoadControl(AgLote As AgregarLote)
-        Me.ClientSize = AgLote.Size
-        mainContent.Controls.Add(AgLote)
-        AgLote.AutoSize = True
-        AgLote.BringToFront
+    Friend Sub LoadControl(Ctrl As Control)
+        Ctrl.AutoSize = True
+        Me.ClientSize = Ctrl.Size
+        mainContent.Controls.Add(Ctrl)
+        Ctrl.BringToFront()
     End Sub
 
     Friend Sub LoadControl(VerInsp As VerInspeccion, VIN As String)
@@ -67,33 +21,6 @@ Public Class Ventana_Ver
         VerInsp.BringToFront
     End Sub
 
-    Friend Sub LoadControl(AgrDanio As AgregarDanio)
-        Me.ClientSize = AgrDanio.Size
-        mainContent.Controls.Add(AgrDanio)
-        AgrDanio.AutoSize = True
-        AgrDanio.BringToFront
-    End Sub
-
-    Friend Sub LoadControl(selecTransp As SeleccionarTransportista)
-        Me.ClientSize = selecTransp.Size
-        mainContent.Controls.Add(selecTransp)
-        selecTransp.AutoSize = True
-        selecTransp.BringToFront
-    End Sub
-
-    Friend Sub LoadControl(VerD As VerDanios)
-        Me.ClientSize = VerD.Size
-        mainContent.Controls.Add(VerD)
-        VerD.AutoSize = True
-        VerD.BringToFront()
-    End Sub
-
-    Friend Sub LoadControl(agv As AgregarVehiculo)
-        Me.ClientSize = agv.Size
-        mainContent.Controls.Add(agv)
-        agv.AutoSize = True
-        agv.BringToFront()
-    End Sub
 
     ''' <summary>
     ''' Metodo usado para cambiar dinamicamente el contenido del MainContent
@@ -168,17 +95,5 @@ Public Class Ventana_Ver
         End If
     End Sub
 
-    Private Sub Closing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If CameraActiva
-            InicCamera.Timer2.Stop
-            InicCamera.StopWebcam
-        End If
-    End Sub
 
-    Friend Sub LoadControl(selecLote As SeleccionarLote)
-        Me.ClientSize = selecLote.Size
-        mainContent.Controls.Add(selecLote)
-        selecLote.AutoSize = True
-        selecLote.BringToFront()
-    End Sub
 End Class

@@ -7,6 +7,7 @@ Public Class Login_Deus
 
                 Conexion.USER = tbx_user.Text
                 Conexion.PSWD = tbx_passwd.Text
+
                 Conexion.Conectar()
 
                 If (LogInAdministrador) Then

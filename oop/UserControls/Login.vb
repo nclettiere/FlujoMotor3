@@ -22,21 +22,6 @@ Public Class Login
     Public Property Cargado As Boolean = False
 
     Private Sub OnLoginLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            Conexion.USER = "root"
-            Conexion.PSWD = "root"
-
-            If Conexion.Conectar()
-                Conexion.Cerrar()
-            Else
-                MessageBox.Show("No se pedo establecer conexion con la DB." + Environment.NewLine + "Chequee que la VM este corriendo y que los datos sean correctos.", "Error de Conexion",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Conexion.Cerrar()
-            End If
-        Catch ex As Exception
-            Serilog.Log.Error(ex, "Error al chquear conexion.")
-        End Try
-
         cbxIdioma.SelectedIndex = 0
         Cargado = True
     End Sub

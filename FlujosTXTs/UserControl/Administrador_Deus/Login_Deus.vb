@@ -9,14 +9,11 @@ Public Class Login_Deus
                 Conexion.PSWD = tbx_passwd.Text
                 Conexion.Conectar()
 
-                If (Conexion.Conectar()) Then
+                If (LogInAdministrador) Then
                     MessageBox.Show("Conectado Exitosamente.")
 
                     DirectCast(ParentForm, Menu).CargarMenuPrincipal()
 
-                    Cerrar
-                Else
-                    MessageBox.Show("Usuario o Contrasena invalidos.")
                     Cerrar
                 End If
             Else

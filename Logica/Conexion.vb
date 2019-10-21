@@ -67,6 +67,7 @@ Public Module Conexion
         End Try
     End Function
 
+
     Public Function CheckLogueo(ByRef EmpleadoId As Integer, ByRef PuertoPatio As Boolean) As Boolean
         Cerrar
         If PrimeraVez
@@ -110,6 +111,35 @@ Public Module Conexion
             Serilog.Log.Fatal(ex, "err")
             Return False
         End Try
+    End Function
+
+    Public Function LogInAdministrador() As Boolean
+        Cerrar
+        If PrimeraVez
+            DBConexion.ConnectionString = GetArchivoConexion
+            PrimeraVez = False
+        End If
+
+        Try
+            DBConexion.Open()
+            Dim datos As DataTable = UObtener(USER)
+            If datos Is Nothing
+                Return True
+            Else
+                If datos.Rows.Count = 0
+                    Return True
+                Else
+                    MsgBox("No tienes permisos para ingresar.")
+                    Return False
+                End If
+                MsgBox("No tienes permisos para ingresar.")
+            End If
+        Catch ex As OdbcException
+            MsgBox("Hubo un error al conectarse.")
+            Serilog.Log.Fatal(ex, "err")
+            Return False
+        End Try
+        Cerrar
     End Function
 
     Public Sub Cerrar()

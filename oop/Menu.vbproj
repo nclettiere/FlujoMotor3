@@ -176,6 +176,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AgregarDanio.Designer.vb">
       <DependentUpon>AgregarDanio.vb</DependentUpon>
     </Compile>
@@ -289,11 +294,6 @@
     </Compile>
     <Compile Include="My Project\Form1.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -436,9 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AgregarLote.resx">
       <DependentUpon>AgregarLote.vb</DependentUpon>
@@ -531,12 +531,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\barra_ buscador.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\577c14f6dd438.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\577c14f6dd4381.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DB\DB.vbproj">

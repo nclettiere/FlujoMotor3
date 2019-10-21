@@ -27,7 +27,7 @@ Partial Class Main_Deus
         Me.TableLayoutPanelOpciones = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanelSesion = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.piBoPuerto = New System.Windows.Forms.PictureBox()
         Me.btOperario = New System.Windows.Forms.Button()
@@ -96,7 +96,7 @@ Partial Class Main_Deus
         Me.TableLayoutPanelSesion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.44231!))
         Me.TableLayoutPanelSesion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.55769!))
         Me.TableLayoutPanelSesion.Controls.Add(Me.PictureBox3, 0, 1)
-        Me.TableLayoutPanelSesion.Controls.Add(Me.Button2, 1, 1)
+        Me.TableLayoutPanelSesion.Controls.Add(Me.btnSalir, 1, 1)
         Me.TableLayoutPanelSesion.Location = New System.Drawing.Point(3, 486)
         Me.TableLayoutPanelSesion.Name = "TableLayoutPanelSesion"
         Me.TableLayoutPanelSesion.RowCount = 2
@@ -116,22 +116,22 @@ Partial Class Main_Deus
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = false
         '
-        'Button2
+        'btnSalir
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 15!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Crimson
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(75, 132)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(195, 51)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Salir"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.UseVisualStyleBackColor = true
+        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Font = New System.Drawing.Font("Calibri", 15!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnSalir.ForeColor = System.Drawing.Color.Crimson
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSalir.Location = New System.Drawing.Point(75, 132)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(195, 51)
+        Me.btnSalir.TabIndex = 1
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSalir.UseVisualStyleBackColor = true
         '
         'FlowLayoutPanel1
         '
@@ -260,7 +260,7 @@ End Sub
     Friend WithEvents TableLayoutPanelOpciones As TableLayoutPanel
     Friend WithEvents TableLayoutPanelSesion As TableLayoutPanel
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnSalir As Button
     Friend WithEvents pnContenido As Panel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents piBoPuerto As PictureBox

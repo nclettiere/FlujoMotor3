@@ -62,6 +62,7 @@ Partial Class ManageUsuarios
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Panel3)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(10, 25, 3, 3)
         Me.GroupBox2.Name = "GroupBox2"
@@ -98,34 +99,47 @@ Partial Class ManageUsuarios
         '
         'btnAgregarUsuario
         '
+        Me.btnAgregarUsuario.BackColor = System.Drawing.Color.Gray
+        Me.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarUsuario.Font = New System.Drawing.Font("Arial", 13!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0,Byte))
+        Me.btnAgregarUsuario.ForeColor = System.Drawing.Color.Crimson
         Me.btnAgregarUsuario.Location = New System.Drawing.Point(358, 10)
         Me.btnAgregarUsuario.Name = "btnAgregarUsuario"
         Me.btnAgregarUsuario.Size = New System.Drawing.Size(156, 36)
         Me.btnAgregarUsuario.TabIndex = 2
         Me.btnAgregarUsuario.Text = "Agregar"
-        Me.btnAgregarUsuario.UseVisualStyleBackColor = true
+        Me.btnAgregarUsuario.UseVisualStyleBackColor = false
         '
         'btnEliminar
         '
+        Me.btnEliminar.BackColor = System.Drawing.Color.Gray
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Font = New System.Drawing.Font("Arial", 13!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0,Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.Crimson
         Me.btnEliminar.Location = New System.Drawing.Point(186, 10)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(156, 36)
         Me.btnEliminar.TabIndex = 1
         Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = true
+        Me.btnEliminar.UseVisualStyleBackColor = false
         '
         'Button4
         '
+        Me.Button4.BackColor = System.Drawing.Color.Gray
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Arial", 13!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0,Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.Crimson
         Me.Button4.Location = New System.Drawing.Point(12, 10)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(158, 36)
         Me.Button4.TabIndex = 0
         Me.Button4.Text = "Modificar"
-        Me.Button4.UseVisualStyleBackColor = true
+        Me.Button4.UseVisualStyleBackColor = false
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.FlowLayoutPanel1)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(544, 0)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(10, 25, 3, 3)
         Me.GroupBox1.Name = "GroupBox1"

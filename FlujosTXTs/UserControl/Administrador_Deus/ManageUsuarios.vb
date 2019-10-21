@@ -27,6 +27,7 @@ Public Class ManageUsuarios
             btnEliminar.Enabled = True
             Try
                 Dim EmpleadoId As String = dataLstUsuarios.SelectedItem.SubItems.Item(1).Text
+                Dim Usuario As String = dataLstUsuarios.SelectedItem.SubItems.Item(0).Text
                 Dim OpTipo As Integer = ObtenerTipoOperario(EmpleadoId)
  
                 Select OpTipo
@@ -77,6 +78,12 @@ Public Class ManageUsuarios
                             lblNroLEntrgados.Text = "Nro. Lotes Entregados: -"
                         End If
                 End Select
+
+                Dim Nombre As String = dataLstUsuarios.SelectedItem.SubItems.Item(3).Text
+                Dim Apellido As String = dataLstUsuarios.SelectedItem.SubItems.Item(4).Text
+
+                lblNombre.Text = "Nombre: " + Nombre + " " + Apellido
+                lblUsuer.Text = "Usuario: " + Usuario
 
             Catch ex As Exception
                 Serilog.Log.Error(ex, "err")

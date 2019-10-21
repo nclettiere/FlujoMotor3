@@ -30,4 +30,11 @@ Public Class Main_Deus
         PZ.Dock = DockStyle.Fill
         pnContenido.Controls.Add(PZ)
     End Sub
+
+    Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Dim result As Integer = MessageBox.Show("Deseas salir de la aplicacion?", "Salir", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            ParentForm.Close
+        End If
+    End Sub
 End Class

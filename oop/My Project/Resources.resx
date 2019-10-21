@@ -139,9 +139,6 @@
   <data name="Icono Restaurar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono Restaurar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="577c14f6dd4381" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\577c14f6dd4381.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icono cerrar FN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono cerrar FN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,9 +153,6 @@
   </data>
   <data name="hide_gris" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hide_gris.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="577c14f6dd438" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\577c14f6dd438.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="next-1aaaa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\next-1aaaa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

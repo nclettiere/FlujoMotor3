@@ -24,6 +24,16 @@ IF %Plataforma% == "x64" (
 
 IF %Plataforma% == "AnyCPU" (
 	cls
-	echo Plataforma Invalida. La ejecucion del binario dara una excepcion como resultado. Elija x64 o x86 para solucionar este problema.
+	echo.
+	echo.
+	echo.
+	echo.
+	echo.
+	echo :::[ERROR]^=^> Plataforma Invalida. La ejecucion del binario dara una excepcion como resultado. Elija x64 o x86 para solucionar este problema.
+	echo.
+	echo.
+	echo.
+	echo.
+	echo.
 	EXIT 3
 )

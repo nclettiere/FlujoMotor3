@@ -102,9 +102,10 @@ Public Class MenuControl
     End Sub
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Dim Ventana As Ventana_Ver = New Ventana_Ver
-        Dim Logi
-        ParentForm.Close()
+        Dim result As Integer = MessageBox.Show("Deseas salir de la aplicacion?", "Salir", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            ParentForm.Close
+        End If
     End Sub
 
     Private Sub ScanQR_Click(sender As Object, e As EventArgs) Handles ScanQR.Click

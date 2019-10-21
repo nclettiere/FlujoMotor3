@@ -71,8 +71,9 @@ Public Class MenuPrincipal
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim Ventana As MainWindow = New MainWindow
-        Ventana.Show
-        ParentForm.Close
+        Dim result As Integer = MessageBox.Show("Deseas salir de la aplicacion?", "Salir", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            ParentForm.Close
+        End If
     End Sub
 End Class

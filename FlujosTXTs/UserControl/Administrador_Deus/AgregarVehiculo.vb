@@ -33,8 +33,6 @@ Public Class AgregarVehiculo
                     Tipo = cbxTipo.Text.ToLower()
                 End If
 
-                MsgBox("VInsertar("+VIN+", "+Marca+", "+Modelo+", "+Color+", "+Tipo+", "+Anio+", "+Me.LoteId+", 1")
-
                If LoteIngresado
                    If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, ObtenerOpId)
                         IInsertar(VIN.ToUpper, ObtenerOpId)

@@ -66,7 +66,6 @@ Public Class Login
                 Dim PuertoPatio As Boolean
                 If (Conexion.CheckLogueo(EmpleadoId, PuertoPatio)) Then
                     MessageBox.Show("Conectado Exitosamente.")
-                    MsgBox(PuertoPatio.ToString)
                     Conexion.OperarioId = EmpleadoId
                     Ventana_Login.ChangeControlSummary(0, PuertoPatio)
                     Cerrar

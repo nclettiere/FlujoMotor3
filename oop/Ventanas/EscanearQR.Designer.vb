@@ -24,7 +24,6 @@ Partial Class EscanearQR
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.btnInic = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -34,18 +33,6 @@ Partial Class EscanearQR
         '
         'Timer1
         '
-        '
-        'btnInic
-        '
-        Me.btnInic.BackColor = System.Drawing.Color.Gray
-        Me.btnInic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInic.ForeColor = System.Drawing.Color.Orange
-        Me.btnInic.Location = New System.Drawing.Point(98, 494)
-        Me.btnInic.Name = "btnInic"
-        Me.btnInic.Size = New System.Drawing.Size(179, 36)
-        Me.btnInic.TabIndex = 7
-        Me.btnInic.Text = "Iniciar Camara"
-        Me.btnInic.UseVisualStyleBackColor = false
         '
         'PictureBox1
         '
@@ -83,8 +70,9 @@ Partial Class EscanearQR
         Me.btnScan.Name = "btnScan"
         Me.btnScan.Size = New System.Drawing.Size(179, 36)
         Me.btnScan.TabIndex = 8
-        Me.btnScan.Text = "Escanear QR"
+        Me.btnScan.Text = "Reintentar"
         Me.btnScan.UseVisualStyleBackColor = false
+        Me.btnScan.Visible = false
         '
         'EscanearQR
         '
@@ -93,7 +81,6 @@ Partial Class EscanearQR
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(683, 598)
         Me.Controls.Add(Me.btnScan)
-        Me.Controls.Add(Me.btnInic)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComboBox1)
@@ -106,7 +93,6 @@ Partial Class EscanearQR
 End Sub
 
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents btnInic As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox

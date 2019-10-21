@@ -28,6 +28,8 @@ Public Class EscanearQR
             AddHandler FinalFrame.NewFrame, AddressOf FinalFrame_NewFrame
             FinalFrame.Start()
 
+            timer1.Enabled = true
+            timer1.Start()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -41,16 +43,20 @@ Public Class EscanearQR
     Private Sub timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
         Dim Reader As BarcodeReader = New BarcodeReader()
         Dim result As Result = Reader.Decode(CType(pictureBox1.Image, Bitmap))
-
+        btnScan.Visible = False
         Try
             Dim decoded As String = result.ToString().Trim()
 
             If decoded <> "" Then
                 timer1.[Stop]()
                 MessageBox.Show(decoded)
+
                 'Dim form As Form2 = New Form2()
                 'form.Show()
                 'Me.Hide()
+
+                Timer1.Stop
+                btnScan.Visible = True
             End If
 
         Catch ex As Exception
@@ -63,8 +69,9 @@ Public Class EscanearQR
         End If
     End Sub
 
-    Private Sub BtnScan_Click_1(sender As Object, e As EventArgs) Handles btnScan.Click
+    Private Sub BtnScan_Click(sender As Object, e As EventArgs) Handles btnScan.Click
         timer1.Enabled = true
         timer1.Start()
+        btnScan.Visible = False
     End Sub
 End Class

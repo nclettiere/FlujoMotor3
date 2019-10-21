@@ -22,7 +22,6 @@ Public Class MenuControl
         Me.AutoSize = true
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
        
-        MsgBox(PuertoPatio.ToString)
         If Not PuertoPatio
             btPatio.Enabled = False
             btPuerto.Enabled = True

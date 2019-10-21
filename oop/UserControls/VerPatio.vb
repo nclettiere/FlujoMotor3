@@ -88,7 +88,8 @@ Public Class VerPatio
 
     Private Sub BtnPatios_Click(sender As Object, e As EventArgs) Handles btnPatios.Click
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver
-        VentanaVer.GoToSection(4, String.Empty)
+        Dim PZ As PatiosZonas = New PatiosZonas
+        VentanaVer.LoadControl(PZ)
         VentanaVer.ShowDialog()
     End Sub
 

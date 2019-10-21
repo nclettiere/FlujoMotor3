@@ -66,13 +66,12 @@ Partial Class EscanearQR
         Me.btnScan.BackColor = System.Drawing.Color.Gray
         Me.btnScan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnScan.ForeColor = System.Drawing.Color.Orange
-        Me.btnScan.Location = New System.Drawing.Point(406, 494)
+        Me.btnScan.Location = New System.Drawing.Point(260, 503)
         Me.btnScan.Name = "btnScan"
         Me.btnScan.Size = New System.Drawing.Size(179, 36)
         Me.btnScan.TabIndex = 8
-        Me.btnScan.Text = "Reintentar"
+        Me.btnScan.Text = "Iniciar Escaneo"
         Me.btnScan.UseVisualStyleBackColor = false
-        Me.btnScan.Visible = false
         '
         'EscanearQR
         '

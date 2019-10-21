@@ -23,6 +23,7 @@ Partial Class VerFoto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PbFoto = New System.Windows.Forms.PictureBox()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         CType(Me.PbFoto,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -38,11 +39,22 @@ Partial Class VerFoto
         Me.PbFoto.TabIndex = 0
         Me.PbFoto.TabStop = false
         '
+        'btnGuardar
+        '
+        Me.btnGuardar.Location = New System.Drawing.Point(3, 3)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(152, 36)
+        Me.btnGuardar.TabIndex = 1
+        Me.btnGuardar.Text = "Guardar QR..."
+        Me.btnGuardar.UseVisualStyleBackColor = true
+        Me.btnGuardar.Visible = false
+        '
         'VerFoto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = true
+        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.PbFoto)
         Me.Name = "VerFoto"
         Me.Size = New System.Drawing.Size(579, 555)
@@ -53,4 +65,5 @@ Partial Class VerFoto
 End Sub
 
     Friend WithEvents PbFoto As PictureBox
+    Friend WithEvents btnGuardar As Button
 End Class

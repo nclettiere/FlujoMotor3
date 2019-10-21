@@ -148,6 +148,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\QR\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
+    <Reference Include="CefSharp">
+      <HintPath>..\CefSharp\x64\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.BrowserSubprocess">
+      <HintPath>..\CefSharp\x64\CefSharp.BrowserSubprocess.exe</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.BrowserSubprocess.Core">
+      <HintPath>..\CefSharp\x64\CefSharp.BrowserSubprocess.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core">
+      <HintPath>..\CefSharp\x64\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms">
+      <HintPath>..\CefSharp\x64\CefSharp.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="MessagingToolkit.QRCode">
       <HintPath>.\MessagingToolkit.QRCode.dll</HintPath>
     </Reference>
@@ -221,6 +236,12 @@
     <Compile Include="UserControls\InspeccionWidget.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\ListarPatio.Designer.vb">
+      <DependentUpon>ListarPatio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ListarPatio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\MenuControl.Designer.vb">
       <DependentUpon>MenuControl.vb</DependentUpon>
     </Compile>
@@ -231,6 +252,12 @@
       <DependentUpon>ModificarSubzona.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ModificarSubzona.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PatiosZonas.Designer.vb">
+      <DependentUpon>PatiosZonas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PatiosZonas.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\QRScan.Designer.vb">
@@ -423,11 +450,17 @@
     <EmbeddedResource Include="UserControls\InspeccionWidget.resx">
       <DependentUpon>InspeccionWidget.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ListarPatio.resx">
+      <DependentUpon>ListarPatio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MenuControl.resx">
       <DependentUpon>MenuControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ModificarSubzona.resx">
       <DependentUpon>ModificarSubzona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PatiosZonas.resx">
+      <DependentUpon>PatiosZonas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\QRScan.resx">
       <DependentUpon>QRScan.vb</DependentUpon>
@@ -607,4 +640,7 @@
     <Content Include="Resources\icono_ Operario.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)CefSharp\x64" "$(ProjectDir)$(OutDir)" /Y /I</PostBuildEvent>
+  </PropertyGroup>
 </Project>

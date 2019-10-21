@@ -19,12 +19,18 @@ Public Class EscanearQR
             comboBox1.Items.Add(Device.Name)
         Next
 
-        comboBox1.SelectedIndex = 0
-        FinalFrame = New VideoCaptureDevice()
+        If CaptureDevice.Count > 0
+            comboBox1.SelectedIndex = 0
+            FinalFrame = New VideoCaptureDevice()
 
-        FinalFrame = New VideoCaptureDevice(CaptureDevice(comboBox1.SelectedIndex).MonikerString)
-        AddHandler FinalFrame.NewFrame, Sub(s, ea) FinalFrame_NewFrame(s, ea)
-        FinalFrame.Start()
+            FinalFrame = New VideoCaptureDevice(CaptureDevice(comboBox1.SelectedIndex).MonikerString)
+            AddHandler FinalFrame.NewFrame, Sub(s, ea) FinalFrame_NewFrame(s, ea)
+            FinalFrame.Start()
+        Else
+            MsgBox("No se detecto ninguna camara. Conecte la camara y vuelva a intentar.")
+            btnScan.Enabled = False
+            Me.Close
+        End If
     End Sub
 
     Private Sub FinalFrame_NewFrame(ByVal sender As Object, ByVal eventArgs As NewFrameEventArgs)
@@ -87,9 +93,10 @@ Public Class EscanearQR
     Private Sub ShutDown
         timer1.Enabled = False
         timer1.[Stop]
-
-        If FinalFrame.IsRunning = True Then
-            FinalFrame.[Stop]
+        If FinalFrame IsNot Nothing
+            If FinalFrame.IsRunning = True Then
+                FinalFrame.[Stop]
+            End If
         End If
     End Sub
 End Class

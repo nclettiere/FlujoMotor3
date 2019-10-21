@@ -55,6 +55,15 @@ Public Class VerPatio
     Private Sub CambioSeleccion() 
         If DataGridViewVehiculos.SelectedIndex >= 0
             VinSeleccionado = DataGridViewVehiculos.SelectedItem.SubItems.Item(0).Text
+            btnLavado.Enabled = True
+            btnPos.Enabled = True
+            btnVendido.Enabled = True
+            btInfoVehiculo.Enabled = True
+        Else
+            btnLavado.Enabled = False
+            btnPos.Enabled = False
+            btnVendido.Enabled = False
+            btInfoVehiculo.Enabled = False
         End If
     End Sub
 

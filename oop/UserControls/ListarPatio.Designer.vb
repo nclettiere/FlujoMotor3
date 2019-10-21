@@ -46,7 +46,7 @@ Partial Class ListarPatio
         '
         Me.GroupBox1.AutoSize = true
         Me.GroupBox1.Controls.Add(Me.flpSubZonas)
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Orange
         Me.GroupBox1.Location = New System.Drawing.Point(669, 16)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(258, 736)

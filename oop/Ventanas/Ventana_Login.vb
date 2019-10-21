@@ -19,10 +19,15 @@ Public Class Ventana_Login
     End Sub
 
     Friend Sub ChangeControlSummary(operarioId As Integer, PuertoPatio As Boolean)
-        Dim mainVentana = New Menu
-        mainVentana.PuertoPatio = PuertoPatio
-        Hide()
-        mainVentana.ShowDialog()
-        Close()
+        Try
+            Dim mainVentana = New Menu
+            mainVentana.PuertoPatio = PuertoPatio
+            Hide()
+            mainVentana.ShowDialog()
+            Close()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

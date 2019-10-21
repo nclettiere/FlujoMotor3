@@ -47,7 +47,7 @@ Public Class ListarPatio
                     Dim Config As CefSettings = New CefSettings()
                     'Iniciar CefSharp con las configuraciones dadas
                     CefSharp.Cef.Initialize(Config)
-                    Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion+"/@-34.8453539,-56.0098319,14.5z/data=!4m5!3m4!1s0x959f87e117a691e3:0x223b5948614efdd0!8m2!3d-34.8379636!4d-56.0229841?hl=es-419")
+                    Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion)
                     ActualizarSubZonas
                 End If
             End If
@@ -57,7 +57,7 @@ Public Class ListarPatio
     Private Function CrearControlSubZona(ZonaId As String, Nombre As String, Capacidad As String) As Control
         Dim PanelContenido As Panel = New Panel
         PanelContenido.Size = New Size(236, 127)
-        PanelContenido.BackColor = Color.Silver
+        PanelContenido.BackColor = Color.Gray
         PanelContenido.Dock = DockStyle.Top
 
         Dim LabelId As Label = New Label
@@ -78,9 +78,9 @@ Public Class ListarPatio
         LabelNombre.Location = New Point(3, 37)
         LabelCapacidad.Location = New Point(3, 60)
 
-        LabelId.ForeColor = Color.Crimson
-        LabelNombre.ForeColor = Color.Crimson
-        LabelCapacidad.ForeColor = Color.Crimson
+        LabelId.ForeColor = Color.Orange
+        LabelNombre.ForeColor = Color.Orange
+        LabelCapacidad.ForeColor = Color.Orange
 
         Dim fuente = New Font("Arial", 10)
 
@@ -90,14 +90,14 @@ Public Class ListarPatio
 
         BtnElim.Size = New Size(89, 28)
         BtnElim.Font = fuente
-        BtnElim.ForeColor = Color.Crimson
+        BtnElim.ForeColor = Color.Orange
         BtnElim.FlatStyle = FlatStyle.Flat
         BtnElim.Text = "Eliminar"
         BtnElim.Location = New Point(6, 91)
 
         BtnMod.Size = New Size(87, 28)
         BtnMod.Font = fuente
-        BtnMod.ForeColor = Color.Crimson
+        BtnMod.ForeColor = Color.Orange
         BtnMod.FlatStyle = FlatStyle.Flat
         BtnMod.Text = "Modificar"
         BtnMod.Location = New Point(136, 91)
@@ -138,13 +138,13 @@ Public Class ListarPatio
             CefSharp.Cef.Initialize(Config)
 
             ' Aniadir el control al panel
-            Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/place/"+Direccion+"/@-34.8453539,-56.0098319,14.5z/data=!4m5!3m4!1s0x959f87e117a691e3:0x223b5948614efdd0!8m2!3d-34.8379636!4d-56.0229841?hl=es-419")
+            Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/place/"+Direccion)
             panelMapa.Controls.Add(Chromium)
             Chromium.Dock = DockStyle.Fill
             Chromium.BringToFront
         Catch ex As Exception
             Dim web As WebBrowser = New WebBrowser
-            web.Url = New Uri("https://www.google.com.uy/maps/place/"+Direccion+"/@-34.8453539,-56.0098319,14.5z/data=!4m5!3m4!1s0x959f87e117a691e3:0x223b5948614efdd0!8m2!3d-34.8379636!4d-56.0229841?hl=es-419")
+            web.Url = New Uri("https://www.google.com.uy/maps/place/"+Direccion)
             panelMapa.Controls.Add(web)
             web.Dock = DockStyle.Fill
             web.BringToFront

@@ -209,15 +209,17 @@ Public Module Vehiculos
 
     Public Function VUpdateLoteId(LoteIdNuevo As String, VIN As String) As Boolean
         Conectar
-        Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("UPDATE vehiculos SET loteid ="+ LoteIdNuevo +"  WHERE vehiculovin='"+ VIN +"'", DBConexion)
-        adaptador.Fill(tabla)
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("UPDATE vehiculos SET loteid ="+ LoteIdNuevo +"  WHERE vehiculovin='"+ VIN +"'", DBConexion)
+            adaptador.Fill(tabla)
 
-        If VerificarTabla(tabla)
             Return True
-        Else
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err...")
             Return False
-        End If
+        End Try
+
         Cerrar
     End Function
 
@@ -467,7 +469,6 @@ Public Module Vehiculos
 
     Public Function VMarcarVendido(VIN As String) As Boolean
         Conectar
-        MsgBox(VIN)
         Try
             Dim Dcommand As OdbcCommand = New OdbcCommand("UPDATE vehiculos SET vehiculoFechaEntrega = ? WHERE vehiculovin='"+VIN+"'")
             Dim Dparameters As OdbcParameterCollection = Dcommand.Parameters
@@ -483,6 +484,25 @@ Public Module Vehiculos
             MsgBox("Error al vender auto.")
             Serilog.Log.Error(ex, "err...")
             Return False
+        End Try
+        Cerrar
+    End Function
+
+    Public Function VObtenerEnXPatio(PatioId As String) As DataTable
+        Conectar
+        Try
+            Dim Vehiculos As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos A LEFT JOIN lotes B ON A.loteid = B.loteid WHERE A.vehiculofechaentrega IS NULL AND B.lotefechallegada IS NOT NULL AND B.lotefechasalida IS NOT NULL AND patioid="+ PatioId, DBConexion)
+            adaptador.Fill(Vehiculos)
+
+            If VerificarTabla(Vehiculos)
+                Return Vehiculos
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err...")
+            Return Nothing
         End Try
         Cerrar
     End Function

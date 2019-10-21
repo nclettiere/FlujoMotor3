@@ -79,22 +79,6 @@ Public Class VerPatio
         End Try
     End Sub
 
-    Private Sub BtBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-        Try
-            If tbxBuscarVin.Text.Length > 0
-                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = VObtenerAllPatioFiltro(tbxBuscarVin.Text.ToUpper)
-                DataGridViewVehiculos.DataSource = resultado
-            Else
-                Dim resultado As DataTable = VObtenerAllPatio
-                DataGridViewVehiculos.DataSource = resultado
-            End If
-        Catch ex As Exception
-            Serilog.Log.Error(ex, "Error al filtrar.")
-            MessageBox.Show("Error al filtrar.")
-        End Try
-    End Sub
-
     Private Sub BtnPatios_Click(sender As Object, e As EventArgs) Handles btnPatios.Click
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver
         Dim PZ As PatiosZonas = New PatiosZonas
@@ -107,13 +91,10 @@ Public Class VerPatio
             Case 0
                 tbxBuscarVin.Visible = True
                 cbxZonaPatio.Visible = False
-                RemoveClickEvent(btBuscar)
-                AddHandler btBuscar.Click, Sub(s, ea) FiltrarPorVIN()
+
             Case 1
                 tbxBuscarVin.Visible = False
                 cbxZonaPatio.Visible = True
-                RemoveClickEvent(btBuscar)
-                AddHandler btBuscar.Click, Sub(s, ea) FiltrarPorZona()
             Case 2
                 tbxBuscarVin.Visible = False
                 cbxZonaPatio.Visible = True
@@ -121,65 +102,7 @@ Public Class VerPatio
                 For Each item As DataRow In PObtenerAll.Rows
                     cbxZonaPatio.Items.Add(item.Item("pationombre"))
                 Next
-                RemoveClickEvent(btBuscar)
-                AddHandler btBuscar.Click, Sub(s, ea) FiltrarPorPatio()
         End Select
-    End Sub
-
-    Private Sub FiltrarPorVIN()
-        Try
-            If tbxBuscarVin.Text.Length > 0
-                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = VObtenerAllFiltro("vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%' AND loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
-                DataGridViewVehiculos.DataSource = resultado
-            Else
-                Dim resultado As DataTable = VObtenerAllFiltro("SELECT * FROM vehiculos WHERE loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
-                DataGridViewVehiculos.DataSource = resultado
-            End If
-        Catch ex As Exception
-            Serilog.Log.Error(ex, "Error al filtrar.")
-            MessageBox.Show("Error al filtrar.")
-        End Try
-    End Sub
-
-    Private Sub FiltrarPorPatio()
-        Try
-            If tbxBuscarVin.Text.Length > 0
-                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = VObtenerAllFiltro("SELECT loteid IN (SELECT loteid FROM lotes WHERE patioid IN (SELECT patioid FROM patios WHERE pationombre='"+ cbxZonaPatio.Text +"')")
-                DataGridViewVehiculos.DataSource = resultado
-            Else
-                Dim resultado As DataTable = VObtenerAllFiltro("SELECT * FROM vehiculos WHERE loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
-                DataGridViewVehiculos.DataSource = resultado
-            End If
-        Catch ex As Exception
-            Serilog.Log.Error(ex, "Error al filtrar.")
-            MessageBox.Show("Error al filtrar.")
-        End Try
-    End Sub
-
-    Private Sub FiltrarPorZona()
-        Try
-            If tbxBuscarVin.Text.Length > 0
-                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
-                Dim resultado As DataTable = VObtenerAllFiltro("vehiculovin LIKE '%" + tbxBuscarVin.Text.ToUpper + "%' AND loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
-                DataGridViewVehiculos.DataSource = resultado
-            Else
-                Dim resultado As DataTable = VObtenerAllFiltro("SELECT * FROM vehiculos WHERE loteid IN (SELECT loteid FROM lotes WHERE lotefechallegada IS NOT NULL)")
-                DataGridViewVehiculos.DataSource = resultado
-            End If
-        Catch ex As Exception
-            Serilog.Log.Error(ex, "Error al filtrar.")
-            MessageBox.Show("Error al filtrar.")
-        End Try
-    End Sub
-
-    Private Sub RemoveClickEvent(b As Button)
-        Dim f1 As FieldInfo = GetType(Control).GetField("EventClick", BindingFlags.Static Or BindingFlags.NonPublic)
-        Dim obj As Object = f1.GetValue(b)
-        Dim pi As PropertyInfo = b.GetType().GetProperty("Events", BindingFlags.NonPublic Or BindingFlags.Instance)
-        Dim list As EventHandlerList = DirectCast(pi.GetValue(b, Nothing), EventHandlerList)
-        list.RemoveHandler(obj, list(obj))
     End Sub
 
     Private Sub BtnVendido_Click(sender As Object, e As EventArgs) Handles btnVendido.Click
@@ -210,5 +133,39 @@ Public Class VerPatio
 
     Private Sub BtActualizarVehiculo_Click(sender As Object, e As EventArgs) Handles btActualizarVehiculo.Click
         ActualizarLista
+    End Sub
+
+    Private Sub BtBuscarVIN_Click(sender As Object, e As EventArgs) Handles btBuscarVIN.Click
+        Try
+            If tbxBuscarVin.Text.Length > 0
+                '' LAS LETRAS DEL VIN TIENEN QUE SER CAPITAL LETTERS.
+                Dim resultado As DataTable = VObtenerAllPatioFiltro(tbxBuscarVin.Text.ToUpper)
+                DataGridViewVehiculos.DataSource = resultado
+            Else
+                Dim resultado As DataTable = VObtenerAllPatio
+                DataGridViewVehiculos.DataSource = resultado
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al filtrar.")
+            MessageBox.Show("Error al filtrar.")
+        End Try
+    End Sub
+
+    Private Sub BtBuscarPatio_Click(sender As Object, e As EventArgs) Handles btBuscarPatio.Click
+
+    End Sub
+
+    Private Sub BtBuscarLote_Click(sender As Object, e As EventArgs) Handles btBuscarLote.Click
+
+    End Sub
+
+    Private Sub CbxZonaPatio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxZonaPatio.SelectedIndexChanged
+        Dim PatioInfo = PObtenerNombre(cbxZonaPatio.Text)
+        If PatioInfo IsNot Nothing
+            Dim resultado As DataTable = VObtenerEnXPatio(PatioInfo.Item("patioid"))
+            DataGridViewVehiculos.DataSource = resultado
+        Else
+            DataGridViewVehiculos.DataSource = Nothing
+        End If
     End Sub
 End Class

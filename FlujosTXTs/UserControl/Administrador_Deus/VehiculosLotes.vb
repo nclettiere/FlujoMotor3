@@ -1,4 +1,6 @@
-﻿Imports Logica
+﻿Imports System.Drawing.Imaging
+Imports System.IO
+Imports Logica
 
 Public Class VehiculosLotes
 
@@ -32,19 +34,17 @@ Public Class VehiculosLotes
                     btnVender.Enabled = False
                 End If
 
-                lblVin.Text = "VIN: "+ VIN
+                lblVin.Text = "VIN: " + VIN
                 lblOpIngresado.Text = "Ingresado Por:" + OpDatos.Item("empleadonombre") + " " + OpDatos.Item("empleadoapellido")
 
                 lblFecha.Text = "Ingresado el: " + Fecha
 
                 If String.IsNullOrEmpty(Lote)
                     lbllote.Text = "Lote: - "
-                    lblLoteStatus.Visible = False
                     btnMngLote.Enabled = False
                     btnLavado.Enabled = False
                 Else
-                    lbllote.Text = "Lote: SI - Lote id: "+ Lote
-                    lblLoteStatus.Visible = True
+                    lbllote.Text = "Lote: SI - Lote id: " + Lote
                 End If
 
                 PbQR.BackgroundImage = GenerarQR(VIN, Nothing)
@@ -60,6 +60,20 @@ Public Class VehiculosLotes
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error desconocido.")
         End Try
+    End Sub
+
+    Friend Sub AgregarALote(vinSeleccionado As String)
+        Try
+            If VUpdateLoteId(LoteIdSelec, vinSeleccionado)
+                MsgBox("Vehiculo agregado correctamente.")
+            Else
+                MsgBox("Ocurrio un error al agregar vehiculo.")
+            End If
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al agregar vehiculo.")
+            Serilog.Log.Error(ex, "err...")
+        End Try
+        ActualizarLV
     End Sub
 
     Friend Sub ActualizarLV()
@@ -127,7 +141,7 @@ Public Class VehiculosLotes
 
     Private Sub BtnElim_Click(sender As Object, e As EventArgs) Handles btnElim.Click
         Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
-        Dim result As Integer = MessageBox.Show("Deseas eliminar el vehiculo '"+VIN+"' permanentemente?", "Eliminar Vehiculo", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Deseas eliminar el vehiculo '" + VIN + "' permanentemente?", "Eliminar Vehiculo", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             If VEliminar(VIN)
                 ActualizarVehiculos
@@ -199,8 +213,8 @@ Public Class VehiculosLotes
                 Dim ID As String = ListaLotes.SelectedItem.SubItems.Item(0).Text
                 LoteIdSelec = ID
                 Dim loteNombre As String = ListaLotes.SelectedItem.SubItems.Item(1).Text
-                Dim loteDescripcion  As String = ListaLotes.SelectedItem.SubItems.Item(2).Text
-                Dim operarioPuertoID  As DataRow = EObtener(ListaLotes.SelectedItem.SubItems.Item(3).Text)
+                Dim loteDescripcion As String = ListaLotes.SelectedItem.SubItems.Item(2).Text
+                Dim operarioPuertoID As DataRow = EObtener(ListaLotes.SelectedItem.SubItems.Item(3).Text)
                 Dim loteFecha As String = ListaLotes.SelectedItem.SubItems.Item(4).Text
                 Dim patioid As String = ListaLotes.SelectedItem.SubItems.Item(8).Text
                 Dim transid As String = ListaLotes.SelectedItem.SubItems.Item(7).Text
@@ -218,10 +232,10 @@ Public Class VehiculosLotes
                 Else
                     btnEntreado.Enabled = False
                 End If
-                
+
                 lblloteid.Text = "LoteId: " + ID
                 lblopL.Text = "Ingresado Por:" + operarioPuertoID.Item("empleadonombre") + " " + operarioPuertoID.Item("empleadoapellido")
-                lblLFecha.Text = "Fecha Ingresado: "+loteFecha
+                lblLFecha.Text = "Fecha Ingresado: " + loteFecha
 
                 Try
                     listaLV.DataSource = VObtenerLoteId(ID)
@@ -274,12 +288,12 @@ Public Class VehiculosLotes
 
     Private Sub ListaLV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listaLV.SelectedIndexChanged
         Try
-            If ListaLV.SelectedIndex >= 0
+            If listaLV.SelectedIndex >= 0
                 btnagvl.Enabled = True
                 Dim VIN As String = ListaLotes.SelectedItem.SubItems.Item(0).Text
                 Dim fechaentrega = ListaLotes.SelectedItem.SubItems.Item(2)
                 Dim loteid As String = LoteIdSelec
-                
+
                 If fechaentrega Is Nothing
                     btnquitarv.Enabled = True
                 Else
@@ -308,5 +322,37 @@ Public Class VehiculosLotes
 
     Private Sub Btnquitarv_Click(sender As Object, e As EventArgs) Handles btnquitarv.Click
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim guardar As SaveFileDialog = New SaveFileDialog()
+        guardar.Filter = "Images|*.png;*.bmp;*.jpg"
+        Dim formato As ImageFormat = ImageFormat.Png
+
+        Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
+        guardar.FileName = VIN
+
+        If guardar.ShowDialog() = DialogResult.OK Then
+            Dim extension As String = Path.GetExtension(guardar.FileName)
+
+            Select Case extension
+                Case ".jpg"
+                    formato = ImageFormat.Jpeg
+                Case ".bmp"
+                    formato = ImageFormat.Bmp
+            End Select
+
+            PbQR.BackgroundImage.Save(guardar.FileName, formato)
+
+            MsgBox("El QR se guardo exitosamente.")
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim SV As SelecVehiculo = New SelecVehiculo
+        SV.UC_VehiculosLotes = Me
+        Ventana.LoadControl(SV)
+        Ventana.ShowDialog
     End Sub
 End Class

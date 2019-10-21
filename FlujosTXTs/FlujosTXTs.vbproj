@@ -241,6 +241,12 @@
     <Compile Include="UserControl\Administrador_Deus\SeleccionarTransportista.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\Administrador_Deus\SelecVehiculo.Designer.vb">
+      <DependentUpon>SelecVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\SelecVehiculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Administrador_Deus\VehiculosLotes.Designer.vb">
       <DependentUpon>VehiculosLotes.vb</DependentUpon>
     </Compile>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\SeleccionarTransportista.resx">
       <DependentUpon>SeleccionarTransportista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\SelecVehiculo.resx">
+      <DependentUpon>SelecVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\VehiculosLotes.resx">
       <DependentUpon>VehiculosLotes.vb</DependentUpon>

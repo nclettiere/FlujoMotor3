@@ -102,7 +102,8 @@ Public Class MenuControl
     End Sub
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Conexion.Cerrar()
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim Logi
         ParentForm.Close()
     End Sub
 

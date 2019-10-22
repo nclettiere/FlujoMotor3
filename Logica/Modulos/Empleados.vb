@@ -123,31 +123,47 @@ Public Module Empleados
 
     Public Function OPInsertar(ByVal EmpleadoId As Integer, tipo As Integer) As Boolean
         Conectar
+        Try
+            Dim DcommandOPbase As OdbcCommand
+            DcommandOPbase = New OdbcCommand("INSERT INTO operarios (empleadoid) VALUES ("+EmpleadoId.ToString+")")
+            DcommandOPbase.Connection = DBConexion
+            DcommandOPbase.ExecuteNonQuery()
 
-        Dim DcommandOPbase As OdbcCommand
-        DcommandOPbase = New OdbcCommand("INSERT INTO operarios (empleadoid) VALUES ("+EmpleadoId.ToString+")")
-        DcommandOPbase.Connection = DBConexion
-        DcommandOPbase.ExecuteNonQuery()
+            Dim Dcommand As OdbcCommand
 
-        Dim Dcommand As OdbcCommand
+            Dim Dcommand1 As OdbcCommand
+            Dim Dcommand2 As OdbcCommand
 
-        Select Case tipo
-            Case 0
-                Dcommand = New OdbcCommand("INSERT INTO operarioPuertos (empleadoid) VALUES ("+EmpleadoId.ToString+")")
-            Case 1
-                Dcommand = New OdbcCommand("INSERT INTO operarioPatios (empleadoid) VALUES ("+EmpleadoId.ToString+")")
-            Case 2
-                Dcommand = New OdbcCommand("INSERT INTO transportistas  (empleadoid) VALUES ("+EmpleadoId.ToString+")")
-            ''Case 3
-            ''    Dcommand = New OdbcCommand("INSERT INTO admin (empleadoid) VALUES (?)")
-            Case Else
-                Dcommand = New OdbcCommand("INSERT INTO operarioPuertos (empleadoid) VALUES ("+EmpleadoId.ToString+")")
-        End Select
+            Select Case tipo
+                Case 0
+                    Dcommand = New OdbcCommand("INSERT INTO operarioPuertos (empleadoid) VALUES ("+EmpleadoId.ToString+")")
+                Case 1
+                    Dcommand = New OdbcCommand("INSERT INTO operarioPatios (empleadoid) VALUES ("+EmpleadoId.ToString+")")
+                Case 2
+                    Dcommand = New OdbcCommand("INSERT INTO transportistas  (empleadoid) VALUES ("+EmpleadoId.ToString+")")
+                Case 3
+                    Dcommand = New OdbcCommand("INSERT INTO operarioPuertos (empleadoid) VALUES (?)")
+                    Dcommand1 = New OdbcCommand("INSERT INTO operarioPatios (empleadoid) VALUES (?)")
+                    Dcommand2 = New OdbcCommand("INSERT INTO transportistas (empleadoid) VALUES (?)")
 
-        Dcommand.Connection = DBConexion
-        Dcommand.ExecuteNonQuery()
+                    Dcommand1.Connection = DBConexion
+                    Dcommand1.ExecuteNonQuery()
 
-        Return True
+                    Dcommand2.Connection = DBConexion
+                    Dcommand2.ExecuteNonQuery()
+                Case Else
+                    Dcommand = New OdbcCommand("INSERT INTO operarioPuertos (empleadoid) VALUES ("+EmpleadoId.ToString+")")
+            End Select
+
+            Dcommand.Connection = DBConexion
+            Dcommand.ExecuteNonQuery()
+
+            Return True
+
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+            Return False
+        End Try
         Cerrar
     End Function
 

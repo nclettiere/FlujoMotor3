@@ -37,6 +37,7 @@ Partial Class AgregarUsuario
         Me.tbxUsername = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.RBAdmin = New System.Windows.Forms.RadioButton()
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
         Me.SuspendLayout
@@ -54,6 +55,7 @@ Partial Class AgregarUsuario
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Silver
+        Me.Panel2.Controls.Add(Me.RBAdmin)
         Me.Panel2.Controls.Add(Me.tbxTel)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.rbOpTransportista)
@@ -217,6 +219,20 @@ Partial Class AgregarUsuario
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Agregar Usuario"
         '
+        'RBAdmin
+        '
+        Me.RBAdmin.AutoSize = true
+        Me.RBAdmin.FlatAppearance.BorderColor = System.Drawing.Color.Crimson
+        Me.RBAdmin.FlatAppearance.CheckedBackColor = System.Drawing.Color.Crimson
+        Me.RBAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RBAdmin.Location = New System.Drawing.Point(157, 280)
+        Me.RBAdmin.Name = "RBAdmin"
+        Me.RBAdmin.Size = New System.Drawing.Size(53, 17)
+        Me.RBAdmin.TabIndex = 16
+        Me.RBAdmin.TabStop = true
+        Me.RBAdmin.Text = "Admin"
+        Me.RBAdmin.UseVisualStyleBackColor = true
+        '
         'AgregarUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -249,4 +265,5 @@ End Sub
     Friend WithEvents btnAgregar As Button
     Friend WithEvents tbxTel As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents RBAdmin As RadioButton
 End Class

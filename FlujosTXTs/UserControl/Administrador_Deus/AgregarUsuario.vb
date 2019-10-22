@@ -21,6 +21,8 @@ Public Class AgregarUsuario
                         UsuarioTipo = 1
                     ElseIf rbOpTransportista.Checked
                         UsuarioTipo = 2
+                    ElseIf RBAdmin.Checked
+                        UsuarioTipo = 3
                     End If
 
                     If EInsertar(Usuario, Nombre, Apellido, Telefono, UsuarioTipo)

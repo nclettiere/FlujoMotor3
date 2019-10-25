@@ -9,6 +9,7 @@ Public Class VerPatio
     Private Shared _instance As VerPatio
 
     Public Chromium As ChromiumWebBrowser
+
     Friend PatioId As String
 
     Friend Direccion As String
@@ -30,28 +31,21 @@ Public Class VerPatio
 
     Public Sub New()
         InitializeComponent
-        '' Iniciar Chromium
-        '' En otro thread para no congestionar la UI mientras carga.
-        Dim thread As Thread = New Thread(AddressOf InciarChromium)
-        thread.Start()
-        PrimeraVez = False
     End Sub
 
     Private Sub VerPatio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ActualizarSubZonas
 
-        If Not PrimeraVez And Chromium IsNot Nothing
-            If Chromium.IsBrowserInitialized
-                If CefSharp.Cef.IsInitialized
-                    CefSharp.Cef.Shutdown
-                    Dim Config As CefSettings = New CefSettings()
-                    'Iniciar CefSharp con las configuraciones dadas
-                    CefSharp.Cef.Initialize(Config)
-                    Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion)
-                    ActualizarSubZonas
-                End If
-            End If
+        Chromium = CType(ParentForm, ChromiumHandler).Chromium
+
+        If CefSharp.Cef.IsInitialized
+            Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion)
+            panelMapa.Controls.Add(Chromium)
+            Chromium.Dock = DockStyle.Fill
+            Chromium.BringToFront
+            ActualizarSubZonas
         End If
+
     End Sub
 
     Private Function CrearControlSubZona(ZonaId As String, Nombre As String, Capacidad As String) As Control
@@ -132,30 +126,29 @@ Public Class VerPatio
 
     Private Delegate Sub InciarChromiumDelegate()
     Private Sub InciarChromium()
+        If Me.InvokeRequired Then
+            Me.Invoke(New InciarChromiumDelegate(AddressOf InciarChromium))
+        Else
+            Try
+                Dim Config As CefSettings = New CefSettings()
+                'Iniciar CefSharp con las configuraciones dadas
+                CefSharp.Cef.Initialize(Config)
 
-    If Me.InvokeRequired Then
-        Me.Invoke(New InciarChromiumDelegate(AddressOf InciarChromium))
-    Else
-        Try
-            Dim Config As CefSettings = New CefSettings()
-            'Iniciar CefSharp con las configuraciones dadas
-            CefSharp.Cef.Initialize(Config)
+                ' Aniadir el control al panel
+                Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/place/"+Direccion)
+                panelMapa.Controls.Add(Chromium)
+                Chromium.Dock = DockStyle.Fill
+                Chromium.BringToFront
+            Catch ex As Exception
+                Dim web As WebBrowser = New WebBrowser
+                web.Url = New Uri("https://www.google.com.uy/maps/place/"+Direccion)
+                panelMapa.Controls.Add(web)
+                web.Dock = DockStyle.Fill
+                web.BringToFront
 
-            ' Aniadir el control al panel
-            Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/place/"+Direccion)
-            panelMapa.Controls.Add(Chromium)
-            Chromium.Dock = DockStyle.Fill
-            Chromium.BringToFront
-        Catch ex As Exception
-            Dim web As WebBrowser = New WebBrowser
-            web.Url = New Uri("https://www.google.com.uy/maps/place/"+Direccion)
-            panelMapa.Controls.Add(web)
-            web.Dock = DockStyle.Fill
-            web.BringToFront
-
-            Serilog.Log.Error(ex, "Error al cargar CefSharp. Cargando Webview del legado.")
-        End Try
-    End If
+                Serilog.Log.Error(ex, "Error al cargar CefSharp. Cargando Webview del legado.")
+            End Try
+        End If
     End Sub
 
     Private Sub BtnAgZona_Click(sender As Object, e As EventArgs) Handles btnAgZona.Click

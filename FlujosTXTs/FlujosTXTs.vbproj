@@ -300,6 +300,12 @@
     <Compile Include="UserControl\Administrador_Deus\VerPatio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Ventanitas\ChromiumHandler.Designer.vb">
+      <DependentUpon>ChromiumHandler.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanitas\ChromiumHandler.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventanitas\Menu.Designer.vb">
       <DependentUpon>Menu.vb</DependentUpon>
     </Compile>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\VerPatio.resx">
       <DependentUpon>VerPatio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanitas\ChromiumHandler.resx">
+      <DependentUpon>ChromiumHandler.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanitas\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>

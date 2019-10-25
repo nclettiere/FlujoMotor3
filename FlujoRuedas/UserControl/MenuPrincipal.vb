@@ -20,32 +20,17 @@ Public Class MenuPrincipal
         Dim infoL = New InfoLotes
         infoL.Dock = DockStyle.Fill
         pnCOntenedor.Controls.Add(New InfoLotes)
-        btViajes.Font = New Font(btViajes.Font.FontFamily, 14)
-        piBoPatio.Size = New Size(56, 30)
-        btViajes.BackColor = Color.Transparent
-        btLotes.BackColor = Color.DarkGray
-        btLotes.Font = New Font(btLotes.Font.FontFamily, 17)
-        piBoPuerto.Size = New Size(56, 70)
+
+        GoToSection(1)
+        piBoPatio.Size = New Size(56, 70)
     End Sub
 
-    Private Sub BtPuerto_Click(sender As Object, e As EventArgs) Handles btLotes.Click
-        GoToSection(0)
-        btViajes.Font = New Font(btViajes.Font.FontFamily, 14)
-        piBoPatio.Size = New Size(56, 30)
-        btViajes.BackColor = Color.Transparent
-        btLotes.BackColor = Color.DarkGray
-        btLotes.Font = New Font(btLotes.Font.FontFamily, 17)
-        piBoPuerto.Size = New Size(56, 70)
+    Private Sub BtPuerto_Click(sender As Object, e As EventArgs) 
+
     End Sub
 
     Private Sub BtViajes_Click(sender As Object, e As EventArgs) Handles btViajes.Click
-        GoToSection(1)
-        btLotes.Font = New Font(btViajes.Font.FontFamily, 14)
-        piBoPuerto.Size = New Size(56, 30)
-        btLotes.BackColor = Color.Transparent
-        btViajes.BackColor = Color.DarkGray
-        btViajes.Font = New Font(btLotes.Font.FontFamily, 17)
-        piBoPatio.Size = New Size(56, 70)
+        
     End Sub
 
     Friend Sub GoToSection(ByVal Section As Integer)

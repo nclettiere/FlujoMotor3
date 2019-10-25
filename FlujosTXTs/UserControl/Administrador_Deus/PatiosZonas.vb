@@ -79,7 +79,7 @@ Public Class PatiosZonas
     End Sub
 
     Private Sub VerClick(s As Object, ea As EventArgs, PatioId As String, Direccion As String)
-        Dim Ventana As ChromiumHandler = New ChromiumHandler
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
         Dim VerPt As VerPatio = New VerPatio
         VerPt.PatioId = PatioId
         Dim dir As String = Direccion.Replace(" ", "+")

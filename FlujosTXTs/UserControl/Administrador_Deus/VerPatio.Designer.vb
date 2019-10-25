@@ -7,7 +7,8 @@ Partial Class VerPatio
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
+                Chromium.Dispose
+                components.Dispose
             End If
         Finally
             MyBase.Dispose(disposing)

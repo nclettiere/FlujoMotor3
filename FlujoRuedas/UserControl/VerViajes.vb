@@ -70,7 +70,19 @@ Public Class VerViajes
     Private Sub ActualizarLista
         ListaViajes.DataSource = Nothing
         Try
-            ListaViajes.DataSource = LObtenerAllFitro("lotefechasalida IS NOT NULL AND lotefechallegada IS NULL AND transportistaid ="+ ObtenerOpId.ToString)
+            Dim Datos As DataTable = LObtenerAllFitro("lotefechasalida IS NOT NULL AND lotefechallegada IS NULL AND transportistaid ="+ ObtenerOpId.ToString)
+            ListaViajes.DataSource = Datos
+
+            If Datos IsNot Nothing
+                If Datos.Rows.Count = 0
+                    lblNoViajes.Visible = True
+                Else
+                    lblNoViajes.Visible = False
+                End If
+            Else
+                lblNoViajes.Visible = True
+            End If
+
             For Each column As ColumnHeader In ListaViajes.Columns
                 column.Width = -2
             Next
@@ -120,4 +132,9 @@ Public Class VerViajes
             End Try
         End If
     End Sub
+
+    Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        ActualizarLista
+    End Sub
+
 End Class

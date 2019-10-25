@@ -36,7 +36,7 @@ Public Class VerPatio
     Private Sub VerPatio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ActualizarSubZonas
 
-        Chromium = CType(ParentForm, ChromiumHandler).Chromium
+        Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/")
 
         If CefSharp.Cef.IsInitialized
             Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion)

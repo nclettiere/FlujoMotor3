@@ -26,17 +26,14 @@ Partial Class MenuPrincipal
         Me.pnCOntenedor = New System.Windows.Forms.Panel()
         Me.TableLayoutPanelSesion = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.btLotes = New System.Windows.Forms.Button()
         Me.btViajes = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.piBoPuerto = New System.Windows.Forms.PictureBox()
         Me.piBoPatio = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanelOpciones = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanelSesion.SuspendLayout
         CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         Me.TableLayoutPanel1.SuspendLayout
-        CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).BeginInit
         Me.TableLayoutPanelOpciones.SuspendLayout
         Me.Panel1.SuspendLayout
@@ -98,23 +95,6 @@ Partial Class MenuPrincipal
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = false
         '
-        'btLotes
-        '
-        Me.btLotes.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btLotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btLotes.FlatAppearance.BorderSize = 0
-        Me.btLotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btLotes.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btLotes.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btLotes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btLotes.Location = New System.Drawing.Point(64, 25)
-        Me.btLotes.Name = "btLotes"
-        Me.btLotes.Size = New System.Drawing.Size(206, 62)
-        Me.btLotes.TabIndex = 0
-        Me.btLotes.Text = "LOTES"
-        Me.btLotes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btLotes.UseVisualStyleBackColor = true
-        '
         'btViajes
         '
         Me.btViajes.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -133,34 +113,18 @@ Partial Class MenuPrincipal
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.59615!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.40385!))
-        Me.TableLayoutPanel1.Controls.Add(Me.btLotes, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.piBoPuerto, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btViajes, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.piBoPatio, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.btViajes, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.piBoPatio, 0, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(273, 227)
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(273, 217)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'piBoPuerto
-        '
-        Me.piBoPuerto.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.piBoPuerto.BackgroundImage = Global.FlujoRuedas.My.Resources.Resources.next_1aaaaa
-        Me.piBoPuerto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.piBoPuerto.Location = New System.Drawing.Point(3, 41)
-        Me.piBoPuerto.Name = "piBoPuerto"
-        Me.piBoPuerto.Size = New System.Drawing.Size(55, 30)
-        Me.piBoPuerto.TabIndex = 1
-        Me.piBoPuerto.TabStop = false
         '
         'piBoPatio
         '
@@ -185,8 +149,8 @@ Partial Class MenuPrincipal
         Me.TableLayoutPanelOpciones.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanelOpciones.Name = "TableLayoutPanelOpciones"
         Me.TableLayoutPanelOpciones.RowCount = 3
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.8209!))
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.85714!))
+        Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.14286!))
         Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.97015!))
         Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
         Me.TableLayoutPanelOpciones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20!))
@@ -213,7 +177,6 @@ Partial Class MenuPrincipal
         Me.TableLayoutPanelSesion.ResumeLayout(false)
         CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         Me.TableLayoutPanel1.ResumeLayout(false)
-        CType(Me.piBoPuerto,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.piBoPatio,System.ComponentModel.ISupportInitialize).EndInit
         Me.TableLayoutPanelOpciones.ResumeLayout(false)
         Me.Panel1.ResumeLayout(false)
@@ -226,8 +189,6 @@ End Sub
     Friend WithEvents pnCOntenedor As Panel
     Friend WithEvents TableLayoutPanelSesion As TableLayoutPanel
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents btLotes As Button
-    Friend WithEvents piBoPuerto As PictureBox
     Friend WithEvents btViajes As Button
     Friend WithEvents piBoPatio As PictureBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel

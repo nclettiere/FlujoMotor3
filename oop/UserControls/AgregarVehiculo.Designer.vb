@@ -45,65 +45,66 @@ Partial Class AgregarVehiculo
         Me.lblmodagr = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.SuspendLayout()
+        Me.chkInspeccion = New System.Windows.Forms.CheckBox()
+        Me.Panel1.SuspendLayout
+        Me.Panel2.SuspendLayout
+        Me.SuspendLayout
         '
         'btnmod
         '
         Me.btnmod.BackColor = System.Drawing.Color.DimGray
         Me.btnmod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmod.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnmod.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnmod.ForeColor = System.Drawing.Color.Orange
-        Me.btnmod.Location = New System.Drawing.Point(16, 422)
+        Me.btnmod.Location = New System.Drawing.Point(16, 439)
         Me.btnmod.Name = "btnmod"
         Me.btnmod.Size = New System.Drawing.Size(297, 35)
         Me.btnmod.TabIndex = 28
         Me.btnmod.Text = "Modificar"
-        Me.btnmod.UseVisualStyleBackColor = False
-        Me.btnmod.Visible = False
+        Me.btnmod.UseVisualStyleBackColor = false
+        Me.btnmod.Visible = false
         '
         'btnQuitarLote
         '
         Me.btnQuitarLote.BackColor = System.Drawing.Color.DimGray
         Me.btnQuitarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitarLote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitarLote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnQuitarLote.ForeColor = System.Drawing.Color.Orange
         Me.btnQuitarLote.Location = New System.Drawing.Point(99, 357)
         Me.btnQuitarLote.Name = "btnQuitarLote"
         Me.btnQuitarLote.Size = New System.Drawing.Size(214, 35)
         Me.btnQuitarLote.TabIndex = 25
         Me.btnQuitarLote.Text = "X Quitar X"
-        Me.btnQuitarLote.UseVisualStyleBackColor = False
-        Me.btnQuitarLote.Visible = False
+        Me.btnQuitarLote.UseVisualStyleBackColor = false
+        Me.btnQuitarLote.Visible = false
         '
         'btnremover2
         '
         Me.btnremover2.BackColor = System.Drawing.Color.DimGray
         Me.btnremover2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnremover2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnremover2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnremover2.ForeColor = System.Drawing.Color.Orange
         Me.btnremover2.Location = New System.Drawing.Point(209, 357)
         Me.btnremover2.Name = "btnremover2"
         Me.btnremover2.Size = New System.Drawing.Size(104, 35)
         Me.btnremover2.TabIndex = 27
         Me.btnremover2.Text = "X Quitar X"
-        Me.btnremover2.UseVisualStyleBackColor = False
-        Me.btnremover2.Visible = False
+        Me.btnremover2.UseVisualStyleBackColor = false
+        Me.btnremover2.Visible = false
         '
         'btncambiarlote
         '
         Me.btncambiarlote.BackColor = System.Drawing.Color.DimGray
         Me.btncambiarlote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncambiarlote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncambiarlote.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btncambiarlote.ForeColor = System.Drawing.Color.Orange
         Me.btncambiarlote.Location = New System.Drawing.Point(99, 357)
         Me.btncambiarlote.Name = "btncambiarlote"
         Me.btncambiarlote.Size = New System.Drawing.Size(104, 35)
         Me.btncambiarlote.TabIndex = 26
         Me.btncambiarlote.Text = "Cambiar"
-        Me.btncambiarlote.UseVisualStyleBackColor = False
-        Me.btncambiarlote.Visible = False
+        Me.btncambiarlote.UseVisualStyleBackColor = false
+        Me.btncambiarlote.Visible = false
         '
         'VehiculoAno
         '
@@ -114,7 +115,7 @@ Partial Class AgregarVehiculo
         '
         'cbxTipo
         '
-        Me.cbxTipo.FormattingEnabled = True
+        Me.cbxTipo.FormattingEnabled = true
         Me.cbxTipo.Items.AddRange(New Object() {"Auto", "Camion", "Van", "Minivan", "SUV"})
         Me.cbxTipo.Location = New System.Drawing.Point(16, 222)
         Me.cbxTipo.Name = "cbxTipo"
@@ -125,32 +126,32 @@ Partial Class AgregarVehiculo
         '
         Me.btnExist.BackColor = System.Drawing.Color.DimGray
         Me.btnExist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExist.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExist.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnExist.ForeColor = System.Drawing.Color.Orange
         Me.btnExist.Location = New System.Drawing.Point(209, 357)
         Me.btnExist.Name = "btnExist"
         Me.btnExist.Size = New System.Drawing.Size(104, 35)
         Me.btnExist.TabIndex = 22
         Me.btnExist.Text = "Existente"
-        Me.btnExist.UseVisualStyleBackColor = False
+        Me.btnExist.UseVisualStyleBackColor = false
         '
         'btnLnew
         '
         Me.btnLnew.BackColor = System.Drawing.Color.DimGray
         Me.btnLnew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLnew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLnew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnLnew.ForeColor = System.Drawing.Color.Orange
         Me.btnLnew.Location = New System.Drawing.Point(99, 357)
         Me.btnLnew.Name = "btnLnew"
         Me.btnLnew.Size = New System.Drawing.Size(104, 35)
         Me.btnLnew.TabIndex = 21
         Me.btnLnew.Text = "Nuevo"
-        Me.btnLnew.UseVisualStyleBackColor = False
+        Me.btnLnew.UseVisualStyleBackColor = false
         '
         'lblLotedesc
         '
-        Me.lblLotedesc.AutoSize = True
-        Me.lblLotedesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLotedesc.AutoSize = true
+        Me.lblLotedesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblLotedesc.ForeColor = System.Drawing.Color.Orange
         Me.lblLotedesc.Location = New System.Drawing.Point(14, 368)
         Me.lblLotedesc.Name = "lblLotedesc"
@@ -160,8 +161,8 @@ Partial Class AgregarVehiculo
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.AutoSize = true
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Orange
         Me.Label7.Location = New System.Drawing.Point(13, 293)
         Me.Label7.Name = "Label7"
@@ -179,8 +180,8 @@ Partial Class AgregarVehiculo
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.AutoSize = true
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Orange
         Me.Label5.Location = New System.Drawing.Point(14, 248)
         Me.Label5.Name = "Label5"
@@ -190,8 +191,8 @@ Partial Class AgregarVehiculo
         '
         'Label6
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.AutoSize = true
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Orange
         Me.Label6.Location = New System.Drawing.Point(14, 205)
         Me.Label6.Name = "Label6"
@@ -203,14 +204,14 @@ Partial Class AgregarVehiculo
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.DimGray
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Orange
-        Me.btnAgregar.Location = New System.Drawing.Point(16, 422)
+        Me.btnAgregar.Location = New System.Drawing.Point(16, 439)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(297, 35)
         Me.btnAgregar.TabIndex = 9
         Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = False
+        Me.btnAgregar.UseVisualStyleBackColor = false
         '
         'tbxModelo
         '
@@ -222,8 +223,8 @@ Partial Class AgregarVehiculo
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.AutoSize = true
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Orange
         Me.Label4.Location = New System.Drawing.Point(14, 158)
         Me.Label4.Name = "Label4"
@@ -241,8 +242,8 @@ Partial Class AgregarVehiculo
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
         Me.Label3.Location = New System.Drawing.Point(14, 107)
         Me.Label3.Name = "Label3"
@@ -260,8 +261,8 @@ Partial Class AgregarVehiculo
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
         Me.Label2.Location = New System.Drawing.Point(13, 58)
         Me.Label2.Name = "Label2"
@@ -271,8 +272,8 @@ Partial Class AgregarVehiculo
         '
         'lblmodagr
         '
-        Me.lblmodagr.AutoSize = True
-        Me.lblmodagr.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblmodagr.AutoSize = true
+        Me.lblmodagr.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblmodagr.ForeColor = System.Drawing.Color.Orange
         Me.lblmodagr.Location = New System.Drawing.Point(13, 18)
         Me.lblmodagr.Name = "lblmodagr"
@@ -287,12 +288,13 @@ Partial Class AgregarVehiculo
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(5, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(322, 475)
+        Me.Panel1.Size = New System.Drawing.Size(322, 490)
         Me.Panel1.TabIndex = 2
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Gray
+        Me.Panel2.Controls.Add(Me.chkInspeccion)
         Me.Panel2.Controls.Add(Me.btnmod)
         Me.Panel2.Controls.Add(Me.btnQuitarLote)
         Me.Panel2.Controls.Add(Me.btnremover2)
@@ -318,24 +320,38 @@ Partial Class AgregarVehiculo
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(322, 475)
+        Me.Panel2.Size = New System.Drawing.Size(322, 490)
         Me.Panel2.TabIndex = 0
+        '
+        'chkInspeccion
+        '
+        Me.chkInspeccion.AutoSize = true
+        Me.chkInspeccion.Checked = true
+        Me.chkInspeccion.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkInspeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkInspeccion.ForeColor = System.Drawing.Color.Orange
+        Me.chkInspeccion.Location = New System.Drawing.Point(126, 409)
+        Me.chkInspeccion.Name = "chkInspeccion"
+        Me.chkInspeccion.Size = New System.Drawing.Size(187, 17)
+        Me.chkInspeccion.TabIndex = 29
+        Me.chkInspeccion.Text = "Crear Inspeccion automaticamente"
+        Me.chkInspeccion.UseVisualStyleBackColor = true
         '
         'AgregarVehiculo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.Panel1)
         Me.Name = "AgregarVehiculo"
         Me.Padding = New System.Windows.Forms.Padding(5)
-        Me.Size = New System.Drawing.Size(332, 485)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.ResumeLayout(False)
+        Me.Size = New System.Drawing.Size(332, 500)
+        Me.Panel1.ResumeLayout(false)
+        Me.Panel2.ResumeLayout(false)
+        Me.Panel2.PerformLayout
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents btnmod As Button
     Friend WithEvents btnQuitarLote As Button
@@ -360,4 +376,5 @@ Partial Class AgregarVehiculo
     Friend WithEvents lblmodagr As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents chkInspeccion As CheckBox
 End Class

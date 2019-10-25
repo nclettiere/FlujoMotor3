@@ -7,6 +7,7 @@ Public Class VerLavados
     Friend Sub CargarDatos(VIN As String)
         Me.VIN = VIN
         DataGridView1.DataSource = MObtenerLavadoVIN(VIN)
+        lblLavadoTitulo.Text = "Viendo Lavados de: " + VIN
     End Sub
 
     Private Sub BtCerrar_Click(sender As Object, e As EventArgs) Handles btCerrar.Click

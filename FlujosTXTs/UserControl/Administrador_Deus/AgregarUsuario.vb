@@ -50,7 +50,7 @@ Public Class AgregarUsuario
             If Not String.IsNullOrWhiteSpace(tbxNombre.Text)
                 If Not String.IsNullOrWhiteSpace(tbxApell.Text)
                     If Not String.IsNullOrWhiteSpace(tbxTel.Text)
-                        If rbOpPuerto.Checked Or rbOpPatio.Checked Or rbOpTransportista.Checked
+                        If rbOpPuerto.Checked Or rbOpPatio.Checked Or rbOpTransportista.Checked Or RBAdmin.Checked
                             Dim tel As Integer
                             If Integer.TryParse(tbxTel.Text, tel)
                                 Return True

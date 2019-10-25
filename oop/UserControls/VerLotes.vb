@@ -93,12 +93,14 @@ Public Class VerLotes
             Dim VehiculosEnLote = VObtenerLoteId(LoteId)
             If VehiculosEnLote IsNot Nothing
                 If VehiculosEnLote.Rows.Count > 0
-                    Dim VentanaVerControl As Ventana_Ver = New Ventana_Ver
-                    Dim SelecTransp As SeleccionarTransportista = New SeleccionarTransportista
-                    SelecTransp.VL_VerLote = Me
-                    VentanaVerControl.LoadControl(SelecTransp)
-                    VentanaVerControl.Text = "Asignar Lote A Transportista"
-                    VentanaVerControl.ShowDialog
+                    If VerificarVehiculosEntrega(LoteId)
+                        Dim VentanaVerControl As Ventana_Ver = New Ventana_Ver
+                        Dim SelecTransp As SeleccionarTransportista = New SeleccionarTransportista
+                        SelecTransp.VL_VerLote = Me
+                        VentanaVerControl.LoadControl(SelecTransp)
+                        VentanaVerControl.Text = "Asignar Lote A Transportista"
+                        VentanaVerControl.ShowDialog
+                    End If
                 Else
                     MsgBox("El lote no tiene ningun vehiculo. Agregue uno para continuar.")
                 End If

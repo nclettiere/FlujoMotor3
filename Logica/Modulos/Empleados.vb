@@ -142,9 +142,9 @@ Public Module Empleados
                 Case 2
                     Dcommand = New OdbcCommand("INSERT INTO transportistas  (empleadoid) VALUES ("+EmpleadoId.ToString+")")
                 Case 3
-                    Dcommand = New OdbcCommand("INSERT INTO operarioPuertos (empleadoid) VALUES (?)")
-                    Dcommand1 = New OdbcCommand("INSERT INTO operarioPatios (empleadoid) VALUES (?)")
-                    Dcommand2 = New OdbcCommand("INSERT INTO transportistas (empleadoid) VALUES (?)")
+                    Dcommand = New OdbcCommand("INSERT INTO operarioPuertos (empleadoid) VALUES ("+EmpleadoId.ToString+")")
+                    Dcommand1 = New OdbcCommand("INSERT INTO operarioPatios (empleadoid) VALUES ("+EmpleadoId.ToString+")")
+                    Dcommand2 = New OdbcCommand("INSERT INTO transportistas (empleadoid) VALUES ("+EmpleadoId.ToString+")")
 
                     Dcommand1.Connection = DBConexion
                     Dcommand1.ExecuteNonQuery()
@@ -250,6 +250,31 @@ Public Module Empleados
         Else
             Return False
         End If
+        Cerrar
+    End Function
+
+    Public Function CheckAdmin(Usuario As String) As Boolean
+        Conectar
+        Try
+            Dim UsuarioDatos As DataTable = UObtener(Usuario)
+
+            If VerificarTabla(UsuarioDatos)
+                If CheckearTipoOperario("SELECT COUNT(*) FROM operariopuertos WHERE empleadoid = "+ UsuarioDatos.Rows(0).Item("empleadoid").ToString +";") And
+                   CheckearTipoOperario("SELECT COUNT(*) FROM operariopatios WHERE empleadoid = "+ UsuarioDatos.Rows(0).Item("empleadoid").ToString +";") And
+                   CheckearTipoOperario("SELECT COUNT(*) FROM transportistas WHERE empleadoid = "+ UsuarioDatos.Rows(0).Item("empleadoid").ToString +";")
+                   Return True
+                Else
+                    MsgBox("No tienes los permisos suficientes para utilizar esta aplicacion.")
+                    Return False
+                End If
+            Else
+                MsgBox("El usuario iungresado parece no estar registrado en la base de datos.")
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox("Hubo un error al verificar los datos. Vea el log para mas informacion.")
+            Serilog.Log.Error(ex, "err..")
+        End Try
         Cerrar
     End Function
 

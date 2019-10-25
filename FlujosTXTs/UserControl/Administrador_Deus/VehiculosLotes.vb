@@ -7,16 +7,17 @@ Public Class VehiculosLotes
     Private LoteIdSelec As String
 
     Private Sub OnVLload(sender As Object, e As EventArgs) Handles MyBase.Load
+        listaVehiculos.VirtualListSize = Integer.MaxValue
         ActualizarVehiculos
+        cbxEstado.SelectedIndex = 0
     End Sub
+
+    Private TipoBusqueda As Integer = 0
 
     Private Sub CambioSeleccion(sender As Object, e As EventArgs) Handles listaVehiculos.SelectedIndexChanged
         Try
             If listaVehiculos.SelectedIndex >= 0
                 btnElim.Enabled = True
-                btnInsp.Enabled = True
-                btnLavado.Enabled = True
-                btnMngLote.Enabled = True
                 btnMod.Enabled = True
 
                 '' Obtener Datos
@@ -138,6 +139,21 @@ Public Class VehiculosLotes
             Serilog.Log.Error(ex, "Error Al obtener lotes")
         End Try
     End Sub
+
+    Friend Sub ActualizarVehiculos(dv As DataView)
+        Try
+            listaVehiculos.DataSource = Nothing
+            listaVehiculos.DataSource = dv
+
+            For Each column As ColumnHeader In listaVehiculos.Columns
+                column.Width = -2
+            Next
+        Catch ex As Exception
+            MsgBox("Error Al obtener vehiculos")
+            Serilog.Log.Error(ex, "Error Al obtener vehiculos")
+        End Try
+    End Sub
+
 
     Private Sub BtnElim_Click(sender As Object, e As EventArgs) Handles btnElim.Click
         Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
@@ -354,5 +370,35 @@ Public Class VehiculosLotes
         SV.UC_VehiculosLotes = Me
         Ventana.LoadControl(SV)
         Ventana.ShowDialog
+    End Sub
+
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim dv As DataView
+
+        listaVehiculos.DataSource = Nothing
+
+        Select cbxEstado.SelectedIndex
+            Case 0
+                dv = New DataView(VObtenerAll)
+            Case 1
+                dv = New DataView(VObtenerAllPuerto)
+            Case 2
+                dv = New DataView(VObtenerAllPatio)
+            Case 3
+                dv = New DataView(VObtenerAllTransportista)
+            Case 4
+                dv = New DataView(VObtenerAllVendidos)
+            Case Else
+                dv = New DataView(VObtenerAll)
+        End Select
+
+        Dim Loteid As Integer = Integer.Parse(tbxLoteid.Text)
+        MsgBox(String.Format("vehiculovin LIKE '{0}' AND Loteid = {1}", tbxVIN.Text, Loteid))
+        dv.RowFilter = String.Format("vehiculovin LIKE '%{0}%' AND Loteid = {1}", tbxVIN.Text, Loteid)
+        ActualizarVehiculos(dv)
+    End Sub
+
+    Private Sub CbxEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxEstado.SelectedIndexChanged
+
     End Sub
 End Class

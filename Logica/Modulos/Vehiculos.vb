@@ -84,6 +84,20 @@ Public Module Vehiculos
         Cerrar
     End Function
 
+    Public Function VObtenerAllTransportista() As DataTable
+        Conectar
+        Dim tabla As New DataTable
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos A LEFT JOIN lotes B ON A.loteid = B.loteid WHERE A.vehiculofechaentrega IS NULL AND B.lotefechallegada IS NULL AND B.lotefechasalida IS NOT NULL AND B.transportistaID IS NOT NULL", DBConexion)
+        adaptador.Fill(tabla)
+
+        If VerificarTabla(tabla)
+            Return tabla
+        Else
+            Return Nothing
+        End If
+        Cerrar
+    End Function
+
     Public Function VObtenerAllPatioFiltro(Filtro As String) As DataTable
         Conectar
         Dim tabla As New DataTable
@@ -506,4 +520,52 @@ Public Module Vehiculos
         End Try
         Cerrar
     End Function
+
+    Public Function VerificarVehiculosEntrega(LoteId As String) As Boolean
+        Conectar
+        Try
+            Dim Vehiculos As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT * FROM vehiculos WHERE loteid="+ LoteId, DBConexion)
+            adaptador.Fill(Vehiculos)
+
+            Dim PuedeContinuar As Boolean = True
+            For Each Vehiculo As DataRow In Vehiculos.Rows
+                Dim VIN As String = Vehiculo.Item("vehiculovin")
+                If IObtenerVINCount(VIN) = 0
+                    MsgBox("El vehiculo VIN: "+ VIN + " necesita ser inspeccionado antes de ser entregado.")
+                    PuedeContinuar = False
+                End If
+            Next
+
+            Return PuedeContinuar
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err...")
+            Return False
+        End Try
+        Cerrar
+    End Function
+
+    Public Function VerificarLavado(VIN As String) As Boolean
+        Conectar
+        Try
+            Dim Vehiculos As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT COUNT(*) FROM lavadoVehiculo WHERE vehiculoVIN ='"+ VIN + "'", DBConexion)
+            adaptador.Fill(Vehiculos)
+
+            If VerificarTabla(Vehiculos)
+                If Vehiculos.Rows(0).Item(0) > 0
+                    Return True
+                Else
+                    Return False
+                End If
+            End If
+
+            Return False
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err...")
+            Return False
+        End Try
+        Cerrar
+    End Function
+    
 End Module

@@ -50,6 +50,25 @@ Public Module Inspecciones
         Cerrar
     End Function
 
+    Public Function IObtenerVINCount(VIN As String) As Integer
+        Conectar()
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT COUNT(*) FROM inspecciones WHERE vehiculovin='" + VIN + "'", DBConexion)
+            adaptador.Fill(tabla)
+
+            If VerificarTabla(tabla)
+                Return tabla.Rows(0).Item(0)
+            Else
+                Return 0
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+            Return 0
+        End Try
+        Cerrar
+    End Function
+
     Public Function IObtenerVIN(VIN As String, Filtro As String) As DataTable
         Conectar()
         Dim tabla As New DataTable

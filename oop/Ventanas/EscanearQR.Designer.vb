@@ -22,14 +22,14 @@ Partial Class EscanearQR
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EscanearQR))
+        Me.Timer1 = New System.Windows.Forms.Timer()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.btnScan = New System.Windows.Forms.Button()
-        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'Timer1
         '
@@ -41,11 +41,11 @@ Partial Class EscanearQR
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(487, 367)
         Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = false
+        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
-        Me.Label1.AutoSize = true
+        Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.Orange
         Me.Label1.Location = New System.Drawing.Point(360, 65)
         Me.Label1.Name = "Label1"
@@ -55,7 +55,7 @@ Partial Class EscanearQR
         '
         'ComboBox1
         '
-        Me.ComboBox1.FormattingEnabled = true
+        Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(445, 62)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(140, 21)
@@ -71,11 +71,11 @@ Partial Class EscanearQR
         Me.btnScan.Size = New System.Drawing.Size(179, 36)
         Me.btnScan.TabIndex = 8
         Me.btnScan.Text = "Iniciar Escaneo"
-        Me.btnScan.UseVisualStyleBackColor = false
+        Me.btnScan.UseVisualStyleBackColor = False
         '
         'EscanearQR
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(683, 598)
@@ -83,6 +83,7 @@ Partial Class EscanearQR
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComboBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EscanearQR"
         Me.Text = "EscanearQR"
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit

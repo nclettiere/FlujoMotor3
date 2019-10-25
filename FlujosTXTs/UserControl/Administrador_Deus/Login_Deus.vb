@@ -10,7 +10,7 @@ Public Class Login_Deus
 
                 Conexion.Conectar()
 
-                If (LogInAdministrador) Then
+                If CheckAdmin(USER) Then
                     MessageBox.Show("Conectado Exitosamente.")
 
                     DirectCast(ParentForm, Menu).CargarMenuPrincipal()

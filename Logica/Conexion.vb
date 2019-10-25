@@ -113,7 +113,7 @@ Public Module Conexion
         End Try
     End Function
 
-    Public Function LogInAdministrador() As Boolean
+    Public Function LogInAdministrador(Usuario As String) As Boolean
         Cerrar
         If PrimeraVez
             DBConexion.ConnectionString = GetArchivoConexion
@@ -122,16 +122,9 @@ Public Module Conexion
 
         Try
             DBConexion.Open()
-            Dim datos As DataTable = UObtener(USER)
-            If datos Is Nothing
+            If CheckAdmin(Usuario)
                 Return True
             Else
-                If datos.Rows.Count = 0
-                    Return True
-                Else
-                    MsgBox("No tienes permisos para ingresar.")
-                    Return False
-                End If
                 MsgBox("No tienes permisos para ingresar.")
             End If
         Catch ex As OdbcException

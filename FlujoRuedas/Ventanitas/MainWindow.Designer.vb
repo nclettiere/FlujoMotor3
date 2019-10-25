@@ -22,8 +22,9 @@ Partial Class MainWindow
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.MainContent = New System.Windows.Forms.Panel()
-        Me.SuspendLayout
+        Me.SuspendLayout()
         '
         'MainContent
         '
@@ -35,12 +36,13 @@ Partial Class MainWindow
         '
         'MainWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.MainContent)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainWindow"
-        Me.Text = "Form1"
+        Me.Text = "ESPItacular"
         Me.ResumeLayout(false)
 
 End Sub

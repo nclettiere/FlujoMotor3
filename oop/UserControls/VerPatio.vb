@@ -42,6 +42,7 @@ Public Class VerPatio
 
     Private Sub BtnLavado_Click(sender As Object, e As EventArgs) Handles btnLavado.Click
         Try
+            MsgBox(VinSeleccionado)
             Dim CVentanaVer As Ventana_Ver = New Ventana_Ver
             Dim VerLvd = New VerLavados()
             VerLvd.CargarDatos(VinSeleccionado)
@@ -107,10 +108,15 @@ Public Class VerPatio
 
     Private Sub BtnVendido_Click(sender As Object, e As EventArgs) Handles btnVendido.Click
         Try
-            If VMarcarVendido(VinSeleccionado)
-                MessageBox.Show("Vehiculo vendido exitosamente.")
-                ActualizarLista
+            If VerificarLavado(VinSeleccionado)
+                If VMarcarVendido(VinSeleccionado)
+                    MessageBox.Show("Vehiculo vendido exitosamente.")
+                    ActualizarLista
+                End If
+            Else
+                MsgBox("El vehiculo debe ser lavado antes de venderse.")
             End If
+
         Catch ex As Exception
             MsgBox("Error al vender makako")
             Serilog.Log.Error(ex, "err")

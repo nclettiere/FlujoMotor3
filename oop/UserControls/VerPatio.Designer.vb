@@ -31,6 +31,10 @@ Partial Class VerPatio
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.cbxZonaPatio = New System.Windows.Forms.ComboBox()
         Me.tbxBuscarVin = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btBuscarLote = New System.Windows.Forms.Button()
+        Me.btBuscarPatio = New System.Windows.Forms.Button()
+        Me.btBuscarVIN = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnVendido = New System.Windows.Forms.Button()
         Me.btnPatios = New System.Windows.Forms.Button()
@@ -39,18 +43,14 @@ Partial Class VerPatio
         Me.btActualizarVehiculo = New System.Windows.Forms.Button()
         Me.btInfoVehiculo = New System.Windows.Forms.Button()
         Me.pnlData = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btBuscarVIN = New System.Windows.Forms.Button()
-        Me.btBuscarPatio = New System.Windows.Forms.Button()
-        Me.btBuscarLote = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.TabControl1.SuspendLayout
         Me.autito.SuspendLayout
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel3.SuspendLayout
         Me.Panel3.SuspendLayout
-        Me.Panel4.SuspendLayout
         Me.Panel2.SuspendLayout
+        Me.Panel4.SuspendLayout
         Me.SuspendLayout
         '
         'Panel1
@@ -132,7 +132,7 @@ Partial Class VerPatio
         Me.cbxFiltro.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.cbxFiltro.FormattingEnabled = true
         Me.cbxFiltro.Items.AddRange(New Object() {"VIN", "ZONA", "PATIO"})
-        Me.cbxFiltro.Location = New System.Drawing.Point(3, 9)
+        Me.cbxFiltro.Location = New System.Drawing.Point(3, 14)
         Me.cbxFiltro.Name = "cbxFiltro"
         Me.cbxFiltro.Size = New System.Drawing.Size(94, 31)
         Me.cbxFiltro.TabIndex = 4
@@ -169,6 +169,66 @@ Partial Class VerPatio
         Me.tbxBuscarVin.Size = New System.Drawing.Size(602, 27)
         Me.tbxBuscarVin.TabIndex = 4
         Me.tbxBuscarVin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.btBuscarLote)
+        Me.Panel2.Controls.Add(Me.btBuscarPatio)
+        Me.Panel2.Controls.Add(Me.btBuscarVIN)
+        Me.Panel2.Location = New System.Drawing.Point(711, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(165, 44)
+        Me.Panel2.TabIndex = 6
+        '
+        'btBuscarLote
+        '
+        Me.btBuscarLote.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btBuscarLote.BackColor = System.Drawing.Color.DimGray
+        Me.btBuscarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btBuscarLote.FlatAppearance.BorderSize = 0
+        Me.btBuscarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBuscarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btBuscarLote.ForeColor = System.Drawing.Color.Orange
+        Me.btBuscarLote.Location = New System.Drawing.Point(27, 3)
+        Me.btBuscarLote.Name = "btBuscarLote"
+        Me.btBuscarLote.Size = New System.Drawing.Size(111, 40)
+        Me.btBuscarLote.TabIndex = 5
+        Me.btBuscarLote.Text = "Filtrar"
+        Me.btBuscarLote.UseVisualStyleBackColor = false
+        Me.btBuscarLote.Visible = false
+        '
+        'btBuscarPatio
+        '
+        Me.btBuscarPatio.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btBuscarPatio.BackColor = System.Drawing.Color.DimGray
+        Me.btBuscarPatio.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btBuscarPatio.FlatAppearance.BorderSize = 0
+        Me.btBuscarPatio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBuscarPatio.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btBuscarPatio.ForeColor = System.Drawing.Color.Orange
+        Me.btBuscarPatio.Location = New System.Drawing.Point(27, 4)
+        Me.btBuscarPatio.Name = "btBuscarPatio"
+        Me.btBuscarPatio.Size = New System.Drawing.Size(111, 40)
+        Me.btBuscarPatio.TabIndex = 4
+        Me.btBuscarPatio.Text = "Filtrar"
+        Me.btBuscarPatio.UseVisualStyleBackColor = false
+        Me.btBuscarPatio.Visible = false
+        '
+        'btBuscarVIN
+        '
+        Me.btBuscarVIN.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btBuscarVIN.BackColor = System.Drawing.Color.DimGray
+        Me.btBuscarVIN.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btBuscarVIN.FlatAppearance.BorderSize = 0
+        Me.btBuscarVIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBuscarVIN.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btBuscarVIN.ForeColor = System.Drawing.Color.Orange
+        Me.btBuscarVIN.Location = New System.Drawing.Point(27, 2)
+        Me.btBuscarVIN.Name = "btBuscarVIN"
+        Me.btBuscarVIN.Size = New System.Drawing.Size(111, 40)
+        Me.btBuscarVIN.TabIndex = 3
+        Me.btBuscarVIN.Text = "Filtrar"
+        Me.btBuscarVIN.UseVisualStyleBackColor = false
         '
         'Panel4
         '
@@ -294,66 +354,6 @@ Partial Class VerPatio
         Me.pnlData.Size = New System.Drawing.Size(879, 315)
         Me.pnlData.TabIndex = 6
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.btBuscarLote)
-        Me.Panel2.Controls.Add(Me.btBuscarPatio)
-        Me.Panel2.Controls.Add(Me.btBuscarVIN)
-        Me.Panel2.Location = New System.Drawing.Point(711, 3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(165, 44)
-        Me.Panel2.TabIndex = 6
-        '
-        'btBuscarVIN
-        '
-        Me.btBuscarVIN.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btBuscarVIN.BackColor = System.Drawing.Color.DimGray
-        Me.btBuscarVIN.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btBuscarVIN.FlatAppearance.BorderSize = 0
-        Me.btBuscarVIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btBuscarVIN.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btBuscarVIN.ForeColor = System.Drawing.Color.Orange
-        Me.btBuscarVIN.Location = New System.Drawing.Point(27, 2)
-        Me.btBuscarVIN.Name = "btBuscarVIN"
-        Me.btBuscarVIN.Size = New System.Drawing.Size(111, 40)
-        Me.btBuscarVIN.TabIndex = 3
-        Me.btBuscarVIN.Text = "Filtrar"
-        Me.btBuscarVIN.UseVisualStyleBackColor = false
-        '
-        'btBuscarPatio
-        '
-        Me.btBuscarPatio.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btBuscarPatio.BackColor = System.Drawing.Color.DimGray
-        Me.btBuscarPatio.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btBuscarPatio.FlatAppearance.BorderSize = 0
-        Me.btBuscarPatio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btBuscarPatio.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btBuscarPatio.ForeColor = System.Drawing.Color.Orange
-        Me.btBuscarPatio.Location = New System.Drawing.Point(27, 4)
-        Me.btBuscarPatio.Name = "btBuscarPatio"
-        Me.btBuscarPatio.Size = New System.Drawing.Size(111, 40)
-        Me.btBuscarPatio.TabIndex = 4
-        Me.btBuscarPatio.Text = "Filtrar"
-        Me.btBuscarPatio.UseVisualStyleBackColor = false
-        Me.btBuscarPatio.Visible = false
-        '
-        'btBuscarLote
-        '
-        Me.btBuscarLote.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btBuscarLote.BackColor = System.Drawing.Color.DimGray
-        Me.btBuscarLote.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btBuscarLote.FlatAppearance.BorderSize = 0
-        Me.btBuscarLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btBuscarLote.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btBuscarLote.ForeColor = System.Drawing.Color.Orange
-        Me.btBuscarLote.Location = New System.Drawing.Point(27, 3)
-        Me.btBuscarLote.Name = "btBuscarLote"
-        Me.btBuscarLote.Size = New System.Drawing.Size(111, 40)
-        Me.btBuscarLote.TabIndex = 5
-        Me.btBuscarLote.Text = "Filtrar"
-        Me.btBuscarLote.UseVisualStyleBackColor = false
-        Me.btBuscarLote.Visible = false
-        '
         'VerPatio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -368,8 +368,8 @@ Partial Class VerPatio
         Me.TableLayoutPanel3.ResumeLayout(false)
         Me.Panel3.ResumeLayout(false)
         Me.Panel3.PerformLayout
-        Me.Panel4.ResumeLayout(false)
         Me.Panel2.ResumeLayout(false)
+        Me.Panel4.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub

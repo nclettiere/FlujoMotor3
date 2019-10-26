@@ -3,16 +3,7 @@ Repositorio Oficial de FlujoMotor por ESPI Solutions.
 
 <img src="https://i.imgur.com/wf31bpF.png" alt="ESPI Solutions" width="150" height="150">
 
-CREATE TABLE usuario(
-  empleadoID SERIAL NOT NULL,
-  usuario VARCHAR(24) NOT NULL,
-  hash VARCHAR(512) NOT NULL,
-  salt VARCHAR(512) NOT NULL,
-  conectado SMALLINT DEFAULT 0,
-  ultimaconexion DATETIME YEAR TO SECOND,
-  PRIMARY KEY(empleadoID),
-  FOREIGN KEY (empleadoID) REFERENCES operarios(empleadoID)
-);
+- [Link librerias CefSharp - https://drive.google.com/open?id=1r2qRPtG7ev_etdiRNykYxoITVAVf4SX5](https://drive.google.com/open?id=1r2qRPtG7ev_etdiRNykYxoITVAVf4SX5)
 
 ### :heavy_exclamation_mark: Para el primer uso
 1. Modificar el archivo '_conexioninformix.yaml_' a las configuraciones de su maquina virtual y su ODBC.

@@ -12,6 +12,15 @@ Public Class Menu : Implements ILifeSpanHandler
 
         Dim Config As CefSettings = New CefSettings()
         CefSharpSettings.SubprocessExitIfParentProcessClosed = true
+        'Config.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\.CacheCef"
+        Config.CachePath = My.Application.Info.DirectoryPath + "\.CacheCef"
+
+        Environment.SetEnvironmentVariable("GOOGLE_API_KEY", "AIzaSyBbpL8iCQT8R5p5c-tWblkfy0YAXMb-pwY")
+        Environment.SetEnvironmentVariable("GOOGLE_DEFAULT_CLIENT_ID", "766996483210-rl29kav23s636oofcco8o0s31o3vbagp.apps.googleusercontent.com")
+        Environment.SetEnvironmentVariable("GOOGLE_DEFAULT_CLIENT_SECRET", "wGP-Ei-lQvAzW5vw83x7v2j_")
+
+        Config.CefCommandLineArgs.Add("enable-geolocation", "1")
+
         CefSharp.Cef.Initialize(Config)
     End Sub
 

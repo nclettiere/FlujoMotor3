@@ -38,6 +38,13 @@ Public Class VerPatio
 
         Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/")
 
+        AddHandler Chromium.FrameLoadEnd , Sub(s, ea)
+            If ea.Frame.IsMain Then
+                Chromium.ShowDevTools()
+                ea.Frame.ExecuteJavaScriptAsync("navigator.permissions.query({name:'push', userVisibleOnly:true})")
+            End If
+        End Sub
+
         If CefSharp.Cef.IsInitialized
             Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion)
             panelMapa.Controls.Add(Chromium)
@@ -47,6 +54,10 @@ Public Class VerPatio
         End If
 
     End Sub
+
+    Private Function doing(s As Object, args As EventArgs)
+        
+    End Function
 
     Private Function CrearControlSubZona(ZonaId As String, Nombre As String, Capacidad As String) As Control
         Dim PanelContenido As Panel = New Panel

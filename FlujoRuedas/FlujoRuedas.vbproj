@@ -261,6 +261,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>call "$(SolutionDir)compile.bat" "$(PlatformName)" $(ProjectDir)$(OutDir)</PostBuildEvent>
+    <PostBuildEvent>call "$(SolutionDir)compile.bat" "$(PlatformName)"  $(ProjectDir)$(OutDir) "$(SolutionDir)"</PostBuildEvent>
   </PropertyGroup>
 </Project>

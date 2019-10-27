@@ -23,13 +23,13 @@ Partial Class VerViajes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.lblNoViajes = New System.Windows.Forms.Label()
         Me.btnEntregar = New System.Windows.Forms.Button()
         Me.panelMapa = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ListaViajes = New BrightIdeasSoftware.FastDataListView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblNoViajes = New System.Windows.Forms.Label()
-        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout
         Me.panelMapa.SuspendLayout
         CType(Me.ListaViajes,System.ComponentModel.ISupportInitialize).BeginInit
@@ -49,6 +49,32 @@ Partial Class VerViajes
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(893, 745)
         Me.Panel1.TabIndex = 5
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.BackColor = System.Drawing.Color.DimGray
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdate.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.btnUpdate.Location = New System.Drawing.Point(674, 9)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(160, 41)
+        Me.btnUpdate.TabIndex = 6
+        Me.btnUpdate.Text = "Actualizar Lista"
+        Me.btnUpdate.UseVisualStyleBackColor = false
+        '
+        'lblNoViajes
+        '
+        Me.lblNoViajes.AutoSize = true
+        Me.lblNoViajes.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblNoViajes.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.lblNoViajes.Location = New System.Drawing.Point(114, 7)
+        Me.lblNoViajes.Margin = New System.Windows.Forms.Padding(20, 20, 20, 40)
+        Me.lblNoViajes.Name = "lblNoViajes"
+        Me.lblNoViajes.Padding = New System.Windows.Forms.Padding(20)
+        Me.lblNoViajes.Size = New System.Drawing.Size(319, 57)
+        Me.lblNoViajes.TabIndex = 5
+        Me.lblNoViajes.Text = "No tiene viajes disponibles. Disfrute su dia."
+        Me.lblNoViajes.Visible = false
         '
         'btnEntregar
         '
@@ -111,33 +137,6 @@ Partial Class VerViajes
         Me.Label1.Size = New System.Drawing.Size(142, 65)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Mis Viajes"
-        '
-        'lblNoViajes
-        '
-        Me.lblNoViajes.AutoSize = true
-        Me.lblNoViajes.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblNoViajes.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.lblNoViajes.Location = New System.Drawing.Point(114, 7)
-        Me.lblNoViajes.Margin = New System.Windows.Forms.Padding(20, 20, 20, 40)
-        Me.lblNoViajes.Name = "lblNoViajes"
-        Me.lblNoViajes.Padding = New System.Windows.Forms.Padding(20)
-        Me.lblNoViajes.Size = New System.Drawing.Size(319, 57)
-        Me.lblNoViajes.TabIndex = 5
-        Me.lblNoViajes.Text = "No tiene viajes disponibles. Disfrute su dia."
-        Me.lblNoViajes.Visible = false
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.BackColor = System.Drawing.Color.DimGray
-        Me.btnUpdate.Enabled = false
-        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdate.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btnUpdate.Location = New System.Drawing.Point(674, 9)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(160, 41)
-        Me.btnUpdate.TabIndex = 6
-        Me.btnUpdate.Text = "Actualizar Lista"
-        Me.btnUpdate.UseVisualStyleBackColor = false
         '
         'VerViajes
         '

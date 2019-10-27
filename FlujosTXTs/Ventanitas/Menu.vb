@@ -20,6 +20,8 @@ Public Class Menu : Implements ILifeSpanHandler
         Environment.SetEnvironmentVariable("GOOGLE_DEFAULT_CLIENT_SECRET", "wGP-Ei-lQvAzW5vw83x7v2j_")
 
         Config.CefCommandLineArgs.Add("enable-geolocation", "1")
+        Config.LocalesDirPath = Application.StartupPath + "\locales"
+        Config.Locale = "es"
 
         CefSharp.Cef.Initialize(Config)
     End Sub

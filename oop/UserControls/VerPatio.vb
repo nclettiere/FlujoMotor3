@@ -25,7 +25,16 @@ Public Class VerPatio
     Public Property VinSeleccionado As String
 
     Private Sub BtnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
-
+        Try
+            MsgBox(VinSeleccionado)
+            Dim CVentanaVer As Ventana_Ver = New Ventana_Ver
+            Dim Aparcar = New AparcarVehiculo
+            Aparcar.VIN = VinSeleccionado
+            CVentanaVer.LoadControl(Aparcar)
+            CVentanaVer.ShowDialog
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al abrir AparcarVehiculo")
+        End Try
     End Sub
 
     Private Sub OnVerPatioLoad(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -42,7 +51,6 @@ Public Class VerPatio
 
     Private Sub BtnLavado_Click(sender As Object, e As EventArgs) Handles btnLavado.Click
         Try
-            MsgBox(VinSeleccionado)
             Dim CVentanaVer As Ventana_Ver = New Ventana_Ver
             Dim VerLvd = New VerLavados()
             VerLvd.CargarDatos(VinSeleccionado)

@@ -47,7 +47,7 @@ Public Class VerViajes
                 Dim LoteInfo = LObtenerID(IdSeleccionado)
                 Dim PatioInfo = PObtenerID(LoteInfo.Item("Patioid"))
                 If CCargado
-                    Chromium.Load("https://www.google.com/maps/dir/Port+of+Montevideo,+Juan+Carlos+Gómez,+11000+Montevideo/"+PatioInfo.Item("ubicacion"))
+                    Chromium.Load("https://www.google.com/maps/dir/Puerto+De+Montevideo+Juan+Carlos+Gómez,+11000+Montevideo/"+PatioInfo.Item("ubicacion"))
                 End If
             Catch ex As Exception
 
@@ -69,6 +69,7 @@ Public Class VerViajes
 
     Private Sub ActualizarLista
         ListaViajes.DataSource = Nothing
+        ListaViajes.Clear
         Try
             Dim Datos As DataTable = LObtenerAllFitro("lotefechasalida IS NOT NULL AND lotefechallegada IS NULL AND transportistaid ="+ ObtenerOpId.ToString)
             ListaViajes.DataSource = Datos
@@ -100,8 +101,17 @@ Public Class VerViajes
         Else
             Try
                 Dim Config As CefSettings = New CefSettings()
-                'Iniciar CefSharp con las configuraciones dadas
-                CefSharp.Cef.Initialize(Config)
+                CefSharpSettings.SubprocessExitIfParentProcessClosed = true
+                'Config.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\.CacheCef"
+                Config.CachePath = My.Application.Info.DirectoryPath + "\.CacheCef"
+
+                Environment.SetEnvironmentVariable("GOOGLE_API_KEY", "AIzaSyBbpL8iCQT8R5p5c-tWblkfy0YAXMb-pwY")
+                Environment.SetEnvironmentVariable("GOOGLE_DEFAULT_CLIENT_ID", "766996483210-rl29kav23s636oofcco8o0s31o3vbagp.apps.googleusercontent.com")
+                Environment.SetEnvironmentVariable("GOOGLE_DEFAULT_CLIENT_SECRET", "wGP-Ei-lQvAzW5vw83x7v2j_")
+
+                Config.CefCommandLineArgs.Add("enable-geolocation", "1")
+                Config.LocalesDirPath = Application.StartupPath + "\locales"
+                Config.Locale = "es"
 
                 ' Aniadir el control al panel
                 If ListaViajes.SelectedIndex >= 0
@@ -109,7 +119,7 @@ Public Class VerViajes
                         IdSeleccionado = ListaViajes.SelectedItem.SubItems.Item(0).Text
                         Dim LoteInfo = LObtenerID(IdSeleccionado)
                         Dim PatioInfo = PObtenerID(LoteInfo.Item("Patioid"))                
-                        Chromium.Load("https://www.google.com/maps/dir/Port+of+Montevideo,+Juan+Carlos+Gómez,+11000+Montevideo/"+PatioInfo.Item("ubicacion"))
+                        Chromium.Load("https://www.google.com.uy/maps/place/Puerto+De+Montevideo/"+PatioInfo.Item("ubicacion"))
                     Catch ex As Exception
                         Chromium = New ChromiumWebBrowser("https://www.google.com/maps/place/Puerto+De+Montevideo/")
                     End Try

@@ -157,8 +157,12 @@ Public Module Conexion
     End Function
 
     Friend Function VerificarTabla(tabla As DataTable) As Boolean
-        If tabla IsNot Nothing And tabla.Rows.Count > 0
-            Return True
+        If tabla IsNot Nothing
+            If tabla.Rows.Count > 0
+                Return True
+            Else
+                Return False
+            End If
         Else
             Return False
         End If

@@ -97,6 +97,7 @@ Public Class VerVehiculo
         Dim icono As New Bitmap(My.Resources.FE01001LOGO)
         Dim vFoto As VerFoto = New VerFoto
         vFoto.SetFoto(GenerarQR(VIN, icono))
+        vFoto.EsQR = True
         Dim vVer = New Ventana_Ver
         vVer.LoadControl(vFoto)
         vVer.TopMost = True

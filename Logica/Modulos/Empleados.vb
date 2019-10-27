@@ -258,6 +258,8 @@ Public Module Empleados
         Try
             Dim UsuarioDatos As DataTable = UObtener(Usuario)
 
+
+
             If VerificarTabla(UsuarioDatos)
                 If CheckearTipoOperario("SELECT COUNT(*) FROM operariopuertos WHERE empleadoid = "+ UsuarioDatos.Rows(0).Item("empleadoid").ToString +";") And
                    CheckearTipoOperario("SELECT COUNT(*) FROM operariopatios WHERE empleadoid = "+ UsuarioDatos.Rows(0).Item("empleadoid").ToString +";") And

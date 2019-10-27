@@ -22,6 +22,8 @@ IF %Plataforma% == "x86" (
 	echo La Plataforma es de 32bits
 	pushd %~dp0
 	xcopy "CefSharp\x86" %OUTPUT% /Y /I
+	xcopy "CefSharp\x86\locales" %OUTPUT% /Y /I
+	xcopy "CefSharp\x86\swiftshader" %OUTPUT% /Y /I
 	EXIT 0
 )
 
@@ -29,6 +31,8 @@ IF %Plataforma% == "x64" (
 	echo La Plataforma es de 64bits
 	pushd %~dp0
 	xcopy "CefSharp\x64" %OUTPUT% /Y /I
+	xcopy "CefSharp\x64\locales" %OUTPUT%\locales /Y /I
+	xcopy "CefSharp\x64\swiftshader" %OUTPUT%\swiftshader /Y /I
 	EXIT 0
 )
 

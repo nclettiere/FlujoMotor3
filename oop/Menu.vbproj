@@ -224,6 +224,12 @@
     <Compile Include="UserControls\AgregarDanio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\AparcarVehiculo.Designer.vb">
+      <DependentUpon>AparcarVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AparcarVehiculo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\IniciarCamara.Designer.vb">
       <DependentUpon>IniciarCamara.vb</DependentUpon>
     </Compile>
@@ -443,6 +449,9 @@
   <ItemGroup>
     <EmbeddedResource Include="UserControls\AgregarDanio.resx">
       <DependentUpon>AgregarDanio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AparcarVehiculo.resx">
+      <DependentUpon>AparcarVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\IniciarCamara.resx">
       <DependentUpon>IniciarCamara.vb</DependentUpon>

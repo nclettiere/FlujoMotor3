@@ -13,8 +13,19 @@ Repositorio Oficial de FlujoMotor por ESPI Solutions.
 
 ### :pushpin: Tareas | TODO
 
-- [ ] Finalizar Transportista.
-- [ ] Finalizar Administrador
+<ul>
+  <li>Idiomas</li>
+  <li>Arreglar UI de verdanios</li>
+  <li>Actualizar en op patio no funca</li>
+  <li>Modificar V. cuando es lanzado en verV no funca</li>
+  <li>Fix size of login in FlujoRuedas</li>
+  <li>Agregar mod user in admin</li>
+  <li>Fix error al aparcar vehiculo en op patio</li>
+  <li>Fix cef instance en App Operarios</li>
+  <li><b>Meh</b></li>
+</ul>
+
+
 
 ### :large_blue_diamond: Caracteristicas
 

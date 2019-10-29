@@ -1,7 +1,4 @@
 ﻿Imports Logica
-Imports System.Data.Odbc
-Imports System.Text
-Imports System.IO
 
 Public Class Login
 
@@ -21,22 +18,30 @@ Public Class Login
 
     Public Property Cargado As Boolean = False
 
+    Protected _Lang As LangManager  = New LangManager
+
     Private Sub OnLoginLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxIdioma.SelectedIndex = 0
         Cargado = True
     End Sub
 
     Private Sub CambioIndiceIdioma(sender As Object, e As EventArgs) Handles cbxIdioma.SelectedIndexChanged
-        If Cargado
-            Select cbxIdioma.SelectedIndex
-                Case 0
-                    MessageBox.Show("oie shico, si!")
-                Case 1
-                    MessageBox.Show("Oh, Right!")
-                Case 2:
-                    MessageBox.Show("!عربيعربى")
-            End Select
-        End If
+        Select cbxIdioma.SelectedIndex
+            Case 0
+                '' Seleccionamos el directorio de idioma.
+                SetDirectorioIdioma("es-UY", "operario")
+
+                '' Actualizamos los textos de la app
+                UpdateLang
+            Case 1
+                '' Seleccionamos el directorio de idioma.
+                SetDirectorioIdioma("en-GB", "operario")
+
+                '' Actualizamos los textos de la app
+                UpdateLang
+            Case 2:
+                MessageBox.Show("!عربيعربى")
+        End Select
     End Sub
 
     Private Sub btn_LogIn_Click(sender As Object, e As EventArgs) Handles btn_LogIn.Click
@@ -66,5 +71,11 @@ Public Class Login
             MessageBox.Show("Debes ingresar un usuario.")
             Cerrar
         End If
+    End Sub
+
+    Protected Sub UpdateLang
+            ParentForm.Text = _Lang.ObtenerKey("Login", "Titulo")
+            lblUser.Text = _Lang.ObtenerKey("Login", "lbl_001")
+
     End Sub
 End Class

@@ -1,12 +1,12 @@
 Login:
-  Titulo: Login Operario
-  lbl_001: Usuario
-  lbl_002: Contrasena
-  btn_001: Iniciar Sesion
-  err_001: Hubo un error al conectarse.
-  err_002: No tienes permisos para usar esta aplicacion.
-  err_003: Usuario o contrasena invalidos.
-  msg_001: Conectado exitosamente.
+  - Titulo: Login Operario EN
+  - lbl_001: Usuario EN
+  - lbl_002: Contrasena
+  - btn_001: Iniciar Sesion
+  - err_001: Hubo un error al conectarse.
+  - err_002: No tienes permisos para usar esta aplicacion.
+  - err_003: Usuario o contrasena invalidos.
+  - msg_001: Conectado exitosamente.
 
 Main:
   - Titulo: Operario

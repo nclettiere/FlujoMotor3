@@ -7,13 +7,14 @@ Public Class AparcarVehiculo
 
     Private Sub AparcarVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetupControl
+        UpdateLang
     End Sub
 
     Private Sub SetupControl
         Try
             Dim PatioInfo As DataRow = PObtenerID(PatioId)
             If PatioInfo IsNot Nothing
-                lblpatio.Text = "Patio designado: " + PatioInfo.Item("patioNombre")
+                lblpatio.Text = _Lang.ObtenerKey("AparcarVehiculo", 2)+": " + PatioInfo.Item("patioNombre")
                 Dim ZonasId As DataTable = ZObtener(PatioInfo.Item("patioID").ToString)
                 If ZonasId IsNot Nothing
                     If ZonasId.Rows.Count > 0
@@ -91,5 +92,16 @@ Public Class AparcarVehiculo
             MessageBox.Show("Error al aparcar.")
             Serilog.Log.Error(ex, "err")
         End Try
+    End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("AparcarVehiculo", 0)
+        Label1.Text = _Lang.ObtenerKey("AparcarVehiculo", 1)
+        lblpatio.Text = _Lang.ObtenerKey("AparcarVehiculo", 2)
+        Label3.Text = _Lang.ObtenerKey("AparcarVehiculo", 3)
+        Label4.Text = _Lang.ObtenerKey("AparcarVehiculo", 4)
+        Label5.Text = _Lang.ObtenerKey("AparcarVehiculo", 5)
+        btnAparcar.Text = _Lang.ObtenerKey("AparcarVehiculo", 6)
     End Sub
 End Class

@@ -239,4 +239,27 @@ Public Class VerLotes
             btneliminar.Enabled = False
         End If
     End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("VerLote", 0)
+        lblID.Text = _Lang.ObtenerKey("VerLote", 1)
+        lblpatio2.Text = _Lang.ObtenerKey("VerLote", 2)
+        lbldesc.Text = _Lang.ObtenerKey("VerLote", 4)
+        lblentregar.Text = _Lang.ObtenerKey("VerLote", 3)
+        lblSALIDA.Text = _Lang.ObtenerKey("VerLote", 5)
+        lblVehiculos.Text = _Lang.ObtenerKey("VerLote", 7)
+        lblLlegada.Text = _Lang.ObtenerKey("VerLote", 6)
+
+        btCerrar.Text = _Lang.ObtenerKey("VerLote", 11)
+        btneliminar.Text = _Lang.ObtenerKey("VerLote", 13)
+        btnEntregar.Text = _Lang.ObtenerKey("VerLote", 8)
+        btnAgregarVehiculo.Text = _Lang.ObtenerKey("VerLote", 9)
+        btnMod.Text = _Lang.ObtenerKey("VerLote", 12)
+        btnModificar.Text = _Lang.ObtenerKey("VerLote", 10)
+    End Sub
+
+    Private Sub VerLotes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        UpdateLang
+    End Sub
 End Class

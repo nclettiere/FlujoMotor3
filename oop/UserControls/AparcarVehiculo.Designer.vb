@@ -39,7 +39,7 @@ Partial Class AparcarVehiculo
         '
         Me.Label1.AutoSize = true
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Crimson
+        Me.Label1.ForeColor = System.Drawing.Color.Orange
         Me.Label1.Location = New System.Drawing.Point(14, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(116, 17)
@@ -50,7 +50,7 @@ Partial Class AparcarVehiculo
         '
         Me.lblpatio.AutoSize = true
         Me.lblpatio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblpatio.ForeColor = System.Drawing.Color.Crimson
+        Me.lblpatio.ForeColor = System.Drawing.Color.Orange
         Me.lblpatio.Location = New System.Drawing.Point(14, 45)
         Me.lblpatio.Name = "lblpatio"
         Me.lblpatio.Size = New System.Drawing.Size(99, 15)
@@ -61,7 +61,7 @@ Partial Class AparcarVehiculo
         '
         Me.Label3.AutoSize = true
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Crimson
+        Me.Label3.ForeColor = System.Drawing.Color.Orange
         Me.Label3.Location = New System.Drawing.Point(14, 82)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(128, 15)
@@ -80,7 +80,7 @@ Partial Class AparcarVehiculo
         '
         Me.Label4.AutoSize = true
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Crimson
+        Me.Label4.ForeColor = System.Drawing.Color.Orange
         Me.Label4.Location = New System.Drawing.Point(14, 133)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 15)
@@ -105,7 +105,7 @@ Partial Class AparcarVehiculo
         '
         Me.Label5.AutoSize = true
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Crimson
+        Me.Label5.ForeColor = System.Drawing.Color.Orange
         Me.Label5.Location = New System.Drawing.Point(14, 187)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(30, 15)
@@ -116,7 +116,7 @@ Partial Class AparcarVehiculo
         '
         Me.btnAparcar.BackColor = System.Drawing.Color.Gray
         Me.btnAparcar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAparcar.ForeColor = System.Drawing.Color.Crimson
+        Me.btnAparcar.ForeColor = System.Drawing.Color.Orange
         Me.btnAparcar.Location = New System.Drawing.Point(17, 257)
         Me.btnAparcar.Name = "btnAparcar"
         Me.btnAparcar.Size = New System.Drawing.Size(247, 39)

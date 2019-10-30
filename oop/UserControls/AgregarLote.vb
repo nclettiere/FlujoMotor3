@@ -6,6 +6,9 @@ Public Class AgregarLote
     Friend Modo As Integer = 0
 
     Private Sub OnAlLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        UpdateLang
+
         Try
             Dim ConsultaPatios As DataTable = PObtenerAll()
             If ConsultaPatios IsNot Nothing
@@ -47,17 +50,17 @@ Public Class AgregarLote
                         ParentForm.Hide()
                     Else
                         LInsertar(rtbDesc.Text, tbxNombre.Text, ObtenerOpId, cbxPatios.Text)
-                        MsgBox("Lote Insertado.")
+                        MsgBox(_Lang.ObtenerKey("AgregarLote", 9))
                         ParentForm.Close()
                     End If
                 Else
-                    MsgBox("Debes seleccionar un patio")
+                    MsgBox(_Lang.ObtenerKey("AgregarLote", 8))
                 End If
             Else
-                MsgBox("Debes una descripcion")
+                MsgBox(_Lang.ObtenerKey("AgregarLote", 7))
             End If
         Else
-            MsgBox("Debes ingresar un nombre para el lote")
+            MsgBox(_Lang.ObtenerKey("AgregarLote", 6))
         End If
     End Sub
 
@@ -71,4 +74,14 @@ Public Class AgregarLote
             Return False
         End Try
     End Function
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("AgregarLote", 0)
+        Label1.Text = _Lang.ObtenerKey("AgregarLote", 1)
+        Label2.Text = _Lang.ObtenerKey("AgregarLote", 2)
+        Label3.Text = _Lang.ObtenerKey("AgregarLote", 3)
+        Label4.Text = _Lang.ObtenerKey("AgregarLote", 4)
+        btnAgregar.Text = _Lang.ObtenerKey("AgregarLote", 5)
+    End Sub
 End Class

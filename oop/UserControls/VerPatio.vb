@@ -38,6 +38,9 @@ Public Class VerPatio
     End Sub
 
     Private Sub OnVerPatioLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        UpdateLang
+
         DataGridViewVehiculos = New FastDataListView
         DataGridViewVehiculos.MultiSelect = False
         DataGridViewVehiculos.FullRowSelect = True
@@ -118,7 +121,7 @@ Public Class VerPatio
         Try
             If VerificarLavado(VinSeleccionado)
                 If VMarcarVendido(VinSeleccionado)
-                    MessageBox.Show("Vehiculo vendido exitosamente.")
+                    MessageBox.Show(_Lang.ObtenerKey("VerParking", 13))
                     ActualizarLista
                 End If
             Else
@@ -182,4 +185,18 @@ Public Class VerPatio
             DataGridViewVehiculos.DataSource = Nothing
         End If
     End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("VerParking", 0)
+        autito.Text = _Lang.ObtenerKey("VerParking", 1)
+        btnLavado.Text = _Lang.ObtenerKey("VerParking", 6)
+        btnPos.Text = _Lang.ObtenerKey("VerParking", 7)
+        btInfoVehiculo.Text = _Lang.ObtenerKey("VerParking", 8)
+        btnPatios.Text = _Lang.ObtenerKey("VerParking", 9)
+        btnVendido.Text = _Lang.ObtenerKey("VerParking", 10)
+        btActualizarVehiculo.Text = _Lang.ObtenerKey("VerParking", 11)
+        btBuscarLote.Text = _Lang.ObtenerKey("VerParking", 12)
+    End Sub
+
 End Class

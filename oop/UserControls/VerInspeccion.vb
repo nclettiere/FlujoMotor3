@@ -22,7 +22,7 @@ Public Class VerInspeccion
 
     Friend Sub Populate(VIN As String)
         Me.VIN = VIN
-        lblVehiculoVin.Text = "Inspecciones del Vehiculo: " + VIN
+        lblVehiculoVin.Text = _Lang.ObtenerKey("VerInspecciones", 1)+": " + VIN
         Dim Contador As Integer = 1
         Try
             For Each Inspeccion As DataRow In IObtenerVIN(VIN).Rows
@@ -57,9 +57,9 @@ Public Class VerInspeccion
         LabelFecha.AutoSize = True
         LabelOperario.AutoSize = True
 
-        LabelInspeccon.Text = "Inspeccion #"+ Numero
-        LabelFecha.Text = "Realizada el: "+ InspeccionFecha
-        LabelOperario.Text = "Operario a Cargo: "+ Operario
+        LabelInspeccon.Text = _Lang.ObtenerKey("VerInspecciones", 3)+" #"+ Numero
+        LabelFecha.Text = _Lang.ObtenerKey("VerInspecciones", 4)+": "+ InspeccionFecha
+        LabelOperario.Text = _Lang.ObtenerKey("VerInspecciones", 5)+": "+ Operario
 
         LabelInspeccon.Location = New Point(3, 9)
         LabelFecha.Location = New Point(3, 38)
@@ -79,13 +79,13 @@ Public Class VerInspeccion
         BtnVerDanios.Size = New Size(111, 33)
         BtnVerDanios.Font = fuente
         BtnVerDanios.ForeColor = Color.Orange
-        BtnVerDanios.Text = "Ver Danios"
+        BtnVerDanios.Text = _Lang.ObtenerKey("VerInspecciones", 8)
 
         Dim BtnAgDanios As Button = New Button
         BtnAgDanios.Size = New Size(150, 33)
         BtnAgDanios.Font = fuente
         BtnAgDanios.ForeColor = Color.Orange
-        BtnAgDanios.Text = "Agregar Danios"
+        BtnAgDanios.Text = _Lang.ObtenerKey("VerInspecciones", 7)
 
         AddHandler BtnVerDanios.Click , Sub(s, ea) VerDanio(s, ea, InspID, PanelContenido)
         AddHandler BtnAgDanios.Click , Sub(s, ea) AgregarDanioI(s, ea, InspID)
@@ -109,7 +109,7 @@ Public Class VerInspeccion
             Ventana.LoadControl(danios)
             Ventana.ShowDialog()
         Else
-            MsgBox("Esta Inspeccion no posee danios.")
+            MsgBox(_Lang.ObtenerKey("VerInspecciones", 11))
         End If
     End Sub
     Private Sub AgregarDanioI(s As Object, ea As EventArgs, InspID As String)
@@ -122,7 +122,7 @@ Public Class VerInspeccion
     End Sub
 
     Private Sub BtnAddInspeccion_Click(sender As Object, e As EventArgs) Handles btnAddInspeccion.Click
-        If MessageBox.Show("Desea agregar una inpeccion? Se asignara la inspeccion a su cuenta.", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+        If MessageBox.Show(_Lang.ObtenerKey("VerInspecciones", 10), "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
                 IInsertar(VIN, ObtenerOpId)
                 FlowInspecciones.Controls.Clear
@@ -131,5 +131,16 @@ Public Class VerInspeccion
                 Serilog.Log.Error(ex, "Error al insertar inspeccion.")
             End Try
         End If
+    End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("VerInspecciones", 0)
+        GroupBox1.Text = _Lang.ObtenerKey("VerInspecciones", 2)
+        btnAddInspeccion.Text = _Lang.ObtenerKey("VerInspecciones", 6)
+    End Sub
+
+    Private Sub VerInspeccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        UpdateLang
     End Sub
 End Class

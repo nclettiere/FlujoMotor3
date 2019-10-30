@@ -25,6 +25,7 @@ Partial Class AgregarLote
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.cbxPatios = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.rtbDesc = New System.Windows.Forms.RichTextBox()
@@ -32,28 +33,27 @@ Partial Class AgregarLote
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.SuspendLayout()
+        Me.Panel2.SuspendLayout
+        Me.Panel1.SuspendLayout
+        Me.SuspendLayout
         '
         'btnAgregar
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.DimGray
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Orange
         Me.btnAgregar.Location = New System.Drawing.Point(17, 313)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(297, 35)
         Me.btnAgregar.TabIndex = 9
         Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = False
+        Me.btnAgregar.UseVisualStyleBackColor = false
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Orange
         Me.Label3.Location = New System.Drawing.Point(14, 107)
         Me.Label3.Name = "Label3"
@@ -80,9 +80,18 @@ Partial Class AgregarLote
         Me.Panel2.Size = New System.Drawing.Size(329, 365)
         Me.Panel2.TabIndex = 0
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(-20, -20)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 26
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = true
+        '
         'cbxPatios
         '
-        Me.cbxPatios.FormattingEnabled = True
+        Me.cbxPatios.FormattingEnabled = true
         Me.cbxPatios.Location = New System.Drawing.Point(16, 257)
         Me.cbxPatios.Name = "cbxPatios"
         Me.cbxPatios.Size = New System.Drawing.Size(297, 21)
@@ -90,8 +99,8 @@ Partial Class AgregarLote
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.AutoSize = true
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Orange
         Me.Label4.Location = New System.Drawing.Point(13, 232)
         Me.Label4.Name = "Label4"
@@ -117,8 +126,8 @@ Partial Class AgregarLote
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
         Me.Label2.Location = New System.Drawing.Point(13, 58)
         Me.Label2.Name = "Label2"
@@ -128,8 +137,8 @@ Partial Class AgregarLote
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.AutoSize = true
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Orange
         Me.Label1.Location = New System.Drawing.Point(13, 18)
         Me.Label1.Name = "Label1"
@@ -147,18 +156,9 @@ Partial Class AgregarLote
         Me.Panel1.Size = New System.Drawing.Size(329, 365)
         Me.Panel1.TabIndex = 3
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(-20, -20)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 26
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'AgregarLote
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
         Me.Controls.Add(Me.Panel1)
@@ -166,15 +166,14 @@ Partial Class AgregarLote
         Me.Name = "AgregarLote"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(339, 375)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(false)
+        Me.Panel2.PerformLayout
+        Me.Panel1.ResumeLayout(false)
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
     Friend WithEvents btnAgregar As Button
-    Friend WithEvents Label3 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents cbxPatios As ComboBox
@@ -184,4 +183,5 @@ Partial Class AgregarLote
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
+    Public WithEvents Label3 As Label
 End Class

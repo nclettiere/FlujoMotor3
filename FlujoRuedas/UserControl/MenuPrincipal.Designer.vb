@@ -103,7 +103,7 @@ Partial Class MenuPrincipal
         Me.btViajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btViajes.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btViajes.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btViajes.Location = New System.Drawing.Point(64, 142)
+        Me.btViajes.Location = New System.Drawing.Point(64, 81)
         Me.btViajes.Name = "btViajes"
         Me.btViajes.Size = New System.Drawing.Size(206, 55)
         Me.btViajes.TabIndex = 2
@@ -131,7 +131,7 @@ Partial Class MenuPrincipal
         Me.piBoPatio.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.piBoPatio.BackgroundImage = Global.FlujoRuedas.My.Resources.Resources.next_1aaaaa
         Me.piBoPatio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.piBoPatio.Location = New System.Drawing.Point(3, 155)
+        Me.piBoPatio.Location = New System.Drawing.Point(3, 93)
         Me.piBoPatio.Name = "piBoPatio"
         Me.piBoPatio.Size = New System.Drawing.Size(55, 30)
         Me.piBoPatio.TabIndex = 3

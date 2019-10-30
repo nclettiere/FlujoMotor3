@@ -176,5 +176,15 @@
       "lbl_004": "Direccion",
       "lbl_005": "Cant. Lotes Usando Patio",
       "lbl_006": "Lista de Patios"
+    },
+    "VerPtio": {
+      "0": "Ver Patio",
+      "1": "Cargando Mapa...",
+      "2": "Patio SubZonas",
+      "3": "Zona ID: #",
+      "4": "Nombre: ",
+      "5": "Capacidad: {0} Vehiculos",
+      "6": "Deleto",
+      "7": "Modificar"
     }
 }

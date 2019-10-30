@@ -1,0 +1,28 @@
+{
+  "Login": {
+    "0": "Carrier Login",
+    "1": "User",
+    "2": "Password",
+    "3": "Login",
+    "4": "There was an error connecting.",
+    "5": "You do not have permission to use this application.",
+    "6": "Invalid user or password.",
+    "7": "Connected successfully.",
+    "8": "You must enter a User.",
+    "9": "You must enter a password."
+  },
+  "Main": {
+    "0": "Carrier App",
+    "1": "My Trips",
+    "2": "Exit"
+  },
+  "VerViajes": {
+    "0": "My Trips",
+    "1": "You have no travel available. Enjoy your day.",
+    "2": "Loading Map...",
+    "3": "Deliver Set",
+    "4": "Update List",
+    "5": "Do you want to finish the trip for the batch: ID = {0}?",
+    "6": "The lot has been delivered successfully"
+  }
+}

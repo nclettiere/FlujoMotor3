@@ -38,6 +38,9 @@ Public Class ListarPatio
     End Sub
 
     Private Sub VerPatio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        UpdateLang
+
         ActualizarSubZonas
 
         If Not PrimeraVez And Chromium IsNot Nothing
@@ -70,9 +73,9 @@ Public Class ListarPatio
         LabelNombre.AutoSize = True
         LabelCapacidad.AutoSize = True
 
-        LabelId.Text = "Zona ID: "+ ZonaId
-        LabelNombre.Text = "Nombre: "+ Nombre
-        LabelCapacidad.Text = "Capacidad: "+ Capacidad + " Vehiculos"
+        LabelId.Text = _Lang.ObtenerKey("VerPtio", 3)+ ZonaId
+        LabelNombre.Text = _Lang.ObtenerKey("VerPtio", 4)+ Nombre
+        LabelCapacidad.Text = String.Format(_Lang.ObtenerKey("VerPtio", 5), Capacidad)
 
         LabelId.Location = New Point(3, 10)
         LabelNombre.Location = New Point(3, 37)
@@ -92,14 +95,14 @@ Public Class ListarPatio
         BtnElim.Font = fuente
         BtnElim.ForeColor = Color.Orange
         BtnElim.FlatStyle = FlatStyle.Flat
-        BtnElim.Text = "Eliminar"
+        BtnElim.Text = _Lang.ObtenerKey("VerPtio", 6)
         BtnElim.Location = New Point(6, 91)
 
         BtnMod.Size = New Size(87, 28)
         BtnMod.Font = fuente
         BtnMod.ForeColor = Color.Orange
         BtnMod.FlatStyle = FlatStyle.Flat
-        BtnMod.Text = "Modificar"
+        BtnMod.Text = _Lang.ObtenerKey("VerPtio", 7)
         BtnMod.Location = New Point(136, 91)
 
         'AddHandler BtnElim.Click , Sub(s, ea) EliminarClick(s, ea, PatioId)
@@ -185,5 +188,12 @@ Public Class ListarPatio
             MsgBox("Error al crear subzonas.")
             Serilog.Log.Error(ex, "err..")
         End Try
+    End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("VerPtio", 0)
+        lblloading.Text = _Lang.ObtenerKey("VerPtio", 1)
+        GroupBox1.Text = _Lang.ObtenerKey("VerPtio", 2)
     End Sub
 End Class

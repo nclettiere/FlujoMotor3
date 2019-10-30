@@ -18,8 +18,6 @@ Public Class Login
 
     Public Property Cargado As Boolean = False
 
-    Protected _Lang As LangManager  = New LangManager
-
     Private Sub OnLoginLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxIdioma.SelectedIndex = 0
         Cargado = True
@@ -73,6 +71,7 @@ Public Class Login
         End If
     End Sub
 
+    Protected _Lang As LangManager  = New LangManager
     Protected Sub UpdateLang
         ParentForm.Text = _Lang.ObtenerKey("Login", 0)
         lblUser.Text = _Lang.ObtenerKey("Login", 1)

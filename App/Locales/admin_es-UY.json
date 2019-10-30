@@ -1,0 +1,28 @@
+{
+  "Login": {
+    "0": "Login Admin",
+    "1": "Usuario",
+    "2": "Contrasena",
+    "3": "Iniciar Sesion",
+    "4": "Hubo un error al conectarse.",
+    "5": "No tienes permisos para usar esta aplicacion.",
+    "6": "Usuario o contrasena invalidos.",
+    "7": "Conectado exitosamente.",
+    "8": "Debes Ingresar un Usuario.",
+    "9": "Debes Ingresar una Contrasena."
+  },
+  "Main": {
+    "0": "Admin App",
+    "1": "My Trips",
+    "2": "Exit"
+  },
+  "VerViajes": {
+    "0": "My Trips",
+    "1": "You have no travel available. Enjoy your day.",
+    "2": "Loading Map...",
+    "3": "Deliver Set",
+    "4": "Update List",
+    "5": "Do you want to finish the trip for the batch: ID = {0}?",
+    "6": "The lot has been delivered successfully"
+  }
+}

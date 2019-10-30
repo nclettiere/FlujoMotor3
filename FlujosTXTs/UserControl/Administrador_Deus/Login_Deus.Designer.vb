@@ -26,8 +26,8 @@ Partial Class Login_Deus
         Me.btn_LogIn = New System.Windows.Forms.Button()
         Me.cbxIdioma = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblpswd = New System.Windows.Forms.Label()
+        Me.lbluser = New System.Windows.Forms.Label()
         Me.tbx_user = New System.Windows.Forms.TextBox()
         Me.tbx_passwd = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -81,8 +81,8 @@ Partial Class Login_Deus
         '
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblpswd, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.lbluser, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.tbx_user, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.tbx_passwd, 0, 3)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -96,33 +96,33 @@ Partial Class Login_Deus
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(370, 219)
         Me.TableLayoutPanel2.TabIndex = 2
         '
-        'Label3
+        'lblpswd
         '
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Crimson
-        Me.Label3.Location = New System.Drawing.Point(3, 137)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(3)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(364, 22)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "CONTRASEÑA"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.lblpswd.BackColor = System.Drawing.Color.Transparent
+        Me.lblpswd.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lblpswd.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblpswd.ForeColor = System.Drawing.Color.Crimson
+        Me.lblpswd.Location = New System.Drawing.Point(3, 137)
+        Me.lblpswd.Margin = New System.Windows.Forms.Padding(3)
+        Me.lblpswd.Name = "lblpswd"
+        Me.lblpswd.Size = New System.Drawing.Size(364, 22)
+        Me.lblpswd.TabIndex = 15
+        Me.lblpswd.Text = "CONTRASEÑA"
+        Me.lblpswd.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Label2
+        'lbluser
         '
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Crimson
-        Me.Label2.Location = New System.Drawing.Point(3, 29)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(3)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(364, 22)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "USUARIO"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lbluser.BackColor = System.Drawing.Color.Transparent
+        Me.lbluser.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lbluser.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lbluser.ForeColor = System.Drawing.Color.Crimson
+        Me.lbluser.Location = New System.Drawing.Point(3, 29)
+        Me.lbluser.Margin = New System.Windows.Forms.Padding(3)
+        Me.lbluser.Name = "lbluser"
+        Me.lbluser.Size = New System.Drawing.Size(364, 22)
+        Me.lbluser.TabIndex = 12
+        Me.lbluser.Text = "USUARIO"
+        Me.lbluser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tbx_user
         '
@@ -204,8 +204,8 @@ End Sub
     Friend WithEvents btn_LogIn As Button
     Friend WithEvents cbxIdioma As ComboBox
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblpswd As Label
+    Friend WithEvents lbluser As Label
     Friend WithEvents tbx_user As TextBox
     Friend WithEvents tbx_passwd As TextBox
     Friend WithEvents PictureBox1 As PictureBox

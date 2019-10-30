@@ -1,6 +1,7 @@
 ﻿Imports Logica
 Public Class PatiosZonas
     Private Sub OnPatiosZonasLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        UpdateLang
         ActualizarPatios
     End Sub
 
@@ -22,10 +23,10 @@ Public Class PatiosZonas
         LabelDireccion.AutoSize = True
         LabelCantidad.AutoSize = True
 
-        LabelId.Text = "Patio ID: "+ PatioId
-        LabelNombre.Text = "Patio Nombre: "+ PatioNombre
-        LabelCantidad.Text = "Cant. Lotes Usando Patio: "+ PatioCantidad
-        LabelDireccion.Text = "Direccion: "+ Direccion
+        LabelId.Text =  _Lang.ObtenerKey("ListadoPatios", 5)+": "+ PatioId
+        LabelNombre.Text =  _Lang.ObtenerKey("ListadoPatios", 6)+": "+ PatioNombre
+        LabelCantidad.Text =  _Lang.ObtenerKey("ListadoPatios", 8)+": "+ PatioCantidad
+        LabelDireccion.Text =  _Lang.ObtenerKey("ListadoPatios", 7)+": "+ Direccion
 
         LabelId.Location = New Point(14, 16)
         LabelNombre.Location = New Point(14, 41)
@@ -48,14 +49,14 @@ Public Class PatiosZonas
         BtnElim.Font = fuente
         BtnElim.ForeColor = Color.Orange
         BtnElim.FlatStyle = FlatStyle.Flat
-        BtnElim.Text = "Eliminar"
+        BtnElim.Text = "Danny Deleto"
         BtnElim.Location = New Point(16, 120)
 
         BtnVer.Size = New Size(99, 26)
         BtnVer.Font = fuente
         BtnVer.ForeColor = Color.Orange
         BtnVer.FlatStyle = FlatStyle.Flat
-        BtnVer.Text = "Ver Mas"
+        BtnVer.Text =  _Lang.ObtenerKey("ListadoPatios", 3)
         BtnVer.Location = New Point(165, 120)
 
         AddHandler BtnElim.Click , Sub(s, ea) EliminarClick(s, ea, PatioId)
@@ -117,5 +118,11 @@ Public Class PatiosZonas
         Catch ex As Exception
             Serilog.Log.Error(ex, "err")
         End Try
+    End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("ListadoPatios", 0)
+        btnAgPatio.Text = _Lang.ObtenerKey("ListadoPatios", 1)
     End Sub
 End Class

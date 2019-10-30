@@ -17,6 +17,9 @@ Public Class MenuPrincipal
     End Property
 
     Private Sub OnMPLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        UpdateLang
+
         Dim infoL = New InfoLotes
         infoL.Dock = DockStyle.Fill
         pnCOntenedor.Controls.Add(New InfoLotes)
@@ -61,4 +64,12 @@ Public Class MenuPrincipal
             ParentForm.Close
         End If
     End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("Main", 0)
+        btViajes.Text = _Lang.ObtenerKey("Login", 1)
+        Button2.Text = _Lang.ObtenerKey("Login", 2)
+    End Sub
+
 End Class

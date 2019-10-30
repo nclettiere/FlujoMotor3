@@ -21,9 +21,9 @@ Public Class Login
         If Not String.IsNullOrWhiteSpace(tbx_user.Text) Then
             If Not String.IsNullOrWhiteSpace(tbx_passwd.Text) Then
 
-                Conexion.USER = tbx_user.Text
-                Conexion.PSWD = tbx_passwd.Text
-                Conexion.Conectar()
+                USER = tbx_user.Text
+                PSWD = tbx_passwd.Text
+                Conectar()
 
                 Dim EmpleadoId As Integer
 
@@ -43,5 +43,36 @@ Public Class Login
             MessageBox.Show("Debes ingresar un usuario.")
             Cerrar
         End If
+    End Sub
+
+    Private Sub CbxIdioma_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxIdioma.SelectedIndexChanged
+        Select cbxIdioma.SelectedIndex
+            Case 0
+                '' Seleccionamos el directorio de idioma.
+                SetDirectorioIdioma("es-UY", "transportista")
+
+                '' Actualizamos los textos de la app
+                UpdateLang
+            Case 1
+                '' Seleccionamos el directorio de idioma.
+                SetDirectorioIdioma("en-GB", "transportista")
+
+                '' Actualizamos los textos de la app
+                UpdateLang
+            Case 2:
+                MessageBox.Show("!عربيعربى. Tenia que ser bilingue y efectivamente es bilingu''e. PD: No tengo enie en el teclado, asique todas las enies las sustituyo por 'ni'")
+        End Select
+    End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("Login", 0)
+        lblUser.Text = _Lang.ObtenerKey("Login", 1)
+        lblPswd.Text = _Lang.ObtenerKey("Login", 2)
+        btn_LogIn.Text = _Lang.ObtenerKey("Login", 3)
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cbxIdioma.SelectedIndex = 0
     End Sub
 End Class

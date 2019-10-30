@@ -1,0 +1,28 @@
+{
+    "Login": {
+      "0": "Login Transportista",
+      "1": "Usuario",
+      "2": "Contrasena",
+      "3": "Iniciar Sesion",
+      "4": "Hubo un error al conectarse.",
+      "5": "No tienes permisos para usar esta aplicacion.",
+      "6": "Usuario o contrasena invalidos.",
+      "7": "Conectado exitosamente.",
+      "8": "Debes Ingresar un Usuario.",
+      "9": "Debes Ingresar una Contrasena."
+    },
+    "Main": {
+      "0": "App Transportista",
+      "1": "Mis Viajes",
+      "2": "Salir"
+    },
+    "VerViajes": {
+      "0": "Mis Viajes",
+      "1": "No tiene viejes disponibles. Disfrute de su dia.",
+      "2": "Cargando Mapa...",
+      "3": "Entregar Lote",
+      "4": "Actualizar Lista",
+      "5": "Deseas terminar el viaje para el lote: ID={0} ?",
+      "6": "El lote ha sido entregado con exito"
+    }
+}

@@ -145,7 +145,7 @@
      "7": "Position",
      "8": "Information",
      "9": "Courtyard List",
-     "10": "Dial Sold",
+     "10": "Mark As Sold",
      "11": "Update",
      "12": "Filter",
      "13": "Vehicle Sold Successfully."
@@ -165,16 +165,26 @@
       "4": "Row",
       "5": "Park"
     },
-    "ListadoParkings": {
-      "0": "Courtyard List",
-      "1": "Add Parking",
-      "2": "Delete",
-      "3": "See More",
-      "4": "Courtyard List",
-      "5": "Parking ID",
-      "6": "Parking Name",
-      "7": "Address",
-      "8": "Qty. Sets Using Parking",
-      "9": "Courtyard List"
-    }
+    "ListadoPatios": {
+       "0": "Parking List",
+       "1": "Add Parking",
+       "2": "Delete",
+       "3": "See More",
+       "4": "Parking List",
+       "5": "Parking ID",
+       "6": "Parking Name",
+       "7": "Address",
+       "8": "Qty. Sets Using Parking",
+       "9": "Parking List"
+     },
+     "VerPtio": {
+       "0": "See Parking",
+       "1": "Loading Map...",
+       "2": "Parking SubZones",
+       "3": "Zone ID: #",
+       "4": "Name: ",
+       "5": "Capacity: {0} Vehicles",
+       "6": "Deleto",
+       "7": "Modify"
+     }
 }

@@ -55,7 +55,7 @@ Partial Class VerViajes
         Me.btnUpdate.BackColor = System.Drawing.Color.DimGray
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btnUpdate.Location = New System.Drawing.Point(674, 9)
+        Me.btnUpdate.Location = New System.Drawing.Point(682, 9)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(160, 41)
         Me.btnUpdate.TabIndex = 6
@@ -82,7 +82,7 @@ Partial Class VerViajes
         Me.btnEntregar.Enabled = false
         Me.btnEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEntregar.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btnEntregar.Location = New System.Drawing.Point(424, 9)
+        Me.btnEntregar.Location = New System.Drawing.Point(433, 9)
         Me.btnEntregar.Name = "btnEntregar"
         Me.btnEntregar.Size = New System.Drawing.Size(244, 41)
         Me.btnEntregar.TabIndex = 4

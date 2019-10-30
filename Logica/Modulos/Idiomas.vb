@@ -6,7 +6,7 @@
     Public Sub SetDirectorioIdioma(Locale As String, App As String)
 
         Dim Directorio As String = My.Application.Info.DirectoryPath
-
+        
         Select Locale
             Case "es-UY"
                 IdiomaDir = Directorio + "\App\Locales\"+ App +"_es-UY.json"

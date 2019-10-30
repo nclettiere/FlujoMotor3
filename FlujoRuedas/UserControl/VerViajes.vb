@@ -35,6 +35,7 @@ Public Class VerViajes
     End Sub
 
     Private Sub OnViajesLOad(sender As Object, e As EventArgs) Handles MyBase.Load
+        UpdateLang
         ActualizarLista
     End Sub
 
@@ -147,4 +148,12 @@ Public Class VerViajes
         ActualizarLista
     End Sub
 
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        Label1.Text = _Lang.ObtenerKey("VerViajes", 0)
+        lblNoViajes.Text = _Lang.ObtenerKey("VerViajes", 1)
+        Label2.Text = _Lang.ObtenerKey("VerViajes", 2)
+        btnEntregar.Text = _Lang.ObtenerKey("VerViajes", 3)
+        btnUpdate.Text = _Lang.ObtenerKey("VerViajes", 4)
+    End Sub
 End Class

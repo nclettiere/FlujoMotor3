@@ -18,9 +18,13 @@ Public Class MenuControl
     Public Property FormParent As Menu
     Public Property Conexion As DB.ODBC
 
+    Protected _Lang As LangManager  = New LangManager
+
     Private Sub OnControlLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.AutoSize = true
         Me.AutoSizeMode = AutoSizeMode.GrowOnly
+
+        UpdateLang
        
         If Not PuertoPatio
             btPatio.Enabled = False
@@ -111,5 +115,12 @@ Public Class MenuControl
     Private Sub ScanQR_Click(sender As Object, e As EventArgs) Handles ScanQR.Click
         Dim VentanaQR = New EscanearQR
         VentanaQR.ShowDialog()
+    End Sub
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("Main", 0)
+        btPuerto.Text = _Lang.ObtenerKey("Main", 1)
+        btPatio.Text = _Lang.ObtenerKey("Main", 2)
+        ScanQR.Text = _Lang.ObtenerKey("Main", 3)
+        btnSalir.Text = _Lang.ObtenerKey("Main", 4)
     End Sub
 End Class

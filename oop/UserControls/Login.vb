@@ -40,7 +40,7 @@ Public Class Login
                 '' Actualizamos los textos de la app
                 UpdateLang
             Case 2:
-                MessageBox.Show("!عربيعربى")
+                MessageBox.Show("!عربيعربى. Tenia que ser bilingue y efectivamente es bilingu''e. PD: No tengo enie en el teclado, asique todas las enies las sustituyo por 'ni'")
         End Select
     End Sub
 
@@ -55,27 +55,28 @@ Public Class Login
                 Dim EmpleadoId As Integer
                 Dim PuertoPatio As Boolean
                 If (Conexion.CheckLogueo(EmpleadoId, PuertoPatio)) Then
-                    MessageBox.Show("Conectado Exitosamente.")
+                    MessageBox.Show(_Lang.ObtenerKey("Login", 7))
                     Conexion.OperarioId = EmpleadoId
                     Ventana_Login.ChangeControlSummary(0, PuertoPatio)
                     Cerrar
                 Else
-                    MessageBox.Show("Usuario o Contrasena invalidos.")
+                    MessageBox.Show(_Lang.ObtenerKey("Login", 6))
                     Cerrar
                 End If
             Else
-                MessageBox.Show("Debes ingresar una contrasena.")
+                MessageBox.Show(_Lang.ObtenerKey("Login", 9))
                 Cerrar
             End If
         Else
-            MessageBox.Show("Debes ingresar un usuario.")
+            MessageBox.Show(_Lang.ObtenerKey("Login", 8))
             Cerrar
         End If
     End Sub
 
     Protected Sub UpdateLang
-            ParentForm.Text = _Lang.ObtenerKey("Login", "Titulo")
-            lblUser.Text = _Lang.ObtenerKey("Login", "lbl_001")
-
+        ParentForm.Text = _Lang.ObtenerKey("Login", 0)
+        lblUser.Text = _Lang.ObtenerKey("Login", 1)
+        lblPswd.Text = _Lang.ObtenerKey("Login", 2)
+        btn_LogIn.Text = _Lang.ObtenerKey("Login", 3)
     End Sub
 End Class

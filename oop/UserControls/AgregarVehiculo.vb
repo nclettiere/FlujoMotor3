@@ -33,16 +33,14 @@ Public Class AgregarVehiculo
                 If Not (String.Equals("SUV", cbxTipo.Text)) Then
                     Tipo = cbxTipo.Text.ToLower()
                 End If
-
-                MsgBox("VInsertar(" + VIN + ", " + Marca + ", " + Modelo + ", " + Color + ", " + Tipo + ", " + Anio + ", " + Me.LoteId + ", 1")
-
+                
                 If LoteIngresado Then
 
                     If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, ObtenerOpId) Then
                         If chkInspeccion.Checked
                             IInsertar(VIN, ObtenerOpId)
                         End If
-                        MsgBox("Vehiculo Insertado Exitosamente.")
+                        MsgBox(_Lang.ObtenerKey("IngresarVehiculos", 22))
                         UC_VehiculosLotes.ActualizarVehiculos
                         ParentForm.Close()
                     End If
@@ -54,7 +52,7 @@ Public Class AgregarVehiculo
                             If chkInspeccion.Checked
                                 IInsertar(VIN, ObtenerOpId)
                             End If
-                            MsgBox("Vehiculo y Lote Insertados Exitosamente.")
+                            MsgBox(_Lang.ObtenerKey("IngresarVehiculos", 22))
                             UC_VehiculosLotes.ActualizarVehiculos
                             ParentForm.Close()
                         Else
@@ -68,7 +66,7 @@ Public Class AgregarVehiculo
                         If chkInspeccion.Checked
                             IInsertar(VIN, ObtenerOpId)
                         End If
-                        MsgBox("Vehiculo Insertado Exitosamente.")
+                        MsgBox(_Lang.ObtenerKey("IngresarVehiculos", 22))
                         UC_VehiculosLotes.ActualizarVehiculos
                         ParentForm.Close()
                     End If
@@ -102,7 +100,7 @@ Public Class AgregarVehiculo
                                 If Not String.IsNullOrWhiteSpace(tbxColor.Text) Then
                                     Return True
                                 Else
-                                    MessageBox.Show("El campo color no debe quedar vacio.")
+                                    MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 19))
                                     Return False
                                 End If
                             Else
@@ -110,15 +108,15 @@ Public Class AgregarVehiculo
                                 Return False
                             End If
                         Else
-                            MessageBox.Show("El campo modelo no debe quedar vacio.")
+                            MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 17))
                             Return False
                         End If
                     Else
-                        MessageBox.Show("El campo marca no debe quedar vacio.")
+                        MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 16))
                         Return False
                     End If
                 Else
-                    MessageBox.Show("Debes seleccionar el tipo de vehiculo.")
+                    MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 18))
                     Return False
                 End If
             Else
@@ -126,12 +124,14 @@ Public Class AgregarVehiculo
                 Return False
             End If
         Else
-            MessageBox.Show("El campo VIN no debe estar vacio.")
+            MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 15))
             Return False
         End If
     End Function
 
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        UpdateLang
+
         VehiculoAno.Format = DateTimePickerFormat.Custom
         VehiculoAno.CustomFormat = "yyyy"
         VehiculoAno.ShowUpDown = True
@@ -278,5 +278,22 @@ Public Class AgregarVehiculo
                 MsgBox("Vehiculo Actualizado Correctamente.")
             End If
         End If
+    End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("IngresarVehiculos", 0)
+        lblmodagr.Text = _Lang.ObtenerKey("IngresarVehiculos", 1)
+        lbltipo.Text = _Lang.ObtenerKey("IngresarVehiculos", 6)
+        lblmarca.Text = _Lang.ObtenerKey("IngresarVehiculos", 4)
+        lblmodelo.Text = _Lang.ObtenerKey("IngresarVehiculos", 5)
+        lblano.Text = _Lang.ObtenerKey("IngresarVehiculos", 8)
+        lblcolor.Text = _Lang.ObtenerKey("IngresarVehiculos", 7)
+        lblLotedesc.Text = _Lang.ObtenerKey("IngresarVehiculos", 9)
+        btnAgregar.Text = _Lang.ObtenerKey("IngresarVehiculos", 12)
+        btnQuitarLote.Text = _Lang.ObtenerKey("IngresarVehiculos", 13)
+        chkInspeccion.Text = _Lang.ObtenerKey("IngresarVehiculos", 14)
+        btnLnew.Text = _Lang.ObtenerKey("IngresarVehiculos", 10)
+        btnExist.Text = _Lang.ObtenerKey("IngresarVehiculos", 11)
     End Sub
 End Class

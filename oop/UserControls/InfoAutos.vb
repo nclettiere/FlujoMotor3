@@ -22,6 +22,9 @@ Public Class InfoAutos
     Private Property VinSeleccionado As String
 
     Private Sub OnInfoLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        UpdateLang
+
         Try
             Dim Lista = VObtenerAllPuerto()
             If Lista IsNot Nothing
@@ -159,5 +162,19 @@ Public Class InfoAutos
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         DataGridViewLotes.DataSource = Nothing
         DataGridViewLotes.DataSource = LObtenerNoSalida()
+    End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("Main", 0)
+        btnIngresar.Text = _Lang.ObtenerKey("Main", 5)
+        btActualizarVehiculo.Text = _Lang.ObtenerKey("Main", 6)
+        btInfoVehiculo.Text = _Lang.ObtenerKey("Main", 7)
+        btBuscar.Text = _Lang.ObtenerKey("Main", 8)
+        autito.Text = _Lang.ObtenerKey("Main", 11)
+        lote.Text = _Lang.ObtenerKey("Main", 12)
+        btnAgregarLote.Text = _Lang.ObtenerKey("Main", 9)
+        btnActualizar.Text = _Lang.ObtenerKey("Main", 6)
+        btVerLote.Text = _Lang.ObtenerKey("Main", 10)
     End Sub
 End Class

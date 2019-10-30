@@ -31,15 +31,15 @@ Partial Class AgregarVehiculo
         Me.btnExist = New System.Windows.Forms.Button()
         Me.btnLnew = New System.Windows.Forms.Button()
         Me.lblLotedesc = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblano = New System.Windows.Forms.Label()
         Me.tbxColor = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblcolor = New System.Windows.Forms.Label()
+        Me.lbltipo = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.tbxModelo = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblmodelo = New System.Windows.Forms.Label()
         Me.tbxMarca = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblmarca = New System.Windows.Forms.Label()
         Me.tbxVin = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblmodagr = New System.Windows.Forms.Label()
@@ -159,16 +159,16 @@ Partial Class AgregarVehiculo
         Me.lblLotedesc.TabIndex = 20
         Me.lblLotedesc.Text = "Lote (Opcional)"
         '
-        'Label7
+        'lblano
         '
-        Me.Label7.AutoSize = true
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Orange
-        Me.Label7.Location = New System.Drawing.Point(13, 293)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(28, 13)
-        Me.Label7.TabIndex = 18
-        Me.Label7.Text = "Anio"
+        Me.lblano.AutoSize = true
+        Me.lblano.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblano.ForeColor = System.Drawing.Color.Orange
+        Me.lblano.Location = New System.Drawing.Point(13, 293)
+        Me.lblano.Name = "lblano"
+        Me.lblano.Size = New System.Drawing.Size(28, 13)
+        Me.lblano.TabIndex = 18
+        Me.lblano.Text = "Anio"
         '
         'tbxColor
         '
@@ -178,27 +178,27 @@ Partial Class AgregarVehiculo
         Me.tbxColor.Size = New System.Drawing.Size(297, 20)
         Me.tbxColor.TabIndex = 17
         '
-        'Label5
+        'lblcolor
         '
-        Me.Label5.AutoSize = true
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Orange
-        Me.Label5.Location = New System.Drawing.Point(14, 248)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(31, 13)
-        Me.Label5.TabIndex = 16
-        Me.Label5.Text = "Color"
+        Me.lblcolor.AutoSize = true
+        Me.lblcolor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblcolor.ForeColor = System.Drawing.Color.Orange
+        Me.lblcolor.Location = New System.Drawing.Point(14, 248)
+        Me.lblcolor.Name = "lblcolor"
+        Me.lblcolor.Size = New System.Drawing.Size(31, 13)
+        Me.lblcolor.TabIndex = 16
+        Me.lblcolor.Text = "Color"
         '
-        'Label6
+        'lbltipo
         '
-        Me.Label6.AutoSize = true
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Orange
-        Me.Label6.Location = New System.Drawing.Point(14, 205)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(28, 13)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Tipo"
+        Me.lbltipo.AutoSize = true
+        Me.lbltipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lbltipo.ForeColor = System.Drawing.Color.Orange
+        Me.lbltipo.Location = New System.Drawing.Point(14, 205)
+        Me.lbltipo.Name = "lbltipo"
+        Me.lbltipo.Size = New System.Drawing.Size(28, 13)
+        Me.lbltipo.TabIndex = 14
+        Me.lbltipo.Text = "Tipo"
         '
         'btnAgregar
         '
@@ -221,16 +221,16 @@ Partial Class AgregarVehiculo
         Me.tbxModelo.Size = New System.Drawing.Size(297, 20)
         Me.tbxModelo.TabIndex = 6
         '
-        'Label4
+        'lblmodelo
         '
-        Me.Label4.AutoSize = true
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Orange
-        Me.Label4.Location = New System.Drawing.Point(14, 158)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(42, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Modelo"
+        Me.lblmodelo.AutoSize = true
+        Me.lblmodelo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblmodelo.ForeColor = System.Drawing.Color.Orange
+        Me.lblmodelo.Location = New System.Drawing.Point(14, 158)
+        Me.lblmodelo.Name = "lblmodelo"
+        Me.lblmodelo.Size = New System.Drawing.Size(42, 13)
+        Me.lblmodelo.TabIndex = 5
+        Me.lblmodelo.Text = "Modelo"
         '
         'tbxMarca
         '
@@ -240,16 +240,16 @@ Partial Class AgregarVehiculo
         Me.tbxMarca.Size = New System.Drawing.Size(297, 20)
         Me.tbxMarca.TabIndex = 4
         '
-        'Label3
+        'lblmarca
         '
-        Me.Label3.AutoSize = true
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Orange
-        Me.Label3.Location = New System.Drawing.Point(14, 107)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Marca"
+        Me.lblmarca.AutoSize = true
+        Me.lblmarca.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblmarca.ForeColor = System.Drawing.Color.Orange
+        Me.lblmarca.Location = New System.Drawing.Point(14, 107)
+        Me.lblmarca.Name = "lblmarca"
+        Me.lblmarca.Size = New System.Drawing.Size(37, 13)
+        Me.lblmarca.TabIndex = 3
+        Me.lblmarca.Text = "Marca"
         '
         'tbxVin
         '
@@ -304,15 +304,15 @@ Partial Class AgregarVehiculo
         Me.Panel2.Controls.Add(Me.btnExist)
         Me.Panel2.Controls.Add(Me.btnLnew)
         Me.Panel2.Controls.Add(Me.lblLotedesc)
-        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.lblano)
         Me.Panel2.Controls.Add(Me.tbxColor)
-        Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.lblcolor)
+        Me.Panel2.Controls.Add(Me.lbltipo)
         Me.Panel2.Controls.Add(Me.btnAgregar)
         Me.Panel2.Controls.Add(Me.tbxModelo)
-        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.lblmodelo)
         Me.Panel2.Controls.Add(Me.tbxMarca)
-        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.lblmarca)
         Me.Panel2.Controls.Add(Me.tbxVin)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.lblmodagr)
@@ -362,15 +362,15 @@ End Sub
     Friend WithEvents btnExist As Button
     Friend WithEvents btnLnew As Button
     Friend WithEvents lblLotedesc As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblano As Label
     Friend WithEvents tbxColor As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblcolor As Label
+    Friend WithEvents lbltipo As Label
     Friend WithEvents btnAgregar As Button
     Friend WithEvents tbxModelo As TextBox
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblmodelo As Label
     Friend WithEvents tbxMarca As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblmarca As Label
     Friend WithEvents tbxVin As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents lblmodagr As Label

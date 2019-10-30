@@ -10,10 +10,8 @@
         Select Locale
             Case "es-UY"
                 IdiomaDir = Directorio + "\App\Locales\"+ App +"_es-UY.json"
-                MsgBox(IdiomaDir)
             Case "en-GB"
-                IdiomaDir = Directorio + "\App\Locales\"+ App +"_en-GB.yaml"
-                MsgBox(IdiomaDir)
+                IdiomaDir = Directorio + "\App\Locales\"+ App +"_en-GB.json"
             Case Else
                 IdiomaDir = Directorio + "\App\Locales\"+ App +"_es-UY.json"
         End Select

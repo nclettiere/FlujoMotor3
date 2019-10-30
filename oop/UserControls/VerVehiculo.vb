@@ -103,4 +103,33 @@ Public Class VerVehiculo
         vVer.TopMost = True
         vVer.ShowDialog()
     End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        ParentForm.Text = _Lang.ObtenerKey("VerVehiculo", 0)
+        lbltipo.Text = _Lang.ObtenerKey("VerVehiculo", 2)
+        lblmarca.Text = _Lang.ObtenerKey("VerVehiculo", 3)
+        lblmodelo.Text = _Lang.ObtenerKey("VerVehiculo", 4)
+        lblano.Text = _Lang.ObtenerKey("VerVehiculo", 5)
+        lblcolor.Text = _Lang.ObtenerKey("VerVehiculo", 6)
+        lblagr.Text = _Lang.ObtenerKey("VerVehiculo", 7)
+
+        lbllote.Text = _Lang.ObtenerKey("VerVehiculo", 8)
+        lblinsp.Text = _Lang.ObtenerKey("VerVehiculo", 9)
+        lblpatio.Text = _Lang.ObtenerKey("VerVehiculo", 10)
+
+        lblozona.Text = _Lang.ObtenerKey("VerVehiculo", 11)
+        lblsubzona.Text = _Lang.ObtenerKey("VerVehiculo", 12)
+        lblcol.Text = _Lang.ObtenerKey("VerVehiculo", 13)
+        lblrow.Text = _Lang.ObtenerKey("VerVehiculo", 14)
+
+        btVerInspeccion.Text = _Lang.ObtenerKey("VerVehiculo", 15)
+        btnGenerarQR.Text = _Lang.ObtenerKey("VerVehiculo", 16)
+        btnModificar.Text = _Lang.ObtenerKey("VerVehiculo", 17)
+        Button1.Text = _Lang.ObtenerKey("VerVehiculo", 18)
+    End Sub
+
+    Private Sub VerVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        UpdateLang
+    End Sub
 End Class

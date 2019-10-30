@@ -200,9 +200,6 @@
     <Reference Include="WebCam_Capture">
       <HintPath>.\WebCam_Capture.dll</HintPath>
     </Reference>
-    <Reference Include="YamlDotNet">
-      <HintPath>..\YAML\YamlDotNet.dll</HintPath>
-    </Reference>
     <Reference Include="zxing">
       <HintPath>..\QR\zxing.dll</HintPath>
     </Reference>

@@ -48,9 +48,7 @@ Public Class Login_Deus
                 SetDirectorioIdioma("en-GB", "admin")
 
                 '' Actualizamos los textos de la app
-                UpdateLang
-            Case 2:
-                MessageBox.Show("!عربيعربى. Alahak")
+                UpdateLang()
         End Select
     End Sub
 

@@ -81,13 +81,12 @@ Public Module Conexion
             If datos IsNot Nothing
                 If datos.Rows.Count > 0
                     Dim tipo As Integer = ObtenerTipoOperario(datos.Rows(0).Item("empleadoid"))
-                    MsgBox(tipo.ToString)
-                    If tipo = 0
+                    If tipo = 0 Then
                         Console.WriteLine("Conectado")
                         EmpleadoId = datos.Rows(0).Item("empleadoid")
                         PuertoPatio = False
                         Return True
-                    Else If tipo = 1
+                    ElseIf tipo = 1 Then
                         Console.WriteLine("Conectado")
                         EmpleadoId = datos.Rows(0).Item("empleadoid")
                         PuertoPatio = True

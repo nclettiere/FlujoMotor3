@@ -70,8 +70,8 @@ Partial Class Login_Deus
         Me.cbxIdioma.BackColor = System.Drawing.Color.White
         Me.cbxIdioma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbxIdioma.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.cbxIdioma.FormattingEnabled = true
-        Me.cbxIdioma.Items.AddRange(New Object() {"Español", "English", " العربية", "Latin", "Arameo"})
+        Me.cbxIdioma.FormattingEnabled = True
+        Me.cbxIdioma.Items.AddRange(New Object() {"Español", "English"})
         Me.cbxIdioma.Location = New System.Drawing.Point(112, 456)
         Me.cbxIdioma.Name = "cbxIdioma"
         Me.cbxIdioma.Size = New System.Drawing.Size(151, 21)

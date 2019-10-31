@@ -41,8 +41,8 @@ Partial Class Login
         'cbxIdioma
         '
         Me.cbxIdioma.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.cbxIdioma.FormattingEnabled = true
-        Me.cbxIdioma.Items.AddRange(New Object() {"Espanol", "English", " العربية"})
+        Me.cbxIdioma.FormattingEnabled = True
+        Me.cbxIdioma.Items.AddRange(New Object() {"Español", "English"})
         Me.cbxIdioma.Location = New System.Drawing.Point(112, 456)
         Me.cbxIdioma.Name = "cbxIdioma"
         Me.cbxIdioma.Size = New System.Drawing.Size(151, 21)

@@ -14,15 +14,16 @@ Public Class AgregarVehiculo
     Private OpId As Integer
     Private Patio As String
 
+    Friend Loteado As Boolean = False
 
     Private Modo As Integer = 0
 
     Friend UC_VehiculosLotes As InfoAutos
+    Friend UC_VerVehiculos As VerVehiculo
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        If CheckFields()
-
-            If VCheckVIN(tbxVin.Text) = 0 Then
+        If CheckFields
+            If VCheckVIN(tbxVin.Text) = 0
                 Dim VIN As String = tbxVin.Text
                 Dim Marca As String = tbxMarca.Text
                 Dim Modelo As String = tbxModelo.Text
@@ -30,31 +31,33 @@ Public Class AgregarVehiculo
                 Dim Tipo As String = cbxTipo.Text
                 Dim Anio As String = VehiculoAno.Value.Year.ToString
 
-                If Not (String.Equals("SUV", cbxTipo.Text)) Then
+                If Not (String.Equals("SUV", cbxTipo.Text))
                     Tipo = cbxTipo.Text.ToLower()
                 End If
-                
-                If LoteIngresado Then
 
-                    If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, ObtenerOpId) Then
-                        If chkInspeccion.Checked
+               If LoteIngresado
+                   If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, ObtenerOpId)
+                         If chkInspeccion.Checked
                             IInsertar(VIN, ObtenerOpId)
                         End If
-                        MsgBox(_Lang.ObtenerKey("IngresarVehiculos", 22))
-                        UC_VehiculosLotes.ActualizarVehiculos
-                        ParentForm.Close()
-                    End If
-                ElseIf PreLote Then
-
-                    If LInsertar(Desc, Nombre, OpId.ToString, Patio) Then
-                        Me.LoteId = (Consultar("SELECT MAX(loteid) FROM lotes").Rows(0).Item(0)).ToString
-                        If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, 1) Then
-                            If chkInspeccion.Checked
-                                IInsertar(VIN, ObtenerOpId)
-                            End If
-                            MsgBox(_Lang.ObtenerKey("IngresarVehiculos", 22))
+                        MsgBox("Vehiculo Insertado Exitosamente.")
+                        If Not Loteado
                             UC_VehiculosLotes.ActualizarVehiculos
-                            ParentForm.Close()
+                        Else
+                            UC_VehiculosLotes.ActualizarVehiculos
+                        End If
+                        ParentForm.Close
+                   End If
+                ElseIf PreLote
+                    If LInsertar(Desc, Nombre, OpId.ToString, Patio)
+                        Me.LoteId = (Consultar("SELECT MAX(loteid) FROM lotes").Rows(0).Item(0)).ToString
+                        If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, Me.LoteId, ObtenerOpId)
+                             If chkInspeccion.Checked
+                            IInsertar(VIN, ObtenerOpId)
+                        End If
+                            MsgBox("Vehiculo y Lote Insertados Exitosamente.")
+                            UC_VehiculosLotes.ActualizarVehiculos
+                            ParentForm.Close
                         Else
                             MsgBox("No se pudo insertar vehiuclo.")
                         End If
@@ -62,15 +65,15 @@ Public Class AgregarVehiculo
                         MsgBox("No se pudo insertar lote.")
                     End If
                 Else
-                    If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, 1) Then
-                        If chkInspeccion.Checked
+                    If VInsertar(VIN.ToUpper, Marca, Modelo, Color, Tipo, Anio, ObtenerOpId)
+                         If chkInspeccion.Checked
                             IInsertar(VIN, ObtenerOpId)
                         End If
-                        MsgBox(_Lang.ObtenerKey("IngresarVehiculos", 22))
+                        MsgBox("Vehiculo Insertado Exitosamente.")
                         UC_VehiculosLotes.ActualizarVehiculos
-                        ParentForm.Close()
+                        ParentForm.Close
                     End If
-                End If
+               End If
             Else
                 MsgBox("Ya eiste un vehiculo con ese VIN.")
             End If
@@ -80,27 +83,21 @@ Public Class AgregarVehiculo
     Friend Sub CambiarLote(idSeleccionado As String, v As Boolean)
         LoteModificado = True
         Me.LoteId = idSeleccionado
-        lblLotedesc.Text = "Lote Id = " + LoteId
+        lblLotedesc.Text = "Lote Id = "+ LoteId
         btnQuitarLote.Visible = True
     End Sub
 
     Private Function CheckFields() As Boolean
-        If Not String.IsNullOrWhiteSpace(tbxVin.Text) Then
-
-            If tbxVin.Text.Length = 17 Then
-
-                If cbxTipo.SelectedIndex >= 0 Then
-
-                    If Not String.IsNullOrWhiteSpace(tbxMarca.Text) Then
-
-                        If Not String.IsNullOrWhiteSpace(tbxModelo.Text) Then
-
-                            If Not VehiculoAno.Value.Year > Now.Year And Not VehiculoAno.Value.Year < 1808 Then
-
-                                If Not String.IsNullOrWhiteSpace(tbxColor.Text) Then
+        If Not String.IsNullOrWhiteSpace(tbxVin.Text)
+            If tbxVin.Text.Length = 17
+                If cbxTipo.SelectedIndex >= 0
+                    If Not String.IsNullOrWhiteSpace(tbxMarca.Text)
+                        If Not String.IsNullOrWhiteSpace(tbxModelo.Text)
+                            If Not VehiculoAno.Value.Year > Now.Year And Not VehiculoAno.Value.Year < 1808
+                                If Not String.IsNullOrWhiteSpace(tbxColor.Text)
                                     Return True
                                 Else
-                                    MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 19))
+                                    MessageBox.Show("El campo color no debe quedar vacio.")
                                     Return False
                                 End If
                             Else
@@ -108,15 +105,15 @@ Public Class AgregarVehiculo
                                 Return False
                             End If
                         Else
-                            MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 17))
+                            MessageBox.Show("El campo modelo no debe quedar vacio.")
                             Return False
                         End If
                     Else
-                        MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 16))
+                        MessageBox.Show("El campo marca no debe quedar vacio.")
                         Return False
                     End If
                 Else
-                    MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 18))
+                    MessageBox.Show("Debes seleccionar el tipo de vehiculo.")
                     Return False
                 End If
             Else
@@ -124,18 +121,26 @@ Public Class AgregarVehiculo
                 Return False
             End If
         Else
-            MessageBox.Show(_Lang.ObtenerKey("IngresarVehiculos", 15))
+            MessageBox.Show("El campo VIN no debe estar vacio.")
             Return False
         End If
     End Function
 
     Private Sub OnFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        UpdateLang
-
         VehiculoAno.Format = DateTimePickerFormat.Custom
         VehiculoAno.CustomFormat = "yyyy"
         VehiculoAno.ShowUpDown = True
         cbxTipo.SelectedIndex = 0
+
+        If Loteado
+            btnQuitarLote.Visible = False
+            btnremover2.Visible = False
+            btnExist.Visible = False
+            btncambiarlote.Visible = False
+            btnLnew.Visible = False
+            lblLotedesc.Text = "Lote Seleccionado: ID ="+ LoteId
+            CargarLoteNuevo(LoteId, False)
+        End If
     End Sub
 
     Private Sub BtnLnew_Click(sender As Object, e As EventArgs) Handles btnLnew.Click
@@ -143,13 +148,15 @@ Public Class AgregarVehiculo
         Dim AgLote As AgregarLote = New AgregarLote
         AgLote.UC_AgregarVehiculo = Me
         Ventana.LoadControl(AgLote)
-        Ventana.ShowDialog()
+        Ventana.ShowDialog
     End Sub
 
     Friend Sub CargarLoteNuevo(LoteId As String, PreLote As Boolean)
         LoteIngresado = True
         Me.LoteId = LoteId
-        btnQuitarLote.Visible = True
+        If Not Loteado
+            btnQuitarLote.Visible = True
+        End If
         Me.PreLote = False
     End Sub
 
@@ -172,11 +179,11 @@ Public Class AgregarVehiculo
         SelecLote.UC_AgregarVehiculo = Me
         SelecLote.TipoLista = 1
         Ventana.LoadControl(SelecLote)
-        Ventana.ShowDialog()
+        Ventana.ShowDialog
     End Sub
 
     Private Sub BtnQuitarLote_Click(sender As Object, e As EventArgs) Handles btnQuitarLote.Click
-        If Not LoteModificado Then
+        If Not LoteModificado
             LoteIngresado = False
             PreLote = False
             LoteId = Nothing
@@ -195,36 +202,43 @@ Public Class AgregarVehiculo
     End Sub
 
     Friend Sub CargarModificacion(VIN As String)
-        Modo = 1
         btnmod.Visible = True
         lblmodagr.Text = "Modificar Vehiculo"
         tbxVin.Enabled = False
-        chkInspeccion.Visible = False
         Try
             Dim VDatos As DataRow = VObtenerVIN(VIN)
-            If VDatos IsNot Nothing Then
+            If VDatos IsNot Nothing
                 tbxVin.Text = VIN
                 Me.VINmodificacion = VIN
                 tbxMarca.Text = VDatos.Item("vehiculomarca")
                 tbxModelo.Text = VDatos.Item("vehiculomodelo")
                 tbxColor.Text = VDatos.Item("vehiculocolor")
                 cbxTipo.SelectedText = VDatos.Item("vehiculoTipo")
-                VehiculoAno.Value = New DateTime(VDatos.Item("vehiculoanio"), 5, 28)
+                VehiculoAno.Value = new DateTime(VDatos.Item("vehiculoanio"),05,28)
+
+                lblLotedesc.Visible = False
+
+                chkInspeccion.Visible = False
 
                 Try
-                    If Not String.IsNullOrEmpty(VDatos.Item("loteid").ToString) Then
-                        lblLotedesc.Text = "Lote Id = " + VDatos.Item("loteid").ToString
+                    If Not String.IsNullOrEmpty(VDatos.Item("loteid").ToString)
+                        lblLotedesc.Text = "Lote Id = "+ VDatos.Item("loteid").ToString
                         Me.LoteId = VDatos.Item("loteid").ToString
                         btnremover2.Visible = True
                         btncambiarlote.Visible = True
                     Else
                         Me.LoteId = Nothing
+                        btnremover2.Visible = False
+                        btncambiarlote.Visible = False
+                        btnExist.Visible = False
+                        btnQuitarLote.Visible = False
+                        btnLnew.Visible = False
                     End If
                 Catch ex As Exception
                     Me.LoteId = Nothing
                 End Try
-
-
+                    
+  
             End If
         Catch ex As Exception
             Serilog.Log.Error(ex, "Err...")
@@ -239,7 +253,7 @@ Public Class AgregarVehiculo
         SelecLote.TipoLista = 1
         SelecLote.Modo = 1
         Ventana.LoadControl(SelecLote)
-        Ventana.ShowDialog()
+        Ventana.ShowDialog
     End Sub
 
     Private Sub Btnremover2_Click(sender As Object, e As EventArgs) Handles btnremover2.Click
@@ -248,35 +262,38 @@ Public Class AgregarVehiculo
         PreLote = False
         LoteId = Nothing
         btnQuitarLote.Visible = False
-
+        
         btncambiarlote.Visible = False
         btnremover2.Visible = False
         btnLnew.Visible = True
     End Sub
 
     Private Sub Btnmod_Click(sender As Object, e As EventArgs) Handles btnmod.Click
-        If CheckFields()
-
-            If LoteId IsNot Nothing Then
+        If CheckFields
+            If LoteId IsNot Nothing
                 VUpdateLote(LoteId, VINmodificacion)
             Else
                 VUpdateLote("NULL", VINmodificacion)
             End If
 
-            Dim VIN As String = tbxVin.Text
-            Dim Marca As String = tbxMarca.Text
-            Dim Modelo As String = tbxModelo.Text
-            Dim Color As String = tbxColor.Text
-            Dim Tipo As String = cbxTipo.Text
-            Dim Anio As String = VehiculoAno.Value.Year.ToString
+             Dim VIN As String = tbxVin.Text
+             Dim Marca As String = tbxMarca.Text
+             Dim Modelo As String = tbxModelo.Text
+             Dim Color As String = tbxColor.Text
+             Dim Tipo As String = cbxTipo.Text
+             Dim Anio As String = VehiculoAno.Value.Year.ToString
 
-            If Not (String.Equals("SUV", cbxTipo.Text)) Then
-                Tipo = cbxTipo.Text.ToLower()
-            End If
+             If Not (String.Equals("SUV", cbxTipo.Text))
+                 Tipo = cbxTipo.Text.ToLower()
+             End If
 
-            If VUpdate(VINmodificacion, Marca, Modelo, Color, Tipo, Anio) Then
+             If VUpdate(VINmodificacion, Marca, Modelo, Color, Tipo, Anio)
                 MsgBox("Vehiculo Actualizado Correctamente.")
-            End If
+                If UC_VerVehiculos IsNot Nothing
+                    UC_VerVehiculos.UpdateFields
+                    ParentForm.Close
+                End If
+             End If
         End If
     End Sub
 

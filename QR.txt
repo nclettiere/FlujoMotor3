@@ -1,3 +1,0 @@
-https://stackoverflow.com/questions/32634027/how-to-decode-qrcode-from-webcamera-using-aforge-net-and-zxing-net-in-c-sharp
-https://github.com/andrewkirillov/AForge.NET
-http://www.aforgenet.com/

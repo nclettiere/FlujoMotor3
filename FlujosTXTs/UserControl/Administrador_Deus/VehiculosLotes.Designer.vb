@@ -28,15 +28,7 @@ Partial Class VehiculosLotes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbxLoteid = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btnAplicarFechaEntega = New System.Windows.Forms.Button()
-        Me.btnAplicarFechaIng = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.DTPentrega = New System.Windows.Forms.DateTimePicker()
-        Me.DTPingreso = New System.Windows.Forms.DateTimePicker()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbxEstado = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbxVIN = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -58,7 +50,6 @@ Partial Class VehiculosLotes
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PbQR = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.listaVehiculos = New BrightIdeasSoftware.FastDataListView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -75,6 +66,7 @@ Partial Class VehiculosLotes
         Me.lblLFecha = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ListaLotes = New BrightIdeasSoftware.FastDataListView()
+        Me.listaVehiculos = New BrightIdeasSoftware.FastDataListView()
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
         Me.Panel1.SuspendLayout
@@ -84,12 +76,12 @@ Partial Class VehiculosLotes
         Me.FlowLayoutPanel1.SuspendLayout
         Me.Panel3.SuspendLayout
         CType(Me.PbQR,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.TabPage2.SuspendLayout
         Me.Panel2.SuspendLayout
         CType(Me.listaLV,System.ComponentModel.ISupportInitialize).BeginInit
         Me.FlowLayoutPanel2.SuspendLayout
         CType(Me.ListaLotes,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'TabControl1
@@ -121,15 +113,7 @@ Partial Class VehiculosLotes
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.tbxLoteid)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.btnAplicarFechaEntega)
-        Me.Panel1.Controls.Add(Me.btnAplicarFechaIng)
         Me.Panel1.Controls.Add(Me.btnBuscar)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.DTPentrega)
-        Me.Panel1.Controls.Add(Me.DTPingreso)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.cbxEstado)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.tbxVIN)
         Me.Panel1.Controls.Add(Me.GroupBox2)
@@ -172,103 +156,23 @@ Partial Class VehiculosLotes
         Me.Label6.TabIndex = 27
         Me.Label6.Text = "VIN"
         '
-        'btnAplicarFechaEntega
-        '
-        Me.btnAplicarFechaEntega.BackColor = System.Drawing.Color.Gray
-        Me.btnAplicarFechaEntega.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAplicarFechaEntega.ForeColor = System.Drawing.Color.Crimson
-        Me.btnAplicarFechaEntega.Location = New System.Drawing.Point(646, 217)
-        Me.btnAplicarFechaEntega.Name = "btnAplicarFechaEntega"
-        Me.btnAplicarFechaEntega.Size = New System.Drawing.Size(98, 25)
-        Me.btnAplicarFechaEntega.TabIndex = 26
-        Me.btnAplicarFechaEntega.Text = "Aplicar"
-        Me.btnAplicarFechaEntega.UseVisualStyleBackColor = false
-        '
-        'btnAplicarFechaIng
-        '
-        Me.btnAplicarFechaIng.BackColor = System.Drawing.Color.Gray
-        Me.btnAplicarFechaIng.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAplicarFechaIng.ForeColor = System.Drawing.Color.Crimson
-        Me.btnAplicarFechaIng.Location = New System.Drawing.Point(646, 187)
-        Me.btnAplicarFechaIng.Name = "btnAplicarFechaIng"
-        Me.btnAplicarFechaIng.Size = New System.Drawing.Size(98, 25)
-        Me.btnAplicarFechaIng.TabIndex = 25
-        Me.btnAplicarFechaIng.Text = "Aplicar"
-        Me.btnAplicarFechaIng.UseVisualStyleBackColor = false
-        '
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.Gray
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.ForeColor = System.Drawing.Color.Crimson
-        Me.btnBuscar.Location = New System.Drawing.Point(564, 85)
+        Me.btnBuscar.Location = New System.Drawing.Point(339, 134)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(180, 34)
+        Me.btnBuscar.Size = New System.Drawing.Size(211, 34)
         Me.btnBuscar.TabIndex = 4
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = false
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = true
-        Me.Label5.ForeColor = System.Drawing.Color.Crimson
-        Me.Label5.Location = New System.Drawing.Point(342, 165)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 13)
-        Me.Label5.TabIndex = 24
-        Me.Label5.Text = "Estado:"
-        '
-        'DTPentrega
-        '
-        Me.DTPentrega.Location = New System.Drawing.Point(440, 219)
-        Me.DTPentrega.Name = "DTPentrega"
-        Me.DTPentrega.Size = New System.Drawing.Size(200, 20)
-        Me.DTPentrega.TabIndex = 23
-        '
-        'DTPingreso
-        '
-        Me.DTPingreso.Location = New System.Drawing.Point(440, 189)
-        Me.DTPingreso.Name = "DTPingreso"
-        Me.DTPingreso.Size = New System.Drawing.Size(200, 20)
-        Me.DTPingreso.TabIndex = 22
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = true
-        Me.Label4.ForeColor = System.Drawing.Color.Crimson
-        Me.Label4.Location = New System.Drawing.Point(342, 225)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 13)
-        Me.Label4.TabIndex = 21
-        Me.Label4.Text = "Fecha de Entrega:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = true
-        Me.Label3.ForeColor = System.Drawing.Color.Crimson
-        Me.Label3.Location = New System.Drawing.Point(342, 192)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 13)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Fecha de Ingreso:"
-        '
-        'cbxEstado
-        '
-        Me.cbxEstado.FormattingEnabled = true
-        Me.cbxEstado.Items.AddRange(New Object() {"Todo", "En Puerto", "En Patio", "Transportsitas", "Vendidos"})
-        Me.cbxEstado.Location = New System.Drawing.Point(440, 162)
-        Me.cbxEstado.Name = "cbxEstado"
-        Me.cbxEstado.Size = New System.Drawing.Size(200, 21)
-        Me.cbxEstado.TabIndex = 19
         '
         'Label2
         '
         Me.Label2.AutoSize = true
         Me.Label2.ForeColor = System.Drawing.Color.Crimson
-        Me.Label2.Location = New System.Drawing.Point(336, 142)
+        Me.Label2.Location = New System.Drawing.Point(333, 53)
         Me.Label2.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 13)
@@ -289,7 +193,7 @@ Partial Class VehiculosLotes
         Me.GroupBox2.Controls.Add(Me.btnLavado)
         Me.GroupBox2.Controls.Add(Me.btnVender)
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox2.Location = New System.Drawing.Point(336, 324)
+        Me.GroupBox2.Location = New System.Drawing.Point(336, 259)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(518, 68)
         Me.GroupBox2.TabIndex = 13
@@ -340,7 +244,7 @@ Partial Class VehiculosLotes
         Me.GroupBox1.Controls.Add(Me.btnMngLote)
         Me.GroupBox1.Controls.Add(Me.btnInsp)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox1.Location = New System.Drawing.Point(336, 246)
+        Me.GroupBox1.Location = New System.Drawing.Point(336, 185)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(518, 68)
         Me.GroupBox1.TabIndex = 12
@@ -508,21 +412,6 @@ Partial Class VehiculosLotes
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Guardar QR..."
         Me.Button1.UseVisualStyleBackColor = false
-        '
-        'listaVehiculos
-        '
-        Me.listaVehiculos.CellEditUseWholeCell = false
-        Me.listaVehiculos.DataSource = Nothing
-        Me.listaVehiculos.Dock = System.Windows.Forms.DockStyle.Top
-        Me.listaVehiculos.FullRowSelect = true
-        Me.listaVehiculos.Location = New System.Drawing.Point(3, 3)
-        Me.listaVehiculos.Name = "listaVehiculos"
-        Me.listaVehiculos.ShowGroups = false
-        Me.listaVehiculos.Size = New System.Drawing.Size(872, 214)
-        Me.listaVehiculos.TabIndex = 0
-        Me.listaVehiculos.UseCompatibleStateImageBehavior = false
-        Me.listaVehiculos.View = System.Windows.Forms.View.Details
-        Me.listaVehiculos.VirtualMode = true
         '
         'TabPage2
         '
@@ -727,6 +616,26 @@ Partial Class VehiculosLotes
         Me.ListaLotes.View = System.Windows.Forms.View.Details
         Me.ListaLotes.VirtualMode = true
         '
+        'listaVehiculos
+        '
+        Me.listaVehiculos.CellEditUseWholeCell = false
+        Me.listaVehiculos.DataSource = Nothing
+        Me.listaVehiculos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.listaVehiculos.FullRowSelect = true
+        Me.listaVehiculos.Location = New System.Drawing.Point(3, 3)
+        Me.listaVehiculos.Name = "listaVehiculos"
+        Me.listaVehiculos.ShowCommandMenuOnRightClick = true
+        Me.listaVehiculos.ShowGroups = false
+        Me.listaVehiculos.ShowItemToolTips = true
+        Me.listaVehiculos.Size = New System.Drawing.Size(872, 214)
+        Me.listaVehiculos.TabIndex = 0
+        Me.listaVehiculos.UseCompatibleStateImageBehavior = false
+        Me.listaVehiculos.UseExplorerTheme = true
+        Me.listaVehiculos.UseFilterIndicator = true
+        Me.listaVehiculos.UseFiltering = true
+        Me.listaVehiculos.View = System.Windows.Forms.View.Details
+        Me.listaVehiculos.VirtualMode = true
+        '
         'VehiculosLotes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -745,7 +654,6 @@ Partial Class VehiculosLotes
         Me.FlowLayoutPanel1.PerformLayout
         Me.Panel3.ResumeLayout(false)
         CType(Me.PbQR,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage2.ResumeLayout(false)
         Me.Panel2.ResumeLayout(false)
         Me.Panel2.PerformLayout
@@ -753,6 +661,7 @@ Partial Class VehiculosLotes
         Me.FlowLayoutPanel2.ResumeLayout(false)
         Me.FlowLayoutPanel2.PerformLayout
         CType(Me.ListaLotes,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
@@ -773,7 +682,6 @@ End Sub
     Friend WithEvents btnElim As Button
     Friend WithEvents btnMod As Button
     Friend WithEvents btnAgrVehculo As Button
-    Friend WithEvents listaVehiculos As BrightIdeasSoftware.FastDataListView
     Friend WithEvents btnAparcar As Button
     Friend WithEvents btnVender As Button
     Friend WithEvents Panel2 As Panel
@@ -796,18 +704,11 @@ End Sub
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents DTPentrega As DateTimePicker
-    Friend WithEvents DTPingreso As DateTimePicker
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents cbxEstado As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents tbxVIN As TextBox
     Friend WithEvents btnBuscar As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents btnAplicarFechaEntega As Button
-    Friend WithEvents btnAplicarFechaIng As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents tbxLoteid As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents listaVehiculos As BrightIdeasSoftware.FastDataListView
 End Class

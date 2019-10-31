@@ -3,6 +3,7 @@
 Public Class AgregarLote
 
     Friend UC_AgregarVehiculo As AgregarVehiculo
+    Friend UC_InfoAutos As InfoAutos
     Friend Modo As Integer = 0
 
     Private Sub OnAlLoad(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -51,6 +52,9 @@ Public Class AgregarLote
                     Else
                         LInsertar(rtbDesc.Text, tbxNombre.Text, ObtenerOpId, cbxPatios.Text)
                         MsgBox(_Lang.ObtenerKey("AgregarLote", 9))
+                        If UC_InfoAutos IsNot Nothing
+                            UC_InfoAutos.ActualizarLotes
+                        End If
                         ParentForm.Close()
                     End If
                 Else
@@ -65,7 +69,6 @@ Public Class AgregarLote
     End Sub
 
     Friend Function Insertar() As Boolean
-        MsgBox("Hello")
         Try
             LInsertar(rtbDesc.Text, tbxNombre.Text, ObtenerOpId, cbxPatios.Text)
             Return True

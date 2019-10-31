@@ -90,7 +90,12 @@ Public Class VerVehiculo
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        DirectCast(ParentForm, Ventana_Ver).GoToSection(3, VIN)
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim AgVehiculo As AgregarVehiculo = New AgregarVehiculo
+        AgVehiculo.CargarModificacion(VIN)
+        AgVehiculo.UC_VerVehiculos = Me
+        Ventana.LoadControl(AgVehiculo)
+        Ventana.ShowDialog
     End Sub
 
     Private Sub BtnGenerarQR_Click(sender As Object, e As EventArgs) Handles btnGenerarQR.Click
@@ -131,5 +136,9 @@ Public Class VerVehiculo
 
     Private Sub VerVehiculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateLang
+    End Sub
+
+    Friend Sub UpdateFields
+        ProcesarDatos
     End Sub
 End Class

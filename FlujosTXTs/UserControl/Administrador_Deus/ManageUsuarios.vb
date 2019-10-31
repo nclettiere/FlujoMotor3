@@ -27,7 +27,6 @@ Public Class ManageUsuarios
 
     Private Sub SelectionChanged(sender As Object, e As EventArgs) Handles dataLstUsuarios.SelectedIndexChanged 
         If dataLstUsuarios.SelectedIndex >= 0
-            btnEliminar.Enabled = True
             Try
                 Dim EmpleadoId As String = dataLstUsuarios.SelectedItem.SubItems.Item(1).Text
                 Dim Usuario As String = dataLstUsuarios.SelectedItem.SubItems.Item(0).Text
@@ -92,11 +91,10 @@ Public Class ManageUsuarios
                 Serilog.Log.Error(ex, "err")
             End Try
         Else
-            btnEliminar.Enabled = False
         End If
     End Sub
 
-    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click 
+    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs)  
         Try
             Dim Usuario As String = dataLstUsuarios.SelectedItem.SubItems.Item(0).Text
             Dim EmpleadoId As String = dataLstUsuarios.SelectedItem.SubItems.Item(1).Text
@@ -117,8 +115,17 @@ Public Class ManageUsuarios
     Protected Sub UpdateLang
         GroupBox1.Text = _Lang.ObtenerKey("ManageUsuarios", 0)
         btnMod.Text = _Lang.ObtenerKey("ManageUsuarios", 1)
-        btnEliminar.Text = _Lang.ObtenerKey("ManageUsuarios", 2)
         btnAgregarUsuario.Text = _Lang.ObtenerKey("ManageUsuarios", 3)
         GroupBox2.Text = _Lang.ObtenerKey("ManageUsuarios", 4)
+    End Sub
+
+    Private Sub BtnMod_Click(sender As Object, e As EventArgs) Handles btnMod.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim AgregarUsuario = New AgregarUsuario
+        AgregarUsuario.FormAnterior = Me
+        Dim user As String = dataLstUsuarios.SelectedItem.SubItems.Item(0).Text
+        AgregarUsuario.Modificacion(User)
+        Ventana.LoadControl(AgregarUsuario)
+        Ventana.ShowDialog
     End Sub
 End Class

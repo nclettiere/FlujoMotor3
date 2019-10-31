@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.IO
+Imports BrightIdeasSoftware
 Imports Logica
 
 Public Class VehiculosLotes
@@ -7,9 +8,12 @@ Public Class VehiculosLotes
     Private LoteIdSelec As String
 
     Private Sub OnVLload(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        UpdateLang
+
+        listaVehiculos.ListFilter = New TailFilter(10000)
         listaVehiculos.VirtualListSize = Integer.MaxValue
         ActualizarVehiculos
-        cbxEstado.SelectedIndex = 0
     End Sub
 
     Private TipoBusqueda As Integer = 0
@@ -373,46 +377,49 @@ Public Class VehiculosLotes
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Dim dv As DataView
-        Dim loteid As Integer = -1
-        listaVehiculos.DataSource = Nothing
-
-        Select Case cbxEstado.SelectedIndex
-            Case 0
-                dv = New DataView(VObtenerAll)
-            Case 1
-                dv = New DataView(VObtenerAllPuerto)
-            Case 2
-                dv = New DataView(VObtenerAllPatio)
-            Case 3
-                dv = New DataView(VObtenerAllTransportista)
-            Case 4
-                dv = New DataView(VObtenerAllVendidos)
-            Case Else
-                dv = New DataView(VObtenerAll)
-        End Select
-
         Try
-            loteid = Integer.Parse(tbxLoteid.Text)
+            Dim dv As DataView
+            dv = new DataView(VObtenerAll)
+
+            listaVehiculos.Objects = Nothing
+            listaVehiculos.DataSource = Nothing
+            listaVehiculos.ClearObjects
+            listaVehiculos.ClearHotItem
+            listaVehiculos.Invalidate
+            
+            Dim a = VObtenerAll.Select(String.Format("vehiculovin LIKE '%{0}%'", tbxVIN.Text))
+
+
+            Dim Query As String = String.Empty
+
+            If Not String.IsNullOrWhiteSpace(tbxVIN.Text)
+                Query = Query + "vehiculovin LIKE '%"+tbxVIN.Text+"%'"
+            End If
+
+            If Not String.IsNullOrWhiteSpace(tbxLoteid.Text)
+                If Not String.IsNullOrWhiteSpace(tbxVIN.Text)
+                     Query = Query + " AND LoteId = "+tbxLoteid.Text
+                Else
+                     Query = Query + "LoteId = "+tbxLoteid.Text
+                End If
+            End If
+
+            If Query IsNot Nothing
+                dv.RowFilter = Query
+                listaVehiculos.DataSource = dv
+            Else
+                listaVehiculos.DataSource = VObtenerAll
+            End If
         Catch ex As Exception
-            loteid = -1
+            Serilog.Log.Error(ex, "err..")
         End Try
-
-        If (tbxVIN.Text <> "" And tbxLoteid.Text <> "" And loteid > -1) Then
-            dv.RowFilter = String.Format("vehiculovin LIKE '%{0}%' AND Loteid = {1}", tbxVIN.Text, loteid)
-        ElseIf (tbxLoteid.Text <> "" And loteid > -1) Then
-            dv.RowFilter = String.Format("Loteid = {0}", loteid)
-        ElseIf (tbxVIN.Text <> "") Then
-            dv.RowFilter = String.Format("vehiculovin LIKE '%{0}%'", tbxVIN.Text)
-        End If
-        ActualizarVehiculos(dv)
     End Sub
 
-    Private Sub CbxEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxEstado.SelectedIndexChanged
+    Private Sub CbxEstado_SelectedIndexChanged(sender As Object, e As EventArgs) 
 
     End Sub
 
-    Protected _Lang As LangManager  = New LangManager
+    Protected _Lang As LangManager = New LangManager
     Protected Sub UpdateLang
         TabPage1.Text = _Lang.ObtenerKey("VehiculosLotes", 0)
         TabPage2.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
@@ -424,17 +431,12 @@ Public Class VehiculosLotes
         Label1.Text = _Lang.ObtenerKey("VehiculosLotes", 11)
         btnBuscar.Text = _Lang.ObtenerKey("VehiculosLotes", 12)
         Label2.Text = _Lang.ObtenerKey("VehiculosLotes", 13)
-        Label5.Text = _Lang.ObtenerKey("VehiculosLotes", 14)
-        Label3.Text = _Lang.ObtenerKey("VehiculosLotes", 15)
-        Label4.Text = _Lang.ObtenerKey("VehiculosLotes", 16)
-        btnAplicarFechaIng.Text = _Lang.ObtenerKey("VehiculosLotes", 17)
-        btnAplicarFechaEntega.Text = _Lang.ObtenerKey("VehiculosLotes", 18)
         GroupBox1.Text = _Lang.ObtenerKey("VehiculosLotes", 20)
         btnMngLote.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
         btnInsp.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
         GroupBox2.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
         btnAparcar.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
-        btnLavado.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
-        btnVender.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+        btnLavado.Text = _Lang.ObtenerKey("VehiculosLotes", 22)
+        btnVender.Text = _Lang.ObtenerKey("VehiculosLotes", 23)
     End Sub
 End Class

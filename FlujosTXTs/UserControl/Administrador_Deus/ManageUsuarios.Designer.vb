@@ -27,7 +27,6 @@ Partial Class ManageUsuarios
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.dataLstUsuarios = New BrightIdeasSoftware.DataListView()
         Me.btnAgregarUsuario = New System.Windows.Forms.Button()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnMod = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -76,7 +75,6 @@ Partial Class ManageUsuarios
         Me.Panel3.BackColor = System.Drawing.Color.Silver
         Me.Panel3.Controls.Add(Me.dataLstUsuarios)
         Me.Panel3.Controls.Add(Me.btnAgregarUsuario)
-        Me.Panel3.Controls.Add(Me.btnEliminar)
         Me.Panel3.Controls.Add(Me.btnMod)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(3, 16)
@@ -109,19 +107,6 @@ Partial Class ManageUsuarios
         Me.btnAgregarUsuario.TabIndex = 2
         Me.btnAgregarUsuario.Text = "Agregar"
         Me.btnAgregarUsuario.UseVisualStyleBackColor = false
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.BackColor = System.Drawing.Color.Gray
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Font = New System.Drawing.Font("Arial", 13!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0,Byte))
-        Me.btnEliminar.ForeColor = System.Drawing.Color.Crimson
-        Me.btnEliminar.Location = New System.Drawing.Point(186, 10)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(156, 36)
-        Me.btnEliminar.TabIndex = 1
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = false
         '
         'btnMod
         '
@@ -319,7 +304,6 @@ End Sub
     Friend WithEvents Panel3 As Panel
     Friend WithEvents dataLstUsuarios As BrightIdeasSoftware.DataListView
     Friend WithEvents btnAgregarUsuario As Button
-    Friend WithEvents btnEliminar As Button
     Friend WithEvents btnMod As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel

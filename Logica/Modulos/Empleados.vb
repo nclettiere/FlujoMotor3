@@ -41,7 +41,7 @@ Public Module Empleados
     Public Function UObtenerAll() As DataTable
         Conectar()
         Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("SELECT * FROM usuarios A RIGHT JOIN empleados B ON A.empleadoid = B.empleadoid", DBConexion)
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM usuarios A INNER JOIN empleados B ON A.empleadoid = B.empleadoid", DBConexion)
         adaptador.Fill(tabla)
 
         If VerificarTabla(tabla)
@@ -118,6 +118,32 @@ Public Module Empleados
             MsgBox("No se pudo ingresar operario tipo")
             Return False
         End If
+        Cerrar
+    End Function
+
+    Public Function EUpdate(ByVal Usuario As String, ByVal Nombre As String, ByVal Apellido As String, ByVal Telefono As String) As Boolean
+        Conectar
+        Try
+            MsgBox(Usuario)
+            Dim EmpleadoId = UObtener(Usuario)
+
+            If EmpleadoId IsNot Nothing
+                If EmpleadoId.Rows.Count > 0
+                    Dim tabla As New DataTable
+                    Dim adaptador As New OdbcDataAdapter("UPDATE empleados SET empleadoNombre  = '"+Nombre+"', empleadoApellido = '"+Apellido+"', empleadoTelefono = "+Telefono+"  WHERE empleadoId="+EmpleadoId.Rows(0).Item("empleadoid").ToString+";", DBConexion)
+                    adaptador.Fill(tabla)
+
+                    Return True
+                Else
+                    Return False
+                End If
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+            Return False
+        End Try
         Cerrar
     End Function
 

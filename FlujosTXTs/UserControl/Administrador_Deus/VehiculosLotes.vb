@@ -23,6 +23,7 @@ Public Class VehiculosLotes
             If listaVehiculos.SelectedIndex >= 0
                 btnElim.Enabled = True
                 btnMod.Enabled = True
+                btnInsp.Enabled = True
 
                 '' Obtener Datos
                 Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
@@ -226,8 +227,10 @@ Public Class VehiculosLotes
 
     Private Sub ListaLotes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListaLotes.SelectedIndexChanged
         Try
-            If ListaLotes.SelectedIndex >= 0
+            If ListaLotes.SelectedIndex >= 0 Then
                 btnElimL.Enabled = True
+
+                btnVerUbicPatio.Enabled = True
 
                 '' Obtener Datos
                 Dim ID As String = ListaLotes.SelectedItem.SubItems.Item(0).Text
@@ -270,6 +273,7 @@ Public Class VehiculosLotes
                 btnElimL.Enabled = False
                 btnEntregarT.Enabled = False
                 btnEntreado.Enabled = False
+                btnVerUbicPatio.Enabled = Falsecc
             End If
 
         Catch ex As Exception
@@ -379,32 +383,33 @@ Public Class VehiculosLotes
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             Dim dv As DataView
-            dv = new DataView(VObtenerAll)
+            dv = New DataView(VObtenerAll)
 
             listaVehiculos.Objects = Nothing
             listaVehiculos.DataSource = Nothing
             listaVehiculos.ClearObjects
             listaVehiculos.ClearHotItem
             listaVehiculos.Invalidate
-            
+
             Dim a = VObtenerAll.Select(String.Format("vehiculovin LIKE '%{0}%'", tbxVIN.Text))
 
 
             Dim Query As String = String.Empty
 
-            If Not String.IsNullOrWhiteSpace(tbxVIN.Text)
-                Query = Query + "vehiculovin LIKE '%"+tbxVIN.Text+"%'"
+            If Not String.IsNullOrWhiteSpace(tbxVIN.Text) Then
+                Query = Query + "vehiculovin LIKE '%" + tbxVIN.Text + "%'"
             End If
 
-            If Not String.IsNullOrWhiteSpace(tbxLoteid.Text)
-                If Not String.IsNullOrWhiteSpace(tbxVIN.Text)
-                     Query = Query + " AND LoteId = "+tbxLoteid.Text
+            If Not String.IsNullOrWhiteSpace(tbxLoteid.Text) Then
+
+                If Not String.IsNullOrWhiteSpace(tbxVIN.Text) Then
+                    Query = Query + " AND LoteId = " + tbxLoteid.Text
                 Else
-                     Query = Query + "LoteId = "+tbxLoteid.Text
+                    Query = Query + "LoteId = " + tbxLoteid.Text
                 End If
             End If
 
-            If Query IsNot Nothing
+            If Query IsNot Nothing Then
                 dv.RowFilter = Query
                 listaVehiculos.DataSource = dv
             Else
@@ -415,12 +420,25 @@ Public Class VehiculosLotes
         End Try
     End Sub
 
-    Private Sub CbxEstado_SelectedIndexChanged(sender As Object, e As EventArgs) 
+    Private Sub btnVerUbicPatio_Click(sender As Object, e As EventArgs) Handles btnVerUbicPatio.Click
+        Try
+            Dim Ventana As Ventana_Ver = New Ventana_Ver
+            Dim Verptio As VerPatio = New VerPatio
+            Dim patioid As String = ListaLotes.SelectedItem.SubItems.Item(8).Text
 
+            Dim PatioInfo = PObtenerID(patioid)
+
+            Verptio.Direccion = PatioInfo.Item("ubicacion")
+            Verptio.PatioId = patioid
+            Ventana.LoadControl(Verptio)
+            Ventana.ShowDialog()
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+        End Try
     End Sub
 
     Protected _Lang As LangManager = New LangManager
-    Protected Sub UpdateLang
+    Protected Sub UpdateLang()
         TabPage1.Text = _Lang.ObtenerKey("VehiculosLotes", 0)
         TabPage2.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
         Button1.Text = _Lang.ObtenerKey("VehiculosLotes", 6)
@@ -431,12 +449,16 @@ Public Class VehiculosLotes
         Label1.Text = _Lang.ObtenerKey("VehiculosLotes", 11)
         btnBuscar.Text = _Lang.ObtenerKey("VehiculosLotes", 12)
         Label2.Text = _Lang.ObtenerKey("VehiculosLotes", 13)
-        GroupBox1.Text = _Lang.ObtenerKey("VehiculosLotes", 20)
-        btnMngLote.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
-        btnInsp.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
-        GroupBox2.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
-        btnAparcar.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+        GroupBox1.Text = _Lang.ObtenerKey("VehiculosLotes", 17)
+        btnMngLote.Text = _Lang.ObtenerKey("VehiculosLotes", 18)
+        btnInsp.Text = _Lang.ObtenerKey("VehiculosLotes", 19)
+        GroupBox2.Text = _Lang.ObtenerKey("VehiculosLotes", 20)
+        btnAparcar.Text = _Lang.ObtenerKey("VehiculosLotes", 21)
         btnLavado.Text = _Lang.ObtenerKey("VehiculosLotes", 22)
         btnVender.Text = _Lang.ObtenerKey("VehiculosLotes", 23)
+    End Sub
+
+    Private Sub btnMngLote_Click(sender As Object, e As EventArgs) Handles btnMngLote.Click
+
     End Sub
 End Class

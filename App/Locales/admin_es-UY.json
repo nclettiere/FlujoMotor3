@@ -80,5 +80,36 @@
     "21": "Estacionamiento",
     "22": "Hacer Lavado",
     "23": "Vender"
+  },
+  "VerInspecciones": {
+    "Titulo": "Inspecciones",
+    "lbl_001": "Inspecciones del Vehiculo",
+    "lbl_002": "Listado de Inspecciones",
+    "lbl_003": "Inspeccion",
+    "lbl_004": "Realizada el",
+    "lbl_005": "Operario a Cargo",
+    "btn_001": "Agregar Inspeccion",
+    "btn_002": "Agregar Danios",
+    "btn_003": "Ver Danios",
+    "btn_004": "Cerrar",
+    "msg_001": "Desea agregar una inspeccion? Se le asignara la inspeccion a su cuenta.",
+    "msg_002": "Esta Inspeccion no tiene danios"
+  },
+  "AgregarDanio": {
+    "Titulo": "Agregar nuevo danio",
+    "lbl_001": "Vehiculo",
+    "lbl_002": "Ingresar Danios",
+    "lbl_003": "Descripcion",
+    "lbl_004": "Adjuntar Foto",
+    "btn_001": "Desde la camara",
+    "btn_002": "Archivo",
+    "btn_003": "Agregar Danio",
+    "msg_001": "El danio se agrego correctamente"
+  },
+  "VerDanios": {
+    "Titulo": "Ver Danios",
+    "lbl_001": "Danios",
+    "lbl_002": "Danio",
+    "btn_001": "Expandir Imagen"
   }
 }

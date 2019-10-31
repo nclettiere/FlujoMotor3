@@ -120,4 +120,5 @@ Public Class PatiosZonas
             Serilog.Log.Error(ex, "err")
         End Try
     End Sub
+
 End Class

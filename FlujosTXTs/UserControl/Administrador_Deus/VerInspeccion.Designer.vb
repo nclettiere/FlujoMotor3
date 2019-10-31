@@ -33,7 +33,7 @@ Partial Class VerInspeccion
         '
         Me.lblVehiculoVin.AutoSize = true
         Me.lblVehiculoVin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblVehiculoVin.ForeColor = System.Drawing.Color.Orange
+        Me.lblVehiculoVin.ForeColor = System.Drawing.Color.Crimson
         Me.lblVehiculoVin.Location = New System.Drawing.Point(8, 14)
         Me.lblVehiculoVin.Name = "lblVehiculoVin"
         Me.lblVehiculoVin.Size = New System.Drawing.Size(363, 20)
@@ -42,31 +42,31 @@ Partial Class VerInspeccion
         '
         'GroupBox1
         '
-        Me.GroupBox1.AutoSize = true
+        Me.GroupBox1.AutoSize = True
         Me.GroupBox1.Controls.Add(Me.FlowInspecciones)
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Orange
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(12, 54)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(592, 557)
         Me.GroupBox1.TabIndex = 2
-        Me.GroupBox1.TabStop = false
+        Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado Inspecciones"
         '
         'FlowInspecciones
         '
-        Me.FlowInspecciones.AutoScroll = true
-        Me.FlowInspecciones.AutoSize = true
+        Me.FlowInspecciones.AutoScroll = True
+        Me.FlowInspecciones.AutoSize = True
         Me.FlowInspecciones.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowInspecciones.Location = New System.Drawing.Point(6, 19)
         Me.FlowInspecciones.Name = "FlowInspecciones"
         Me.FlowInspecciones.Size = New System.Drawing.Size(580, 519)
         Me.FlowInspecciones.TabIndex = 0
-        Me.FlowInspecciones.WrapContents = false
+        Me.FlowInspecciones.WrapContents = False
         '
         'btnAddInspeccion
         '
-        Me.btnAddInspeccion.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
-        Me.btnAddInspeccion.ForeColor = System.Drawing.Color.Orange
+        Me.btnAddInspeccion.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnAddInspeccion.ForeColor = System.Drawing.Color.Crimson
         Me.btnAddInspeccion.Location = New System.Drawing.Point(456, 8)
         Me.btnAddInspeccion.Name = "btnAddInspeccion"
         Me.btnAddInspeccion.Size = New System.Drawing.Size(148, 34)

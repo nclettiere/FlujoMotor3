@@ -50,8 +50,10 @@ Partial Class VehiculosLotes
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PbQR = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.listaVehiculos = New BrightIdeasSoftware.FastDataListView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnVerUbicPatio = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnquitarv = New System.Windows.Forms.Button()
         Me.btnagvl = New System.Windows.Forms.Button()
@@ -66,23 +68,22 @@ Partial Class VehiculosLotes
         Me.lblLFecha = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ListaLotes = New BrightIdeasSoftware.FastDataListView()
-        Me.listaVehiculos = New BrightIdeasSoftware.FastDataListView()
-        Me.TabControl1.SuspendLayout
-        Me.TabPage1.SuspendLayout
-        Me.Panel1.SuspendLayout
-        Me.GroupBox2.SuspendLayout
-        Me.GroupBox1.SuspendLayout
-        Me.Panel4.SuspendLayout
-        Me.FlowLayoutPanel1.SuspendLayout
-        Me.Panel3.SuspendLayout
-        CType(Me.PbQR,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage2.SuspendLayout
-        Me.Panel2.SuspendLayout
-        CType(Me.listaLV,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.FlowLayoutPanel2.SuspendLayout
-        CType(Me.ListaLotes,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PbQR, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.listaVehiculos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.listaLV, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel2.SuspendLayout()
+        CType(Me.ListaLotes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'TabControl1
         '
@@ -128,7 +129,7 @@ Partial Class VehiculosLotes
         '
         'Label1
         '
-        Me.Label1.AutoSize = true
+        Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.Crimson
         Me.Label1.Location = New System.Drawing.Point(336, 111)
         Me.Label1.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
@@ -147,7 +148,7 @@ Partial Class VehiculosLotes
         '
         'Label6
         '
-        Me.Label6.AutoSize = true
+        Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Crimson
         Me.Label6.Location = New System.Drawing.Point(336, 85)
         Me.Label6.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
@@ -166,11 +167,11 @@ Partial Class VehiculosLotes
         Me.btnBuscar.Size = New System.Drawing.Size(211, 34)
         Me.btnBuscar.TabIndex = 4
         Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = false
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'Label2
         '
-        Me.Label2.AutoSize = true
+        Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Crimson
         Me.Label2.Location = New System.Drawing.Point(333, 53)
         Me.Label2.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
@@ -197,13 +198,13 @@ Partial Class VehiculosLotes
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(518, 68)
         Me.GroupBox2.TabIndex = 13
-        Me.GroupBox2.TabStop = false
+        Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Patio"
         '
         'btnAparcar
         '
         Me.btnAparcar.BackColor = System.Drawing.Color.Gray
-        Me.btnAparcar.Enabled = false
+        Me.btnAparcar.Enabled = False
         Me.btnAparcar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAparcar.ForeColor = System.Drawing.Color.Crimson
         Me.btnAparcar.Location = New System.Drawing.Point(6, 19)
@@ -211,12 +212,12 @@ Partial Class VehiculosLotes
         Me.btnAparcar.Size = New System.Drawing.Size(111, 34)
         Me.btnAparcar.TabIndex = 9
         Me.btnAparcar.Text = "Estacionamiento"
-        Me.btnAparcar.UseVisualStyleBackColor = false
+        Me.btnAparcar.UseVisualStyleBackColor = False
         '
         'btnLavado
         '
         Me.btnLavado.BackColor = System.Drawing.Color.Gray
-        Me.btnLavado.Enabled = false
+        Me.btnLavado.Enabled = False
         Me.btnLavado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLavado.ForeColor = System.Drawing.Color.Crimson
         Me.btnLavado.Location = New System.Drawing.Point(123, 19)
@@ -224,12 +225,12 @@ Partial Class VehiculosLotes
         Me.btnLavado.Size = New System.Drawing.Size(99, 34)
         Me.btnLavado.TabIndex = 6
         Me.btnLavado.Text = "Hacer Lavado"
-        Me.btnLavado.UseVisualStyleBackColor = false
+        Me.btnLavado.UseVisualStyleBackColor = False
         '
         'btnVender
         '
         Me.btnVender.BackColor = System.Drawing.Color.Gray
-        Me.btnVender.Enabled = false
+        Me.btnVender.Enabled = False
         Me.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVender.ForeColor = System.Drawing.Color.Crimson
         Me.btnVender.Location = New System.Drawing.Point(228, 20)
@@ -237,7 +238,7 @@ Partial Class VehiculosLotes
         Me.btnVender.Size = New System.Drawing.Size(111, 34)
         Me.btnVender.TabIndex = 10
         Me.btnVender.Text = "Vender"
-        Me.btnVender.UseVisualStyleBackColor = false
+        Me.btnVender.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -248,13 +249,13 @@ Partial Class VehiculosLotes
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(518, 68)
         Me.GroupBox1.TabIndex = 12
-        Me.GroupBox1.TabStop = false
+        Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Puerto"
         '
         'btnMngLote
         '
         Me.btnMngLote.BackColor = System.Drawing.Color.Gray
-        Me.btnMngLote.Enabled = false
+        Me.btnMngLote.Enabled = False
         Me.btnMngLote.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMngLote.ForeColor = System.Drawing.Color.Crimson
         Me.btnMngLote.Location = New System.Drawing.Point(6, 21)
@@ -262,12 +263,12 @@ Partial Class VehiculosLotes
         Me.btnMngLote.Size = New System.Drawing.Size(132, 34)
         Me.btnMngLote.TabIndex = 7
         Me.btnMngLote.Text = "Ingresar/Cambiar Lote"
-        Me.btnMngLote.UseVisualStyleBackColor = false
+        Me.btnMngLote.UseVisualStyleBackColor = False
         '
         'btnInsp
         '
         Me.btnInsp.BackColor = System.Drawing.Color.Gray
-        Me.btnInsp.Enabled = false
+        Me.btnInsp.Enabled = False
         Me.btnInsp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnInsp.ForeColor = System.Drawing.Color.Crimson
         Me.btnInsp.Location = New System.Drawing.Point(144, 21)
@@ -275,11 +276,11 @@ Partial Class VehiculosLotes
         Me.btnInsp.Size = New System.Drawing.Size(111, 34)
         Me.btnInsp.TabIndex = 8
         Me.btnInsp.Text = "Inspecciones"
-        Me.btnInsp.UseVisualStyleBackColor = false
+        Me.btnInsp.UseVisualStyleBackColor = False
         '
         'Panel4
         '
-        Me.Panel4.AutoSize = true
+        Me.Panel4.AutoSize = True
         Me.Panel4.Controls.Add(Me.btnMod)
         Me.Panel4.Controls.Add(Me.btnElim)
         Me.Panel4.Controls.Add(Me.btnAgrVehculo)
@@ -292,7 +293,7 @@ Partial Class VehiculosLotes
         'btnMod
         '
         Me.btnMod.BackColor = System.Drawing.Color.Gray
-        Me.btnMod.Enabled = false
+        Me.btnMod.Enabled = False
         Me.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMod.ForeColor = System.Drawing.Color.Crimson
         Me.btnMod.Location = New System.Drawing.Point(136, 6)
@@ -300,12 +301,12 @@ Partial Class VehiculosLotes
         Me.btnMod.Size = New System.Drawing.Size(84, 34)
         Me.btnMod.TabIndex = 2
         Me.btnMod.Text = "Modificar"
-        Me.btnMod.UseVisualStyleBackColor = false
+        Me.btnMod.UseVisualStyleBackColor = False
         '
         'btnElim
         '
         Me.btnElim.BackColor = System.Drawing.Color.Gray
-        Me.btnElim.Enabled = false
+        Me.btnElim.Enabled = False
         Me.btnElim.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnElim.ForeColor = System.Drawing.Color.Crimson
         Me.btnElim.Location = New System.Drawing.Point(226, 6)
@@ -313,7 +314,7 @@ Partial Class VehiculosLotes
         Me.btnElim.Size = New System.Drawing.Size(84, 34)
         Me.btnElim.TabIndex = 3
         Me.btnElim.Text = "Eliminar"
-        Me.btnElim.UseVisualStyleBackColor = false
+        Me.btnElim.UseVisualStyleBackColor = False
         '
         'btnAgrVehculo
         '
@@ -325,7 +326,7 @@ Partial Class VehiculosLotes
         Me.btnAgrVehculo.Size = New System.Drawing.Size(124, 34)
         Me.btnAgrVehculo.TabIndex = 1
         Me.btnAgrVehculo.Text = "Agregar Vehiculo"
-        Me.btnAgrVehculo.UseVisualStyleBackColor = false
+        Me.btnAgrVehculo.UseVisualStyleBackColor = False
         '
         'FlowLayoutPanel1
         '
@@ -345,7 +346,7 @@ Partial Class VehiculosLotes
         '
         'lblVin
         '
-        Me.lblVin.AutoSize = true
+        Me.lblVin.AutoSize = True
         Me.lblVin.Location = New System.Drawing.Point(13, 20)
         Me.lblVin.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.lblVin.Name = "lblVin"
@@ -355,7 +356,7 @@ Partial Class VehiculosLotes
         '
         'lblOpIngresado
         '
-        Me.lblOpIngresado.AutoSize = true
+        Me.lblOpIngresado.AutoSize = True
         Me.lblOpIngresado.Location = New System.Drawing.Point(13, 43)
         Me.lblOpIngresado.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.lblOpIngresado.Name = "lblOpIngresado"
@@ -365,7 +366,7 @@ Partial Class VehiculosLotes
         '
         'lblFecha
         '
-        Me.lblFecha.AutoSize = true
+        Me.lblFecha.AutoSize = True
         Me.lblFecha.Location = New System.Drawing.Point(13, 66)
         Me.lblFecha.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.lblFecha.Name = "lblFecha"
@@ -375,7 +376,7 @@ Partial Class VehiculosLotes
         '
         'lbllote
         '
-        Me.lbllote.AutoSize = true
+        Me.lbllote.AutoSize = True
         Me.lbllote.Location = New System.Drawing.Point(13, 89)
         Me.lbllote.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.lbllote.Name = "lbllote"
@@ -399,7 +400,7 @@ Partial Class VehiculosLotes
         Me.PbQR.Name = "PbQR"
         Me.PbQR.Size = New System.Drawing.Size(200, 200)
         Me.PbQR.TabIndex = 5
-        Me.PbQR.TabStop = false
+        Me.PbQR.TabStop = False
         '
         'Button1
         '
@@ -411,7 +412,27 @@ Partial Class VehiculosLotes
         Me.Button1.Size = New System.Drawing.Size(132, 34)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Guardar QR..."
-        Me.Button1.UseVisualStyleBackColor = false
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'listaVehiculos
+        '
+        Me.listaVehiculos.CellEditUseWholeCell = False
+        Me.listaVehiculos.DataSource = Nothing
+        Me.listaVehiculos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.listaVehiculos.FullRowSelect = True
+        Me.listaVehiculos.Location = New System.Drawing.Point(3, 3)
+        Me.listaVehiculos.Name = "listaVehiculos"
+        Me.listaVehiculos.ShowCommandMenuOnRightClick = True
+        Me.listaVehiculos.ShowGroups = False
+        Me.listaVehiculos.ShowItemToolTips = True
+        Me.listaVehiculos.Size = New System.Drawing.Size(872, 214)
+        Me.listaVehiculos.TabIndex = 0
+        Me.listaVehiculos.UseCompatibleStateImageBehavior = False
+        Me.listaVehiculos.UseExplorerTheme = True
+        Me.listaVehiculos.UseFilterIndicator = True
+        Me.listaVehiculos.UseFiltering = True
+        Me.listaVehiculos.View = System.Windows.Forms.View.Details
+        Me.listaVehiculos.VirtualMode = True
         '
         'TabPage2
         '
@@ -423,11 +444,12 @@ Partial Class VehiculosLotes
         Me.TabPage2.Size = New System.Drawing.Size(878, 645)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Lotes"
-        Me.TabPage2.UseVisualStyleBackColor = true
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Silver
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.btnVerUbicPatio)
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.btnquitarv)
         Me.Panel2.Controls.Add(Me.btnagvl)
@@ -444,6 +466,19 @@ Partial Class VehiculosLotes
         Me.Panel2.Size = New System.Drawing.Size(872, 425)
         Me.Panel2.TabIndex = 7
         '
+        'btnVerUbicPatio
+        '
+        Me.btnVerUbicPatio.BackColor = System.Drawing.Color.DimGray
+        Me.btnVerUbicPatio.Enabled = False
+        Me.btnVerUbicPatio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVerUbicPatio.ForeColor = System.Drawing.Color.Crimson
+        Me.btnVerUbicPatio.Location = New System.Drawing.Point(661, 11)
+        Me.btnVerUbicPatio.Name = "btnVerUbicPatio"
+        Me.btnVerUbicPatio.Size = New System.Drawing.Size(155, 28)
+        Me.btnVerUbicPatio.TabIndex = 12
+        Me.btnVerUbicPatio.Text = "Ver Ubicacion Patio"
+        Me.btnVerUbicPatio.UseVisualStyleBackColor = False
+        '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.DimGray
@@ -454,7 +489,7 @@ Partial Class VehiculosLotes
         Me.Button2.Size = New System.Drawing.Size(157, 28)
         Me.Button2.TabIndex = 11
         Me.Button2.Text = "Agregar Vehiculo Existente"
-        Me.Button2.UseVisualStyleBackColor = false
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'btnquitarv
         '
@@ -466,7 +501,7 @@ Partial Class VehiculosLotes
         Me.btnquitarv.Size = New System.Drawing.Size(124, 28)
         Me.btnquitarv.TabIndex = 10
         Me.btnquitarv.Text = "Quitar"
-        Me.btnquitarv.UseVisualStyleBackColor = false
+        Me.btnquitarv.UseVisualStyleBackColor = False
         '
         'btnagvl
         '
@@ -478,26 +513,26 @@ Partial Class VehiculosLotes
         Me.btnagvl.Size = New System.Drawing.Size(124, 28)
         Me.btnagvl.TabIndex = 9
         Me.btnagvl.Text = "Agregar Vehiculo"
-        Me.btnagvl.UseVisualStyleBackColor = false
+        Me.btnagvl.UseVisualStyleBackColor = False
         '
         'listaLV
         '
-        Me.listaLV.CellEditUseWholeCell = false
+        Me.listaLV.CellEditUseWholeCell = False
         Me.listaLV.DataSource = Nothing
-        Me.listaLV.FullRowSelect = true
+        Me.listaLV.FullRowSelect = True
         Me.listaLV.Location = New System.Drawing.Point(339, 60)
         Me.listaLV.Name = "listaLV"
-        Me.listaLV.ShowGroups = false
+        Me.listaLV.ShowGroups = False
         Me.listaLV.Size = New System.Drawing.Size(567, 214)
         Me.listaLV.TabIndex = 8
-        Me.listaLV.UseCompatibleStateImageBehavior = false
+        Me.listaLV.UseCompatibleStateImageBehavior = False
         Me.listaLV.View = System.Windows.Forms.View.Details
-        Me.listaLV.VirtualMode = true
+        Me.listaLV.VirtualMode = True
         '
         'btnEntreado
         '
         Me.btnEntreado.BackColor = System.Drawing.Color.DimGray
-        Me.btnEntreado.Enabled = false
+        Me.btnEntreado.Enabled = False
         Me.btnEntreado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEntreado.ForeColor = System.Drawing.Color.Crimson
         Me.btnEntreado.Location = New System.Drawing.Point(500, 11)
@@ -505,12 +540,12 @@ Partial Class VehiculosLotes
         Me.btnEntreado.Size = New System.Drawing.Size(155, 28)
         Me.btnEntreado.TabIndex = 6
         Me.btnEntreado.Text = "Marcar Como Entregado"
-        Me.btnEntreado.UseVisualStyleBackColor = false
+        Me.btnEntreado.UseVisualStyleBackColor = False
         '
         'btnEntregarT
         '
         Me.btnEntregarT.BackColor = System.Drawing.Color.DimGray
-        Me.btnEntregarT.Enabled = false
+        Me.btnEntregarT.Enabled = False
         Me.btnEntregarT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEntregarT.ForeColor = System.Drawing.Color.Crimson
         Me.btnEntregarT.Location = New System.Drawing.Point(339, 11)
@@ -518,12 +553,12 @@ Partial Class VehiculosLotes
         Me.btnEntregarT.Size = New System.Drawing.Size(155, 28)
         Me.btnEntregarT.TabIndex = 5
         Me.btnEntregarT.Text = "Entregar a Transportista"
-        Me.btnEntregarT.UseVisualStyleBackColor = false
+        Me.btnEntregarT.UseVisualStyleBackColor = False
         '
         'btnElimL
         '
         Me.btnElimL.BackColor = System.Drawing.Color.DimGray
-        Me.btnElimL.Enabled = false
+        Me.btnElimL.Enabled = False
         Me.btnElimL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnElimL.ForeColor = System.Drawing.Color.Crimson
         Me.btnElimL.Location = New System.Drawing.Point(133, 11)
@@ -531,7 +566,7 @@ Partial Class VehiculosLotes
         Me.btnElimL.Size = New System.Drawing.Size(84, 28)
         Me.btnElimL.TabIndex = 3
         Me.btnElimL.Text = "Eliminar"
-        Me.btnElimL.UseVisualStyleBackColor = false
+        Me.btnElimL.UseVisualStyleBackColor = False
         '
         'Button8
         '
@@ -543,7 +578,7 @@ Partial Class VehiculosLotes
         Me.Button8.Size = New System.Drawing.Size(124, 28)
         Me.Button8.TabIndex = 1
         Me.Button8.Text = "Agregar Lote"
-        Me.Button8.UseVisualStyleBackColor = false
+        Me.Button8.UseVisualStyleBackColor = False
         '
         'FlowLayoutPanel2
         '
@@ -560,7 +595,7 @@ Partial Class VehiculosLotes
         '
         'lblloteid
         '
-        Me.lblloteid.AutoSize = true
+        Me.lblloteid.AutoSize = True
         Me.lblloteid.Location = New System.Drawing.Point(13, 20)
         Me.lblloteid.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.lblloteid.Name = "lblloteid"
@@ -570,7 +605,7 @@ Partial Class VehiculosLotes
         '
         'lblopL
         '
-        Me.lblopL.AutoSize = true
+        Me.lblopL.AutoSize = True
         Me.lblopL.Location = New System.Drawing.Point(13, 43)
         Me.lblopL.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.lblopL.Name = "lblopL"
@@ -580,7 +615,7 @@ Partial Class VehiculosLotes
         '
         'lblLFecha
         '
-        Me.lblLFecha.AutoSize = true
+        Me.lblLFecha.AutoSize = True
         Me.lblLFecha.Location = New System.Drawing.Point(13, 66)
         Me.lblLFecha.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.lblLFecha.Name = "lblLFecha"
@@ -590,7 +625,7 @@ Partial Class VehiculosLotes
         '
         'Label8
         '
-        Me.Label8.AutoSize = true
+        Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.ForeColor = System.Drawing.Color.Crimson
@@ -603,68 +638,48 @@ Partial Class VehiculosLotes
         '
         'ListaLotes
         '
-        Me.ListaLotes.CellEditUseWholeCell = false
+        Me.ListaLotes.CellEditUseWholeCell = False
         Me.ListaLotes.DataSource = Nothing
         Me.ListaLotes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ListaLotes.FullRowSelect = true
+        Me.ListaLotes.FullRowSelect = True
         Me.ListaLotes.Location = New System.Drawing.Point(3, 3)
         Me.ListaLotes.Name = "ListaLotes"
-        Me.ListaLotes.ShowGroups = false
+        Me.ListaLotes.ShowGroups = False
         Me.ListaLotes.Size = New System.Drawing.Size(872, 214)
         Me.ListaLotes.TabIndex = 6
-        Me.ListaLotes.UseCompatibleStateImageBehavior = false
+        Me.ListaLotes.UseCompatibleStateImageBehavior = False
         Me.ListaLotes.View = System.Windows.Forms.View.Details
-        Me.ListaLotes.VirtualMode = true
-        '
-        'listaVehiculos
-        '
-        Me.listaVehiculos.CellEditUseWholeCell = false
-        Me.listaVehiculos.DataSource = Nothing
-        Me.listaVehiculos.Dock = System.Windows.Forms.DockStyle.Top
-        Me.listaVehiculos.FullRowSelect = true
-        Me.listaVehiculos.Location = New System.Drawing.Point(3, 3)
-        Me.listaVehiculos.Name = "listaVehiculos"
-        Me.listaVehiculos.ShowCommandMenuOnRightClick = true
-        Me.listaVehiculos.ShowGroups = false
-        Me.listaVehiculos.ShowItemToolTips = true
-        Me.listaVehiculos.Size = New System.Drawing.Size(872, 214)
-        Me.listaVehiculos.TabIndex = 0
-        Me.listaVehiculos.UseCompatibleStateImageBehavior = false
-        Me.listaVehiculos.UseExplorerTheme = true
-        Me.listaVehiculos.UseFilterIndicator = true
-        Me.listaVehiculos.UseFiltering = true
-        Me.listaVehiculos.View = System.Windows.Forms.View.Details
-        Me.listaVehiculos.VirtualMode = true
+        Me.ListaLotes.VirtualMode = True
         '
         'VehiculosLotes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "VehiculosLotes"
         Me.Size = New System.Drawing.Size(886, 671)
-        Me.TabControl1.ResumeLayout(false)
-        Me.TabPage1.ResumeLayout(false)
-        Me.Panel1.ResumeLayout(false)
-        Me.Panel1.PerformLayout
-        Me.GroupBox2.ResumeLayout(false)
-        Me.GroupBox1.ResumeLayout(false)
-        Me.Panel4.ResumeLayout(false)
-        Me.FlowLayoutPanel1.ResumeLayout(false)
-        Me.FlowLayoutPanel1.PerformLayout
-        Me.Panel3.ResumeLayout(false)
-        CType(Me.PbQR,System.ComponentModel.ISupportInitialize).EndInit
-        Me.TabPage2.ResumeLayout(false)
-        Me.Panel2.ResumeLayout(false)
-        Me.Panel2.PerformLayout
-        CType(Me.listaLV,System.ComponentModel.ISupportInitialize).EndInit
-        Me.FlowLayoutPanel2.ResumeLayout(false)
-        Me.FlowLayoutPanel2.PerformLayout
-        CType(Me.ListaLotes,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.listaVehiculos,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        CType(Me.PbQR, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.listaVehiculos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.listaLV, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.FlowLayoutPanel2.PerformLayout()
+        CType(Me.ListaLotes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
 
-End Sub
+    End Sub
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
@@ -711,4 +726,5 @@ End Sub
     Friend WithEvents tbxLoteid As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents listaVehiculos As BrightIdeasSoftware.FastDataListView
+    Friend WithEvents btnVerUbicPatio As Button
 End Class

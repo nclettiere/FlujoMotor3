@@ -49,15 +49,15 @@ Public Class VerDanios
         PBDanio.Location = New Point(3, 3)
         rchDesc.Location = New Point(280, 3)
         btnverimg.Location = New Point(281, 130)
-        
-        lblNumero.ForeColor = Color.Crimson
+
+        lblNumero.ForeColor = Color.Orange
 
         Dim fuente = New Font("Arial", 10)
 
         lblNumero.Font = fuente
         lblDesc.Font = fuente
         btnverimg.Font = fuente
-        btnverimg.ForeColor = Color.Crimson
+        btnverimg.ForeColor = Color.Orange
         btnverimg.FlatStyle = FlatStyle.Flat
 
         rchDesc.ReadOnly = True

@@ -19,19 +19,19 @@
       "4": "Exit"
     },
     "ManageUsuarios": {
-      "0": "Details",
+      "0": "User Administration",
       "1": "Modify",
       "2": "Delete",
       "3": "Add",
-      "4": "User Administration",
-      "5": "User: ",
-      "6": "Operator Type: ",
-      "7": "No. Vehicles Entered: ",
-      "8": "No. Lots Entered: ",
-      "9": "Assigned Lots: ",
-      "10": "Batches Delivered: ",
-      "11": "Vehicles Sold: ",
-      "12": "Name: "
+      "4": "Details",
+      "5": "User:",
+      "6": "Operator Type:",
+      "7": "No. Vehicles Entered:",
+      "8": "No. Lots Entered:",
+      "9": "Assigned Lots:",
+      "10": "Batches Delivered:",
+      "11": "Vehicles Sold:",
+      "12": "Name"
     },
     "PatiosZonas": {
       "0": "Courtyard List",
@@ -54,5 +54,62 @@
       "5": "Capacity: {0} Vehicles",
       "6": "Deleto",
       "7": "Modify"
+    },
+    "VehiclesLotes": {
+      "0": "Vehicles",
+      "1": "Lots",
+      "2": "VIN",
+      "3": "Entered By",
+      "4": "Date",
+      "5": "Sold",
+      "6": "Save QR",
+      "7": "Add Vehicle",
+      "8": "Modify",
+      "9": "Delete",
+      "10": "VIN",
+      "11": "Lot ID",
+      "12": "Search",
+      "13": "Filters",
+      "14": "State",
+      "15": "Date of Entry",
+      "16": "Delivery Date",
+      "17": "Port",
+      "18": "Enter / Change Lot",
+      "19": "Inspections",
+      "20": "Patio",
+      "21": "Parking",
+      "22": "Do Washing",
+      "23": "Sell"
+    },
+    "See Inspections": {
+      "Title": "Inspections",
+      "lbl_001": "Vehicle Inspections",
+      "lbl_002": "List of Inspections",
+      "lbl_003": "Inspection",
+      "lbl_004": "Done on",
+      "lbl_005": "Operator in Charge",
+      "btn_001": "Add Inspection",
+      "btn_002": "Add Danios",
+      "btn_003": "See Danios",
+      "btn_004": "Close",
+      "msg_001": "Do you want to add an inspection? The inspection will be assigned to your account.",
+      "msg_002": "This Inspection has no damage"
+    },
+    "AddDanio": {
+      "Title": "Add new danio",
+      "lbl_001": "Vehicle",
+      "lbl_002": "Enter Danios",
+      "lbl_003": "Description",
+      "lbl_004": "Attach Photo",
+      "btn_001": "From the camera",
+      "btn_002": "File",
+      "btn_003": "Add Danio",
+      "msg_001": "The danio was added correctly"
+    },
+    "SeeDanios": {
+      "Title": "See Danios",
+      "lbl_001": "Danios",
+      "lbl_002": "Danio",
+      "btn_001": "Expand Image"
     }
   }

@@ -49,7 +49,7 @@ Public Class VerDanios
         PBDanio.Location = New Point(3, 3)
         rchDesc.Location = New Point(280, 3)
         btnverimg.Location = New Point(281, 130)
-        
+
         lblNumero.ForeColor = Color.Crimson
 
         Dim fuente = New Font("Arial", 10)
@@ -63,7 +63,7 @@ Public Class VerDanios
         rchDesc.ReadOnly = True
         rchDesc.Enabled = False
 
-        AddHandler btnverimg.Click , Sub(s, ea) VerImg(s, ea, Imagen)
+        AddHandler btnverimg.Click, Sub(s, ea) VerImg(s, ea, Imagen)
 
         PanelContenido.Controls.Add(lblNumero)
         PanelContenido.Controls.Add(PBDanio)
@@ -74,11 +74,12 @@ Public Class VerDanios
         Return PanelContenido
     End Function
 
-    Private Sub VerImg(s As Object, ea As EventArgs, image As Bitmap)
+    Private Function VerImg(s As Object, ea As EventArgs, image As Bitmap)
         Dim VentanaVer As Ventana_Ver = New Ventana_Ver
         Dim VerF As VerFoto = New VerFoto
         VerF.PbFoto.BackgroundImage = image
         VentanaVer.LoadControl(VerF)
         VentanaVer.ShowDialog()
-    End Sub
+        Return True
+    End Function
 End Class

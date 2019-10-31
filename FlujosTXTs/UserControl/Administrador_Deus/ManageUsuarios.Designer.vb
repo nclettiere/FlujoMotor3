@@ -28,7 +28,7 @@ Partial Class ManageUsuarios
         Me.dataLstUsuarios = New BrightIdeasSoftware.DataListView()
         Me.btnAgregarUsuario = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnMod = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -77,7 +77,7 @@ Partial Class ManageUsuarios
         Me.Panel3.Controls.Add(Me.dataLstUsuarios)
         Me.Panel3.Controls.Add(Me.btnAgregarUsuario)
         Me.Panel3.Controls.Add(Me.btnEliminar)
-        Me.Panel3.Controls.Add(Me.Button4)
+        Me.Panel3.Controls.Add(Me.btnMod)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(3, 16)
         Me.Panel3.Name = "Panel3"
@@ -123,18 +123,18 @@ Partial Class ManageUsuarios
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = false
         '
-        'Button4
+        'btnMod
         '
-        Me.Button4.BackColor = System.Drawing.Color.Gray
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Arial", 13!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0,Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.Crimson
-        Me.Button4.Location = New System.Drawing.Point(12, 10)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(158, 36)
-        Me.Button4.TabIndex = 0
-        Me.Button4.Text = "Modificar"
-        Me.Button4.UseVisualStyleBackColor = false
+        Me.btnMod.BackColor = System.Drawing.Color.Gray
+        Me.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMod.Font = New System.Drawing.Font("Arial", 13!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0,Byte))
+        Me.btnMod.ForeColor = System.Drawing.Color.Crimson
+        Me.btnMod.Location = New System.Drawing.Point(12, 10)
+        Me.btnMod.Name = "btnMod"
+        Me.btnMod.Size = New System.Drawing.Size(158, 36)
+        Me.btnMod.TabIndex = 0
+        Me.btnMod.Text = "Modificar"
+        Me.btnMod.UseVisualStyleBackColor = false
         '
         'GroupBox1
         '
@@ -320,7 +320,7 @@ End Sub
     Friend WithEvents dataLstUsuarios As BrightIdeasSoftware.DataListView
     Friend WithEvents btnAgregarUsuario As Button
     Friend WithEvents btnEliminar As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnMod As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Panel2 As Panel

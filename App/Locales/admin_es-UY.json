@@ -12,17 +12,73 @@
     "9": "Debes Ingresar una Contrasena."
   },
   "Main": {
-    "0": "Admin App",
-    "1": "My Trips",
-    "2": "Exit"
+    "0": "Aplicacion Admin",
+    "1": "Operarios",
+    "2": "Vehiculos",
+    "3": "Patios / Zonas",
+    "4": "Salir"
   },
-  "VerViajes": {
-    "0": "My Trips",
-    "1": "You have no travel available. Enjoy your day.",
-    "2": "Loading Map...",
-    "3": "Deliver Set",
-    "4": "Update List",
-    "5": "Do you want to finish the trip for the batch: ID = {0}?",
-    "6": "The lot has been delivered successfully"
+  "ManageUsuarios": {
+    "0": "Administracion de Usuarios",
+    "1": "Modificar",
+    "2": "Eliminar",
+    "3": "Agregar",
+    "4": "Detalles",
+    "5": "Usuario: ",
+    "6": "Tipo Operario: ",
+    "7": "Nro. Vehiculos Ingresados: ",
+    "8": "Nro. Lotes Ingresados: ",
+    "9": "Lotes Asignados: ",
+    "10": "Lotes Entregados: ",
+    "11": "Vehiculos Vendidos: ",
+    "12": "Nombre"
+  },
+  "PatiosZonas": {
+    "0": "Listado de Patios",
+    "1": "Agregar Patio",
+    "2": "Eliminar",
+    "3": "Ver Mas",
+    "4": "Lista de Patios",
+    "5": "Patio ID",
+    "6": "Patio Nombre",
+    "7": "Direccion",
+    "8": "Cant. Lotes Usando Patio",
+    "9": "Lista de Patios"
+  },
+  "VerPtio": {
+    "0": "Ver Patio",
+    "1": "Cargando Mapa...",
+    "2": "Patio SubZonas",
+    "3": "Zona ID: #",
+    "4": "Nombre: ",
+    "5": "Capacidad: {0} Vehiculos",
+    "6": "Deleto",
+    "7": "Modificar"
+  },
+  "VehiculosLotes": {
+    "0": "Vehiculos",
+    "1": "Lotes",
+    "2": "VIN",
+    "3": "Ingresado Por",
+    "4": "Fecha",
+    "5": "Vendido",
+    "6": "Guardar QR",
+    "7": "Agregar Vehiculo",
+    "8": "Modificar",
+    "9": "Eliminar",
+    "10": "VIN",
+    "11": "Lote ID",
+    "12": "Buscar",
+    "13": "Filtros",
+    "14": "Estado",
+    "15": "Fecha de Ingreso",
+    "16": "Fecha de Entrega",
+    "17": "Puerto",
+    "18": "Ingresar / Cambiar Lote",
+    "19": "Inspecciones",
+    "20": "Patio",
+    "21": "Estacionamiento",
+    "22": "Hacer Lavado",
+    "23": "Vender"
   }
 }

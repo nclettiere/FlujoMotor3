@@ -2,6 +2,9 @@
 
 Public Class ManageUsuarios
     Private Sub OnMUload(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        UpdateLang
+
         dataLstUsuarios.DataSource = UObtenerAll
 
         For Each column As ColumnHeader In dataLstUsuarios.Columns
@@ -32,7 +35,7 @@ Public Class ManageUsuarios
  
                 Select OpTipo
                     Case 0
-                        lblOpTipo.Text = "Tipo de Operario: Puerto"
+                        lblOpTipo.Text =  _Lang.ObtenerKey("ManageUsuarios", 6)+"Puerto"
                         Dim NroVIngresados As Integer
                         Dim NroLIngresados As Integer
                         Dim NroLAsign As Integer
@@ -41,49 +44,49 @@ Public Class ManageUsuarios
                         lblNroLEntrgados.Visible = False
 
                         If Integer.TryParse(Consultar("SELECT COUNT(*) FROM vehiculos WHERE operariopuertoid="+ EmpleadoId).Rows(0).Item(0).ToString, NroVIngresados)
-                            lblNroVIngresados.Text = "Nro. Vehiculos Ingresados: "+ NroVIngresados.ToString
+                            lblNroVIngresados.Text = _Lang.ObtenerKey("ManageUsuarios", 7)+ NroVIngresados.ToString
                         Else
-                            lblNroVIngresados.Text = "Nro. Vehiculos Ingresados: -"
+                            lblNroVIngresados.Text = _Lang.ObtenerKey("ManageUsuarios", 7)+"-"
                         End If
 
                         If Integer.TryParse(Consultar("SELECT COUNT(*) FROM lotes WHERE operariopuertoid="+ EmpleadoId).Rows(0).Item(0).ToString, NroLIngresados)
-                            lblNroLIngresados.Text = "Nro. Lotes Ingresados: "+ NroLIngresados.ToString
+                            lblNroLIngresados.Text = _Lang.ObtenerKey("ManageUsuarios", 8) + NroLIngresados.ToString
                         Else
-                            lblNroLIngresados.Text = "Nro. Lotes Ingresados: -"
+                            lblNroLIngresados.Text = _Lang.ObtenerKey("ManageUsuarios", 8)+"-"
                         End If
 
                         If Integer.TryParse(Consultar("SELECT COUNT(*) FROM lotes WHERE operariopuertoid="+ EmpleadoId + " AND lotefechasalida IS NOT NULL").Rows(0).Item(0).ToString, NroLAsign)
-                            lblNroLAsign.Text = "Nro. Lotes Asignados: "+ NroLAsign.ToString
+                            lblNroLAsign.Text = _Lang.ObtenerKey("ManageUsuarios", 9)+ NroLAsign.ToString
                         Else
-                            lblNroLAsign.Text = "Nro. Lotes Asignados: -"
+                            lblNroLAsign.Text = _Lang.ObtenerKey("ManageUsuarios", 9)+"-"
                         End If
                     Case 1
                         lblNroVIngresados.Visible = False
                         lblNroLIngresados.Visible = False
                         lblNroLEntrgados.Visible = False
-                        lblOpTipo.Text = "Tipo de Operario: Patio"
+                        lblOpTipo.Text = _Lang.ObtenerKey("ManageUsuarios", 6)+"Patio"
                     Case 2
                         lblNroVIngresados.Visible = False
                         lblNroLIngresados.Visible = False
                         lblNroVvendidos.Visible = False
                         lblNroLAsign.Visible = False
                         lblNroLEntrgados.Visible = True
-                        lblOpTipo.Text = "Tipo de Operario: Transportista"
+                        lblOpTipo.Text = _Lang.ObtenerKey("ManageUsuarios", 6)+"Transportista"
 
                         Dim NroLEntrega As Integer
 
                         If Integer.TryParse(Consultar("SELECT COUNT(*) FROM lotes WHERE transportistaid="+ EmpleadoId + " AND lotefechallegada IS NOT NULL").Rows(0).Item(0).ToString, NroLEntrega)
-                            lblNroLEntrgados.Text = "Nro. Lotes Entregados: "+ NroLEntrega.ToString
+                            lblNroLEntrgados.Text = _Lang.ObtenerKey("ManageUsuarios", 10)+ NroLEntrega.ToString
                         Else
-                            lblNroLEntrgados.Text = "Nro. Lotes Entregados: -"
+                            lblNroLEntrgados.Text = _Lang.ObtenerKey("ManageUsuarios", 10)+"-"
                         End If
                 End Select
 
                 Dim Nombre As String = dataLstUsuarios.SelectedItem.SubItems.Item(3).Text
                 Dim Apellido As String = dataLstUsuarios.SelectedItem.SubItems.Item(4).Text
 
-                lblNombre.Text = "Nombre: " + Nombre + " " + Apellido
-                lblUsuer.Text = "Usuario: " + Usuario
+                lblNombre.Text = _Lang.ObtenerKey("ManageUsuarios", 12)+ Nombre + " " + Apellido
+                lblUsuer.Text = _Lang.ObtenerKey("ManageUsuarios", 5)+ Usuario
 
             Catch ex As Exception
                 Serilog.Log.Error(ex, "err")
@@ -108,5 +111,14 @@ Public Class ManageUsuarios
             MsgBox("Error al eliminar usuario.")
             Serilog.Log.Error(ex, "Error al eliminar usuario.")
         End Try
+    End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        GroupBox1.Text = _Lang.ObtenerKey("ManageUsuarios", 0)
+        btnMod.Text = _Lang.ObtenerKey("ManageUsuarios", 1)
+        btnEliminar.Text = _Lang.ObtenerKey("ManageUsuarios", 2)
+        btnAgregarUsuario.Text = _Lang.ObtenerKey("ManageUsuarios", 3)
+        GroupBox2.Text = _Lang.ObtenerKey("ManageUsuarios", 4)
     End Sub
 End Class

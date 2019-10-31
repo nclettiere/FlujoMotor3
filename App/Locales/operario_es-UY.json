@@ -134,7 +134,7 @@
       "msg_001": "El lote quedara completo y el transportista se encargara de entregarlo al patio correspondiente.",
       "msg_002": "Lote entregado correctamente."
     },
-    "VerPatio": {
+    "VerParking": {
       "Titulo": "Operario Patio",
       "tab_001": "Vehiculos",
       "btn_001": "Puerto",

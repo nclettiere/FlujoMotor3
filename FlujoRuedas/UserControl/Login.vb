@@ -74,5 +74,6 @@ Public Class Login
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxIdioma.SelectedIndex = 0
+        MainWindow.Size = New Size(392, 499)
     End Sub
 End Class

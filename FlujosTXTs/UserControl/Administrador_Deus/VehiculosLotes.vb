@@ -401,4 +401,30 @@ Public Class VehiculosLotes
     Private Sub CbxEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxEstado.SelectedIndexChanged
 
     End Sub
+
+    Protected _Lang As LangManager  = New LangManager
+    Protected Sub UpdateLang
+        TabPage1.Text = _Lang.ObtenerKey("VehiculosLotes", 0)
+        TabPage2.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+        Button1.Text = _Lang.ObtenerKey("VehiculosLotes", 6)
+        btnAgrVehculo.Text = _Lang.ObtenerKey("VehiculosLotes", 7)
+        btnMod.Text = _Lang.ObtenerKey("VehiculosLotes", 8)
+        btnElim.Text = _Lang.ObtenerKey("VehiculosLotes", 9)
+        Label6.Text = _Lang.ObtenerKey("VehiculosLotes", 10)
+        Label1.Text = _Lang.ObtenerKey("VehiculosLotes", 11)
+        btnBuscar.Text = _Lang.ObtenerKey("VehiculosLotes", 12)
+        Label2.Text = _Lang.ObtenerKey("VehiculosLotes", 13)
+        Label5.Text = _Lang.ObtenerKey("VehiculosLotes", 14)
+        Label3.Text = _Lang.ObtenerKey("VehiculosLotes", 15)
+        Label4.Text = _Lang.ObtenerKey("VehiculosLotes", 16)
+        btnAplicarFechaIng.Text = _Lang.ObtenerKey("VehiculosLotes", 17)
+        btnAplicarFechaEntega.Text = _Lang.ObtenerKey("VehiculosLotes", 18)
+        GroupBox1.Text = _Lang.ObtenerKey("VehiculosLotes", 20)
+        btnMngLote.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+        btnInsp.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+        GroupBox2.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+        btnAparcar.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+        btnLavado.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+        btnVender.Text = _Lang.ObtenerKey("VehiculosLotes", 1)
+    End Sub
 End Class

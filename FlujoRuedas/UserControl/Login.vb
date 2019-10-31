@@ -46,7 +46,7 @@ Public Class Login
     End Sub
 
     Private Sub CbxIdioma_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxIdioma.SelectedIndexChanged
-        Select cbxIdioma.SelectedIndex
+        Select Case cbxIdioma.SelectedIndex
             Case 0
                 '' Seleccionamos el directorio de idioma.
                 SetDirectorioIdioma("es-UY", "transportista")
@@ -59,8 +59,6 @@ Public Class Login
 
                 '' Actualizamos los textos de la app
                 UpdateLang
-            Case 2:
-                MessageBox.Show("!عربيعربى. Tenia que ser bilingue y efectivamente es bilingu''e. PD: No tengo enie en el teclado, asique todas las enies las sustituyo por 'ni'")
         End Select
     End Sub
 

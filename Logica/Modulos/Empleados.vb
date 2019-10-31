@@ -41,7 +41,7 @@ Public Module Empleados
     Public Function UObtenerAll() As DataTable
         Conectar()
         Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("SELECT * FROM usuarios A INNER JOIN empleados B ON A.empleadoid = B.empleadoid", DBConexion)
+        Dim adaptador As New OdbcDataAdapter("SELECT * FROM usuarios A RIGHT JOIN empleados B ON A.empleadoid = B.empleadoid", DBConexion)
         adaptador.Fill(tabla)
 
         If VerificarTabla(tabla)

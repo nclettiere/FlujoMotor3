@@ -68,8 +68,8 @@ Public Class MenuPrincipal
     Protected _Lang As LangManager  = New LangManager
     Protected Sub UpdateLang
         ParentForm.Text = _Lang.ObtenerKey("Main", 0)
-        btViajes.Text = _Lang.ObtenerKey("Login", 1)
-        Button2.Text = _Lang.ObtenerKey("Login", 2)
+        btViajes.Text = _Lang.ObtenerKey("Main", 1)
+        Button2.Text = _Lang.ObtenerKey("Main", 2)
     End Sub
 
 End Class

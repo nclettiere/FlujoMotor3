@@ -374,10 +374,10 @@ Public Class VehiculosLotes
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim dv As DataView
-
+        Dim loteid As Integer = -1
         listaVehiculos.DataSource = Nothing
 
-        Select cbxEstado.SelectedIndex
+        Select Case cbxEstado.SelectedIndex
             Case 0
                 dv = New DataView(VObtenerAll)
             Case 1
@@ -392,9 +392,19 @@ Public Class VehiculosLotes
                 dv = New DataView(VObtenerAll)
         End Select
 
-        Dim Loteid As Integer = Integer.Parse(tbxLoteid.Text)
-        MsgBox(String.Format("vehiculovin LIKE '{0}' AND Loteid = {1}", tbxVIN.Text, Loteid))
-        dv.RowFilter = String.Format("vehiculovin LIKE '%{0}%' AND Loteid = {1}", tbxVIN.Text, Loteid)
+        Try
+            loteid = Integer.Parse(tbxLoteid.Text)
+        Catch ex As Exception
+            loteid = -1
+        End Try
+
+        If (tbxVIN.Text <> "" And tbxLoteid.Text <> "" And loteid > -1) Then
+            dv.RowFilter = String.Format("vehiculovin LIKE '%{0}%' AND Loteid = {1}", tbxVIN.Text, loteid)
+        ElseIf (tbxLoteid.Text <> "" And loteid > -1) Then
+            dv.RowFilter = String.Format("Loteid = {0}", loteid)
+        ElseIf (tbxVIN.Text <> "") Then
+            dv.RowFilter = String.Format("vehiculovin LIKE '%{0}%'", tbxVIN.Text)
+        End If
         ActualizarVehiculos(dv)
     End Sub
 

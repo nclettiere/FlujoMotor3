@@ -42,7 +42,7 @@ Partial Class MainWindow
         Me.Controls.Add(Me.MainContent)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainWindow"
-        Me.Text = "ESPItacular"
+        Me.Text = "FMPI Transportista"
         Me.ResumeLayout(false)
 
 End Sub

@@ -4,6 +4,8 @@ Public Class SelecVehiculo
     Private Property FormParent As VerLotes
     Private Property VinSeleccionado As String
 
+    Friend UC_ModificarLote As ModificarLote
+
     Friend Sub CargarDatos(FormParent As VerLotes)
         Me.FormParent = FormParent
 
@@ -27,7 +29,12 @@ Public Class SelecVehiculo
     End Sub
 
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
-        FormParent.AgregarVehiculo(VinSeleccionado)
+        If UC_ModificarLote IsNot Nothing
+            UC_ModificarLote.AgregarALote(VinSeleccionado)
+        Else
+            FormParent.AgregarVehiculo(VinSeleccionado)
+        End If
+
         ParentForm.Close()
     End Sub
 

@@ -25,15 +25,17 @@ Public Class VerPatio
     Public Property VinSeleccionado As String
 
     Private Sub BtnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim Aparcar As AparcarVehiculo = New AparcarVehiculo
+        Aparcar.VIN = (VinSeleccionado)
         Try
-            MsgBox(VinSeleccionado)
-            Dim CVentanaVer As Ventana_Ver = New Ventana_Ver
-            Dim Aparcar = New AparcarVehiculo
-            Aparcar.VIN = VinSeleccionado
-            CVentanaVer.LoadControl(Aparcar)
-            CVentanaVer.ShowDialog
+            Dim PatioId = LObtenerID(DataGridViewVehiculos.SelectedItem.SubItems.Item(9).Text).Item("patioid").ToString
+            Aparcar.PatioId = PatioId
+            Ventana.LoadControl(Aparcar)
+            Ventana.ShowDialog
         Catch ex As Exception
-            Serilog.Log.Error(ex, "Error al abrir AparcarVehiculo")
+            MessageBox.Show("Error al obtener patioid.")
+            Serilog.Log.Error(ex, "err..")
         End Try
     End Sub
 

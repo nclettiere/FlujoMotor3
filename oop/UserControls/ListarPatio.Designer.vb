@@ -34,6 +34,8 @@ Partial Class ListarPatio
         Me.lblloading = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnAgZona = New System.Windows.Forms.Button()
+        Me.btnAgSubZona = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout
         Me.flpSubZonas.SuspendLayout
         Me.Panel1.SuspendLayout
@@ -47,9 +49,9 @@ Partial Class ListarPatio
         Me.GroupBox1.AutoSize = true
         Me.GroupBox1.Controls.Add(Me.flpSubZonas)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Orange
-        Me.GroupBox1.Location = New System.Drawing.Point(669, 16)
+        Me.GroupBox1.Location = New System.Drawing.Point(669, 56)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(258, 736)
+        Me.GroupBox1.Size = New System.Drawing.Size(258, 556)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = false
         Me.GroupBox1.Text = "SubZonas Del Patio"
@@ -62,7 +64,7 @@ Partial Class ListarPatio
         Me.flpSubZonas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flpSubZonas.Location = New System.Drawing.Point(3, 16)
         Me.flpSubZonas.Name = "flpSubZonas"
-        Me.flpSubZonas.Size = New System.Drawing.Size(252, 717)
+        Me.flpSubZonas.Size = New System.Drawing.Size(252, 537)
         Me.flpSubZonas.TabIndex = 0
         '
         'Panel1
@@ -158,6 +160,8 @@ Partial Class ListarPatio
         '
         Me.Panel3.AutoSize = true
         Me.Panel3.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Panel3.Controls.Add(Me.btnAgZona)
+        Me.Panel3.Controls.Add(Me.btnAgSubZona)
         Me.Panel3.Controls.Add(Me.GroupBox1)
         Me.Panel3.Controls.Add(Me.panelMapa)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
@@ -165,6 +169,30 @@ Partial Class ListarPatio
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(930, 615)
         Me.Panel3.TabIndex = 7
+        '
+        'btnAgZona
+        '
+        Me.btnAgZona.BackColor = System.Drawing.Color.Silver
+        Me.btnAgZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgZona.ForeColor = System.Drawing.Color.Orange
+        Me.btnAgZona.Location = New System.Drawing.Point(670, 12)
+        Me.btnAgZona.Name = "btnAgZona"
+        Me.btnAgZona.Size = New System.Drawing.Size(120, 38)
+        Me.btnAgZona.TabIndex = 9
+        Me.btnAgZona.Text = "Agregar Zona"
+        Me.btnAgZona.UseVisualStyleBackColor = false
+        '
+        'btnAgSubZona
+        '
+        Me.btnAgSubZona.BackColor = System.Drawing.Color.Silver
+        Me.btnAgSubZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgSubZona.ForeColor = System.Drawing.Color.Orange
+        Me.btnAgSubZona.Location = New System.Drawing.Point(795, 12)
+        Me.btnAgSubZona.Name = "btnAgSubZona"
+        Me.btnAgSubZona.Size = New System.Drawing.Size(116, 38)
+        Me.btnAgSubZona.TabIndex = 10
+        Me.btnAgSubZona.Text = "Agregar SubZona"
+        Me.btnAgSubZona.UseVisualStyleBackColor = false
         '
         'ListarPatio
         '
@@ -199,4 +227,6 @@ End Sub
     Friend WithEvents lblloading As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents btnAgZona As Button
+    Friend WithEvents btnAgSubZona As Button
 End Class

@@ -50,7 +50,6 @@ Public Class VehiculosLotes
 
                 If String.IsNullOrEmpty(Lote)
                     lbllote.Text = "Lote: - "
-                    btnMngLote.Enabled = False
                     btnLavado.Enabled = False
                 Else
                     lbllote.Text = "Lote: SI - Lote id: " + Lote
@@ -61,7 +60,6 @@ Public Class VehiculosLotes
                 btnElim.Enabled = False
                 btnInsp.Enabled = False
                 btnLavado.Enabled = False
-                btnMngLote.Enabled = False
                 btnMod.Enabled = False
                 btnAparcar.Enabled = False
                 btnModLote.Enabled = False
@@ -461,7 +459,6 @@ Public Class VehiculosLotes
         btnBuscar.Text = _Lang.ObtenerKey("VehiculosLotes", 12)
         Label2.Text = _Lang.ObtenerKey("VehiculosLotes", 13)
         GroupBox1.Text = _Lang.ObtenerKey("VehiculosLotes", 17)
-        btnMngLote.Text = _Lang.ObtenerKey("VehiculosLotes", 18)
         btnInsp.Text = _Lang.ObtenerKey("VehiculosLotes", 19)
         GroupBox2.Text = _Lang.ObtenerKey("VehiculosLotes", 20)
         btnAparcar.Text = _Lang.ObtenerKey("VehiculosLotes", 21)

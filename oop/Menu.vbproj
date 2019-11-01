@@ -232,6 +232,12 @@
     <Compile Include="UserControls\AgregarDanio.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\AgregarSubzona.Designer.vb">
+      <DependentUpon>AgregarSubzona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AgregarSubzona.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\AparcarVehiculo.Designer.vb">
       <DependentUpon>AparcarVehiculo.vb</DependentUpon>
     </Compile>
@@ -260,6 +266,12 @@
       <DependentUpon>MenuControl.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MenuControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ModificarLote.Designer.vb">
+      <DependentUpon>ModificarLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ModificarLote.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\ModificarSubzona.Designer.vb">
@@ -458,6 +470,9 @@
     <EmbeddedResource Include="UserControls\AgregarDanio.resx">
       <DependentUpon>AgregarDanio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AgregarSubzona.resx">
+      <DependentUpon>AgregarSubzona.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AparcarVehiculo.resx">
       <DependentUpon>AparcarVehiculo.vb</DependentUpon>
     </EmbeddedResource>
@@ -472,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MenuControl.resx">
       <DependentUpon>MenuControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ModificarLote.resx">
+      <DependentUpon>ModificarLote.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ModificarSubzona.resx">
       <DependentUpon>ModificarSubzona.vb</DependentUpon>

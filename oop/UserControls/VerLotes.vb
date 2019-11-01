@@ -41,15 +41,10 @@ Public Class VerLotes
                     lblPatio.Text = Patio.Item("pationombre")
                 End If
 
+                lblnombre.Text = Lote.Item("loteNombre")
                 
                 labId.Text = Lote.Item("loteid")
 
-                Try
-                    lblFechaSalida.Text = Lote.Item("lotefechasalida")
-                    lblFechaLlegada.Text = Lote.Item("lotefechallegada")
-                Catch ex As Exception
-                    Serilog.Log.Warning(ex, "Error al obtener fecha salida/llegada.")
-                End Try
                 riTeBoDescripcion.Text = Lote.Item("lotedescripcion")
             End If
         Catch ex As Exception
@@ -118,65 +113,13 @@ Public Class VerLotes
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        If DataGridViewVehiculos.Rows.Count > 0
-            btneliminar.Visible = True
-        End If
-        
-        lblFechaLlegada.Visible = False
-        lblFechaSalida.Visible = False
-        DateTimeLlegada.Visible = True
-        DateTimeSalida.Visible = True
-        riTeBoDescripcion.ReadOnly = False
-        btnEntregar.Enabled = False
-        DataGridViewVehiculos.Enabled = False
-        lblPatio.Visible = False
-        cbxPatios.Visible = True
-        btnModificar.Enabled = False
-        btnMod.Visible = True
-        dateTimeLlegada.Format = DateTimePickerFormat.Custom
-        dateTimeSalida.Format = DateTimePickerFormat.Custom
-        dateTimeLlegada.CustomFormat = "yyyy-MM-dd HH:mm:ss"
-        dateTimeSalida.CustomFormat = "yyyy-MM-dd HH:mm:ss"
-
-        Try
-            If cbxPatios.Items.Count = 0 Then
-
-                Dim ConsultaPatios = PObtenerAll()
-                If ConsultaPatios IsNot Nothing Then
-
-                    If ConsultaPatios.Rows.Count > 0 Then
-                        Dim contador As Integer = 1
-                        Dim index As Integer = 1
-                        Dim Lote = LObtenerID(LoteId)
-                        Dim PatioLote = PObtenerID(Lote.Item("patioid"))
-
-                        For Each item As DataRow In ConsultaPatios.Rows()
-                            cbxPatios.Items.Add(item.Item("pationombre"))
-                            If String.Equals(item.Item("pationombre"), PatioLote.Item("pationombre")) Then
-                                index = contador
-                            End If
-                            contador += 1
-                        Next
-
-                        Try
-                            cbxPatios.SelectedIndex = (index - 1)
-                        Catch ex As Exception
-                            Serilog.Log.Warning(ex, "No se pudo setear cbxpatio. Hay patios ingresados en la db?")
-                        End Try
-
-                        Try
-                            DateTimeLlegada.Value = DateTime.ParseExact(Lote.Item("lotefechallegada").ToString, "yyyy-MM-dd HH:mm:ss", Nothing)
-                            DateTimeSalida.Value = DateTime.ParseExact(Lote.Item("lotefechasalida").ToString, "yyyy-MM-dd HH:mm:ss", Nothing)
-                        Catch ex As Exception
-                            Serilog.Log.Warning(ex, "No se pudo setear DateTimeLlegada/Salida. Chequee el formato de las fechas.")
-                        End Try
-                    End If
-                End If
-            End If
-        Catch ex As Exception
-            Serilog.Log.Error(ex, "Error al obtener patios")
-        End Try
-
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim ML As ModificarLote = New ModificarLote
+        ML.UC_VerLote = Me
+        ML.LoteId = LoteId
+        ML.CargarDatos
+        Ventana.LoadControl(ML)
+        Ventana.ShowDialog
     End Sub
 
     Private Sub BtnMod_Click(sender As Object, e As EventArgs) Handles btnMod.Click
@@ -192,17 +135,12 @@ Public Class VerLotes
                 LUpdateDesc(riTeBoDescripcion.Text, LoteId)
             End If
 
-            LUpdateFechas(DateTimeLlegada.Value.ToString, DateTimeSalida.Value.ToString, LoteId)
-
         Catch ex As Exception
             Serilog.Log.Error(ex, "Error al modificardatos.")
         End Try
 
         btneliminar.Visible = False
-        lblFechaLlegada.Visible = True
-        lblFechaSalida.Visible = True
         DateTimeLlegada.Visible = False
-        DateTimeSalida.Visible = False
         riTeBoDescripcion.ReadOnly = True
         btnEntregar.Enabled = True
         DataGridViewVehiculos.Enabled = True
@@ -214,7 +152,7 @@ Public Class VerLotes
         CargarDatos()
     End Sub
 
-    Private Sub BtnAgregarVehiculo_Click(sender As Object, e As EventArgs) Handles btnAgregarVehiculo.Click
+    Private Sub BtnAgregarVehiculo_Click(sender As Object, e As EventArgs) 
         Dim VentanaVerControl As Ventana_Ver = New Ventana_Ver
         Dim SelecVehiculo As SelecVehiculo = New SelecVehiculo
         SelecVehiculo.CargarDatos(Me)
@@ -251,19 +189,26 @@ Public Class VerLotes
         lblpatio2.Text = _Lang.ObtenerKey("VerLote", 2)
         lbldesc.Text = _Lang.ObtenerKey("VerLote", 4)
         lblentregar.Text = _Lang.ObtenerKey("VerLote", 3)
-        lblSALIDA.Text = _Lang.ObtenerKey("VerLote", 5)
+        'lblNopmbre.Text = _Lang.ObtenerKey("VerLote", 5)
         lblVehiculos.Text = _Lang.ObtenerKey("VerLote", 7)
-        lblLlegada.Text = _Lang.ObtenerKey("VerLote", 6)
 
         btCerrar.Text = _Lang.ObtenerKey("VerLote", 11)
         btneliminar.Text = _Lang.ObtenerKey("VerLote", 13)
         btnEntregar.Text = _Lang.ObtenerKey("VerLote", 8)
-        btnAgregarVehiculo.Text = _Lang.ObtenerKey("VerLote", 9)
         btnMod.Text = _Lang.ObtenerKey("VerLote", 12)
         btnModificar.Text = _Lang.ObtenerKey("VerLote", 10)
     End Sub
 
     Private Sub VerLotes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateLang
+    End Sub
+
+    Friend Sub ActualizarLista(LNombre As String, LDesc As String, PNombre As String)
+        Dim ListaVehiculos As DataTable = VObtenerLoteId(LoteId)
+        DataGridViewVehiculos.DataSource = ListaVehiculos
+
+        lblnombre.Text = LNombre
+        riTeBoDescripcion.Text = LDesc
+        lblPatio.Text = PNombre
     End Sub
 End Class

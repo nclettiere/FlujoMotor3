@@ -31,12 +31,8 @@ Partial Class VerLotes
         Me.Button1 = New System.Windows.Forms.Button()
         Me.cbxPatios = New System.Windows.Forms.ComboBox()
         Me.lblPatio = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.DateTimeSalida = New System.Windows.Forms.DateTimePicker()
-        Me.lblFechaSalida = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DateTimeLlegada = New System.Windows.Forms.DateTimePicker()
-        Me.lblFechaLlegada = New System.Windows.Forms.Label()
         Me.lbldesc = New System.Windows.Forms.Label()
         Me.lblentregar = New System.Windows.Forms.Label()
         Me.lblID = New System.Windows.Forms.Label()
@@ -46,21 +42,19 @@ Partial Class VerLotes
         Me.btnEntregar = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.riTeBoDescripcion = New System.Windows.Forms.RichTextBox()
-        Me.lblLlegada = New System.Windows.Forms.Label()
-        Me.lblSALIDA = New System.Windows.Forms.Label()
+        Me.lblNopmbre = New System.Windows.Forms.Label()
         Me.btnMod = New System.Windows.Forms.Button()
-        Me.btnAgregarVehiculo = New System.Windows.Forms.Button()
         Me.lblVehiculos = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.DataGridViewVehiculos = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.btneliminar = New System.Windows.Forms.Button()
+        Me.lblnombre = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.Panel6.SuspendLayout
-        Me.Panel5.SuspendLayout
         Me.Panel4.SuspendLayout
         Me.Panel2.SuspendLayout
         Me.Panel3.SuspendLayout
@@ -144,7 +138,6 @@ Partial Class VerLotes
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.19376!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.80624!))
         Me.TableLayoutPanel2.Controls.Add(Me.Panel6, 1, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Panel5, 1, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel4, 1, 5)
         Me.TableLayoutPanel2.Controls.Add(Me.lbldesc, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.lblentregar, 0, 2)
@@ -153,10 +146,9 @@ Partial Class VerLotes
         Me.TableLayoutPanel2.Controls.Add(Me.labId, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel2, 1, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel3, 1, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.lblLlegada, 0, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.lblSALIDA, 0, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblNopmbre, 0, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.btnMod, 1, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnAgregarVehiculo, 1, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblnombre, 1, 4)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -227,71 +219,24 @@ Partial Class VerLotes
         Me.lblPatio.Text = "N/A"
         Me.lblPatio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Panel5
-        '
-        Me.Panel5.AutoSize = true
-        Me.Panel5.Controls.Add(Me.DateTimeSalida)
-        Me.Panel5.Controls.Add(Me.lblFechaSalida)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(169, 248)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(277, 26)
-        Me.Panel5.TabIndex = 19
-        '
-        'DateTimeSalida
-        '
-        Me.DateTimeSalida.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DateTimeSalida.Location = New System.Drawing.Point(0, 26)
-        Me.DateTimeSalida.Name = "DateTimeSalida"
-        Me.DateTimeSalida.Size = New System.Drawing.Size(277, 20)
-        Me.DateTimeSalida.TabIndex = 20
-        Me.DateTimeSalida.Visible = false
-        '
-        'lblFechaSalida
-        '
-        Me.lblFechaSalida.AutoSize = true
-        Me.lblFechaSalida.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblFechaSalida.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblFechaSalida.ForeColor = System.Drawing.Color.Wheat
-        Me.lblFechaSalida.Location = New System.Drawing.Point(0, 0)
-        Me.lblFechaSalida.Name = "lblFechaSalida"
-        Me.lblFechaSalida.Size = New System.Drawing.Size(45, 26)
-        Me.lblFechaSalida.TabIndex = 18
-        Me.lblFechaSalida.Text = "N/A"
-        Me.lblFechaSalida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Panel4
         '
         Me.Panel4.AutoSize = true
         Me.Panel4.Controls.Add(Me.DateTimeLlegada)
-        Me.Panel4.Controls.Add(Me.lblFechaLlegada)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(169, 280)
+        Me.Panel4.Location = New System.Drawing.Point(169, 274)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(277, 26)
+        Me.Panel4.Size = New System.Drawing.Size(277, 1)
         Me.Panel4.TabIndex = 18
         '
         'DateTimeLlegada
         '
         Me.DateTimeLlegada.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DateTimeLlegada.Location = New System.Drawing.Point(0, 26)
+        Me.DateTimeLlegada.Location = New System.Drawing.Point(0, 0)
         Me.DateTimeLlegada.Name = "DateTimeLlegada"
         Me.DateTimeLlegada.Size = New System.Drawing.Size(277, 20)
         Me.DateTimeLlegada.TabIndex = 19
         Me.DateTimeLlegada.Visible = false
-        '
-        'lblFechaLlegada
-        '
-        Me.lblFechaLlegada.AutoSize = true
-        Me.lblFechaLlegada.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblFechaLlegada.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblFechaLlegada.ForeColor = System.Drawing.Color.Wheat
-        Me.lblFechaLlegada.Location = New System.Drawing.Point(0, 0)
-        Me.lblFechaLlegada.Name = "lblFechaLlegada"
-        Me.lblFechaLlegada.Size = New System.Drawing.Size(45, 26)
-        Me.lblFechaLlegada.TabIndex = 18
-        Me.lblFechaLlegada.Text = "N/A"
-        Me.lblFechaLlegada.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lbldesc
         '
@@ -408,31 +353,18 @@ Partial Class VerLotes
         Me.riTeBoDescripcion.TabIndex = 5
         Me.riTeBoDescripcion.Text = ""
         '
-        'lblLlegada
+        'lblNopmbre
         '
-        Me.lblLlegada.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.lblLlegada.AutoSize = true
-        Me.lblLlegada.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblLlegada.ForeColor = System.Drawing.Color.Orange
-        Me.lblLlegada.Location = New System.Drawing.Point(3, 280)
-        Me.lblLlegada.Name = "lblLlegada"
-        Me.lblLlegada.Size = New System.Drawing.Size(160, 26)
-        Me.lblLlegada.TabIndex = 15
-        Me.lblLlegada.Text = "Fecha Llegada"
-        Me.lblLlegada.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblSALIDA
-        '
-        Me.lblSALIDA.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.lblSALIDA.AutoSize = true
-        Me.lblSALIDA.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblSALIDA.ForeColor = System.Drawing.Color.Orange
-        Me.lblSALIDA.Location = New System.Drawing.Point(3, 248)
-        Me.lblSALIDA.Name = "lblSALIDA"
-        Me.lblSALIDA.Size = New System.Drawing.Size(160, 26)
-        Me.lblSALIDA.TabIndex = 13
-        Me.lblSALIDA.Text = "Fecha Salida"
-        Me.lblSALIDA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblNopmbre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lblNopmbre.AutoSize = true
+        Me.lblNopmbre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblNopmbre.ForeColor = System.Drawing.Color.Orange
+        Me.lblNopmbre.Location = New System.Drawing.Point(3, 245)
+        Me.lblNopmbre.Name = "lblNopmbre"
+        Me.lblNopmbre.Size = New System.Drawing.Size(160, 26)
+        Me.lblNopmbre.TabIndex = 13
+        Me.lblNopmbre.Text = "Lote Nombre"
+        Me.lblNopmbre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnMod
         '
@@ -444,34 +376,15 @@ Partial Class VerLotes
         Me.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMod.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnMod.ForeColor = System.Drawing.Color.Orange
-        Me.btnMod.Location = New System.Drawing.Point(222, 382)
+        Me.btnMod.Location = New System.Drawing.Point(222, 297)
         Me.btnMod.Margin = New System.Windows.Forms.Padding(3, 20, 3, 3)
         Me.btnMod.MaximumSize = New System.Drawing.Size(999, 55)
         Me.btnMod.Name = "btnMod"
-        Me.btnMod.Size = New System.Drawing.Size(171, 48)
+        Me.btnMod.Size = New System.Drawing.Size(171, 55)
         Me.btnMod.TabIndex = 21
         Me.btnMod.Text = "Aceptar y Modificar"
         Me.btnMod.UseVisualStyleBackColor = false
         Me.btnMod.Visible = false
-        '
-        'btnAgregarVehiculo
-        '
-        Me.btnAgregarVehiculo.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnAgregarVehiculo.AutoSize = true
-        Me.btnAgregarVehiculo.BackColor = System.Drawing.Color.DimGray
-        Me.btnAgregarVehiculo.FlatAppearance.BorderColor = System.Drawing.Color.Gold
-        Me.btnAgregarVehiculo.FlatAppearance.BorderSize = 0
-        Me.btnAgregarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarVehiculo.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnAgregarVehiculo.ForeColor = System.Drawing.Color.Orange
-        Me.btnAgregarVehiculo.Location = New System.Drawing.Point(222, 309)
-        Me.btnAgregarVehiculo.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAgregarVehiculo.MaximumSize = New System.Drawing.Size(999, 55)
-        Me.btnAgregarVehiculo.Name = "btnAgregarVehiculo"
-        Me.btnAgregarVehiculo.Size = New System.Drawing.Size(171, 53)
-        Me.btnAgregarVehiculo.TabIndex = 23
-        Me.btnAgregarVehiculo.Text = "Agregar Vehiculo"
-        Me.btnAgregarVehiculo.UseVisualStyleBackColor = false
         '
         'lblVehiculos
         '
@@ -569,6 +482,19 @@ Partial Class VerLotes
         Me.btneliminar.UseVisualStyleBackColor = false
         Me.btneliminar.Visible = false
         '
+        'lblnombre
+        '
+        Me.lblnombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lblnombre.AutoSize = true
+        Me.lblnombre.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblnombre.ForeColor = System.Drawing.Color.Wheat
+        Me.lblnombre.Location = New System.Drawing.Point(169, 245)
+        Me.lblnombre.Name = "lblnombre"
+        Me.lblnombre.Size = New System.Drawing.Size(277, 26)
+        Me.lblnombre.TabIndex = 24
+        Me.lblnombre.Text = "N/A"
+        Me.lblnombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'VerLotes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -585,10 +511,7 @@ Partial Class VerLotes
         Me.TableLayoutPanel2.PerformLayout
         Me.Panel6.ResumeLayout(false)
         Me.Panel6.PerformLayout
-        Me.Panel5.ResumeLayout(false)
-        Me.Panel5.PerformLayout
         Me.Panel4.ResumeLayout(false)
-        Me.Panel4.PerformLayout
         Me.Panel2.ResumeLayout(false)
         Me.Panel3.ResumeLayout(false)
         Me.Panel1.ResumeLayout(false)
@@ -619,20 +542,15 @@ End Sub
     Friend WithEvents Panel3 As Panel
     Friend WithEvents riTeBoDescripcion As RichTextBox
     Friend WithEvents btnModificar As Button
-    Friend WithEvents lblLlegada As Label
-    Friend WithEvents lblSALIDA As Label
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents lblFechaSalida As Label
+    Friend WithEvents lblNopmbre As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents lblFechaLlegada As Label
-    Friend WithEvents DateTimeSalida As DateTimePicker
     Friend WithEvents DateTimeLlegada As DateTimePicker
     Friend WithEvents Panel6 As Panel
     Friend WithEvents cbxPatios As ComboBox
     Friend WithEvents lblPatio As Label
     Friend WithEvents btnMod As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents btnAgregarVehiculo As Button
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents btneliminar As Button
+    Friend WithEvents lblnombre As Label
 End Class

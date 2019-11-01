@@ -5,10 +5,11 @@ Imports CefSharp.WinForms
 Imports Logica
 
 Public Class ListarPatio
-
+    
     Private Shared _instance As ListarPatio
 
     Public Chromium As ChromiumWebBrowser
+
     Friend PatioId As String
 
     Friend Direccion As String
@@ -30,37 +31,27 @@ Public Class ListarPatio
 
     Public Sub New()
         InitializeComponent
-        '' Iniciar Chromium
-        '' En otro thread para no congestionar la UI mientras carga.
-        Dim thread As Thread = New Thread(AddressOf InciarChromium)
-        thread.Start()
-        PrimeraVez = False
     End Sub
 
-    Private Sub VerPatio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        UpdateLang
-
+    Private Sub VerPatio_Load(sender As Object, e As EventArgs) Handles MyBase.Load 
         ActualizarSubZonas
 
-        If Not PrimeraVez And Chromium IsNot Nothing
-            If Chromium.IsBrowserInitialized
-                If CefSharp.Cef.IsInitialized
-                    CefSharp.Cef.Shutdown
-                    Dim Config As CefSettings = New CefSettings()
-                    'Iniciar CefSharp con las configuraciones dadas
-                    CefSharp.Cef.Initialize(Config)
-                    Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion)
-                    ActualizarSubZonas
-                End If
-            End If
+        Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/")
+
+        If CefSharp.Cef.IsInitialized
+            Chromium.Load("https://www.google.com.uy/maps/place/"+Direccion)
+            panelMapa.Controls.Add(Chromium)
+            Chromium.Dock = DockStyle.Fill
+            Chromium.BringToFront
+            ActualizarSubZonas
         End If
+
     End Sub
 
     Private Function CrearControlSubZona(ZonaId As String, Nombre As String, Capacidad As String) As Control
         Dim PanelContenido As Panel = New Panel
         PanelContenido.Size = New Size(236, 127)
-        PanelContenido.BackColor = Color.Gray
+        PanelContenido.BackColor = Color.Silver
         PanelContenido.Dock = DockStyle.Top
 
         Dim LabelId As Label = New Label
@@ -73,17 +64,17 @@ Public Class ListarPatio
         LabelNombre.AutoSize = True
         LabelCapacidad.AutoSize = True
 
-        LabelId.Text = _Lang.ObtenerKey("VerPtio", 3)+ ZonaId
-        LabelNombre.Text = _Lang.ObtenerKey("VerPtio", 4)+ Nombre
-        LabelCapacidad.Text = String.Format(_Lang.ObtenerKey("VerPtio", 5), Capacidad)
+        LabelId.Text = "Zona ID: "+ ZonaId
+        LabelNombre.Text = "Nombre: "+ Nombre
+        LabelCapacidad.Text = "Capacidad: "+ Capacidad + " Vehiculos"
 
         LabelId.Location = New Point(3, 10)
         LabelNombre.Location = New Point(3, 37)
         LabelCapacidad.Location = New Point(3, 60)
 
-        LabelId.ForeColor = Color.Orange
-        LabelNombre.ForeColor = Color.Orange
-        LabelCapacidad.ForeColor = Color.Orange
+        LabelId.ForeColor = Color.Crimson
+        LabelNombre.ForeColor = Color.Crimson
+        LabelCapacidad.ForeColor = Color.Crimson
 
         Dim fuente = New Font("Arial", 10)
 
@@ -93,24 +84,21 @@ Public Class ListarPatio
 
         BtnElim.Size = New Size(89, 28)
         BtnElim.Font = fuente
-        BtnElim.ForeColor = Color.Orange
+        BtnElim.ForeColor = Color.Crimson
         BtnElim.FlatStyle = FlatStyle.Flat
-        BtnElim.Text = _Lang.ObtenerKey("VerPtio", 6)
+        BtnElim.Text = "Eliminar"
         BtnElim.Location = New Point(6, 91)
 
         BtnMod.Size = New Size(87, 28)
         BtnMod.Font = fuente
-        BtnMod.ForeColor = Color.Orange
+        BtnMod.ForeColor = Color.Crimson
         BtnMod.FlatStyle = FlatStyle.Flat
-        BtnMod.Text = _Lang.ObtenerKey("VerPtio", 7)
+        BtnMod.Text = "Modificar"
         BtnMod.Location = New Point(136, 91)
 
         'AddHandler BtnElim.Click , Sub(s, ea) EliminarClick(s, ea, PatioId)
-        'AddHandler BtnMod.Click , Sub(s, ea) ModClick(s, ea, Nombre)
+        AddHandler BtnMod.Click , Sub(s, ea) ModClick(s, ea, Nombre)
         
-        BtnElim.Enabled = false
-        BtnMod.Enabled = false
-
         PanelContenido.Controls.Add(LabelId)
         PanelContenido.Controls.Add(LabelNombre)
         PanelContenido.Controls.Add(LabelCapacidad)
@@ -126,37 +114,62 @@ Public Class ListarPatio
     End Sub
 
     Private Sub ModClick(s As Object, ea As EventArgs, SZnombre As String)
-
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim AgSubZ As AgregarSubzona = New AgregarSubzona
+        AgSubZ.PatioId = PatioId
+        AgSubZ.VP_ListarPatio = Me
+        AgSubZ.Modo = 1
+        AgSubZ.SZNombre = SZnombre
+        Ventana.LoadControl(AgSubZ)
+        Ventana.ShowDialog
     End Sub
 
     Private Delegate Sub InciarChromiumDelegate()
     Private Sub InciarChromium()
+        If Me.InvokeRequired Then
+            Me.Invoke(New InciarChromiumDelegate(AddressOf InciarChromium))
+        Else
+            Try
+                Dim Config As CefSettings = New CefSettings()
+                'Iniciar CefSharp con las configuraciones dadas
+                CefSharp.Cef.Initialize(Config)
 
-    If Me.InvokeRequired Then
-        Me.Invoke(New InciarChromiumDelegate(AddressOf InciarChromium))
-    Else
-        Try
-            Dim Config As CefSettings = New CefSettings()
-            'Iniciar CefSharp con las configuraciones dadas
-            CefSharp.Cef.Initialize(Config)
+                ' Aniadir el control al panel
+                Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/place/"+Direccion)
+                panelMapa.Controls.Add(Chromium)
+                Chromium.Dock = DockStyle.Fill
+                Chromium.BringToFront
+            Catch ex As Exception
+                Dim web As WebBrowser = New WebBrowser
+                web.Url = New Uri("https://www.google.com.uy/maps/place/"+Direccion)
+                panelMapa.Controls.Add(web)
+                web.Dock = DockStyle.Fill
+                web.BringToFront
 
-            ' Aniadir el control al panel
-            Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/place/"+Direccion)
-            panelMapa.Controls.Add(Chromium)
-            Chromium.Dock = DockStyle.Fill
-            Chromium.BringToFront
-        Catch ex As Exception
-            Dim web As WebBrowser = New WebBrowser
-            web.Url = New Uri("https://www.google.com.uy/maps/place/"+Direccion)
-            panelMapa.Controls.Add(web)
-            web.Dock = DockStyle.Fill
-            web.BringToFront
-
-            Serilog.Log.Error(ex, "Error al cargar CefSharp. Cargando Webview del legado.")
-        End Try
-    End If
+                Serilog.Log.Error(ex, "Error al cargar CefSharp. Cargando Webview del legado.")
+            End Try
+        End If
     End Sub
 
+    Private Sub BtnAgZona_Click(sender As Object, e As EventArgs) Handles btnAgZona.Click
+        Dim result As Integer = MessageBox.Show("Deseas agregar una zona para este patio?", "Agregar Zona", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            If ZInsertar(PatioId)
+                MessageBox.Show("Zona insertada exitosamente.")
+            Else
+                MessageBox.Show("Hubo un error al insertar zona.")
+            End If
+        End If
+    End Sub
+
+    Private Sub BtnAgSubZona_Click(sender As Object, e As EventArgs) Handles btnAgSubZona.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim AgSubZ As AgregarSubzona = New AgregarSubzona
+        AgSubZ.PatioId = PatioId
+        AgSubZ.VP_ListarPatio = Me
+        Ventana.LoadControl(AgSubZ)
+        Ventana.ShowDialog
+    End Sub
 
     Friend Sub ActualizarSubZonas
        flpSubZonas.Controls.Clear
@@ -188,12 +201,5 @@ Public Class ListarPatio
             MsgBox("Error al crear subzonas.")
             Serilog.Log.Error(ex, "err..")
         End Try
-    End Sub
-
-    Protected _Lang As LangManager  = New LangManager
-    Protected Sub UpdateLang
-        ParentForm.Text = _Lang.ObtenerKey("VerPtio", 0)
-        lblloading.Text = _Lang.ObtenerKey("VerPtio", 1)
-        GroupBox1.Text = _Lang.ObtenerKey("VerPtio", 2)
     End Sub
 End Class

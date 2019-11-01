@@ -81,7 +81,7 @@
       "22": "Do Washing",
       "23": "Sell"
     },
-    "See Inspections": {
+    "VerInspecciones": {
       "Title": "Inspections",
       "lbl_001": "Vehicle Inspections",
       "lbl_002": "List of Inspections",
@@ -95,7 +95,7 @@
       "msg_001": "Do you want to add an inspection? The inspection will be assigned to your account.",
       "msg_002": "This Inspection has no damage"
     },
-    "AddDanio": {
+    "AgregarDanio": {
       "Title": "Add new danio",
       "lbl_001": "Vehicle",
       "lbl_002": "Enter Danios",
@@ -106,10 +106,17 @@
       "btn_003": "Add Danio",
       "msg_001": "The danio was added correctly"
     },
-    "SeeDanios": {
+    "VerDanios": {
       "Title": "See Danios",
       "lbl_001": "Danios",
       "lbl_002": "Danio",
       "btn_001": "Expand Image"
-    }
+    },
+      "VerLavados": {
+      "Titulo": "Ver Lavados",
+      "lbl_001": "Viendo Lavados de",
+      "btn_001": "Nuevo Lavado",
+      "btn_002": "Cerrar",
+      "msg_001": "Deseas hacer un nuevo lavado para el vehiculo"
+    } 
   }

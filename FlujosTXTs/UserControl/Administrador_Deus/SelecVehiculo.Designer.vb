@@ -58,7 +58,7 @@ Partial Class SelecVehiculo
         Me.btAceptar.FlatAppearance.BorderSize = 0
         Me.btAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAceptar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btAceptar.ForeColor = System.Drawing.Color.Orange
+        Me.btAceptar.ForeColor = System.Drawing.Color.Crimson
         Me.btAceptar.Location = New System.Drawing.Point(103, 361)
         Me.btAceptar.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btAceptar.MinimumSize = New System.Drawing.Size(143, 53)

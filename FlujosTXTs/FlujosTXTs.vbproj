@@ -246,6 +246,12 @@
     <Compile Include="UserControl\Administrador_Deus\ManageUsuarios.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\Administrador_Deus\ModificarLote.Designer.vb">
+      <DependentUpon>ModificarLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\ModificarLote.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Administrador_Deus\PatiosZonas.Designer.vb">
       <DependentUpon>PatiosZonas.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,12 @@
       <DependentUpon>VerInspeccion.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\VerInspeccion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerLavados.Designer.vb">
+      <DependentUpon>VerLavados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\VerLavados.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Administrador_Deus\VerPatio.Designer.vb">
@@ -353,6 +365,9 @@
     <EmbeddedResource Include="UserControl\Administrador_Deus\ManageUsuarios.resx">
       <DependentUpon>ManageUsuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\ModificarLote.resx">
+      <DependentUpon>ModificarLote.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\PatiosZonas.resx">
       <DependentUpon>PatiosZonas.vb</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\VerInspeccion.resx">
       <DependentUpon>VerInspeccion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\VerLavados.resx">
+      <DependentUpon>VerLavados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\VerPatio.resx">
       <DependentUpon>VerPatio.vb</DependentUpon>

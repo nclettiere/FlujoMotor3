@@ -3,11 +3,16 @@ Imports Logica
 
 Public Class SelecVehiculo
     Friend UC_VehiculosLotes As VehiculosLotes
+    Friend UC_ModificarLote As ModificarLote
     Private Property VinSeleccionado As String
 
     Private Sub BtAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
         If UC_VehiculosLotes IsNot Nothing
             UC_VehiculosLotes.AgregarALote(VinSeleccionado)
+        End If
+
+        If UC_ModificarLote IsNot Nothing
+            UC_ModificarLote.AgregarALote(VinSeleccionado)
         End If
         ParentForm.Close()
     End Sub

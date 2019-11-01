@@ -24,6 +24,7 @@ Public Class VehiculosLotes
                 btnElim.Enabled = True
                 btnMod.Enabled = True
                 btnInsp.Enabled = True
+                btnModLote.Enabled = True
 
                 '' Obtener Datos
                 Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
@@ -35,9 +36,11 @@ Public Class VehiculosLotes
                 If VEstaEnPatio(VIN)
                     btnAparcar.Enabled = True
                     btnVender.Enabled = True
+                    btnLavado.Enabled = True
                 Else
                     btnAparcar.Enabled = False
                     btnVender.Enabled = False
+                    btnLavado.Enabled = False
                 End If
 
                 lblVin.Text = "VIN: " + VIN
@@ -61,6 +64,7 @@ Public Class VehiculosLotes
                 btnMngLote.Enabled = False
                 btnMod.Enabled = False
                 btnAparcar.Enabled = False
+                btnModLote.Enabled = False
             End If
 
         Catch ex As Exception
@@ -317,15 +321,8 @@ Public Class VehiculosLotes
                 Dim VIN As String = ListaLotes.SelectedItem.SubItems.Item(0).Text
                 Dim fechaentrega = ListaLotes.SelectedItem.SubItems.Item(2)
                 Dim loteid As String = LoteIdSelec
-
-                If fechaentrega Is Nothing
-                    btnquitarv.Enabled = True
-                Else
-                    btnquitarv.Enabled = False
-                End If
             Else
                 btnagvl.Enabled = False
-                btnquitarv.Enabled = False
             End If
 
         Catch ex As Exception
@@ -345,7 +342,21 @@ Public Class VehiculosLotes
     End Sub
 
     Private Sub Btnquitarv_Click(sender As Object, e As EventArgs) Handles btnquitarv.Click
+        Try 
+            Dim VIN = ListaLotes.SelectedItem.SubItems.Item(0).Text
+            VUpdateLoteId("NULL", VIN)
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+        End Try
 
+        Try
+            listaLV.DataSource = VObtenerLoteId(LoteIdSelec)
+            For Each column As ColumnHeader In listaLV.Columns
+                column.Width = -2
+            Next
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -458,7 +469,30 @@ Public Class VehiculosLotes
         btnVender.Text = _Lang.ObtenerKey("VehiculosLotes", 23)
     End Sub
 
-    Private Sub btnMngLote_Click(sender As Object, e As EventArgs) Handles btnMngLote.Click
+    Private Sub btnMngLote_Click(sender As Object, e As EventArgs) 
 
+    End Sub
+
+    Private Sub BtnModLote_Click(sender As Object, e As EventArgs) Handles btnModLote.Click
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim ML As ModificarLote = New ModificarLote
+        ML.UC_VehiculosLotes = Me
+        ML.LoteId = LoteIdSelec
+        ML.CargarDatos
+        Ventana.LoadControl(ML)
+        Ventana.ShowDialog
+    End Sub
+
+    Private Sub BtnLavado_Click(sender As Object, e As EventArgs) Handles btnLavado.Click
+        Try
+            Dim CVentanaVer As Ventana_Ver = New Ventana_Ver
+            Dim VerLvd = New VerLavados()
+            Dim VIN As String = listaVehiculos.SelectedItem.SubItems.Item(0).Text
+            VerLvd.CargarDatos(VIN)
+            CVentanaVer.LoadControl(VerLvd)
+            CVentanaVer.ShowDialog
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "Error al abrir VerLavados")
+        End Try
     End Sub
 End Class

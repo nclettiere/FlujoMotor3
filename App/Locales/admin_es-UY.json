@@ -111,5 +111,12 @@
     "lbl_001": "Danios",
     "lbl_002": "Danio",
     "btn_001": "Expandir Imagen"
+  },
+  "VerLavados": {
+    "Titulo": "Ver Lavados",
+    "lbl_001": "Viendo Lavados de",
+    "btn_001": "Nuevo Lavado",
+    "btn_002": "Cerrar",
+    "msg_001": "Deseas hacer un nuevo lavado para el vehiculo"
   }
 }

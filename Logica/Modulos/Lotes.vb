@@ -85,6 +85,22 @@ Public Module Lotes
         Cerrar
     End Function
 
+    Public Function LUpdate(LoteId As String, LoteNombre As String, LoteDesc As String, LotePatio As String) As Boolean
+        Conectar()
+
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("UPDATE lotes SET lotenombre = '"+LoteNombre+"', lotedescripcion = '"+LoteDesc+"', PatioId = "+LotePatio+" WHERE LoteId = "+LoteId, DBConexion)
+            adaptador.Fill(tabla)
+            Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err")
+            Return False
+        End Try
+
+        Cerrar
+    End Function
+
     Public Function LUpdateFechaSalida(NuevaFecha As DateTime, LoteId As String) As Boolean
         Conectar()
 

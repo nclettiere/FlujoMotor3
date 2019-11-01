@@ -70,7 +70,6 @@ Public Class VerViajes
 
     Private Sub ActualizarLista
         ListaViajes.DataSource = Nothing
-        ListaViajes.Clear
         Try
             Dim Datos As DataTable = LObtenerAllFitro("lotefechasalida IS NOT NULL AND lotefechallegada IS NULL AND transportistaid ="+ ObtenerOpId.ToString)
             ListaViajes.DataSource = Datos
@@ -102,20 +101,15 @@ Public Class VerViajes
         Else
             Try
                 Dim Config As CefSettings = New CefSettings()
-                CefSharpSettings.SubprocessExitIfParentProcessClosed = true
+                CefSharpSettings.SubprocessExitIfParentProcessClosed = True
                 'Config.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\.CacheCef"
-                Config.CachePath = My.Application.Info.DirectoryPath + "\.CacheCef"
-
-                Environment.SetEnvironmentVariable("GOOGLE_API_KEY", "AIzaSyBbpL8iCQT8R5p5c-tWblkfy0YAXMb-pwY")
-                Environment.SetEnvironmentVariable("GOOGLE_DEFAULT_CLIENT_ID", "766996483210-rl29kav23s636oofcco8o0s31o3vbagp.apps.googleusercontent.com")
-                Environment.SetEnvironmentVariable("GOOGLE_DEFAULT_CLIENT_SECRET", "wGP-Ei-lQvAzW5vw83x7v2j_")
-
-                Config.CefCommandLineArgs.Add("enable-geolocation", "1")
+                Config.CachePath = My.Application.Info.DirectoryPath + "\CacheCef"
                 Config.LocalesDirPath = Application.StartupPath + "\locales"
                 Config.Locale = "es"
+                CefSharp.Cef.Initialize(Config)
 
                 ' Aniadir el control al panel
-                If ListaViajes.SelectedIndex >= 0
+                If ListaViajes.SelectedIndex >= 0Then
                     Try
                         IdSeleccionado = ListaViajes.SelectedItem.SubItems.Item(0).Text
                         Dim LoteInfo = LObtenerID(IdSeleccionado)

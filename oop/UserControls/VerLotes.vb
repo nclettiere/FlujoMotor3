@@ -139,34 +139,38 @@ Public Class VerLotes
         dateTimeSalida.CustomFormat = "yyyy-MM-dd HH:mm:ss"
 
         Try
-            Dim ConsultaPatios = PObtenerAll()
-            If ConsultaPatios IsNot Nothing
-                If ConsultaPatios.Rows.Count > 0
-                    Dim contador As Integer = 1
-                    Dim index As Integer = 1
-                    Dim Lote = LObtenerID(LoteId)
-                    Dim PatioLote = PObtenerID(Lote.Item("patioid"))
+            If cbxPatios.Items.Count = 0 Then
 
-                    For Each item As DataRow in ConsultaPatios.Rows()
-                        cbxPatios.Items.Add(item.Item("pationombre"))
-                        If String.Equals(item.Item("pationombre"), PatioLote.Item("pationombre"))
-                            index = contador
-                        End If
-                        Contador += 1
-                    Next
+                Dim ConsultaPatios = PObtenerAll()
+                If ConsultaPatios IsNot Nothing Then
 
-                    Try
-                        cbxPatios.SelectedIndex = (index - 1)
-                    Catch ex As Exception
-                        Serilog.Log.Warning(ex, "No se pudo setear cbxpatio. Hay patios ingresados en la db?")
-                    End Try
+                    If ConsultaPatios.Rows.Count > 0 Then
+                        Dim contador As Integer = 1
+                        Dim index As Integer = 1
+                        Dim Lote = LObtenerID(LoteId)
+                        Dim PatioLote = PObtenerID(Lote.Item("patioid"))
 
-                    Try
-                        DateTimeLlegada.Value = DateTime.ParseExact(Lote.Item("lotefechallegada").ToString, "yyyy-MM-dd HH:mm:ss", Nothing)
-                        DateTimeSalida.Value = DateTime.ParseExact(Lote.Item("lotefechasalida").ToString, "yyyy-MM-dd HH:mm:ss", Nothing)
-                    Catch ex As Exception
-                        Serilog.Log.Warning(ex, "No se pudo setear DateTimeLlegada/Salida. Chequee el formato de las fechas.")
-                    End Try
+                        For Each item As DataRow In ConsultaPatios.Rows()
+                            cbxPatios.Items.Add(item.Item("pationombre"))
+                            If String.Equals(item.Item("pationombre"), PatioLote.Item("pationombre")) Then
+                                index = contador
+                            End If
+                            contador += 1
+                        Next
+
+                        Try
+                            cbxPatios.SelectedIndex = (index - 1)
+                        Catch ex As Exception
+                            Serilog.Log.Warning(ex, "No se pudo setear cbxpatio. Hay patios ingresados en la db?")
+                        End Try
+
+                        Try
+                            DateTimeLlegada.Value = DateTime.ParseExact(Lote.Item("lotefechallegada").ToString, "yyyy-MM-dd HH:mm:ss", Nothing)
+                            DateTimeSalida.Value = DateTime.ParseExact(Lote.Item("lotefechasalida").ToString, "yyyy-MM-dd HH:mm:ss", Nothing)
+                        Catch ex As Exception
+                            Serilog.Log.Warning(ex, "No se pudo setear DateTimeLlegada/Salida. Chequee el formato de las fechas.")
+                        End Try
+                    End If
                 End If
             End If
         Catch ex As Exception

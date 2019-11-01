@@ -16,6 +16,12 @@ IF NOT EXIST %DirAbsoluto%\CefSharp (
 
 IF NOT EXIST %OUTPUT%\.CacheCef (
 	mkdir %OUTPUT%\.CacheCef
+	mkdir %OUTPUT%\CacheCef
+)
+
+IF NOT EXIST %OUTPUT%\CacheCef (
+	mkdir %OUTPUT%\.CacheCef
+	mkdir %OUTPUT%\CacheCef
 )
 
 IF %Plataforma% == "x86" (

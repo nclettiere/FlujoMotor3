@@ -17,26 +17,28 @@ Public Module Inspecciones
 
     Public Function DObtener(VIN As String) As DataTable
         Conectar()
+        Try
+            Dim ListaDanios As DataTable = New DataTable
+            Dim Inspecciones = IObtenerVIN(VIN)
 
-        Dim ListaDanios As DataTable = New DataTable
-        Dim Inspecciones = IObtenerVIN(VIN)
+            For Each Inspeccion As DataRow In Inspecciones.Rows
+                Dim InspeccionDanios = IDObtener(Inspeccion("inspeccionid").ToString)
 
-        For Each Inspeccion As DataRow In Inspecciones.Rows
-            Dim InspeccionDanios = IDObtener(Inspeccion("inspeccionid").ToString)
+                For Each InspeccionDanio In InspeccionDanios.Rows
+                    Dim Danios As DataTable = Consultar("SELECT * FROM danios WHERE danioid=" + InspeccionDanio("danioid").ToString)
 
-            For Each InspeccionDanio In InspeccionDanios.Rows
-                Dim Danios As DataTable = Consultar("SELECT * FROM danios WHERE danioid=" + InspeccionDanio("danioid").ToString)
-
-                If Danios IsNot Nothing Then
-                    If Danios.Rows.Count > 0 Then
-                        ListaDanios.Merge(Danios)
+                    If Danios IsNot Nothing Then
+                        If Danios.Rows.Count > 0 Then
+                            ListaDanios.Merge(Danios)
+                        End If
                     End If
-                End If
+                Next
             Next
-        Next
-
-        Return ListaDanios
-
+            Return ListaDanios
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "er..")
+            Return Nothing
+        End Try
         Cerrar()
     End Function
 
@@ -198,8 +200,6 @@ Public Module Inspecciones
             Dim tabla As New DataTable
             Dim adaptador As New OdbcDataAdapter("SELECT * FROM inspecciondanio WHERE InspeccionId=" + InspeccionId, DBConexion)
             adaptador.Fill(tabla)
-
-            MsgBox("LA " + tabla.Rows.Count.ToString + " Insp " + InspeccionId)
 
             If VerificarTabla(tabla) Then
                 Return tabla

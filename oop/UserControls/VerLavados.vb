@@ -15,8 +15,8 @@ Public Class VerLavados
     End Sub
 
     Private Sub BtnNuevoLavado_Click(sender As Object, e As EventArgs) Handles btnNuevoLavado.Click
-        Dim DialogoLavado As DialogResult = MessageBox.Show(_Lang.ObtenerKey("VerLavados", 5), _Lang.ObtenerKey("VerLavados", 2), MessageBoxButtons.YesNo)
-        If DialogoLavado = DialogResult.Yes
+        Dim DialogoLavado As DialogResult = MessageBox.Show(_Lang.ObtenerKey("VerLavados", 4), _Lang.ObtenerKey("VerLavados", 2), MessageBoxButtons.YesNo)
+        If DialogoLavado = DialogResult.Yes Then
             Try
                 MInsertarLavado(VIN)
                 DataGridView1.DataSource = MObtenerLavadoVIN(VIN)
@@ -31,7 +31,7 @@ Public Class VerLavados
     Protected Sub UpdateLang
         ParentForm.Text = _Lang.ObtenerKey("VerLavados", 0)
         btnNuevoLavado.Text = _Lang.ObtenerKey("VerLavados", 2)
-        btCerrar.Text = _Lang.ObtenerKey("VerLavados", 4)
+        btCerrar.Text = _Lang.ObtenerKey("VerLavados", 3)
     End Sub
 
     Private Sub VerLotes_Load(sender As Object, e As EventArgs) Handles MyBase.Load

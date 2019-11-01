@@ -151,11 +151,11 @@
       "msg_001": "Vehiculo Vendido Exitosamente."
     },
     "VerLavados": {
-      "Titulo": "Ver Lavados",
-      "lbl_001": "Viendo Lavados de",
-      "btn_001": "Nuevo Lavado",
-      "btn_002": "Cerrar",
-      "msg_001": "Deseas hacer un nuevo lavado para el vehiculo"
+      "0": "Ver Lavados",
+      "1": "Viendo Lavados de",
+      "2": "Nuevo Lavado",
+      "3": "Cerrar",
+      "4": "Deseas hacer un nuevo lavado para el vehiculo"
     },
     "AparcarVehiculo": {
       "Titulo": "Estacionar Vehiculo",

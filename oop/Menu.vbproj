@@ -292,6 +292,12 @@
     <Compile Include="UserControls\QRScan.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\SeleccionarInspeccion.Designer.vb">
+      <DependentUpon>SeleccionarInspeccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SeleccionarInspeccion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\SeleccionarLote.Designer.vb">
       <DependentUpon>SeleccionarLote.vb</DependentUpon>
     </Compile>
@@ -499,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\QRScan.resx">
       <DependentUpon>QRScan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SeleccionarInspeccion.resx">
+      <DependentUpon>SeleccionarInspeccion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SeleccionarLote.resx">
       <DependentUpon>SeleccionarLote.vb</DependentUpon>

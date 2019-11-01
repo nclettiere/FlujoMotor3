@@ -8,11 +8,36 @@ Public Module Inspecciones
         Dim adaptador As New OdbcDataAdapter("SELECT * FROM inspecciones", DBConexion)
         adaptador.Fill(tabla)
 
-        If VerificarTabla(tabla)
+        If VerificarTabla(tabla) Then
             Return tabla
         Else
             Return Nothing
         End If
+    End Function
+
+    Public Function DObtener(VIN As String) As DataTable
+        Conectar()
+
+        Dim ListaDanios As DataTable = New DataTable
+        Dim Inspecciones = IObtenerVIN(VIN)
+
+        For Each Inspeccion As DataRow In Inspecciones.Rows
+            Dim InspeccionDanios = IDObtener(Inspeccion("inspeccionid").ToString)
+
+            For Each InspeccionDanio In InspeccionDanios.Rows
+                Dim Danios As DataTable = Consultar("SELECT * FROM danios WHERE danioid=" + InspeccionDanio("danioid").ToString)
+
+                If Danios IsNot Nothing Then
+                    If Danios.Rows.Count > 0 Then
+                        ListaDanios.Merge(Danios)
+                    End If
+                End If
+            Next
+        Next
+
+        Return ListaDanios
+
+        Cerrar()
     End Function
 
     Public Function IObtenerCount(VIN As String) As Integer
@@ -37,16 +62,20 @@ Public Module Inspecciones
 
     Public Function IObtenerVIN(VIN As String) As DataTable
         Conectar()
-        Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN + "'", DBConexion)
-        adaptador.Fill(tabla)
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT * FROM inspecciones WHERE vehiculovin='" + VIN + "'", DBConexion)
+            adaptador.Fill(tabla)
 
-        If VerificarTabla(tabla)
-            Return tabla
-        Else
+            If VerificarTabla(tabla) Then
+                Return tabla
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "er..")
             Return Nothing
-        End If
-
+        End Try
         Cerrar
     End Function
 
@@ -86,16 +115,20 @@ Public Module Inspecciones
 
     Public Function DObtenerFiltro(Filtro As String) As DataTable
         Conectar()
-        Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("SELECT * FROM danios WHERE " + Filtro, DBConexion)
-        adaptador.Fill(tabla)
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT * FROM danios WHERE " + Filtro, DBConexion)
+            adaptador.Fill(tabla)
 
-        If VerificarTabla(tabla)
-            Return tabla
-        Else
+            If VerificarTabla(tabla) Then
+                Return tabla
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "er..")
             Return Nothing
-        End If
-
+        End Try
         Cerrar
     End Function
 
@@ -161,22 +194,27 @@ Public Module Inspecciones
 
     Public Function IDObtener(InspeccionId As String) As DataTable
         Conectar()
-        Dim tabla As New DataTable
-        Dim adaptador As New OdbcDataAdapter("SELECT * FROM inspecciondanio WHERE InspeccionId=" + InspeccionId, DBConexion)
-        adaptador.Fill(tabla)
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT * FROM inspecciondanio WHERE InspeccionId=" + InspeccionId, DBConexion)
+            adaptador.Fill(tabla)
 
-        If VerificarTabla(tabla)
-            Return tabla
-        Else
+            MsgBox("LA " + tabla.Rows.Count.ToString + " Insp " + InspeccionId)
+
+            If VerificarTabla(tabla) Then
+                Return tabla
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
             Return Nothing
-        End If
-
+        End Try
         Cerrar
     End Function
 
     Public Function IInsertar(VIN As String, OpId As Integer) As Boolean
         Conectar()
-        MsgBox(VIN.ToString)
         Try
             Dim command As OdbcCommand = New OdbcCommand("INSERT INTO inspecciones (vehiculovin, operarioid) VALUES('" + VIN.ToUpper + "', "+ OpId.ToString +")")
             Dim parameters As OdbcParameterCollection = command.Parameters

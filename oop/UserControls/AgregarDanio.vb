@@ -1,4 +1,5 @@
 ﻿Imports Logica
+Imports Menu
 
 Public Class AgregarDanio
 
@@ -7,6 +8,7 @@ Public Class AgregarDanio
     Private ByteFotoDanio As Byte()
 
     Private TieneImagen As Boolean = False
+    Friend UC_VerInspeccion As VerInspeccion
 
     Private Sub BtAdjCamara_Click(sender As Object, e As EventArgs) Handles btAdjCamara.Click
         Dim InicCamera As IniciarCamara = New IniciarCamara
@@ -30,7 +32,7 @@ Public Class AgregarDanio
         End With
     End Sub
 
-   Friend Sub CargarImagen(Imagen As Image)
+    Friend Sub CargarImagen(Imagen As Image)
         Try
             PBDanio.Image = Imagen
             ByteFotoDanio = ConvertirAByteArray(PBDanio.Image)
@@ -45,8 +47,11 @@ Public Class AgregarDanio
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         If Not String.IsNullOrWhiteSpace(rtbx.Text)
             If TieneImagen
-                If IInsertar(VIN, InspeccionID, rtbx.Text, ByteFotoDanio)
+                If IInsertar(VIN, InspeccionID, rtbx.Text, ByteFotoDanio) Then
                     MsgBox("El danio se creo exitosamente.")
+                    If UC_VerInspeccion IsNot Nothing Then
+                        UC_VerInspeccion.ActualizarListaDanios()
+                    End If
                     ParentForm.Close
                 Else
                     MsgBox("Error al crear danio.")
@@ -60,6 +65,6 @@ Public Class AgregarDanio
     End Sub
 
     Private Sub OnAgrInspLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        lblvin.Text = "Vehiculo: "+ VIN
+        lblvin.Text = "Vehiculo: " + VIN
     End Sub
 End Class

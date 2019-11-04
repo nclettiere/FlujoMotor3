@@ -34,7 +34,9 @@ Public Class VerPatio
     End Sub
 
     Private Sub VerPatio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ActualizarSubZonas
+        ActualizarSubZonas()
+
+        UpdateLang()
 
         Chromium = New ChromiumWebBrowser("https://www.google.com.uy/maps/")
 
@@ -68,9 +70,9 @@ Public Class VerPatio
         LabelNombre.AutoSize = True
         LabelCapacidad.AutoSize = True
 
-        LabelId.Text = "Zona ID: "+ ZonaId
-        LabelNombre.Text = "Nombre: "+ Nombre
-        LabelCapacidad.Text = "Capacidad: "+ Capacidad + " Vehiculos"
+        LabelId.Text = _Lang.ObtenerKey("VerPtio", 3) + ZonaId
+        LabelNombre.Text = _Lang.ObtenerKey("VerPtio", 4) + Nombre
+        LabelCapacidad.Text = String.Format(_Lang.ObtenerKey("VerPtio", 5), Capacidad)
 
         LabelId.Location = New Point(3, 10)
         LabelNombre.Location = New Point(3, 37)
@@ -90,14 +92,14 @@ Public Class VerPatio
         BtnElim.Font = fuente
         BtnElim.ForeColor = Color.Crimson
         BtnElim.FlatStyle = FlatStyle.Flat
-        BtnElim.Text = "Eliminar"
+        BtnElim.Text = _Lang.ObtenerKey("VerPtio", 6)
         BtnElim.Location = New Point(6, 91)
 
         BtnMod.Size = New Size(87, 28)
         BtnMod.Font = fuente
         BtnMod.ForeColor = Color.Crimson
         BtnMod.FlatStyle = FlatStyle.Flat
-        BtnMod.Text = "Modificar"
+        BtnMod.Text = _Lang.ObtenerKey("VerPtio", 7)
         BtnMod.Location = New Point(136, 91)
 
         'AddHandler BtnElim.Click , Sub(s, ea) EliminarClick(s, ea, PatioId)
@@ -175,17 +177,21 @@ Public Class VerPatio
         Ventana.ShowDialog
     End Sub
 
-    Friend Sub ActualizarSubZonas
-       flpSubZonas.Controls.Clear
+    Friend Sub ActualizarSubZonas()
+        flpSubZonas.Controls.Clear
         Try
-            If PatioId IsNot Nothing
-                Dim ZonasPatio As DataTable = Consultar("SELECT * FROM zonas WHERE patioid="+ PatioId.ToString)
-                If ZonasPatio IsNot Nothing
-                    If ZonasPatio.Rows.Count > 0
+            If PatioId IsNot Nothing Then
+                Dim ZonasPatio As DataTable = Consultar("SELECT * FROM zonas WHERE patioid=" + PatioId.ToString)
+                If ZonasPatio IsNot Nothing Then
+
+                    If ZonasPatio.Rows.Count > 0 Then
+
                         For Each Zona As DataRow In ZonasPatio.Rows
-                            Dim SubZonas As DataTable = Consultar("SELECT * FROM subZonas WHERE zonaID ="+ Zona.Item("zonaid").ToString)
-                            If SubZonas IsNot Nothing
-                                If SubZonas.Rows.Count > 0
+                            Dim SubZonas As DataTable = Consultar("SELECT * FROM subZonas WHERE zonaID =" + Zona.Item("zonaid").ToString)
+                            If SubZonas IsNot Nothing Then
+
+                                If SubZonas.Rows.Count > 0 Then
+
                                     For Each SubZona As DataRow In SubZonas.Rows
                                         Dim ctrlSubZona As Control = CrearControlSubZona(SubZona.Item("ZonaId").ToString,
                                                                                          SubZona.Item("subZonaNombre"),
@@ -206,4 +212,14 @@ Public Class VerPatio
             Serilog.Log.Error(ex, "err..")
         End Try
     End Sub
+
+    Protected _Lang As LangManager = New LangManager
+    Protected Sub UpdateLang()
+        ParentForm.Text = _Lang.ObtenerKey("VerPtio", 0)
+        lblLoading.Text = _Lang.ObtenerKey("VerPtio", 1)
+        btnAgZona.Text = _Lang.ObtenerKey("VerPtio", 8)
+        btnAgSubZona.Text = _Lang.ObtenerKey("VerPtio", 9)
+        GroupBox1.Text = _Lang.ObtenerKey("VerPtio", 2)
+    End Sub
+
 End Class

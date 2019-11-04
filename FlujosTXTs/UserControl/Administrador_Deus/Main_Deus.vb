@@ -4,7 +4,10 @@ Imports BrightIdeasSoftware
 Public Class Main_Deus
 
     Private Sub OnMenuLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        pnContenido.Controls.Clear
+
+        UpdateLang()
+
+        pnContenido.Controls.Clear()
         Dim MU As ManageUsuarios = New ManageUsuarios
         MU.Dock = DockStyle.Fill
         pnContenido.Controls.Add(MU)
@@ -36,5 +39,14 @@ Public Class Main_Deus
         If result = DialogResult.Yes Then
             ParentForm.Close
         End If
+    End Sub
+
+    Protected _Lang As LangManager = New LangManager
+    Protected Sub UpdateLang()
+        ParentForm.Text = _Lang.ObtenerKey("Main", 0)
+        btOperario.Text = _Lang.ObtenerKey("Main", 1)
+        btvehiculos.Text = _Lang.ObtenerKey("Main", 2)
+        btnpatioszonas.Text = _Lang.ObtenerKey("Main", 3)
+        btnSalir.Text = _Lang.ObtenerKey("Main", 4)
     End Sub
 End Class

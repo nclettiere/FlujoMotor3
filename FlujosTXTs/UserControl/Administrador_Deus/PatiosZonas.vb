@@ -1,7 +1,8 @@
 ﻿Imports Logica
 Public Class PatiosZonas
     Private Sub OnPatiosZonasLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        ActualizarPatios
+        ActualizarPatios()
+        UpdateLang()
     End Sub
 
     Private Function CrearPatioInfo(PatioId As String, PatioNombre As String, Direccion As String, PatioCantidad As String) As Control
@@ -22,10 +23,10 @@ Public Class PatiosZonas
         LabelDireccion.AutoSize = True
         LabelCantidad.AutoSize = True
 
-        LabelId.Text = "Patio ID: "+ PatioId
-        LabelNombre.Text = "Patio Nombre: "+ PatioNombre
-        LabelCantidad.Text = "Cant. Lotes Usando Patio: "+ PatioCantidad
-        LabelDireccion.Text = "Direccion: "+ Direccion
+        LabelId.Text = _Lang.ObtenerKey("PatiosZonas", 5) + PatioId
+        LabelNombre.Text = _Lang.ObtenerKey("PatiosZonas", 6) + PatioNombre
+        LabelCantidad.Text = _Lang.ObtenerKey("PatiosZonas", 8) + PatioCantidad
+        LabelDireccion.Text = _Lang.ObtenerKey("PatiosZonas", 7) + Direccion
 
         LabelId.Location = New Point(14, 16)
         LabelNombre.Location = New Point(14, 41)
@@ -48,14 +49,14 @@ Public Class PatiosZonas
         BtnElim.Font = fuente
         BtnElim.ForeColor = Color.Crimson
         BtnElim.FlatStyle = FlatStyle.Flat
-        BtnElim.Text = "Eliminar"
+        BtnElim.Text = _Lang.ObtenerKey("PatiosZonas", 2)
         BtnElim.Location = New Point(16, 120)
 
         BtnVer.Size = New Size(99, 26)
         BtnVer.Font = fuente
         BtnVer.ForeColor = Color.Crimson
         BtnVer.FlatStyle = FlatStyle.Flat
-        BtnVer.Text = "Ver Mas"
+        BtnVer.Text = _Lang.ObtenerKey("PatiosZonas", 3)
         BtnVer.Location = New Point(165, 120)
 
         AddHandler BtnElim.Click , Sub(s, ea) EliminarClick(s, ea, PatioId)
@@ -121,4 +122,9 @@ Public Class PatiosZonas
         End Try
     End Sub
 
+    Protected _Lang As LangManager = New LangManager
+    Protected Sub UpdateLang()
+        GroupBox1.Text = _Lang.ObtenerKey("PatiosZonas", 0)
+        btnAgPatio.Text = _Lang.ObtenerKey("PatiosZonas", 1)
+    End Sub
 End Class

@@ -32,7 +32,7 @@ Partial Class VerPatio
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.panelMapa = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblLoading = New System.Windows.Forms.Label()
         Me.btnAgZona = New System.Windows.Forms.Button()
         Me.btnAgSubZona = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -129,24 +129,24 @@ Partial Class VerPatio
         'panelMapa
         '
         Me.panelMapa.BackColor = System.Drawing.Color.Gainsboro
-        Me.panelMapa.Controls.Add(Me.Label1)
+        Me.panelMapa.Controls.Add(Me.lblLoading)
         Me.panelMapa.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelMapa.Location = New System.Drawing.Point(0, 0)
         Me.panelMapa.Name = "panelMapa"
         Me.panelMapa.Size = New System.Drawing.Size(1040, 771)
         Me.panelMapa.TabIndex = 1
         '
-        'Label1
+        'lblLoading
         '
-        Me.Label1.AutoSize = true
-        Me.Label1.BackColor = System.Drawing.Color.Gray
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(203, 298)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(288, 39)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cargando Mapa..."
+        Me.lblLoading.AutoSize = True
+        Me.lblLoading.BackColor = System.Drawing.Color.Gray
+        Me.lblLoading.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLoading.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblLoading.Location = New System.Drawing.Point(203, 298)
+        Me.lblLoading.Name = "lblLoading"
+        Me.lblLoading.Size = New System.Drawing.Size(288, 39)
+        Me.lblLoading.TabIndex = 0
+        Me.lblLoading.Text = "Cargando Mapa..."
         '
         'btnAgZona
         '
@@ -217,7 +217,7 @@ End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents panelMapa As Panel
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblLoading As Label
     Friend WithEvents flpSubZonas As FlowLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button

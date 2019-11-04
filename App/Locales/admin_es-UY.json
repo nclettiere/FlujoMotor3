@@ -39,21 +39,23 @@
     "2": "Eliminar",
     "3": "Ver Mas",
     "4": "Lista de Patios",
-    "5": "Patio ID",
-    "6": "Patio Nombre",
-    "7": "Direccion",
-    "8": "Cant. Lotes Usando Patio",
-    "9": "Lista de Patios"
+    "5": "Patio ID ",
+    "6": "Patio Nombre ",
+    "7": "Direccion ",
+    "8": "Cant. Lotes Usando Patio ",
+    "9": "Lista de Patios "
   },
   "VerPtio": {
     "0": "Ver Patio",
     "1": "Cargando Mapa...",
-    "2": "Patio SubZonas",
+    "2": "SubZonas del Patio",
     "3": "Zona ID: #",
     "4": "Nombre: ",
     "5": "Capacidad: {0} Vehiculos",
     "6": "Deleto",
-    "7": "Modificar"
+    "7": "Modificar",
+	"8": "Agregar Zona",
+    "9": "Agregar SubZona"
   },
   "VehiculosLotes": {
     "0": "Vehiculos",

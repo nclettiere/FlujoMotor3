@@ -42,6 +42,48 @@ Public Module Inspecciones
         Cerrar()
     End Function
 
+    Public Function DObtener() As DataTable
+        Conectar()
+        Try
+            Dim ListaDanios As DataTable = New DataTable
+
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT * FROM danios", DBConexion)
+            adaptador.Fill(tabla)
+
+            If VerificarTabla(tabla) Then
+                Return tabla
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "er..")
+            Return Nothing
+        End Try
+        Cerrar()
+    End Function
+
+    Public Function DObtenerExcep(InspeccionId As String) As DataTable
+        Conectar()
+        Try
+            Dim ListaDanios As DataTable = New DataTable
+
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("SELECT A.danioid, A.daniodescripcion, A.daniofoto FROM danios A LEFT JOIN inspecciondanio B ON A.danioid = B.danioid WHERE B.danioid <> " + InspeccionId, DBConexion)
+            adaptador.Fill(tabla)
+
+            If VerificarTabla(tabla) Then
+                Return tabla
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "er..")
+            Return Nothing
+        End Try
+        Cerrar()
+    End Function
+
     Public Function IObtenerCount(VIN As String) As Integer
         Conectar()
         Dim tabla As New DataTable
@@ -263,26 +305,40 @@ Public Module Inspecciones
     End Function
 
     Public Function DObtenerFoto(DanioId As String) As Bitmap
-        Dim queryString As String = "SELECT daniofoto FROM danios WHERE danioid="+DanioId
+        Dim queryString As String = "SELECT daniofoto FROM danios WHERE danioid=" + DanioId
         Dim ByteCrudo As Byte() = Nothing
         Try
-            Conectar
-            Dim command As OdbcCommand = new OdbcCommand(queryString, DBConexion)
+            Conectar()
+            Dim command As OdbcCommand = New OdbcCommand(queryString, DBConexion)
             Dim reader As OdbcDataReader = command.ExecuteReader()
 
             While reader.Read()
                 ByteCrudo = reader(0)
             End While
 
-            reader.Close
+            reader.Close()
 
-            Cerrar
+            Cerrar()
 
             Return ByteABitmap(ByteCrudo)
         Catch ex As Exception
             MsgBox("Error al convertir foto. Vea el logesillo para mas info.")
             Serilog.Log.Error(ex, "Error al convertir foto.")
             Return Nothing
+        End Try
+    End Function
+
+    Public Function IDInsertar(DanioId As String, InspeccionId As String) As Boolean
+
+        Try
+            Dim tabla As New DataTable
+            Dim adaptador As New OdbcDataAdapter("INSERT INTO inspecciondanio VALUES(" + DanioId + ", " + InspeccionId + ")", DBConexion)
+            adaptador.Fill(tabla)
+
+            Return True
+        Catch ex As Exception
+            Serilog.Log.Error(ex, "err..")
+            Return False
         End Try
     End Function
 End Module

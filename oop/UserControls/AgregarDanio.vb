@@ -49,9 +49,6 @@ Public Class AgregarDanio
             If TieneImagen
                 If IInsertar(VIN, InspeccionID, rtbx.Text, ByteFotoDanio) Then
                     MsgBox("El danio se creo exitosamente.")
-                    If UC_VerInspeccion IsNot Nothing Then
-                        UC_VerInspeccion.ActualizarListaDanios()
-                    End If
                     ParentForm.Close
                 Else
                     MsgBox("Error al crear danio.")

@@ -51,7 +51,7 @@ Partial Class VerLavados
         Me.btCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btCerrar.Font = New System.Drawing.Font("Calibri", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btCerrar.ForeColor = System.Drawing.Color.Orange
-        Me.btCerrar.Location = New System.Drawing.Point(246, 295)
+        Me.btCerrar.Location = New System.Drawing.Point(237, 295)
         Me.btCerrar.MaximumSize = New System.Drawing.Size(143, 53)
         Me.btCerrar.MinimumSize = New System.Drawing.Size(143, 53)
         Me.btCerrar.Name = "btCerrar"

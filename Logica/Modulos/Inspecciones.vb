@@ -51,11 +51,7 @@ Public Module Inspecciones
             Dim adaptador As New OdbcDataAdapter("SELECT * FROM danios", DBConexion)
             adaptador.Fill(tabla)
 
-            If VerificarTabla(tabla) Then
-                Return tabla
-            Else
-                Return Nothing
-            End If
+            Return tabla
         Catch ex As Exception
             Serilog.Log.Error(ex, "er..")
             Return Nothing

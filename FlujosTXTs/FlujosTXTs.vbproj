@@ -258,6 +258,12 @@
     <Compile Include="UserControl\Administrador_Deus\PatiosZonas.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\Administrador_Deus\SeleccionarInspeccion.Designer.vb">
+      <DependentUpon>SeleccionarInspeccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Administrador_Deus\SeleccionarInspeccion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\Administrador_Deus\SeleccionarLote.Designer.vb">
       <DependentUpon>SeleccionarLote.vb</DependentUpon>
     </Compile>
@@ -370,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\PatiosZonas.resx">
       <DependentUpon>PatiosZonas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\Administrador_Deus\SeleccionarInspeccion.resx">
+      <DependentUpon>SeleccionarInspeccion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Administrador_Deus\SeleccionarLote.resx">
       <DependentUpon>SeleccionarLote.vb</DependentUpon>

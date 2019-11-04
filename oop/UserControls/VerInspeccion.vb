@@ -132,16 +132,12 @@ Public Class VerInspeccion
     End Sub
 
     Private Sub AgregarDanioAnterior(s As Object, ea As EventArgs, InspID As String, PanelC As Panel)
-        If DIObtenerCount(InspID) > 0 Then
-            Dim Ventana As Ventana_Ver = New Ventana_Ver
-            Dim SLCD As SeleccionarInspeccion = New SeleccionarInspeccion
-            SLCD.UC_VerInspeccion = Me
-            SLCD.InspeccionId = InspID
-            Ventana.LoadControl(SLCD)
-            Ventana.ShowDialog()
-        Else
-            MsgBox("Error al cargar 'seleccionar danios'")
-        End If
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim SLCD As SeleccionarInspeccion = New SeleccionarInspeccion
+        SLCD.UC_VerInspeccion = Me
+        SLCD.InspeccionId = InspID
+        Ventana.LoadControl(SLCD)
+        Ventana.ShowDialog()
     End Sub
     Private Sub AgregarDanioI(s As Object, ea As EventArgs, InspID As String)
         Dim Ventana As Ventana_Ver = New Ventana_Ver

@@ -22,21 +22,29 @@ Public Class VerInspeccion
 
     Friend Sub Populate(VIN As String)
         Me.VIN = VIN
-        lblVehiculoVin.Text = _Lang.ObtenerKey("VerInspecciones", 1) + ": " + VIN
+        lblVehiculoVin.Text = _Lang.ObtenerKey("VerInspecciones", 1)+": " + VIN
         Dim Contador As Integer = 1
         Try
             For Each Inspeccion As DataRow In IObtenerVIN(VIN).Rows
                 FlowInspecciones.Controls.Add(DrawInspeccion(
                                               Inspeccion.Item("inspeccionID"),
-                                              Contador.ToString,
+                                              Contador.ToString, 
                                               Inspeccion.Item("inspeccionFecha").ToString,
-                                              Consultar("SELECT empleadonombre FROM empleados WHERE empleadoid=" + Inspeccion.Item("operarioid").ToString).Rows(0).Item(0)
+                                              Consultar("SELECT empleadonombre FROM empleados WHERE empleadoid="+Inspeccion.Item("operarioid").ToString).Rows(0).Item(0)
                                               ))
                 Contador += 1
             Next
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Friend Sub AgregarDanioViejo(danioId As String, InspeccionId As String)
+        If IDInsertar(danioId, InspeccionId) Then
+            MsgBox("El danio se agrego correctamente.")
+        Else
+            MsgBox("Parece que la inspeccion ya tiene ese danio. Intente con otro danio.")
+        End If
     End Sub
 
     Private Function DrawInspeccion(InspID As String, Numero As String, InspeccionFecha As String, Operario As String) As Control
@@ -71,6 +79,12 @@ Public Class VerInspeccion
         LabelFecha.Font = fuente
         LabelOperario.Font = fuente
 
+        Dim BtnAgregarDanioAnterior As Button = New Button
+        BtnAgregarDanioAnterior.Size = New Size(200, 33)
+        BtnAgregarDanioAnterior.Font = fuente
+        BtnAgregarDanioAnterior.ForeColor = Color.Crimson
+        BtnAgregarDanioAnterior.Text = "Agregar Danio Anterior"
+
         Dim BtnVerDanios As Button = New Button
         BtnVerDanios.Size = New Size(111, 33)
         BtnVerDanios.Font = fuente
@@ -83,20 +97,24 @@ Public Class VerInspeccion
         BtnAgDanios.ForeColor = Color.Crimson
         BtnAgDanios.Text = _Lang.ObtenerKey("VerInspecciones", 7)
 
+        AddHandler BtnAgregarDanioAnterior.Click, Sub(s, ea) AgregarDanioAnterior(s, ea, InspID, PanelContenido)
         AddHandler BtnVerDanios.Click, Sub(s, ea) VerDanio(s, ea, InspID, PanelContenido)
         AddHandler BtnAgDanios.Click, Sub(s, ea) AgregarDanioI(s, ea, InspID)
 
+        BtnAgregarDanioAnterior.Location = New Point(100, 113)
         BtnVerDanios.Location = New Point(450, 113)
         BtnAgDanios.Location = New Point(300, 113)
 
         PanelContenido.Controls.Add(LabelInspeccon)
         PanelContenido.Controls.Add(LabelFecha)
         PanelContenido.Controls.Add(LabelOperario)
+        PanelContenido.Controls.Add(BtnAgregarDanioAnterior)
         PanelContenido.Controls.Add(BtnVerDanios)
         PanelContenido.Controls.Add(BtnAgDanios)
 
         Return PanelContenido
     End Function
+
     Private Sub VerDanio(s As Object, ea As EventArgs, InspID As String, PanelC As Panel)
         If DIObtenerCount(InspID) > 0 Then
             Dim Ventana As Ventana_Ver = New Ventana_Ver
@@ -107,6 +125,15 @@ Public Class VerInspeccion
         Else
             MsgBox(_Lang.ObtenerKey("VerInspecciones", 11))
         End If
+    End Sub
+
+    Private Sub AgregarDanioAnterior(s As Object, ea As EventArgs, InspID As String, PanelC As Panel)
+        Dim Ventana As Ventana_Ver = New Ventana_Ver
+        Dim SLCD As SeleccionarInspeccion = New SeleccionarInspeccion
+        SLCD.UC_VerInspeccion = Me
+        SLCD.InspeccionId = InspID
+        Ventana.LoadControl(SLCD)
+        Ventana.ShowDialog()
     End Sub
     Private Sub AgregarDanioI(s As Object, ea As EventArgs, InspID As String)
         Dim Ventana As Ventana_Ver = New Ventana_Ver
@@ -138,5 +165,20 @@ Public Class VerInspeccion
 
     Private Sub VerInspeccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateLang()
+    End Sub
+
+    Private Sub btnNuevoDanio_Click(sender As Object, e As EventArgs)
+        If IObtenerCount(VIN) > 0 Then
+            Dim Inspecciones = IObtenerVIN(VIN)
+            Dim VentanaVer As Ventana_Ver = New Ventana_Ver
+            Dim AgregarD As AgregarDanio = New AgregarDanio
+            AgregarD.UC_VerInspeccion = Me
+            AgregarD.VIN = VIN
+            AgregarD.InspeccionID = Inspecciones.Rows(Inspecciones.Rows.Count - 1).Item("inspeccionid").ToString
+            VentanaVer.LoadControl(AgregarD)
+            VentanaVer.ShowDialog()
+        Else
+            MsgBox("No existen danios, cree uno en la pestana inspecciones para continuar.")
+        End If
     End Sub
 End Class
